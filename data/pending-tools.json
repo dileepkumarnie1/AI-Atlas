@@ -1,0 +1,417 @@
+{
+  "lastUpdated": "2025-09-21T20:25:23.710Z",
+  "items": [
+    {
+      "domain": "Most Popular",
+      "name": "OpenBB",
+      "description": "Financial data platform for analysts, quants and AI agents.",
+      "link": "https://openbb.co",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/80064875?v=4&s=64",
+      "about": "Financial data platform for analysts, quants and AI agents.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 52,421 stars for query \"ai platform\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Open-Assistant",
+      "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+      "link": "https://open-assistant.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/92627801?v=4&s=64",
+      "about": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 37,473 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "chatbox",
+      "description": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
+      "link": "https://chatboxai.app?utm_medium=github",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/199570308?v=4&s=64",
+      "about": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 36,719 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "gpt4all",
+      "description": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+      "link": "https://nomic.ai/gpt4all",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/102670180?v=4&s=64",
+      "about": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 76,701 stars for query \"llm\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "LLMs-from-scratch",
+      "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+      "link": "https://amzn.to/4fqvn0D",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/5618407?v=4&s=64",
+      "about": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 72,260 stars for query \"llm\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "browser-use",
+      "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "link": "https://browser-use.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/192012301?v=4&s=64",
+      "about": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 70,253 stars for query \"llm\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "InvokeAI",
+      "description": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
+      "link": "https://invoke-ai.github.io/InvokeAI/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/113954515?v=4&s=64",
+      "about": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 25,897 stars for query \"stable diffusion\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
+      "description": "Riffusion – Stable Diffusion fine-tuned to generate music",
+      "link": "https://www.riffusion.com/about",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Riffusion – Stable Diffusion fine-tuned to generate music",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2421 points) for \"stable diffusion\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Imagen Video: high definition video generation with diffusion models",
+      "description": "Imagen Video: high definition video generation with diffusion models",
+      "link": "https://imagen.research.google/video/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Imagen Video: high definition video generation with diffusion models",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (800 points) for \"video generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "mmagic",
+      "description": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+      "link": "https://mmagic.readthedocs.io/en/latest/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64",
+      "about": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,270 stars for query \"video generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "mmaction2",
+      "description": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+      "link": "https://mmaction2.readthedocs.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64",
+      "about": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,756 stars for query \"video generation\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "cc-model-switcher",
+      "description": "A simple CLI tool to switch Claude Code AI models easily",
+      "link": "https://www.npmjs.com/package/cc-model-switcher",
+      "tags": [
+        "Library"
+      ],
+      "about": "A simple CLI tool to switch Claude Code AI models easily",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "@openctx/provider-linear-issues",
+      "description": "Linear Issues context for code AI and editors (OpenCtx provider)",
+      "link": "https://www.npmjs.com/package/@openctx/provider-linear-issues",
+      "tags": [
+        "Library"
+      ],
+      "about": "Linear Issues context for code AI and editors (OpenCtx provider)",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "@lobehub/chat",
+      "description": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
+      "link": "https://www.npmjs.com/package/@lobehub/chat",
+      "tags": [
+        "Library"
+      ],
+      "about": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"speech synthesis\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "ssml-builder",
+      "description": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
+      "link": "https://www.npmjs.com/package/ssml-builder",
+      "tags": [
+        "Library"
+      ],
+      "about": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"speech synthesis\""
+    },
+    {
+      "domain": "Productivity",
+      "name": "@ckeditor/ckeditor5-ai",
+      "description": "AI Assistant feature for CKEditor 5.",
+      "link": "https://www.npmjs.com/package/@ckeditor/ckeditor5-ai",
+      "tags": [
+        "Library"
+      ],
+      "about": "AI Assistant feature for CKEditor 5.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"assistant\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "Figma AI",
+      "description": "Figma AI",
+      "link": "https://www.figma.com/blog/introducing-figma-ai/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Figma AI",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (240 points) for \"figma ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "Figma disables AI app design tool after it copied Apple's weather app",
+      "description": "Figma disables AI app design tool after it copied Apple's weather app",
+      "link": "https://www.404media.co/figma-disables-ai-app-design-tool-after-it-copied-apples-weather-app/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Figma disables AI app design tool after it copied Apple's weather app",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (113 points) for \"figma ai\""
+    },
+    {
+      "domain": "3D Modeling",
+      "name": "threed-garden",
+      "description": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
+      "link": "https://www.npmjs.com/package/threed-garden",
+      "tags": [
+        "Library"
+      ],
+      "about": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"3d ai\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "ethical-algorithm-tester",
+      "description": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
+      "link": "https://www.npmjs.com/package/ethical-algorithm-tester",
+      "tags": [
+        "Library"
+      ],
+      "about": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"fairness\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "@luckymachines/contracts",
+      "description": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
+      "link": "https://www.npmjs.com/package/@luckymachines/contracts",
+      "tags": [
+        "Library"
+      ],
+      "about": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"fairness\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "password-prompt",
+      "description": "cross-platform masked or hidden prompt",
+      "link": "https://www.npmjs.com/package/password-prompt",
+      "tags": [
+        "Library"
+      ],
+      "about": "cross-platform masked or hidden prompt",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@listr2/prompt-adapter-inquirer",
+      "description": "Listr2 prompt adapter for inquirer.",
+      "link": "https://www.npmjs.com/package/@listr2/prompt-adapter-inquirer",
+      "tags": [
+        "Library"
+      ],
+      "about": "Listr2 prompt adapter for inquirer.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "Why AutoGPT engineers ditched vector databases",
+      "description": "Why AutoGPT engineers ditched vector databases",
+      "link": "https://dariuszsemba.com/blog/why-autogpt-engineers-ditched-vector-databases/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Why AutoGPT engineers ditched vector databases",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (109 points) for \"AutoGPT\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@voltagent/core",
+      "description": "VoltAgent Core - AI agent framework for JavaScript",
+      "link": "https://www.npmjs.com/package/@voltagent/core",
+      "tags": [
+        "Library"
+      ],
+      "about": "VoltAgent Core - AI agent framework for JavaScript",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "workflow-ai-plugin",
+      "description": "This library was generated with [Nx](https://nx.dev).",
+      "link": "https://www.npmjs.com/package/workflow-ai-plugin",
+      "tags": [
+        "Library"
+      ],
+      "about": "This library was generated with [Nx](https://nx.dev).",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"workflow ai\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "workflow-ai-bot",
+      "description": "This library was generated with [Nx](https://nx.dev).",
+      "link": "https://www.npmjs.com/package/workflow-ai-bot",
+      "tags": [
+        "Library"
+      ],
+      "about": "This library was generated with [Nx](https://nx.dev).",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"workflow ai\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "ai-embed-search",
+      "description": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
+      "link": "https://www.npmjs.com/package/ai-embed-search",
+      "tags": [
+        "Library"
+      ],
+      "about": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"semantic search\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "@wildcard-ai/deepcontext",
+      "description": "Advanced codebase indexing and semantic search MCP server",
+      "link": "https://www.npmjs.com/package/@wildcard-ai/deepcontext",
+      "tags": [
+        "Library"
+      ],
+      "about": "Advanced codebase indexing and semantic search MCP server",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"semantic search\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+      "description": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+      "link": "https://1a3orn.com/sub/machine-learning-bans.html",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (385 points) for \"ai safety\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+      "description": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+      "link": "https://gizmodo.com/ai-safety-openai-sam-altman-ouster-back-microsoft-1851038439",
+      "tags": [
+        "Trending"
+      ],
+      "about": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (295 points) for \"ai safety\""
+    }
+  ]
+}

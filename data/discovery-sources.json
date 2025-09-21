@@ -1,0 +1,182 @@
+{
+  "most-popular": {
+    "githubQueries": ["ai platform", "ai toolkit", "prompt engineering", "agents framework", "ai assistant"],
+    "npmQueries": ["ai assistant", "prompt", "agents"],
+    "hnQueries": ["AI", "LLM", "agent"],
+    "maxAdds": 3,
+    "githubStarsMin": 1000,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "language-chat": {
+    "githubQueries": ["chatbot", "llm", "language model", "gpt", "assistant", "rag", "retrieval augmented generation", "chat ui"],
+    "npmQueries": ["chatbot", "llm", "ai chat", "rag"],
+    "hnQueries": ["chatbot", "RAG", "LLM"],
+    "maxAdds": 3,
+    "githubStarsMin": 800,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "image-generation": {
+    "githubQueries": ["text to image", "image generation", "stable diffusion", "diffusion", "img2img", "inpainting", "controlnet"],
+    "npmQueries": ["image generation", "diffusion", "stable diffusion"],
+    "hnQueries": ["image generation", "stable diffusion"],
+    "maxAdds": 2,
+    "githubStarsMin": 800,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "video-tools": {
+    "githubQueries": ["video generation", "text to video", "video-to-video", "avatar video", "automatic rotoscoping", "subtitle ai", "lip sync ai"],
+    "npmQueries": ["text-to-video", "video ai", "subtitle ai", "lip sync"],
+    "hnQueries": ["text to video", "video generation"],
+    "maxAdds": 3,
+    "githubStarsMin": 400,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "code-assistance": {
+    "githubQueries": ["code assistant", "ai code", "code completion", "code llm", "copilot", "test generation ai"],
+    "npmQueries": ["code ai", "copilot", "autocomplete ai"],
+    "hnQueries": ["code assistant", "copilot"],
+    "maxAdds": 2,
+    "githubStarsMin": 800,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "audio-music": {
+    "githubQueries": ["text to speech", "voice cloning", "tts", "music generation", "voice conversion", "audio separation"],
+    "npmQueries": ["tts", "voice", "speech synthesis", "music generation"],
+    "hnQueries": ["voice cloning", "music generation"],
+    "maxAdds": 2,
+    "githubStarsMin": 500,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "productivity": {
+    "githubQueries": ["meeting notes ai", "transcription ai", "document automation ai", "email assistant ai", "calendar assistant ai"],
+    "npmQueries": ["productivity ai", "assistant", "meeting notes"],
+    "hnQueries": ["meeting notes ai", "transcription ai"],
+    "maxAdds": 2,
+    "githubStarsMin": 400,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "design-tools": {
+    "githubQueries": ["design ai", "ui generation", "figma ai", "image upscaler", "logo generation"],
+    "npmQueries": ["design ai", "ux ai", "image upscaler"],
+    "hnQueries": ["design ai", "figma ai"],
+    "maxAdds": 2,
+    "githubStarsMin": 500,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "research": {
+    "githubQueries": ["paper summarization", "literature review ai", "citation extraction ai", "pdf summarizer ai"],
+    "npmQueries": ["research ai", "paper summarizer", "pdf ai"],
+    "hnQueries": ["paper summarization", "literature review"],
+    "maxAdds": 2,
+    "githubStarsMin": 400,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "marketing-seo": {
+    "githubQueries": ["seo ai", "content generation marketing", "ad copy ai", "keyword research ai"],
+    "npmQueries": ["seo ai", "marketing ai", "copywriting ai"],
+    "hnQueries": ["seo ai", "content generation"],
+    "maxAdds": 2,
+    "githubStarsMin": 600,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "data-analysis": {
+    "githubQueries": ["sql copilot", "data analysis ai", "notebook copilot", "pandas ai", "data wrangler ai"],
+    "npmQueries": ["analytics ai", "sql ai", "notebook ai"],
+    "hnQueries": ["sql copilot", "semantic search"],
+    "maxAdds": 2,
+    "githubStarsMin": 500,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "3d-modeling": {
+    "githubQueries": ["text to 3d", "neural rendering", "gaussian splatting", "instant-ngp", "nerf", "mesh generation ai"],
+    "npmQueries": ["3d ai", "nerf", "gaussian splatting"],
+    "hnQueries": ["gaussian splatting", "text to 3d"],
+    "maxAdds": 2,
+    "githubStarsMin": 400,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "ethical-ai": {
+    "githubQueries": ["bias detection ai", "model interpretability", "privacy preserving ml", "audit ai"],
+    "npmQueries": ["fairness", "bias", "guardrails ai"],
+    "hnQueries": ["model interpretability", "ai fairness"],
+    "maxAdds": 2,
+    "githubStarsMin": 300,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "education": {
+    "githubQueries": ["learning assistant ai", "quiz generation ai", "tutor ai", "flashcards ai"],
+    "npmQueries": ["education ai", "tutor ai", "quiz ai"],
+    "hnQueries": ["tutor ai", "learning assistant"],
+    "maxAdds": 2,
+    "githubStarsMin": 300,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "crypto": {
+    "githubQueries": ["ai trading bot", "agent defi", "crypto ai", "blockchain ai"],
+    "npmQueries": ["crypto ai", "defi ai"],
+    "hnQueries": ["crypto ai"],
+    "maxAdds": 1,
+    "githubStarsMin": 1500,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "prompt-enhancers": {
+    "githubQueries": ["prompt engineering", "prompt optimizer", "prompt template", "prompt library"],
+    "npmQueries": ["prompt", "prompt engineering", "prompt optimizer"],
+    "hnQueries": ["prompt engineering"],
+    "maxAdds": 2,
+    "githubStarsMin": 300,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "most-famous-agentic-ais": {
+    "githubQueries": ["autonomous agents", "autogpt", "babyagi", "agent framework", "multi-agent"],
+    "npmQueries": ["agent framework", "autonomous agent"],
+    "hnQueries": ["AutoGPT", "agents"],
+    "maxAdds": 2,
+    "githubStarsMin": 600,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "workflow-automation": {
+    "githubQueries": ["workflow automation ai", "zapier ai", "n8n ai", "orchestration ai"],
+    "npmQueries": ["workflow ai", "automation ai", "orchestration"],
+    "hnQueries": ["workflow automation ai"],
+    "maxAdds": 2,
+    "githubStarsMin": 400,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "search-knowledge-discovery": {
+    "githubQueries": ["rag", "semantic search", "vector search", "document qa", "knowledge graph ai"],
+    "npmQueries": ["vector search", "semantic search", "rag"],
+    "hnQueries": ["semantic search", "vector database"],
+    "maxAdds": 2,
+    "githubStarsMin": 500,
+    "githubPerPage": 10,
+    "npmSize": 10
+  },
+  "ai-safety-ethics": {
+    "githubQueries": ["red teaming ai", "model safety", "guardrails ai", "prompt injection detection", "ai safety"],
+    "npmQueries": ["guardrails ai", "prompt injection"],
+    "hnQueries": ["ai safety", "guardrails"],
+    "maxAdds": 2,
+    "githubStarsMin": 300,
+    "githubPerPage": 10,
+    "npmSize": 10
+  }
+}

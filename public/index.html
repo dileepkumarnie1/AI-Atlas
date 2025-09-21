@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Domain Atlas</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    
+    <!-- Custom Stylesheet -->
+    <style>
+        html, body, #app {
+            height: 100% !important;
+            min-height: 100vh !important;
+        }
+        html, body {
+            background: transparent !important;
+        }
+        .bg-card,
+        .domain-card,
+        .feature-card {
+            background-color: rgba(255,255,255,0.85) !important;
+        }
+        html.dark .bg-card,
+        html.dark .domain-card,
+        html.dark .feature-card {
+            background-color: rgba(24,24,27,0.85) !important;
+        }
+        .feature-card {
+            background-color: rgba(255,255,255,0.85) !important;
+        }
+        html.dark .bg-card,
+        html.dark .domain-card,
+        html.dark .feature-card {
+            background-color: rgba(24,24,27,0.85) !important;
+        }
+        html, body {
+            background: transparent !important;
+        }
+        body {
+            background-image: url('/images/david-becker-mGx5-xt1uec-unsplash.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }
+        #background-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(255,255,255,0.80); /* increased opacity */
+            z-index: 0;
+            pointer-events: none;
+        }
+        html.dark #background-overlay {
+            background: rgba(30,41,59,0.80);
+        }
+        /* ...existing code... */
+    :root {
+        --bg-primary: transparent; /* Let the image show through */
+        --bg-primary-translucent: rgba(244, 244, 245, 0.9); /* Keep for other elements if needed */
+        --bg-secondary: #e4e4e7;
+        --bg-card: #ffffff;
+        --text-primary: #18181b;
+        --text-secondary: #52525b;
+        --text-muted: #71717a;
+        --border-color: #e4e4e7;
+        --header-bg: linear-gradient(to right, rgba(250, 245, 255, 0.8), rgba(255, 255, 255, 0.8));
+        --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+        --scrollbar-track: #e4e4e7;
+        --scrollbar-thumb: #a1a1aa;
+        --scrollbar-thumb-hover: #71717a;
+        --tag-bg: #e4e4e7;
+        --tag-text: #3f3f46;
+    }
+
+    html.dark {
+        --bg-primary: transparent; /* Let the image show through */
+        --bg-primary-translucent: rgba(10, 10, 10, 0.9); /* Keep for other elements if needed */
+        --bg-secondary: #1a1a1a;
+        --bg-card: #18181b;
+        --text-primary: #f5f5f5;
+        --text-secondary: #a1a1aa;
+        --text-muted: #71717a;
+        --border-color: #27272a;
+        --header-bg: linear-gradient(to right, rgba(30, 27, 75, 0.8), rgba(17, 17, 17, 0.8));
+        --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+        --scrollbar-track: #1a1a1a;
+        --scrollbar-thumb: #4a4a4a;
+        --scrollbar-thumb-hover: #5a5a5a;
+        --tag-bg: #3f3f46;
+        --tag-text: #d4d4d8;
+    }
+
+        #app {
+            transition: background-color 0.3s ease;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+        .card-hover-effect {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        html.dark .card-hover-effect:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(76, 29, 149, 0.3);
+        }
+
+        header { 
+            background: var(--header-bg); 
+            border-color: var(--border-color);
+            box-shadow: var(--header-shadow);
+        }
+        #home-link { color: var(--text-primary); }
+        nav a { color: var(--text-secondary); }
+        nav a:hover { background-color: var(--bg-secondary); color: var(--text-primary); }
+        #theme-toggle { color: var(--text-secondary); }
+        #theme-toggle:hover { background-color: var(--bg-secondary); }
+        footer { background-color: var(--bg-secondary); border-top-color: var(--border-color); }
+        footer p { color: var(--text-muted); }
+        #search-bar { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); }
+        #search-bar::placeholder { color: var(--text-muted); }
+
+        .domain-card, .feature-card {
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .domain-card { align-items: center; text-align: center; }
+
+        .tool-list-item {
+            background-color: var(--bg-card);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: background 0.2s, color 0.2s;
+            min-width: 0;
+            position: relative;
+        }
+        .tool-desc-line {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: clamp(180px, 32vw, 340px);
+            display: block;
+            min-width: 0;
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
+            padding-right: 0.5rem;
+            background: transparent;
+        }
+        .tool-desc-full {
+            white-space: normal;
+            word-break: break-word;
+            max-width: clamp(180px, 32vw, 340px);
+            display: block;
+            background: transparent;
+            margin-bottom: 0.25rem;
+            padding-right: 0.5rem;
+        }
+        #theme-toggle, .open-tool-btn, .tool-list-item a {
+            transition: background 0.2s, color 0.2s;
+        }
+        .open-tool-btn {
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+        .dark .open-tool-btn {
+            color: #f3f4f6;
+            background: #23272f;
+            border: 1px solid #444;
+        }
+        .tool-list-item a {
+            text-decoration: none;
+            z-index: 1;
+        }
+        .tool-list-item a:focus, .tool-list-item a:hover {
+            outline: 2px solid #a78bfa;
+        }
+        @media (min-width: 768px) { .tool-list-item { flex-direction: row; align-items: center; } }
+        @media (min-width: 768px) {
+            .tool-list-item {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .tool-desc-line, .tool-desc-full {
+                max-width: 340px;
+            }
+        }
+
+        .tag { background-color: var(--tag-bg); color: var(--tag-text); }
+        .text-primary { color: var(--text-primary); }
+        .text-secondary { color: var(--text-secondary); }
+        .text-muted { color: var(--text-muted); }
+
+        .prose { color: var(--text-secondary); }
+        .prose h1, .prose h2, .prose h5, .prose h6 { color: var(--text-primary); }
+
+        .tool-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .tool-details.expanded {
+            max-height: 1000px;
+        }
+        .tool-details .details-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            background-color: transparent;
+            border-top: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+        .details-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1rem; }
+        @media (min-width: 640px) { .details-grid { grid-template-columns: 1fr 1fr; } }
+
+        .pros-cons-list { list-style-type: none; padding-left: 0; margin-top: 0.5rem; }
+        .pros-cons-list li { position: relative; padding-left: 1.75rem; margin-bottom: 0.5rem; color: var(--text-secondary); }
+        .pros-cons-list li::before {
+            content: ''; position: absolute; left: 0; top: 5px; width: 1rem; height: 1rem;
+            background-size: contain; background-repeat: no-repeat; background-position: center;
+        }
+        .pros .pros-cons-list li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2334D399'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clip-rule='evenodd' /%3E%3C/svg%3E"); }
+        .cons .pros-cons-list li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23F87171'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z' clip-rule='evenodd' /%3E%3C/svg%3E"); }
+        .details-grid h6 { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+
+        /* Auth Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .modal-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 400px;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.visible .modal-content {
+            transform: scale(1);
+        }
+
+        /* New search styles */
+        .search-wrapper { max-width: 900px; margin: 0 auto 1.5rem; display:flex; gap:8px; align-items:center; }
+        .search-input { flex:1; padding:0.75rem 1rem; border-radius:0.75rem; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); }
+        .search-clear { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.75rem; border-radius:0.5rem; color:var(--text-secondary); }
+        .search-results { margin-top:1rem; display:grid; gap:12px; }
+        @media(min-width:768px) { .search-results { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Tool Details Modal Styles */
+        #tool-details-modal-content {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="background-overlay"></div>
+    <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:1;">
+        <!-- Header -->
+        <header class="sticky top-0 backdrop-blur-lg border-b z-50">
+            <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="#" id="home-link" class="text-2xl font-bold flex items-center">
+                            <svg class="w-8 h-8 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            AI Domain Atlas
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full border border-color bg-card hover:bg-secondary transition flex items-center justify-center mr-2">
+                            <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                            <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 12.122l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414zM17 13a1 1 0 100 2h1a1 1 0 100-2h-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <div class="hidden md:block">
+                            <div id="main-nav" class="ml-6 flex items-baseline space-x-4">
+                                <a href="#" id="domains-link" class="px-3 py-2 rounded-md text-sm font-medium">Domains</a>
+                                <a href="#" id="submit-link" class="px-3 py-2 rounded-md text-sm font-medium">Submit a Tool</a>
+                                <a href="#" id="about-link" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            </div>
+                        </div>
+                        <div id="auth-container" class="flex items-center ml-4">
+                            <!-- Auth state will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div id="content-area">
+                 <div class="text-center text-secondary">Loading AI tools...</div>
+            </div>
+        </main>
+
+        <footer class="border-t">
+            <div class="container mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-muted">&copy; 2025 AI Domain Atlas. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modal-title" class="text-2xl font-bold text-primary">Sign In</h2>
+                <button id="close-modal-btn" class="text-secondary hover:text-primary">&times;</button>
+            </div>
+            <div id="modal-error" class="text-red-500 text-sm mb-4 hidden"></div>
+            <form id="auth-form" class="space-y-4">
+                <input type="email" id="email-input" placeholder="Email" class="w-full p-3 rounded-md bg-secondary border-color text-primary focus:outline-none focus:ring-2 focus:ring-purple-500" required>
+                <input type="password" id="password-input" placeholder="Password" class="w-full p-3 rounded-md bg-secondary border-color text-primary focus:outline-none focus:ring-2 focus:ring-purple-500" required>
+                <button type="submit" id="auth-submit-btn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition">Sign In</button>
+            </form>
+            <div class="text-center my-4 text-muted text-sm">OR</div>
+            <button id="google-signin-btn" class="w-full bg-white dark:bg-gray-700 border border-color text-primary font-semibold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.222,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574	l6.19,5.238C42.012,35.846,44,30.138,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
+                Sign In with Google
+            </button>
+            <p class="text-center text-sm text-muted mt-6">
+                <span id="modal-prompt-text">Don't have an account?</span>
+                <button id="modal-switch-btn" class="text-purple-600 hover:underline">Sign Up</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- Tool Details Modal -->
+    <div id="tool-details-modal" class="modal-overlay">
+        <div id="tool-details-modal-content" class="modal-content">
+            <!-- Content will be injected by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // --- THEME TOGGLE LOGIC ---
+        function setupTheme() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            // Set initial state
+            function updateThemeIcons() {
+                const isDark = document.documentElement.classList.contains('dark');
+                if (isDark) {
+                    darkIcon.classList.add('hidden');
+                    lightIcon.classList.remove('hidden');
+                } else {
+                    darkIcon.classList.remove('hidden');
+                    lightIcon.classList.add('hidden');
+                }
+            }
+            updateThemeIcons();
+            themeToggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                updateThemeIcons();
+                // Optionally persist theme
+                if (window.localStorage) {
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                }
+            });
+            // On load, respect saved theme
+            if (window.localStorage) {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark') document.documentElement.classList.add('dark');
+                else if (saved === 'light') document.documentElement.classList.remove('dark');
+                updateThemeIcons();
+            }
+        }
+        setupTheme();
+        // NOTE: Replace the following with your actual Firebase project configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyDKpMZ_ik9LdcJxg3tKre-MAApV0BpI0Wo",
+  authDomain: "ai-domain-atlas.firebaseapp.com",
+  projectId: "ai-domain-atlas",
+  storageBucket: "ai-domain-atlas.firebasestorage.app",
+  messagingSenderId: "656158450742",
+  appId: "1:656158450742:web:928b64678b22c12fe22497",
+  measurementId: "G-ES11CRRDP6"
+};
+        
+        // Import Firebase modules
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { 
+            getAuth, 
+            onAuthStateChanged,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signInWithPopup,
+            GoogleAuthProvider,
+            signOut
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import {
+            getFirestore, doc, getDoc, setDoc, updateDoc
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+        const firestore = getFirestore(app);
+
+        // --- Firestore User Profile Sync ---
+        async function getUserProfile(uid) {
+            if (!uid) return null;
+            const ref = doc(firestore, 'users', uid);
+            const snap = await getDoc(ref);
+            return snap.exists() ? snap.data() : null;
+        }
+
+        async function setUserProfile(uid, data) {
+            if (!uid) return;
+            const ref = doc(firestore, 'users', uid);
+            await setDoc(ref, data, { merge: true });
+        }
+
+        async function updateUserProfileField(uid, field, value) {
+            if (!uid) return;
+            const ref = doc(firestore, 'users', uid);
+            await updateDoc(ref, { [field]: value });
+        }
+
+        // Save favorites, reviews, comparisons
+        async function saveFavorites(uid, favorites) {
+            await updateUserProfileField(uid, 'favorites', favorites);
+        }
+        async function saveReviews(uid, reviews) {
+            await updateUserProfileField(uid, 'reviews', reviews);
+        }
+        async function saveComparisons(uid, comparisons) {
+            await updateUserProfileField(uid, 'comparisons', comparisons);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let db = [];
+            let fuse = null;
+            const contentArea = document.getElementById('content-area');
+            const authContainer = document.getElementById('auth-container');
+            // Popularity map loaded at init (optional)
+            let popularityMap = {};
+            // Optional ranks file (generated by updater)
+            let popularityRanksMap = {};
+            // Most Popular order scores cached at init
+            let mostPopularOrderMap = {};
+            // Add a favorites link container after auth state is rendered
+            function ensureFavoritesLinkContainer() {
+                let favLink = document.getElementById('favorites-link-container');
+                if (!favLink) {
+                    favLink = document.createElement('span');
+                    favLink.id = 'favorites-link-container';
+                    favLink.className = 'ml-2';
+                    if (authContainer && authContainer.lastElementChild) {
+                        authContainer.appendChild(favLink);
+                    }
+                }
+                return favLink;
+            }
+            const authModal = document.getElementById('auth-modal');
+            const authForm = document.getElementById('auth-form');
+            const emailInput = document.getElementById('email-input');
+            const passwordInput = document.getElementById('password-input');
+            const modalTitle = document.getElementById('modal-title');
+            const authSubmitBtn = document.getElementById('auth-submit-btn');
+            const modalPromptText = document.getElementById('modal-prompt-text');
+            const modalSwitchBtn = document.getElementById('modal-switch-btn');
+            const modalError = document.getElementById('modal-error');
+            const toolDetailsModal = document.getElementById('tool-details-modal');
+            const toolDetailsModalContent = document.getElementById('tool-details-modal-content');
+
+            let isLoginMode = true;
+
+            const state = {
+                currentView: 'home',
+                selectedDomain: null,
+                searchQuery: '',
+                user: null,
+                favorites: [],
+                reviews: {},
+                comparisons: []
+            };
+
+            // --- Ensure Firestore user document is created after login and favorites are loaded ---
+            onAuthStateChanged(auth, async (user) => {
+                state.user = user;
+                if (user) {
+                    // Create or update user document in Firestore
+                    await setDoc(doc(firestore, 'users', user.uid), {
+                        profile: {
+                            displayName: user.displayName || '',
+                            email: user.email || '',
+                            avatar: user.photoURL || ''
+                        },
+                        role: 'user'
+                    }, { merge: true });
+                    // Load favorites, reviews, comparisons from Firestore
+                    await loadUserProfileToState(user);
+                } else {
+                    // Clear user-specific state on logout
+                    state.favorites = [];
+                    state.reviews = {};
+                    state.comparisons = [];
+                }
+                // Re-render UI to reflect updated state
+                render();
+            });
+            // --- Firestore Profile Sync Logic ---
+            async function loadUserProfileToState(user) {
+                if (!user || !user.uid) return;
+                const profile = await getUserProfile(user.uid);
+                state.favorites = Array.isArray(profile?.favorites) ? profile.favorites : [];
+                state.reviews = profile?.reviews || {};
+                state.comparisons = Array.isArray(profile?.comparisons) ? profile.comparisons : [];
+            }
+
+            async function saveFavoritesToFirestore() {
+                if (state.user && state.user.uid) await saveFavorites(state.user.uid, state.favorites);
+            }
+            async function saveReviewsToFirestore() {
+                if (state.user && state.user.uid) await saveReviews(state.user.uid, state.reviews);
+            }
+            async function saveComparisonsToFirestore() {
+                if (state.user && state.user.uid) await saveComparisons(state.user.uid, state.comparisons);
+            }
+
+            // Ensure theme toggle is initialized after DOM is ready
+            if (typeof setupTheme === 'function') setupTheme();
+
+            // --- Fuse setup for search ---
+            function setupFuse() {
+                try {
+                    const all = (db || []).flatMap(d => d.tools || []);
+                    // attempt to find Fuse (UMD global or window export)
+                    const FuseLib = (typeof Fuse !== 'undefined') ? Fuse : (window && window.Fuse) ? window.Fuse : null;
+                    if (!FuseLib) {
+                        console.warn('Fuse.js not found; search will use simple substring matching.');
+                        fuse = null;
+                        return;
+                    }
+                    // create fuse index with fields; includeScore for safer result mapping
+                    fuse = new FuseLib(all, { keys: ['name', 'description', 'tags'], threshold: 0.4, includeScore: true });
+                    console.debug('Fuse search index initialized with', all.length, 'tools');
+                } catch (e) {
+                    console.warn('setupFuse failed', e);
+                    fuse = null;
+                }
+            }
+
+            // --- Search & UI helper functions (new) ---
+            function escapeHtml(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+            function getHostnameFromLink(link) {
+                try { return new URL(link).hostname; } catch { return ''; }
+            }
+            function getLightPlaceholder(name, size=40) {
+                const ch = encodeURIComponent((name||'?').charAt(0));
+                return `https://placehold.co/${size}x${size}/f3f4f6/7c3aed?text=${ch}`;
+            }
+            function buildIconSources(tool, size=40) {
+                const host = getHostnameFromLink(tool?.link || '');
+                const s2 = host ? `https://www.google.com/s2/favicons?domain=${host}&sz=${size}` : '';
+                const duck = host ? `https://icons.duckduckgo.com/ip3/${host}.ico` : '';
+                const placeholder = getLightPlaceholder(tool?.name, size);
+                const primary = tool?.iconUrl || s2 || duck || placeholder;
+                const secondary = (primary === duck ? s2 : duck) || placeholder;
+                return { primary, secondary, placeholder };
+            }
+            function iconImgHtml(tool, size=40, extraClass='') {
+                const { primary, secondary, placeholder } = buildIconSources(tool, size);
+                const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
+                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px" class="rounded-md ${extraClass}" onerror="${onerr}">`;
+            }
+            function formatCountShort(n) {
+                if (typeof n !== 'number' || !isFinite(n) || n <= 0) return '';
+                const abs = Math.abs(n);
+                if (abs >= 1e9) return `${(n/1e9).toFixed(abs >= 1e10 ? 0 : 1)}B`;
+                if (abs >= 1e6) return `${(n/1e6).toFixed(abs >= 1e7 ? 0 : 1)}M`;
+                if (abs >= 1e3) return `${(n/1e3).toFixed(abs >= 1e4 ? 0 : 1)}K`;
+                return n.toLocaleString();
+            }
+            function getUsersCount(tool) {
+                const direct = tool?.users ?? tool?.monthlyUsers ?? tool?.popularity ?? tool?.userCount;
+                let n = Number(direct);
+                if (!Number.isFinite(n) || n <= 0) {
+                    const key = String(tool?.name || '').trim().toLowerCase();
+                    n = Number(popularityMap[key]);
+                }
+                return Number.isFinite(n) && n > 0 ? n : null;
+            }
+            function usersBadgeHtml(tool) {
+                const n = getUsersCount(tool);
+                if (n) {
+                    const txt = `${formatCountShort(n)} users`;
+                    return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-purple-200 bg-purple-50 text-purple-700 whitespace-nowrap dark:bg-purple-900/30 dark:border-purple-700 dark:text-purple-200">${txt}</span>`;
+                }
+                // Fallback: show popularity rank if available, else N/A
+                const key = (tool?.name || '').toLowerCase();
+                // Prefer rank from generated ranks map if available
+                const directRank = Number(popularityRanksMap[key] || 0);
+                if (directRank > 0) {
+                    return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">Rank #${directRank}</span>`;
+                }
+                // Else compute from Most Popular section order
+                const rankScore = Number(mostPopularOrderMap[key] || 0);
+                if (rankScore > 0) {
+                    const values = Object.values(mostPopularOrderMap).sort((a,b)=>b-a);
+                    const rank = values.indexOf(rankScore) + 1;
+                    if (rank > 0) return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">Rank #${rank}</span>`;
+                }
+                return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-gray-600 whitespace-nowrap dark:bg-gray-800/40 dark:border-gray-700 dark:text-gray-300">N/A</span>`;
+            }
+
+            function performSearch(q) {
+                const query = (q || '').trim();
+                if (!query) return [];
+                try {
+                    if (fuse) {
+                        try {
+                            const results = fuse.search(query, { limit: 50 });
+                            // Fuse v6 returns array of { item, score } objects; some configs may return item directly
+                            const mapped = Array.isArray(results) ? results.map(r => (r && r.item) ? r.item : r) : [];
+                            console.debug('performSearch (fuse) query=', query, 'matches=', mapped.length);
+                            return mapped;
+                        } catch (fe) {
+                            console.warn('Fuse search threw, falling back to substring match', fe);
+                        }
+                    }
+                    // Fallback substring search across name, description, tags
+                    const allTools = (db || []).flatMap(d => d.tools || []);
+                    const ql = query.toLowerCase();
+                    const filtered = allTools.filter(t => {
+                        const name = (t.name || '').toLowerCase();
+                        const desc = (t.description || '').toLowerCase();
+                        const tags = Array.isArray(t.tags) ? t.tags.join(' ').toLowerCase() : (String(t.tags || '')).toLowerCase();
+                        return name.includes(ql) || desc.includes(ql) || tags.includes(ql);
+                    }).slice(0, 50);
+                    console.debug('performSearch (fallback) query=', query, 'matches=', filtered.length);
+                    return filtered;
+                } catch (e) {
+                    console.error('performSearch error', e);
+                    return [];
+                }
+            }
+
+            function renderSearchToolCard(tool) {
+                const iconHtml = iconImgHtml(tool, 40, 'mr-4 flex-shrink-0');
+                return `
+                    <div class="tool-list-item card-hover-effect p-4 bg-white rounded-lg border">
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center">
+                                ${iconHtml}
+                                <div>
+                                    <div class="text-lg font-bold text-primary">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
+                                    <div class="text-sm text-secondary">${escapeHtml(tool.description || '')}</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button class="px-3 py-1 rounded border text-sm open-tool-btn" data-name="${escapeHtml(tool.name)}">Open</button>
+                                <a href="${tool.link || '#'}" target="_blank" class="bg-purple-600 text-white px-3 py-1 rounded text-sm">Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // expose an opener used by result buttons
+            function openToolByName(toolName) {
+                const domain = (db || []).find(d => (d.tools || []).some(t => t.name === toolName));
+                if (!domain) return;
+                state.selectedDomain = domain.slug;
+                state.currentView = 'tools';
+                try { location.hash = `#domain=${encodeURIComponent(state.selectedDomain)}&tool=${encodeURIComponent(toolName)}`; } catch (e) {}
+                render();
+                setTimeout(() => {
+                    const tool = domain.tools.find(t => t.name === toolName);
+                    if (tool) {
+                        openToolDetailsModal(tool);
+                    }
+                }, 250);
+            }
+            window.openToolByName = openToolByName;
+
+            // --- UI RENDERING ---
+
+            const renderHome = () => { /* placeholder if needed */ };
+            const renderTools = () => { /* placeholder if needed */ };
+            const renderToolCard = (tool) => { /* placeholder if needed */ };
+            const renderAbout = () => { /* placeholder if needed */ };
+            const renderSubmit = () => { /* placeholder if needed */ };
+
+            // --- Render Favorites Page ---
+            function renderFavorites() {
+                // Categorize favorites by domain
+                const allDomains = db || [];
+                const favSet = new Set(state.favorites || []);
+                // Map: domainSlug -> { domain, tools: [tool, ...] }
+                const domainFavs = allDomains.map(domain => {
+                    const tools = (domain.tools || []).filter(t => favSet.has(t.name));
+                    return tools.length ? { domain, tools } : null;
+                }).filter(Boolean);
+                contentArea.innerHTML = `
+                    <div class="max-w-4xl mx-auto mt-10 mb-16">
+                        <div class="relative mb-6 pt-10">
+                            <!-- Back to Domains - top-left corner -->
+                            <a href="#" id="back-to-domains-link" class="absolute left-0 top-0 text-purple-600 hover:underline flex items-center text-base md:text-lg font-medium">
+                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                Back to Domains
+                            </a>
+                            <!-- Reset Favorites - top-right corner -->
+                            <button id="reset-favorites-btn" class="absolute right-0 top-0 px-4 py-2 rounded bg-red-100 text-red-700 font-semibold hover:bg-red-200 transition text-sm">Reset Favorites</button>
+                            <!-- Centered title -->
+                            <h1 class="text-3xl md:text-4xl font-bold text-purple-700 text-center flex items-center justify-center gap-2">
+                                <svg class="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.036 6.29a1 1 0 00.95.69h6.631c.969 0 1.371 1.24.588 1.81l-5.37 3.905a1 1 0 00-.364 1.118l2.036 6.29c.3.921-.755 1.688-1.538 1.118l-5.37-3.905a1 1 0 00-1.175 0l-5.37 3.905c-.783.57-1.838-.197-1.538-1.118l2.036-6.29a1 1 0 00-.364-1.118L2.342 11.717c-.783-.57-.38-1.81.588-1.81h6.631a1 1 0 00.95-.69l2.036-6.29z"/></svg>
+                                My Favorite AI Apps
+                            </h1>
+                        </div>
+                        ${domainFavs.length === 0 ? `<div class="text-secondary text-lg">You have not added any favorites yet.</div>` : `
+                            <div class="flex flex-col gap-8">
+                                ${domainFavs.map(df => `
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-primary mb-3 flex items-center gap-2">
+                                            <span class="text-purple-500">${df.domain.icon || ''}</span>
+                                            ${escapeHtml(df.domain.name)}
+                                        </h2>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            ${df.tools.map(tool => `
+                                                <div class="bg-card border border-color rounded-xl p-4 flex items-center gap-4 card-hover-effect">
+                                                    ${iconImgHtml(tool, 48, 'flex-shrink-0')}
+                                                    <div class="flex-1 min-w-0">
+                                                        <div class="font-semibold text-lg text-primary truncate">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
+                                                        <div class="text-sm text-secondary truncate">${escapeHtml(tool.description || '')}</div>
+                                                    </div>
+                                                    <button class="open-tool-btn px-3 py-1 rounded border text-sm bg-purple-600 text-white" data-name="${escapeHtml(tool.name)}">Open</button>
+                                                    <a href="${tool.link || '#'}" target="_blank" class="ml-1 px-3 py-1 rounded border text-sm bg-white text-purple-700 border-purple-300 hover:bg-purple-50">Visit</a>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `}
+                    </div>
+                `;
+                // Attach open button listeners
+                document.querySelectorAll('.open-tool-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const name = e.currentTarget.getAttribute('data-name');
+                        openToolByName(name);
+                    });
+                });
+                // Attach reset button listener
+                // Attach back to domains link listener
+                const backLink = document.getElementById('back-to-domains-link');
+                if (backLink) {
+                    backLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        state.currentView = 'home';
+                        render();
+                    });
+                }
+                const resetBtn = document.getElementById('reset-favorites-btn');
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        if (confirm('Are you sure you want to remove all your favorites?')) {
+                            state.favorites = [];
+                            saveFavoritesToFirestore().then(() => renderFavorites());
+                        }
+                    });
+                }
+            }
+
+            // --- Re-implementing core render functions to avoid code duplication ---
+            const originalRenderFunctions = {
+                renderHome: () => {
+                    // Show domains and redesigned search UI
+                    // No favorites overlay on homepage
+                    contentArea.innerHTML = `
+                        <div class="relative">
+                            <div class="text-center mb-12">
+                                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-primary mb-4">Discover the World of AI</h1>
+                                <p class="max-w-2xl mx-auto text-lg md:text-xl text-secondary">A curated atlas of AI tools and applications, classified by domain.</p>
+                            </div>
+
+                            <!-- Redesigned search bar -->
+                            <div class="search-wrapper mb-6">
+                                <input id="search-bar-new" class="search-input" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
+                            </div>
+
+                            <div id="search-results-container"></div>
+
+                            <h2 class="text-3xl font-bold text-primary mb-8">Explore by Domain</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                                ${ (db || []).map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
+                            </div>
+                        </div>
+                    `;
+
+                    // wire search behavior
+                    const sb = document.getElementById('search-bar-new');
+                    const clearBtn = document.getElementById('search-clear-btn');
+                    const resultsContainer = document.getElementById('search-results-container');
+
+                    function renderSearchResults() {
+                        const q = (state.searchQuery || '').trim();
+                        if (!q) { resultsContainer.innerHTML = ''; return; }
+                        const matches = performSearch(q);
+                        if (!matches || matches.length === 0) {
+                            resultsContainer.innerHTML = `<div class="text-secondary">No tools found for "<strong>${escapeHtml(q)}</strong>". Try different keywords.</div>`;
+                            return;
+                        }
+                        resultsContainer.innerHTML = `
+                            <div>
+                                <h3 class="text-xl font-semibold mb-3">Matching Tools</h3>
+                                <div class="search-results">${matches.map(renderSearchToolCard).join('')}</div>
+                            </div>`;
+                        // attach handlers for Open buttons
+                        resultsContainer.querySelectorAll('.open-tool-btn').forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                const name = e.currentTarget.getAttribute('data-name');
+                                openToolByName(name);
+                            });
+                        });
+                    }
+                    if (sb) {
+                        sb.addEventListener('input', (e) => {
+                            state.searchQuery = e.target.value;
+                            renderSearchResults();
+                        });
+                        sb.addEventListener('keydown', (e) => {
+                            if (e.key === 'Enter') e.preventDefault();
+                        });
+                    }
+                    if (clearBtn) {
+                        clearBtn.addEventListener('click', () => {
+                            state.searchQuery = '';
+                            const sb = document.getElementById('search-bar-new');
+                            if (sb) sb.value = '';
+                            const rc = document.getElementById('search-results-container');
+                            if (rc) rc.innerHTML = '';
+                        });
+                    }
+
+                    attachDomainCardListeners();
+                },
+                renderTools: () => {
+                    const domain = db.find(d => d.slug === state.selectedDomain);
+                    if (!domain) { originalRenderFunctions.renderHome(); return; }
+
+                    // Group tools by pricing model
+                    const openSource = (domain.tools || []).filter(t => (t.tags||[]).some(tag => /open ?source/i.test(tag)));
+                    const free = (domain.tools || []).filter(t =>
+                        !(t.tags||[]).some(tag => /open ?source|freemium|paid|subscription|enterprise/i.test(tag)) &&
+                        ((t.tags||[]).some(tag => /free/i.test(tag)) || (t.price && t.price.toLowerCase() === 'free'))
+                    );
+                    const freemium = (domain.tools || []).filter(t =>
+                        (t.tags||[]).some(tag => /freemium/i.test(tag)) &&
+                        !(t.tags||[]).some(tag => /open ?source/i.test(tag))
+                    );
+                    const paid = (domain.tools || []).filter(t =>
+                        (t.tags||[]).some(tag => /paid|subscription|enterprise/i.test(tag)) &&
+                        !(t.tags||[]).some(tag => /freemium|free|open ?source/i.test(tag))
+                    );
+
+                    // Helper to render a vertical list of tools in a single card
+                    function renderGroupCard(title, tools, color) {
+                        if (!tools.length) return '';
+                        return `
+                            <div class="bg-card border border-color rounded-xl p-4 flex flex-col min-h-[120px]">
+                                <h3 class="text-xl font-bold mb-3" style="color:${color}">${title}</h3>
+                                <ul class="flex flex-col gap-3">
+                                    ${tools.map(tool => {
+                                        const toolId = tool.name;
+                                        const isFav = state.favorites.includes(toolId);
+                                        return `
+                                        <li class="tool-list-item card-hover-effect p-3 cursor-pointer" data-tool-name="${escapeHtml(tool.name)}" data-domain-slug="${escapeHtml(domain.slug)}">
+                                            <div class="flex items-center gap-3 flex-1 min-w-0">
+                                                ${iconImgHtml(tool, 40, 'flex-shrink-0')}
+                                                <div class="min-w-0">
+                                                    <div class="text-lg font-bold text-primary">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
+                                                    <div class="text-sm text-secondary tool-desc-line">
+                                                        ${escapeHtml((tool.description || '').split('.')[0])}
+                                                        <span class="show-more-desc text-purple-600 cursor-pointer ml-2 underline text-xs">Show more</span>
+                                                    </div>
+                                                    <div class="text-sm text-secondary tool-desc-full hidden mt-1">${escapeHtml(tool.description || '')} <span class="show-less-desc text-purple-600 cursor-pointer ml-2 underline text-xs">Show less</span></div>
+                                                    <div class="flex flex-wrap gap-1 mt-1">
+                                                        ${(tool.tags||[]).slice(0, 4).map(tag => `<span class=\"text-xs tag px-2 py-1 rounded-full whitespace-nowrap\">${escapeHtml(tag)}</span>`).join('')}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col items-end gap-2 ml-4">
+                                                <button class="favorite-btn px-2 py-1 rounded border text-sm ${isFav ? 'bg-yellow-300' : 'bg-secondary'}" data-tool-id="${toolId}" title="Favorite">${isFav ? '★' : '☆'}</button>
+                                                <button class="px-3 py-1 rounded border text-sm open-tool-btn" data-name="${escapeHtml(tool.name)}">Open</button>
+                                                <a href="${tool.link || '#'}" target="_blank" class="bg-purple-600 text-white px-3 py-1 rounded text-sm">Visit</a>
+                                            </div>
+                                        </li>
+                                        `;
+                                    }).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    // Compose the group cards, omitting empty groups and adjusting grid columns
+                    const groupData = [
+                        { title: 'Open Source', tools: openSource, color: '#10b981' },
+                        { title: 'Free', tools: free, color: '#22d3ee' },
+                        { title: 'Freemium', tools: freemium, color: '#6366f1' },
+                        { title: 'Paid/Subscription', tools: paid, color: '#f59e42' }
+                    ];
+                    const nonEmptyGroups = groupData.filter(g => g.tools.length > 0);
+                    const groupCards = nonEmptyGroups.map(g => renderGroupCard(g.title, g.tools, g.color)).join('');
+                    // Dynamically set grid columns based on number of non-empty groups (min 1, max 4)
+                    const groupCount = Math.max(1, Math.min(nonEmptyGroups.length, 4));
+                    const gridColsClass = groupCount === 1 ? 'grid-cols-1' : groupCount === 2 ? 'grid-cols-1 sm:grid-cols-2' : groupCount === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
+
+                    contentArea.innerHTML = `
+                        <div class="mb-8">
+                            <button id="back-button" class="flex items-center text-purple-600 hover:text-purple-700 transition mb-4">
+                                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                                Back to Domains
+                            </button>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-purple-500">${domain.icon}</span>
+                                <div><h1 class="text-4xl font-bold text-primary">${domain.name}</h1><p class="text-secondary mt-1">${domain.description}</p></div>
+                            </div>
+                        </div>
+                        <div class="grid ${gridColsClass} gap-6">
+                            ${groupCards || '<div class="text-muted text-sm">No tools found in this domain.</div>'}
+                        </div>
+                    `;
+                    document.getElementById('back-button').addEventListener('click', () => { 
+                        state.currentView = 'home'; 
+                        try { history.pushState('', document.title, window.location.pathname + window.location.search); } catch (e) {}
+                        render(); 
+                    });
+                    attachToolItemListeners();
+                    // Favorite button event wiring
+                    document.querySelectorAll('.favorite-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const toolId = e.currentTarget.getAttribute('data-tool-id');
+                            const idx = state.favorites.indexOf(toolId);
+                            if (idx === -1) {
+                                state.favorites.push(toolId);
+                            } else {
+                                state.favorites.splice(idx, 1);
+                            }
+                            render(); // Update UI immediately
+                            // Save to Firestore in background
+                            saveFavoritesToFirestore().catch(console.error);
+                        });
+                    });
+                },
+                renderAbout: () => {
+                     contentArea.innerHTML = `
+                        <div class="max-w-4xl mx-auto text-center mb-16">
+                            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Our Mission</h1>
+                            <p class="text-lg md:text-xl text-secondary">To build the most beautiful, curated, and developer-focused directory for AI tools.</p>
+                        </div>
+                        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-left">
+                            <div class="feature-card">
+                                <div class="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-full inline-block mb-4"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                                <h3 class="text-lg font-semibold text-primary mb-2">Curated & Vetted</h3>
+                                <p class="text-secondary text-sm">Every tool is hand-picked and accurately classified. We focus on quality over quantity to ensure you find only the most relevant and effective solutions.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-full inline-block mb-4"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></div>
+                                <h3 class="text-lg font-semibold text-primary mb-2">Design-Centric</h3>
+                                <p class="text-secondary text-sm">We believe a good tool directory should be a pleasure to use. Our UI is clean, modern, and built with the high standards of developers and designers in mind.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-full inline-block mb-4"><svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+                                <h3 class="text-lg font-semibold text-primary mb-2">Actionable Information</h3>
+                                <p class="text-secondary text-sm">Get what you need, fast. Each listing provides a direct link, a concise description, and key tags so you can make informed decisions quickly.</p>
+                            </div>
+                        </div>
+                    `;
+                },
+                renderSubmit: () => {
+                    contentArea.innerHTML = `
+                        <div class="max-w-2xl mx-auto">
+                            <div class="text-center mb-10">
+                                <h1 class="text-4xl font-bold text-primary mb-4">Submit a Tool</h1>
+                                <p class="text-secondary">Help the community by submitting a tool. Our team will review it for inclusion.</p>
+                            </div>
+                            <form class="space-y-6 bg-card p-8 rounded-lg border border-color">
+                                <div>
+                                    <label for="tool-name" class="block text-sm font-medium text-secondary">Tool Name</label>
+                                    <input type="text" id="tool-name" class="mt-1 block w-full bg-secondary border-color rounded-md shadow-sm py-2 px-3 text-primary focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                                </div>
+                                <div>
+                                    <label for="tool-link" class="block text-sm font-medium text-secondary">Tool Website Link</label>
+                                    <input type="url" id="tool-link" class="mt-1 block w-full bg-secondary border-color rounded-md shadow-sm py-2 px-3 text-primary focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                                </div>
+                                <div>
+                                    <label for="tool-domain" class="block text-sm font-medium text-secondary">Primary Domain</label>
+                                    <select id="tool-domain" class="mt-1 block w-full bg-secondary border-color rounded-md shadow-sm py-2 px-3 text-primary focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                                        ${ (db || []).map(d => `<option>${d.name}</option>`).join('') }
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="tool-desc" class="block text-sm font-medium text-secondary">Short Description</label>
+                                    <textarea id="tool-desc" rows="3" class="mt-1 block w-full bg-secondary border-color rounded-md shadow-sm py-2 px-3 text-primary focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition">Submit for Review</button>
+                            </form>
+                        </div>
+                    `;
+                    const form = contentArea.querySelector('form');
+                    if (form) {
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            alert('Thank you for your submission!');
+                            form.reset();
+                        });
+                    }
+                }
+            };
+
+            const render = () => {
+                const isDark = document.documentElement.classList.contains('dark');
+                document.body.classList.toggle('dark-mode-bg', isDark);
+                document.body.classList.toggle('light-mode-bg', !isDark);
+                switch (state.currentView) {
+                    case 'tools': originalRenderFunctions.renderTools(); break;
+                    case 'submit': originalRenderFunctions.renderSubmit(); break;
+                    case 'about': originalRenderFunctions.renderAbout(); break;
+                    case 'favorites': renderFavorites(); break;
+                    default: originalRenderFunctions.renderHome(); break;
+                }
+                // Add/Update My Favorites link after user info
+                const favLinkContainer = ensureFavoritesLinkContainer();
+                if (state.user) {
+                    favLinkContainer.innerHTML = `<button id="favorites-link" class="ml-2 px-3 py-1 rounded bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition flex items-center gap-1"><svg class='w-5 h-5 text-purple-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.036 6.29a1 1 0 00.95.69h6.631c.969 0 1.371 1.24.588 1.81l-5.37 3.905a1 1 0 00-.364 1.118l2.036 6.29c.3.921-.755 1.688-1.538 1.118l-5.37-3.905a1 1 0 00-1.175 0l-5.37 3.905c-.783.57-1.838-.197-1.538-1.118l2.036-6.29a1 1 0 00-.364-1.118L2.342 11.717c-.783-.57-.38-1.81.588-1.81h6.631a1 1 0 00.95-.69l2.036-6.29z'/></svg>My Favorites</button>`;
+                    document.getElementById('favorites-link').onclick = () => {
+                        state.currentView = 'favorites';
+                        render();
+                    };
+                } else {
+                    favLinkContainer.innerHTML = '';
+                }
+                // Re-attach theme toggle after render (in case header is re-rendered)
+                if (typeof setupTheme === 'function') setupTheme();
+            };
+
+            const handleSearch = (e) => {
+                state.searchQuery = e.target.value;
+                originalRenderFunctions.renderHome();
+            };
+
+            const attachDomainCardListeners = () => {
+                document.querySelectorAll('.domain-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        state.currentView = 'tools';
+                        state.selectedDomain = e.currentTarget.dataset.slug;
+                        try { location.hash = `#domain=${encodeURIComponent(state.selectedDomain)}`; } catch (e) {}
+                        window.scrollTo(0, 0);
+                        render();
+                    });
+                });
+            };
+
+            const attachToolItemListeners = () => {
+                // Expand/collapse tool description
+                document.querySelectorAll('.show-more-desc').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const descLine = e.target.closest('.tool-desc-line');
+                        const descFull = descLine.parentElement.querySelector('.tool-desc-full');
+                        descLine.style.display = 'none';
+                        descFull.classList.remove('hidden');
+                    });
+                });
+                document.querySelectorAll('.show-less-desc').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const descFull = e.target.closest('.tool-desc-full');
+                        const descLine = descFull.parentElement.querySelector('.tool-desc-line');
+                        descFull.classList.add('hidden');
+                        descLine.style.display = '';
+                    });
+                });
+                // Attach Open button listeners for modal
+                document.querySelectorAll('.open-tool-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const toolName = e.currentTarget.getAttribute('data-name');
+                        openToolByName(toolName);
+                    });
+                });
+                // Also allow clicking the card (not the button) to open modal
+                document.querySelectorAll('.tool-list-item').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        // Prevent modal open if a button inside the card was clicked
+                        if (
+                            e.target.classList.contains('open-tool-btn') ||
+                            e.target.classList.contains('favorite-btn') ||
+                            e.target.closest('.favorite-btn') ||
+                            e.target.closest('.open-tool-btn')
+                        ) return;
+                        const toolName = card.dataset.toolName;
+                        if (toolName) openToolByName(toolName);
+                    });
+                });
+            };
+
+            // Re-add theme toggle icons and listener (moved outside object)
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                themeToggleBtn.innerHTML = `
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 12.122l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414zM17 13a1 1 0 100 2h1a1 1 0 100-2h-1z" clip-rule="evenodd"></path></svg>
+                `;
+                setupTheme();
+            }
+
+            // --- AUTH LOGIC ---
+            
+            const openModal = (loginMode = true) => {
+                isLoginMode = loginMode;
+                modalTitle.textContent = isLoginMode ? 'Sign In' : 'Sign Up';
+                authSubmitBtn.textContent = isLoginMode ? 'Sign In' : 'Sign Up';
+                modalPromptText.textContent = isLoginMode ? "Don't have an account?" : "Already have an account?";
+                modalSwitchBtn.textContent = isLoginMode ? 'Sign Up' : 'Sign In';
+                modalError.classList.add('hidden');
+                authForm.reset();
+                authModal.classList.add('visible');
+            };
+
+            const closeModal = () => {
+                authModal.classList.remove('visible');
+            };
+
+            const openToolDetailsModal = (tool) => {
+                const logo = iconImgHtml(tool, 64, 'mr-4 flex-shrink-0');
+                toolDetailsModalContent.innerHTML = `
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-start">
+                            ${logo}
+                            <div>
+                                <h2 class="text-2xl font-bold text-primary">${tool.name} ${usersBadgeHtml(tool)}</h2>
+                                <p class="text-secondary">${tool.description}</p>
+                            </div>
+                        </div>
+                        <button id="close-tool-details-modal-btn" class="text-secondary hover:text-primary text-2xl">&times;</button>
+                    </div>
+                    <div class="prose max-w-none">
+                        <h5 class="font-bold text-primary">About ${tool.name}</h5>
+                        <p class="text-secondary">${tool.about || 'More info soon.'}</p>
+                    </div>
+                    <div class="mt-6 text-right">
+                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition">Visit Website</a>
+                    </div>
+                `;
+                toolDetailsModal.classList.add('visible');
+                document.getElementById('close-tool-details-modal-btn').addEventListener('click', closeToolDetailsModal);
+            };
+
+            const closeToolDetailsModal = () => {
+                toolDetailsModal.classList.remove('visible');
+            };
+
+            const handleAuthSubmit = async (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                const password = passwordInput.value;
+                modalError.classList.add('hidden');
+
+                try {
+                    if (isLoginMode) {
+                        await signInWithEmailAndPassword(auth, email, password);
+                    } else {
+                        await createUserWithEmailAndPassword(auth, email, password);
+                    }
+                    closeModal();
+                } catch (error) {
+                    modalError.textContent = error.message;
+                    modalError.classList.remove('hidden');
+                }
+            };
+            
+            const handleGoogleSignIn = async () => {
+                try {
+                    await signInWithPopup(auth, provider);
+                    closeModal();
+                } catch (error) {
+                    modalError.textContent = error.message;
+                    modalError.classList.remove('hidden');
+                }
+            };
+
+            const handleSignOut = async () => {
+                await signOut(auth);
+            };
+
+            // --- AUTH UI RENDER ---
+            function updateAuthUI(user) {
+                const authContainer = document.getElementById('auth-container');
+                if (!authContainer) return;
+                state.user = user;
+                if (user) {
+                    // Show user email and sign out
+                    let favoritesList = '';
+                    if (Array.isArray(state.favorites) && state.favorites.length > 0 && Array.isArray(db)) {
+                        // Flatten all tools for lookup
+                        const allTools = db.flatMap(d => d.tools || []);
+                        const favTools = state.favorites.map(fid => allTools.find(t => t.name === fid)).filter(Boolean);
+                        favoritesList = `
+                            <div class="mt-2 text-left">
+                                <div class="text-xs text-muted mb-1">Favorites:</div>
+                                <ul class="list-disc ml-5">
+                                    ${favTools.map(tool => `<li class="text-sm text-primary">${escapeHtml(tool.name)}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    authContainer.innerHTML = `
+                        <span class="text-sm text-primary mr-2">${user.email || user.displayName || 'Account'}</span>
+                        <button id="signout-btn" class="px-3 py-1 rounded border text-sm bg-secondary text-primary hover:bg-purple-100">Sign Out</button>
+                        ${favoritesList}
+                    `;
+                    document.getElementById('signout-btn').addEventListener('click', handleSignOut);
+                    // Load user profile data from Firestore
+                    loadUserProfileToState(user).then(render);
+                } else {
+                    // Show sign in button
+                    authContainer.innerHTML = `
+                        <button id="signin-btn" class="px-3 py-1 rounded border text-sm bg-purple-600 text-white hover:bg-purple-700">Sign In</button>
+                    `;
+                    document.getElementById('signin-btn').addEventListener('click', () => openModal(true));
+                    // Clear user data from state
+                    state.favorites = [];
+                    state.reviews = {};
+                    state.comparisons = [];
+                }
+            }
+            // --- Usage Example ---
+            // To add/remove a favorite:
+            // state.favorites.push(toolId); await saveFavoritesToFirestore();
+            // To add/edit a review:
+            // state.reviews[toolId] = reviewText; await saveReviewsToFirestore();
+            // To update comparison list:
+            // state.comparisons = [...]; await saveComparisonsToFirestore();
+            // --- INITIALIZATION ---
+
+            // Lightweight hash routing helpers
+            function getHashParams() {
+                const raw = (location.hash || '').replace(/^#/, '');
+                if (!raw) return new URLSearchParams('');
+                return new URLSearchParams(raw.includes('=') ? raw : `domain=${raw}`);
+            }
+
+            function applyHashRoute() {
+                try {
+                    const params = getHashParams();
+                    const tool = params.get('tool');
+                    const domain = params.get('domain');
+                    if (tool && typeof window.openToolByName === 'function') {
+                        window.openToolByName(tool);
+                        return;
+                    }
+                    if (domain) {
+                        state.currentView = 'tools';
+                        state.selectedDomain = decodeURIComponent(domain);
+                    }
+                } catch (e) { /* ignore */ }
+            }
+
+            // --- Popularity sorting helpers ---
+            function normalizeKey(name) { return (name || '').toString().trim().toLowerCase(); }
+
+            function buildMostPopularOrderMap(dbArray) {
+                try {
+                    const mp = (dbArray || []).find(d => (d.slug === 'most-popular' || /most\s*popular/i.test(d.name || '')));
+                    if (!mp || !Array.isArray(mp.tools)) return {};
+                    const base = 1_000_000; // very high baseline so MP always ranks top if no explicit counts
+                    const step = 1_000;      // distance between neighbors
+                    const map = {};
+                    mp.tools.forEach((t, idx) => {
+                        map[normalizeKey(t.name)] = base - idx * step;
+                    });
+                    return map;
+                } catch { return {}; }
+            }
+
+            function buildFrequencyMap(dbArray) {
+                const freq = {};
+                try {
+                    (dbArray || []).forEach(section => {
+                        (section.tools || []).forEach(t => {
+                            const k = normalizeKey(t.name);
+                            freq[k] = (freq[k] || 0) + 1;
+                        });
+                    });
+                } catch { /* ignore */ }
+                return freq;
+            }
+
+            async function loadPopularityMap() {
+                // Optional file: public/popularity.json { "tool name": usersCount }
+                try {
+                    const res = await fetch('popularity.json', { cache: 'no-store' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        return data && typeof data === 'object' ? data : {};
+                    }
+                } catch { /* file may not exist - that's okay */ }
+                return {};
+            }
+            async function loadPopularityRanks() {
+                try {
+                    const res = await fetch('popularity_ranks.json', { cache: 'no-store' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        return data && typeof data === 'object' ? Object.fromEntries(Object.entries(data).map(([k,v])=>[String(k).toLowerCase(), v])) : {};
+                    }
+                } catch { /* optional */ }
+                return {};
+            }
+
+            function getPopularityScore(tool, popMap, mpOrderMap, freqMap) {
+                const key = normalizeKey(tool?.name);
+                // Prefer explicit numeric fields on tool
+                const direct = tool && (tool.users ?? tool.monthlyUsers ?? tool.popularity ?? tool.userCount);
+                const directNum = Number(direct);
+                if (!Number.isNaN(directNum) && directNum > 0) return directNum;
+                // Otherwise external mapping
+                const extNum = Number(popMap[key]);
+                if (!Number.isNaN(extNum) && extNum > 0) return extNum;
+                // Otherwise if listed in Most Popular, give order weight
+                const mpNum = Number(mpOrderMap[key]);
+                if (!Number.isNaN(mpNum) && mpNum > 0) return mpNum;
+                // Fallback to frequency across sections
+                const freq = Number(freqMap[key] || 0);
+                if (!Number.isNaN(freq) && freq > 0) return freq;
+                // Fallback
+                return 0;
+            }
+
+            function sortDatabaseByPopularity(dbArray, popMap, mpOrderMap, freqMap) {
+                if (!Array.isArray(dbArray)) return;
+                dbArray.forEach(section => {
+                    if (!Array.isArray(section.tools)) return;
+                    section.tools.sort((a, b) => {
+                        const aScore = getPopularityScore(a, popMap, mpOrderMap, freqMap);
+                        const bScore = getPopularityScore(b, popMap, mpOrderMap, freqMap);
+                        if (bScore !== aScore) return bScore - aScore; // higher first
+                        // tie-breaker: alphabetical by name
+                        const an = (a.name || '').toLowerCase();
+                        const bn = (b.name || '').toLowerCase();
+                        if (an < bn) return -1; if (an > bn) return 1; return 0;
+                    });
+                });
+            }
+
+            async function initialize() {
+                try {
+                    const response = await fetch('tools.json');
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    db = await response.json();
+                    try { window.db = db; } catch (e) {}
+                } catch (error) {
+                    console.error("Could not load tool data:", error);
+                    contentArea.innerHTML = `<div class="text-center text-red-500">Error: Could not load AI tool data. Please check the console.</div>`;
+                    return;
+                }
+                // Sort tools by popularity if available
+                popularityMap = await loadPopularityMap();
+                popularityRanksMap = await loadPopularityRanks();
+                const mostPopularOrder = buildMostPopularOrderMap(db);
+                mostPopularOrderMap = mostPopularOrder;
+                const frequencyMap = buildFrequencyMap(db);
+                sortDatabaseByPopularity(db, popularityMap, mostPopularOrder, frequencyMap);
+                
+                // build search index
+                setupFuse();
+
+                // Auth state listener
+                onAuthStateChanged(auth, (user) => {
+                    updateAuthUI(user);
+                });
+
+                // Modal listeners
+                document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+                authModal.addEventListener('click', (e) => { if (e.target === authModal) closeModal(); });
+                toolDetailsModal.addEventListener('click', (e) => { if (e.target === toolDetailsModal) closeToolDetailsModal(); });
+                modalSwitchBtn.addEventListener('click', () => openModal(!isLoginMode));
+                authForm.addEventListener('submit', handleAuthSubmit);
+                document.getElementById('google-signin-btn').addEventListener('click', handleGoogleSignIn);
+
+                // Nav listeners
+                document.getElementById('home-link').addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'home'; state.searchQuery = ''; try { history.pushState('', document.title, window.location.pathname + window.location.search); } catch (e) {} render(); });
+                document.getElementById('domains-link').addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'home'; state.searchQuery = ''; render(); });
+                document.getElementById('submit-link').addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'submit'; render(); });
+                document.getElementById('about-link').addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'about'; render(); });
+
+                // Keyboard shortcut: focus search with '/' on Home
+                document.addEventListener('keydown', (ev) => {
+                    if (ev.key === '/' && state.currentView === 'home') {
+                        ev.preventDefault();
+                        const sb = document.getElementById('search-bar-new');
+                        if (sb) sb.focus();
+                    }
+                });
+
+                // Apply initial hash route and listen for changes
+                applyHashRoute();
+                window.addEventListener('hashchange', () => { applyHashRoute(); render(); });
+
+                render();
+            }
+            
+            function setupTheme() {
+                const themeToggleBtn = document.getElementById('theme-toggle');
+                const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+                const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+                const htmlEl = document.documentElement;
+
+                const applyTheme = (theme) => {
+                    const isDark = theme === 'dark';
+                    htmlEl.classList.toggle('dark', isDark);
+                    if (themeToggleLightIcon) themeToggleLightIcon.classList.toggle('hidden', !isDark);
+                    if (themeToggleDarkIcon) themeToggleDarkIcon.classList.toggle('hidden', isDark);
+                };
+                
+                if (themeToggleBtn) {
+                    themeToggleBtn.addEventListener('click', () => {
+                        const newTheme = htmlEl.classList.contains('dark') ? 'light' : 'dark';
+                        localStorage.setItem('theme', newTheme);
+                        applyTheme(newTheme);
+                        render(); // Re-render to apply all theme-dependent styles
+                    });
+                }
+
+                const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                applyTheme(initialTheme);
+            }
+
+            initialize();
+    });
+    </script>
+<!-- prompt modal will be loaded here (prompt.html) -->
+<div id="prompt-html-root"></div>
+
+<!-- prompt enhancer script (ensure prompt-enhancer.js is in the same public folder) -->
+<script src="./prompt-enhancer.js" defer></script>
+</body>
+</html>

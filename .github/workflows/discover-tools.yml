@@ -1,0 +1,62 @@
+name: Discover New Tools
+
+on:
+  schedule:
+    - cron: '0 4 */3 * *'  # Every 3 days at 04:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install nodemailer (optional)
+        run: npm i nodemailer@7 --no-save || true
+
+      - name: Discover tools
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+        run: node ./scripts/discover-tools.mjs
+
+      - name: Create branch for changes
+        run: |
+          CHANGED=$(git status --porcelain)
+          if [ -z "$CHANGED" ]; then echo "No changes"; exit 0; fi
+          BR=ci/discovery-$(date +%Y%m%d%H%M%S)
+          git checkout -b $BR
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add public/tools.json data/discovery_log.json data/pending-tools.json
+          git commit -m "chore(discovery): new tools added"
+          git push --set-upstream origin $BR
+          echo "BRANCH=$BR" >> $GITHUB_ENV
+
+      - name: Open PR
+        if: env.BRANCH != ''
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: chore(discovery): new tools added
+          branch: ${{ env.BRANCH }}
+          title: "Automated: discovered new tools"
+          body: |
+            Automated discovery added tools. Please review descriptions and placement.
+          base: main

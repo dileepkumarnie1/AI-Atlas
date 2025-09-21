@@ -1,0 +1,2543 @@
+{
+  "generatedAt": "2025-09-21T19:40:01.629Z",
+  "raw": {
+    "ComfyUI": {
+      "signals": {
+        "github": {
+          "stars": 88947,
+          "forks": 9924,
+          "openIssues": 2932
+        },
+        "npm": null
+      },
+      "popularityScore": 426.37,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Stable Diffusion": {
+      "signals": {
+        "github": {
+          "stars": 41772,
+          "forks": 5326,
+          "openIssues": 299
+        },
+        "npm": null
+      },
+      "popularityScore": 397.99,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Clipdrop": {
+      "signals": {
+        "github": {
+          "stars": 0,
+          "forks": 0,
+          "openIssues": 0
+        },
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "DreamStudio": {
+      "signals": {
+        "github": {
+          "stars": 2434,
+          "forks": 346,
+          "openIssues": 55
+        },
+        "npm": null
+      },
+      "popularityScore": 287.86,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Midjourney": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "DALL-E 3 (OpenAI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Canva AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Adobe Firefly": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "Magnific AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "popularityScore": 0,
+      "mpScore": 0,
+      "freqScore": 0
+    },
+    "ChatGPT (OpenAI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 100,
+      "freqScore": 10,
+      "popularityScore": 110
+    },
+    "Gemini (Google)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 90.9090909090909,
+      "freqScore": 10,
+      "popularityScore": 100.91
+    },
+    "Grok (xAI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 81.81818181818183,
+      "freqScore": 0,
+      "popularityScore": 81.82
+    },
+    "Claude (Anthropic)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 72.72727272727273,
+      "freqScore": 10,
+      "popularityScore": 82.73
+    },
+    "Llama (Meta)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 63.63636363636363,
+      "freqScore": 0,
+      "popularityScore": 63.64
+    },
+    "DeepSeek": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 54.54545454545454,
+      "freqScore": 0,
+      "popularityScore": 54.55
+    },
+    "Perplexity AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 45.45454545454545,
+      "freqScore": 10,
+      "popularityScore": 55.45
+    },
+    "GitHub Copilot": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 36.36363636363637,
+      "freqScore": 10,
+      "popularityScore": 46.36
+    },
+    "Microsoft Copilot": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 27.27272727272727,
+      "freqScore": 10,
+      "popularityScore": 37.27
+    },
+    "Mistral Le Chat": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 18.181818181818183,
+      "freqScore": 10,
+      "popularityScore": 28.18
+    },
+    "Meta AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 9.090909090909092,
+      "freqScore": 0,
+      "popularityScore": 9.09
+    },
+    "Jasper AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "QuillBot": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "You.com": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Google Bard": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Replika": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Poe by Quora": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "DeepL": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Grammarly": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Character.AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Fotor AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Leonardo Ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Ideogram": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Playground v2 (Playground AI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "NightCafe": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "DeepBrain AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "D-ID": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Veed.io": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Pictory": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Sora (OpenAI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Kling (Kuaishou)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Runway": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Pika": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Synthesia": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Descript": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "InVideo": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "HeyGen": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Luma Dream Machine": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Google Veo": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Kaiber": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Blackbox AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Cursor": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Tabnine": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Replit Ghostwriter": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Amazon CodeWhisperer": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Phind": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Codeium": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Sourcegraph Cody": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "JetBrains AI Assistant": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Voicemod AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Descript Overdub": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Cleanvoice AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Suno AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Udio": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Stable Audio (Stability AI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "ElevenLabs": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "AIVA": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Adobe Podcast": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "LALAL.AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Play.ht": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Auphonic": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Kits AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Notion AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Fireflies.ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "SaneBox": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Motion": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Reclaim.ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Todoist": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Otter.ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Microsoft Copilot for M365": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Gemini for Workspace": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Tome": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Gamma": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Figma AI (Diagram)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Galileo AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Uizard": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Khroma": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Vev": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Framer AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Canva Magic Design": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Beautiful.ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Spline AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Elicit": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Consensus": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Scholarcy": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Scite": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Litmaps": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Jasper (formerly Jarvis)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Copy.ai": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Surfer SEO": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Frase": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "MarketMuse": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Anyword": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Julius AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Tableau AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Power BI Copilot": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Hex Magic": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "PandasAI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Luma AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Masterpiece Studio": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Meshy": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Kaedim": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Blockade Labs Skybox": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Hugging Face Ethics & Society": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Fiddler AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "IBM AI Fairness 360": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Microsoft Responsible AI Toolbox": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Fairlearn": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 10,
+      "popularityScore": 10
+    },
+    "Khanmigo (Khan Academy)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Quizlet Q-Chat": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Duolingo Max": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "MagicSchool AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Photomath": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Arkham Intelligence": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "TokenMetrics": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "3Commas": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Santiment": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "IntoTheBlock": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Nansen": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Messari": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "AIPRM": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Prompt Perfect": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "FlowGPT": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "PromptHero": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "PromptLayer": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Langfuse": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "promptfoo": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Devin (Cognition Labs)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Auto-GPT": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "MultiOn": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "AgentGPT": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "CrewAI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "LangChain Agents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "OpenAI Assistants API": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "BabyAGI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Adept": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Devika": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Hugging Face Transformers Agents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Lindy": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Superagent.sh": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "E2B": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Glowby": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "LlamaIndex Agents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "MetaGPT": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "SuperAGI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Camel-AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Voyager (Minecraft AI)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Manus": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "OpenAI Custom GPTs (Agents)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Zapier AI Agents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Grammarly AI Agents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "HuggingGPT": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "AutoGen (Microsoft)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "OpenDevin": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "OpenInterpreter": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "smolagents": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Zapier": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Make (formerly Integromat)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "n8n": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Bardeen": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Workato": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Microsoft Power Automate": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Tray.io": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Glean": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Neeva AI (legacy)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "OpenAI Red Teaming": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Anthropic Constitutional AI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Google PAIR": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Aequitas": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Hugging Face Evaluate (Bias & Fairness Metrics)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    },
+    "Google What-If Tool": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "mpScore": 0,
+      "freqScore": 0,
+      "popularityScore": 0
+    }
+  },
+  "ranked": [
+    {
+      "name": "ComfyUI",
+      "score": 426.37,
+      "rank": 1
+    },
+    {
+      "name": "Stable Diffusion",
+      "score": 397.99,
+      "rank": 2
+    },
+    {
+      "name": "DreamStudio",
+      "score": 287.86,
+      "rank": 3
+    },
+    {
+      "name": "ChatGPT (OpenAI)",
+      "score": 110,
+      "rank": 4
+    },
+    {
+      "name": "Gemini (Google)",
+      "score": 100.91,
+      "rank": 5
+    },
+    {
+      "name": "Claude (Anthropic)",
+      "score": 82.73,
+      "rank": 6
+    },
+    {
+      "name": "Grok (xAI)",
+      "score": 81.82,
+      "rank": 7
+    },
+    {
+      "name": "Llama (Meta)",
+      "score": 63.64,
+      "rank": 8
+    },
+    {
+      "name": "Perplexity AI",
+      "score": 55.45,
+      "rank": 9
+    },
+    {
+      "name": "DeepSeek",
+      "score": 54.55,
+      "rank": 10
+    },
+    {
+      "name": "GitHub Copilot",
+      "score": 46.36,
+      "rank": 11
+    },
+    {
+      "name": "Microsoft Copilot",
+      "score": 37.27,
+      "rank": 12
+    },
+    {
+      "name": "Mistral Le Chat",
+      "score": 28.18,
+      "rank": 13
+    },
+    {
+      "name": "You.com",
+      "score": 10,
+      "rank": 14
+    },
+    {
+      "name": "Poe by Quora",
+      "score": 10,
+      "rank": 15
+    },
+    {
+      "name": "DeepL",
+      "score": 10,
+      "rank": 16
+    },
+    {
+      "name": "Suno AI",
+      "score": 10,
+      "rank": 17
+    },
+    {
+      "name": "Elicit",
+      "score": 10,
+      "rank": 18
+    },
+    {
+      "name": "IBM AI Fairness 360",
+      "score": 10,
+      "rank": 19
+    },
+    {
+      "name": "Microsoft Responsible AI Toolbox",
+      "score": 10,
+      "rank": 20
+    },
+    {
+      "name": "Fairlearn",
+      "score": 10,
+      "rank": 21
+    },
+    {
+      "name": "Meta AI",
+      "score": 9.09,
+      "rank": 22
+    },
+    {
+      "name": "Clipdrop",
+      "score": 0,
+      "rank": 23
+    },
+    {
+      "name": "Midjourney",
+      "score": 0,
+      "rank": 24
+    },
+    {
+      "name": "DALL-E 3 (OpenAI)",
+      "score": 0,
+      "rank": 25
+    },
+    {
+      "name": "Canva AI",
+      "score": 0,
+      "rank": 26
+    },
+    {
+      "name": "Adobe Firefly",
+      "score": 0,
+      "rank": 27
+    },
+    {
+      "name": "Magnific AI",
+      "score": 0,
+      "rank": 28
+    },
+    {
+      "name": "Jasper AI",
+      "score": 0,
+      "rank": 29
+    },
+    {
+      "name": "QuillBot",
+      "score": 0,
+      "rank": 30
+    },
+    {
+      "name": "Google Bard",
+      "score": 0,
+      "rank": 31
+    },
+    {
+      "name": "Replika",
+      "score": 0,
+      "rank": 32
+    },
+    {
+      "name": "Grammarly",
+      "score": 0,
+      "rank": 33
+    },
+    {
+      "name": "Character.AI",
+      "score": 0,
+      "rank": 34
+    },
+    {
+      "name": "Fotor AI",
+      "score": 0,
+      "rank": 35
+    },
+    {
+      "name": "Leonardo Ai",
+      "score": 0,
+      "rank": 36
+    },
+    {
+      "name": "Ideogram",
+      "score": 0,
+      "rank": 37
+    },
+    {
+      "name": "Playground v2 (Playground AI)",
+      "score": 0,
+      "rank": 38
+    },
+    {
+      "name": "NightCafe",
+      "score": 0,
+      "rank": 39
+    },
+    {
+      "name": "DeepBrain AI",
+      "score": 0,
+      "rank": 40
+    },
+    {
+      "name": "D-ID",
+      "score": 0,
+      "rank": 41
+    },
+    {
+      "name": "Veed.io",
+      "score": 0,
+      "rank": 42
+    },
+    {
+      "name": "Pictory",
+      "score": 0,
+      "rank": 43
+    },
+    {
+      "name": "Sora (OpenAI)",
+      "score": 0,
+      "rank": 44
+    },
+    {
+      "name": "Kling (Kuaishou)",
+      "score": 0,
+      "rank": 45
+    },
+    {
+      "name": "Runway",
+      "score": 0,
+      "rank": 46
+    },
+    {
+      "name": "Pika",
+      "score": 0,
+      "rank": 47
+    },
+    {
+      "name": "Synthesia",
+      "score": 0,
+      "rank": 48
+    },
+    {
+      "name": "Descript",
+      "score": 0,
+      "rank": 49
+    },
+    {
+      "name": "InVideo",
+      "score": 0,
+      "rank": 50
+    },
+    {
+      "name": "HeyGen",
+      "score": 0,
+      "rank": 51
+    },
+    {
+      "name": "Luma Dream Machine",
+      "score": 0,
+      "rank": 52
+    },
+    {
+      "name": "Google Veo",
+      "score": 0,
+      "rank": 53
+    },
+    {
+      "name": "Kaiber",
+      "score": 0,
+      "rank": 54
+    },
+    {
+      "name": "Blackbox AI",
+      "score": 0,
+      "rank": 55
+    },
+    {
+      "name": "Cursor",
+      "score": 0,
+      "rank": 56
+    },
+    {
+      "name": "Tabnine",
+      "score": 0,
+      "rank": 57
+    },
+    {
+      "name": "Replit Ghostwriter",
+      "score": 0,
+      "rank": 58
+    },
+    {
+      "name": "Amazon CodeWhisperer",
+      "score": 0,
+      "rank": 59
+    },
+    {
+      "name": "Phind",
+      "score": 0,
+      "rank": 60
+    },
+    {
+      "name": "Codeium",
+      "score": 0,
+      "rank": 61
+    },
+    {
+      "name": "Sourcegraph Cody",
+      "score": 0,
+      "rank": 62
+    },
+    {
+      "name": "JetBrains AI Assistant",
+      "score": 0,
+      "rank": 63
+    },
+    {
+      "name": "Voicemod AI",
+      "score": 0,
+      "rank": 64
+    },
+    {
+      "name": "Descript Overdub",
+      "score": 0,
+      "rank": 65
+    },
+    {
+      "name": "Cleanvoice AI",
+      "score": 0,
+      "rank": 66
+    },
+    {
+      "name": "Udio",
+      "score": 0,
+      "rank": 67
+    },
+    {
+      "name": "Stable Audio (Stability AI)",
+      "score": 0,
+      "rank": 68
+    },
+    {
+      "name": "ElevenLabs",
+      "score": 0,
+      "rank": 69
+    },
+    {
+      "name": "AIVA",
+      "score": 0,
+      "rank": 70
+    },
+    {
+      "name": "Adobe Podcast",
+      "score": 0,
+      "rank": 71
+    },
+    {
+      "name": "LALAL.AI",
+      "score": 0,
+      "rank": 72
+    },
+    {
+      "name": "Play.ht",
+      "score": 0,
+      "rank": 73
+    },
+    {
+      "name": "Auphonic",
+      "score": 0,
+      "rank": 74
+    },
+    {
+      "name": "Kits AI",
+      "score": 0,
+      "rank": 75
+    },
+    {
+      "name": "Notion AI",
+      "score": 0,
+      "rank": 76
+    },
+    {
+      "name": "Fireflies.ai",
+      "score": 0,
+      "rank": 77
+    },
+    {
+      "name": "SaneBox",
+      "score": 0,
+      "rank": 78
+    },
+    {
+      "name": "Motion",
+      "score": 0,
+      "rank": 79
+    },
+    {
+      "name": "Reclaim.ai",
+      "score": 0,
+      "rank": 80
+    },
+    {
+      "name": "Todoist",
+      "score": 0,
+      "rank": 81
+    },
+    {
+      "name": "Otter.ai",
+      "score": 0,
+      "rank": 82
+    },
+    {
+      "name": "Microsoft Copilot for M365",
+      "score": 0,
+      "rank": 83
+    },
+    {
+      "name": "Gemini for Workspace",
+      "score": 0,
+      "rank": 84
+    },
+    {
+      "name": "Tome",
+      "score": 0,
+      "rank": 85
+    },
+    {
+      "name": "Gamma",
+      "score": 0,
+      "rank": 86
+    },
+    {
+      "name": "Figma AI (Diagram)",
+      "score": 0,
+      "rank": 87
+    },
+    {
+      "name": "Galileo AI",
+      "score": 0,
+      "rank": 88
+    },
+    {
+      "name": "Uizard",
+      "score": 0,
+      "rank": 89
+    },
+    {
+      "name": "Khroma",
+      "score": 0,
+      "rank": 90
+    },
+    {
+      "name": "Vev",
+      "score": 0,
+      "rank": 91
+    },
+    {
+      "name": "Framer AI",
+      "score": 0,
+      "rank": 92
+    },
+    {
+      "name": "Canva Magic Design",
+      "score": 0,
+      "rank": 93
+    },
+    {
+      "name": "Beautiful.ai",
+      "score": 0,
+      "rank": 94
+    },
+    {
+      "name": "Spline AI",
+      "score": 0,
+      "rank": 95
+    },
+    {
+      "name": "Consensus",
+      "score": 0,
+      "rank": 96
+    },
+    {
+      "name": "Scholarcy",
+      "score": 0,
+      "rank": 97
+    },
+    {
+      "name": "Scite",
+      "score": 0,
+      "rank": 98
+    },
+    {
+      "name": "Litmaps",
+      "score": 0,
+      "rank": 99
+    },
+    {
+      "name": "Jasper (formerly Jarvis)",
+      "score": 0,
+      "rank": 100
+    },
+    {
+      "name": "Copy.ai",
+      "score": 0,
+      "rank": 101
+    },
+    {
+      "name": "Surfer SEO",
+      "score": 0,
+      "rank": 102
+    },
+    {
+      "name": "Frase",
+      "score": 0,
+      "rank": 103
+    },
+    {
+      "name": "MarketMuse",
+      "score": 0,
+      "rank": 104
+    },
+    {
+      "name": "Anyword",
+      "score": 0,
+      "rank": 105
+    },
+    {
+      "name": "Julius AI",
+      "score": 0,
+      "rank": 106
+    },
+    {
+      "name": "Tableau AI",
+      "score": 0,
+      "rank": 107
+    },
+    {
+      "name": "Power BI Copilot",
+      "score": 0,
+      "rank": 108
+    },
+    {
+      "name": "Hex Magic",
+      "score": 0,
+      "rank": 109
+    },
+    {
+      "name": "PandasAI",
+      "score": 0,
+      "rank": 110
+    },
+    {
+      "name": "Luma AI",
+      "score": 0,
+      "rank": 111
+    },
+    {
+      "name": "Masterpiece Studio",
+      "score": 0,
+      "rank": 112
+    },
+    {
+      "name": "Meshy",
+      "score": 0,
+      "rank": 113
+    },
+    {
+      "name": "Kaedim",
+      "score": 0,
+      "rank": 114
+    },
+    {
+      "name": "Blockade Labs Skybox",
+      "score": 0,
+      "rank": 115
+    },
+    {
+      "name": "Hugging Face Ethics & Society",
+      "score": 0,
+      "rank": 116
+    },
+    {
+      "name": "Fiddler AI",
+      "score": 0,
+      "rank": 117
+    },
+    {
+      "name": "Khanmigo (Khan Academy)",
+      "score": 0,
+      "rank": 118
+    },
+    {
+      "name": "Quizlet Q-Chat",
+      "score": 0,
+      "rank": 119
+    },
+    {
+      "name": "Duolingo Max",
+      "score": 0,
+      "rank": 120
+    },
+    {
+      "name": "MagicSchool AI",
+      "score": 0,
+      "rank": 121
+    },
+    {
+      "name": "Photomath",
+      "score": 0,
+      "rank": 122
+    },
+    {
+      "name": "Arkham Intelligence",
+      "score": 0,
+      "rank": 123
+    },
+    {
+      "name": "TokenMetrics",
+      "score": 0,
+      "rank": 124
+    },
+    {
+      "name": "3Commas",
+      "score": 0,
+      "rank": 125
+    },
+    {
+      "name": "Santiment",
+      "score": 0,
+      "rank": 126
+    },
+    {
+      "name": "IntoTheBlock",
+      "score": 0,
+      "rank": 127
+    },
+    {
+      "name": "Nansen",
+      "score": 0,
+      "rank": 128
+    },
+    {
+      "name": "Messari",
+      "score": 0,
+      "rank": 129
+    },
+    {
+      "name": "AIPRM",
+      "score": 0,
+      "rank": 130
+    },
+    {
+      "name": "Prompt Perfect",
+      "score": 0,
+      "rank": 131
+    },
+    {
+      "name": "FlowGPT",
+      "score": 0,
+      "rank": 132
+    },
+    {
+      "name": "PromptHero",
+      "score": 0,
+      "rank": 133
+    },
+    {
+      "name": "PromptLayer",
+      "score": 0,
+      "rank": 134
+    },
+    {
+      "name": "Langfuse",
+      "score": 0,
+      "rank": 135
+    },
+    {
+      "name": "promptfoo",
+      "score": 0,
+      "rank": 136
+    },
+    {
+      "name": "Devin (Cognition Labs)",
+      "score": 0,
+      "rank": 137
+    },
+    {
+      "name": "Auto-GPT",
+      "score": 0,
+      "rank": 138
+    },
+    {
+      "name": "MultiOn",
+      "score": 0,
+      "rank": 139
+    },
+    {
+      "name": "AgentGPT",
+      "score": 0,
+      "rank": 140
+    },
+    {
+      "name": "CrewAI",
+      "score": 0,
+      "rank": 141
+    },
+    {
+      "name": "LangChain Agents",
+      "score": 0,
+      "rank": 142
+    },
+    {
+      "name": "OpenAI Assistants API",
+      "score": 0,
+      "rank": 143
+    },
+    {
+      "name": "BabyAGI",
+      "score": 0,
+      "rank": 144
+    },
+    {
+      "name": "Adept",
+      "score": 0,
+      "rank": 145
+    },
+    {
+      "name": "Devika",
+      "score": 0,
+      "rank": 146
+    },
+    {
+      "name": "Hugging Face Transformers Agents",
+      "score": 0,
+      "rank": 147
+    },
+    {
+      "name": "Lindy",
+      "score": 0,
+      "rank": 148
+    },
+    {
+      "name": "Superagent.sh",
+      "score": 0,
+      "rank": 149
+    },
+    {
+      "name": "E2B",
+      "score": 0,
+      "rank": 150
+    },
+    {
+      "name": "Glowby",
+      "score": 0,
+      "rank": 151
+    },
+    {
+      "name": "LlamaIndex Agents",
+      "score": 0,
+      "rank": 152
+    },
+    {
+      "name": "MetaGPT",
+      "score": 0,
+      "rank": 153
+    },
+    {
+      "name": "SuperAGI",
+      "score": 0,
+      "rank": 154
+    },
+    {
+      "name": "Camel-AI",
+      "score": 0,
+      "rank": 155
+    },
+    {
+      "name": "Voyager (Minecraft AI)",
+      "score": 0,
+      "rank": 156
+    },
+    {
+      "name": "Manus",
+      "score": 0,
+      "rank": 157
+    },
+    {
+      "name": "OpenAI Custom GPTs (Agents)",
+      "score": 0,
+      "rank": 158
+    },
+    {
+      "name": "Zapier AI Agents",
+      "score": 0,
+      "rank": 159
+    },
+    {
+      "name": "Grammarly AI Agents",
+      "score": 0,
+      "rank": 160
+    },
+    {
+      "name": "HuggingGPT",
+      "score": 0,
+      "rank": 161
+    },
+    {
+      "name": "AutoGen (Microsoft)",
+      "score": 0,
+      "rank": 162
+    },
+    {
+      "name": "OpenDevin",
+      "score": 0,
+      "rank": 163
+    },
+    {
+      "name": "OpenInterpreter",
+      "score": 0,
+      "rank": 164
+    },
+    {
+      "name": "smolagents",
+      "score": 0,
+      "rank": 165
+    },
+    {
+      "name": "Zapier",
+      "score": 0,
+      "rank": 166
+    },
+    {
+      "name": "Make (formerly Integromat)",
+      "score": 0,
+      "rank": 167
+    },
+    {
+      "name": "n8n",
+      "score": 0,
+      "rank": 168
+    },
+    {
+      "name": "Bardeen",
+      "score": 0,
+      "rank": 169
+    },
+    {
+      "name": "Workato",
+      "score": 0,
+      "rank": 170
+    },
+    {
+      "name": "Microsoft Power Automate",
+      "score": 0,
+      "rank": 171
+    },
+    {
+      "name": "Tray.io",
+      "score": 0,
+      "rank": 172
+    },
+    {
+      "name": "Glean",
+      "score": 0,
+      "rank": 173
+    },
+    {
+      "name": "Neeva AI (legacy)",
+      "score": 0,
+      "rank": 174
+    },
+    {
+      "name": "OpenAI Red Teaming",
+      "score": 0,
+      "rank": 175
+    },
+    {
+      "name": "Anthropic Constitutional AI",
+      "score": 0,
+      "rank": 176
+    },
+    {
+      "name": "Google PAIR",
+      "score": 0,
+      "rank": 177
+    },
+    {
+      "name": "Aequitas",
+      "score": 0,
+      "rank": 178
+    },
+    {
+      "name": "Hugging Face Evaluate (Bias & Fairness Metrics)",
+      "score": 0,
+      "rank": 179
+    },
+    {
+      "name": "Google What-If Tool",
+      "score": 0,
+      "rank": 180
+    }
+  ]
+}

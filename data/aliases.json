@@ -1,0 +1,10 @@
+{
+  "aliases": {
+    "openassistant": "open-assistant",
+    "open assistant": "open-assistant",
+    "gpt 4 all": "gpt4all",
+    "ollama.ai": "ollama",
+    "stable diffusion webui": "stable-diffusion-webui",
+    "sd webui": "stable-diffusion-webui"
+  }
+}

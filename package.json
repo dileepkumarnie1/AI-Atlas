@@ -1,0 +1,19 @@
+{
+    "name": "ai-prompt-recommender",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+            "update:popularity": "node ./scripts/update-popularity.mjs",
+          "discover:tools": "node ./scripts/discover-tools.mjs",
+      "email:test": "node ./scripts/send-test-email.mjs",
+      "drafts:publish": "node ./scripts/publish-drafts.mjs",
+      "drafts:clear": "node ./scripts/clear-drafts.mjs",
+          "discover:direct": "set DIRECT_PUBLISH=true && node ./scripts/discover-tools.mjs",
+          "drafts:check": "node ./scripts/check-duplicates.mjs"
+    },
+        "dependencies": {
+            "nodemailer": "^7.0.6",
+            "dotenv": "^16.4.5"
+        }
+}
