@@ -138,3 +138,14 @@ Local .env setup
 - If badges show N/A, ensure `public/popularity_ranks.json` exists (run the updater)
 - If emails don’t arrive, verify SMTP secrets/vars and provider security settings
 - If GitHub Actions PRs aren’t created, check if there were no changes in the run
+
+---
+
+## License
+
+This project is dual-licensed under either:
+
+- MIT License (see `LICENSE-MIT`)
+- Apache License, Version 2.0 (see `LICENSE-APACHE`)
+
+You may choose either license to govern your use of this software. The package metadata declares `"license": "(MIT OR Apache-2.0)"`.
