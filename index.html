@@ -793,6 +793,31 @@
             const renderSubmit = () => { /* placeholder if needed */ };
 
             // --- Admin Panel ---
+            function domainNameToSlug(name){
+                const d = (db || []).find(x => String(x.name).toLowerCase() === String(name||'').toLowerCase());
+                return d?.slug || String(name||'').toLowerCase().replace(/\s+/g,'-');
+            }
+            function defaultTagsForDomain(slug){
+                const m = {
+                    'language-chat': ['LLM'],
+                    'code-assistance': ['Code'],
+                    'image-generation': ['Images'],
+                    'video-tools': ['Video'],
+                    'audio-music': ['Audio'],
+                    'productivity': ['Productivity'],
+                    'data-analysis': ['Data'],
+                    'search-knowledge-discovery': ['Search'],
+                    'workflow-automation': ['Automation'],
+                    'prompt-enhancers': ['Prompts'],
+                    'design-tools': ['Design'],
+                    'education': ['Education'],
+                    'marketing-seo': ['Marketing'],
+                    '3d-modeling': ['3D'],
+                    'crypto': ['Crypto'],
+                    'ai-safety-ethics': ['Safety']
+                };
+                return m[slug] || [];
+            }
             async function fetchSubmissionsList() {
                 try {
                     // Prefer ordering by createdAt if available
@@ -844,17 +869,21 @@
                             </div>
                         </div>
                         <div class="bg-card border border-color rounded-xl p-4">
-                            <h2 class="text-xl font-semibold mb-3">Submissions</h2>
+                            <h2 class="text-xl font-semibold mb-3">Submissions (Pending)</h2>
                             <div id="admin-submissions" class="text-secondary">Loading submissions...</div>
                             <p class="text-xs text-muted mt-2">Actions are enforced by Firestore rules. Approve sets status=approved; Delete removes the record.</p>
+                            <h2 class="text-xl font-semibold mt-10 mb-3">History (Approved)</h2>
+                            <div id="admin-history" class="text-secondary">Loading...</div>
                         </div>
                     </div>`;
 
                 async function loadSubs() {
-                    const container = document.getElementById('admin-submissions');
-                    const subs = await fetchSubmissionsList();
-                    if (!subs.length) { container.innerHTML = '<div class="text-muted">No submissions found.</div>'; return; }
-                                        container.innerHTML = `
+                                        const container = document.getElementById('admin-submissions');
+                                        const historyEl = document.getElementById('admin-history');
+                                        const subs = await fetchSubmissionsList();
+                                        const pending = subs.filter(s => String(s.status||'pending') === 'pending');
+                                        const approved = subs.filter(s => String(s.status||'') === 'approved');
+                                        container.innerHTML = pending.length ? `
                         <div class="overflow-x-auto">
                           <table class="min-w-full text-sm">
                             <thead>
@@ -866,20 +895,43 @@
                               </tr>
                             </thead>
                             <tbody>
-                              ${subs.map(s => `
+                                                            ${pending.map(s => `
                                 <tr class="border-t border-color">
                                   <td class="py-2 pr-4">${escapeHtml(s.title || s.name || s.link || s.id)}</td>
                                   <td class="py-2 pr-4">${escapeHtml(s.status || 'pending')}</td>
-                                  <td class="py-2 pr-4">${escapeHtml(s.createdBy || s.email || '')}</td>
+                                                                    <td class="py-2 pr-4">${escapeHtml(s.createdBy || s.submitterEmail || s.email || '')}</td>
                                   <td class="py-2 pr-4 flex gap-2">
                                     <button class="admin-approve px-2 py-1 rounded border text-xs bg-green-100 text-green-800" data-id="${escapeHtml(s.id)}">Approve</button>
-                                                                        <button class="admin-add-tool px-2 py-1 rounded border text-xs bg-blue-100 text-blue-800" data-id="${escapeHtml(s.id)}" data-title="${escapeHtml(s.title || '')}" data-link="${escapeHtml(s.link || '')}" data-domain="${escapeHtml(s.domain || '')}" data-description="${escapeHtml(s.description || '')}">Add Tool</button>
+                                                                        <button class="admin-add-tool px-2 py-1 rounded border text-xs bg-blue-100 text-blue-800" data-id="${escapeHtml(s.id)}" data-title="${escapeHtml(s.title || '')}" data-link="${escapeHtml(s.link || '')}" data-domain="${escapeHtml(s.domain || '')}" data-description="${escapeHtml(s.description || '')}" data-email="${escapeHtml(s.submitterEmail || s.createdBy || '')}">Add Tool</button>
                                     <button class="admin-delete px-2 py-1 rounded border text-xs bg-red-100 text-red-700" data-id="${escapeHtml(s.id)}">Delete</button>
                                   </td>
                                 </tr>`).join('')}
                             </tbody>
                           </table>
-                        </div>`;
+                                                </div>` : '<div class="text-muted">No pending submissions.</div>';
+
+                                        historyEl.innerHTML = approved.length ? `
+                                                <div class="overflow-x-auto">
+                                                    <table class="min-w-full text-sm">
+                                                        <thead>
+                                                            <tr class="text-left text-secondary">
+                                                                <th class="py-2 pr-4">Title</th>
+                                                                <th class="py-2 pr-4">Approved</th>
+                                                                <th class="py-2 pr-4">Approved By</th>
+                                                                <th class="py-2 pr-4">Link</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            ${approved.map(s => `
+                                                                <tr class="border-t border-color">
+                                                                    <td class="py-2 pr-4">${escapeHtml(s.title || s.name || s.link || s.id)}</td>
+                                                                    <td class="py-2 pr-4">${s.approvedAt && s.approvedAt.seconds ? new Date(s.approvedAt.seconds * 1000).toLocaleString() : ''}</td>
+                                                                    <td class="py-2 pr-4">${escapeHtml(s.approvedBy || '')}</td>
+                                                                    <td class="py-2 pr-4">${s.link ? `<a href="${escapeHtml(s.link)}" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Visit</a>` : ''}</td>
+                                                                </tr>`).join('')}
+                                                        </tbody>
+                                                    </table>
+                                                </div>` : '<div class="text-muted">No approved items yet.</div>';
 
                     // Wire actions
                     document.querySelectorAll('.admin-approve').forEach(btn => btn.addEventListener('click', async (e) => {
@@ -901,22 +953,54 @@
                         const link = e.currentTarget.getAttribute('data-link') || '';
                         const domain = e.currentTarget.getAttribute('data-domain') || '';
                         const description = e.currentTarget.getAttribute('data-description') || '';
+                        const submitterEmail = e.currentTarget.getAttribute('data-email') || '';
                         if (!title || !link) { alert('Missing name or link'); return; }
                         try {
+                            const domainSlug = domainNameToSlug(domain);
+
+                            // Enrichment: fetch official metadata for standardized fields
+                            let enriched = { name: '', description: '', iconUrl: '' };
+                            try {
+                                const resp = await fetch('/.netlify/functions/enrich-tool', {
+                                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ url: link })
+                                });
+                                if (resp.ok) enriched = await resp.json();
+                            } catch {}
+
                             const toolDoc = {
-                                name: title,
+                                name: (enriched.name || title).trim(),
                                 link,
-                                description,
-                                domainSlug: (domain || '').toLowerCase().replace(/\s+/g,'-'),
-                                tags: [],
+                                description: (enriched.description || '').trim(),
+                                iconUrl: (enriched.iconUrl || '').trim(),
+                                domainSlug,
+                                tags: defaultTagsForDomain(domainSlug),
                                 status: 'active',
                                 createdAt: new Date(),
                                 createdBy: state.user?.email || state.user?.uid || 'admin'
                             };
                             const newRef = doc(collection(firestore, 'tools'));
                             await setDoc(newRef, toolDoc);
-                            await approveSubmission(id);
-                            alert('Tool added to Firestore and submission approved. Remember to export to public/tools.json for the SPA.');
+                            // Mark submission approved with history details
+                            try {
+                                await updateDoc(doc(firestore, 'submissions', id), {
+                                    status: 'approved',
+                                    approvedAt: serverTimestamp(),
+                                    approvedBy: state.user?.email || state.user?.uid || 'admin',
+                                    approvedToolId: newRef.id,
+                                    approvedToolDomain: domainSlug
+                                });
+                            } catch {}
+
+                            // Send approval acknowledgement
+                            const email = (submitterEmail && submitterEmail.includes('@')) ? submitterEmail : '';
+                            if (email) {
+                                const ackUrl = '/.netlify/functions/notify-user';
+                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI Domain Atlas!</p>`;
+                                try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: email, subject: 'Your tool was approved', html: ackHtml }) }); } catch {}
+                            }
+
+                            alert('Tool added in standard format and submission approved. The exporter will append it to public/tools.json.');
                             loadSubs();
                         } catch (err) {
                             console.error(err);
@@ -1269,7 +1353,8 @@
                                     description: desc,
                                     status: 'pending',
                                     createdAt: new Date(),
-                                    createdBy: state.user?.email || state.user?.uid || 'anonymous'
+                                    createdBy: state.user?.email || state.user?.uid || 'anonymous',
+                                    submitterEmail: state.user?.email || ''
                                 };
                                 // Create a submission document; server timestamps preferred but acceptable here.
                                 const subRef = doc(collection(firestore, 'submissions'));
