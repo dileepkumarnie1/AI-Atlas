@@ -94,6 +94,23 @@ Notes
 - Tools with a GitHub link are excluded by policy, except allowlisted names (e.g., "GitHub Copilot").
 - Unknown domain slugs get appended at the end with a generated title; you can curate later.
 
+### Backfill Firestore from tools.json (optional)
+
+If you already have a curated `public/tools.json` and want Firestore to match it, run the importer:
+
+Local (Windows PowerShell)
+- `$Env:GOOGLE_APPLICATION_CREDENTIALS = "C:\\path\\to\\service-account.json"`
+- `npm run import:tools`
+
+Options
+- Dry run (no writes): `node scripts/import-tools-from-json.mjs --dry-run`
+- Custom key: `node scripts/import-tools-from-json.mjs --key C:\\path\\to\\service-account.json`
+
+Notes
+- The importer enforces the GitHub link exclusion policy (allowlists GitHub Copilot).
+- It sets `status: "active"` and uses each section’s `slug` as `domainSlug`.
+- It avoids duplicates using normalized `name + domainSlug`.
+
 Optional Windows scheduling (Task Scheduler)
 1. Create Basic Task → Daily
 2. Program/script: powershell.exe
