@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '0 4 */3 * *'  # Every 3 days at 04:00 UTC
   workflow_dispatch: {}
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -53,12 +55,12 @@ jobs:
           echo "BRANCH=$BR" >> $GITHUB_ENV
 
       - name: Open PR
-        if: env.BRANCH != ''
+        if: ${{ env.BR != '' }}
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: chore(discovery): new tools added
-          branch: ${{ env.BRANCH }}
+          commit-message: "chore(discovery): new tools added"
+          branch: ${{ env.BR }}
           title: "Automated: discovered new tools"
           body: |
             Automated discovery added tools. Please review descriptions and placement.

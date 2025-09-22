@@ -12,8 +12,8 @@
     "githubQueries": ["chatbot", "llm", "language model", "gpt", "assistant", "rag", "retrieval augmented generation", "chat ui"],
     "npmQueries": ["chatbot", "llm", "ai chat", "rag"],
     "hnQueries": ["chatbot", "RAG", "LLM"],
-    "maxAdds": 3,
-    "githubStarsMin": 800,
+    "maxAdds": 4,
+    "githubStarsMin": 300,
     "githubPerPage": 10,
     "npmSize": 10
   },
@@ -30,8 +30,8 @@
     "githubQueries": ["video generation", "text to video", "video-to-video", "avatar video", "automatic rotoscoping", "subtitle ai", "lip sync ai"],
     "npmQueries": ["text-to-video", "video ai", "subtitle ai", "lip sync"],
     "hnQueries": ["text to video", "video generation"],
-    "maxAdds": 3,
-    "githubStarsMin": 400,
+    "maxAdds": 4,
+    "githubStarsMin": 200,
     "githubPerPage": 10,
     "npmSize": 10
   },
