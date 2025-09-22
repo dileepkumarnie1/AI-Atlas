@@ -4,6 +4,7 @@
 import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const root = path.resolve(process.cwd());
 const DATA_DIR = path.join(root, 'data');
@@ -35,6 +36,33 @@ async function loadTop30(){
   // Ensure increasing by rank
   ranked.sort((a,b)=> (a.rank||99999) - (b.rank||99999));
   return ranked.slice(0, 30);
+}
+
+function tryLoadPrevJsonFromGit(repoPath){
+  try{
+    const s = execSync(`git show HEAD~1:${repoPath}`, { encoding:'utf8', stdio:['ignore','pipe','ignore'] });
+    return JSON.parse(s);
+  }catch{ return null; }
+}
+
+async function loadPrevTop30(){
+  // Try previous commit's raw first, then ranks
+  const prevRaw = tryLoadPrevJsonFromGit('data/popularity_raw.json');
+  if(prevRaw && Array.isArray(prevRaw.ranked)){
+    const r = [...prevRaw.ranked].sort((a,b)=> (a.rank||99999) - (b.rank||99999)).slice(0,30);
+    return r;
+  }
+  const prevRanks = tryLoadPrevJsonFromGit('public/popularity_ranks.json');
+  if(prevRanks && typeof prevRanks === 'object'){
+    const r = Object.entries(prevRanks).map(([name, rank])=>({ name, rank:Number(rank)||99999, score:null }))
+      .sort((a,b)=> a.rank - b.rank).slice(0,30);
+    return r;
+  }
+  return null;
+}
+
+function signature(list){
+  return (list||[]).map(e=> String(e.name||'').trim().toLowerCase()).join('|');
 }
 
 async function buildLinkMap(){
@@ -77,21 +105,45 @@ function esc(s){ return String(s||'').replace(/[&<>"']/g, c=>({"&":"&amp;","<":"
 
 async function main(){
   const top = await loadTop30();
+  const prevTop = await loadPrevTop30();
+  const deltaOnly = /^false$/i.test(String(process.env.POP_EMAIL_DELTA_ONLY||'').trim()) ? false : true; // default true
+  if(deltaOnly && prevTop){
+    if(signature(prevTop) === signature(top)){
+      console.log('Top 30 unchanged since previous run — skipping email (delta-only mode).');
+      return;
+    }
+  }
   const linkMap = await buildLinkMap();
   const dateStr = new Date().toISOString().slice(0,10);
   const subject = `AI Atlas — Top 30 Popularity (${dateStr})`;
+  // For change markers if prev exists
+  const prevIndex = new Map((prevTop||[]).map((e,idx)=>[e.name, { idx, rank:e.rank }]));
   const lines = top.map(e => {
     const link = linkMap.get(normalizeKey(e.name));
     const score = e.score != null ? ` (score ${e.score})` : '';
-    return `${String(e.rank).padStart(2,' ')}. ${e.name}${score}${link?` — ${link}`:''}`;
+    let delta = '';
+    const prev = prevIndex.get(e.name);
+    if(prev){
+      const diff = (prev.rank||prev.idx+1) - e.rank;
+      if(diff > 0) delta = ` ↑${diff}`; else if(diff < 0) delta = ` ↓${Math.abs(diff)}`; else delta = ' •';
+    }
+    return `${String(e.rank).padStart(2,' ')}. ${e.name}${delta}${score}${link?` — ${link}`:''}`;
   });
   const text = lines.join('\n');
 
   const itemsHtml = top.map(e => {
     const link = linkMap.get(normalizeKey(e.name));
     const score = e.score != null ? ` (score ${esc(e.score)})` : '';
+    let deltaHtml = '';
+    const prev = prevIndex.get(e.name);
+    if(prev){
+      const diff = (prev.rank||prev.idx+1) - e.rank;
+      if(diff > 0) deltaHtml = ` <span style="color:#116329;">↑${diff}</span>`;
+      else if(diff < 0) deltaHtml = ` <span style="color:#b35900;">↓${Math.abs(diff)}</span>`;
+      else deltaHtml = ` <span style="color:#57606a;">•</span>`;
+    }
     const nameHtml = link ? `<a href="${esc(link)}" style="color:#0969da; text-decoration:none; font-weight:600;">${esc(e.name)}</a>` : `<strong>${esc(e.name)}</strong>`;
-    return `<li style="margin:6px 0;">#${e.rank} — ${nameHtml}${score}${link?`<div style=\"font-size:12px; color:#57606a;\">${esc(link)}</div>`:''}</li>`;
+    return `<li style="margin:6px 0;">#${e.rank} — ${nameHtml}${deltaHtml}${score}${link?`<div style=\"font-size:12px; color:#57606a;\">${esc(link)}</div>`:''}</li>`;
   }).join('');
 
   const html = `
