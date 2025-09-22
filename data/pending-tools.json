@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-22T03:53:04.920Z",
+  "lastUpdated": "2025-09-22T17:48:58.498Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1115,6 +1115,175 @@
         "Library"
       ],
       "about": "A Javascript wrapper for guardrails-ai",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"guardrails ai\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Airfoil",
+      "description": "Airfoil",
+      "link": "https://ciechanow.ski/airfoil/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Airfoil",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2544 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Open source AI is the path forward",
+      "description": "Open source AI is the path forward",
+      "link": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Open source AI is the path forward",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2360 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "My AI skeptic friends are all nuts",
+      "description": "My AI skeptic friends are all nuts",
+      "link": "https://fly.io/blog/youre-all-nuts/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "My AI skeptic friends are all nuts",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2356 points) for \"AI\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "LLM Inevitabilism",
+      "description": "LLM Inevitabilism",
+      "link": "https://tomrenner.com/posts/llm-inevitabilism/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "LLM Inevitabilism",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1773 points) for \"LLM\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "Learning to Reason with LLMs",
+      "description": "Learning to Reason with LLMs",
+      "link": "https://openai.com/index/learning-to-reason-with-llms/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Learning to Reason with LLMs",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1654 points) for \"LLM\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "LLM Visualization",
+      "description": "LLM Visualization",
+      "link": "https://bbycroft.net/llm",
+      "tags": [
+        "Trending"
+      ],
+      "about": "LLM Visualization",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1592 points) for \"LLM\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "description": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "link": "https://arxiv.org/abs/2501.12948",
+      "tags": [
+        "Trending"
+      ],
+      "about": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1351 points) for \"LLM\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Run Stable Diffusion on Your M1 Mac’s GPU",
+      "description": "Run Stable Diffusion on Your M1 Mac’s GPU",
+      "link": "https://replicate.com/blog/run-stable-diffusion-on-m1-mac",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Run Stable Diffusion on Your M1 Mac’s GPU",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1007 points) for \"stable diffusion\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Stable Diffusion 3",
+      "description": "Stable Diffusion 3",
+      "link": "https://stability.ai/news/stable-diffusion-3",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Stable Diffusion 3",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (983 points) for \"stable diffusion\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@zeyue0329/xiaoma-cli",
+      "description": "XiaoMa Cli: Universal AI Agent Framework",
+      "link": "https://www.npmjs.com/package/@zeyue0329/xiaoma-cli",
+      "tags": [
+        "Library"
+      ],
+      "about": "XiaoMa Cli: Universal AI Agent Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@inkeep/agents-sdk",
+      "description": "Agents SDK for building and managing agents in the Inkeep Agent Framework",
+      "link": "https://www.npmjs.com/package/@inkeep/agents-sdk",
+      "tags": [
+        "Library"
+      ],
+      "about": "Agents SDK for building and managing agents in the Inkeep Agent Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "@guardrails-ai/api-client",
+      "description": "Client libaray for interacting with the guardrails-api",
+      "link": "https://www.npmjs.com/package/@guardrails-ai/api-client",
+      "tags": [
+        "Library"
+      ],
+      "about": "Client libaray for interacting with the guardrails-api",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"guardrails ai\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "@presidio-dev/hai-guardrails",
+      "description": "A set of guards for LLM Apps",
+      "link": "https://www.npmjs.com/package/@presidio-dev/hai-guardrails",
+      "tags": [
+        "Library"
+      ],
+      "about": "A set of guards for LLM Apps",
       "pros": [],
       "cons": [],
       "reason": "Popular npm package for \"guardrails ai\""
