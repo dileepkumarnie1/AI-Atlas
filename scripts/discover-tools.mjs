@@ -346,10 +346,17 @@ async function main(){
   const directPublish = /^true$/i.test(String(process.env.DIRECT_PUBLISH||''));
 
   const additions = [];
+  const diag = {
+    timestamp: new Date().toISOString(),
+    strict: /^true$/i.test(String(process.env.RELIABILITY_STRICT||'')),
+    domains: {},
+    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStops: 0 }
+  };
   for(const [slug, cfg] of Object.entries(sources)){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
+    diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
     const starsMin = Number(cfg.githubStarsMin || 500);
     const npmSize = Number(cfg.npmSize || 5);
@@ -358,31 +365,33 @@ async function main(){
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
     for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
-    const ranked = chooseBest(dedupeByName(results));
+    const deduped = dedupeByName(results);
+    diag.domains[slug].candidates = deduped.length;
+    diag.totals.candidates += deduped.length;
+    const ranked = chooseBest(deduped);
     let addedForDomain = 0;
     for(const cand of ranked){
   const k = normalizeKey(cand.name);
   const kl = normalizeKeyLoose(cand.name);
   // direct name/loose matches
-  if(existingNames.has(k) || existingNamesLoose.has(kl)) continue;
+      if(existingNames.has(k) || existingNamesLoose.has(kl)) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
   // alias match: map candidate alias -> canonical and see if present
   const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
-  if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) continue;
-      if(blacklistNames.has(k)) continue;
-      if(!isLikelyAITool(cand, slug)) continue;
+      if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
+      if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
+      if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
       // Reliability gate
       const reliability = await assessReliability(cand);
       const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||''));
-      if(reliability.verdict === 'risky' || (strict && reliability.verdict !== 'safe')){
-        // Skip risky (and unknown if strict). Optionally log.
-        continue;
-      }
+      if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
+      if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
       const tool = toToolShape(cand);
       if(directPublish){
         sec.tools = sec.tools || [];
         sec.tools.push(tool);
         existingNames.add(k);
         additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link, reliability });
+        diag.domains[slug].published++; diag.totals.published++;
       } else {
         const domName = sec.name || slug;
         const items = Array.isArray(pending?.items) ? pending.items : [];
@@ -391,11 +400,13 @@ async function main(){
           items.push({ domain: domName, ...tool, reason: cand.reason });
           pending.items = items;
           additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
+          diag.domains[slug].staged++; diag.totals.staged++;
         }
       }
       addedForDomain += 1;
-      if(addedForDomain >= maxAdds) break;
+      if(addedForDomain >= maxAdds){ diag.domains[slug].maxAddsStop = true; diag.totals.maxAddsStops++; break; }
     }
+    diag.domains[slug].added = (diag.domains[slug].staged||0) + (diag.domains[slug].published||0);
   }
 
   if(additions.length && directPublish){
@@ -408,6 +419,8 @@ async function main(){
   const now = new Date().toISOString();
   const logNew = { lastRun: now, additions, ...logPrev };
   await writeJson(DISCOVERY_LOG, logNew);
+  // Write diagnostics report for inspection in CI
+  await writeJson(path.join(DATA_DIR, 'discovery_report.json'), { ...diag, additions });
 
   if(additions.length){
     const dateStr = new Date().toISOString().slice(0,10);
@@ -473,7 +486,24 @@ async function main(){
     await maybeSendEmail({ subject, text, html });
   }else{
     console.log('No new additions this run.');
+    // Print a concise diagnostic summary to logs
+    for(const [slug, d] of Object.entries(diag.domains)){
+      console.log(`[diag] ${slug} — candidates=${d.candidates}, added=${d.added}, skips:`, d.skips);
+    }
   }
+
+  // If running in GitHub Actions, append a short summary table
+  try{
+    const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+    if(summaryPath){
+      let md = `### Discovery summary (\`${now}\`)\n\n`;
+      md += `| Domain | Candidates | Added | Staged | Published | Duplicate | Alias | Blacklist | Not AI | Risky | Strict Unknown |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n`;
+      for(const [slug, d] of Object.entries(diag.domains)){
+        md += `| ${slug} | ${d.candidates||0} | ${d.added||0} | ${d.staged||0} | ${d.published||0} | ${d.skips.duplicate||0} | ${d.skips.alias||0} | ${d.skips.blacklist||0} | ${d.skips.notAi||0} | ${d.skips.risky||0} | ${d.skips.strictUnknown||0} |\n`;
+      }
+      await fs.appendFile(summaryPath, md);
+    }
+  }catch{}
 }
 
 main().catch(err=>{ console.error(err); process.exit(1); });
