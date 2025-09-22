@@ -1399,6 +1399,23 @@
                     const response = await fetch('tools.json');
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     db = await response.json();
+                    // Hard filter: exclude GitHub web/repo links except allowlisted tools
+                    const allowGithubNames = new Set([
+                        'github copilot' // keep Copilot even though it lives on github.com/features/copilot
+                    ]);
+                    const isGithubHost = (url) => {
+                        try { return new URL(String(url||'')).hostname.replace(/^www\./,'').toLowerCase() === 'github.com'; } catch { return false; }
+                    };
+                    const norm = (s)=> String(s||'').trim().toLowerCase();
+                    if (Array.isArray(db)) {
+                        db.forEach(sec => {
+                            if (!Array.isArray(sec.tools)) return;
+                            sec.tools = sec.tools.filter(t => {
+                                const nameOk = allowGithubNames.has(norm(t?.name));
+                                return nameOk || !isGithubHost(t?.link);
+                            });
+                        });
+                    }
                     try { window.db = db; } catch (e) {}
                 } catch (error) {
                     console.error("Could not load tool data:", error);

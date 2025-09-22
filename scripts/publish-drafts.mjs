@@ -12,6 +12,10 @@ function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
 async function readJsonSafe(p){ try{ const s = await fs.readFile(p,'utf8'); return JSON.parse(s);}catch{ return Array.isArray(p)?[]:{}; } }
 async function writeJson(p, obj){ await fs.mkdir(path.dirname(p), { recursive: true }); await fs.writeFile(p, JSON.stringify(obj, null, 2)); }
 
+function getHostname(u){ try { return new URL(String(u||'')).hostname.replace(/^www\./,'').toLowerCase(); } catch { return ''; } }
+const GITHUB_HOST = 'github.com';
+const ALLOWLIST_GITHUB_NAMES = new Set(['github copilot']);
+
 async function main(){
   const [db, pending] = await Promise.all([ readJsonSafe(TOOLS_JSON), readJsonSafe(PENDING_JSON) ]);
   const sections = Array.isArray(db) ? db : [];
@@ -31,6 +35,12 @@ async function main(){
     if(!sec) { console.warn('Unknown domain for draft:', draft.domain, '-', draft.name); continue; }
     const k = normalizeKey(draft.name);
     if(existingNames.has(k)) { console.log('Already present, skipping:', draft.name); continue; }
+    // Skip GitHub-hosted links unless allowlisted
+    const nameNorm = normalizeKey(draft.name);
+    if(getHostname(draft.link) === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(nameNorm)){
+      console.log('Skipping GitHub-hosted link (policy):', draft.name, '->', draft.link);
+      continue;
+    }
     const tool = {
       name: draft.name,
       description: draft.description || draft.about || 'New tool',

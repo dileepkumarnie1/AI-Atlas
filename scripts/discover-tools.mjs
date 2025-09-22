@@ -28,6 +28,12 @@ const BAD_HOSTS = new Set([
   // Add known-bad domains here if needed
 ]);
 
+// Exclusion policy: avoid GitHub-hosted repo pages as final tool links, except allowlisted branded products
+const GITHUB_HOST = 'github.com';
+const ALLOWLIST_GITHUB_NAMES = new Set([
+  'github copilot'
+]);
+
 function getHostname(u){
   try { return new URL(u).hostname.replace(/^www\./,'').toLowerCase(); } catch { return ''; }
 }
@@ -362,7 +368,7 @@ async function main(){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
-    diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStop: false };
+  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
     const starsMin = Number(cfg.githubStarsMin || 500);
     const npmSize = Number(cfg.npmSize || 5);
@@ -376,7 +382,7 @@ async function main(){
     diag.totals.candidates += deduped.length;
     const ranked = chooseBest(deduped);
     let addedForDomain = 0;
-    for(const cand of ranked){
+  for(const cand of ranked){
   const k = normalizeKey(cand.name);
   const kl = normalizeKeyLoose(cand.name);
   // direct name/loose matches
@@ -386,6 +392,12 @@ async function main(){
       if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
       if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
       if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
+      // Skip GitHub-hosted links unless allowlisted (prevents non-standard repo pages from populating)
+      const host = getHostname(cand.link);
+      const candNameNorm = normalizeKey(cand.name);
+      if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
+        diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
+      }
       // Reliability gate
   const reliability = await assessReliability(cand);
   const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
