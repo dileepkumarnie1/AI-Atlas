@@ -34,3 +34,12 @@ jobs:
           git add public/popularity.json public/popularity_ranks.json data/popularity_raw.json
           git commit -m "chore(popularity): daily refresh" || echo "No changes to commit"
           git push
+
+      - name: Email Top 30 (after update)
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+        run: node ./scripts/email-top-popularity.mjs
