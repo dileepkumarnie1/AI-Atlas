@@ -21,3 +21,13 @@ Thumbs.db
 dist/
 build/
 .tmp/
+
+# Local helper scripts (accidental)
+*.ps1
+*.bat
+!scripts/*.ps1
+!scripts/*.bat
+
+# Temporary shell files
+*.swp
+*.swo
