@@ -12,7 +12,8 @@
         "drafts:publish": "node ./scripts/publish-drafts.mjs",
         "drafts:clear": "node ./scripts/clear-drafts.mjs",
         "discover:direct": "set DIRECT_PUBLISH=true && node ./scripts/discover-tools.mjs",
-        "drafts:check": "node ./scripts/check-duplicates.mjs"
+        "drafts:check": "node ./scripts/check-duplicates.mjs",
+        "serve:functions": "npx netlify dev --dir=."
     },
     "dependencies": {
         "dotenv": "^16.4.5",
