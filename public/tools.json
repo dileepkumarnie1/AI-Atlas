@@ -291,6 +291,12 @@
         "cons": []
       },
       {
+        "name": "Notebook LLM",
+        "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
+        "link": "https://notebooklm.google.com/",
+        "tags": []
+      },
+      {
         "name": "PaddleOCR",
         "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 80+ languages.",
         "link": "https://www.paddleocr.ai",
