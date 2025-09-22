@@ -458,10 +458,22 @@
             signInWithEmailAndPassword,
             signInWithPopup,
             GoogleAuthProvider,
-            signOut
+            signOut,
+            getIdTokenResult
         } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
         import {
-            getFirestore, doc, getDoc, setDoc, updateDoc
+            getFirestore,
+            doc,
+            getDoc,
+            setDoc,
+            updateDoc,
+            collection,
+            getDocs,
+            query,
+            orderBy,
+            limit,
+            deleteDoc,
+            serverTimestamp
         } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
         // Initialize Firebase
@@ -526,6 +538,19 @@
                 }
                 return favLink;
             }
+            // Add an admin panel link container (rendered only for admins)
+            function ensureAdminLinkContainer() {
+                let adminLink = document.getElementById('admin-link-container');
+                if (!adminLink) {
+                    adminLink = document.createElement('span');
+                    adminLink.id = 'admin-link-container';
+                    adminLink.className = 'ml-2';
+                    if (authContainer && authContainer.lastElementChild) {
+                        authContainer.appendChild(adminLink);
+                    }
+                }
+                return adminLink;
+            }
             const authModal = document.getElementById('auth-modal');
             const authForm = document.getElementById('auth-form');
             const emailInput = document.getElementById('email-input');
@@ -547,13 +572,21 @@
                 user: null,
                 favorites: [],
                 reviews: {},
-                comparisons: []
+                comparisons: [],
+                isAdmin: false
             };
 
             // --- Ensure Firestore user document is created after login and favorites are loaded ---
             onAuthStateChanged(auth, async (user) => {
                 state.user = user;
                 if (user) {
+                    // Load custom claims to determine admin rights
+                    try {
+                        const token = await getIdTokenResult(user, true);
+                        state.isAdmin = !!(token?.claims?.admin);
+                    } catch (e) {
+                        state.isAdmin = false;
+                    }
                     // Create or update user document in Firestore
                     // Create/update user profile; do NOT set/overwrite role here
                     await setDoc(doc(firestore, 'users', user.uid), {
@@ -570,6 +603,7 @@
                     state.favorites = [];
                     state.reviews = {};
                     state.comparisons = [];
+                    state.isAdmin = false;
                 }
                 // Re-render UI to reflect updated state
                 render();
@@ -757,6 +791,113 @@
             const renderToolCard = (tool) => { /* placeholder if needed */ };
             const renderAbout = () => { /* placeholder if needed */ };
             const renderSubmit = () => { /* placeholder if needed */ };
+
+            // --- Admin Panel ---
+            async function fetchSubmissionsList() {
+                try {
+                    // Prefer ordering by createdAt if available
+                    const col = collection(firestore, 'submissions');
+                    let snap;
+                    try {
+                        const qy = query(col, orderBy('createdAt', 'desc'), limit(50));
+                        snap = await getDocs(qy);
+                    } catch (e) {
+                        // Fallback if no index/field
+                        snap = await getDocs(col);
+                    }
+                    const items = [];
+                    snap.forEach(docu => items.push({ id: docu.id, ...(docu.data()||{}) }));
+                    return items;
+                } catch (e) {
+                    console.warn('Failed to load submissions:', e);
+                    return [];
+                }
+            }
+
+            async function approveSubmission(id) {
+                try {
+                    await updateDoc(doc(firestore, 'submissions', id), { status: 'approved', approvedAt: serverTimestamp() });
+                    return true;
+                } catch (e) { console.error('approveSubmission failed', e); return false; }
+            }
+            async function deleteSubmissionById(id) {
+                try { await deleteDoc(doc(firestore, 'submissions', id)); return true; }
+                catch (e) { console.error('deleteSubmission failed', e); return false; }
+            }
+
+            async function renderAdmin() {
+                if (!state.user || !state.isAdmin) {
+                    contentArea.innerHTML = `<div class="max-w-2xl mx-auto text-center p-8 bg-card border border-color rounded-xl">Admin access required.</div>`;
+                    return;
+                }
+                contentArea.innerHTML = `
+                    <div class="max-w-5xl mx-auto mb-16">
+                        <div class="flex items-start justify-between gap-4 mb-6">
+                            <div>
+                                <h1 class="text-3xl md:text-4xl font-bold text-primary">Admin Panel</h1>
+                                <p class="text-secondary">Signed in as <strong>${escapeHtml(state.user.email||state.user.uid)}</strong></p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button id="admin-refresh" class="px-3 py-2 rounded border text-sm bg-secondary text-primary">Refresh</button>
+                                <a href="#" id="admin-back-home" class="px-3 py-2 rounded border text-sm bg-white text-purple-700 border-purple-300 hover:bg-purple-50">Back</a>
+                            </div>
+                        </div>
+                        <div class="bg-card border border-color rounded-xl p-4">
+                            <h2 class="text-xl font-semibold mb-3">Submissions</h2>
+                            <div id="admin-submissions" class="text-secondary">Loading submissions...</div>
+                        </div>
+                    </div>`;
+
+                async function loadSubs() {
+                    const container = document.getElementById('admin-submissions');
+                    const subs = await fetchSubmissionsList();
+                    if (!subs.length) { container.innerHTML = '<div class="text-muted">No submissions found.</div>'; return; }
+                    container.innerHTML = `
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full text-sm">
+                            <thead>
+                              <tr class="text-left text-secondary">
+                                <th class="py-2 pr-4">Title</th>
+                                <th class="py-2 pr-4">Status</th>
+                                <th class="py-2 pr-4">Submitted By</th>
+                                <th class="py-2 pr-4">Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              ${subs.map(s => `
+                                <tr class="border-t border-color">
+                                  <td class="py-2 pr-4">${escapeHtml(s.title || s.name || s.link || s.id)}</td>
+                                  <td class="py-2 pr-4">${escapeHtml(s.status || 'pending')}</td>
+                                  <td class="py-2 pr-4">${escapeHtml(s.createdBy || s.email || '')}</td>
+                                  <td class="py-2 pr-4 flex gap-2">
+                                    <button class="admin-approve px-2 py-1 rounded border text-xs bg-green-100 text-green-800" data-id="${escapeHtml(s.id)}">Approve</button>
+                                    <button class="admin-delete px-2 py-1 rounded border text-xs bg-red-100 text-red-700" data-id="${escapeHtml(s.id)}">Delete</button>
+                                  </td>
+                                </tr>`).join('')}
+                            </tbody>
+                          </table>
+                        </div>`;
+
+                    // Wire actions
+                    document.querySelectorAll('.admin-approve').forEach(btn => btn.addEventListener('click', async (e) => {
+                        const id = e.currentTarget.getAttribute('data-id');
+                        if (!id) return;
+                        const ok = await approveSubmission(id);
+                        if (ok) loadSubs();
+                    }));
+                    document.querySelectorAll('.admin-delete').forEach(btn => btn.addEventListener('click', async (e) => {
+                        const id = e.currentTarget.getAttribute('data-id');
+                        if (!id) return;
+                        if (!confirm('Delete this submission?')) return;
+                        const ok = await deleteSubmissionById(id);
+                        if (ok) loadSubs();
+                    }));
+                }
+
+                document.getElementById('admin-refresh').addEventListener('click', (e) => { e.preventDefault(); loadSubs(); });
+                document.getElementById('admin-back-home').addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'home'; render(); });
+                loadSubs();
+            }
 
             // --- Render Favorites Page ---
             function renderFavorites() {
@@ -1096,6 +1237,7 @@
                     case 'tools': originalRenderFunctions.renderTools(); break;
                     case 'submit': originalRenderFunctions.renderSubmit(); break;
                     case 'about': originalRenderFunctions.renderAbout(); break;
+                    case 'admin': renderAdmin(); break;
                     case 'favorites': renderFavorites(); break;
                     default: originalRenderFunctions.renderHome(); break;
                 }
@@ -1107,8 +1249,17 @@
                         state.currentView = 'favorites';
                         render();
                     };
+                    const adminContainer = ensureAdminLinkContainer();
+                    if (state.isAdmin) {
+                        adminContainer.innerHTML = `<button id="admin-link" class="ml-2 px-3 py-1 rounded bg-emerald-100 text-emerald-800 font-semibold hover:bg-emerald-200 transition">Admin</button>`;
+                        document.getElementById('admin-link').onclick = () => { state.currentView = 'admin'; render(); };
+                    } else {
+                        adminContainer.innerHTML = '';
+                    }
                 } else {
                     favLinkContainer.innerHTML = '';
+                    const adminContainer = ensureAdminLinkContainer();
+                    adminContainer.innerHTML = '';
                 }
                 // Re-attach theme toggle after render (in case header is re-rendered)
                 if (typeof setupTheme === 'function') setupTheme();
