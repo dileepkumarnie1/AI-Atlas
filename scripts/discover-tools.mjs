@@ -345,10 +345,16 @@ async function main(){
   const aliasMap = new Map(Object.entries(aliases?.aliases||{}).map(([a,c])=>[normalizeKey(a), normalizeKey(c)]));
   const directPublish = /^true$/i.test(String(process.env.DIRECT_PUBLISH||''));
 
+  // Config flags for diagnostics and CI visibility
+  const strictMode = /^true$/i.test(String(process.env.RELIABILITY_STRICT||''));
+  const hasGSBKey = Boolean(process.env.GOOGLE_SAFEBROWSING_API_KEY);
+  console.log(`[config] Safe Browsing key present=${hasGSBKey}, strict=${strictMode}`);
+
   const additions = [];
   const diag = {
     timestamp: new Date().toISOString(),
-    strict: /^true$/i.test(String(process.env.RELIABILITY_STRICT||'')),
+    strict: strictMode,
+    hasGSBKey,
     domains: {},
     totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStops: 0 }
   };
@@ -497,6 +503,7 @@ async function main(){
     const summaryPath = process.env.GITHUB_STEP_SUMMARY;
     if(summaryPath){
       let md = `### Discovery summary (\`${now}\`)\n\n`;
+      md += `Config: Safe Browsing key: ${diag.hasGSBKey ? 'present' : 'absent'} · Strict mode: ${diag.strict ? 'on' : 'off'}\n\n`;
       md += `| Domain | Candidates | Added | Staged | Published | Duplicate | Alias | Blacklist | Not AI | Risky | Strict Unknown |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n`;
       for(const [slug, d] of Object.entries(diag.domains)){
         md += `| ${slug} | ${d.candidates||0} | ${d.added||0} | ${d.staged||0} | ${d.published||0} | ${d.skips.duplicate||0} | ${d.skips.alias||0} | ${d.skips.blacklist||0} | ${d.skips.notAi||0} | ${d.skips.risky||0} | ${d.skips.strictUnknown||0} |\n`;
