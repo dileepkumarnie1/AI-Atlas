@@ -88,14 +88,15 @@ function mapToolDocToJson(doc){
 }
 
 async function main(){
-  // Read existing tools.json to preserve domain metadata and order
+  // Read existing tools.json to preserve domain metadata, order, and EXISTING TOOLS
   const existing = await readJsonSafe(DEFAULT_OUT);
-  const skeletonSections = Array.isArray(existing) ? existing.map(sec => ({
+  const existingSections = Array.isArray(existing) ? existing : [];
+  const skeletonSections = existingSections.map(sec => ({
     name: sec.name,
     slug: sec.slug,
     description: sec.description || '',
     icon: sec.icon || '',
-  })) : [];
+  }));
   const skeletonOrder = skeletonSections.map(s => normalizeKey(s.slug || s.name));
   const skeletonBySlug = new Map(skeletonSections.map(s => [normalizeKey(s.slug || s.name), s]));
 
@@ -126,21 +127,34 @@ async function main(){
     process.exit(0);
   }
 
-  // Build output sections: preserve known domains (order), append unknown
+  // Build output sections by merging Firestore tools into existing sections (append-only)
   const outSections = [];
-  for (const key of skeletonOrder){
-    const sec = skeletonBySlug.get(key);
+  for (const secOrig of existingSections){
+    const key = normalizeKey(secOrig.slug || secOrig.name);
     const grp = groups.get(key);
+    // Start with existing tools
+    const mergedTools = Array.isArray(secOrig.tools) ? [...secOrig.tools] : [];
+    // Append any Firestore tools not already present by name
+    if (grp && Array.isArray(grp.tools)){
+      const existingNames = new Set(mergedTools.map(t => normalizeKey(t?.name)));
+      for(const t of grp.tools){
+        const k = normalizeKey(t.name);
+        if(!existingNames.has(k)){
+          mergedTools.push(t);
+          existingNames.add(k);
+        }
+      }
+    }
     outSections.push({
-      name: sec?.name || titleCaseFromSlug(key),
-      slug: sec?.slug || key,
-      description: sec?.description || '',
-      icon: sec?.icon || '',
-      tools: grp?.tools || [],
+      name: secOrig.name,
+      slug: secOrig.slug,
+      description: secOrig.description || '',
+      icon: secOrig.icon || '',
+      tools: mergedTools,
     });
   }
 
-  // Append new domains present in Firestore but not in skeleton
+  // Append new domains present in Firestore but not in existing file
   for (const [slug, grp] of groups.entries()){
     const key = normalizeKey(slug);
     if (skeletonBySlug.has(key)) continue;
