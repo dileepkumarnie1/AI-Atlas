@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-22T03:53:04.920Z",
+  "lastUpdated": "2025-09-22T17:20:49.610Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1115,6 +1115,319 @@
         "Library"
       ],
       "about": "A Javascript wrapper for guardrails-ai",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"guardrails ai\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "MetaGPT",
+      "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "link": "https://mgx.dev/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/198047230?v=4&s=64",
+      "about": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 58,527 stars for query \"agents framework\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Airfoil",
+      "description": "Airfoil",
+      "link": "https://ciechanow.ski/airfoil/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Airfoil",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2544 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "CopilotKit",
+      "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+      "link": "https://docs.copilotkit.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/131273140?v=4&s=64",
+      "about": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 23,868 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "firecrawl",
+      "description": "The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data 🔥",
+      "link": "https://firecrawl.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/135057108?v=4&s=64",
+      "about": "The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data 🔥",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 58,923 stars for query \"rag\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "cherry-studio",
+      "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+      "link": "https://cherry-ai.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/187777663?v=4&s=64",
+      "about": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 33,389 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "chatbot-ui",
+      "description": "AI chat for any model.",
+      "link": "https://JoinTakeoff.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/29221284?v=4&s=64",
+      "about": "AI chat for any model.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 32,335 stars for query \"chat ui\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "dspy",
+      "description": "DSPy: The framework for programming—not prompting—language models",
+      "link": "https://dspy.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3046006?v=4&s=64",
+      "about": "DSPy: The framework for programming—not prompting—language models",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 28,475 stars for query \"language model\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "ComfyUI",
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "link": "https://www.comfy.org/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/121283862?v=4&s=64",
+      "about": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 89,041 stars for query \"diffusion\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Grounded-Segment-Anything",
+      "description": "Grounded SAM: Marrying Grounding DINO with Segment Anything & Stable Diffusion & Recognize Anything - Automatically Detect , Segment and Generate Anything",
+      "link": "https://arxiv.org/abs/2401.14159",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/113572103?v=4&s=64",
+      "about": "Grounded SAM: Marrying Grounding DINO with Segment Anything & Stable Diffusion & Recognize Anything - Automatically Detect , Segment and Generate Anything",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 16,936 stars for query \"stable diffusion\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "VideoLingo",
+      "description": "Netflix-level subtitle cutting, translation, alignment, and even dubbing - one-click fully automated AI video subtitle team | Netflix级字幕切割、翻译、对齐、甚至加上配音，一键全自动视频搬运AI字幕组",
+      "link": "https://docs.videolingo.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/147359634?v=4&s=64",
+      "about": "Netflix-level subtitle cutting, translation, alignment, and even dubbing - one-click fully automated AI video subtitle team | Netflix级字幕切割、翻译、对齐、甚至加上配音，一键全自动视频搬运AI字幕组",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 14,980 stars for query \"subtitle ai\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "vid2avatar",
+      "description": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+      "link": "https://moygcc.github.io/vid2avatar/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64",
+      "about": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,332 stars for query \"avatar video\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "generate-subtitles",
+      "description": "Generate transcripts for audio and video content with a user friendly UI, powered by Open AI's Whisper with automatic translations and download videos automatically with yt-dlp integration",
+      "link": "https://freesubtitles.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/7200471?v=4&s=64",
+      "about": "Generate transcripts for audio and video content with a user friendly UI, powered by Open AI's Whisper with automatic translations and download videos automatically with yt-dlp integration",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 802 stars for query \"subtitle ai\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "GaussianAvatar",
+      "description": "[CVPR 2024] The official repo for \"GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians\"",
+      "link": "https://huliangxiao.github.io/GaussianAvatar",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/68504773?v=4&s=64",
+      "about": "[CVPR 2024] The official repo for \"GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians\"",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 535 stars for query \"avatar video\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "context7",
+      "description": "Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors",
+      "link": "https://context7.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/74989412?v=4&s=64",
+      "about": "Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 31,090 stars for query \"ai code\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "LibreChat",
+      "description": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.",
+      "link": "https://librechat.ai/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/110412045?v=4&s=64",
+      "about": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 30,237 stars for query \"ai code\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "@williamzujkowski/strudel-mcp-server",
+      "description": "Advanced MCP server for AI-powered music generation with Strudel.cc",
+      "link": "https://www.npmjs.com/package/@williamzujkowski/strudel-mcp-server",
+      "tags": [
+        "Library"
+      ],
+      "about": "Advanced MCP server for AI-powered music generation with Strudel.cc",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"music generation\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "suno-api",
+      "description": "The Suno's AI-powered music generation unofficial API.",
+      "link": "https://www.npmjs.com/package/suno-api",
+      "tags": [
+        "Library"
+      ],
+      "about": "The Suno's AI-powered music generation unofficial API.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"music generation\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@commitlint/prompt",
+      "description": "commitizen prompt using commitlint.config.js",
+      "link": "https://www.npmjs.com/package/@commitlint/prompt",
+      "tags": [
+        "Library"
+      ],
+      "about": "commitizen prompt using commitlint.config.js",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@inquirer/search",
+      "description": "Inquirer search prompt",
+      "link": "https://www.npmjs.com/package/@inquirer/search",
+      "tags": [
+        "Library"
+      ],
+      "about": "Inquirer search prompt",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@zeyue0329/xiaoma-cli",
+      "description": "XiaoMa Cli: Universal AI Agent Framework",
+      "link": "https://www.npmjs.com/package/@zeyue0329/xiaoma-cli",
+      "tags": [
+        "Library"
+      ],
+      "about": "XiaoMa Cli: Universal AI Agent Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@inkeep/agents-sdk",
+      "description": "Agents SDK for building and managing agents in the Inkeep Agent Framework",
+      "link": "https://www.npmjs.com/package/@inkeep/agents-sdk",
+      "tags": [
+        "Library"
+      ],
+      "about": "Agents SDK for building and managing agents in the Inkeep Agent Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "@guardrails-ai/api-client",
+      "description": "Client libaray for interacting with the guardrails-api",
+      "link": "https://www.npmjs.com/package/@guardrails-ai/api-client",
+      "tags": [
+        "Library"
+      ],
+      "about": "Client libaray for interacting with the guardrails-api",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"guardrails ai\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "@presidio-dev/hai-guardrails",
+      "description": "A set of guards for LLM Apps",
+      "link": "https://www.npmjs.com/package/@presidio-dev/hai-guardrails",
+      "tags": [
+        "Library"
+      ],
+      "about": "A set of guards for LLM Apps",
       "pros": [],
       "cons": [],
       "reason": "Popular npm package for \"guardrails ai\""
