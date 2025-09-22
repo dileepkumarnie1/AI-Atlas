@@ -46,6 +46,13 @@ jobs:
       - name: Run exporter
         run: npm run export:tools
 
+      - name: Enrich and validate tools.json
+        run: |
+          # Attempt to enrich any missing fields (best-effort)
+          npm run tools:enrich
+          # Validate and summarize; do not fail the job here
+          npm run tools:validate
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6

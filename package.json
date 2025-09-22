@@ -14,6 +14,8 @@
         "discover:direct": "set DIRECT_PUBLISH=true && node ./scripts/discover-tools.mjs",
         "drafts:check": "node ./scripts/check-duplicates.mjs",
         "export:tools": "node ./scripts/export-tools.mjs",
+        "tools:validate": "node ./scripts/validate-tools-json.mjs",
+        "tools:enrich": "node ./scripts/enrich-tools-json.mjs",
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
         "serve:functions": "npx netlify dev --dir=."
     },
