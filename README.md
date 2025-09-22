@@ -14,9 +14,10 @@ This folder includes a lightweight, tokenless updater that collects public signa
 ### Run the updater
 ## AI Atlas: Popularity and Discovery
 
-This project powers a lightweight SPA that lists AI tools by domain, shows popularity, and lets users save favorites. Two background pipelines keep the data fresh:
+This project powers a lightweight SPA that lists AI tools by domain, shows popularity, and lets users save favorites. Two background pipelines keep the data fresh, plus an admin export:
 - Popularity refresh (daily): computes counts and ranks from public signals
 - Tool discovery (every 3 days): proposes new tools and opens a PR for review
+- Firestore export (on demand): exports approved tools from Firestore into `public/tools.json`
 
 The UI shows a badge for each tool:
 - "N users" when an explicit numeric count is known
@@ -70,6 +71,28 @@ What it does
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/update-popularity.yml`
 - Schedule: daily at 03:17 UTC (cron: `17 3 * * *`)
+
+---
+
+## Firestore → tools.json exporter (admin)
+
+Source of truth is Firestore (`tools` collection). When you approve/add tools in the Admin panel, run this exporter to regenerate the static catalog consumed by the SPA:
+
+Run locally (Windows PowerShell)
+- Set service account once per session:
+   - `$Env:GOOGLE_APPLICATION_CREDENTIALS = "C:\\path\\to\\service-account.json"`
+- Export:
+   - `npm run export:tools`
+
+Advanced
+- Custom key path: `node scripts/export-tools.mjs --key C:\\path\\to\\service-account.json`
+- Custom output: `node scripts/export-tools.mjs --out public/tools.json`
+- Allow empty (if no tools in Firestore): add `--allow-empty`
+
+Notes
+- The exporter keeps your current domain list (name, slug, icon, description) and order from `public/tools.json` when present, and fills tools from Firestore by `domainSlug`.
+- Tools with a GitHub link are excluded by policy, except allowlisted names (e.g., "GitHub Copilot").
+- Unknown domain slugs get appended at the end with a generated title; you can curate later.
 
 Optional Windows scheduling (Task Scheduler)
 1. Create Basic Task → Daily

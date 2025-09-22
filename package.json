@@ -13,6 +13,7 @@
         "drafts:clear": "node ./scripts/clear-drafts.mjs",
         "discover:direct": "set DIRECT_PUBLISH=true && node ./scripts/discover-tools.mjs",
         "drafts:check": "node ./scripts/check-duplicates.mjs",
+        "export:tools": "node ./scripts/export-tools.mjs",
         "serve:functions": "npx netlify dev --dir=."
     },
     "dependencies": {

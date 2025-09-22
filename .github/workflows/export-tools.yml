@@ -1,0 +1,63 @@
+name: Export Firestore tools to public/tools.json
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Daily at 04:15 UTC
+    - cron: '15 4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Write Firebase service account key
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT_JSON" ]; then
+            echo "FIREBASE_SERVICE_ACCOUNT_JSON secret is not set" >&2
+            exit 1
+          fi
+          KEY_FILE="$RUNNER_TEMP/serviceAccount.json"
+          printf "%s" "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$KEY_FILE"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$KEY_FILE" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run exporter
+        run: npm run export:tools
+
+      - name: Commit and push changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/tools.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: export tools from Firestore (CI)"
+            git push
+          fi
+
+    # Notes:
+    # - Set repository secret FIREBASE_SERVICE_ACCOUNT_JSON to the raw JSON of your Firebase service account key.
+    # - The exporter enforces the GitHub link exclusion policy (allowlisting GitHub Copilot).
+    # - Update the cron schedule as needed.
