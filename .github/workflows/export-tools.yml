@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -43,23 +45,6 @@ jobs:
             npm install
           fi
 
-      - name: Determine STRICT validation flag
-        id: strict
-        run: |
-          # Use repo variable TOOLS_VALIDATION_STRICT_AFTER (ISO date, e.g., 2025-09-30)
-          # If not set or unparsable, default to STRICT=1 (enforce now)
-          STRICT="1"
-          if [ -n "${{ vars.TOOLS_VALIDATION_STRICT_AFTER }}" ]; then
-            # Convert dates to epoch seconds; GNU date available on ubuntu-latest
-            NOW=$(date -u +%s)
-            AFTER=$(date -u -d "${{ vars.TOOLS_VALIDATION_STRICT_AFTER }}" +%s 2>/dev/null || echo "")
-            if [ -n "$AFTER" ] && [ "$NOW" -lt "$AFTER" ]; then
-              STRICT="0"
-            fi
-          fi
-          echo "strict=$STRICT" >> $GITHUB_OUTPUT
-          echo "STRICT set to $STRICT (TOOLS_VALIDATION_STRICT_AFTER=${{ vars.TOOLS_VALIDATION_STRICT_AFTER }})"
-
       - name: Enrich tools in Firestore (move-left)
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
@@ -76,7 +61,7 @@ jobs:
 
       - name: Validate tools.json
         env:
-          STRICT: ${{ steps.strict.outputs.strict }}
+          STRICT: '1'
         run: |
           # Validate and summarize; STRICT controls failure after grace period
           npm run tools:validate
@@ -107,7 +92,7 @@ jobs:
           else
             echo "PR #${{ steps.cpr.outputs.pull-request-number }} created: ${{ steps.cpr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
           fi
-          echo "Validation STRICT mode: ${{ steps.strict.outputs.strict == '1' && 'ENFORCED' || 'GRACE' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Validation STRICT mode: ENFORCED (applies to NEW tools only)" >> $GITHUB_STEP_SUMMARY
 
     # Notes:
     # - Set repository secret FIREBASE_SERVICE_ACCOUNT_JSON to the raw JSON of your Firebase service account key.

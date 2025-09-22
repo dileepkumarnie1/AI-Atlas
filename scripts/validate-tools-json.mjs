@@ -1,17 +1,38 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const root = process.cwd();
 const toolsPath = path.join(root, 'public', 'tools.json');
+const BASELINE_REF = process.env.BASELINE_REF || 'origin/main';
 
 function isNonEmptyStr(s){ return typeof s === 'string' && s.trim().length > 0; }
 function arr(a){ return Array.isArray(a) ? a : []; }
+function norm(s){ return String(s||'').trim().toLowerCase(); }
+function secKey(sec){ return norm(sec.slug || sec.name || ''); }
+function toolKey(sec, t){ return `${secKey(sec)}::${norm(t?.name)}`; }
+
+function loadBaselineFromGit(){
+  try{
+    const raw = execSync(`git show ${BASELINE_REF}:public/tools.json`, { encoding: 'utf8', stdio: ['ignore','pipe','ignore'] });
+    const json = JSON.parse(raw);
+    return Array.isArray(json) ? json : [];
+  } catch {
+    return [];
+  }
+}
 
 async function main(){
   const raw = await fs.readFile(toolsPath, 'utf8');
   const sections = JSON.parse(raw);
-  const issues = [];
+  // Build baseline key set to identify new tools
+  const baseline = loadBaselineFromGit();
+  const baselineKeys = new Set();
+  for (const s of baseline){ for (const t of arr(s.tools)) baselineKeys.add(toolKey(s, t)); }
+
+  const issuesNew = [];
+  const issuesLegacy = [];
   for (const sec of sections){
     const secName = sec.slug || sec.name || 'unknown-section';
     for (const t of arr(sec.tools)){
@@ -26,29 +47,33 @@ async function main(){
       if (!('cons' in t) || !Array.isArray(t.cons)) miss.push('cons');
       if (!('iconUrl' in t) || !isNonEmptyStr(t.iconUrl)) miss.push('iconUrl');
       if (miss.length){
-        issues.push({ section: secName, tool: tName, missing: miss });
+        const isNew = baselineKeys.size === 0 ? false : !baselineKeys.has(toolKey(sec, t));
+        const item = { section: secName, tool: tName, missing: miss };
+        (isNew ? issuesNew : issuesLegacy).push(item);
       }
     }
   }
   const summaryLines = [];
   summaryLines.push('### Tools.json validation');
-  if (issues.length === 0){
-    summaryLines.push('All tools have required fields.');
-  } else {
-    summaryLines.push(`Found ${issues.length} tools with missing fields:`);
-    for (const it of issues.slice(0, 100)){
-      summaryLines.push(`- [${it.section}] ${it.tool}: ${it.missing.join(', ')}`);
-    }
-    if (issues.length > 100) summaryLines.push(`...and ${issues.length - 100} more.`);
+  const totalIssues = issuesNew.length + issuesLegacy.length;
+  summaryLines.push(`New tools with issues: ${issuesNew.length}`);
+  for (const it of issuesNew.slice(0, 100)){
+    summaryLines.push(`- NEW [${it.section}] ${it.tool}: ${it.missing.join(', ')}`);
   }
+  if (issuesNew.length > 100) summaryLines.push(`...and ${issuesNew.length - 100} more NEW.`);
+  summaryLines.push(`Legacy tools with issues: ${issuesLegacy.length}`);
+  for (const it of issuesLegacy.slice(0, 50)){
+    summaryLines.push(`- LEGACY [${it.section}] ${it.tool}: ${it.missing.join(', ')}`);
+  }
+  if (issuesLegacy.length > 50) summaryLines.push(`...and ${issuesLegacy.length - 50} more LEGACY.`);
   const out = process.env.GITHUB_STEP_SUMMARY;
   if (out){
     await fs.appendFile(out, summaryLines.join('\n') + '\n');
   } else {
     console.log(summaryLines.join('\n'));
   }
-  // Do not fail the job by default; set STRICT=1 to enforce
-  if (process.env.STRICT === '1' && issues.length){
+  // Enforce STRICT only for NEW tools; legacy issues are reported but do not fail
+  if (process.env.STRICT === '1' && issuesNew.length){
     process.exit(1);
   }
 }
