@@ -5,6 +5,7 @@ import { execSync } from 'node:child_process';
 
 const root = process.cwd();
 const toolsPath = path.join(root, 'public', 'tools.json');
+const configPath = path.join(root, '.github', 'tools-validation.json');
 const BASELINE_REF = process.env.BASELINE_REF || 'origin/main';
 
 function isNonEmptyStr(s){ return typeof s === 'string' && s.trim().length > 0; }
@@ -66,14 +67,37 @@ async function main(){
     summaryLines.push(`- LEGACY [${it.section}] ${it.tool}: ${it.missing.join(', ')}`);
   }
   if (issuesLegacy.length > 50) summaryLines.push(`...and ${issuesLegacy.length - 50} more LEGACY.`);
+  // Determine strict mode with optional config grace period
+  let strictAfter = '';
+  try {
+    const cfgRaw = await fs.readFile(configPath, 'utf8');
+    const cfg = JSON.parse(cfgRaw);
+    if (cfg && typeof cfg.strictAfter === 'string') strictAfter = cfg.strictAfter;
+  } catch {}
+  function strictActive(){
+    if (process.env.STRICT === '0') return false;
+    if (process.env.STRICT === '1') return true;
+    if (strictAfter){
+      const now = Date.now();
+      const ts = Date.parse(strictAfter);
+      if (!Number.isNaN(ts)){
+        return now >= ts; // before the date -> GRACE; on/after -> ENFORCED
+      }
+    }
+    return true; // default enforce if no config
+  }
+  const enforce = strictActive();
   const out = process.env.GITHUB_STEP_SUMMARY;
   if (out){
-    await fs.appendFile(out, summaryLines.join('\n') + '\n');
+    const header = [`Strict mode scope: NEW tools only`, `Strict mode: ${enforce ? 'ENFORCED' : 'GRACE'}${strictAfter ? ` (strictAfter=${strictAfter})` : ''}`].join(' \| ');
+    await fs.appendFile(out, header + '\n' + summaryLines.join('\n') + '\n');
   } else {
+    console.log(`Strict mode scope: NEW tools only`);
+    console.log(`Strict mode: ${enforce ? 'ENFORCED' : 'GRACE'}${strictAfter ? ` (strictAfter=${strictAfter})` : ''}`);
     console.log(summaryLines.join('\n'));
   }
   // Enforce STRICT only for NEW tools; legacy issues are reported but do not fail
-  if (process.env.STRICT === '1' && issuesNew.length){
+  if (enforce && issuesNew.length){
     process.exit(1);
   }
 }
