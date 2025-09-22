@@ -250,6 +250,8 @@ async function main(){
   // Opportunistic enrichment for tools that were just added
   // Build quick lookup for outSections tools by slug+name
   async function enrichNewlyAdded(){
+    // Only run if explicitly enabled; enrichment has moved to approval time
+    if (process.env.EXPORTER_ENRICH !== '1') return;
     const tasks = [];
     for (const sec of outSections){
       const secKey = normalizeKey(sec.slug || sec.name);

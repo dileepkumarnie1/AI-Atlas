@@ -15,7 +15,8 @@
         "drafts:check": "node ./scripts/check-duplicates.mjs",
         "export:tools": "node ./scripts/export-tools.mjs",
         "tools:validate": "node ./scripts/validate-tools-json.mjs",
-        "tools:enrich": "node ./scripts/enrich-tools-json.mjs",
+    "tools:enrich": "node ./scripts/enrich-tools-json.mjs",
+    "tools:enrich:firestore": "node ./scripts/enrich-firestore-tools.mjs",
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
         "serve:functions": "npx netlify dev --dir=."
     },
