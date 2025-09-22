@@ -901,10 +901,27 @@
                         const link = e.currentTarget.getAttribute('data-link') || '';
                         const domain = e.currentTarget.getAttribute('data-domain') || '';
                         const description = e.currentTarget.getAttribute('data-description') || '';
-                        alert('Record details saved for manual addition. In a future step, we can push directly into tools.json via an authenticated admin function.');
-                        // Optional: mark the submission as approved
-                        const ok = await approveSubmission(id);
-                        if (ok) loadSubs();
+                        if (!title || !link) { alert('Missing name or link'); return; }
+                        try {
+                            const toolDoc = {
+                                name: title,
+                                link,
+                                description,
+                                domainSlug: (domain || '').toLowerCase().replace(/\s+/g,'-'),
+                                tags: [],
+                                status: 'active',
+                                createdAt: new Date(),
+                                createdBy: state.user?.email || state.user?.uid || 'admin'
+                            };
+                            const newRef = doc(collection(firestore, 'tools'));
+                            await setDoc(newRef, toolDoc);
+                            await approveSubmission(id);
+                            alert('Tool added to Firestore and submission approved. Remember to export to public/tools.json for the SPA.');
+                            loadSubs();
+                        } catch (err) {
+                            console.error(err);
+                            alert('Failed to add tool');
+                        }
                     }));
                 }
 

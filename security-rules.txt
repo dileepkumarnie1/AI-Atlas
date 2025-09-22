@@ -51,5 +51,11 @@ service cloud.firestore {
       allow write: if isSignedIn();
       allow update, delete: if isAdmin();
     }
+
+    // Tools collection: public read, admin-managed writes
+    match /tools/{toolId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
   }
 }
