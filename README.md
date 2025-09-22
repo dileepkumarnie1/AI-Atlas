@@ -25,6 +25,28 @@ The UI shows a badge for each tool:
 
 ---
 
+## Exclusion policy: GitHub-hosted links
+
+This site hides tools whose primary link points to GitHub (for example, repository README pages) to reduce noise from non-web apps and repos. One exception is allowlisted:
+
+- Allowlisted: "GitHub Copilot"
+
+Where enforced
+- UI: On load, the app filters out any tool whose link host is github.com unless its name is allowlisted.
+- Discovery: `scripts/discover-tools.mjs` skips candidates with github.com links unless allowlisted; it also reports `skips.githubHost` in diagnostics.
+- Draft publishing: `scripts/publish-drafts.mjs` skips drafts with github.com links unless allowlisted.
+
+Change the allowlist
+- Search for the constant (case-insensitive names):
+   - In UI (`public/index.html`): `const ALLOWLIST_GITHUB_NAMES = new Set([ 'github copilot' ])`
+   - In scripts: `ALLOWLIST_GITHUB_NAMES`
+- Add another tool name in lowercase to the set(s) if you want to allow a specific GitHub-hosted tool.
+
+Rationale
+- Many GitHub repos are libraries or CLIs rather than ready-to-use web tools, which created confusion in domain listings. Hiding them by default keeps the catalog focused. The allowlist provides a narrow escape hatch for special cases.
+
+---
+
 ## Popularity data pipeline
 
 Generates both `public/popularity.json` (counts) and `public/popularity_ranks.json` (ranks) consumed by the app.
