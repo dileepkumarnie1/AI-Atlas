@@ -41,7 +41,10 @@ jobs:
     steps:
       - name: Create PR via GitHub API
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Prefer a user PAT if provided (create a repo-scoped PAT and save as GH_PAT),
+          # otherwise fall back to the workflow's GITHUB_TOKEN.
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           HEAD: ${{ inputs.head_branch }}
           BASE: ${{ inputs.base_branch }}
@@ -51,10 +54,32 @@ jobs:
           set -e
           api_url="https://api.github.com/repos/$REPO/pulls"
           data=$(jq -n --arg title "$TITLE" --arg body "$BODY" --arg head "$HEAD" --arg base "$BASE" '{title:$title, body:$body, head:$head, base:$base}')
-          resp=$(curl -sS -X POST "$api_url" -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -d "$data")
+          # Choose token: prefer GH_PAT if set
+          GH_TOKEN_USE=${GH_PAT:-$GITHUB_TOKEN}
+          resp=$(curl -sS -X POST "$api_url" -H "Authorization: Bearer $GH_TOKEN_USE" -H "Accept: application/vnd.github+json" -d "$data")
           echo "$resp" | jq '.'
           url=$(echo "$resp" | jq -r '.html_url')
           if [ "$url" = "null" ] || [ -z "$url" ]; then
+            msg=$(echo "$resp" | jq -r '.message // empty')
+            if echo "$msg" | grep -qi 'not permitted to create or approve pull requests'; then
+              echo "Workflow token lacks PR creation permission."
+              echo "Fix options:" >> $GITHUB_STEP_SUMMARY
+              echo "1) Add a PAT secret (GH_PAT) with repo scope, then re-run." >> $GITHUB_STEP_SUMMARY
+              echo "2) Or enable: Settings → Actions → General → Workflow permissions → Read and write + Allow GitHub Actions to create and approve pull requests." >> $GITHUB_STEP_SUMMARY
+            fi
+            # If PR already exists, surface the URL instead of failing (HTTP 422).
+            exists=$(echo "$resp" | jq -r '.errors[]?.message // empty' | grep -i 'already exists' || true)
+            if [ -n "$exists" ]; then
+              owner="${REPO%%/*}"
+              list_url="https://api.github.com/repos/$REPO/pulls?head=${owner}:${HEAD}&state=all"
+              list=$(curl -sS -H "Authorization: Bearer $GH_TOKEN_USE" -H "Accept: application/vnd.github+json" "$list_url")
+              existing_url=$(echo "$list" | jq -r '.[0].html_url // empty')
+              if [ -n "$existing_url" ]; then
+                echo "PR already exists:" >> $GITHUB_STEP_SUMMARY
+                echo "$existing_url" >> $GITHUB_STEP_SUMMARY
+                exit 0
+              fi
+            fi
             echo "Failed to create PR" >&2
             exit 1
           fi
