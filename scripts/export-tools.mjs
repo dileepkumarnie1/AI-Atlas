@@ -88,9 +88,14 @@ function mapToolDocToJson(doc){
 }
 
 async function main(){
-  // Read existing tools.json to preserve domain metadata, order, and EXISTING TOOLS
+  // Read existing tools.json to preserve domain metadata, order, and current tools
   const existing = await readJsonSafe(DEFAULT_OUT);
   const existingSections = Array.isArray(existing) ? existing : [];
+  if (!existingSections.length && !hasFlag('force-new')){
+    console.log('Safety: existing public/tools.json not found or empty. Skipping write. Use --force-new to create a new catalog.');
+    process.exit(0);
+  }
+  const existingTotal = existingSections.reduce((sum, s) => sum + (Array.isArray(s.tools) ? s.tools.length : 0), 0);
   const skeletonSections = existingSections.map(sec => ({
     name: sec.name,
     slug: sec.slug,
@@ -127,21 +132,22 @@ async function main(){
     process.exit(0);
   }
 
-  // Build output sections by merging Firestore tools into existing sections (append-only)
+  // Build output by merging Firestore tools into existing sections (append-only)
   const outSections = [];
+  let additions = 0;
   for (const secOrig of existingSections){
     const key = normalizeKey(secOrig.slug || secOrig.name);
     const grp = groups.get(key);
-    // Start with existing tools
+    // Start with existing tools list
     const mergedTools = Array.isArray(secOrig.tools) ? [...secOrig.tools] : [];
-    // Append any Firestore tools not already present by name
     if (grp && Array.isArray(grp.tools)){
       const existingNames = new Set(mergedTools.map(t => normalizeKey(t?.name)));
-      for(const t of grp.tools){
+      for (const t of grp.tools){
         const k = normalizeKey(t.name);
-        if(!existingNames.has(k)){
+        if (!existingNames.has(k)){
           mergedTools.push(t);
           existingNames.add(k);
+          additions++;
         }
       }
     }
@@ -165,6 +171,7 @@ async function main(){
       icon: '',
       tools: grp.tools,
     });
+    additions += Array.isArray(grp.tools) ? grp.tools.length : 0;
   }
 
   // Optional: stable sort tools by name within each section
@@ -173,9 +180,17 @@ async function main(){
       sec.tools.sort((a,b)=> a.name.localeCompare(b.name));
     }
   }
-
+  const newTotal = outSections.reduce((sum, s) => sum + (Array.isArray(s.tools) ? s.tools.length : 0), 0);
+  if (newTotal < existingTotal && !hasFlag('allow-shrink')){
+    console.log(`Safety: new catalog would shrink from ${existingTotal} to ${newTotal}. Skipping write. Use --allow-shrink to override.`);
+    process.exit(0);
+  }
+  if (additions === 0){
+    console.log('No additions detected from Firestore. Skipping write.');
+    process.exit(0);
+  }
   await writeJson(OUT_PATH, outSections);
-  console.log(`Wrote ${outSections.length} sections and ${totalTools} tools to ${path.relative(root, OUT_PATH)}.`);
+  console.log(`Wrote ${outSections.length} sections; total tools ${newTotal} (was ${existingTotal}); additions ${additions} -> ${path.relative(root, OUT_PATH)}`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
