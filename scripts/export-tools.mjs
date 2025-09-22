@@ -61,6 +61,7 @@ try { sa = JSON.parse(fssync.readFileSync(KEY_PATH, 'utf8')); }
 catch { console.error('ERROR: Failed to parse service account JSON at', KEY_PATH); process.exit(1); }
 initializeApp({ credential: cert(sa) });
 const db = getFirestore();
+console.log(`Using Firebase project: ${sa.project_id || process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || 'unknown'}`);
 
 function mapToolDocToJson(doc){
   const data = doc || {};
@@ -101,6 +102,10 @@ async function main(){
   // Fetch Firestore tools
   const snap = await db.collection('tools').where('status', '==', 'active').get();
   console.log(`Fetched ${snap.size} active tools from Firestore.`);
+  if (snap.size === 0) {
+    console.log('No active tools found in Firestore. Skipping write (exit 0).');
+    process.exit(0);
+  }
 
   // Group by domainSlug
   const groups = new Map(); // slug -> { tools: [] }
@@ -116,9 +121,9 @@ async function main(){
   }
 
   const totalTools = Array.from(groups.values()).reduce((acc, g) => acc + g.tools.length, 0);
-  if (totalTools === 0 && !hasFlag('allow-empty')){
-    console.error('No tools found to export. Aborting write. Use --allow-empty to write an empty catalog.');
-    process.exit(2);
+  if (totalTools === 0) {
+    console.log('After filtering/grouping, no tools to write. Skipping write (exit 0).');
+    process.exit(0);
   }
 
   // Build output sections: preserve known domains (order), append unknown
