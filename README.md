@@ -226,3 +226,32 @@ This project is dual-licensed under either:
 - Apache License, Version 2.0 (see `LICENSE-APACHE`)
 
 You may choose either license to govern your use of this software. The package metadata declares `"license": "(MIT OR Apache-2.0)"`.
+
+---
+
+## Admin role (full CRUD)
+
+Admins are granted full read/write access to Firestore using a custom claim (request.auth.token.admin = true). Regular users can only access their own data. This is enforced by `security-rules.txt`.
+
+Steps:
+
+1) Deploy the rules in Firebase Console (Firestore → Rules) using the contents of `security-rules.txt`.
+
+2) Assign the admin claim to a user with the Admin SDK script:
+
+    - Create a Firebase service account JSON (Firebase Console → Project settings → Service accounts) and download it.
+    - Set an env var to point at it:
+       - PowerShell: `$Env:GOOGLE_APPLICATION_CREDENTIALS = "C:\\path\\to\\service-account.json"`
+    - Run one of:
+       - `npm run admin:set -- --uid <UID>`
+       - `npm run admin:set -- --email <email@example.com>`
+
+    The script sets the claim `{ admin: true }` for that user.
+
+3) Client notes:
+    - The client writes only `profile` fields on sign-in; it does not set or overwrite the `role` field.
+    - Access control is claim-based (rules read `request.auth.token.admin`). If you want to show a role label in UI, you may store `role: "admin"` in Firestore for display only.
+
+Troubleshooting:
+- After setting claims, sign out and sign back in to refresh the ID token.
+- Ensure your site’s domain is in Firebase Auth → Settings → Authorized domains (for GitHub Pages/Netlify).

@@ -1,28 +1,55 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // User profile and role
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    // Prefer custom claims for admin. Set via Admin SDK: request.auth.token.admin == true
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    // Global admin override: full CRUD everywhere
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    // Users collection
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-      // Favorites
+      // Everyone can read their own profile; admins can read any
+      allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+
+      // Create own user doc but cannot set 'role' field on create
+      allow create: if isSignedIn() && request.auth.uid == userId && !("role" in request.resource.data);
+
+      // Update own user doc but cannot change 'role' unless admin
+      allow update: if isSignedIn() && (
+        isAdmin() || (
+          request.auth.uid == userId &&
+          resource.data.role == request.resource.data.role // role unchanged
+        )
+      );
+
+      // Delete only by admin (prevents users from deleting their profile doc arbitrarily)
+      allow delete: if isAdmin();
+
+      // Nested data owned by the user (optional subcollections pattern)
       match /favorites/{favoriteId} {
-        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
       }
-      // Reviews
       match /reviews/{reviewId} {
-        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
       }
-      // Comparisons
       match /comparisons/{comparisonId} {
-        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
       }
     }
-    // Admin/moderator actions (example: submissions collection)
+
+    // Example public collection with admin moderation
     match /submissions/{submissionId} {
       allow read: if true;
-      allow write: if request.auth != null;
-      allow update, delete: if request.auth != null &&
-        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'moderator']);
+      allow write: if isSignedIn();
+      allow update, delete: if isAdmin();
     }
   }
 }

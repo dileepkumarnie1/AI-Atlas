@@ -5,6 +5,7 @@
     "license": "(MIT OR Apache-2.0)",
     "type": "module",
     "scripts": {
+          "admin:set": "node ./scripts/set-admin-claim.mjs",
             "update:popularity": "node ./scripts/update-popularity.mjs",
           "discover:tools": "node ./scripts/discover-tools.mjs",
       "email:test": "node ./scripts/send-test-email.mjs",

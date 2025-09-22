@@ -555,13 +555,13 @@
                 state.user = user;
                 if (user) {
                     // Create or update user document in Firestore
+                    // Create/update user profile; do NOT set/overwrite role here
                     await setDoc(doc(firestore, 'users', user.uid), {
                         profile: {
                             displayName: user.displayName || '',
                             email: user.email || '',
                             avatar: user.photoURL || ''
-                        },
-                        role: 'user'
+                        }
                     }, { merge: true });
                     // Load favorites, reviews, comparisons from Firestore
                     await loadUserProfileToState(user);
