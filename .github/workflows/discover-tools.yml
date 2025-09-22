@@ -23,8 +23,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install nodemailer (optional)
-        run: npm i nodemailer@7 --no-save || true
+      - name: Install dependencies
+        run: |
+          npm ci || npm i
 
       - name: Discover tools
         env:

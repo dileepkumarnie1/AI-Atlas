@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-21T20:25:23.710Z",
+  "lastUpdated": "2025-09-22T03:53:04.920Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -412,6 +412,712 @@
       "pros": [],
       "cons": [],
       "reason": "HN discussion (295 points) for \"ai safety\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "ToolJet",
+      "description": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
+      "link": "https://tooljet.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/82193554?v=4&s=64",
+      "about": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 36,593 stars for query \"ai platform\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "tabby",
+      "description": "Self-hosted AI coding assistant",
+      "link": "https://tabbyml.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/125617854?v=4&s=64",
+      "about": "Self-hosted AI coding assistant",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 32,125 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "nacos",
+      "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+      "link": "https://nacos.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/1961952?v=4&s=64",
+      "about": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 32,067 stars for query \"ai platform\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "gpt_academic",
+      "description": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
+      "link": "https://github.com/binary-husky/gpt_academic/wiki/online",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/96192199?v=4&s=64",
+      "about": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 69,240 stars for query \"gpt\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "gpt4free",
+      "description": "The official gpt4free repository | various collection of powerful language models | o4, o3 and deepseek r1, gpt-4.1, gemini 2.5",
+      "link": "https://t.me/g4f_channel",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/98614666?v=4&s=64",
+      "about": "The official gpt4free repository | various collection of powerful language models | o4, o3 and deepseek r1, gpt-4.1, gemini 2.5",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 65,134 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "Flowise",
+      "description": "Build AI Agents, Visually",
+      "link": "https://flowiseai.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/128289781?v=4&s=64",
+      "about": "Build AI Agents, Visually",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 43,827 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "IOPaint",
+      "description": "Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.",
+      "link": "https://www.iopaint.com/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3998421?v=4&s=64",
+      "about": "Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 22,120 stars for query \"stable diffusion\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "ml-stable-diffusion",
+      "description": "Stable Diffusion with Core ML on Apple Silicon",
+      "link": "https://github.com/apple/ml-stable-diffusion",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/10639145?v=4&s=64",
+      "about": "Stable Diffusion with Core ML on Apple Silicon",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 17,613 stars for query \"stable diffusion\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Tune-A-Video",
+      "description": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+      "link": "https://tuneavideo.github.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/101181824?v=4&s=64",
+      "about": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,358 stars for query \"video generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Text2Video-Zero",
+      "description": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+      "link": "https://text2video-zero.github.io/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/96586070?v=4&s=64",
+      "about": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,217 stars for query \"text to video\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "MAGI-1",
+      "description": "MAGI-1: Autoregressive Video Generation at Scale",
+      "link": "https://sand.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/208222005?v=4&s=64",
+      "about": "MAGI-1: Autoregressive Video Generation at Scale",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,489 stars for query \"video generation\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "@usgupta/circuitware-cli",
+      "description": "Circuitware Code - AI-powered command-line workflow tool",
+      "link": "https://www.npmjs.com/package/@usgupta/circuitware-cli",
+      "tags": [
+        "Library"
+      ],
+      "about": "Circuitware Code - AI-powered command-line workflow tool",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "claude-forge",
+      "description": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
+      "link": "https://www.npmjs.com/package/claude-forge",
+      "tags": [
+        "Library"
+      ],
+      "about": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "@kajidog/aivis-cloud-cli",
+      "description": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
+      "link": "https://www.npmjs.com/package/@kajidog/aivis-cloud-cli",
+      "tags": [
+        "Library"
+      ],
+      "about": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"speech synthesis\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "@bentwnghk/chat",
+      "description": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
+      "link": "https://www.npmjs.com/package/@bentwnghk/chat",
+      "tags": [
+        "Library"
+      ],
+      "about": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"speech synthesis\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "@ai-sdk/react",
+      "description": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+      "link": "https://www.npmjs.com/package/@ai-sdk/react",
+      "tags": [
+        "Library"
+      ],
+      "about": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"design ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "@ai-sdk/ui-utils",
+      "description": "Important: this is an internal API. Expect breaking changes.",
+      "link": "https://www.npmjs.com/package/@ai-sdk/ui-utils",
+      "tags": [
+        "Library"
+      ],
+      "about": "Important: this is an internal API. Expect breaking changes.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"design ai\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "@stdlib/constants-float64-exponent-bias",
+      "description": "The bias of a double-precision floating-point number's exponent.",
+      "link": "https://www.npmjs.com/package/@stdlib/constants-float64-exponent-bias",
+      "tags": [
+        "Library"
+      ],
+      "about": "The bias of a double-precision floating-point number's exponent.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"bias\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "@wemake.cx/bias-detection",
+      "description": "MCP server for simple bias detection in text",
+      "link": "https://www.npmjs.com/package/@wemake.cx/bias-detection",
+      "tags": [
+        "Library"
+      ],
+      "about": "MCP server for simple bias detection in text",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"bias\""
+    },
+    {
+      "domain": "Crypto",
+      "name": "tensaikit-test",
+      "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+      "link": "https://www.npmjs.com/package/tensaikit-test",
+      "tags": [
+        "Library"
+      ],
+      "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"defi ai\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@inquirer/confirm",
+      "description": "Inquirer confirm prompt",
+      "link": "https://www.npmjs.com/package/@inquirer/confirm",
+      "tags": [
+        "Library"
+      ],
+      "about": "Inquirer confirm prompt",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@inquirer/expand",
+      "description": "Inquirer checkbox prompt",
+      "link": "https://www.npmjs.com/package/@inquirer/expand",
+      "tags": [
+        "Library"
+      ],
+      "about": "Inquirer checkbox prompt",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@inkeep/create-agents",
+      "description": "Create an Inkeep Agent Framework project",
+      "link": "https://www.npmjs.com/package/@inkeep/create-agents",
+      "tags": [
+        "Library"
+      ],
+      "about": "Create an Inkeep Agent Framework project",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "beeai-framework",
+      "description": "BeeAI Framework - LLM Agent Framework",
+      "link": "https://www.npmjs.com/package/beeai-framework",
+      "tags": [
+        "Library"
+      ],
+      "about": "BeeAI Framework - LLM Agent Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "Joint Statement on AI Safety and Openness",
+      "description": "Joint Statement on AI Safety and Openness",
+      "link": "https://open.mozilla.org/letter/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Joint Statement on AI Safety and Openness",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (241 points) for \"ai safety\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "Concrete AI Safety Problems",
+      "description": "Concrete AI Safety Problems",
+      "link": "https://openai.com/blog/concrete-ai-safety-problems/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Concrete AI Safety Problems",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (221 points) for \"ai safety\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "fairseq",
+      "description": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
+      "link": "https://github.com/facebookresearch/fairseq",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/16943930?v=4&s=64",
+      "about": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 31,824 stars for query \"ai toolkit\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "khoj",
+      "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+      "link": "https://khoj.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/134046886?v=4&s=64",
+      "about": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 31,155 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "qlib",
+      "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+      "link": "https://qlib.readthedocs.io/en/latest/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
+      "about": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 30,883 stars for query \"ai platform\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "ChatGLM-6B",
+      "description": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
+      "link": "https://github.com/zai-org/ChatGLM-6B",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/223098841?v=4&s=64",
+      "about": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 41,127 stars for query \"language model\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "FastChat",
+      "description": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
+      "link": "https://github.com/lm-sys/FastChat",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/126381704?v=4&s=64",
+      "about": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 39,124 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "quivr",
+      "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+      "link": "https://core.quivr.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/159330290?v=4&s=64",
+      "about": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 38,459 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Stable Diffusion 2.0",
+      "description": "Stable Diffusion 2.0",
+      "link": "https://stability.ai/blog/stable-diffusion-v2-release",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Stable Diffusion 2.0",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1368 points) for \"stable diffusion\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Stable Video Diffusion",
+      "description": "Stable Video Diffusion",
+      "link": "https://stability.ai/news/stable-video-diffusion-open-ai-video-model",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Stable Video Diffusion",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1330 points) for \"stable diffusion\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+      "description": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+      "link": "https://github.com/THUDM/CogVideo",
+      "tags": [
+        "Trending"
+      ],
+      "about": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (128 points) for \"text to video\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Meta’s new text-to-video AI generator is like DALL-E for video",
+      "description": "Meta’s new text-to-video AI generator is like DALL-E for video",
+      "link": "https://www.theverge.com/2022/9/29/23378210/meta-text-to-video-ai-generation-make-a-video-model-dall-e",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Meta’s new text-to-video AI generator is like DALL-E for video",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (103 points) for \"text to video\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "n8n-nodes-comfyui-image-to-image",
+      "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
+      "link": "https://www.npmjs.com/package/n8n-nodes-comfyui-image-to-image",
+      "tags": [
+        "Library"
+      ],
+      "about": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"text-to-video\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "@edsamo/mysql-mcp-server",
+      "description": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
+      "link": "https://www.npmjs.com/package/@edsamo/mysql-mcp-server",
+      "tags": [
+        "Library"
+      ],
+      "about": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "@usgupta/circuitware-code",
+      "description": "Circuitware Code - AI-powered command-line workflow tool",
+      "link": "https://www.npmjs.com/package/@usgupta/circuitware-code",
+      "tags": [
+        "Library"
+      ],
+      "about": "Circuitware Code - AI-powered command-line workflow tool",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"code ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "@ai-sdk/svelte",
+      "description": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+      "link": "https://www.npmjs.com/package/@ai-sdk/svelte",
+      "tags": [
+        "Library"
+      ],
+      "about": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"design ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "@assistant-ui/react",
+      "description": "TypeScript/React library for AI Chat",
+      "link": "https://www.npmjs.com/package/@assistant-ui/react",
+      "tags": [
+        "Library"
+      ],
+      "about": "TypeScript/React library for AI Chat",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"ux ai\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "@pooltogether/uniform-random-number",
+      "description": "PoolTogether Solidity Modulo Bias library",
+      "link": "https://www.npmjs.com/package/@pooltogether/uniform-random-number",
+      "tags": [
+        "Library"
+      ],
+      "about": "PoolTogether Solidity Modulo Bias library",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"bias\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "@stdlib/constants-float32-exponent-bias",
+      "description": "The bias of a single-precision floating-point number's exponent.",
+      "link": "https://www.npmjs.com/package/@stdlib/constants-float32-exponent-bias",
+      "tags": [
+        "Library"
+      ],
+      "about": "The bias of a single-precision floating-point number's exponent.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"bias\""
+    },
+    {
+      "domain": "Crypto",
+      "name": "tensaikit",
+      "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+      "link": "https://www.npmjs.com/package/tensaikit",
+      "tags": [
+        "Library"
+      ],
+      "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"defi ai\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@inquirer/core",
+      "description": "Core Inquirer prompt API",
+      "link": "https://www.npmjs.com/package/@inquirer/core",
+      "tags": [
+        "Library"
+      ],
+      "about": "Core Inquirer prompt API",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "@inquirer/rawlist",
+      "description": "Inquirer rawlist prompt",
+      "link": "https://www.npmjs.com/package/@inquirer/rawlist",
+      "tags": [
+        "Library"
+      ],
+      "about": "Inquirer rawlist prompt",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"prompt\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "llm-agents",
+      "description": "LLM Agent framework for Node.js",
+      "link": "https://www.npmjs.com/package/llm-agents",
+      "tags": [
+        "Library"
+      ],
+      "about": "LLM Agent framework for Node.js",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "@xynehq/jaf",
+      "description": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
+      "link": "https://www.npmjs.com/package/@xynehq/jaf",
+      "tags": [
+        "Library"
+      ],
+      "about": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"agent framework\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "kapellmeister",
+      "description": "Orchestration For Animated Transitions",
+      "link": "https://www.npmjs.com/package/kapellmeister",
+      "tags": [
+        "Library"
+      ],
+      "about": "Orchestration For Animated Transitions",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"orchestration\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "@google-cloud/orchestration-airflow",
+      "description": "orchestration-airflow client for Node.js",
+      "link": "https://www.npmjs.com/package/@google-cloud/orchestration-airflow",
+      "tags": [
+        "Library"
+      ],
+      "about": "orchestration-airflow client for Node.js",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"orchestration\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "@llamaindex/semtools",
+      "description": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
+      "link": "https://www.npmjs.com/package/@llamaindex/semtools",
+      "tags": [
+        "Library"
+      ],
+      "about": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"semantic search\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "Freeway guardrails are now a favorite target of thieves",
+      "description": "Freeway guardrails are now a favorite target of thieves",
+      "link": "https://laist.com/news/transportation/guardrails-aluminum-theft",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Freeway guardrails are now a favorite target of thieves",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (157 points) for \"guardrails\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "@guardrails-ai/core",
+      "description": "A Javascript wrapper for guardrails-ai",
+      "link": "https://www.npmjs.com/package/@guardrails-ai/core",
+      "tags": [
+        "Library"
+      ],
+      "about": "A Javascript wrapper for guardrails-ai",
+      "pros": [],
+      "cons": [],
+      "reason": "Popular npm package for \"guardrails ai\""
     }
   ]
 }

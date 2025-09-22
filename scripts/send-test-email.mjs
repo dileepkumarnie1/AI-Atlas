@@ -21,7 +21,12 @@ async function main(){
   });
   const subject = `SMTP test from AI Atlas at ${new Date().toISOString()}`;
   const text = 'Success! Your SMTP settings are working.';
-  const info = await transporter.sendMail({ from: SMTP_USER, to: TO_EMAIL, subject, text });
+  const html = `<div style="font-family:Segoe UI,Arial,sans-serif; line-height:1.4; color:#24292f;">
+    <h2 style="margin:0 0 8px;">AI Atlas</h2>
+    <p style="margin:0 0 8px;">Success! Your SMTP settings are working.</p>
+    <p style="margin:0; color:#57606a; font-size:12px;">${new Date().toLocaleString()}</p>
+  </div>`;
+  const info = await transporter.sendMail({ from: SMTP_USER, to: TO_EMAIL, subject, text, html });
   console.log('Email sent:', info.messageId || info);
 }
 

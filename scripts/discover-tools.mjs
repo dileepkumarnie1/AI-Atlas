@@ -216,7 +216,7 @@ function toToolShape(item){
   };
 }
 
-async function maybeSendEmail({ subject, text }){
+async function maybeSendEmail({ subject, text, html }){
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, TO_EMAIL } = process.env;
   if(!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !TO_EMAIL){
     console.log('Email not sent (SMTP env not configured). Preview:\n', subject, '\n', text);
@@ -233,7 +233,9 @@ async function maybeSendEmail({ subject, text }){
     secure: Number(SMTP_PORT) === 465,
     auth: { user: SMTP_USER, pass: SMTP_PASS }
   });
-  await transporter.sendMail({ from: SMTP_USER, to: TO_EMAIL, subject, text });
+  const mail = { from: SMTP_USER, to: TO_EMAIL, subject, text };
+  if(html) mail.html = html;
+  await transporter.sendMail(mail);
   console.log('Email sent to', TO_EMAIL);
   return true;
 }
@@ -287,7 +289,7 @@ async function main(){
         sec.tools = sec.tools || [];
         sec.tools.push(tool);
         existingNames.add(k);
-        additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published' });
+        additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link });
       } else {
         const domName = sec.name || slug;
         const items = Array.isArray(pending?.items) ? pending.items : [];
@@ -295,7 +297,7 @@ async function main(){
         if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl)){
           items.push({ domain: domName, ...tool, reason: cand.reason });
           pending.items = items;
-          additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged' });
+          additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link });
         }
       }
       addedForDomain += 1;
@@ -316,9 +318,44 @@ async function main(){
 
   if(additions.length){
     const dateStr = new Date().toISOString().slice(0,10);
-    const subject = `new tools added to AI atlas website on ${dateStr}`;
-    const text = additions.map(a=>`• ${a.name} — ${a.domain}\n  Why: ${a.reason}`).join('\n');
-    await maybeSendEmail({ subject, text });
+    const subject = `AI Atlas — ${additions.length} new ${directPublish? 'published' : 'staged'} tool(s) on ${dateStr}`;
+
+    // Group by domain for nicer formatting
+    const byDomain = additions.reduce((acc, a)=>{ (acc[a.domain] ||= []).push(a); return acc; }, {});
+
+    // Plain text fallback
+    const text = Object.entries(byDomain)
+      .map(([dom, items]) => [`${dom}:`, ...items.map(a => `  • ${a.name}${a.link?` — ${a.link}`:''}\n    Why: ${a.reason}${a.mode?`\n    Mode: ${a.mode}`:''}`)].join('\n'))
+      .join('\n\n');
+
+    // Minimal HTML email (inline styles for broad client support)
+    const esc = s => String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const htmlSections = Object.entries(byDomain).map(([dom, items]) => `
+      <section style="margin:16px 0;">
+        <h3 style="margin:0 0 8px; font-size:16px;">${esc(dom)}</h3>
+        <ul style="margin:0; padding-left:18px;">
+          ${items.map(a => `
+            <li style="margin:6px 0;">
+              ${a.link ? `<a href="${esc(a.link)}" style="color:#0969da; text-decoration:none; font-weight:600;">${esc(a.name)}</a>` : `<strong>${esc(a.name)}</strong>`}
+              ${a.mode ? `<span style="color:#6a737d;">(${esc(a.mode)})</span>` : ''}
+              <div style="color:#24292f; font-size:13px; margin-top:2px;">${esc(a.reason)}</div>
+              ${a.link ? `<div style="font-size:12px; color:#57606a;">${esc(a.link)}</div>` : ''}
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    `).join('');
+
+    const html = `
+      <div style="font-family:Segoe UI,Arial,sans-serif; line-height:1.4; color:#24292f;">
+        <h2 style="margin:0 0 12px;">AI Atlas</h2>
+        <div style="margin:0 0 14px; color:#57606a;">${additions.length} new ${directPublish? 'published' : 'staged'} tool(s) on ${esc(dateStr)}</div>
+        ${htmlSections}
+        <hr style="border:none; border-top:1px solid #d0d7de; margin:16px 0;"/>
+        <div style="font-size:12px; color:#57606a;">You’re receiving this because discovery ran successfully. Update SMTP settings or disable emails in the workflow to stop notifications.</div>
+      </div>`;
+
+    await maybeSendEmail({ subject, text, html });
   }else{
     console.log('No new additions this run.');
   }

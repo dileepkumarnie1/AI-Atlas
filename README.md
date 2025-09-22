@@ -81,7 +81,9 @@ Automation (GitHub Actions)
 - Opens a PR if `public/tools.json`, `data/discovery_log.json`, or `data/pending-tools.json` changed
 
 Email notifications (optional)
-The discovery script can send an email summary when SMTP is configured.
+The discovery script can send a summary email when SMTP is configured. Emails are now sent in both HTML and plaintext:
+- HTML: grouped by domain, with clickable tool names, reasons, and links.
+- Plaintext: readable fallback for clients that strip HTML.
 
 Configure GitHub Actions secrets
 - SMTP_HOST – e.g., smtp.gmail.com or your provider
@@ -95,8 +97,20 @@ Configure locally in Windows PowerShell (one session)
 - $env:SMTP_PORT = "587"
 - $env:SMTP_USER = "user@example.com"
 - $env:SMTP_PASS = "app-password-or-token"
-- $env:TO_EMAIL   = "dileepkumarnie1@gmail.com"
+- $env:TO_EMAIL   = "your@email.com"
 Then run: npm run discover:tools
+
+Test email (local)
+- npm run email:test — sends a small HTML + plaintext test message.
+
+Test email (CI)
+- Actions → "Send Test Email" → Run workflow — uses the same SMTP_* secrets.
+
+Troubleshooting
+- Missing env vars: scripts will print which variables are missing.
+- Gmail: enable 2FA and use an App Password with smtp.gmail.com:587.
+- Outlook/Office365: smtp.office365.com:587; consider app passwords if required.
+- If CI prints "Email not sent (SMTP env not configured)", ensure all SMTP_* and TO_EMAIL secrets are defined.
 
 Note: The workflow installs nodemailer dynamically; the repo already depends on nodemailer@7 for local runs.
 
