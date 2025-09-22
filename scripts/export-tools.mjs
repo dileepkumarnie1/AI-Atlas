@@ -79,12 +79,75 @@ function mapToolDocToJson(doc){
     description: data.description || data.about || '',
     link,
     tags: Array.isArray(data.tags) ? data.tags : [],
+    // Always include schema fields for consistency
+    about: data.about || '',
+    pros: Array.isArray(data.pros) ? data.pros : [],
+    cons: Array.isArray(data.cons) ? data.cons : [],
   };
   if (data.iconUrl) out.iconUrl = data.iconUrl;
-  if (data.about) out.about = data.about;
-  if (Array.isArray(data.pros) && data.pros.length) out.pros = data.pros;
-  if (Array.isArray(data.cons) && data.cons.length) out.cons = data.cons;
   return out;
+}
+
+// Lightweight HTML metadata extraction without external deps
+function extractMeta(html){
+  const out = {};
+  const get = (re) => {
+    const m = html.match(re);
+    return m && m[1] ? m[1].trim() : '';
+  };
+  out.title = get(/<title[^>]*>([^<]*)<\/title>/i);
+  // Prefer og:description, then twitter:description, then meta description
+  out.ogDescription = get(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["'][^>]*>/i) ||
+                      get(/<meta[^>]+name=["']twitter:description["'][^>]+content=["']([^"']+)["'][^>]*>/i) ||
+                      get(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["'][^>]*>/i);
+  // Icon candidates
+  const icons = [];
+  const linkRe = /<link[^>]+rel=["']([^"']+)["'][^>]+href=["']([^"']+)["'][^>]*>/ig;
+  let lm;
+  while ((lm = linkRe.exec(html))){
+    const rel = lm[1].toLowerCase();
+    const href = lm[2];
+    if (/(^|\s)(icon|shortcut icon|apple-touch-icon)(\s|$)/.test(rel)) icons.push(href);
+  }
+  out.icons = icons;
+  // og:image as a fallback logo (may be large)
+  const ogImg = get(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["'][^>]*>/i);
+  if (ogImg) out.ogImage = ogImg;
+  return out;
+}
+
+async function enrichFromLink(link){
+  // best-effort: short timeout
+  const controller = new AbortController();
+  const to = setTimeout(() => controller.abort(), 6000);
+  try {
+    const res = await fetch(link, { signal: controller.signal, headers: { 'user-agent': 'ai-atlas-exporter/1.0 (+github actions)' } });
+    const url = new URL(link);
+    const origin = url.origin;
+    const text = await res.text();
+    const meta = extractMeta(text || '');
+    // Description
+    const description = meta.ogDescription || meta.title || '';
+    // Icon resolution
+    let iconUrl = '';
+    const pick = meta.icons && meta.icons.find(h => /apple-touch-icon|icon/.test(h)) || meta.icons && meta.icons[0] || '';
+    if (pick) {
+      try { iconUrl = new URL(pick, origin).toString(); } catch { /* ignore */ }
+    }
+    if (!iconUrl) {
+      // fallback to favicon.ico
+      iconUrl = `${origin}/favicon.ico`;
+    }
+    return { description, about: description, iconUrl };
+  } catch {
+    // Network error or timeout; fallback to favicon
+    try {
+      const origin = new URL(link).origin;
+      return { description: '', about: '', iconUrl: `${origin}/favicon.ico` };
+    } catch { return { description: '', about: '', iconUrl: '' }; }
+  } finally {
+    clearTimeout(to);
+  }
 }
 
 async function main(){
@@ -115,6 +178,8 @@ async function main(){
 
   // Group by domainSlug
   const groups = new Map(); // slug -> { tools: [] }
+  // Track added-tools later to optionally enrich only new insertions
+  const candidatesToEnrich = new Set(); // key: `${slug}::${nameLower}`
   for (const doc of snap.docs){
     const d = doc.data();
     const slug = normalizeKey(d.domainSlug || 'uncategorized');
@@ -123,7 +188,10 @@ async function main(){
     if (!groups.has(slug)) groups.set(slug, { tools: [], name: d.domainName });
     const arr = groups.get(slug).tools;
     const k = normalizeKey(tool.name);
-    if (!arr.some(t => normalizeKey(t.name) === k)) arr.push(tool);
+    if (!arr.some(t => normalizeKey(t.name) === k)) {
+      arr.push(tool);
+      candidatesToEnrich.add(`${slug}::${k}`);
+    }
   }
 
   const totalTools = Array.from(groups.values()).reduce((acc, g) => acc + g.tools.length, 0);
@@ -145,6 +213,11 @@ async function main(){
       for (const t of grp.tools){
         const k = normalizeKey(t.name);
         if (!existingNames.has(k)){
+          // Ensure schema fields always present
+          if (!Array.isArray(t.tags)) t.tags = [];
+          if (!('about' in t)) t.about = t.description || '';
+          if (!Array.isArray(t.pros)) t.pros = [];
+          if (!Array.isArray(t.cons)) t.cons = [];
           mergedTools.push(t);
           existingNames.add(k);
           additions++;
@@ -173,6 +246,42 @@ async function main(){
     });
     additions += Array.isArray(grp.tools) ? grp.tools.length : 0;
   }
+
+  // Opportunistic enrichment for tools that were just added
+  // Build quick lookup for outSections tools by slug+name
+  async function enrichNewlyAdded(){
+    const tasks = [];
+    for (const sec of outSections){
+      const secKey = normalizeKey(sec.slug || sec.name);
+      if (!Array.isArray(sec.tools)) continue;
+      for (const t of sec.tools){
+        const key = `${secKey}::${normalizeKey(t.name)}`;
+        if (!candidatesToEnrich.has(key)) continue; // only enrich newly added
+        const needsDesc = !t.description || t.description.trim().length < 10;
+        const needsIcon = !t.iconUrl;
+        const needsAbout = !t.about;
+        if (!(needsDesc || needsIcon || needsAbout)) continue;
+        tasks.push((async () => {
+          const info = await enrichFromLink(t.link);
+          if (needsDesc && info.description) t.description = info.description;
+          if (needsAbout && info.about) t.about = info.about;
+          if (needsIcon && info.iconUrl) t.iconUrl = info.iconUrl;
+          // Ensure arrays remain present
+          if (!Array.isArray(t.tags)) t.tags = [];
+          if (!Array.isArray(t.pros)) t.pros = [];
+          if (!Array.isArray(t.cons)) t.cons = [];
+        })());
+      }
+    }
+    // Run in parallel with a cap (simple chunking)
+    const chunk = 6;
+    for (let i = 0; i < tasks.length; i += chunk){
+      // eslint-disable-next-line no-await-in-loop
+      await Promise.all(tasks.slice(i, i + chunk));
+    }
+  }
+
+  await enrichNewlyAdded();
 
   // Optional: stable sort tools by name within each section
   for (const sec of outSections){
