@@ -1,4 +1,4 @@
-﻿name: Manual - Open PR
+name: Manual - Open PR
 
 on:
   workflow_dispatch:
