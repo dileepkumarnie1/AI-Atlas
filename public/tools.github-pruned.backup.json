@@ -300,6 +300,18 @@
         "cons": []
       },
       {
+        "name": "gpt-engineer",
+        "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
+        "link": "https://github.com/AntonOsika/gpt-engineer",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/4467025?v=4&s=64",
+        "about": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
+        "pros": [],
+        "cons": []
+      },
+      {
         "name": "autogen",
         "description": "A programming framework for agentic AI",
         "link": "https://microsoft.github.io/autogen/",
@@ -718,6 +730,30 @@
         "about": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "generative-ai-for-beginners",
+        "description": "21 Lessons, Get Started Building with Generative AI ",
+        "link": "https://github.com/microsoft/generative-ai-for-beginners",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
+        "about": "21 Lessons, Get Started Building with Generative AI ",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "llama.cpp",
+        "description": "LLM inference in C/C++",
+        "link": "https://github.com/ggml-org/llama.cpp",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/134263123?v=4&s=64",
+        "about": "LLM inference in C/C++",
+        "pros": [],
+        "cons": []
       }
     ]
   },
@@ -980,6 +1016,27 @@
         ]
       },
       {
+        "name": "ComfyUI",
+        "description": "Node‑based Stable Diffusion workflow UI for power users.",
+        "link": "https://github.com/comfyanonymous/ComfyUI",
+        "tags": [
+          "Open Source",
+          "Workflows"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "A modular graph editor for complex SD pipelines, fine control, and reproducible workflows.",
+        "pros": [
+          "Extreme flexibility.",
+          "Reproducible graphs.",
+          "Large community."
+        ],
+        "cons": [
+          "Steeper learning curve.",
+          "Local setup complexity.",
+          "Not a one‑click tool."
+        ]
+      },
+      {
         "name": "NightCafe",
         "description": "Beginner‑friendly image generator with presets and social challenges.",
         "link": "https://nightcafe.studio/",
@@ -1001,6 +1058,18 @@
         ]
       },
       {
+        "name": "stable-diffusion-webui",
+        "description": "Stable Diffusion web UI",
+        "link": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/20920490?v=4&s=64",
+        "about": "Stable Diffusion web UI",
+        "pros": [],
+        "cons": []
+      },
+      {
         "name": "stable-diffusion",
         "description": "A latent text-to-image diffusion model",
         "link": "https://ommer-lab.com/research/latent-diffusion-models/",
@@ -1009,6 +1078,30 @@
         ],
         "iconUrl": "https://avatars.githubusercontent.com/u/30233788?v=4&s=64",
         "about": "A latent text-to-image diffusion model",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "stablediffusion",
+        "description": "High-Resolution Image Synthesis with Latent Diffusion Models",
+        "link": "https://github.com/Stability-AI/stablediffusion",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/100950301?v=4&s=64",
+        "about": "High-Resolution Image Synthesis with Latent Diffusion Models",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "ControlNet",
+        "description": "Let us control diffusion models!",
+        "link": "https://github.com/lllyasviel/ControlNet",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/19834515?v=4&s=64",
+        "about": "Let us control diffusion models!",
         "pros": [],
         "cons": []
       }
@@ -1360,6 +1453,18 @@
         "cons": []
       },
       {
+        "name": "CogVideo",
+        "description": "text and image to video generation: CogVideoX (2024) and CogVideo (ICLR 2023)",
+        "link": "https://github.com/zai-org/CogVideo",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/223098841?v=4&s=64",
+        "about": "text and image to video generation: CogVideoX (2024) and CogVideo (ICLR 2023)",
+        "pros": [],
+        "cons": []
+      },
+      {
         "name": "deeplake",
         "description": "Database for AI. Store Vectors, Images, Texts, Videos, etc. Use with LLMs/LangChain. Store, query, version, & visualize any AI data. Stream data in real-time to PyTorch/TensorFlow. https://activeloop.ai",
         "link": "https://activeloop.ai",
@@ -1392,6 +1497,18 @@
         ],
         "iconUrl": "https://avatars.githubusercontent.com/u/210980732?v=4&s=64",
         "about": "HunyuanVideo: A Systematic Framework For Large Video Generation Model",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "imaginAIry",
+        "description": "Pythonic AI generation of images and videos",
+        "link": "https://github.com/brycedrennan/imaginAIry",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/1217531?v=4&s=64",
+        "about": "Pythonic AI generation of images and videos",
         "pros": [],
         "cons": []
       }
@@ -1632,6 +1749,17 @@
           "Trending"
         ],
         "about": "Kite – Programming Copilot",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "Show HN: Sketch – AI code-writing assistant that understands data content",
+        "description": "Show HN: Sketch – AI code-writing assistant that understands data content",
+        "link": "https://github.com/approximatelabs/sketch",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Show HN: Sketch – AI code-writing assistant that understands data content",
         "pros": [],
         "cons": []
       },
@@ -1926,6 +2054,29 @@
           "Quality varies.",
           "Credit system."
         ]
+      },
+      {
+        "name": "Real-Time-Voice-Cloning",
+        "description": "Clone a voice in 5 seconds to generate arbitrary speech in real-time",
+        "link": "https://github.com/CorentinJ/Real-Time-Voice-Cloning",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/12038136?v=4&s=64",
+        "about": "Clone a voice in 5 seconds to generate arbitrary speech in real-time",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "Show HN: Voice-Pro – AI Voice Cloning",
+        "description": "Show HN: Voice-Pro – AI Voice Cloning",
+        "link": "https://github.com/abus-aikorea/voice-pro",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Show HN: Voice-Pro – AI Voice Cloning",
+        "pros": [],
+        "cons": []
       },
       {
         "name": "Google's advanced music generation model and two new AI experiments",
@@ -2918,6 +3069,27 @@
           "Limits on free.",
           "Learning curve for app building."
         ]
+      },
+      {
+        "name": "PandasAI",
+        "description": "Natural language to pandas code for dataframe analysis.",
+        "link": "https://github.com/Sinaptik-AI/pandas-ai",
+        "tags": [
+          "Open Source",
+          "Python"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "Ask questions and generate pandas code to explore and visualize local data.",
+        "pros": [
+          "Great for beginners.",
+          "Local control.",
+          "Transparent code."
+        ],
+        "cons": [
+          "Limited to pandas.",
+          "Not for big data.",
+          "Depends on model quality."
+        ]
       }
     ]
   },
@@ -3040,6 +3212,17 @@
           "Trending"
         ],
         "about": "DreamFusion: Text-to-3D using 2D Diffusion",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "A working implementation of text-to-3D DreamFusion, powered by Stable Diffusion",
+        "description": "A working implementation of text-to-3D DreamFusion, powered by Stable Diffusion",
+        "link": "https://github.com/ashawkey/stable-dreamfusion",
+        "tags": [
+          "Trending"
+        ],
+        "about": "A working implementation of text-to-3D DreamFusion, powered by Stable Diffusion",
         "pros": [],
         "cons": []
       },
@@ -3537,6 +3720,17 @@
           "Not real‑time trading.",
           "Coverage varies by asset."
         ]
+      },
+      {
+        "name": "Show HN: StealthDrop – Anonymous crypto airdrops using zero-knowledge proofs",
+        "description": "Show HN: StealthDrop – Anonymous crypto airdrops using zero-knowledge proofs",
+        "link": "https://github.com/nalinbhardwaj/stealthdrop",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Show HN: StealthDrop – Anonymous crypto airdrops using zero-knowledge proofs",
+        "pros": [],
+        "cons": []
       }
     ]
   },
@@ -3698,6 +3892,28 @@
         ]
       },
       {
+        "name": "Prompt Engineering Guide: Guides, papers, and resources for prompt engineering",
+        "description": "Prompt Engineering Guide: Guides, papers, and resources for prompt engineering",
+        "link": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Prompt Engineering Guide: Guides, papers, and resources for prompt engineering",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "Brex’s Prompt Engineering Guide",
+        "description": "Brex’s Prompt Engineering Guide",
+        "link": "https://github.com/brexhq/prompt-engineering",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Brex’s Prompt Engineering Guide",
+        "pros": [],
+        "cons": []
+      },
+      {
         "name": "prompt",
         "description": "A beautiful command-line prompt for node.js",
         "link": "https://www.npmjs.com/package/prompt",
@@ -3747,6 +3963,28 @@
           "Access is currently limited to a select few, with a long waitlist.",
           "Its real-world effectiveness across diverse tasks is still being evaluated.",
           "Raises significant questions about the future of software development jobs."
+        ]
+      },
+      {
+        "name": "Auto-GPT",
+        "description": "An experimental open-source agent that chains LLM 'thoughts' to achieve a goal.",
+        "link": "https://github.com/Significant-Gravitas/Auto-GPT",
+        "tags": [
+          "Open Source",
+          "Experimental",
+          "Task Automation"
+        ],
+        "iconUrl": "https://autgpt.news/wp-content/uploads/2023/08/auto-gpt-logo.png",
+        "about": "Auto-GPT was one of the first projects to go viral showcasing the potential of autonomous agents. It works by taking a user-defined goal and breaking it down into sub-tasks. It then uses tools like web search and file I/O in a loop to work towards the goal, attempting to 'think' step-by-step.",
+        "pros": [
+          "Pioneered the concept of autonomous agents for the public.",
+          "Fully open-source, allowing for customization and learning.",
+          "Great for understanding the fundamental principles of agent loops."
+        ],
+        "cons": [
+          "Highly experimental and often fails to complete complex goals.",
+          "Can get stuck in repetitive loops and is not cost-effective due to high API usage.",
+          "Has been largely superseded by more advanced agent frameworks."
         ]
       },
       {
@@ -3860,6 +4098,28 @@
         ]
       },
       {
+        "name": "BabyAGI",
+        "description": "An early, influential script for an AI-powered task management system.",
+        "link": "https://github.com/yoheinakajima/babyagi",
+        "tags": [
+          "Open Source",
+          "Experimental",
+          "Task Management"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643111421453254656/lqg52h2x_400x400.jpg",
+        "about": "BabyAGI is a simple but powerful Python script that demonstrates an autonomous task management system. It creates, prioritizes, and executes tasks based on a given objective, using an LLM to generate new tasks based on the results of previous ones. It was a foundational inspiration for many subsequent agent projects.",
+        "pros": [
+          "Simple, easy-to-understand code makes it great for learning.",
+          "Its core loop was a foundational concept for the agent community.",
+          "Spurred a massive amount of innovation and experimentation."
+        ],
+        "cons": [
+          "Extremely basic and not intended for practical, real-world use.",
+          "Inefficient by design, as it constantly re-prioritizes the entire task list.",
+          "Lacks advanced features like tool use or a long-term memory system."
+        ]
+      },
+      {
         "name": "Adept",
         "description": "An AI research lab building a foundational model for actions and general intelligence.",
         "link": "https://www.adept.ai/",
@@ -3879,6 +4139,28 @@
           "Product is not yet widely available to the public.",
           "Generalizing across all software is an incredibly difficult technical challenge.",
           "Faces immense competition from all major tech companies building similar agents."
+        ]
+      },
+      {
+        "name": "Devika",
+        "description": "An open-source AI software engineer that aims to replicate Devin's capabilities.",
+        "link": "https://github.com/stitionai/devika",
+        "tags": [
+          "Open Source",
+          "Code Generation",
+          "Experimental"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1769218933740261376/78e874An_400x400.jpg",
+        "about": "Devika is an open-source project inspired by Cognition Labs' Devin. It aims to be a competitive alternative that can understand high-level human instructions, break them down into steps, research relevant information, and write the code to achieve the given objective.",
+        "pros": [
+          "Fully open-source, making agent technology more accessible.",
+          "Active and passionate development community contributing to the project.",
+          "Allows researchers to experiment with and build upon its architecture."
+        ],
+        "cons": [
+          "Significantly less capable and reliable than Devin at present.",
+          "Highly experimental, often buggy, and requires a complex setup process.",
+          "May struggle to keep pace with well-funded, proprietary models."
         ]
       },
       {
@@ -4011,6 +4293,28 @@
           "Niche focus.",
           "Requires setup.",
           "Less general-purpose."
+        ]
+      },
+      {
+        "name": "MetaGPT",
+        "description": "A multi-agent system where agents role-play as a software company.",
+        "link": "https://github.com/geekan/MetaGPT",
+        "tags": [
+          "Open Source",
+          "Multi-Agent",
+          "Software Development"
+        ],
+        "iconUrl": "https://opengraph.githubassets.com/1/geekan/MetaGPT",
+        "about": "MetaGPT assigns agents roles like Product Manager, Developer, and QA, simulating an entire company. It demonstrates how multi-agent systems can produce end-to-end solutions.",
+        "pros": [
+          "Automates complex org-like workflows.",
+          "Role specialization is powerful.",
+          "Great demo for AI enterprises."
+        ],
+        "cons": [
+          "Complex setup.",
+          "Still experimental.",
+          "Output can be inconsistent."
         ]
       },
       {
@@ -4190,6 +4494,93 @@
         ]
       },
       {
+        "name": "AutoGen (Microsoft)",
+        "description": "Framework for building multi‑agent systems with tool use and memory.",
+        "link": "https://github.com/microsoft/autogen",
+        "tags": [
+          "Open Source",
+          "Framework",
+          "Multi-Agent"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "Compose agent teams that collaborate with tools, code execution, and human‑in‑the‑loop.",
+        "pros": [
+          "Rich primitives.",
+          "Good samples.",
+          "Active dev."
+        ],
+        "cons": [
+          "Complexity for beginners.",
+          "Frequent updates.",
+          "Best with Python expertise."
+        ]
+      },
+      {
+        "name": "OpenDevin",
+        "description": "Open‑source autonomous software engineer inspired by Devin.",
+        "link": "https://github.com/OpenDevin/OpenDevin",
+        "tags": [
+          "Open Source",
+          "Code",
+          "Agent"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "Plan, browse, and write code to complete software tasks with evaluators.",
+        "pros": [
+          "Transparent.",
+          "Community‑driven.",
+          "Extensible."
+        ],
+        "cons": [
+          "Early stage.",
+          "Fragility on complex tasks.",
+          "Setup effort."
+        ]
+      },
+      {
+        "name": "OpenInterpreter",
+        "description": "Local agent that can run tools and code safely on your machine.",
+        "link": "https://github.com/OpenInterpreter/open-interpreter",
+        "tags": [
+          "Open Source",
+          "Local",
+          "Tools"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "Command your computer via natural language; run code and external tools with guardrails.",
+        "pros": [
+          "Local control.",
+          "Powerful tool use.",
+          "Good for automation."
+        ],
+        "cons": [
+          "Security considerations.",
+          "Environment setup.",
+          "Model costs if cloud LLMs used."
+        ]
+      },
+      {
+        "name": "smolagents",
+        "description": "Minimalistic agent framework from Hugging Face.",
+        "link": "https://github.com/huggingface/smolagents",
+        "tags": [
+          "Open Source",
+          "Framework"
+        ],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "about": "Tiny building blocks to compose agents with tools and reasoning loops.",
+        "pros": [
+          "Lightweight.",
+          "Easy to grok.",
+          "HF ecosystem."
+        ],
+        "cons": [
+          "Early API.",
+          "Smaller feature set.",
+          "Community still growing."
+        ]
+      },
+      {
         "name": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
         "description": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
         "link": "https://answers.microsoft.com/en-us/msoffice/forum/msoffice_onedrivefb-mso_o365brs/onedrive-for-business-open-is-very-slow-on-linux/3d33dc1b-3cc3-4c24-9998-9ab96bad31fc",
@@ -4201,6 +4592,17 @@
         "cons": []
       },
       {
+        "name": "Huginn: Create agents that monitor and act on your behalf",
+        "description": "Huginn: Create agents that monitor and act on your behalf",
+        "link": "https://github.com/huginn/huginn",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Huginn: Create agents that monitor and act on your behalf",
+        "pros": [],
+        "cons": []
+      },
+      {
         "name": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
         "description": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
         "link": "https://www.tallahassee.com/story/news/2020/12/07/agents-raid-home-fired-florida-data-scientist-who-built-covid-19-dashboard-rebekah-jones/6482817002/",
@@ -4208,6 +4610,17 @@
           "Trending"
         ],
         "about": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "Auto-GPT: An Autonomous GPT-4 Experiment",
+        "description": "Auto-GPT: An Autonomous GPT-4 Experiment",
+        "link": "https://github.com/Torantulino/Auto-GPT",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Auto-GPT: An Autonomous GPT-4 Experiment",
         "pros": [],
         "cons": []
       }
@@ -4533,6 +4946,17 @@
         ],
         "iconUrl": "https://avatars.githubusercontent.com/u/134426827?v=4&s=64",
         "about": "The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.",
+        "pros": [],
+        "cons": []
+      },
+      {
+        "name": "Show HN: SeaGOAT – local, “AI-based” grep for semantic code search",
+        "description": "Show HN: SeaGOAT – local, “AI-based” grep for semantic code search",
+        "link": "https://github.com/kantord/SeaGOAT",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Show HN: SeaGOAT – local, “AI-based” grep for semantic code search",
         "pros": [],
         "cons": []
       }
