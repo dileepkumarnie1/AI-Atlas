@@ -137,6 +137,17 @@ CI setup
 - Add GOOGLE_SAFEBROWSING_API_KEY to Actions Secrets
 - Add RELIABILITY_STRICT to Actions Variables (e.g., true)
 
+Actions summary visibility
+- Each discovery run writes a config line in the GitHub Actions job summary:
+   - Config: Safe Browsing key: present/absent · Strict mode: on/off
+- Use this to confirm your secret/variable is being picked up.
+
+Strict mode source (CI)
+- The workflow reads RELIABILITY_STRICT from either:
+   1) Actions Secret RELIABILITY_STRICT (preferred if defined), or
+   2) Actions Variable RELIABILITY_STRICT (fallback)
+- Tip: When pasting values in the UI, extra spaces/newlines are ignored by the script.
+
 - Missing env vars: scripts will print which variables are missing.
 - Gmail: enable 2FA and use an App Password with smtp.gmail.com:587.
 - Outlook/Office365: smtp.office365.com:587; consider app passwords if required.
