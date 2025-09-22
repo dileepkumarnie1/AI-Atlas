@@ -38,7 +38,8 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           GOOGLE_SAFEBROWSING_API_KEY: ${{ secrets.GOOGLE_SAFEBROWSING_API_KEY }}
-          RELIABILITY_STRICT: ${{ vars.RELIABILITY_STRICT }}
+          # Prefer a Secret if provided; else fall back to Actions Variable
+          RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT }}
         run: node ./scripts/discover-tools.mjs
 
       - name: Create branch for changes

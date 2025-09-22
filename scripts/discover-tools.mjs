@@ -346,7 +346,7 @@ async function main(){
   const directPublish = /^true$/i.test(String(process.env.DIRECT_PUBLISH||''));
 
   // Config flags for diagnostics and CI visibility
-  const strictMode = /^true$/i.test(String(process.env.RELIABILITY_STRICT||''));
+  const strictMode = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
   const hasGSBKey = Boolean(process.env.GOOGLE_SAFEBROWSING_API_KEY);
   console.log(`[config] Safe Browsing key present=${hasGSBKey}, strict=${strictMode}`);
 
@@ -387,8 +387,8 @@ async function main(){
       if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
       if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
       // Reliability gate
-      const reliability = await assessReliability(cand);
-      const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||''));
+  const reliability = await assessReliability(cand);
+  const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
       if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
       if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
       const tool = toToolShape(cand);
