@@ -1,0 +1,61 @@
+name: Manual - Open PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      head_branch:
+        description: 'Head branch (source)'
+        required: true
+        default: 'feature/admin-panel-updates'
+      base_branch:
+        description: 'Base branch (target)'
+        required: true
+        default: 'main'
+      title:
+        description: 'Pull Request title'
+        required: true
+        default: 'feat(admin): Approve & Add + Reject; Delete Tool in history; enrich + acknowledgments'
+      body:
+        description: 'Pull Request description'
+        required: false
+        default: |
+          This PR updates the Admin panel:
+
+          - Replace separate Approve/Add with a single "Approve & Add" action
+          - Add "Reject" action for submissions (records rejectedBy/rejectedAt)
+          - Enrich tool metadata from official site (name/description/icon)
+          - Assign default tags based on domain; standardized fields
+          - Send approval acknowledgment email to submitter
+          - History: add "Delete Tool" (removes tool from Firestore and notes toolDeletedAt)
+
+          Notes:
+          - Static public/tools.json remains append-only via exporter PRs; removing a tool from JSON requires manual removal or exporter run with shrink allowance.
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create PR via GitHub API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEAD: ${{ inputs.head_branch }}
+          BASE: ${{ inputs.base_branch }}
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+        run: |
+          set -e
+          api_url="https://api.github.com/repos/$REPO/pulls"
+          data=$(jq -n --arg title "$TITLE" --arg body "$BODY" --arg head "$HEAD" --arg base "$BASE" '{title:$title, body:$body, head:$head, base:$base}')
+          resp=$(curl -sS -X POST "$api_url" -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -d "$data")
+          echo "$resp" | jq '.'
+          url=$(echo "$resp" | jq -r '.html_url')
+          if [ "$url" = "null" ] || [ -z "$url" ]; then
+            echo "Failed to create PR" >&2
+            exit 1
+          fi
+          echo "PR URL: $url" >> $GITHUB_STEP_SUMMARY
