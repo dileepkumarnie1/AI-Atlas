@@ -28,14 +28,22 @@ jobs:
           node ./scripts/update-popularity.mjs
 
       - name: Commit and push changes
+        id: commit_push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add public/popularity.json public/popularity_ranks.json data/popularity_raw.json
-          git commit -m "chore(popularity): daily refresh" || echo "No changes to commit"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "pop_changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore(popularity): daily refresh"
+            git push
+            echo "pop_changed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Email Top 30 (after update)
+        if: steps.commit_push.outputs.pop_changed == 'true'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
