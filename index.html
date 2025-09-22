@@ -871,7 +871,7 @@
                         <div class="bg-card border border-color rounded-xl p-4">
                             <h2 class="text-xl font-semibold mb-3">Submissions (Pending)</h2>
                             <div id="admin-submissions" class="text-secondary">Loading submissions...</div>
-                            <p class="text-xs text-muted mt-2">Actions are enforced by Firestore rules. Approve sets status=approved; Delete removes the record.</p>
+                            <p class="text-xs text-muted mt-2">Actions are enforced by Firestore rules. Approve & Add creates the tool in its domain and records approval. Reject marks the submission as rejected.</p>
                             <h2 class="text-xl font-semibold mt-10 mb-3">History (Approved)</h2>
                             <div id="admin-history" class="text-secondary">Loading...</div>
                         </div>
@@ -891,7 +891,7 @@
                                 <th class="py-2 pr-4">Title</th>
                                 <th class="py-2 pr-4">Status</th>
                                 <th class="py-2 pr-4">Submitted By</th>
-                                <th class="py-2 pr-4">Actions</th>
+                                                                <th class="py-2 pr-4">Actions</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -901,9 +901,8 @@
                                   <td class="py-2 pr-4">${escapeHtml(s.status || 'pending')}</td>
                                                                     <td class="py-2 pr-4">${escapeHtml(s.createdBy || s.submitterEmail || s.email || '')}</td>
                                   <td class="py-2 pr-4 flex gap-2">
-                                    <button class="admin-approve px-2 py-1 rounded border text-xs bg-green-100 text-green-800" data-id="${escapeHtml(s.id)}">Approve</button>
-                                                                        <button class="admin-add-tool px-2 py-1 rounded border text-xs bg-blue-100 text-blue-800" data-id="${escapeHtml(s.id)}" data-title="${escapeHtml(s.title || '')}" data-link="${escapeHtml(s.link || '')}" data-domain="${escapeHtml(s.domain || '')}" data-description="${escapeHtml(s.description || '')}" data-email="${escapeHtml(s.submitterEmail || s.createdBy || '')}">Add Tool</button>
-                                    <button class="admin-delete px-2 py-1 rounded border text-xs bg-red-100 text-red-700" data-id="${escapeHtml(s.id)}">Delete</button>
+                                                                        <button class="admin-approve-add px-2 py-1 rounded border text-xs bg-green-100 text-green-800" data-id="${escapeHtml(s.id)}" data-title="${escapeHtml(s.title || '')}" data-link="${escapeHtml(s.link || '')}" data-domain="${escapeHtml(s.domain || '')}" data-description="${escapeHtml(s.description || '')}" data-email="${escapeHtml(s.submitterEmail || s.createdBy || '')}">Approve & Add</button>
+                                                                        <button class="admin-reject px-2 py-1 rounded border text-xs bg-red-100 text-red-700" data-id="${escapeHtml(s.id)}">Reject</button>
                                   </td>
                                 </tr>`).join('')}
                             </tbody>
@@ -919,6 +918,7 @@
                                                                 <th class="py-2 pr-4">Approved</th>
                                                                 <th class="py-2 pr-4">Approved By</th>
                                                                 <th class="py-2 pr-4">Link</th>
+                                                                <th class="py-2 pr-4">Actions</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -928,26 +928,31 @@
                                                                     <td class="py-2 pr-4">${s.approvedAt && s.approvedAt.seconds ? new Date(s.approvedAt.seconds * 1000).toLocaleString() : ''}</td>
                                                                     <td class="py-2 pr-4">${escapeHtml(s.approvedBy || '')}</td>
                                                                     <td class="py-2 pr-4">${s.link ? `<a href="${escapeHtml(s.link)}" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Visit</a>` : ''}</td>
+                                                              <td class="py-2 pr-4">
+                                                                ${s.approvedToolId ? `<button class="admin-delete-tool px-2 py-1 rounded border text-xs bg-red-50 text-red-700" data-tool-id="${escapeHtml(s.approvedToolId)}" data-sub-id="${escapeHtml(s.id)}">Delete Tool</button>` : `<span class="text-xs text-muted">No linked tool</span>`}
+                                                              </td>
                                                                 </tr>`).join('')}
                                                         </tbody>
                                                     </table>
                                                 </div>` : '<div class="text-muted">No approved items yet.</div>';
 
                     // Wire actions
-                    document.querySelectorAll('.admin-approve').forEach(btn => btn.addEventListener('click', async (e) => {
+                    document.querySelectorAll('.admin-reject').forEach(btn => btn.addEventListener('click', async (e) => {
                         const id = e.currentTarget.getAttribute('data-id');
                         if (!id) return;
-                        const ok = await approveSubmission(id);
-                        if (ok) loadSubs();
+                        try {
+                            await updateDoc(doc(firestore, 'submissions', id), {
+                                status: 'rejected',
+                                rejectedAt: serverTimestamp(),
+                                rejectedBy: state.user?.email || state.user?.uid || 'admin'
+                            });
+                            loadSubs();
+                        } catch (err) {
+                            console.error(err);
+                            alert('Failed to reject submission');
+                        }
                     }));
-                    document.querySelectorAll('.admin-delete').forEach(btn => btn.addEventListener('click', async (e) => {
-                        const id = e.currentTarget.getAttribute('data-id');
-                        if (!id) return;
-                        if (!confirm('Delete this submission?')) return;
-                        const ok = await deleteSubmissionById(id);
-                        if (ok) loadSubs();
-                    }));
-                    document.querySelectorAll('.admin-add-tool').forEach(btn => btn.addEventListener('click', async (e) => {
+                    document.querySelectorAll('.admin-approve-add').forEach(btn => btn.addEventListener('click', async (e) => {
                         const id = e.currentTarget.getAttribute('data-id');
                         const title = e.currentTarget.getAttribute('data-title') || '';
                         const link = e.currentTarget.getAttribute('data-link') || '';
@@ -1000,11 +1005,31 @@
                                 try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: email, subject: 'Your tool was approved', html: ackHtml }) }); } catch {}
                             }
 
-                            alert('Tool added in standard format and submission approved. The exporter will append it to public/tools.json.');
+                            alert('Approved and added. The exporter will append to public/tools.json via PR.');
                             loadSubs();
                         } catch (err) {
                             console.error(err);
                             alert('Failed to add tool');
+                        }
+                    }));
+                    document.querySelectorAll('.admin-delete-tool').forEach(btn => btn.addEventListener('click', async (e) => {
+                        const toolId = e.currentTarget.getAttribute('data-tool-id');
+                        const subId = e.currentTarget.getAttribute('data-sub-id');
+                        if (!toolId) { alert('No linked tool id'); return; }
+                        if (!confirm('Delete this tool from the catalog (Firestore)? This will require a manual removal in tools.json or running the exporter with shrink allowance.')) return;
+                        try {
+                            await deleteDoc(doc(firestore, 'tools', toolId));
+                            try {
+                                await updateDoc(doc(firestore, 'submissions', subId), {
+                                    toolDeletedAt: serverTimestamp(),
+                                    approvedToolId: null
+                                });
+                            } catch {}
+                            alert('Tool deleted from Firestore. Note: tools.json removal requires an explicit action (PR or exporter with --allow-shrink).');
+                            loadSubs();
+                        } catch (err) {
+                            console.error(err);
+                            alert('Failed to delete tool');
                         }
                     }));
                 }
