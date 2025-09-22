@@ -107,6 +107,36 @@ Test email (CI)
 - Actions → "Send Test Email" → Run workflow — uses the same SMTP_* secrets.
 
 Troubleshooting
+-
+### Reliability checks (spam/scam safety)
+
+Before any discovered tool is staged or published, the script performs basic reliability checks and will skip items deemed risky. Signals used:
+
+- Link integrity and HTTPS (https gets a small boost; invalid links are penalized)
+- Host signals: trusted doc/repo/package hosts (e.g., github.com, npmjs.com, huggingface.co) boost score; BAD_HOSTS can be extended to blacklist domains
+- GitHub stars thresholds add confidence
+- npm weekly downloads add confidence (queried via api.npmjs.org)
+- Hacker News popularity (>=100 points) adds a mild boost
+- Optional Google Safe Browsing (GSB) URL check; if a match is found, the tool is marked risky and skipped
+
+Verdicts
+- safe: allowed
+- unknown: allowed by default; set RELIABILITY_STRICT=true to skip these
+- risky: always skipped
+
+Configuration
+- GOOGLE_SAFEBROWSING_API_KEY (secret): if set, GSB is queried to detect known unsafe URLs
+- RELIABILITY_STRICT (env/CI variable): set to "true" to only allow tools with a safe verdict
+
+Local testing (PowerShell)
+- $env:GOOGLE_SAFEBROWSING_API_KEY = "your-key"  # optional
+- $env:RELIABILITY_STRICT = "true"               # optional
+- npm run discover:tools
+
+CI setup
+- Add GOOGLE_SAFEBROWSING_API_KEY to Actions Secrets
+- Add RELIABILITY_STRICT to Actions Variables (e.g., true)
+
 - Missing env vars: scripts will print which variables are missing.
 - Gmail: enable 2FA and use an App Password with smtp.gmail.com:587.
 - Outlook/Office365: smtp.office365.com:587; consider app passwords if required.

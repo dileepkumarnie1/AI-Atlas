@@ -19,6 +19,92 @@ const ALIASES_JSON = path.join(DATA_DIR, 'aliases.json');
 function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
 function normalizeKeyLoose(s){ return normalizeKey(s).replace(/[^a-z0-9]+/g,''); }
 
+// --- Reliability helpers ---
+const TRUSTED_HOSTS = new Set([
+  'github.com','npmjs.com','huggingface.co','pypi.org','readthedocs.io','gitlab.com',
+  'vercel.app','netlify.app','readme.io','docs.rs','pkg.go.dev','crates.io'
+]);
+const BAD_HOSTS = new Set([
+  // Add known-bad domains here if needed
+]);
+
+function getHostname(u){
+  try { return new URL(u).hostname.replace(/^www\./,'').toLowerCase(); } catch { return ''; }
+}
+
+async function getNpmWeeklyDownloads(pkg){
+  try{
+    const url = `https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(pkg)}`;
+    const j = await (await fetch(url)).json();
+    return Number(j.downloads||0);
+  }catch{ return 0; }
+}
+
+async function checkGoogleSafeBrowsing(url){
+  const key = process.env.GOOGLE_SAFEBROWSING_API_KEY;
+  if(!key) return { unsafe: false, reason: 'no-gsb-key' };
+  try{
+    const body = {
+      client: { clientId: 'ai-atlas', clientVersion: '1.0' },
+      threatInfo: {
+        threatTypes: ['MALWARE','SOCIAL_ENGINEERING','UNWANTED_SOFTWARE','POTENTIALLY_HARMFUL_APPLICATION'],
+        platformTypes: ['ANY_PLATFORM'],
+        threatEntryTypes: ['URL'],
+        threatEntries: [{ url }]
+      }
+    };
+    const resp = await fetch(`https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${key}`, {
+      method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body)
+    });
+    if(!resp.ok) return { unsafe: false, reason: `gsb-http-${resp.status}` };
+    const data = await resp.json();
+    const unsafe = Array.isArray(data?.matches) && data.matches.length>0;
+    return { unsafe, reason: unsafe ? 'gsb-match' : 'gsb-clear' };
+  }catch{
+    return { unsafe: false, reason: 'gsb-error' };
+  }
+}
+
+async function assessReliability(cand){
+  // Score toolbox: + signals add, - signals subtract
+  let score = 0;
+  const reasons = [];
+  const link = String(cand.link||'');
+  const host = getHostname(link);
+  if(!link || !/^https?:\/\//i.test(link)) { reasons.push('invalid-link'); score -= 2; }
+  if(link.startsWith('https://')) { reasons.push('https'); score += 1; } else { reasons.push('no-https'); score -= 1; }
+  if(TRUSTED_HOSTS.has(host)) { reasons.push(`trusted-host:${host}`); score += 2; }
+  if(BAD_HOSTS.has(host)) { reasons.push(`bad-host:${host}`); score -= 5; }
+  // Source-specific signals
+  const src = String(cand.source||'').toLowerCase();
+  if(src === 'github'){
+    const stars = Number(cand.metrics?.stars||0);
+    if(stars >= 500) { reasons.push(`gh-stars:${stars}`); score += 3; }
+    else if(stars >= 100) { reasons.push(`gh-stars:${stars}`); score += 2; }
+    else if(stars >= 20) { reasons.push(`gh-stars:${stars}`); score += 1; }
+  }
+  if(src === 'npm'){
+    // Extract package name from npm link
+    const m = link.match(/\/package\/(@?[^/]+)/);
+    if(m){
+      const dls = await getNpmWeeklyDownloads(m[1]);
+      if(dls >= 50000) { reasons.push(`npm-dls:${dls}`); score += 3; }
+      else if(dls >= 5000) { reasons.push(`npm-dls:${dls}`); score += 2; }
+      else if(dls >= 500) { reasons.push(`npm-dls:${dls}`); score += 1; }
+    }
+  }
+  // HN already filtered by >=100 points upstream -> mild boost
+  if(src === 'hn' && (cand.metrics?.points||0) >= 100){ reasons.push('hn-points'); score += 1; }
+
+  // Optional Google Safe Browsing check
+  const gsb = await checkGoogleSafeBrowsing(link);
+  if(gsb.unsafe){ reasons.push('gsb-unsafe'); score -= 10; }
+
+  const thresholdRisky = Number(process.env.RELIABILITY_RISKY_MAX || -1); // <= -1 defaults to our logic
+  const verdict = (gsb.unsafe || score <= -2) ? 'risky' : (score >= 2 ? 'safe' : 'unknown');
+  return { score, reasons, verdict, host };
+}
+
 async function readJsonSafe(p){
   try { const s = await fs.readFile(p, 'utf8'); return JSON.parse(s); } catch { return Array.isArray(p)?[]:{}; }
 }
@@ -284,12 +370,19 @@ async function main(){
   if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) continue;
       if(blacklistNames.has(k)) continue;
       if(!isLikelyAITool(cand, slug)) continue;
+      // Reliability gate
+      const reliability = await assessReliability(cand);
+      const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||''));
+      if(reliability.verdict === 'risky' || (strict && reliability.verdict !== 'safe')){
+        // Skip risky (and unknown if strict). Optionally log.
+        continue;
+      }
       const tool = toToolShape(cand);
       if(directPublish){
         sec.tools = sec.tools || [];
         sec.tools.push(tool);
         existingNames.add(k);
-        additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link });
+        additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link, reliability });
       } else {
         const domName = sec.name || slug;
         const items = Array.isArray(pending?.items) ? pending.items : [];
@@ -297,7 +390,7 @@ async function main(){
         if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl)){
           items.push({ domain: domName, ...tool, reason: cand.reason });
           pending.items = items;
-          additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link });
+          additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
         }
       }
       addedForDomain += 1;
@@ -328,8 +421,20 @@ async function main(){
       .map(([dom, items]) => [`${dom}:`, ...items.map(a => `  • ${a.name}${a.link?` — ${a.link}`:''}\n    Why: ${a.reason}${a.mode?`\n    Mode: ${a.mode}`:''}`)].join('\n'))
       .join('\n\n');
 
-    // Minimal HTML email (inline styles for broad client support)
+    // Minimal HTML email (inline styles for broad client support) with header and summary
     const esc = s => String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const modeBadge = m => {
+      const isPub = String(m).toLowerCase() === 'published';
+      const bg = isPub ? '#d1f7c4' : '#ffe8a3';
+      const fg = isPub ? '#116329' : '#8a6d00';
+      const label = isPub ? 'Published' : 'Staged';
+      return `<span style="display:inline-block; padding:2px 6px; border-radius:10px; font-size:11px; background:${bg}; color:${fg}; margin-left:6px;">${label}</span>`;
+    };
+
+    const summaryRows = Object.entries(byDomain)
+      .map(([dom, items]) => `<tr><td style="padding:4px 8px;">${esc(dom)}</td><td style="padding:4px 8px; text-align:right;">${items.length}</td></tr>`)
+      .join('');
+
     const htmlSections = Object.entries(byDomain).map(([dom, items]) => `
       <section style="margin:16px 0;">
         <h3 style="margin:0 0 8px; font-size:16px;">${esc(dom)}</h3>
@@ -337,8 +442,9 @@ async function main(){
           ${items.map(a => `
             <li style="margin:6px 0;">
               ${a.link ? `<a href="${esc(a.link)}" style="color:#0969da; text-decoration:none; font-weight:600;">${esc(a.name)}</a>` : `<strong>${esc(a.name)}</strong>`}
-              ${a.mode ? `<span style="color:#6a737d;">(${esc(a.mode)})</span>` : ''}
+              ${a.mode ? modeBadge(a.mode) : ''}
               <div style="color:#24292f; font-size:13px; margin-top:2px;">${esc(a.reason)}</div>
+              ${a.reliability ? `<div style="font-size:12px; color:#57606a; margin-top:2px;">Reliability: ${esc(a.reliability.verdict)} (score ${esc(a.reliability.score)})</div>` : ''}
               ${a.link ? `<div style="font-size:12px; color:#57606a;">${esc(a.link)}</div>` : ''}
             </li>
           `).join('')}
@@ -348,8 +454,17 @@ async function main(){
 
     const html = `
       <div style="font-family:Segoe UI,Arial,sans-serif; line-height:1.4; color:#24292f;">
-        <h2 style="margin:0 0 12px;">AI Atlas</h2>
-        <div style="margin:0 0 14px; color:#57606a;">${additions.length} new ${directPublish? 'published' : 'staged'} tool(s) on ${esc(dateStr)}</div>
+        <div style="display:flex; align-items:center; gap:8px; margin:0 0 8px;">
+          <div style="width:10px; height:10px; border-radius:2px; background:#0969da;"></div>
+          <h2 style="margin:0; font-size:18px;">AI Atlas</h2>
+        </div>
+        <div style="margin:0 0 10px; color:#57606a;">${additions.length} new ${directPublish? 'published' : 'staged'} tool(s) on ${esc(dateStr)}</div>
+        <table style="border-collapse:collapse; border:1px solid #d0d7de; margin:10px 0; width:100%; max-width:420px;">
+          <thead>
+            <tr style="background:#f6f8fa;"><th style="text-align:left; padding:6px 8px;">Domain</th><th style="text-align:right; padding:6px 8px;">Count</th></tr>
+          </thead>
+          <tbody>${summaryRows}</tbody>
+        </table>
         ${htmlSections}
         <hr style="border:none; border-top:1px solid #d0d7de; margin:16px 0;"/>
         <div style="font-size:12px; color:#57606a;">You’re receiving this because discovery ran successfully. Update SMTP settings or disable emails in the workflow to stop notifications.</div>

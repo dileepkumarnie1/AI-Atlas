@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/json",
+  "$schema": "https://json.schemastore.org/schema", 
   "note": "Names (case-insensitive) to exclude from discovery and publication.",
   "names": [
     "youtube-dl"
