@@ -2,10 +2,8 @@ name: Discover New Tools
 
 on:
   schedule:
-    - cron: '0 4 */3 * *'  # Every 3 days at 04:00 UTC
+    - cron: '0 4 * * 1'  # Weekly on Monday at 04:00 UTC (UTC time)
   workflow_dispatch: {}
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
@@ -39,10 +37,12 @@ jobs:
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           GOOGLE_SAFEBROWSING_API_KEY: ${{ secrets.GOOGLE_SAFEBROWSING_API_KEY }}
           # Prefer a Secret if provided; else fall back to Actions Variable
-          RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT }}
+          RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT || 'true' }}
+          GLOBAL_MAX_NEW_TOOLS: 6
         run: node ./scripts/discover-tools.mjs
 
       - name: Create branch for changes
+        id: create_branch
         run: |
           CHANGED=$(git status --porcelain)
           if [ -z "$CHANGED" ]; then echo "No changes"; exit 0; fi
@@ -53,15 +53,15 @@ jobs:
           git add public/tools.json data/discovery_log.json data/pending-tools.json
           git commit -m "chore(discovery): new tools added"
           git push --set-upstream origin $BR
-          echo "BRANCH=$BR" >> $GITHUB_ENV
+          echo "branch=$BR" >> $GITHUB_OUTPUT
 
       - name: Open PR
-        if: ${{ env.BR != '' }}
+        if: ${{ steps.create_branch.outputs.branch != '' }}
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(discovery): new tools added"
-          branch: ${{ env.BR }}
+          branch: ${{ steps.create_branch.outputs.branch }}
           title: "Automated: discovered new tools"
           body: |
             Automated discovery added tools. Please review descriptions and placement.

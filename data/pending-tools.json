@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-22T03:53:04.920Z",
+  "lastUpdated": "2025-09-23T05:55:41.075Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1118,6 +1118,89 @@
       "pros": [],
       "cons": [],
       "reason": "Popular npm package for \"guardrails ai\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "ComfyUI",
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "link": "https://www.comfy.org/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/121283862?v=4&s=64",
+      "about": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 89,091 stars for query \"diffusion\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "MetaGPT",
+      "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "link": "https://mgx.dev/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/198047230?v=4&s=64",
+      "about": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 58,562 stars for query \"agents framework\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "cherry-studio",
+      "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+      "link": "https://cherry-ai.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/187777663?v=4&s=64",
+      "about": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 33,407 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "dspy",
+      "description": "DSPy: The framework for programming—not prompting—language models",
+      "link": "https://dspy.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3046006?v=4&s=64",
+      "about": "DSPy: The framework for programming—not prompting—language models",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 28,490 stars for query \"language model\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Airfoil",
+      "description": "Airfoil",
+      "link": "https://ciechanow.ski/airfoil/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Airfoil",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2544 points) for \"AI\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "gpt-2",
+      "description": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+      "link": "https://openai.com/blog/better-language-models/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64",
+      "about": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 24,204 stars for query \"language model\""
     }
   ]
 }

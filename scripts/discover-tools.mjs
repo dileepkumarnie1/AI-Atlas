@@ -364,6 +364,8 @@ async function main(){
     domains: {},
     totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStops: 0 }
   };
+  // Global candidate pool to allow selecting top-N across all domains
+  const globalCandidates = [];
   for(const [slug, cfg] of Object.entries(sources)){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
@@ -380,50 +382,75 @@ async function main(){
     const deduped = dedupeByName(results);
     diag.domains[slug].candidates = deduped.length;
     diag.totals.candidates += deduped.length;
-    const ranked = chooseBest(deduped);
-    let addedForDomain = 0;
-  for(const cand of ranked){
+    const ranked = chooseBest(deduped).map(c => ({ ...c, _domainSlug: slug }));
+    // Push into global pool; we'll apply strict filters and a global top-N later
+    globalCandidates.push(...ranked);
+  }
+
+  // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select top-N
+  globalCandidates.sort((a,b)=> (b._score||0) - (a._score||0));
+  const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || 6);
+  const selected = [];
+  for(const cand of globalCandidates){
+    if(selected.length >= GLOBAL_MAX_NEW) break;
+    const slug = cand._domainSlug;
+    const sec = domainBySlug.get(normalizeKey(slug));
+    if(!sec) continue;
+    const k = normalizeKey(cand.name);
+    const kl = normalizeKeyLoose(cand.name);
+    // direct name/loose matches
+    if(existingNames.has(k) || existingNamesLoose.has(kl)) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
+    // alias match: map candidate alias -> canonical and see if present
+    const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
+    if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
+    if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
+    if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
+    // Prefer reliable sources/domains for the link itself
+    const host = getHostname(cand.link);
+    const candNameNorm = normalizeKey(cand.name);
+    if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
+      diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
+    }
+    const reliability = await assessReliability(cand);
+    const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+    if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
+    if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
+
+    // Passed all gates, add to selection for publication/staging
+    selected.push({ cand, slug, reliability });
+  }
+
+  // Apply per-domain maxAdds as a secondary safety (but primary control is GLOBAL_MAX_NEW)
+  const domainAddedCount = new Map();
+  for(const sel of selected){
+    const { cand, slug, reliability } = sel;
+    const sec = domainBySlug.get(normalizeKey(slug));
+    if(!sec) continue;
+    const cfg = sources[slug] || {};
+    const perDomainMax = Number(cfg.maxAdds || Infinity);
+    const cur = domainAddedCount.get(slug) || 0;
+    if(cur >= perDomainMax){ diag.domains[slug].maxAddsStop = true; diag.totals.maxAddsStops++; continue; }
   const k = normalizeKey(cand.name);
   const kl = normalizeKeyLoose(cand.name);
-  // direct name/loose matches
-      if(existingNames.has(k) || existingNamesLoose.has(kl)) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
-  // alias match: map candidate alias -> canonical and see if present
-  const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
-      if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
-      if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
-      if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
-      // Skip GitHub-hosted links unless allowlisted (prevents non-standard repo pages from populating)
-      const host = getHostname(cand.link);
-      const candNameNorm = normalizeKey(cand.name);
-      if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
-        diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
+    const tool = toToolShape(cand);
+    if(directPublish){
+      sec.tools = sec.tools || [];
+      sec.tools.push(tool);
+      existingNames.add(k);
+      additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link, reliability });
+      diag.domains[slug].published++; diag.totals.published++;
+    } else {
+      const domName = sec.name || slug;
+      const items = Array.isArray(pending?.items) ? pending.items : [];
+      // avoid staging duplicates
+      if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl)){
+        items.push({ domain: domName, ...tool, reason: cand.reason });
+        pending.items = items;
+        additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
+        diag.domains[slug].staged++; diag.totals.staged++;
       }
-      // Reliability gate
-  const reliability = await assessReliability(cand);
-  const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
-      if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
-      if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
-      const tool = toToolShape(cand);
-      if(directPublish){
-        sec.tools = sec.tools || [];
-        sec.tools.push(tool);
-        existingNames.add(k);
-        additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link, reliability });
-        diag.domains[slug].published++; diag.totals.published++;
-      } else {
-        const domName = sec.name || slug;
-        const items = Array.isArray(pending?.items) ? pending.items : [];
-        // avoid staging duplicates
-        if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl)){
-          items.push({ domain: domName, ...tool, reason: cand.reason });
-          pending.items = items;
-          additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
-          diag.domains[slug].staged++; diag.totals.staged++;
-        }
-      }
-      addedForDomain += 1;
-      if(addedForDomain >= maxAdds){ diag.domains[slug].maxAddsStop = true; diag.totals.maxAddsStops++; break; }
     }
+    domainAddedCount.set(slug, cur + 1);
     diag.domains[slug].added = (diag.domains[slug].staged||0) + (diag.domains[slug].published||0);
   }
 

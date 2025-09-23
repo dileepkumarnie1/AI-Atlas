@@ -31,3 +31,6 @@ build/
 # Temporary shell files
 *.swp
 *.swo
+
+# Discovery diagnostics (generated)
+data/discovery_report.json
