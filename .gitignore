@@ -9,6 +9,7 @@ yarn-error.log*
 # Env
 .env
 .env.local
+.env.*
 
 # OS
 .DS_Store
