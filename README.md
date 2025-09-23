@@ -295,3 +295,15 @@ Steps:
 Troubleshooting:
 - After setting claims, sign out and sign back in to refresh the ID token.
 - Ensure your site’s domain is in Firebase Auth → Settings → Authorized domains (for GitHub Pages/Netlify).
+
+---
+
+## Code of Conduct
+
+Participation in this project is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md). By contributing or engaging in project spaces, you agree to uphold these standards.
+
+---
+
+## Attribution
+
+This site is powered by [Netlify](https://www.netlify.com/).
