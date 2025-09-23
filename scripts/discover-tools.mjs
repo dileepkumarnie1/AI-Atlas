@@ -518,7 +518,19 @@ async function main(){
       .join('');
 
     // If approval flow configured, create pending docs and generate approve/reject links
-    const approvalBase = String(process.env.APPROVAL_BASE_URL||'').replace(/\/$/,'');
+    // Normalize APPROVAL_BASE_URL to the site origin (strip any path) so function URL is correct
+    const approvalBase = (() => {
+      const raw = String(process.env.APPROVAL_BASE_URL || '').trim();
+      if(!raw) return '';
+      try{
+        const u = new URL(raw);
+        return u.origin; // ensures we don't end up with /subpath/.netlify/functions/...
+      }catch{
+        // Fallback: extract protocol+host manually and trim trailing slashes
+        const m = raw.match(/^(https?:\/\/[^\/]+)/i);
+        return (m ? m[1] : raw).replace(/\/+$/,'');
+      }
+    })();
     const useApproval = Boolean(approvalBase) && Boolean(process.env.ADMIN_APPROVAL_SIGNING_KEY);
     let db = null;
     if(useApproval){ await initFirebaseIfPossible(); try{ db = getFirestoreSafe && getFirestoreSafe(); }catch{} }
