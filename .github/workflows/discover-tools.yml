@@ -39,6 +39,11 @@ jobs:
           # Prefer a Secret if provided; else fall back to Actions Variable
           RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT || 'true' }}
           GLOBAL_MAX_NEW_TOOLS: 6
+          # Approval flow config (optional): base URL for Netlify function and signing key
+          APPROVAL_BASE_URL: ${{ vars.APPROVAL_BASE_URL }}
+          ADMIN_APPROVAL_SIGNING_KEY: ${{ secrets.ADMIN_APPROVAL_SIGNING_KEY }}
+          # Firebase service account (JSON string). Enables creation of pending docs for approval links.
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node ./scripts/discover-tools.mjs
 
       - name: Create branch for changes

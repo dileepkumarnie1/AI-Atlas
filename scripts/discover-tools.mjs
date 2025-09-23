@@ -5,6 +5,30 @@
 import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
+
+// Optional Firestore (for approval links flow)
+let fbInitTried = false;
+let getFirestoreSafe = null;
+async function initFirebaseIfPossible(){
+  if(fbInitTried) return;
+  fbInitTried = true;
+  try{
+    const svc = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+    if(!svc) return;
+    const { initializeApp, cert } = await import('firebase-admin/app');
+    const { getFirestore } = await import('firebase-admin/firestore');
+    const key = JSON.parse(svc);
+    initializeApp({ credential: cert(key) });
+    getFirestoreSafe = () => getFirestore();
+  }catch{/* ignore */}
+}
+
+function signId(id){
+  const SECRET = String(process.env.ADMIN_APPROVAL_SIGNING_KEY||'');
+  if(!SECRET) return '';
+  return crypto.createHmac('sha256', SECRET).update(String(id)).digest('hex');
+}
 
 const root = path.resolve(process.cwd());
 const DATA_DIR = path.join(root, 'data');
@@ -493,22 +517,63 @@ async function main(){
       .map(([dom, items]) => `<tr><td style="padding:4px 8px;">${esc(dom)}</td><td style="padding:4px 8px; text-align:right;">${items.length}</td></tr>`)
       .join('');
 
-    const htmlSections = Object.entries(byDomain).map(([dom, items]) => `
-      <section style="margin:16px 0;">
-        <h3 style="margin:0 0 8px; font-size:16px;">${esc(dom)}</h3>
-        <ul style="margin:0; padding-left:18px;">
-          ${items.map(a => `
+    // If approval flow configured, create pending docs and generate approve/reject links
+    const approvalBase = String(process.env.APPROVAL_BASE_URL||'').replace(/\/$/,'');
+    const useApproval = Boolean(approvalBase) && Boolean(process.env.ADMIN_APPROVAL_SIGNING_KEY);
+    let db = null;
+    if(useApproval){ await initFirebaseIfPossible(); try{ db = getFirestoreSafe && getFirestoreSafe(); }catch{} }
+
+    async function ensurePendingAndLinks(domainName, a){
+      if(!useApproval || !db) return { approve:'#', reject:'#', id:'' };
+      const slug = normalizeKey(domainName || a.domain);
+      const doc = {
+        name: a.name,
+        description: '',
+        about: '',
+        link: a.link,
+        iconUrl: '',
+        tags: [], pros: [], cons: [],
+        domainSlug: slug,
+        domainName,
+        source: 'discovery',
+        status: 'pending',
+        createdAt: new Date()
+      };
+      const ref = await db.collection('pending_tools').add(doc);
+      const id = ref.id;
+      const token = signId(id);
+      const approve = `${approvalBase}/.netlify/functions/approve-tool?action=approve&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
+      const reject = `${approvalBase}/.netlify/functions/approve-tool?action=reject&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
+      return { approve, reject, id };
+    }
+
+    const htmlSections = await Promise.all(Object.entries(byDomain).map(async ([dom, items]) => {
+      const rows = await Promise.all(items.map(async a => {
+        const links = await ensurePendingAndLinks(dom, a);
+        const approvalHtml = useApproval && links.id ? `<div style="margin-top:6px;">
+          <a href="${links.approve}" style="background:#2da44e;color:#fff;padding:4px 8px;border-radius:6px;text-decoration:none;">Approve</a>
+          <a href="${links.reject}" style="background:#d1242f;color:#fff;padding:4px 8px;border-radius:6px;text-decoration:none;margin-left:8px;">Reject</a>
+          <span style="color:#57606a;font-size:12px;margin-left:6px;">ID: ${links.id}</span>
+        </div>` : '';
+        return `
             <li style="margin:6px 0;">
               ${a.link ? `<a href="${esc(a.link)}" style="color:#0969da; text-decoration:none; font-weight:600;">${esc(a.name)}</a>` : `<strong>${esc(a.name)}</strong>`}
               ${a.mode ? modeBadge(a.mode) : ''}
               <div style="color:#24292f; font-size:13px; margin-top:2px;">${esc(a.reason)}</div>
               ${a.reliability ? `<div style="font-size:12px; color:#57606a; margin-top:2px;">Reliability: ${esc(a.reliability.verdict)} (score ${esc(a.reliability.score)})</div>` : ''}
               ${a.link ? `<div style="font-size:12px; color:#57606a;">${esc(a.link)}</div>` : ''}
+              ${approvalHtml}
             </li>
-          `).join('')}
+          `;
+      }));
+      return `
+      <section style="margin:16px 0;">
+        <h3 style="margin:0 0 8px; font-size:16px;">${esc(dom)}</h3>
+        <ul style="margin:0; padding-left:18px;">
+          ${rows.join('')}
         </ul>
-      </section>
-    `).join('');
+      </section>`;
+    }));
 
     const html = `
       <div style="font-family:Segoe UI,Arial,sans-serif; line-height:1.4; color:#24292f;">
@@ -523,7 +588,7 @@ async function main(){
           </thead>
           <tbody>${summaryRows}</tbody>
         </table>
-        ${htmlSections}
+  ${htmlSections.join('')}
         <hr style="border:none; border-top:1px solid #d0d7de; margin:16px 0;"/>
         <div style="font-size:12px; color:#57606a;">You’re receiving this because discovery ran successfully. Update SMTP settings or disable emails in the workflow to stop notifications.</div>
       </div>`;
