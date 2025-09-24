@@ -39,7 +39,7 @@ Where enforced
 
 Change the allowlist
 - Search for the constant (case-insensitive names):
-   - In UI (`public/index.html`): `const ALLOWLIST_GITHUB_NAMES = new Set([ 'github copilot' ])`
+   - In UI (`index.html`): `const ALLOWLIST_GITHUB_NAMES = new Set([ 'github copilot' ])`
    - In scripts: `ALLOWLIST_GITHUB_NAMES`
 - Add another tool name in lowercase to the set(s) if you want to allow a specific GitHub-hosted tool.
 
