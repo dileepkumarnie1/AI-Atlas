@@ -73,7 +73,17 @@
       <div>
         <div class="card">
           <h3>Quick Actions</h3>
-          <p class="note">More admin features coming soon. This MVP supports listing and approving/rejecting pending tools.</p>
+          <div class="stack" style="margin-top:8px">
+            <div class="flex">
+              <button id="btn-health" class="btn">Check Health</button>
+              <span id="health-status" class="note"></span>
+            </div>
+            <div class="flex">
+              <button id="btn-discover" class="btn primary">Run Discovery Now</button>
+              <button id="btn-export" class="btn">Publish Now (Export)</button>
+            </div>
+            <p class="note">Runs the corresponding GitHub workflow_dispatch on the <code>main</code> branch.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -195,6 +205,31 @@
     document.getElementById('refresh-pending').addEventListener('click', async ()=>{
       try { const data = await fetchPending(); renderPending(data.items||[]); } catch(e){ alert(e.message||e); }
     });
+
+    async function callHealth(){
+      const at = await getAdminToken();
+      if(!at || !at.isAdmin){ alert('Admin role required'); return; }
+      const headers = { 'Authorization': 'Bearer ' + at.token };
+      const res = await fetch('/.netlify/functions/admin-health', { headers });
+      const el = document.getElementById('health-status');
+      if(!res.ok){ el.textContent = 'Health error: ' + res.status; return; }
+      const j = await res.json();
+      const missing = (j.checks?.env?.required||[]).filter(x=>!x.present).map(x=>x.key);
+      el.textContent = 'OK' + (missing.length ? ` — missing: ${missing.join(', ')}` : '');
+    }
+
+    async function dispatch(workflow){
+      const at = await getAdminToken();
+      if(!at || !at.isAdmin){ alert('Admin role required'); return; }
+      const headers = { 'Authorization': 'Bearer ' + at.token, 'Content-Type':'application/json' };
+      const res = await fetch('/.netlify/functions/admin-dispatch', { method:'POST', headers, body: JSON.stringify({ workflow, ref:'main' }) });
+      if(!res.ok){ const t = await res.text(); alert('Dispatch failed: ' + t); return; }
+      alert('Dispatch queued for ' + workflow);
+    }
+
+    document.getElementById('btn-health').addEventListener('click', callHealth);
+    document.getElementById('btn-discover').addEventListener('click', ()=>dispatch('discover'));
+    document.getElementById('btn-export').addEventListener('click', ()=>dispatch('export'));
 
     signInBtn.addEventListener('click', async ()=>{
       try { await signInWithPopup(auth, provider); } catch(e){ alert(e.message||e); }

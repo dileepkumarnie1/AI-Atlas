@@ -307,3 +307,27 @@ Participation in this project is governed by our [Code of Conduct](./CODE_OF_CON
 ## Attribution
 
 This site is powered by [Netlify](https://www.netlify.com/).
+
+---
+
+## Admin endpoints configuration
+
+Admin-only Netlify Functions support curation and operations:
+
+- `/.netlify/functions/admin-list-pending` (GET) — list pending tools
+- `/.netlify/functions/admin-review` (POST) — approve/reject a pending tool
+- `/.netlify/functions/admin-dispatch` (POST) — trigger GitHub workflows (discover/export)
+- `/.netlify/functions/admin-health` (GET) — health and connectivity checks
+
+Required Netlify environment variables:
+
+- FIREBASE_SERVICE_ACCOUNT_JSON — Raw JSON for a Firebase service account (Firestore access)
+- ADMIN_ALLOWED_ORIGIN — Exact origin allowed for CORS (e.g., https://your-site.netlify.app)
+- APPROVAL_BASE_URL — Public site URL (used to derive origin if ADMIN_ALLOWED_ORIGIN not set)
+- GITHUB_REPO — GitHub repo in owner/name format, e.g., user/ai-prompt-recommender
+- GITHUB_TOKEN — Token with workflow scope to call the dispatch API
+
+Access control:
+
+- All admin functions require a Firebase ID token with custom claim `admin: true`.
+- Use the provided script to set the claim: `npm run set:admin`
