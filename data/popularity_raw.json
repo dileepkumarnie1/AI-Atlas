@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2025-09-23T03:41:49.121Z",
+  "generatedAt": "2025-09-24T03:42:44.984Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 89081,
-          "forks": 9940,
-          "openIssues": 2934
+          "stars": 89169,
+          "forks": 9948,
+          "openIssues": 2940
         },
         "npm": null
       },
-      "popularityScore": 426.43
+      "popularityScore": 426.47
     },
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41782,
+          "stars": 41785,
           "forks": 5327,
           "openIssues": 299
         },
@@ -2116,7 +2116,7 @@
   "ranked": [
     {
       "name": "ComfyUI",
-      "score": 426.43,
+      "score": 426.47,
       "rank": 1
     },
     {
