@@ -387,7 +387,7 @@ def main():
 
     os.makedirs(args.out_dir, exist_ok=True)
     plan = build_test_plan()
-    if args.list-features:
+    if args.list_features:
         print('Available features:')
         for f in _available_features(plan):
             print('-', f)
