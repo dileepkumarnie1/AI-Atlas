@@ -313,26 +313,98 @@ def write_results(results: List[TestResult], out_dir: str) -> None:
             group.to_excel(w, sheet_name=feature[:31], index=False)
 
 
+def _available_features(plan: List[TestCase]) -> List[str]:
+    return sorted({tc.feature for tc in plan})
+
+
+def _resolve_features(input_csv: str, plan_features: List[str]) -> List[str]:
+    """Resolve comma-separated feature inputs to canonical feature names.
+
+    - Case-insensitive match
+    - Synonym mapping (e.g., 'hamburger' -> 'Mobile Nav')
+    - Substring fallback (either direction)
+    """
+    requested = [x.strip().lower() for x in (input_csv or '').split(',') if x.strip()]
+    if not requested:
+        return []
+
+    avail_map = {f.lower(): f for f in plan_features}
+    selected: List[str] = []
+
+    synonyms = {
+        'hamburger': 'Mobile Nav',
+        'hamburger menu': 'Mobile Nav',
+        'mobile nav': 'Mobile Nav',
+        'mobile navigation': 'Mobile Nav',
+        'mobile menu': 'Mobile Nav',
+        'theme color': 'Accessibility',
+        'theme-color': 'Accessibility',
+        'accessibility': 'Accessibility',
+        'background': 'Background Fix',
+    }
+
+    for r in requested:
+        # Exact feature name
+        if r in avail_map:
+            selected.append(avail_map[r])
+            continue
+        # Synonyms
+        matched_syn = False
+        for key, canon in synonyms.items():
+            if key in r:
+                selected.append(canon)
+                matched_syn = True
+                break
+        if matched_syn:
+            continue
+        # Substring match (both directions)
+        hit = None
+        for low, orig in avail_map.items():
+            if r in low or low in r:
+                hit = orig
+                break
+        if hit:
+            selected.append(hit)
+
+    # De-duplicate while preserving order
+    seen = set()
+    uniq: List[str] = []
+    for f in selected:
+        if f not in seen:
+            uniq.append(f)
+            seen.add(f)
+    return uniq
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--base-url', default=os.environ.get('TEST_BASE_URL', 'http://localhost:8888'))
     parser.add_argument('--out-dir', default='tests/output')
     parser.add_argument('--features', help='Comma-separated list of feature names to include (case-insensitive).')
     parser.add_argument('--ids', help='Comma-separated list of test IDs to include.')
+    parser.add_argument('--list-features', action='store_true', help='List available features and exit.')
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
     plan = build_test_plan()
+    if args.list-features:
+        print('Available features:')
+        for f in _available_features(plan):
+            print('-', f)
+        return
     # Apply filters if provided
     if args.features:
-        wanted = {x.strip().lower() for x in args.features.split(',') if x.strip()}
-        plan = [tc for tc in plan if tc.feature.lower() in wanted]
+        avail = _available_features(plan)
+        resolved = _resolve_features(args.features, avail)
+        plan = [tc for tc in plan if tc.feature in resolved]
     if args.ids:
         ids = {x.strip() for x in args.ids.split(',') if x.strip()}
         plan = [tc for tc in plan if tc.id in ids]
 
     if not plan:
-        raise SystemExit('No tests selected after applying filters. Provide valid --features or --ids.')
+        feats = ', '.join(_available_features(build_test_plan()))
+        raise SystemExit('No tests selected after applying filters. Provide valid --features or --ids. '
+                         f"Try --features one of: {feats}")
     write_test_plan(plan, args.out_dir)
 
     # Attempt to run UI tests; note that admin endpoints may be blocked depending on deployment
