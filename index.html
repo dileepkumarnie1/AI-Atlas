@@ -64,6 +64,10 @@
         html.dark #background-overlay {
             background: rgba(30,41,59,0.80);
         }
+        /* Mobile: avoid iOS background-attachment jank */
+        @media (max-width: 768px) {
+            body { background-attachment: scroll !important; }
+        }
         /* ...existing code... */
     :root {
         --bg-primary: transparent; /* Let the image show through */
@@ -291,6 +295,13 @@
         #tool-details-modal-content {
             max-width: 600px;
         }
+        /* Mobile menu styles */
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); display: none; z-index: 60; }
+        .mobile-menu { position: fixed; top: 0; right: 0; height: 100vh; width: 85vw; max-width: 360px; background: var(--bg-primary-translucent); border-left: 1px solid var(--border-color); box-shadow: -6px 0 24px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform .25s ease; z-index: 70; }
+        html.dark .mobile-menu { background: rgba(24,24,27,0.92); }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu-overlay.show { display:block; }
+        .no-scroll { overflow: hidden; }
     </style>
     
 </head>
@@ -308,6 +319,10 @@
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
+                        <!-- Mobile hamburger -->
+                        <button id="mobile-menu-btn" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-menu-panel" class="md:hidden p-2 rounded-md border border-color bg-card hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        </button>
                         <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full border border-color bg-card hover:bg-secondary transition flex items-center justify-center mr-2">
                             <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                             <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 12.122l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414zM17 13a1 1 0 100 2h1a1 1 0 100-2h-1z" clip-rule="evenodd"></path></svg>
@@ -326,6 +341,25 @@
                 </div>
             </nav>
         </header>
+
+        <!-- Mobile menu panel -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay" tabindex="-1" aria-hidden="true"></div>
+        <aside id="mobile-menu-panel" class="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <div class="p-4 flex items-center justify-between">
+                <h2 id="mobile-menu-title" class="text-lg font-semibold text-primary">Menu</h2>
+                <button id="mobile-menu-close" class="p-2 rounded-md border border-color bg-card hover:bg-secondary" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="px-4 pb-6 flex flex-col gap-2">
+                <a href="#" id="m-domains-link" class="px-3 py-2 rounded-md text-sm font-medium">Domains</a>
+                <a href="#" id="m-submit-link" class="px-3 py-2 rounded-md text-sm font-medium">Submit a Tool</a>
+                <a href="#" id="m-about-link" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+            </nav>
+            <div class="px-4 pb-6 border-t border-color">
+                <div id="m-auth-container" class="pt-4"></div>
+            </div>
+        </aside>
 
         <!-- Policy Banner: GitHub-hosted tools exclusion -->
         <div id="policy-banner" class="hidden">
@@ -425,6 +459,67 @@
             }
         }
         setupTheme();
+
+        // --- MOBILE MENU LOGIC ---
+        (function mobileMenu(){
+            const btn = document.getElementById('mobile-menu-btn');
+            const panel = document.getElementById('mobile-menu-panel');
+            const overlay = document.getElementById('mobile-menu-overlay');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const body = document.body;
+            if(!btn || !panel || !overlay) return;
+            let open = false;
+            let lastFocused = null;
+            const focusables = () => panel.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])');
+            function setOpen(v){
+                open = !!v;
+                panel.classList.toggle('open', open);
+                overlay.classList.toggle('show', open);
+                btn.setAttribute('aria-expanded', String(open));
+                body.classList.toggle('no-scroll', open);
+                if(open){
+                    lastFocused = document.activeElement;
+                    setTimeout(()=>{ (focusables()[0]||panel).focus(); }, 0);
+                }else{
+                    overlay.blur();
+                    if(lastFocused && lastFocused.focus) lastFocused.focus();
+                }
+            }
+            function onKey(e){
+                if(!open) return;
+                if(e.key === 'Escape'){ setOpen(false); }
+                if(e.key === 'Tab'){
+                    const f = Array.from(focusables());
+                    const first = f[0], last = f[f.length-1];
+                    if(!first || !last) return;
+                    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+                    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+                }
+            }
+            btn.addEventListener('click', ()=> setOpen(!open));
+            closeBtn?.addEventListener('click', ()=> setOpen(false));
+            overlay.addEventListener('click', ()=> setOpen(false));
+            document.addEventListener('keydown', onKey);
+            // Click-through: mirror main nav interactions
+            const linkMap = [
+                ['m-domains-link', 'domains-link'],
+                ['m-submit-link', 'submit-link'],
+                ['m-about-link', 'about-link']
+            ];
+            for(const [mId, dId] of linkMap){
+                const src = document.getElementById(mId);
+                const dst = document.getElementById(dId);
+                if(src && dst){ src.addEventListener('click', (e)=>{ e.preventDefault(); setOpen(false); dst.click(); }); }
+            }
+            // Auth container mirror (optional: simple view-only mount)
+            const authSrc = document.getElementById('auth-container');
+            const authDst = document.getElementById('m-auth-container');
+            if(authSrc && authDst){
+                const clone = authSrc.cloneNode(true);
+                clone.id = 'auth-container-mobile';
+                authDst.appendChild(clone);
+            }
+        })();
 
         // --- Policy banner (dismissible) ---
         (function setupPolicyBanner(){
