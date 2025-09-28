@@ -128,7 +128,11 @@ jobs:
           # Primary: explicit IDs
           if [ -n "$INPUT_IDS" ]; then
             json=$(jq -n --arg ids "$INPUT_IDS" '{include: [{include_ids: $ids}]}')
-            echo "matrix=$json" >> "$GITHUB_OUTPUT"
+            {
+              echo "matrix<<JSON"
+              echo "$json"
+              echo JSON
+            } >> "$GITHUB_OUTPUT"
             exit 0
           fi
           # Secondary: explicit features
@@ -147,7 +151,11 @@ jobs:
             # Build array JSON
             inc_json=$(printf '%s\n' "${inc_items[@]}" | jq -sc '.')
             json=$(jq -n --argjson inc "$inc_json" '{include: $inc}')
-            echo "matrix=$json" >> "$GITHUB_OUTPUT"
+            {
+              echo "matrix<<JSON"
+              echo "$json"
+              echo JSON
+            } >> "$GITHUB_OUTPUT"
             exit 0
           fi
           # Auto-detect by changed files
@@ -191,7 +199,11 @@ jobs:
           done < sel.txt
           inc_json=$(printf '%s\n' "${inc_items[@]}" | jq -sc '.')
           json=$(jq -n --argjson inc "$inc_json" '{include: $inc}')
-          echo "matrix=$json" >> "$GITHUB_OUTPUT"
+          {
+            echo "matrix<<JSON"
+            echo "$json"
+            echo JSON
+          } >> "$GITHUB_OUTPUT"
 
   ui-tests:
     name: Playwright UI tests (on-demand)
