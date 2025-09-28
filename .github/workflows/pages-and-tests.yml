@@ -12,7 +12,10 @@ on:
         type: choice
         options: ["true", "false"]
       features:
-        description: "Comma-separated feature names to test (e.g., 'Mobile Nav,Accessibility'). Leave empty to auto-detect or use ids."
+        description: >-
+          Comma-separated feature names to test. Canonical features: 'Mobile Nav', 'Background Fix', 'Accessibility',
+          'Admin Health Endpoint', 'Admin Dispatch Endpoint', 'Legacy Cleanup'. Synonyms allowed (e.g., 'hamburger', 'hamburger mobile',
+          'mobile menu' -> 'Mobile Nav'; 'theme-color' -> 'Accessibility'). Leave empty to auto-detect or use 'ids'.
         required: false
         type: string
       ids:
@@ -116,6 +119,18 @@ jobs:
           fi
           echo "Changed files:"; cat changed.txt || true
 
+      - name: Show available features
+        run: |
+          echo "Available canonical features:"
+          printf '%s\n' \
+            "- Mobile Nav" \
+            "- Background Fix" \
+            "- Accessibility" \
+            "- Admin Health Endpoint" \
+            "- Admin Dispatch Endpoint" \
+            "- Legacy Cleanup"
+          echo "Synonyms: 'hamburger', 'hamburger mobile', 'mobile nav', 'mobile menu' => Mobile Nav; 'theme-color' => Accessibility"
+
       - name: Build test matrix
         id: build
         env:
@@ -142,7 +157,22 @@ jobs:
             for f in "${FEATS[@]}"; do
               f_trim=$(echo "$f" | xargs)
               [ -z "$f_trim" ] && continue
-              inc_items+=("$(jq -n --arg f "$f_trim" '{feature: $f}')")
+              lower=$(echo "$f_trim" | tr '[:upper:]' '[:lower:]')
+              canon="$f_trim"
+              if [[ "$lower" == *"hamburger"* || "$lower" == *"mobile nav"* || "$lower" == *"mobile menu"* || "$lower" == *"mobile navigation"* ]]; then
+                canon="Mobile Nav"
+              elif [[ "$lower" == *"theme-color"* || "$lower" == *"theme color"* || "$lower" == *"accessibility"* ]]; then
+                canon="Accessibility"
+              elif [[ "$lower" == *"background"* ]]; then
+                canon="Background Fix"
+              elif [[ "$lower" == *"admin health"* ]]; then
+                canon="Admin Health Endpoint"
+              elif [[ "$lower" == *"admin dispatch"* ]]; then
+                canon="Admin Dispatch Endpoint"
+              elif [[ "$lower" == *"legacy"* || "$lower" == *"public/index.html"* ]]; then
+                canon="Legacy Cleanup"
+              fi
+              inc_items+=("$(jq -n --arg f "$canon" '{feature: $f}')")
             done
             if [ ${#inc_items[@]} -eq 0 ]; then
               echo "No valid features specified." >&2
