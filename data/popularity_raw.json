@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2025-09-27T03:39:02.324Z",
+  "generatedAt": "2025-09-28T03:46:17.558Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 89429,
-          "forks": 9993,
-          "openIssues": 2957
+          "stars": 89509,
+          "forks": 10002,
+          "openIssues": 2960
         },
         "npm": null
       },
-      "popularityScore": 426.6
+      "popularityScore": 426.63
     },
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41804,
-          "forks": 5327,
+          "stars": 41808,
+          "forks": 5330,
           "openIssues": 299
         },
         "npm": null
       },
-      "popularityScore": 398.02,
+      "popularityScore": 398.03,
       "mpScore": 0,
       "freqScore": 0
     },
@@ -41,13 +41,13 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 2434,
+          "stars": 2433,
           "forks": 345,
           "openIssues": 55
         },
         "npm": null
       },
-      "popularityScore": 287.84,
+      "popularityScore": 287.82,
       "mpScore": 0,
       "freqScore": 0
     },
@@ -2116,17 +2116,17 @@
   "ranked": [
     {
       "name": "ComfyUI",
-      "score": 426.6,
+      "score": 426.63,
       "rank": 1
     },
     {
       "name": "Stable Diffusion",
-      "score": 398.02,
+      "score": 398.03,
       "rank": 2
     },
     {
       "name": "DreamStudio",
-      "score": 287.84,
+      "score": 287.82,
       "rank": 3
     },
     {
