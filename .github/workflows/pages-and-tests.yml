@@ -26,6 +26,36 @@ on:
         description: "Override TEST_BASE_URL; if empty, uses repo variable or deployed Pages URL."
         required: false
         type: string
+      feature_mobile_nav:
+        description: "Feature toggle: Mobile Nav"
+        required: false
+        default: false
+        type: boolean
+      feature_background_fix:
+        description: "Feature toggle: Background Fix"
+        required: false
+        default: false
+        type: boolean
+      feature_accessibility:
+        description: "Feature toggle: Accessibility"
+        required: false
+        default: false
+        type: boolean
+      feature_admin_health:
+        description: "Feature toggle: Admin Health Endpoint"
+        required: false
+        default: false
+        type: boolean
+      feature_admin_dispatch:
+        description: "Feature toggle: Admin Dispatch Endpoint"
+        required: false
+        default: false
+        type: boolean
+      feature_legacy_cleanup:
+        description: "Feature toggle: Legacy Cleanup"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -136,6 +166,12 @@ jobs:
         env:
           INPUT_FEATURES: ${{ inputs.features }}
           INPUT_IDS: ${{ inputs.ids }}
+          T_MN: ${{ inputs.feature_mobile_nav }}
+          T_BG: ${{ inputs.feature_background_fix }}
+          T_AC: ${{ inputs.feature_accessibility }}
+          T_AH: ${{ inputs.feature_admin_health }}
+          T_AD: ${{ inputs.feature_admin_dispatch }}
+          T_LG: ${{ inputs.feature_legacy_cleanup }}
         run: |
           set -euo pipefail
           INPUT_FEATURES="${INPUT_FEATURES:-}"
@@ -185,6 +221,23 @@ jobs:
               echo "matrix<<JSON"
               echo "$json"
               echo JSON
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Third: feature toggles
+          inc_items=()
+          add_inc() { inc_items+=("$(jq -n --arg f "$1" '{feature: $f}')"); }
+          [ "${T_MN}" = "true" ] && add_inc "Mobile Nav"
+          [ "${T_BG}" = "true" ] && add_inc "Background Fix"
+          [ "${T_AC}" = "true" ] && add_inc "Accessibility"
+          [ "${T_AH}" = "true" ] && add_inc "Admin Health Endpoint"
+          [ "${T_AD}" = "true" ] && add_inc "Admin Dispatch Endpoint"
+          [ "${T_LG}" = "true" ] && add_inc "Legacy Cleanup"
+          if [ ${#inc_items[@]} -gt 0 ]; then
+            inc_json=$(printf '%s\n' "${inc_items[@]}" | jq -sc '.')
+            json=$(jq -n --argjson inc "$inc_json" '{include: $inc}')
+            {
+              echo "matrix<<JSON"; echo "$json"; echo JSON;
             } >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -244,7 +297,7 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJson(needs.select-tests.outputs.matrix) }}
     env:
-      TEST_BASE_URL_VAR: ${{ inputs.base_url || vars.TEST_BASE_URL }}
+      TEST_BASE_URL_VAR: ${{ inputs.base_url != '' && inputs.base_url || (vars.TEST_BASE_URL != '' && vars.TEST_BASE_URL || '') }}
       DEPLOYED_URL: ${{ needs.deploy.outputs.page_url }}
     steps:
       - name: Checkout
