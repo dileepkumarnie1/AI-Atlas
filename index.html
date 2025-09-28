@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Domain Atlas</title>
+    <!-- Mobile address bar theming -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0c">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -129,6 +132,7 @@
             background: var(--header-bg); 
             border-color: var(--border-color);
             box-shadow: var(--header-shadow);
+            padding-top: env(safe-area-inset-top);
         }
         #home-link { color: var(--text-primary); }
         nav a { color: var(--text-secondary); }
@@ -309,7 +313,8 @@
     <div id="background-overlay"></div>
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:1;">
         <!-- Header -->
-        <header class="sticky top-0 backdrop-blur-lg border-b z-50">
+    <a href="#content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-sm px-3 py-2 rounded z-[100]">Skip to content</a>
+    <header class="sticky top-0 backdrop-blur-lg border-b z-50">
             <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
@@ -379,7 +384,7 @@
             </div>
         </main>
 
-        <footer class="border-t">
+    <footer class="border-t" style="padding-bottom: env(safe-area-inset-bottom);">
             <div class="container mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
                 <p class="text-muted">&copy; 2025 AI Domain Atlas. All rights reserved.</p>
                 <p class="text-sm text-muted mt-1">
