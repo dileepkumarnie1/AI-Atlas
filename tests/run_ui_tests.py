@@ -251,7 +251,8 @@ def run_ui_tests(base_url: str, out_dir: str) -> List[TestResult]:
             # AC-002: Theme-color meta
             try:
                 dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
-                count = dpage.evaluate("document.querySelectorAll('meta[name=\\"theme-color\\"]').length")
+                # Use CSS selector without quotes in attribute to avoid Python string escaping issues on Windows
+                count = dpage.evaluate('document.querySelectorAll("meta[name=theme-color]").length')
                 status = 'pass' if count >= 2 else 'fail'
                 results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', status, f"count={count}", shot('AC-002', dpage)))
             except Exception as e:
