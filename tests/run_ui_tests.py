@@ -252,7 +252,7 @@ def run_ui_tests(base_url: str, out_dir: str) -> List[TestResult]:
             try:
                 dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
                 count = dpage.evaluate("document.querySelectorAll('meta[name=\\"theme-color\\"]').length")
-                status = 'pass' if count >= 1 else 'fail'
+                status = 'pass' if count >= 2 else 'fail'
                 results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', status, f"count={count}", shot('AC-002', dpage)))
             except Exception as e:
                 results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', 'fail', str(e), shot('AC-002_error', dpage)))
@@ -316,10 +316,22 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--base-url', default=os.environ.get('TEST_BASE_URL', 'http://localhost:8888'))
     parser.add_argument('--out-dir', default='tests/output')
+    parser.add_argument('--features', help='Comma-separated list of feature names to include (case-insensitive).')
+    parser.add_argument('--ids', help='Comma-separated list of test IDs to include.')
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
     plan = build_test_plan()
+    # Apply filters if provided
+    if args.features:
+        wanted = {x.strip().lower() for x in args.features.split(',') if x.strip()}
+        plan = [tc for tc in plan if tc.feature.lower() in wanted]
+    if args.ids:
+        ids = {x.strip() for x in args.ids.split(',') if x.strip()}
+        plan = [tc for tc in plan if tc.id in ids]
+
+    if not plan:
+        raise SystemExit('No tests selected after applying filters. Provide valid --features or --ids.')
     write_test_plan(plan, args.out_dir)
 
     # Attempt to run UI tests; note that admin endpoints may be blocked depending on deployment
