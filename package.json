@@ -19,7 +19,8 @@
         "tools:enrich:firestore": "node ./scripts/enrich-firestore-tools.mjs",
         "ci:dispatch": "node ./scripts/dispatch-and-monitor.mjs --workflows=discover,export --ref=main",
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
-        "serve:functions": "npx netlify dev --dir=."
+        "serve:functions": "npx netlify dev --dir=.",
+        "test:ui": "python ./tests/run_ui_tests.py"
     },
     "dependencies": {
         "dotenv": "^16.4.5",
