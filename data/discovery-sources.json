@@ -16,6 +16,9 @@
     "githubStarsMin": 300,
     "githubPerPage": 10,
     "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/ai-chat-assistant/"
+    ],
     "curated": [
       { "name": "Orchids AI", "link": "https://orchids.ai", "description": "Unified AI chat assistant platform", "tags": ["Freemium"] },
       { "name": "DeepSeek Chat", "link": "https://chat.deepseek.com", "description": "Fast, high-quality LLM chat", "tags": ["Free"] },
@@ -29,7 +32,11 @@
     "maxAdds": 2,
     "githubStarsMin": 800,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/image-ai-en/",
+      "https://www.aixploria.com/en/category/image-editing/"
+    ]
   },
   "video-tools": {
     "githubQueries": ["video generation", "text to video", "video-to-video", "avatar video", "automatic rotoscoping", "subtitle ai", "lip sync ai"],
@@ -38,7 +45,11 @@
     "maxAdds": 4,
     "githubStarsMin": 200,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/video-generators/",
+      "https://www.aixploria.com/en/category/text-to-video-en/"
+    ]
   },
   "code-assistance": {
     "githubQueries": ["code assistant", "ai code", "code completion", "code llm", "copilot", "test generation ai"],
@@ -47,7 +58,11 @@
     "maxAdds": 2,
     "githubStarsMin": 800,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/assistant-code-en/",
+      "https://www.aixploria.com/en/category/developer-tools/"
+    ]
   },
   "audio-music": {
     "githubQueries": ["text to speech", "voice cloning", "tts", "music generation", "voice conversion", "audio separation"],
@@ -56,7 +71,11 @@
     "maxAdds": 2,
     "githubStarsMin": 500,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/music/",
+      "https://www.aixploria.com/en/category/voice-reading/"
+    ]
   },
   "productivity": {
     "githubQueries": ["meeting notes ai", "transcription ai", "document automation ai", "email assistant ai", "calendar assistant ai"],
@@ -92,7 +111,11 @@
     "maxAdds": 2,
     "githubStarsMin": 600,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/marketing-ai/",
+      "https://www.aixploria.com/en/category/seo-ai-tools/"
+    ]
   },
   "data-analysis": {
     "githubQueries": ["sql copilot", "data analysis ai", "notebook copilot", "pandas ai", "data wrangler ai"],
@@ -101,7 +124,10 @@
     "maxAdds": 2,
     "githubStarsMin": 500,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/data-analytics-ai/"
+    ]
   },
   "3d-modeling": {
     "githubQueries": ["text to 3d", "neural rendering", "gaussian splatting", "instant-ngp", "nerf", "mesh generation ai"],

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T14:09:49.398Z",
+  "lastUpdated": "2025-09-29T18:00:20.998Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1527,6 +1527,34 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 7,596 stars for query \"meeting notes ai\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "kestra",
+      "description": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+      "link": "https://kestra.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/59033362?v=4&s=64",
+      "about": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 21,343 stars for query \"copilot\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "plandex",
+      "description": "Open source AI coding agent. Designed for large projects and real world tasks.",
+      "link": "https://plandex.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/148917357?v=4&s=64",
+      "about": "Open source AI coding agent. Designed for large projects and real world tasks.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 14,491 stars for query \"code llm\""
     }
   ]
 }

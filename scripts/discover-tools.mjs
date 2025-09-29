@@ -85,6 +85,10 @@ function getOrigin(u){
   } catch { return ''; }
 }
 
+function sameHost(u, host){
+  try{ return new URL(u).hostname.replace(/^www\./,'').toLowerCase() === host; }catch{ return false; }
+}
+
 async function getNpmWeeklyDownloads(pkg){
   try{
     const url = `https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(pkg)}`;
@@ -521,6 +525,74 @@ async function searchHN(query, hits=5){
   }catch{ return []; }
 }
 
+// --- Aixploria category scraping ---
+async function fetchAixploriaCategory(catUrl, perPageLimit=40){
+  try{
+    const html = await fetchHtml(catUrl, 15000);
+    if(!html || html === '__PDF__') return [];
+    const $ = loadHTML(html);
+    const host = getHostname(catUrl);
+    const cards = new Set();
+    // Collect candidate card roots around internal post links
+    $('a[href*="/en/"]').each((_, a)=>{
+      const href = String($(a).attr('href')||'');
+      if(!href || !href.startsWith('http')) return;
+      if(!sameHost(href, host)) return; // internal only
+      const text = String($(a).text()||'').trim();
+      if(text.length < 2 || text.length > 120) return;
+      const root = $(a).closest('article, li, .card, .listing, .entry, .item, .elementor-post, .elementor-portfolio__content');
+      if(root && root.length) cards.add(root.get(0));
+    });
+    const items = [];
+    for(const node of Array.from(cards)){
+      const el = $(node);
+      // Name: prefer a prominent internal title link
+      let name = el.find('h2 a, h3 a').first().text().trim();
+      if(!name){
+        name = el.find('a[href*="/en/"]').first().text().trim();
+      }
+      if(!name) continue;
+      // External link: text like "Link AI VISIT" or any external anchor inside the card
+      let ext = '';
+      el.find('a[href]').each((_, a)=>{
+        if(ext) return;
+        const href = String($(a).attr('href')||'');
+        if(!href.startsWith('http')) return;
+        const h = getHostname(href);
+        if(h && h !== host){
+          const t = String($(a).text()||'').toLowerCase();
+          if(/visit|link ai visit|open|go to|try/i.test(t) || true){
+            ext = href;
+          }
+        }
+      });
+      if(!ext) continue;
+      items.push({
+        source: 'aixploria',
+        name,
+        description: '',
+        link: ext,
+        tags: ['Freemium'],
+        metrics: {},
+        reason: `Aixploria category seed: ${catUrl}`
+      });
+      if(items.length >= perPageLimit) break;
+    }
+    // Dedupe by name
+    const seen = new Set();
+    return items.filter(it=>{ const k = normalizeKey(it.name); if(!k || seen.has(k)) return false; seen.add(k); return true; });
+  }catch{ return []; }
+}
+
+async function searchAixploriaCategories(categoryUrls=[], sizePerCat=30){
+  const results = [];
+  for(const u of categoryUrls){
+    const items = await fetchAixploriaCategory(u, sizePerCat);
+    results.push(...items);
+  }
+  return results;
+}
+
 function chooseBest(cands){
   // Prefer GitHub items with stars, then HN by points
   const withScore = cands.map(c=>{
@@ -724,6 +796,9 @@ async function main(){
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
     for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
+    if(Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length){
+      results.push(...await searchAixploriaCategories(cfg.aixploriaCategories, Number(cfg.aixploriaSize||30)));
+    }
     // Optional curated items: allow seeding specific high-quality tools per domain via discovery-sources.json
     // Example schema per domain:
     // "curated": [ { "name": "Orchids AI", "link": "https://orchids.ai", "description": "Curated entry", "tags": ["Freemium"] } ]
