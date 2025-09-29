@@ -206,7 +206,9 @@ async function searchHN(query, hits=5){
 function chooseBest(cands){
   // Prefer GitHub items with stars, then HN by points
   const withScore = cands.map(c=>{
-    const score = (c.metrics?.stars||0) + (c.metrics?.points||0)*10;
+    let score = (c.metrics?.stars||0) + (c.metrics?.points||0)*10;
+    // Strongly prefer curated items in ranking so they are considered in global selection
+    if(String(c.source).toLowerCase() === 'curated') score += 1_000_000;
     return { ...c, _score: score };
   }).sort((a,b)=>b._score - a._score);
   return withScore;
@@ -403,6 +405,23 @@ async function main(){
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
     for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
+    // Optional curated items: allow seeding specific high-quality tools per domain via discovery-sources.json
+    // Example schema per domain:
+    // "curated": [ { "name": "Orchids AI", "link": "https://orchids.ai", "description": "Curated entry", "tags": ["Freemium"] } ]
+    if (Array.isArray(cfg.curated) && cfg.curated.length) {
+      for (const c of cfg.curated) {
+        if (!c || !c.name || !c.link) continue;
+        results.push({
+          source: 'curated',
+          name: String(c.name),
+          description: c.description || 'Curated entry',
+          link: String(c.link),
+          tags: Array.isArray(c.tags) && c.tags.length ? c.tags : ['Freemium'],
+          metrics: { },
+          reason: c.reason || 'Curated high-quality tool'
+        });
+      }
+    }
     const deduped = dedupeByName(results);
     diag.domains[slug].candidates = deduped.length;
     diag.totals.candidates += deduped.length;
@@ -413,7 +432,8 @@ async function main(){
 
   // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select top-N
   globalCandidates.sort((a,b)=> (b._score||0) - (a._score||0));
-  const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || 6);
+  // Raise default global cap to 10; still override-able via env GLOBAL_MAX_NEW_TOOLS
+  const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || 10);
   const selected = [];
   for(const cand of globalCandidates){
     if(selected.length >= GLOBAL_MAX_NEW) break;
@@ -428,7 +448,8 @@ async function main(){
     const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
     if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
     if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
-    if(!isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
+    // Curated entries bypass AI-signal heuristic (still subject to reliability checks)
+    if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
     // Prefer reliable sources/domains for the link itself
     const host = getHostname(cand.link);
     const candNameNorm = normalizeKey(cand.name);

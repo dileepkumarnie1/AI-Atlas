@@ -15,7 +15,12 @@
     "maxAdds": 4,
     "githubStarsMin": 300,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "curated": [
+      { "name": "Orchids AI", "link": "https://orchids.ai", "description": "Unified AI chat assistant platform", "tags": ["Freemium"] },
+      { "name": "DeepSeek Chat", "link": "https://chat.deepseek.com", "description": "Fast, high-quality LLM chat", "tags": ["Free"] },
+      { "name": "Seed Dream", "link": "https://seeddream.app", "description": "Creative ideation chat assistant", "tags": ["Freemium"] }
+    ]
   },
   "image-generation": {
     "githubQueries": ["text to image", "image generation", "stable diffusion", "diffusion", "img2img", "inpainting", "controlnet"],
