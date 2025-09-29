@@ -6,6 +6,7 @@ import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { load as loadHTML } from 'cheerio';
 
 // Optional Firestore (for approval links flow)
 let fbInitTried = false;
@@ -52,6 +53,16 @@ const BAD_HOSTS = new Set([
   // Add known-bad domains here if needed
 ]);
 
+// Hosts that are commonly blogs or article platforms (poor signal for "real tool" landing pages)
+const BLOG_HOSTS = new Set([
+  'medium.com','substack.com','dev.to','towardsdatascience.com','mirror.xyz','hashnode.dev',
+  'blogspot.com','wordpress.com','notion.site','ghost.io','hashnode.com','freecodecamp.org','teletype.in'
+]);
+// Package registries and developer-only hubs; usually not end-user tools
+const PACKAGE_HOSTS = new Set([
+  'npmjs.com','pypi.org','rubygems.org','crates.io','pkg.go.dev','packagist.org','nuget.org'
+]);
+
 // Exclusion policy: avoid GitHub-hosted repo pages as final tool links, except allowlisted branded products
 const GITHUB_HOST = 'github.com';
 const ALLOWLIST_GITHUB_NAMES = new Set([
@@ -60,6 +71,10 @@ const ALLOWLIST_GITHUB_NAMES = new Set([
 
 function getHostname(u){
   try { return new URL(u).hostname.replace(/^www\./,'').toLowerCase(); } catch { return ''; }
+}
+
+function getPathname(u){
+  try { return new URL(u).pathname || '/'; } catch { return '/'; }
 }
 
 async function getNpmWeeklyDownloads(pkg){
@@ -133,6 +148,152 @@ async function assessReliability(cand){
   const thresholdRisky = Number(process.env.RELIABILITY_RISKY_MAX || -1); // <= -1 defaults to our logic
   const verdict = (gsb.unsafe || score <= -2) ? 'risky' : (score >= 2 ? 'safe' : 'unknown');
   return { score, reasons, verdict, host };
+}
+
+// --- Tool vs Blog/Docs classifier helpers ---
+function textIncludesAny(text, needles){
+  const t = String(text||'').toLowerCase();
+  return needles.some(n => t.includes(String(n).toLowerCase()));
+}
+
+function looksLikeBlogOrDocs(url){
+  const host = getHostname(url);
+  const path = getPathname(url).toLowerCase();
+  if (BLOG_HOSTS.has(host)) return true;
+  if (/^blog\./i.test(host)) return true;
+  // Common docs/help/knowledge base paths
+  if (/(^|\/)docs(\/|$)/.test(path)) return true;
+  if (/(^|\/)documentation(\/|$)/.test(path)) return true;
+  if (/(^|\/)blog(\/|$)/.test(path)) return true;
+  if (/(^|\/)guide(s)?(\/|$)/.test(path)) return true;
+  if (/(^|\/)support(\/|$)/.test(path)) return true;
+  if (/(^|\/)help(\/|$)/.test(path)) return true;
+  if (/(^|\/)kb(\/|$)/.test(path)) return true;
+  if (/(^|\/)article(s)?(\/|$)/.test(path)) return true;
+  if (/(^|\/)news(\/|$)/.test(path)) return true;
+  return false;
+}
+
+function looksLikeDevPackage(url){
+  const host = getHostname(url);
+  if (PACKAGE_HOSTS.has(host)) return true;
+  // GitHub repo pages are excluded elsewhere, but treat as dev package too
+  if (host === GITHUB_HOST) return true;
+  return false;
+}
+
+async function fetchHtml(url, timeoutMs = 10000){
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), timeoutMs);
+  try{
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'AI-Atlas-Discovery/1.0 (+https://example.com) NodeFetch',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+      },
+      redirect: 'follow',
+      signal: controller.signal
+    });
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const ct = String(res.headers.get('content-type')||'').toLowerCase();
+    if(!ct.includes('text/html')){
+      // If it's not HTML, it's unlikely to be a landing page tool (could be JSON API)
+      return '';
+    }
+    return await res.text();
+  }catch{
+    return '';
+  }finally{
+    clearTimeout(t);
+  }
+}
+
+function extractJsonLdTypes($){
+  const types = [];
+  $('script[type="application/ld+json"]').each((_, el)=>{
+    try{
+      const raw = $(el).contents().text();
+      if(!raw) return;
+      const j = JSON.parse(raw);
+      const pushType = (obj)=>{
+        const t = obj['@type'];
+        if(Array.isArray(t)) types.push(...t.map(x=>String(x).toLowerCase()));
+        else if(t) types.push(String(t).toLowerCase());
+      };
+      if(Array.isArray(j)) j.forEach(pushType); else if(typeof j === 'object') pushType(j);
+    }catch{/* ignore bad JSON-LD */}
+  });
+  return types;
+}
+
+function extractOgType($){
+  const t = $('meta[property="og:type"]').attr('content') || $('meta[name="og:type"]').attr('content');
+  return String(t||'').toLowerCase();
+}
+
+function pageToolSignals($){
+  const signals = [];
+  const bodyText = $('body').text().slice(0, 200000); // cap for performance
+  // CTA signals
+  const ctaNeedles = [
+    'sign up','signup','get started','start for free','start free','try it free','try now','open app','launch app',
+    'add to chrome','add to vscode','install extension','download app','start trial','use for free','create account'
+  ];
+  if(textIncludesAny(bodyText, ctaNeedles)) signals.push('cta');
+  // Pricing
+  const pricingNeedles = ['pricing','plans','plan','tiers','billing'];
+  if(textIncludesAny(bodyText, pricingNeedles)) signals.push('pricing');
+  // Auth nav
+  const authNeedles = ['log in','login','sign in','account','dashboard'];
+  if(textIncludesAny(bodyText, authNeedles)) signals.push('auth');
+  // Product-ish OG metadata
+  const og = extractOgType($);
+  if(og.includes('product') || og.includes('website')) signals.push(`og:${og||'website'}`);
+  // JSON-LD types
+  const ld = extractJsonLdTypes($);
+  if(ld.some(t => t.includes('softwareapplication') || t.includes('product'))) signals.push('jsonld:product');
+  if(ld.some(t => t.includes('article') || t.includes('blogposting'))) signals.push('jsonld:article');
+  // Buttons and links
+  const btnText = $('a,button').map((_,el)=>$(el).text().trim().toLowerCase()).get().join(' ');
+  const btnNeedles = ['try','get started','sign up','start free','pricing','launch'];
+  if(textIncludesAny(btnText, btnNeedles)) signals.push('buttons');
+  return { signals, ld, og };
+}
+
+async function classifyCandidate(cand, domainSlug){
+  const url = String(cand.link||'');
+  const host = getHostname(url);
+  const strictClassifier = /^true$/i.test(String(process.env.TOOL_CLASSIFIER_STRICT||'').trim());
+  // Quick prechecks
+  if(looksLikeDevPackage(url)) return { isTool:false, reason:'dev-package', category:'dev-package' };
+  if(looksLikeBlogOrDocs(url)) return { isTool:false, reason:'blog/docs', category:'content' };
+  // Fetch and inspect
+  const html = await fetchHtml(url);
+  if(!html){
+    // If we cannot fetch, play safe: treat as unknown; in strict mode, reject
+    return { isTool: !strictClassifier, reason: 'unfetchable', category:'unknown' };
+  }
+  const $ = loadHTML(html);
+  // Article signals
+  const ld = extractJsonLdTypes($);
+  if(ld.some(t => t.includes('article') || t.includes('blogposting'))){
+    return { isTool:false, reason:'jsonld-article', category:'content' };
+  }
+  // Hero/title hints
+  const title = $('title').text().toLowerCase();
+  if(/\bblog\b/.test(title) || /\barticle\b/.test(title)){
+    return { isTool:false, reason:'title-article', category:'content' };
+  }
+  const { signals } = pageToolSignals($);
+  const hasProductSchema = signals.includes('jsonld:product');
+  const ctaish = signals.includes('cta') || signals.includes('buttons');
+  const hasPricing = signals.includes('pricing');
+  const hasAuth = signals.includes('auth');
+  const score = (hasProductSchema?2:0) + (ctaish?1:0) + (hasPricing?1:0) + (hasAuth?1:0);
+  const threshold = strictClassifier ? 2 : 1;
+  const isTool = score >= threshold;
+  return { isTool, reason: `signals:${signals.join(',')||'none'} score=${score}`, category: isTool?'tool':'content' };
 }
 
 async function readJsonSafe(p){
@@ -396,7 +557,7 @@ async function main(){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
-  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0 }, maxAddsStop: false };
+    diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
     const starsMin = Number(cfg.githubStarsMin || 500);
     const npmSize = Number(cfg.npmSize || 5);
@@ -456,6 +617,15 @@ async function main(){
     if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
       diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
     }
+    // Exclude obvious blog/doc content and developer package pages; then run detailed page classification
+    if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)){
+      diag.domains[slug].skips.blogHost++; diag.totals.skips.blogHost = (diag.totals.skips.blogHost||0)+1; continue;
+    }
+    if(PACKAGE_HOSTS.has(host)){
+      diag.domains[slug].skips.devPackage++; diag.totals.skips.devPackage = (diag.totals.skips.devPackage||0)+1; continue;
+    }
+    const classif = await classifyCandidate(cand, slug);
+    if(!classif.isTool){ diag.domains[slug].skips.notTool++; diag.totals.skips.notTool = (diag.totals.skips.notTool||0)+1; continue; }
     const reliability = await assessReliability(cand);
     const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
     if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
@@ -701,6 +871,12 @@ async function main(){
       for(const [slug, d] of Object.entries(diag.domains)){
         md += `| ${slug} | ${d.candidates||0} | ${d.added||0} | ${d.staged||0} | ${d.published||0} | ${d.skips.duplicate||0} | ${d.skips.alias||0} | ${d.skips.blacklist||0} | ${d.skips.notAi||0} | ${d.skips.risky||0} | ${d.skips.strictUnknown||0} |\n`;
       }
+      // Append extra skips not in the main table for visibility
+      md += `\n<details><summary>Extra skip reasons</summary>\n\n`;
+      md += `- blogHost (by host/path): ${(diag.totals.skips.blogHost||0)}\n`;
+      md += `- devPackage (registry/dev hubs): ${(diag.totals.skips.devPackage||0)}\n`;
+      md += `- notTool (page classification): ${(diag.totals.skips.notTool||0)}\n`;
+      md += `</details>\n`;
       await fs.appendFile(summaryPath, md);
     }
   }catch{}
