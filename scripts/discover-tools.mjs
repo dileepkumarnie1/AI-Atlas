@@ -557,37 +557,61 @@ async function main(){
     if(useApproval){ await initFirebaseIfPossible(); try{ db = getFirestoreSafe && getFirestoreSafe(); }catch{} }
 
     async function ensurePendingAndLinks(domainName, a){
-      if(!useApproval || !db) return { approve:'#', reject:'#', id:'' };
+      if(!useApproval){ return { approve:'#', reject:'#', id:'' }; }
       const slug = normalizeKey(domainName || a.domain);
-      const doc = {
-        name: a.name,
-        description: '',
-        about: '',
-        link: a.link,
-        iconUrl: '',
-        tags: [], pros: [], cons: [],
-        domainSlug: slug,
-        domainName,
-        source: 'discovery',
-        status: 'pending',
-        createdAt: new Date()
-      };
-      const ref = await db.collection('pending_tools').add(doc);
-      const id = ref.id;
-      const token = signId(id);
+      // If Firestore is available, create a real pending doc and generate signed links
+      if(db){
+        const doc = {
+          name: a.name,
+          description: '',
+          about: '',
+          link: a.link,
+          iconUrl: '',
+          tags: [], pros: [], cons: [],
+          domainSlug: slug,
+          domainName,
+          source: 'discovery',
+          status: 'pending',
+          createdAt: new Date()
+        };
+        const ref = await db.collection('pending_tools').add(doc);
+        const id = ref.id;
+        const token = signId(id);
+        if (repoSlug) {
+          const titleApprove = encodeURIComponent(`Approve ID: ${id}`);
+          const bodyApprove = encodeURIComponent(`Action: approve\nPending ID: ${id}\nToken: ${token}`);
+          const titleReject = encodeURIComponent(`Reject ID: ${id}`);
+          const bodyReject = encodeURIComponent(`Action: reject\nPending ID: ${id}\nToken: ${token}`);
+          const approve = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleApprove}&body=${bodyApprove}`;
+          const reject = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleReject}&body=${bodyReject}`;
+          return { approve, reject, id };
+        } else {
+          const approve = `${approvalBase}/.netlify/functions/approve-tool?action=approve&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
+          const reject = `${approvalBase}/.netlify/functions/approve-tool?action=reject&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
+          return { approve, reject, id };
+        }
+      }
+      // Fallback: Firestore not available at discovery time.
+      // Generate provisional GitHub Issue links that include enough payload to create the pending doc during approval.
+      // Security: Links carry a signed provisional ID (HMAC) based on name+link.
+      const provId = 'prov-' + crypto.createHash('sha256').update(`${a.name}|${a.link}`).digest('hex').slice(0,24);
+      const token = signId(provId);
       if (repoSlug) {
-        const titleApprove = encodeURIComponent(`Approve ID: ${id}`);
-        const bodyApprove = encodeURIComponent(`Action: approve\nPending ID: ${id}\nToken: ${token}`);
-        const titleReject = encodeURIComponent(`Reject ID: ${id}`);
-        const bodyReject = encodeURIComponent(`Action: reject\nPending ID: ${id}\nToken: ${token}`);
+        const titleApprove = encodeURIComponent(`Approve ID: ${provId}`);
+        const bodyApprove = encodeURIComponent(
+          `Action: approve\nPending ID: ${provId}\nToken: ${token}\nName: ${a.name}\nLink: ${a.link}\nDomain: ${domainName}\nDescription: ${a.reason || ''}`
+        );
+        const titleReject = encodeURIComponent(`Reject ID: ${provId}`);
+        const bodyReject = encodeURIComponent(
+          `Action: reject\nPending ID: ${provId}\nToken: ${token}\nName: ${a.name}\nLink: ${a.link}\nDomain: ${domainName}`
+        );
         const approve = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleApprove}&body=${bodyApprove}`;
         const reject = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleReject}&body=${bodyReject}`;
-        return { approve, reject, id };
-      } else {
-        const approve = `${approvalBase}/.netlify/functions/approve-tool?action=approve&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
-        const reject = `${approvalBase}/.netlify/functions/approve-tool?action=reject&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
-        return { approve, reject, id };
+        return { approve, reject, id: provId };
       }
+      // Final fallback: provide Admin UI link if base URL known; else empty
+      const adminUrl = approvalBase ? `${approvalBase}/admin.html` : '#';
+      return { approve: adminUrl, reject: adminUrl, id: '' };
     }
 
     const htmlSections = await Promise.all(Object.entries(byDomain).map(async ([dom, items]) => {

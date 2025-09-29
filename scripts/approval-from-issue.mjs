@@ -81,14 +81,44 @@ try{
   initializeApp({ credential: cert(key) });
   const db = getFirestore();
 
-  const ref = db.collection('pending_tools').doc(id);
-  const snap = await ref.get();
-  if(!snap.exists){
+  let ref = db.collection('pending_tools').doc(id);
+  let snap = await ref.get();
+  let data = snap.data() || {};
+  // If not found and looks like a provisional ID, reconstruct a minimal pending doc from issue body
+  if(!snap.exists && /^prov-/.test(id)){
+    const nameMatch = body.match(/Name:\s*(.+)/i);
+    const linkMatch = body.match(/Link:\s*(https?:[^\s]+)/i);
+    const domainMatch = body.match(/Domain:\s*(.+)/i);
+    const name = (nameMatch ? nameMatch[1] : '').trim();
+    const link = (linkMatch ? linkMatch[1] : '').trim();
+    const domainName = (domainMatch ? domainMatch[1] : '').trim();
+    if(!name || !link){
+      setOutput('status','error');
+      setOutput('message',`Pending item not found and insufficient data to create: ${id}`);
+      process.exit(1);
+    }
+    const slug = domainName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+    const doc = {
+      name,
+      description: '',
+      about: '',
+      link,
+      iconUrl: '',
+      tags: [], pros: [], cons: [],
+      domainSlug: slug,
+      domainName,
+      source: 'discovery',
+      status: 'pending',
+      createdAt: new Date()
+    };
+    await ref.set(doc);
+    snap = await ref.get();
+    data = snap.data() || {};
+  }else if(!snap.exists){
     setOutput('status','error');
     setOutput('message',`Pending item not found: ${id}`);
     process.exit(1);
   }
-  const data = snap.data() || {};
   if(action === 'approve'){
     const toolsRef = db.collection('tools');
     const payload = {
