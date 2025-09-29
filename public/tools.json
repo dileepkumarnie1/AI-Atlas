@@ -299,7 +299,10 @@
           "freemium",
           "llm",
           "code",
-          "subscription"
+          "subscription",
+          "Open Source",
+          "Freemium",
+          "Subscription"
         ],
         "about": "Sign in - Google Accounts",
         "pros": [],
@@ -622,7 +625,8 @@
         "description": "Pathway - Fundamentally changing the way models think",
         "link": "https://pathway.com",
         "tags": [
-          "search"
+          "search",
+          "Freemium"
         ],
         "about": "Pathway - Fundamentally changing the way models think",
         "pros": [],
@@ -715,13 +719,13 @@
       },
       {
         "name": "transformers",
-        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
         "link": "https://huggingface.co/transformers",
         "tags": [
           "Open Source"
         ],
         "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
-        "about": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+        "about": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
         "pros": [],
         "cons": []
       },
@@ -732,7 +736,8 @@
         "tags": [
           "Search",
           "Chat",
-          "Privacy"
+          "Privacy",
+          "Freemium"
         ],
         "iconUrl": "https://you.com/favicon.ico",
         "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
@@ -950,7 +955,8 @@
         "link": "https://www.midjourney.com/",
         "tags": [
           "Paid",
-          "Text-to-Image"
+          "Text-to-Image",
+          "Subscription"
         ],
         "iconUrl": "https://media.dev.to/cdn-cgi/image/width=1000,height=1000,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz1a8m29el33hpwscvl24.png",
         "about": "Midjourney is an independent research lab that produces an artificial intelligence program that creates images from textual descriptions. It is known for its highly artistic and coherent image outputs, making it a favorite among artists and designers.",
@@ -1141,7 +1147,8 @@
         "link": "https://deepmind.google/technologies/veo/",
         "tags": [
           "Preview",
-          "Text-to-Video"
+          "Text-to-Video",
+          "Freemium"
         ],
         "iconUrl": "https://www.google.com/favicon.ico",
         "about": "Advanced T2V with strong scene coherence and camera control showcased in research demos.",
@@ -1354,7 +1361,8 @@
         "link": "https://openai.com/sora",
         "tags": [
           "Limited Access",
-          "Text-to-Video"
+          "Text-to-Video",
+          "Freemium"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1758183303683780608/9Vr3-K5A_400x400.jpg",
         "about": "Sora is a text-to-video model developed by OpenAI, capable of generating high-fidelity, minute-long videos from textual prompts. It demonstrates a sophisticated understanding of language, physics, and cinematic composition, allowing it to create complex scenes with multiple characters, specific types of motion, and accurate details of the subject and background.",
@@ -1499,11 +1507,13 @@
         "description": "Copilot regurgitating Quake code, including sweary comments",
         "link": "https://twitter.com/mitsuhiko/status/1410886329924194309",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Copilot regurgitating Quake code, including sweary comments",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://twitter.com/favicon.ico"
       },
       {
         "name": "Cursor",
@@ -1573,22 +1583,26 @@
         "description": "Kite – Programming Copilot",
         "link": "https://kite.com",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Kite – Programming Copilot",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://kite.com/favicon.ico"
       },
       {
         "name": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
         "description": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
         "link": "https://hub.continue.dev/explore/assistants",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://hub.continue.dev/favicon.ico"
       },
       {
         "name": "LibreChat",
@@ -1600,7 +1614,8 @@
           "image",
           "search",
           "agents",
-          "open-source"
+          "open-source",
+          "Open Source"
         ],
         "about": "Free, open source AI chat platform - Every AI for Everyone",
         "pros": [],
@@ -1830,11 +1845,13 @@
         "description": "Google's advanced music generation model and two new AI experiments",
         "link": "https://deepmind.google/discover/blog/transforming-the-future-of-music-creation/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Google's advanced music generation model and two new AI experiments",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://deepmind.google/favicon.ico"
       },
       {
         "name": "Kits AI",
@@ -1877,17 +1894,6 @@
           "Credit-based system can be costly for bulk processing.",
           "The quality of separation can depend on the complexity of the source audio."
         ]
-      },
-      {
-        "name": "node-red-contrib-xiaoai-tts",
-        "description": "小爱tts",
-        "link": "https://www.npmjs.com/package/node-red-contrib-xiaoai-tts",
-        "tags": [
-          "Library"
-        ],
-        "about": "小爱tts",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "Play.ht",
@@ -2003,28 +2009,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 000 2h2a1 1 0 100-2H9z\" /><path fill-rule=\"evenodd\" d=\"M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
-        "name": "@assistant-ui/react-ai-sdk",
-        "description": "Vercel AI SDK integration for `@assistant-ui/react`.",
-        "link": "https://www.npmjs.com/package/@assistant-ui/react-ai-sdk",
-        "tags": [
-          "Library"
-        ],
-        "about": "Vercel AI SDK integration for `@assistant-ui/react`.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "@n8n_io/ai-assistant-sdk",
-        "description": "n8n AI assistant SDK",
-        "link": "https://www.npmjs.com/package/@n8n_io/ai-assistant-sdk",
-        "tags": [
-          "Library"
-        ],
-        "about": "n8n AI assistant SDK",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "DeepL",
         "description": "Highly accurate AI-powered translation service.",
         "link": "https://www.deepl.com/translator",
@@ -2088,17 +2072,6 @@
         ]
       },
       {
-        "name": "inquirer",
-        "description": "A collection of common interactive command line user interfaces.",
-        "link": "https://www.npmjs.com/package/inquirer",
-        "tags": [
-          "Library"
-        ],
-        "about": "A collection of common interactive command line user interfaces.",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Microsoft Copilot for M365",
         "description": "AI across Word, Excel, PowerPoint, Outlook, and Teams.",
         "link": "https://www.microsoft.com/microsoft-365/copilot",
@@ -2146,7 +2119,8 @@
         "link": "https://www.notion.so/product/ai",
         "tags": [
           "Add-on",
-          "Writing"
+          "Writing",
+          "Freemium"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
         "about": "Notion AI is a suite of features built into the Notion platform. It can summarize existing notes, draft content, brainstorm ideas, translate text, and organize data, all within your existing Notion pages.",
@@ -2300,11 +2274,13 @@
         "description": "Airbnb’s design to live and work anywhere",
         "link": "https://news.airbnb.com/airbnbs-design-to-live-and-work-anywhere/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Airbnb’s design to live and work anywhere",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://news.airbnb.com/favicon.ico"
       },
       {
         "name": "Beautiful.ai",
@@ -2353,11 +2329,13 @@
         "description": "FAA K-12 Airport Design Challenge in Minecraft",
         "link": "https://www.faa.gov/airport-design-challenge",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "FAA K-12 Airport Design Challenge in Minecraft",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://faa.gov/favicon.ico"
       },
       {
         "name": "Figma AI (Diagram)",
@@ -2365,7 +2343,8 @@
         "link": "https://www.figma.com/community/plugin/1199865595779899484/diagram",
         "tags": [
           "Plugin",
-          "UI/UX"
+          "UI/UX",
+          "Freemium"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
         "about": "While Figma itself is a design tool, its ecosystem is rich with AI plugins. Diagram, for instance, can automatically generate flowcharts and diagrams from text. Other plugins assist with generating UI copy, color palettes, and design assets.",
@@ -2469,22 +2448,26 @@
         "description": "Paper Airplane Designs",
         "link": "https://www.foldnfly.com/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Paper Airplane Designs",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://foldnfly.com/favicon.ico"
       },
       {
         "name": "Paper Airplane Designs (2013)",
         "description": "Paper Airplane Designs (2013)",
         "link": "https://www.foldnfly.com/#/1-1-1-1-1-1-1-1-2",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Paper Airplane Designs (2013)",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://foldnfly.com/favicon.ico"
       },
       {
         "name": "Spline AI",
@@ -2625,11 +2608,13 @@
         "description": "Financial Time Series Forecasting with Deep Learning: A Literature Review",
         "link": "https://arxiv.org/abs/1911.13288",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Financial Time Series Forecasting with Deep Learning: A Literature Review",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://arxiv.org/favicon.ico"
       },
       {
         "name": "Litmaps",
@@ -2651,17 +2636,6 @@
           "Export limits on free.",
           "Requires manual vetting."
         ]
-      },
-      {
-        "name": "n8n-nodes-octagon",
-        "description": "Professional n8n node for Octagon AI Agents - Access 15 specialized financial and market research AI agents including SEC filings, earnings transcripts, stock data, and private market intelligence",
-        "link": "https://www.npmjs.com/package/n8n-nodes-octagon",
-        "tags": [
-          "Library"
-        ],
-        "about": "Professional n8n node for Octagon AI Agents - Access 15 specialized financial and market research AI agents including SEC filings, earnings transcripts, stock data, and private market intelligence",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "Scholarcy",
@@ -2718,11 +2692,13 @@
         "description": "AI Content Generation, Part 1: Machine Learning Basics",
         "link": "https://www.jonstokes.com/p/ai-content-generation-part-1-machine",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "AI Content Generation, Part 1: Machine Learning Basics",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://jonstokes.com/favicon.ico"
       },
       {
         "name": "Anyword",
@@ -2771,11 +2747,13 @@
         "description": "Deep Learning for Procedural Content Generation – a survey",
         "link": "https://arxiv.org/abs/2010.04548",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Deep Learning for Procedural Content Generation – a survey",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://arxiv.org/favicon.ico"
       },
       {
         "name": "Frase",
@@ -2797,17 +2775,6 @@
           "Template learning curve.",
           "SERP volatility impacts suggestions."
         ]
-      },
-      {
-        "name": "ipcom-marketing-ai",
-        "description": "Zero-config MCP server for AI-powered marketing tools. Features automatic setup, standalone mode, Interactive Buyer Persona Generator with bilingual support (EN/PT-BR), and enterprise-grade content analysis with 2025 frameworks.",
-        "link": "https://www.npmjs.com/package/ipcom-marketing-ai",
-        "tags": [
-          "Library"
-        ],
-        "about": "Zero-config MCP server for AI-powered marketing tools. Features automatic setup, standalone mode, Interactive Buyer Persona Generator with bilingual support (EN/PT-BR), and enterprise-grade content analysis with 2025 frameworks.",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "Jasper (formerly Jarvis)",
@@ -2928,7 +2895,8 @@
         "link": "https://learn.microsoft.com/power-bi/create-reports/copilot",
         "tags": [
           "Enterprise",
-          "BI"
+          "BI",
+          "Subscription"
         ],
         "iconUrl": "https://learn.microsoft.com/favicon.ico",
         "about": "Ask questions of your data and generate summaries, DAX, and visuals in Power BI.",
@@ -2949,7 +2917,8 @@
         "link": "https://www.tableau.com/products/tableau-ai",
         "tags": [
           "Enterprise",
-          "BI"
+          "BI",
+          "Subscription"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Tableau_Logo_2020.svg/1200px-Tableau_Logo_2020.svg.png",
         "about": "Tableau AI (formerly Einstein Discovery) integrates AI and machine learning into the Tableau ecosystem. It can automatically find patterns in data, provide explanations for outcomes, and generate predictive models without requiring users to write code.",
@@ -2977,22 +2946,26 @@
         "description": "3D Gaussian Splatting as Markov Chain Monte Carlo",
         "link": "https://ubc-vision.github.io/3dgs-mcmc/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "3D Gaussian Splatting as Markov Chain Monte Carlo",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://ubc-vision.github.io/favicon.ico"
       },
       {
         "name": "AI for generative design: Plain text to 3D Designs",
         "description": "AI for generative design: Plain text to 3D Designs",
         "link": "https://blog.insightdatascience.com/ai-for-3d-generative-design-17503d0b3943",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "AI for generative design: Plain text to 3D Designs",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://blog.insightdatascience.com/favicon.ico"
       },
       {
         "name": "Blockade Labs Skybox",
@@ -3020,11 +2993,13 @@
         "description": "DreamFusion: Text-to-3D using 2D Diffusion",
         "link": "https://dreamfusion3d.github.io",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "DreamFusion: Text-to-3D using 2D Diffusion",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://dreamfusion3d.github.io/favicon.ico"
       },
       {
         "name": "Kaedim",
@@ -3119,17 +3094,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 1.944A11.954 11.954 0 012.166 5.002a11.954 11.954 0 0115.668 0A11.954 11.954 0 0110 1.944zM10 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z\" clip-rule=\"evenodd\" /><path d=\"M10 4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 4.5zM10 12a1 1 0 100 2 1 1 0 000-2z\" /></svg>",
     "tools": [
       {
-        "name": "@responsible-ai/fairness",
-        "description": "![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)",
-        "link": "https://www.npmjs.com/package/@responsible-ai/fairness",
-        "tags": [
-          "Library"
-        ],
-        "about": "![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Fairlearn",
         "description": "Fairness metrics and mitigation for Python ML.",
         "link": "https://fairlearn.org",
@@ -3151,23 +3115,13 @@
         ]
       },
       {
-        "name": "fairlearn-dashboard",
-        "description": "Dashboard for evaluating the fairness of models.",
-        "link": "https://www.npmjs.com/package/fairlearn-dashboard",
-        "tags": [
-          "Library"
-        ],
-        "about": "Dashboard for evaluating the fairness of models.",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Fiddler AI",
         "description": "A platform for monitoring, explaining, and analyzing AI models in production.",
         "link": "https://www.fiddler.ai/",
         "tags": [
           "Enterprise",
-          "MLOps"
+          "MLOps",
+          "Subscription"
         ],
         "iconUrl": "https://media.licdn.com/dms/image/C4D0BAQG-f_vA_2LVA/company-logo_200_200/0/1691399329813/fiddler_ai_logo?e=2147483647&v=beta&t=c5o3f4g6h7i8j9k0l1m2n3o4p5q6r7s8",
         "about": "Fiddler is an enterprise-grade Model Performance Management (MPM) platform. It helps organizations gain visibility into their production AI systems, explaining why models make certain predictions, detecting bias, and monitoring for performance drift.",
@@ -3244,28 +3198,6 @@
           "Azure‑biased samples.",
           "Dev‑centric setup."
         ]
-      },
-      {
-        "name": "ml2en",
-        "description": "An algorithm to transliterate Malayalam script to Roman / Latin characters (commonly 'Manglish') with reasonable phonetic fairness",
-        "link": "https://www.npmjs.com/package/ml2en",
-        "tags": [
-          "Library"
-        ],
-        "about": "An algorithm to transliterate Malayalam script to Roman / Latin characters (commonly 'Manglish') with reasonable phonetic fairness",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "starvation-free-priority-queue",
-        "description": "An in-memory priority queue that prevents starvation by balancing priority and arrival time. Items are greedily prioritized within each batch of the longest-waiting items, ensuring fairness alongside prioritization and bounded delays for low-priority task",
-        "link": "https://www.npmjs.com/package/starvation-free-priority-queue",
-        "tags": [
-          "Library"
-        ],
-        "about": "An in-memory priority queue that prevents starvation by balancing priority and arrival time. Items are greedily prioritized within each batch of the longest-waiting items, ensuring fairness alongside prioritization and bounded delays for low-priority task",
-        "pros": [],
-        "cons": []
       }
     ]
   },
@@ -3275,39 +3207,6 @@
     "description": "AI-powered tools for learning, teaching, and academic support.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10.394 2.08a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z\" /></svg>",
     "tools": [
-      {
-        "name": "@santillana-ai/create-tutor-app",
-        "description": "Create a new Santillana AI Tutor application",
-        "link": "https://www.npmjs.com/package/@santillana-ai/create-tutor-app",
-        "tags": [
-          "Library"
-        ],
-        "about": "Create a new Santillana AI Tutor application",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "@santillana-ai/typescript-tutor-sdk",
-        "description": "SDK de TypeScript para integrar el sistema de tutoría con inteligencia artificial de Santillana en aplicaciones educativas.",
-        "link": "https://www.npmjs.com/package/@santillana-ai/typescript-tutor-sdk",
-        "tags": [
-          "Library"
-        ],
-        "about": "SDK de TypeScript para integrar el sistema de tutoría con inteligencia artificial de Santillana en aplicaciones educativas.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "app-tutor-ai-consumer",
-        "description": "Consumer components library for Hotmart Tutor Widget",
-        "link": "https://www.npmjs.com/package/app-tutor-ai-consumer",
-        "tags": [
-          "Library"
-        ],
-        "about": "Consumer components library for Hotmart Tutor Widget",
-        "pros": [],
-        "cons": []
-      },
       {
         "name": "Duolingo Max",
         "description": "Premium AI tutor features in Duolingo (explain my answer, roleplay).",
@@ -3376,11 +3275,13 @@
         "description": "One AI Tutor Per Child: Personalized learning is finally here",
         "link": "https://saigaddam.medium.com/one-ai-tutor-per-child-personalized-learning-is-finally-here-e3727d84a2d7",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "One AI Tutor Per Child: Personalized learning is finally here",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://saigaddam.medium.com/favicon.ico"
       },
       {
         "name": "Photomath",
@@ -3620,7 +3521,8 @@
         "tags": [
           "Community",
           "Prompts",
-          "Discovery"
+          "Discovery",
+          "Freemium"
         ],
         "iconUrl": "https://flowgpt.com/favicon.ico",
         "about": "Browse, share, and rate prompts for a wide range of models and tasks, from productivity to creative writing.",
@@ -3634,17 +3536,6 @@
           "Trends shift quickly.",
           "Requires curation for best results."
         ]
-      },
-      {
-        "name": "inquirer-autocomplete-prompt",
-        "description": "Autocomplete prompt for inquirer",
-        "link": "https://www.npmjs.com/package/inquirer-autocomplete-prompt",
-        "tags": [
-          "Library"
-        ],
-        "about": "Autocomplete prompt for inquirer",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "Langfuse",
@@ -3666,17 +3557,6 @@
           "Data modeling choices.",
           "Adds infra."
         ]
-      },
-      {
-        "name": "prompt",
-        "description": "A beautiful command-line prompt for node.js",
-        "link": "https://www.npmjs.com/package/prompt",
-        "tags": [
-          "Library"
-        ],
-        "about": "A beautiful command-line prompt for node.js",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "Prompt Perfect",
@@ -3728,7 +3608,8 @@
         "tags": [
           "Prompts",
           "Images",
-          "Gallery"
+          "Gallery",
+          "Freemium"
         ],
         "iconUrl": "https://prompthero.com/favicon.ico",
         "about": "Discover successful prompts with example outputs for popular image models; great for learning prompt patterns and styles.",
@@ -3779,7 +3660,8 @@
         "tags": [
           "Research",
           "Foundation Model",
-          "Action Model"
+          "Action Model",
+          "Freemium"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1577742084531855360/b2B3v3S0_400x400.jpg",
         "about": "Adept is building a foundational 'action model' called ACT-1, designed to understand natural language commands and execute them on any software interface. Their goal is to create a true AI teammate that can use the same tools you do, from browsing the web to working in complex enterprise software.",
@@ -3821,11 +3703,13 @@
         "description": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
         "link": "https://www.tallahassee.com/story/news/2020/12/07/agents-raid-home-fired-florida-data-scientist-who-built-covid-19-dashboard-rebekah-jones/6482817002/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://tallahassee.com/favicon.ico"
       },
       {
         "name": "Camel-AI",
@@ -3834,7 +3718,8 @@
         "tags": [
           "Research",
           "Multi-Agent",
-          "Roleplay"
+          "Roleplay",
+          "Freemium"
         ],
         "iconUrl": "https://avatars.githubusercontent.com/u/130492967",
         "about": "Camel-AI explores how autonomous agents interact through role-playing. Useful for research in negotiation, governance, and collaboration dynamics.",
@@ -3878,7 +3763,8 @@
         "tags": [
           "Limited Access",
           "Code Generation",
-          "Software Engineering"
+          "Software Engineering",
+          "Freemium"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1767576826726260736/Lw35m2v6_400x400.jpg",
         "about": "Devin is a landmark AI agent from Cognition Labs, designed to function as an autonomous software engineer. It can take a natural language prompt, create a development plan, write code, debug errors, and deploy the final application, demonstrating an unprecedented level of autonomy in complex tasks.",
@@ -3944,7 +3830,8 @@
         "tags": [
           "Writing",
           "Productivity",
-          "Domain-Specific"
+          "Domain-Specific",
+          "Freemium"
         ],
         "iconUrl": "https://static.grammarly.com/assets/files/8bcd3d62fbb04e5af3f8.svg",
         "about": "A suite of writing-focused agents (proofreader, citation finder, grader, etc.) integrated within Grammarly Docs.",
@@ -3988,7 +3875,8 @@
         "tags": [
           "Research",
           "Multimodal",
-          "Experimental"
+          "Experimental",
+          "Freemium"
         ],
         "iconUrl": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
         "about": "ChatGPT acts as an orchestrator that selects and calls HuggingFace models for specific subtasks (e.g., image generation, speech processing).",
@@ -4076,7 +3964,8 @@
         "tags": [
           "Autonomous",
           "Enterprise",
-          "Next-Gen"
+          "Next-Gen",
+          "Subscription"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
         "about": "Released in 2025, Manus is considered the first true commercial autonomous AI agent. It plans and executes complex workflows without continuous human oversight.",
@@ -4118,11 +4007,13 @@
         "description": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
         "link": "https://answers.microsoft.com/en-us/msoffice/forum/msoffice_onedrivefb-mso_o365brs/onedrive-for-business-open-is-very-slow-on-linux/3d33dc1b-3cc3-4c24-9998-9ab96bad31fc",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://answers.microsoft.com/favicon.ico"
       },
       {
         "name": "OpenAI Assistants API",
@@ -4131,7 +4022,8 @@
         "tags": [
           "API",
           "Developer Tool",
-          "Stateful"
+          "Stateful",
+          "Freemium"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
         "about": "The Assistants API is a purpose-built solution from OpenAI for creating AI assistants within applications. It manages conversation history (state), provides access to built-in tools like Code Interpreter and Retrieval, and allows developers to define and call custom functions.",
@@ -4153,7 +4045,8 @@
         "tags": [
           "Customizable",
           "APIs",
-          "Mainstream"
+          "Mainstream",
+          "Freemium"
         ],
         "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
         "about": "OpenAI’s framework lets users create domain-specific GPTs with API calls, memory, and tool use. Effectively a platform for building personalized agentic AI.",
@@ -4219,7 +4112,8 @@
         "tags": [
           "Research",
           "Lifelong Learning",
-          "Gaming"
+          "Gaming",
+          "Freemium"
         ],
         "iconUrl": "https://voyager.minedojo.org/static/voyager_logo.png",
         "about": "An agent from Microsoft that learns skills in Minecraft autonomously, building a library of abilities. It’s a proof of concept for lifelong learning agents in open worlds.",
@@ -4241,7 +4135,8 @@
         "tags": [
           "Automation",
           "No-Code",
-          "Business"
+          "Business",
+          "Freemium"
         ],
         "iconUrl": "https://zapier.com/favicon.ico",
         "about": "Zapier extends its no-code automation with AI-powered agents that monitor triggers and act across apps, enabling natural language workflow creation.",
@@ -4377,17 +4272,6 @@
         ]
       },
       {
-        "name": "n8n-workflow-ai",
-        "description": "Enterprise-grade n8n workflow AI with graph-based generation, real-time monitoring, comprehensive testing framework, and production-ready resilience",
-        "link": "https://www.npmjs.com/package/n8n-workflow-ai",
-        "tags": [
-          "Library"
-        ],
-        "about": "Enterprise-grade n8n workflow AI with graph-based generation, real-time monitoring, comprehensive testing framework, and production-ready resilience",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Tray.io",
         "description": "A flexible, low-code platform for integrating cloud stacks and automating processes.",
         "link": "https://tray.io/",
@@ -4410,24 +4294,14 @@
         ]
       },
       {
-        "name": "vibedev-specs-mcp",
-        "description": "MCP server for vibedev specs workflow - AI-powered development workflow from requirements to code",
-        "link": "https://www.npmjs.com/package/vibedev-specs-mcp",
-        "tags": [
-          "Library"
-        ],
-        "about": "MCP server for vibedev specs workflow - AI-powered development workflow from requirements to code",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Workato",
         "description": "An enterprise-grade iPaaS platform for automating complex business workflows.",
         "link": "https://www.workato.com/",
         "tags": [
           "Enterprise",
           "iPaaS",
-          "Low-code"
+          "Low-code",
+          "Subscription"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1633433799449788416/iAWy_2s-_400x400.jpg",
         "about": "Workato is an integration platform as a service (iPaaS) designed for enterprise-level automation. It allows businesses to automate complex workflows across the entire organization, from HR and finance to marketing and IT, with a focus on security, governance, and scalability.",
@@ -4511,7 +4385,8 @@
         "link": "https://www.glean.com/",
         "tags": [
           "Enterprise",
-          "Search"
+          "Search",
+          "Subscription"
         ],
         "iconUrl": "https://www.glean.com/favicon.ico",
         "about": "Glean connects to all your company’s apps and surfaces answers, files, and people instantly using AI.",
@@ -4532,7 +4407,8 @@
         "link": "https://neeva.com/",
         "tags": [
           "Search",
-          "Consumer"
+          "Consumer",
+          "Freemium"
         ],
         "iconUrl": "https://neeva.com/favicon.ico",
         "about": "Neeva was a consumer search engine that used AI to provide direct answers and ad-free results.",
@@ -4566,7 +4442,8 @@
         "tags": [
           "Search",
           "Chat",
-          "Privacy"
+          "Privacy",
+          "Freemium"
         ],
         "iconUrl": "https://you.com/favicon.ico",
         "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
@@ -4616,11 +4493,13 @@
         "description": "AI behavior guardrails should be public",
         "link": "https://twitter.com/ID_AA_Carmack/status/1760360183945965853",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "AI behavior guardrails should be public",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://twitter.com/favicon.ico"
       },
       {
         "name": "Anthropic Constitutional AI",
@@ -4628,7 +4507,8 @@
         "link": "https://www.anthropic.com/constitution",
         "tags": [
           "Alignment",
-          "Research"
+          "Research",
+          "Freemium"
         ],
         "iconUrl": "https://www.anthropic.com/favicon.ico",
         "about": "Constitutional AI is Anthropic’s method for training models to be helpful, harmless, and honest.",
@@ -4683,7 +4563,8 @@
         "link": "https://pair.withgoogle.com/",
         "tags": [
           "Responsible AI",
-          "Research"
+          "Research",
+          "Freemium"
         ],
         "iconUrl": "https://pair.withgoogle.com/favicon.ico",
         "about": "PAIR provides tools, guidelines, and research for building responsible, human-centered AI.",
@@ -4792,7 +4673,8 @@
         "link": "https://openai.com/research/red-teaming",
         "tags": [
           "Safety",
-          "Testing"
+          "Testing",
+          "Freemium"
         ],
         "iconUrl": "https://openai.com/favicon.ico",
         "about": "OpenAI’s red teaming resources help organizations test AI models for safety, robustness, and misuse.",
@@ -4812,11 +4694,13 @@
         "description": "US and UK refuse to sign AI safety declaration at summit",
         "link": "https://arstechnica.com/ai/2025/02/us-and-uk-refuse-to-sign-ai-safety-declaration-at-summit/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "US and UK refuse to sign AI safety declaration at summit",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "https://arstechnica.com/favicon.ico"
       },
       {
         "name": "Zero",
