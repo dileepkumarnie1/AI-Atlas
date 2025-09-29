@@ -609,6 +609,28 @@ async function main(){
         const reject = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleReject}&body=${bodyReject}`;
         return { approve, reject, id: provId };
       }
+      // If Netlify base is configured, provide approval function links with provisional payload
+      if (approvalBase) {
+        const qs = new URLSearchParams({
+          action: 'approve',
+          id: provId,
+          token,
+          name: a.name,
+          link: a.link,
+          domain: domainName
+        }).toString();
+        const approve = `${approvalBase}/.netlify/functions/approve-tool?${qs}`;
+        const qsR = new URLSearchParams({
+          action: 'reject',
+          id: provId,
+          token,
+          name: a.name,
+          link: a.link,
+          domain: domainName
+        }).toString();
+        const reject = `${approvalBase}/.netlify/functions/approve-tool?${qsR}`;
+        return { approve, reject, id: provId };
+      }
       // Final fallback: provide Admin UI link if base URL known; else empty
       const adminUrl = approvalBase ? `${approvalBase}/admin.html` : '#';
       return { approve: adminUrl, reject: adminUrl, id: '' };
@@ -617,10 +639,10 @@ async function main(){
     const htmlSections = await Promise.all(Object.entries(byDomain).map(async ([dom, items]) => {
       const rows = await Promise.all(items.map(async a => {
         const links = await ensurePendingAndLinks(dom, a);
-        const approvalHtml = useApproval && links.id ? `<div style="margin-top:6px;">
+        const approvalHtml = (links && links.approve && links.approve !== '#') ? `<div style="margin-top:6px;">
           <a href="${links.approve}" style="background:#2da44e;color:#fff;padding:4px 8px;border-radius:6px;text-decoration:none;">Approve</a>
           <a href="${links.reject}" style="background:#d1242f;color:#fff;padding:4px 8px;border-radius:6px;text-decoration:none;margin-left:8px;">Reject</a>
-          <span style="color:#57606a;font-size:12px;margin-left:6px;">ID: ${links.id}</span>
+          ${links.id ? `<span style="color:#57606a;font-size:12px;margin-left:6px;">ID: ${links.id}</span>` : ''}
         </div>` : '';
         return `
             <li style="margin:6px 0;">

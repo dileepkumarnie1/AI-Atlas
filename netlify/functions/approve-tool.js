@@ -51,12 +51,37 @@ export const handler = async (event) => {
       return { statusCode: 500, headers: { 'content-type':'text/html' }, body: htmlPage('Approval Error', `<h2 class="err">Server not configured</h2><p>Firebase credentials missing.</p>`) };
     }
     const db = getFirestore();
-    const ref = db.collection('pending_tools').doc(id);
-    const snap = await ref.get();
-    if(!snap.exists){
+    let ref = db.collection('pending_tools').doc(id);
+    let snap = await ref.get();
+    let data = snap.data() || {};
+    // Provisional support: if not found and id looks provisional, create a minimal pending doc from query params
+    if(!snap.exists && /^prov-/.test(id)){
+      const name = String(params.name||'').trim();
+      const link = String(params.link||'').trim();
+      const domainName = String(params.domain||'').trim();
+      if(!name || !link){
+        return { statusCode: 404, headers: { 'content-type':'text/html' }, body: htmlPage('Not Found', `<h2 class="err">Pending item not found</h2><p>Insufficient data for provisional ID: ${id}</p>`) };
+      }
+      const slug = domainName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+      const doc = {
+        name,
+        description: '',
+        about: '',
+        link,
+        iconUrl: '',
+        tags: [], pros: [], cons: [],
+        domainSlug: slug,
+        domainName,
+        source: 'discovery',
+        status: 'pending',
+        createdAt: new Date()
+      };
+      await ref.set(doc);
+      snap = await ref.get();
+      data = snap.data() || {};
+    } else if(!snap.exists){
       return { statusCode: 404, headers: { 'content-type':'text/html' }, body: htmlPage('Not Found', `<h2 class="err">Pending item not found</h2><p>ID: ${id}</p>`) };
     }
-    const data = snap.data() || {};
     if(action === 'approve'){
       // write to tools collection as active
       const toolsRef = db.collection('tools');
