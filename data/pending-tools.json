@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-23T05:55:41.075Z",
+  "lastUpdated": "2025-09-29T14:09:49.398Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1201,6 +1201,332 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 24,204 stars for query \"language model\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "Orchids AI",
+      "description": "Unified AI chat assistant platform",
+      "link": "https://orchids.ai",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "Unified AI chat assistant platform",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "DeepSeek Chat",
+      "description": "Fast, high-quality LLM chat",
+      "link": "https://chat.deepseek.com",
+      "tags": [
+        "Free"
+      ],
+      "about": "Fast, high-quality LLM chat",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "Seed Dream",
+      "description": "Creative ideation chat assistant",
+      "link": "https://seeddream.app",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "Creative ideation chat assistant",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Open source AI is the path forward",
+      "description": "Open source AI is the path forward",
+      "link": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Open source AI is the path forward",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2360 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "My AI skeptic friends are all nuts",
+      "description": "My AI skeptic friends are all nuts",
+      "link": "https://fly.io/blog/youre-all-nuts/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "My AI skeptic friends are all nuts",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2356 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "haystack",
+      "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+      "link": "https://haystack.deepset.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/51827949?v=4&s=64",
+      "about": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 22,806 stars for query \"agents framework\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "CopilotKit",
+      "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+      "link": "https://docs.copilotkit.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/131273140?v=4&s=64",
+      "about": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 24,166 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "link": "https://arxiv.org/pdf/2412.20138",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/192884433?v=4&s=64",
+      "about": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 21,427 stars for query \"agents framework\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Gemini AI",
+      "description": "Gemini AI",
+      "link": "https://deepmind.google/technologies/gemini/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Gemini AI",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2135 points) for \"AI\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "Learning to Reason with LLMs",
+      "description": "Learning to Reason with LLMs",
+      "link": "https://openai.com/index/learning-to-reason-with-llms/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Learning to Reason with LLMs",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1654 points) for \"LLM\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Bypassing airport security via SQL injection",
+      "description": "Bypassing airport security via SQL injection",
+      "link": "https://ian.sh/tsa",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Bypassing airport security via SQL injection",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (2004 points) for \"AI\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "description": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "link": "https://arxiv.org/abs/2501.12948",
+      "tags": [
+        "Trending"
+      ],
+      "about": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (1351 points) for \"LLM\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "A privacy war is raging inside the W3C",
+      "description": "A privacy war is raging inside the W3C",
+      "link": "https://www.protocol.com/policy/w3c-privacy-war",
+      "tags": [
+        "Trending"
+      ],
+      "about": "A privacy war is raging inside the W3C",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (376 points) for \"RAG\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "vid2avatar",
+      "description": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+      "link": "https://moygcc.github.io/vid2avatar/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64",
+      "about": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,332 stars for query \"avatar video\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "Warp",
+      "description": "Warp is the agentic development environment, built for coding with multiple AI agents.",
+      "link": "https://warp.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/71840468?v=4&s=64",
+      "about": "Warp is the agentic development environment, built for coding with multiple AI agents.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 24,943 stars for query \"ai code\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "stagehand",
+      "description": "The AI Browser Automation Framework",
+      "link": "https://stagehand.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64",
+      "about": "The AI Browser Automation Framework",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 17,250 stars for query \"agents framework\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "mastra",
+      "description": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
+      "link": "https://mastra.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/149120496?v=4&s=64",
+      "about": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 16,948 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "react-native-gifted-chat",
+      "description": "💬 The most complete chat UI for React Native",
+      "link": "https://gifted.chat",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/388375?v=4&s=64",
+      "about": "💬 The most complete chat UI for React Native",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 14,078 stars for query \"chat ui\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "assistant-ui",
+      "description": "Typescript/React Library for AI Chat💬🚀",
+      "link": "https://www.assistant-ui.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/189563271?v=4&s=64",
+      "about": "Typescript/React Library for AI Chat💬🚀",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 6,515 stars for query \"chat ui\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "potpie",
+      "description": "Prompt-To-Agent : Create custom engineering agents for your codebase",
+      "link": "https://potpie.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/148619568?v=4&s=64",
+      "about": "Prompt-To-Agent : Create custom engineering agents for your codebase",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,951 stars for query \"prompt engineering\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "text-generation-webui",
+      "description": "The definitive Web UI for local AI, with powerful features and easy setup.",
+      "link": "https://oobabooga.gumroad.com/l/deep_reason",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/112222186?v=4&s=64",
+      "about": "The definitive Web UI for local AI, with powerful features and easy setup.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 45,089 stars for query \"ui generation\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "upscayl",
+      "description": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+      "link": "https://upscayl.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/112148288?v=4&s=64",
+      "about": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 39,985 stars for query \"image upscaler\""
+    },
+    {
+      "domain": "Productivity",
+      "name": "inbox-zero",
+      "description": "The world's best AI personal assistant for email. Open source app to help you reach inbox zero fast.",
+      "link": "https://getinboxzero.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3090527?v=4&s=64",
+      "about": "The world's best AI personal assistant for email. Open source app to help you reach inbox zero fast.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 8,908 stars for query \"email assistant ai\""
+    },
+    {
+      "domain": "Productivity",
+      "name": "meeting-minutes",
+      "description": "A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/ is meetly ai",
+      "link": "https://meetily.zackriya.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/82556810?v=4&s=64",
+      "about": "A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/ is meetly ai",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,596 stars for query \"meeting notes ai\""
     }
   ]
 }

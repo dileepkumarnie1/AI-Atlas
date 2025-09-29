@@ -78,6 +78,13 @@ function getPathname(u){
   try { return new URL(u).pathname || '/'; } catch { return '/'; }
 }
 
+function getOrigin(u){
+  try {
+    const url = new URL(u);
+    return `${url.protocol}//${url.host}`;
+  } catch { return ''; }
+}
+
 async function getNpmWeeklyDownloads(pkg){
   try{
     const url = `https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(pkg)}`;
@@ -267,7 +274,9 @@ function pageToolSignals($){
 async function classifyCandidate(cand, domainSlug){
   const url = String(cand.link||'');
   const host = getHostname(url);
-  const strictClassifier = /^true$/i.test(String(process.env.TOOL_CLASSIFIER_STRICT||'').trim());
+  const strictClassifier = process.env.TOOL_CLASSIFIER_STRICT
+    ? /^true$/i.test(String(process.env.TOOL_CLASSIFIER_STRICT||'').trim())
+    : true;
   // Quick prechecks
   if(/\.pdf(\?|$)/i.test(url)) return { isTool:false, reason:'pdf-link', category:'content' };
   if(host === 'arxiv.org' && /(^|\/)pdf(\/|$)/.test(getPathname(url))) return { isTool:false, reason:'pdf-link', category:'content' };
@@ -304,7 +313,135 @@ async function classifyCandidate(cand, domainSlug){
     return { isTool:false, reason:`weak-homepage score=${score}`, category:'content' };
   }
   const isTool = score >= threshold;
-  return { isTool, reason: `signals:${signals.join(',')||'none'} score=${score}`, category: isTool?'tool':'content' };
+  return { isTool, reason: `signals:${signals.join(',')||'none'} score=${score}`, category: isTool?'tool':'content', score };
+}
+
+// --- Directory consensus and trending helpers ---
+async function fetchAnchors(url, timeoutMs=10000){
+  const html = await fetchHtml(url, timeoutMs);
+  if(!html || html === '__PDF__') return [];
+  const $ = loadHTML(html);
+  const out = [];
+  $('a[href]').each((_, el)=>{
+    const href = String($(el).attr('href')||'');
+    const text = String($(el).text()||'').trim();
+    if(!href) return;
+    let abs = href;
+    if(href.startsWith('/')) abs = getOrigin(url) + href;
+    out.push({ href: abs, text });
+  });
+  return out;
+}
+
+async function fetchDirectoryConsensusSets(){
+  const enabled = String(process.env.DIRECTORY_CONSENSUS_ENABLED||'true').toLowerCase() !== 'false';
+  if(!enabled) return { names:new Set(), domains:new Set() };
+  const names = new Set();
+  const domains = new Set();
+  try{
+    const a1 = await fetchAnchors('https://tooldirectory.ai/');
+    for(const a of a1){
+      if(/\/tool|\/tools|ai/i.test(a.href)){
+        const n = canonicalName(a.text || getHostname(a.href)); if(n) names.add(n);
+        const d = getHostname(a.href); if(d) domains.add(d);
+      }
+    }
+  }catch{}
+  try{
+    const a2 = await fetchAnchors('https://www.aixploria.com/en/');
+    for(const a of a2){
+      if(/ai|tool/i.test(a.href) || /ai|tool/i.test(a.text)){
+        const n = canonicalName(a.text || getHostname(a.href)); if(n) names.add(n);
+        const d = getHostname(a.href); if(d) domains.add(d);
+      }
+    }
+  }catch{}
+  // Third consensus directory: Futurepedia
+  try{
+    const a3 = await fetchAnchors('https://www.futurepedia.io/');
+    for(const a of a3){
+      if(/\/tool|\/tools|\/product|ai/i.test(a.href) || /ai|tool/i.test(a.text)){
+        const n = canonicalName(a.text || getHostname(a.href)); if(n) names.add(n);
+        const d = getHostname(a.href); if(d) domains.add(d);
+      }
+    }
+  }catch{}
+  return { names, domains };
+}
+
+function inDirectoryConsensus(cand, dirSets){
+  const n = canonicalName(cand.name);
+  const host = getHostname(cand.link);
+  if(dirSets.names.has(n)) return true;
+  if(dirSets.domains.has(host)) return true;
+  return false;
+}
+
+async function computeTrendingEvidence(cand){
+  const src = String(cand.source||'').toLowerCase();
+  try{
+    if(src === 'github'){
+      const stars = Number(cand.metrics?.stars||0);
+      const pushedAt = cand.metrics?.pushedAt ? new Date(cand.metrics.pushedAt).getTime() : 0;
+      const recent = pushedAt && (Date.now() - pushedAt) <= (60*24*3600*1000);
+      return stars >= 1000 && recent;
+    }
+    if(src === 'npm'){
+      const m = (cand.link||'').match(/\/package\/(\@?[^/]+)/);
+      if(m){
+        const dls = await getNpmWeeklyDownloads(m[1]);
+        return dls >= 5000;
+      }
+      return false;
+    }
+    if(src === 'hn'){
+      const pts = Number(cand.metrics?.points||0);
+      const created = Number(cand.metrics?.createdAtSec||0) * 1000;
+      const recent = created && (Date.now() - created) <= (14*24*3600*1000);
+      return pts >= 200 && recent;
+    }
+    // Fallback: treat recently updated landing pages as trending (freshness <= 90 days)
+    const freshDays = await pageFreshnessDays(cand.link);
+    if(freshDays !== null && freshDays <= 90) return true;
+  }catch{}
+  return false;
+}
+
+// Extract freshness from page HTML via common meta/JSON-LD date hints
+function extractPageDates($){
+  const dates = [];
+  const push = (s)=>{ if(!s) return; const t = Date.parse(String(s).trim()); if(!Number.isNaN(t)) dates.push(new Date(t)); };
+  const meta = (sel, attr='content') => $(sel).attr(attr);
+  push(meta('meta[property="article:published_time"]'));
+  push(meta('meta[name="article:published_time"]'));
+  push(meta('meta[property="og:updated_time"]'));
+  push(meta('meta[name="og:updated_time"]'));
+  push(meta('meta[itemprop="datePublished"]'));
+  push(meta('meta[itemprop="dateModified"]'));
+  push(meta('meta[name="date"]'));
+  $('time').each((_,el)=>{ push($(el).attr('datetime')); push($(el).text()); });
+  // JSON-LD
+  $('script[type="application/ld+json"]').each((_,el)=>{
+    try{
+      const raw = $(el).contents().text(); if(!raw) return;
+      const j = JSON.parse(raw);
+      const arr = Array.isArray(j) ? j : [j];
+      for(const obj of arr){ push(obj.datePublished); push(obj.dateModified); }
+    }catch{}
+  });
+  return dates;
+}
+
+async function pageFreshnessDays(url){
+  try{
+    const html = await fetchHtml(url);
+    if(!html || html === '__PDF__') return null;
+    const $ = loadHTML(html);
+    const dates = extractPageDates($);
+    if(dates.length === 0) return null;
+    const mostRecent = dates.sort((a,b)=>b.getTime()-a.getTime())[0].getTime();
+    return Math.floor((Date.now() - mostRecent)/(24*3600*1000));
+  }catch{ return null; }
 }
 
 // Stronger duplicate detection with canonical name
@@ -334,7 +471,8 @@ async function ghFetch(url){
 
 async function searchGithubRepos(query, perPage=5, starsMin=500){
   try{
-    const q = encodeURIComponent(`${query} stars:>${starsMin}`);
+    const since = new Date(Date.now() - 180*24*3600*1000).toISOString().slice(0,10);
+    const q = encodeURIComponent(`${query} stars:>${starsMin} pushed:>=${since}`);
     const j = await ghFetch(`https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=${perPage}`);
     return (j.items||[]).map(r=>({
       source: 'github',
@@ -343,7 +481,7 @@ async function searchGithubRepos(query, perPage=5, starsMin=500){
       link: r.homepage && r.homepage.startsWith('http') ? r.homepage : r.html_url,
       iconUrl: r.owner?.avatar_url ? `${r.owner.avatar_url}&s=64` : undefined,
       tags: ['Open Source'],
-      metrics: { stars: r.stargazers_count || 0, forks: r.forks_count || 0 },
+      metrics: { stars: r.stargazers_count || 0, forks: r.forks_count || 0, pushedAt: r.pushed_at },
       reason: `High GitHub traction: ${r.stargazers_count?.toLocaleString?.() || r.stargazers_count} stars for query "${query}"`
     }));
   }catch{ return []; }
@@ -368,7 +506,8 @@ async function searchNpm(query, size=5){
 async function searchHN(query, hits=5){
   try{
     const q = encodeURIComponent(query);
-    const url = `https://hn.algolia.com/api/v1/search?tags=story&query=${q}&hitsPerPage=${hits}`;
+    const since = Math.floor(Date.now()/1000) - (14*24*3600);
+    const url = `https://hn.algolia.com/api/v1/search?tags=story&query=${q}&hitsPerPage=${hits}&numericFilters=created_at_i>${since}`;
     const j = await (await fetch(url)).json();
     return (j.hits||[]).filter(h=>h.points>=100 && h.url).map(h=>({
       source: 'hn',
@@ -376,7 +515,7 @@ async function searchHN(query, hits=5){
       description: h.title,
       link: h.url,
       tags: ['Trending'],
-      metrics: { points: h.points },
+      metrics: { points: h.points, createdAtSec: h.created_at_i },
       reason: `HN discussion (${h.points} points) for "${query}"`
     }));
   }catch{ return []; }
@@ -568,7 +707,7 @@ async function main(){
     strict: strictMode,
     hasGSBKey,
     domains: {},
-    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0 }, maxAddsStops: 0 }
+    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0 }, maxAddsStops: 0 }
   };
   // Global candidate pool to allow selecting top-N across all domains
   const globalCandidates = [];
@@ -576,7 +715,7 @@ async function main(){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
-    diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0 }, maxAddsStop: false };
+  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
     const starsMin = Number(cfg.githubStarsMin || 500);
     const npmSize = Number(cfg.npmSize || 5);
@@ -610,6 +749,8 @@ async function main(){
     globalCandidates.push(...ranked);
   }
 
+  // Load directory consensus sets for cross-reference
+  const dirSets = await fetchDirectoryConsensusSets();
   // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select up to per-domain targets
   globalCandidates.sort((a,b)=> (b._score||0) - (a._score||0));
   // Target up to 2 per domain by default (configurable via discovery-sources maxAdds). Global cap is sum unless overridden.
@@ -647,10 +788,31 @@ async function main(){
     if(PACKAGE_HOSTS.has(host)){
       diag.domains[slug].skips.devPackage++; diag.totals.skips.devPackage = (diag.totals.skips.devPackage||0)+1; continue;
     }
-  const classif = await classifyCandidate(cand, slug);
+    const classif = await classifyCandidate(cand, slug);
     if(!classif.isTool){ diag.domains[slug].skips.notTool++; diag.totals.skips.notTool = (diag.totals.skips.notTool||0)+1; continue; }
-    const reliability = await assessReliability(cand);
-    const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+    // Require either listing in known directories or strong trending evidence,
+    // OR allow strong page signals (score>=3) + reliability safe as fallback
+    const inDirs = inDirectoryConsensus(cand, dirSets);
+    const trending = await computeTrendingEvidence(cand);
+    let allowBySignals = false;
+    let relForDecision = null;
+    if(!inDirs && !trending){
+      const reliability = await assessReliability(cand);
+      const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+      const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
+      if(classif.score >= 3 && safeEnough){
+        allowBySignals = true;
+        relForDecision = reliability;
+      }else{
+        diag.domains[slug].skips.notTrending = (diag.domains[slug].skips.notTrending||0)+1;
+        diag.totals.skips.notTrending = (diag.totals.skips.notTrending||0)+1;
+        diag.domains[slug].skips.notInDirectories = (diag.domains[slug].skips.notInDirectories||0)+1;
+        diag.totals.skips.notInDirectories = (diag.totals.skips.notInDirectories||0)+1;
+        continue;
+      }
+    }
+  const reliability = relForDecision || await assessReliability(cand);
+  const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
     if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
     if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
 
