@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T20:07:05.512Z",
+  "lastUpdated": "2025-09-29T20:15:21.559Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1832,6 +1832,20 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 2,522 stars for query \"prompt optimizer\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "claude-coder",
+      "description": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+      "link": "https://www.kodu.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/160821808?v=4&s=64",
+      "about": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 5,015 stars for query \"autonomous agents\""
     }
   ]
 }

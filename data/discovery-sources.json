@@ -21,7 +21,7 @@
     ],
     "curated": [
       { "name": "Orchids AI", "link": "https://orchids.ai", "description": "Unified AI chat assistant platform", "tags": ["Freemium"] },
-      { "name": "DeepSeek Chat", "link": "https://chat.deepseek.com", "description": "Fast, high-quality LLM chat", "tags": ["Free"] }
+      { "name": "Pi", "link": "https://pi.ai", "description": "Personal AI companion chat", "tags": ["Free"] }
     ]
   },
   "image-generation": {
