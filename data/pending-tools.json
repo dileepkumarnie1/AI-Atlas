@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T18:38:00.067Z",
+  "lastUpdated": "2025-09-29T19:26:17.135Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1639,6 +1639,89 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 18,613 stars for query \"language model\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "If you are good at code review, you will be good at using AI agents",
+      "description": "If you are good at code review, you will be good at using AI agents",
+      "link": "https://www.seangoedecke.com/ai-agents-and-code-review/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "If you are good at code review, you will be good at using AI agents",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (191 points) for \"agent\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "coai",
+      "description": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+      "link": "https://coai.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/125332171?v=4&s=64",
+      "about": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 8,766 stars for query \"stable diffusion\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "qodo-cover",
+      "description": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+      "link": "https://qodo.ai/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/183290039?v=4&s=64",
+      "about": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 5,180 stars for query \"test generation ai\""
+    },
+    {
+      "domain": "Productivity",
+      "name": "MyBrain",
+      "description": "All-in-one productivity app and AI assistant with Tasks, Notes, Calendar, Diary and Bookmarks.",
+      "link": "https://f-droid.org/packages/com.mhss.app.mybrain/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/58703865?v=4&s=64",
+      "about": "All-in-one productivity app and AI assistant with Tasks, Notes, Calendar, Diary and Bookmarks.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,654 stars for query \"calendar assistant ai\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "qdrant",
+      "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+      "link": "https://qdrant.tech",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/73504361?v=4&s=64",
+      "about": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 26,354 stars for query \"vector search\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "ai-knowledge-graph",
+      "description": "AI Powered Knowledge Graph Generator",
+      "link": "https://robert-mcdermott.medium.com/from-unstructured-text-to-interactive-knowledge-graphs-using-llms-dd02a1f71cd6",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/7399563?v=4&s=64",
+      "about": "AI Powered Knowledge Graph Generator",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,299 stars for query \"knowledge graph ai\""
     }
   ]
 }

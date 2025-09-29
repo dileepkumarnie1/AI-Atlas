@@ -665,7 +665,8 @@ async function searchAixploriaByKeywords(keywords=[]){
 function chooseBest(cands){
   // Prefer GitHub items with stars, then HN by points
   const withScore = cands.map(c=>{
-    let score = (c.metrics?.stars||0) + (c.metrics?.points||0)*10;
+    // De-emphasize traction; primarily prefer curated and directory picks
+    let score = 0;
     // Strongly prefer curated items in ranking so they are considered in global selection
     if(String(c.source).toLowerCase() === 'curated') score += 1_000_000;
     // Prefer verified/featured picks from Aixploria directory
@@ -859,6 +860,9 @@ async function main(){
   };
   // Global candidate pool to allow selecting top-N across all domains
   const globalCandidates = [];
+  // Per-domain pools to support filler selection
+  const domainAixPool = new Map(); // slug -> Aixploria-only items
+  const domainAllPool = new Map(); // slug -> all deduped items
   // Per-domain Aixploria seed sets (hosts and canonical names)
   const aixSeenByDomain = new Map();
   for(const [slug, cfg] of Object.entries(sources)){
@@ -910,6 +914,10 @@ async function main(){
       }
     }
     const deduped = dedupeByName(results);
+  // Save pools for potential filler stage later
+  domainAllPool.set(slug, deduped);
+  const aixOnly = deduped.filter(i => String(i.source).toLowerCase() === 'aixploria');
+  domainAixPool.set(slug, aixOnly);
     diag.domains[slug].candidates = deduped.length;
     diag.totals.candidates += deduped.length;
     const ranked = chooseBest(deduped).map(c => ({ ...c, _domainSlug: slug }));
@@ -922,7 +930,11 @@ async function main(){
   // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select up to per-domain targets
   globalCandidates.sort((a,b)=> (b._score||0) - (a._score||0));
   // Target up to 2 per domain by default (configurable via discovery-sources maxAdds). Global cap is sum unless overridden.
-  const perDomainTargets = new Map(Object.entries(sources).map(([slug,cfg])=>[slug, Number(cfg?.maxAdds || 2)]));
+  const perDomainTargets = new Map(Object.entries(sources).map(([slug,cfg])=>{
+    const minPer = Number(getEnvOverride(slug,'MIN_PER_DOMAIN', getEnvOverride(null,'MIN_PER_DOMAIN', 2)));
+    const base = Number(cfg?.maxAdds || 2);
+    return [slug, Math.max(base, minPer)];
+  }));
   const sumTargets = Array.from(perDomainTargets.values()).reduce((a,b)=>a+b,0) || Infinity;
   const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || sumTargets);
   const selected = [];
@@ -958,10 +970,8 @@ async function main(){
     }
     const classif = await classifyCandidate(cand, slug);
     if(!classif.isTool){ diag.domains[slug].skips.notTool++; diag.totals.skips.notTool = (diag.totals.skips.notTool||0)+1; continue; }
-    // Require either listing in known directories or strong trending evidence,
-    // OR allow strong page signals (score>=3) + reliability safe as fallback
+    // Quality acceptance: prefer directory picks; avoid heavy reliance on trending
     const inDirs = inDirectoryConsensus(cand, dirSets);
-    const trending = await computeTrendingEvidence(cand);
     let allowBySignals = false;
     let relForDecision = null;
     // Aixploria parity gate: enforce per-domain quality using directory presence
@@ -981,34 +991,30 @@ async function main(){
           diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
           continue;
         }else{
-          // Soft mode: allow trending OR strong signals + safe reliability fallback
-          if(!trending){
-            const reliability = await assessReliability(cand);
-            const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
-            const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
-            if(classif.score >= 3 && safeEnough){
-              allowBySignals = true; relForDecision = reliability;
-            }else{
-              diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
-              diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
-              continue;
-            }
+          // Soft mode: allow strong signals + safe reliability fallback
+          const reliability = await assessReliability(cand);
+          const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+          const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
+          if(classif.score >= 2 && safeEnough){
+            allowBySignals = true; relForDecision = reliability;
+          }else{
+            diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
+            diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
+            continue;
           }
         }
       }
     }
-    if(!inDirs && !trending){
+    // Accept if in directories consensus OR directory source OR strong page signals + safe reliability
+    if(!(inDirs || String(cand.source).toLowerCase()==='aixploria' || allowBySignals)){
       const reliability = await assessReliability(cand);
       const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
       const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
-      if(classif.score >= 3 && safeEnough){
-        allowBySignals = true;
-        relForDecision = reliability;
+      if(classif.score >= 2 && safeEnough){
+        allowBySignals = true; relForDecision = reliability;
       }else{
-        diag.domains[slug].skips.notTrending = (diag.domains[slug].skips.notTrending||0)+1;
-        diag.totals.skips.notTrending = (diag.totals.skips.notTrending||0)+1;
+        // insufficient evidence
         diag.domains[slug].skips.notInDirectories = (diag.domains[slug].skips.notInDirectories||0)+1;
-        diag.totals.skips.notInDirectories = (diag.totals.skips.notInDirectories||0)+1;
         continue;
       }
     }
@@ -1025,18 +1031,109 @@ async function main(){
     domainAddedPre.set(slug, cur + 1);
   }
 
-  // Apply per-domain maxAdds as a secondary safety (but primary control is GLOBAL_MAX_NEW)
+  // Filler: ensure at least MIN_PER_DOMAIN selections per domain using Aixploria pool where possible
+  const minPerGlobal = Number(getEnvOverride(null,'MIN_PER_DOMAIN', 2));
   const domainAddedCount = new Map();
+  for(const sel of selected){
+    domainAddedCount.set(sel.slug, (domainAddedCount.get(sel.slug)||0)+1);
+  }
+  for(const [slug, cfg] of Object.entries(sources)){
+    const sec = domainBySlug.get(normalizeKey(slug));
+    if(!sec) continue;
+    const minPer = Number(getEnvOverride(slug,'MIN_PER_DOMAIN', minPerGlobal));
+    let cur = domainAddedCount.get(slug)||0;
+    if(cur >= minPer) continue;
+    const aixPool = domainAixPool.get(slug) || [];
+    const filler = [];
+    const capTarget = perDomainTargets.get(slug) ?? minPer;
+    // helper to check duplicates quickly
+    const isDupName = (nm) => {
+      const k = normalizeKey(nm);
+      const kl = normalizeKeyLoose(nm);
+      const kc = canonicalName(nm);
+      return existingNames.has(k) || existingNamesLoose.has(kl) || (kc && existingCanonicalNames.has(kc));
+    };
+    for(const cand of aixPool){
+      if(filler.length + cur >= Math.min(minPer, capTarget)) break;
+      if(isDupName(cand.name)) continue;
+      const k = normalizeKey(cand.name);
+      if(blacklistNames.has(k)) continue;
+      // Basic reliability
+      const reliability = await assessReliability(cand);
+      const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+      if(reliability.verdict === 'risky') continue;
+      if(strict && reliability.verdict !== 'safe') continue;
+      filler.push({ cand, slug, reliability });
+    }
+    // If still below min and parity is not hard, consider non-Aix candidates with quality checks
+    const envStrict = getEnvOverride(slug,'AIXPLORIA_STRICT', undefined);
+    const aixMode = (envStrict !== undefined ? envStrict : (cfg.aixploriaStrict ?? ((Array.isArray(cfg.aixploriaCategories) || Array.isArray(cfg.aixploriaAutoCategories)) ? 'soft' : false)));
+    const aixHard = (aixMode === 'hard');
+    if((cur + filler.length) < minPer && !aixHard){
+      const allPool = domainAllPool.get(slug) || [];
+      for(const cand of allPool){
+        if(filler.length + cur >= Math.min(minPer, capTarget)) break;
+        if(String(cand.source).toLowerCase() === 'aixploria') continue; // already considered
+        if(isDupName(cand.name)) continue;
+        const k = normalizeKey(cand.name);
+        if(blacklistNames.has(k)) continue;
+        const host = getHostname(cand.link);
+        const candNameNorm = normalizeKey(cand.name);
+        if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)) continue;
+        if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
+        if(PACKAGE_HOSTS.has(host)) continue;
+        // Page classification and acceptance
+        if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) continue;
+        const classif = await classifyCandidate(cand, slug);
+        if(!classif.isTool) continue;
+        const inDirs = inDirectoryConsensus(cand, dirSets);
+        let allowBySignals = false;
+        let relForDecision = null;
+        if(!inDirs){
+          const reliability = await assessReliability(cand);
+          const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+          const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
+          if(classif.score >= 2 && safeEnough){ allowBySignals = true; relForDecision = reliability; }
+        }
+        if(!(inDirs || allowBySignals)) continue;
+        const reliability = relForDecision || await assessReliability(cand);
+        const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+        if(reliability.verdict === 'risky') continue;
+        if(strict && reliability.verdict !== 'safe') continue;
+        filler.push({ cand, slug, reliability });
+      }
+    }
+    // Stage filler items
+    for(const {cand, reliability} of filler){
+      if(additions.length >= GLOBAL_MAX_NEW) break;
+      const tool = toToolShape(cand);
+      const domName = sec.name || slug;
+      const items = Array.isArray(pending?.items) ? pending.items : [];
+      if(!items.some(it => normalizeKey(it.name) === normalizeKey(tool.name) || canonicalName(it.name) === canonicalName(tool.name))){
+        items.push({ domain: domName, ...tool, reason: cand.reason });
+        pending.items = items;
+        additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
+        diag.domains[slug].staged = (diag.domains[slug].staged||0) + 1;
+        diag.totals.staged = (diag.totals.staged||0) + 1;
+        diag.domains[slug].added = (diag.domains[slug].staged||0) + (diag.domains[slug].published||0);
+        cur++;
+      }
+    }
+  }
+
+  // Apply per-domain maxAdds as a secondary safety (but primary control is GLOBAL_MAX_NEW)
+  // Recompute after filler
+  const domainAddedCount2 = new Map();
   for(const sel of selected){
     const { cand, slug, reliability } = sel;
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
     const cfg = sources[slug] || {};
     const perDomainMax = Number(cfg.maxAdds || Infinity);
-    const cur = domainAddedCount.get(slug) || 0;
+    const cur = domainAddedCount2.get(slug) || 0;
     if(cur >= perDomainMax){ diag.domains[slug].maxAddsStop = true; diag.totals.maxAddsStops++; continue; }
-  const k = normalizeKey(cand.name);
-  const kl = normalizeKeyLoose(cand.name);
+    const k = normalizeKey(cand.name);
+    const kl = normalizeKeyLoose(cand.name);
     const tool = toToolShape(cand);
     if(directPublish){
       sec.tools = sec.tools || [];
@@ -1056,8 +1153,9 @@ async function main(){
         diag.domains[slug].staged++; diag.totals.staged++;
       }
     }
-    domainAddedCount.set(slug, cur + 1);
+    // Track applied count post-filler for enforcing per-domain maxAdds here
     diag.domains[slug].added = (diag.domains[slug].staged||0) + (diag.domains[slug].published||0);
+    domainAddedCount2.set(slug, cur + 1);
   }
 
   if(additions.length && directPublish){
