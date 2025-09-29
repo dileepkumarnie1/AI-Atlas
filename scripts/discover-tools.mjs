@@ -795,15 +795,17 @@ async function main(){
     strict: strictMode,
     hasGSBKey,
     domains: {},
-    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0 }, maxAddsStops: 0 }
+    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0 }, maxAddsStops: 0 }
   };
   // Global candidate pool to allow selecting top-N across all domains
   const globalCandidates = [];
+  // Per-domain Aixploria seed sets (hosts and canonical names)
+  const aixSeenByDomain = new Map();
   for(const [slug, cfg] of Object.entries(sources)){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
-  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0 }, maxAddsStop: false };
+  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
     const starsMin = Number(cfg.githubStarsMin || 500);
     const npmSize = Number(cfg.npmSize || 5);
@@ -813,7 +815,12 @@ async function main(){
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
     for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
     if(Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length){
-      results.push(...await searchAixploriaCategories(cfg.aixploriaCategories, Number(cfg.aixploriaSize||30)));
+      const aixItems = await searchAixploriaCategories(cfg.aixploriaCategories, Number(cfg.aixploriaSize||30));
+      results.push(...aixItems);
+      // Record Aixploria seed host/name sets for this domain
+      const hosts = new Set(aixItems.map(it => getHostname(it.link)).filter(Boolean));
+      const names = new Set(aixItems.map(it => canonicalName(it.name)).filter(Boolean));
+      aixSeenByDomain.set(slug, { hosts, names });
     }
     // Optional curated items: allow seeding specific high-quality tools per domain via discovery-sources.json
     // Example schema per domain:
@@ -887,6 +894,29 @@ async function main(){
     const trending = await computeTrendingEvidence(cand);
     let allowBySignals = false;
     let relForDecision = null;
+    // Aixploria parity gate: if enabled for this domain, require tool to appear in Aixploria categories
+    // or meet stronger thresholds (trending OR strong signals+safe reliability)
+    const cfg = sources[slug] || {};
+    const aixStrict = cfg.aixploriaStrict ?? (Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length > 0);
+    if(aixStrict){
+      const sets = aixSeenByDomain.get(slug);
+      const host = getHostname(cand.link);
+      const inAix = Boolean(sets && ((sets.hosts && sets.hosts.has(host)) || (sets.names && sets.names.has(canonicalName(cand.name)))));
+      if(!inAix){
+        if(!trending){
+          const reliability = await assessReliability(cand);
+          const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+          const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
+          if(classif.score >= 3 && safeEnough){
+            allowBySignals = true; relForDecision = reliability;
+          }else{
+            diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
+            diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
+            continue;
+          }
+        }
+      }
+    }
     if(!inDirs && !trending){
       const reliability = await assessReliability(cand);
       const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());

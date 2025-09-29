@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T18:06:16.054Z",
+  "lastUpdated": "2025-09-29T18:16:19.046Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1597,6 +1597,34 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 2,245 stars for query \"data analysis ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "ComfyUI-IF_AI_tools",
+      "description": "ComfyUI-IF_AI_tools is a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama. This tool enables you to enhance your image generation workflow by leveraging the power of language models.",
+      "link": "https://ko-fi.com/impactframes",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/21185218?v=4&s=64",
+      "about": "ComfyUI-IF_AI_tools is a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama. This tool enables you to enhance your image generation workflow by leveraging the power of language models.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 681 stars for query \"ui generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "flycut-caption",
+      "description": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+      "link": "https://caption.flycut.co",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/13807549?v=4&s=64",
+      "about": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 318 stars for query \"subtitle ai\""
     }
   ]
 }
