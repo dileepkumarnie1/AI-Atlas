@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T19:39:52.820Z",
+  "lastUpdated": "2025-09-29T20:07:05.512Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1750,6 +1750,88 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 16,922 stars for query \"autonomous agents\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "kilocode",
+      "description": "Open Source AI coding assistant for planning, building, and fixing code. We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. Follow us: kilocode.ai/social",
+      "link": "https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/201822503?v=4&s=64",
+      "about": "Open Source AI coding assistant for planning, building, and fixing code. We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. Follow us: kilocode.ai/social",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 10,595 stars for query \"code assistant\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "cody-public-snapshot",
+      "description": "Type less, code more: Cody is an AI code assistant that uses advanced search and codebase context to help you write and fix code.",
+      "link": "https://cody.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3979584?v=4&s=64",
+      "about": "Type less, code more: Cody is an AI code assistant that uses advanced search and codebase context to help you write and fix code.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,799 stars for query \"code assistant\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Nano Banana",
+      "description": "Gemini-powered image editing features",
+      "link": "https://nanobanana.ai",
+      "tags": [
+        "Free"
+      ],
+      "about": "Gemini-powered image editing features",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "Relevance AI",
+      "description": "Workflows and AI automation platform",
+      "link": "https://relevance.ai",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "Workflows and AI automation platform",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "Context-Engineering",
+      "description": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+      "link": "https://deepwiki.com/davidkimai/Context-Engineering",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/208424706?v=4&s=64",
+      "about": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 6,996 stars for query \"prompt optimizer\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "langwatch",
+      "description": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+      "link": "https://langwatch.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/146763322?v=4&s=64",
+      "about": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,522 stars for query \"prompt optimizer\""
     }
   ]
 }

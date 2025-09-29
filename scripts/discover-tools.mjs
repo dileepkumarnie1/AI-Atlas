@@ -856,7 +856,7 @@ async function main(){
     strict: strictMode,
     hasGSBKey,
     domains: {},
-    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0 }, maxAddsStops: 0 }
+    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStops: 0 }
   };
   // Global candidate pool to allow selecting top-N across all domains
   const globalCandidates = [];
@@ -869,7 +869,7 @@ async function main(){
     if(cfg && cfg.enabled === false) continue; // allow disabling domains
     const sec = domainBySlug.get(normalizeKey(slug));
     if(!sec) continue;
-  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0 }, maxAddsStop: false };
+  diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
   const starsMin = Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500));
     const npmSize = Number(cfg.npmSize || 5);
@@ -957,9 +957,15 @@ async function main(){
     if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
     // Prefer reliable sources/domains for the link itself
     const host = getHostname(cand.link);
+    const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
     const candNameNorm = normalizeKey(cand.name);
     if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
       diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
+    }
+    if(aiOnly && !/\.ai$/i.test(host)){
+      diag.domains[slug].skips.nonAiDomain = (diag.domains[slug].skips.nonAiDomain||0)+1;
+      diag.totals.skips.nonAiDomain = (diag.totals.skips.nonAiDomain||0)+1;
+      continue;
     }
     // Exclude obvious blog/doc content and developer package pages; then run detailed page classification
     if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)){
@@ -1055,6 +1061,9 @@ async function main(){
     };
     for(const cand of aixPool){
       if(filler.length + cur >= Math.min(minPer, capTarget)) break;
+      const hostA = getHostname(cand.link);
+      const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
+      if(aiOnly && !/\.ai$/i.test(hostA)) continue;
       if(isDupName(cand.name)) continue;
       const k = normalizeKey(cand.name);
       if(blacklistNames.has(k)) continue;
@@ -1074,6 +1083,9 @@ async function main(){
       for(const cand of allPool){
         if(filler.length + cur >= Math.min(minPer, capTarget)) break;
         if(String(cand.source).toLowerCase() === 'aixploria') continue; // already considered
+        const hostB = getHostname(cand.link);
+        const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
+        if(aiOnly && !/\.ai$/i.test(hostB)) continue;
         if(isDupName(cand.name)) continue;
         const k = normalizeKey(cand.name);
         if(blacklistNames.has(k)) continue;
