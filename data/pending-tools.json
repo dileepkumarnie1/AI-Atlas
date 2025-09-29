@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T19:26:17.135Z",
+  "lastUpdated": "2025-09-29T19:39:52.820Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1722,6 +1722,34 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 1,299 stars for query \"knowledge graph ai\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "cline",
+      "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+      "link": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/184127137?v=4&s=64",
+      "about": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 50,920 stars for query \"autonomous agents\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "eliza",
+      "description": "Autonomous agents for everyone",
+      "link": "https://eliza.how/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/186240462?v=4&s=64",
+      "about": "Autonomous agents for everyone",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 16,922 stars for query \"autonomous agents\""
     }
   ]
 }

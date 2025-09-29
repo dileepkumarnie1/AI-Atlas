@@ -157,8 +157,8 @@ async function assessReliability(cand){
   const src = String(cand.source||'').toLowerCase();
   if(src === 'github'){
     const stars = Number(cand.metrics?.stars||0);
-    if(stars >= 500) { reasons.push(`gh-stars:${stars}`); score += 3; }
-    else if(stars >= 100) { reasons.push(`gh-stars:${stars}`); score += 2; }
+    if(stars >= 500) { reasons.push(`gh-stars:${stars}`); score += 2; }
+    else if(stars >= 100) { reasons.push(`gh-stars:${stars}`); score += 1; }
     else if(stars >= 20) { reasons.push(`gh-stars:${stars}`); score += 1; }
   }
   if(src === 'npm'){
@@ -166,8 +166,8 @@ async function assessReliability(cand){
     const m = link.match(/\/package\/(@?[^/]+)/);
     if(m){
       const dls = await getNpmWeeklyDownloads(m[1]);
-      if(dls >= 50000) { reasons.push(`npm-dls:${dls}`); score += 3; }
-      else if(dls >= 5000) { reasons.push(`npm-dls:${dls}`); score += 2; }
+      if(dls >= 50000) { reasons.push(`npm-dls:${dls}`); score += 2; }
+      else if(dls >= 5000) { reasons.push(`npm-dls:${dls}`); score += 1; }
       else if(dls >= 500) { reasons.push(`npm-dls:${dls}`); score += 1; }
     }
   }
