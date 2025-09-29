@@ -58,6 +58,7 @@ const BLOG_HOSTS = new Set([
   'medium.com','substack.com','dev.to','towardsdatascience.com','mirror.xyz','hashnode.dev',
   'blogspot.com','wordpress.com','notion.site','ghost.io','hashnode.com','freecodecamp.org','teletype.in'
 ]);
+const CONTENT_SUBDOMAIN_PREFIXES = ['blog','docs','help','support','kb','developer','dev','api','learn','status'];
 // Package registries and developer-only hubs; usually not end-user tools
 const PACKAGE_HOSTS = new Set([
   'npmjs.com','pypi.org','rubygems.org','crates.io','pkg.go.dev','packagist.org','nuget.org'
@@ -160,7 +161,7 @@ function looksLikeBlogOrDocs(url){
   const host = getHostname(url);
   const path = getPathname(url).toLowerCase();
   if (BLOG_HOSTS.has(host)) return true;
-  if (/^blog\./i.test(host)) return true;
+  if (CONTENT_SUBDOMAIN_PREFIXES.some(p => new RegExp(`^${p}\\.`,'i').test(host))) return true;
   // Common docs/help/knowledge base paths
   if (/(^|\/)docs(\/|$)/.test(path)) return true;
   if (/(^|\/)documentation(\/|$)/.test(path)) return true;
@@ -171,6 +172,7 @@ function looksLikeBlogOrDocs(url){
   if (/(^|\/)kb(\/|$)/.test(path)) return true;
   if (/(^|\/)article(s)?(\/|$)/.test(path)) return true;
   if (/(^|\/)news(\/|$)/.test(path)) return true;
+  if (host === 'openai.com' && /(^|\/)index(\/|$)/.test(path)) return true;
   return false;
 }
 
@@ -197,6 +199,7 @@ async function fetchHtml(url, timeoutMs = 10000){
     });
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const ct = String(res.headers.get('content-type')||'').toLowerCase();
+    if(ct.includes('application/pdf')){ return '__PDF__'; }
     if(!ct.includes('text/html')){
       // If it's not HTML, it's unlikely to be a landing page tool (could be JSON API)
       return '';
@@ -266,10 +269,13 @@ async function classifyCandidate(cand, domainSlug){
   const host = getHostname(url);
   const strictClassifier = /^true$/i.test(String(process.env.TOOL_CLASSIFIER_STRICT||'').trim());
   // Quick prechecks
+  if(/\.pdf(\?|$)/i.test(url)) return { isTool:false, reason:'pdf-link', category:'content' };
+  if(host === 'arxiv.org' && /(^|\/)pdf(\/|$)/.test(getPathname(url))) return { isTool:false, reason:'pdf-link', category:'content' };
   if(looksLikeDevPackage(url)) return { isTool:false, reason:'dev-package', category:'dev-package' };
   if(looksLikeBlogOrDocs(url)) return { isTool:false, reason:'blog/docs', category:'content' };
   // Fetch and inspect
   const html = await fetchHtml(url);
+  if(html === '__PDF__') return { isTool:false, reason:'pdf-content', category:'content' };
   if(!html){
     // If we cannot fetch, play safe: treat as unknown; in strict mode, reject
     return { isTool: !strictClassifier, reason: 'unfetchable', category:'unknown' };
@@ -292,8 +298,20 @@ async function classifyCandidate(cand, domainSlug){
   const hasAuth = signals.includes('auth');
   const score = (hasProductSchema?2:0) + (ctaish?1:0) + (hasPricing?1:0) + (hasAuth?1:0);
   const threshold = strictClassifier ? 2 : 1;
+  // If homepage path and strict mode, require stronger signals
+  const path = getPathname(url);
+  if(strictClassifier && path === '/' && score < 3){
+    return { isTool:false, reason:`weak-homepage score=${score}`, category:'content' };
+  }
   const isTool = score >= threshold;
   return { isTool, reason: `signals:${signals.join(',')||'none'} score=${score}`, category: isTool?'tool':'content' };
+}
+
+// Stronger duplicate detection with canonical name
+const DUP_STOPWORDS = new Set(['ai','the','and','of','for','app','apps','tool','tools','platform','labs','studio','framework','kit','sdk','api','model','models','agent','agents','chat','assistant','bot','bots']);
+function canonicalName(s){
+  const tokens = String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').split(' ').filter(t=>t && !DUP_STOPWORDS.has(t));
+  return tokens.join(' ');
 }
 
 async function readJsonSafe(p){
@@ -532,8 +550,9 @@ async function main(){
   const domainBySlug = new Map(sections.map(sec => [normalizeKey(sec.slug), sec]));
   const existingNames = new Set(sections.flatMap(sec => (sec.tools||[]).map(t=>normalizeKey(t.name))));
   const existingNamesLoose = new Set(sections.flatMap(sec => (sec.tools||[]).map(t=>normalizeKeyLoose(t.name))));
+  const existingCanonicalNames = new Set(sections.flatMap(sec => (sec.tools||[]).map(t=>canonicalName(t.name))));
   const pendingItems = Array.isArray(pending?.items) ? pending.items : [];
-  for(const it of pendingItems){ existingNames.add(normalizeKey(it.name)); existingNamesLoose.add(normalizeKeyLoose(it.name)); }
+  for(const it of pendingItems){ existingNames.add(normalizeKey(it.name)); existingNamesLoose.add(normalizeKeyLoose(it.name)); existingCanonicalNames.add(canonicalName(it.name)); }
   const blacklistNames = new Set((blacklist?.names||[]).map(normalizeKey));
   const aliasMap = new Map(Object.entries(aliases?.aliases||{}).map(([a,c])=>[normalizeKey(a), normalizeKey(c)]));
   const directPublish = /^true$/i.test(String(process.env.DIRECT_PUBLISH||''));
@@ -591,11 +610,14 @@ async function main(){
     globalCandidates.push(...ranked);
   }
 
-  // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select top-N
+  // Sort global candidates by composite score (prefer GitHub stars, then HN points); then filter and select up to per-domain targets
   globalCandidates.sort((a,b)=> (b._score||0) - (a._score||0));
-  // Raise default global cap to 10; still override-able via env GLOBAL_MAX_NEW_TOOLS
-  const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || 10);
+  // Target up to 2 per domain by default (configurable via discovery-sources maxAdds). Global cap is sum unless overridden.
+  const perDomainTargets = new Map(Object.entries(sources).map(([slug,cfg])=>[slug, Number(cfg?.maxAdds || 2)]));
+  const sumTargets = Array.from(perDomainTargets.values()).reduce((a,b)=>a+b,0) || Infinity;
+  const GLOBAL_MAX_NEW = Number(process.env.GLOBAL_MAX_NEW_TOOLS || sumTargets);
   const selected = [];
+  const domainAddedPre = new Map();
   for(const cand of globalCandidates){
     if(selected.length >= GLOBAL_MAX_NEW) break;
     const slug = cand._domainSlug;
@@ -603,8 +625,9 @@ async function main(){
     if(!sec) continue;
     const k = normalizeKey(cand.name);
     const kl = normalizeKeyLoose(cand.name);
+    const kc = canonicalName(cand.name);
     // direct name/loose matches
-    if(existingNames.has(k) || existingNamesLoose.has(kl)) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
+    if(existingNames.has(k) || existingNamesLoose.has(kl) || (kc && existingCanonicalNames.has(kc))) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
     // alias match: map candidate alias -> canonical and see if present
     const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
     if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
@@ -624,15 +647,19 @@ async function main(){
     if(PACKAGE_HOSTS.has(host)){
       diag.domains[slug].skips.devPackage++; diag.totals.skips.devPackage = (diag.totals.skips.devPackage||0)+1; continue;
     }
-    const classif = await classifyCandidate(cand, slug);
+  const classif = await classifyCandidate(cand, slug);
     if(!classif.isTool){ diag.domains[slug].skips.notTool++; diag.totals.skips.notTool = (diag.totals.skips.notTool||0)+1; continue; }
     const reliability = await assessReliability(cand);
     const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
     if(reliability.verdict === 'risky'){ diag.domains[slug].skips.risky++; diag.totals.skips.risky++; continue; }
     if(strict && reliability.verdict !== 'safe'){ diag.domains[slug].skips.strictUnknown++; diag.totals.skips.strictUnknown++; continue; }
 
-    // Passed all gates, add to selection for publication/staging
+    // Enforce per-domain pre-selection cap
+    const cur = domainAddedPre.get(slug) || 0;
+    const cap = perDomainTargets.get(slug) ?? 2;
+    if(cur >= cap){ diag.domains[slug].maxAddsStop = true; diag.totals.maxAddsStops = (diag.totals.maxAddsStops||0)+1; continue; }
     selected.push({ cand, slug, reliability });
+    domainAddedPre.set(slug, cur + 1);
   }
 
   // Apply per-domain maxAdds as a secondary safety (but primary control is GLOBAL_MAX_NEW)
@@ -652,13 +679,14 @@ async function main(){
       sec.tools = sec.tools || [];
       sec.tools.push(tool);
       existingNames.add(k);
+      existingCanonicalNames.add(canonicalName(tool.name));
       additions.push({ domain: sec.name || slug, name: tool.name, reason: cand.reason, mode: 'published', link: tool.link, reliability });
       diag.domains[slug].published++; diag.totals.published++;
     } else {
       const domName = sec.name || slug;
       const items = Array.isArray(pending?.items) ? pending.items : [];
       // avoid staging duplicates
-      if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl)){
+      if(!items.some(it => normalizeKey(it.name) === k || normalizeKeyLoose(it.name) === kl || canonicalName(it.name) === canonicalName(cand.name))){
         items.push({ domain: domName, ...tool, reason: cand.reason });
         pending.items = items;
         additions.push({ domain: domName, name: tool.name, reason: cand.reason, mode: 'staged', link: tool.link, reliability });
