@@ -554,6 +554,8 @@ async function fetchAixploriaCategory(catUrl, perPageLimit=40){
       if(!name) continue;
       // External link: text like "Link AI VISIT" or any external anchor inside the card
       let ext = '';
+      let verified = false;
+      let featured = false;
       el.find('a[href]').each((_, a)=>{
         if(ext) return;
         const href = String($(a).attr('href')||'');
@@ -566,15 +568,22 @@ async function fetchAixploriaCategory(catUrl, perPageLimit=40){
           }
         }
       });
+      // Markers: look for verified/featured icons or labels within the card
+      const cardHtml = el.html() || '';
+      if(/verifiedai-icon/i.test(cardHtml)) verified = true;
+      if(/\u2605\s*featured|>\s*featured\s*</i.test(cardHtml)) featured = true;
       if(!ext) continue;
+      const tags = ['Freemium'];
+      if(verified) tags.push('Verified');
+      if(featured) tags.push('Featured');
       items.push({
         source: 'aixploria',
         name,
         description: '',
         link: ext,
-        tags: ['Freemium'],
-        metrics: {},
-        reason: `Aixploria category seed: ${catUrl}`
+        tags,
+        metrics: { aixploria: { verified, featured, category: catUrl }},
+        reason: `Aixploria category seed: ${catUrl}${verified ? ' · verified' : ''}${featured ? ' · featured' : ''}`
       });
       if(items.length >= perPageLimit) break;
     }
@@ -599,6 +608,13 @@ function chooseBest(cands){
     let score = (c.metrics?.stars||0) + (c.metrics?.points||0)*10;
     // Strongly prefer curated items in ranking so they are considered in global selection
     if(String(c.source).toLowerCase() === 'curated') score += 1_000_000;
+    // Prefer verified/featured picks from Aixploria directory
+    if(String(c.source).toLowerCase() === 'aixploria'){
+      if(c.metrics?.aixploria?.verified) score += 100_000;
+      if(c.metrics?.aixploria?.featured) score += 50_000;
+      // Base boost so directory items surface even with limited other metrics
+      score += 20_000;
+    }
     return { ...c, _score: score };
   }).sort((a,b)=>b._score - a._score);
   return withScore;

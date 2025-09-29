@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T18:00:20.998Z",
+  "lastUpdated": "2025-09-29T18:06:16.054Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1555,6 +1555,48 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 14,491 stars for query \"code llm\""
+    },
+    {
+      "domain": "Data Analysis",
+      "name": "yn",
+      "description": "A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.",
+      "link": "https://yank-note.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/7115690?v=4&s=64",
+      "about": "A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 6,351 stars for query \"notebook copilot\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "latitude-llm",
+      "description": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
+      "link": "https://latitude.so",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/98949449?v=4&s=64",
+      "about": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,442 stars for query \"prompt engineering\""
+    },
+    {
+      "domain": "Data Analysis",
+      "name": "DeepBI",
+      "description": "LLM based data scientist, AI native data application.  AI-driven infinite thinking redefines BI.",
+      "link": "https://www.deepbi.com/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/151041383?v=4&s=64",
+      "about": "LLM based data scientist, AI native data application.  AI-driven infinite thinking redefines BI.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,245 stars for query \"data analysis ai\""
     }
   ]
 }
