@@ -137,6 +137,29 @@ Files
 Run locally (Windows PowerShell)
 - npm run discover:tools
 
+### Discovery tuning via environment variables
+
+You can adjust discovery behavior without code changes using environment variables. Set them in CI or locally (PowerShell): `$Env:NAME = "value"` before running `npm run discover:tools`.
+
+Global thresholds
+- DISCOVERY_TRENDING_GH_STARS_MIN — default 1000
+- DISCOVERY_TRENDING_GH_RECENT_DAYS — default 60
+- DISCOVERY_TRENDING_NPM_DL_MIN — default 5000
+- DISCOVERY_TRENDING_HN_POINTS_MIN — default 200
+- DISCOVERY_TRENDING_HN_RECENT_DAYS — default 14
+- DISCOVERY_PAGE_FRESHNESS_MAX_DAYS — default 90
+- DISCOVERY_GITHUB_SEARCH_RECENT_DAYS — default 180
+
+Per-domain overrides (format)
+- DISCOVERY_<DOMAIN>_GITHUB_STARS_MIN — overrides stars filter for GitHub search
+- DISCOVERY_<DOMAIN>_AIXPLORIA_STRICT — one of: hard | soft | true | false
+- DISCOVERY_<DOMAIN>_AIXPLORIA_SIZE — number of items to fetch per category (default 30)
+
+Notes
+- DOMAIN is the slug uppercased with non-alphanumerics replaced by underscores, e.g., `video-tools` → `VIDEO_TOOLS`.
+- Global (DISCOVERY_X) values apply to all domains unless a per-domain override is provided.
+- Hard parity means candidates must be present in Aixploria categories for that domain.
+
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/discover-tools.yml`
 - Schedule: every 3 days at 04:00 UTC (cron: `0 4 */3 * *`)
@@ -222,6 +245,12 @@ Local .env setup
 - You can send a quick test email:
    - npm run email:test
    - If it fails, it prints missing envs or SMTP errors to troubleshoot.
+
+Discovery env examples (PowerShell)
+- $env:DISCOVERY_AIXPLORIA_STRICT = "hard"         # enforce hard parity across all domains
+- $env:DISCOVERY_VIDEO_TOOLS_AIXPLORIA_STRICT = "hard"  # enforce just for Video Tools
+- $env:DISCOVERY_TRENDING_GH_STARS_MIN = "2000"    # require more stars to count as trending
+- $env:DISCOVERY_GITHUB_SEARCH_RECENT_DAYS = "90"  # only search repos updated in last 90 days
 
    Review flow: blacklist and drafts
    - Blacklist: add names to `data/blacklist.json` to permanently exclude items from discovery.
