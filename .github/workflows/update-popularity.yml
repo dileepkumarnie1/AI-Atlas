@@ -2,7 +2,7 @@ name: Update Popularity
 
 on:
   schedule:
-    - cron: '17 3 * * *'  # Daily at 03:17 UTC
+    - cron: '30 1 * * *'  # Daily at 01:30 UTC (07:00 IST)
   workflow_dispatch: {}
 
 permissions:

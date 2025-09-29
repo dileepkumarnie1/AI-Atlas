@@ -70,7 +70,7 @@ What it does
 
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/update-popularity.yml`
-- Schedule: daily at 03:17 UTC (cron: `17 3 * * *`)
+- Schedule: daily at 07:00 IST (01:30 UTC) (cron: `30 1 * * *`)
 
 ---
 
@@ -162,7 +162,7 @@ Notes
 
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/discover-tools.yml`
-- Schedule: every 3 days at 04:00 UTC (cron: `0 4 */3 * *`)
+- Schedule: daily at 07:00 IST (01:30 UTC) (cron: `30 1 * * *`)
 - Opens a PR if `public/tools.json`, `data/discovery_log.json`, or `data/pending-tools.json` changed
 
 Email notifications (optional)
