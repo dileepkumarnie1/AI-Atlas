@@ -1,0 +1,53 @@
+name: Approve or Reject via Issues
+
+on:
+  issues:
+    types: [opened, labeled, reopened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  handle-approval:
+    if: contains(toJson(github.event.issue.labels), 'approval') || contains(github.event.issue.title, 'Approve ID') || contains(github.event.issue.title, 'Reject ID') || contains(github.event.issue.body, 'Action:')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: |
+          if [ -f package-lock.json ]; then npm ci --silent; else npm i --silent; fi
+
+      - name: Process approval/rejection
+        id: approval
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          ADMIN_APPROVAL_SIGNING_KEY: ${{ secrets.ADMIN_APPROVAL_SIGNING_KEY }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: |
+          node scripts/approval-from-issue.mjs
+
+      - name: Comment and close issue
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = `${{ steps.approval.outputs.status || 'unknown' }}`;
+            const message = `${{ steps.approval.outputs.message || '' }}`;
+            const issue_number = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const body = status === 'ok' ? `✅ ${message}` : (status === 'skipped' ? `ℹ️ ${message}` : `❌ ${message}`);
+            // Add a comment
+            await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            // Optionally close on success or skip
+            if (status === 'ok' || status === 'skipped') {
+              await github.rest.issues.update({ owner, repo, issue_number, state: 'closed' });
+            }

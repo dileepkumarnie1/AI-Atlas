@@ -312,18 +312,25 @@ This site is powered by [Netlify](https://www.netlify.com/).
 
 ## Admin endpoints configuration
 
-Admin-only Netlify Functions support curation and operations:
+Admin curation options:
 
-- `/.netlify/functions/admin-list-pending` (GET) — list pending tools
-- `/.netlify/functions/admin-review` (POST) — approve/reject a pending tool
-- `/.netlify/functions/admin-dispatch` (POST) — trigger GitHub workflows (discover/export)
-- `/.netlify/functions/admin-health` (GET) — health and connectivity checks
+1) GitHub-based approval (recommended for GitHub Pages dev):
+   - Discovery emails link to pre-filled GitHub Issues with label `approval` (requires env `GITHUB_REPO`).
+   - Workflow `.github/workflows/approval-from-issue.yml` listens for such issues and writes the decision to Firestore using `FIREBASE_SERVICE_ACCOUNT_JSON` and `ADMIN_APPROVAL_SIGNING_KEY`.
+   - Close the issue after success; comments record the action.
+
+2) Netlify Functions (if you deploy them):
+   - `/.netlify/functions/admin-list-pending` (GET) — list pending tools
+   - `/.netlify/functions/admin-review` (POST) — approve/reject a pending tool
+   - `/.netlify/functions/admin-dispatch` (POST) — trigger GitHub workflows (discover/export)
+   - `/.netlify/functions/admin-health` (GET) — health and connectivity checks
 
 Required Netlify environment variables:
 
 - FIREBASE_SERVICE_ACCOUNT_JSON — Raw JSON for a Firebase service account (Firestore access)
 - ADMIN_ALLOWED_ORIGIN — Exact origin allowed for CORS (e.g., https://your-site.netlify.app)
 - APPROVAL_BASE_URL — Public site URL (used to derive origin if ADMIN_ALLOWED_ORIGIN not set)
+ - GITHUB_REPO — owner/repo; when set, discovery emails will generate GitHub Issue links instead of Netlify approval URLs
 - GITHUB_REPO — GitHub repo in owner/name format, e.g., user/ai-prompt-recommender
 - GITHUB_TOKEN — Token with workflow scope to call the dispatch API
 

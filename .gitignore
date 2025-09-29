@@ -35,3 +35,6 @@ build/
 
 # Discovery diagnostics (generated)
 data/discovery_report.json
+__pycache__/
+*.pyc
+tests/__pycache__/
