@@ -85,7 +85,8 @@
     "maxAdds": 2,
     "githubStarsMin": 400,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["productivity", "workflow", "calendar", "notes", "email", "meeting", "automation"]
   },
   "design-tools": {
     "githubQueries": ["design ai", "ui generation", "figma ai", "image upscaler", "logo generation"],
@@ -108,7 +109,8 @@
     "maxAdds": 2,
     "githubStarsMin": 400,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["research", "literature", "paper", "citation", "scholar", "pdf"]
   },
   "marketing-seo": {
     "githubQueries": ["seo ai", "content generation marketing", "ad copy ai", "keyword research ai"],
@@ -121,7 +123,8 @@
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/marketing-ai/",
       "https://www.aixploria.com/en/category/seo-ai-tools/"
-    ]
+    ],
+    "aixploriaAutoCategories": ["marketing", "seo", "copy", "content", "ads"]
   },
   "data-analysis": {
     "githubQueries": ["sql copilot", "data analysis ai", "notebook copilot", "pandas ai", "data wrangler ai"],
@@ -142,7 +145,8 @@
     "maxAdds": 2,
     "githubStarsMin": 400,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["3d", "modeling", "nerf", "render", "blender", "gaussian"]
   },
   "ethical-ai": {
     "githubQueries": ["bias detection ai", "model interpretability", "privacy preserving ml", "audit ai"],
@@ -178,7 +182,8 @@
     "maxAdds": 2,
     "githubStarsMin": 300,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["prompt", "template", "chat", "assistant"]
   },
   "most-famous-agentic-ais": {
     "githubQueries": ["autonomous agents", "autogpt", "babyagi", "agent framework", "multi-agent"],
@@ -196,7 +201,8 @@
     "maxAdds": 2,
     "githubStarsMin": 400,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["workflow", "automation", "orchestration", "zapier", "n8n"]
   },
   "search-knowledge-discovery": {
     "githubQueries": ["rag", "semantic search", "vector search", "document qa", "knowledge graph ai"],
@@ -214,6 +220,7 @@
     "maxAdds": 2,
     "githubStarsMin": 300,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["search", "semantic", "vector", "knowledge", "rag", "retrieval"]
   }
 }

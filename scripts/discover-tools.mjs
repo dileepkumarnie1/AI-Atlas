@@ -44,6 +44,27 @@ const ALIASES_JSON = path.join(DATA_DIR, 'aliases.json');
 function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
 function normalizeKeyLoose(s){ return normalizeKey(s).replace(/[^a-z0-9]+/g,''); }
 
+// --- Env overrides helpers ---
+function slugToEnv(slug){
+  return String(slug||'').trim().toUpperCase().replace(/[^A-Z0-9]+/g,'_');
+}
+
+function getEnvOverride(slug, key, def){
+  const kGlobal = `DISCOVERY_${String(key||'').toUpperCase()}`;
+  const vGlobal = process.env[kGlobal];
+  const s = slugToEnv(slug);
+  const kDomain = s ? `DISCOVERY_${s}_${String(key||'').toUpperCase()}` : '';
+  const vDomain = kDomain ? process.env[kDomain] : undefined;
+  const raw = (vDomain ?? vGlobal);
+  if(raw === undefined) return def;
+  const val = String(raw).trim();
+  // Auto-cast numbers and booleans
+  if(/^-?\d+(\.\d+)?$/.test(val)) return Number(val);
+  if(/^true$/i.test(val)) return true;
+  if(/^false$/i.test(val)) return false;
+  return val;
+}
+
 // --- Reliability helpers ---
 const TRUSTED_HOSTS = new Set([
   'github.com','npmjs.com','huggingface.co','pypi.org','readthedocs.io','gitlab.com',
@@ -382,31 +403,38 @@ function inDirectoryConsensus(cand, dirSets){
 }
 
 async function computeTrendingEvidence(cand){
+  // Thresholds overridable via env (global only)
+  const ghStarsMin = Number(getEnvOverride(null,'TRENDING_GH_STARS_MIN', 1000));
+  const ghRecentDays = Number(getEnvOverride(null,'TRENDING_GH_RECENT_DAYS', 60));
+  const npmDlMin = Number(getEnvOverride(null,'TRENDING_NPM_DL_MIN', 5000));
+  const hnPtsMin = Number(getEnvOverride(null,'TRENDING_HN_POINTS_MIN', 200));
+  const hnRecentDays = Number(getEnvOverride(null,'TRENDING_HN_RECENT_DAYS', 14));
+  const freshnessMaxDays = Number(getEnvOverride(null,'PAGE_FRESHNESS_MAX_DAYS', 90));
   const src = String(cand.source||'').toLowerCase();
   try{
     if(src === 'github'){
       const stars = Number(cand.metrics?.stars||0);
       const pushedAt = cand.metrics?.pushedAt ? new Date(cand.metrics.pushedAt).getTime() : 0;
-      const recent = pushedAt && (Date.now() - pushedAt) <= (60*24*3600*1000);
-      return stars >= 1000 && recent;
+      const recent = pushedAt && (Date.now() - pushedAt) <= (ghRecentDays*24*3600*1000);
+      return stars >= ghStarsMin && recent;
     }
     if(src === 'npm'){
       const m = (cand.link||'').match(/\/package\/(\@?[^/]+)/);
       if(m){
         const dls = await getNpmWeeklyDownloads(m[1]);
-        return dls >= 5000;
+        return dls >= npmDlMin;
       }
       return false;
     }
     if(src === 'hn'){
       const pts = Number(cand.metrics?.points||0);
       const created = Number(cand.metrics?.createdAtSec||0) * 1000;
-      const recent = created && (Date.now() - created) <= (14*24*3600*1000);
-      return pts >= 200 && recent;
+      const recent = created && (Date.now() - created) <= (hnRecentDays*24*3600*1000);
+      return pts >= hnPtsMin && recent;
     }
     // Fallback: treat recently updated landing pages as trending (freshness <= 90 days)
     const freshDays = await pageFreshnessDays(cand.link);
-    if(freshDays !== null && freshDays <= 90) return true;
+    if(freshDays !== null && freshDays <= freshnessMaxDays) return true;
   }catch{}
   return false;
 }
@@ -475,7 +503,8 @@ async function ghFetch(url){
 
 async function searchGithubRepos(query, perPage=5, starsMin=500){
   try{
-    const since = new Date(Date.now() - 180*24*3600*1000).toISOString().slice(0,10);
+    const ghSearchRecentDays = Number(getEnvOverride(null,'GITHUB_SEARCH_RECENT_DAYS', 180));
+    const since = new Date(Date.now() - ghSearchRecentDays*24*3600*1000).toISOString().slice(0,10);
     const q = encodeURIComponent(`${query} stars:>${starsMin} pushed:>=${since}`);
     const j = await ghFetch(`https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=${perPage}`);
     return (j.items||[]).map(r=>({
@@ -600,6 +629,37 @@ async function searchAixploriaCategories(categoryUrls=[], sizePerCat=30){
     results.push(...items);
   }
   return results;
+}
+
+// --- Aixploria category auto-discovery by keywords ---
+async function fetchAixploriaCategoriesIndex(){
+  try{
+    const html = await fetchHtml('https://www.aixploria.com/en/', 15000);
+    if(!html || html === '__PDF__') return [];
+    const $ = loadHTML(html);
+    const out = [];
+    $('a[href*="/en/category/"]').each((_, a)=>{
+      const href = String($(a).attr('href')||'');
+      if(!href || !href.startsWith('http')) return;
+      const text = String($(a).text()||'').trim();
+      out.push({ href, text });
+    });
+    // Dedupe by href
+    const seen = new Set();
+    return out.filter(x=>{ if(seen.has(x.href)) return false; seen.add(x.href); return true; });
+  }catch{ return []; }
+}
+
+function matchAnyKeyword(s, keywords){
+  const t = String(s||'').toLowerCase();
+  return keywords.some(k => t.includes(String(k||'').toLowerCase()));
+}
+
+async function searchAixploriaByKeywords(keywords=[]){
+  const idx = await fetchAixploriaCategoriesIndex();
+  const urls = idx.filter(x => matchAnyKeyword(x.href, keywords) || matchAnyKeyword(x.text, keywords)).map(x=>x.href);
+  // If nothing matched, fallback to all categories (empty) to avoid blocking
+  return Array.from(new Set(urls));
 }
 
 function chooseBest(cands){
@@ -807,15 +867,25 @@ async function main(){
     if(!sec) continue;
   diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
-    const starsMin = Number(cfg.githubStarsMin || 500);
+  const starsMin = Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500));
     const npmSize = Number(cfg.npmSize || 5);
     const maxAdds = Number(cfg.maxAdds || 2);
     const results = [];
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
     for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
-    if(Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length){
-      const aixItems = await searchAixploriaCategories(cfg.aixploriaCategories, Number(cfg.aixploriaSize||30));
+    // Resolve Aixploria categories: combine manual list + auto-discovered by keywords
+    let aixCategories = Array.isArray(cfg.aixploriaCategories) ? [...cfg.aixploriaCategories] : [];
+    if(Array.isArray(cfg.aixploriaAutoCategories) && cfg.aixploriaAutoCategories.length){
+      try{
+        const auto = await searchAixploriaByKeywords(cfg.aixploriaAutoCategories);
+        aixCategories.push(...auto);
+      }catch{}
+    }
+    // Dedupe categories
+    if(aixCategories.length){
+      aixCategories = Array.from(new Set(aixCategories));
+      const aixItems = await searchAixploriaCategories(aixCategories, Number(getEnvOverride(slug,'AIXPLORIA_SIZE', cfg.aixploriaSize||30)));
       results.push(...aixItems);
       // Record Aixploria seed host/name sets for this domain
       const hosts = new Set(aixItems.map(it => getHostname(it.link)).filter(Boolean));
@@ -896,7 +966,8 @@ async function main(){
     let relForDecision = null;
     // Aixploria parity gate: enforce per-domain quality using directory presence
     const cfg = sources[slug] || {};
-    const aixMode = cfg.aixploriaStrict ?? (Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length > 0 ? 'soft' : false);
+  const envStrict = getEnvOverride(slug,'AIXPLORIA_STRICT', undefined);
+  const aixMode = (envStrict !== undefined ? envStrict : (cfg.aixploriaStrict ?? ((Array.isArray(cfg.aixploriaCategories) || Array.isArray(cfg.aixploriaAutoCategories)) ? 'soft' : false)));
     const aixStrict = (aixMode === true || aixMode === 'soft' || aixMode === 'hard');
     const aixHard = (aixMode === 'hard');
     if(aixStrict){

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T18:16:19.046Z",
+  "lastUpdated": "2025-09-29T18:38:00.067Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1625,6 +1625,20 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 318 stars for query \"subtitle ai\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "gpt-oss",
+      "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+      "link": "https://openai.com/open-models",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64",
+      "about": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 18,613 stars for query \"language model\""
     }
   ]
 }
