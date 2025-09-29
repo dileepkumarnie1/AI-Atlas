@@ -894,25 +894,34 @@ async function main(){
     const trending = await computeTrendingEvidence(cand);
     let allowBySignals = false;
     let relForDecision = null;
-    // Aixploria parity gate: if enabled for this domain, require tool to appear in Aixploria categories
-    // or meet stronger thresholds (trending OR strong signals+safe reliability)
+    // Aixploria parity gate: enforce per-domain quality using directory presence
     const cfg = sources[slug] || {};
-    const aixStrict = cfg.aixploriaStrict ?? (Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length > 0);
+    const aixMode = cfg.aixploriaStrict ?? (Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length > 0 ? 'soft' : false);
+    const aixStrict = (aixMode === true || aixMode === 'soft' || aixMode === 'hard');
+    const aixHard = (aixMode === 'hard');
     if(aixStrict){
       const sets = aixSeenByDomain.get(slug);
       const host = getHostname(cand.link);
       const inAix = Boolean(sets && ((sets.hosts && sets.hosts.has(host)) || (sets.names && sets.names.has(canonicalName(cand.name)))));
       if(!inAix){
-        if(!trending){
-          const reliability = await assessReliability(cand);
-          const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
-          const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
-          if(classif.score >= 3 && safeEnough){
-            allowBySignals = true; relForDecision = reliability;
-          }else{
-            diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
-            diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
-            continue;
+        if(aixHard){
+          // Hard mode: must be listed in Aixploria for this domain
+          diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
+          diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
+          continue;
+        }else{
+          // Soft mode: allow trending OR strong signals + safe reliability fallback
+          if(!trending){
+            const reliability = await assessReliability(cand);
+            const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+            const safeEnough = reliability.verdict === 'safe' || (!strict && reliability.verdict !== 'risky');
+            if(classif.score >= 3 && safeEnough){
+              allowBySignals = true; relForDecision = reliability;
+            }else{
+              diag.domains[slug].skips.notInAixploria = (diag.domains[slug].skips.notInAixploria||0)+1;
+              diag.totals.skips.notInAixploria = (diag.totals.skips.notInAixploria||0)+1;
+              continue;
+            }
           }
         }
       }

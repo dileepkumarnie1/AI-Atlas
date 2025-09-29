@@ -46,6 +46,7 @@
     "githubStarsMin": 200,
     "githubPerPage": 10,
     "npmSize": 10,
+    "aixploriaStrict": "hard",
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/video-generators/",
       "https://www.aixploria.com/en/category/text-to-video-en/"
@@ -93,7 +94,12 @@
     "maxAdds": 2,
     "githubStarsMin": 500,
     "githubPerPage": 10,
-    "npmSize": 10
+    "npmSize": 10,
+    "aixploriaStrict": "hard",
+    "aixploriaCategories": [
+      "https://www.aixploria.com/en/category/image-editing/",
+      "https://www.aixploria.com/en/category/image-ai-en/"
+    ]
   },
   "research": {
     "githubQueries": ["paper summarization", "literature review ai", "citation extraction ai", "pdf summarizer ai"],
