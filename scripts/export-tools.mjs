@@ -43,6 +43,14 @@ const OUT_PATH = getArg('out') ? path.resolve(getArg('out')) : DEFAULT_OUT;
 function normalizeKey(s) { return String(s || '').trim().toLowerCase(); }
 function titleCaseFromSlug(slug){ return String(slug||'').split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' '); }
 function getHostname(u){ try { return new URL(String(u||'')).hostname.replace(/^www\./,'').toLowerCase(); } catch { return ''; } }
+// Convert arbitrary labels to canonical slug (lowercase, hyphens for spaces/punctuation)
+function toSlug(s){
+  return String(s||'')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
 const GITHUB_HOST = 'github.com';
 const ALLOWLIST_GITHUB_NAMES = new Set(['github copilot']);
@@ -74,11 +82,41 @@ function mapToolDocToJson(doc){
   const nameNorm = normalizeKey(name);
   if (host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(nameNorm)) return null;
 
+  // Canonicalize pricing tags for robust UI grouping
+  function canonicalizeTags(tags){
+    const inArr = Array.isArray(tags) ? tags : [];
+    const outSet = new Set();
+    const extras = new Set();
+    for (const t of inArr){
+      if (!t) continue;
+      const raw = String(t).trim();
+      const v = raw.toLowerCase();
+      // Preserve original tag
+      outSet.add(raw);
+      // Pricing/category canonicalization
+      if (/^oss$|open[\s-]?source/.test(v)) extras.add('Open Source');
+      else if (/^freemium$/.test(v)) extras.add('Freemium');
+      else if (/^free$/.test(v)) extras.add('Free');
+      else if (/paid|subscription|subscribe|premium|enterprise/.test(v)) extras.add('Subscription');
+    }
+    // Ensure at least one pricing tag exists so the tool shows in a group
+    const hasPricing = ['Open Source','Free','Freemium','Subscription'].some(x => outSet.has(x) || extras.has(x));
+    if (!hasPricing) {
+      // Heuristic: if the tool name or description hints at being open-source, mark it; else default to Freemium
+      const txt = `${data.name||''} ${data.description||data.about||''}`.toLowerCase();
+      if (/open[\s-]?source|^oss$/.test(txt)) extras.add('Open Source');
+      else extras.add('Freemium');
+    }
+    // Merge extras
+    for (const x of extras) outSet.add(x);
+    return Array.from(outSet);
+  }
+
   const out = {
     name,
     description: data.description || data.about || '',
     link,
-    tags: Array.isArray(data.tags) ? data.tags : [],
+    tags: canonicalizeTags(data.tags),
     // Always include schema fields for consistency
     about: data.about || '',
     pros: Array.isArray(data.pros) ? data.pros : [],
@@ -182,7 +220,8 @@ async function main(){
   const candidatesToEnrich = new Set(); // key: `${slug}::${nameLower}`
   for (const doc of snap.docs){
     const d = doc.data();
-    const slug = normalizeKey(d.domainSlug || 'uncategorized');
+    const rawSlug = d.domainSlug || d.domainName || 'uncategorized';
+    const slug = toSlug(rawSlug);
     const tool = mapToolDocToJson(d);
     if (!tool) continue; // filtered/invalid
     if (!groups.has(slug)) groups.set(slug, { tools: [], name: d.domainName });

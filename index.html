@@ -1304,18 +1304,18 @@
                     if (!domain) { originalRenderFunctions.renderHome(); return; }
 
                     // Group tools by pricing model
-                    const openSource = (domain.tools || []).filter(t => (t.tags||[]).some(tag => /open ?source/i.test(tag)));
+                    const openSource = (domain.tools || []).filter(t => (t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase())));
                     const free = (domain.tools || []).filter(t =>
                         !(t.tags||[]).some(tag => /open ?source|freemium|paid|subscription|enterprise/i.test(tag)) &&
                         ((t.tags||[]).some(tag => /free/i.test(tag)) || (t.price && t.price.toLowerCase() === 'free'))
                     );
                     const freemium = (domain.tools || []).filter(t =>
-                        (t.tags||[]).some(tag => /freemium/i.test(tag)) &&
-                        !(t.tags||[]).some(tag => /open ?source/i.test(tag))
+                        (t.tags||[]).some(tag => /freemium/i.test(String(tag))) &&
+                        !(t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
                     const paid = (domain.tools || []).filter(t =>
-                        (t.tags||[]).some(tag => /paid|subscription|enterprise/i.test(tag)) &&
-                        !(t.tags||[]).some(tag => /freemium|free|open ?source/i.test(tag))
+                        (t.tags||[]).some(tag => /paid|subscription|subscribe|premium|enterprise/i.test(String(tag))) &&
+                        !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
 
                     // Helper to render a vertical list of tools in a single card
