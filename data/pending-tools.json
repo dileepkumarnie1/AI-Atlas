@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T20:15:21.559Z",
+  "lastUpdated": "2025-09-29T20:26:02.908Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1846,6 +1846,19 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 5,015 stars for query \"autonomous agents\""
+    },
+    {
+      "domain": "3D Modeling",
+      "name": "Sloyd",
+      "description": "AI 3D asset generation",
+      "link": "https://sloyd.ai",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "AI 3D asset generation",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
     }
   ]
 }

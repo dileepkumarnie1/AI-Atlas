@@ -32,6 +32,7 @@
     "githubStarsMin": 800,
     "githubPerPage": 10,
     "npmSize": 10,
+    "aixploriaStrict": "soft",
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/image-ai-en/",
       "https://www.aixploria.com/en/category/image-editing/"
@@ -63,6 +64,7 @@
     "githubStarsMin": 800,
     "githubPerPage": 10,
     "npmSize": 10,
+    "aixploriaStrict": "soft",
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/assistant-code-en/",
       "https://www.aixploria.com/en/category/developer-tools/"
@@ -83,6 +85,10 @@
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/music/",
       "https://www.aixploria.com/en/category/voice-reading/"
+    ],
+    "curated": [
+      { "name": "ElevenLabs", "link": "https://elevenlabs.ai", "description": "AI voice synthesis", "tags": ["Paid"] },
+      { "name": "Aiva", "link": "https://aiva.ai", "description": "AI music generation", "tags": ["Freemium"] }
     ]
   },
   "productivity": {
@@ -93,7 +99,11 @@
     "githubStarsMin": 400,
     "githubPerPage": 10,
     "npmSize": 10,
-    "aixploriaAutoCategories": ["productivity", "workflow", "calendar", "notes", "email", "meeting", "automation"]
+    "aixploriaAutoCategories": ["productivity", "workflow", "calendar", "notes", "email", "meeting", "automation"],
+    "curated": [
+      { "name": "Mem", "link": "https://mem.ai", "description": "AI notes and knowledge base", "tags": ["Freemium"] },
+      { "name": "QuillBot AI", "link": "https://quillbot.ai", "description": "AI writing and rephrasing", "tags": ["Freemium"] }
+    ]
   },
   "design-tools": {
     "githubQueries": ["design ai", "ui generation", "figma ai", "image upscaler", "logo generation"],
@@ -131,7 +141,11 @@
       "https://www.aixploria.com/en/category/marketing-ai/",
       "https://www.aixploria.com/en/category/seo-ai-tools/"
     ],
-    "aixploriaAutoCategories": ["marketing", "seo", "copy", "content", "ads"]
+    "aixploriaAutoCategories": ["marketing", "seo", "copy", "content", "ads"],
+    "curated": [
+      { "name": "Jasper", "link": "https://jasper.ai", "description": "AI content for marketing", "tags": ["Paid"] },
+      { "name": "Writesonic", "link": "https://writesonic.ai", "description": "AI content and SEO tools", "tags": ["Freemium"] }
+    ]
   },
   "data-analysis": {
     "githubQueries": ["sql copilot", "data analysis ai", "notebook copilot", "pandas ai", "data wrangler ai"],
@@ -153,7 +167,11 @@
     "githubStarsMin": 400,
     "githubPerPage": 10,
     "npmSize": 10,
-    "aixploriaAutoCategories": ["3d", "modeling", "nerf", "render", "blender", "gaussian"]
+    "aixploriaAutoCategories": ["3d", "modeling", "nerf", "render", "blender", "gaussian"],
+    "curated": [
+      { "name": "Sloyd", "link": "https://sloyd.ai", "description": "AI 3D asset generation", "tags": ["Freemium"] },
+      { "name": "Kaedim", "link": "https://kaedim.ai", "description": "Turn images into 3D models", "tags": ["Paid"] }
+    ]
   },
   "ethical-ai": {
     "githubQueries": ["bias detection ai", "model interpretability", "privacy preserving ml", "audit ai"],
@@ -208,7 +226,8 @@
     "maxAdds": 2,
     "githubStarsMin": 400,
     "githubPerPage": 10,
-    "npmSize": 10,
+  "npmSize": 10,
+  "aixploriaStrict": "soft",
     "aixploriaAutoCategories": ["workflow", "automation", "orchestration", "zapier", "n8n"],
     "curated": [
       { "name": "Magical", "link": "https://magical.ai", "description": "Automate tasks with AI across apps", "tags": ["Freemium"] },
@@ -222,7 +241,8 @@
     "maxAdds": 2,
     "githubStarsMin": 500,
     "githubPerPage": 10,
-    "npmSize": 10,
+  "npmSize": 10,
+  "aixploriaStrict": "soft",
     "curated": [
       { "name": "Andi", "link": "https://andisearch.ai", "description": "AI answers and search", "tags": ["Free"] },
       { "name": "Perplexity", "link": "https://perplexity.ai", "description": "Answer engine for research", "tags": ["Free"] }
