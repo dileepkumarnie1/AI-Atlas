@@ -4802,50 +4802,5 @@
         "cons": []
       }
     ]
-  },
-  {
-    "name": "Language & chat",
-    "slug": "language & chat",
-    "description": "Generated from Firestore export",
-    "icon": "",
-    "tools": [
-      {
-        "name": "pathway",
-        "description": "Pathway - Fundamentally changing the way models think",
-        "link": "https://pathway.com",
-        "tags": [
-          "search"
-        ],
-        "about": "Pathway - Fundamentally changing the way models think",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://pathway.com/favicon-96x96.png"
-      }
-    ]
-  },
-  {
-    "name": "Code assistance",
-    "slug": "code assistance",
-    "description": "Generated from Firestore export",
-    "icon": "",
-    "tools": [
-      {
-        "name": "LibreChat",
-        "description": "Free, open source AI chat platform - Every AI for Everyone",
-        "link": "https://librechat.ai/",
-        "tags": [
-          "chatbot",
-          "developer-tools",
-          "image",
-          "search",
-          "agents",
-          "open-source"
-        ],
-        "about": "Free, open source AI chat platform - Every AI for Everyone",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://librechat.ai/apple-touch-icon.png"
-      }
-    ]
   }
 ]
