@@ -1253,9 +1253,6 @@
                                 <div>
                                     <select id="category-select" class="search-input w-full text-center"></select>
                                 </div>
-                                <div class="md:col-span-2 flex justify-end">
-                                    <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
-                                </div>
                             </div>
 
                             <div id="search-results-container"></div>
@@ -1269,7 +1266,7 @@
 
                     // wire search behavior
                     const sb = document.getElementById('search-bar-new');
-                    const clearBtn = document.getElementById('search-clear-btn');
+                    const clearBtn = null; // clear removed
                     const resultsContainer = document.getElementById('search-results-container');
 
                     function computeCategoryCounts(matches) {
@@ -1377,19 +1374,7 @@
                             if (e.key === 'Enter') e.preventDefault();
                         });
                     }
-                    if (clearBtn) {
-                        clearBtn.addEventListener('click', () => {
-                            state.searchQuery = '';
-                            const sb = document.getElementById('search-bar-new');
-                            if (sb) sb.value = '';
-                            const rc = document.getElementById('search-results-container');
-                            if (rc) rc.innerHTML = '';
-                            // Reset category to placeholder on clear
-                            state.selectedCategory = 'all';
-                            state.categoryExplicit = false;
-                            renderCategorySelect([]);
-                        });
-                    }
+                    // Clear button removed; reset handled on navigation only
 
                     // Initial dropdown render (no query -> total counts)
                     renderCategorySelect([]);
