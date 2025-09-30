@@ -6,30 +6,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
-        "name": "agno",
-        "description": "High-performance runtime for multi-agent systems. Build, run and manage secure multi-agent systems in your cloud.",
-        "link": "https://docs.agno.com",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/104874993?v=4&s=64",
-        "about": "High-performance runtime for multi-agent systems. Build, run and manage secure multi-agent systems in your cloud.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "autogen",
-        "description": "A programming framework for agentic AI",
-        "link": "https://microsoft.github.io/autogen/",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
-        "about": "A programming framework for agentic AI",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "ChatGPT (OpenAI)",
         "description": "The quintessential AI chatbot for drafting, ideation, and summarization.",
         "link": "https://chat.openai.com/",
@@ -188,30 +164,7 @@
           "The ecosystem of tools is less mature than for proprietary models."
         ]
       },
-      {
-        "name": "llama_index",
-        "description": "LlamaIndex is the leading framework for building LLM-powered agents over your data.",
-        "link": "https://docs.llamaindex.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/130722866?v=4&s=64",
-        "about": "LlamaIndex is the leading framework for building LLM-powered agents over your data.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "lobe-chat",
-        "description": "🤯 Lobe Chat - an open-source, modern design AI chat framework. Supports multiple AI providers (OpenAI / Claude 4 / Gemini / DeepSeek / Ollama / Qwen), Knowledge Base (file upload / RAG ), one click install MCP Marketplace and Artifacts / Thinking. One-click FREE deployment of your private AI Agent application.",
-        "link": "https://lobechat.com",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/131470832?v=4&s=64",
-        "about": "🤯 Lobe Chat - an open-source, modern design AI chat framework. Supports multiple AI providers (OpenAI / Claude 4 / Gemini / DeepSeek / Ollama / Qwen), Knowledge Base (file upload / RAG ), one click install MCP Marketplace and Artifacts / Thinking. One-click FREE deployment of your private AI Agent application.",
-        "pros": [],
-        "cons": []
-      },
+      
       {
         "name": "Meta AI",
         "description": "Consumer assistant integrated into Meta apps with image and search features.",
@@ -278,18 +231,7 @@
           "Rapid API changes."
         ]
       },
-      {
-        "name": "NextChat",
-        "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
-        "link": "https://nextchat.club/download",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/153288546?v=4&s=64",
-        "about": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
-        "pros": [],
-        "cons": []
-      },
+      
       {
         "name": "Notebook LLM",
         "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
@@ -309,18 +251,7 @@
         "cons": [],
         "iconUrl": "https://notebooklm.google.com/favicon.ico"
       },
-      {
-        "name": "PaddleOCR",
-        "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 80+ languages.",
-        "link": "https://www.paddleocr.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/23534030?v=4&s=64",
-        "about": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 80+ languages.",
-        "pros": [],
-        "cons": []
-      },
+      
       {
         "name": "Perplexity AI",
         "description": "A conversational search engine that provides direct answers with cited sources.",
@@ -341,19 +272,8 @@
           "Can be slower than a traditional search engine.",
           "Pro version required for advanced features like file uploads."
         ]
-      },
-      {
-        "name": "supabase",
-        "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
-        "link": "https://supabase.com",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/54469796?v=4&s=64",
-        "about": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
-        "pros": [],
-        "cons": []
       }
+      
     ]
   },
   {
