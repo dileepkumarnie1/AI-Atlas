@@ -24,6 +24,11 @@ on:
           - Admin Health Endpoint
           - Admin Dispatch Endpoint
           - Legacy Cleanup
+          - Search
+          - Category Filter
+          - Domain Navigation
+          - Tool Details
+          - Theme Toggle
 
 permissions:
   contents: read

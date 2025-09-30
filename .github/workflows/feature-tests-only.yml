@@ -1,4 +1,4 @@
-name: Feature tests only (no deploy)
+name: Feature/Functionality testing
 
 on:
   workflow_dispatch:
@@ -20,6 +20,11 @@ on:
           - Admin Health Endpoint
           - Admin Dispatch Endpoint
           - Legacy Cleanup
+          - Search
+          - Category Filter
+          - Domain Navigation
+          - Tool Details
+          - Theme Toggle
 
 permissions:
   contents: read

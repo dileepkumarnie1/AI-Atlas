@@ -152,6 +152,88 @@ def build_test_plan() -> List[TestCase]:
         type="positive", priority="P2", device="desktop(1366x768)"
     ))
 
+    # Search experience
+    tc.append(TestCase(
+        id="SR-001",
+        feature="Search",
+        title="Search input is present and focusable",
+        precondition="Home loaded",
+        steps="Locate #search-bar-new and focus it",
+        expected="Active element becomes the search input",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-002",
+        feature="Search",
+        title="Typing shows at least one result",
+        precondition="Home loaded",
+        steps="Type 'a' into search; wait for results",
+        expected=">= 1 result appears in search results",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-003",
+        feature="Search",
+        title="Open button from results shows Tool Details",
+        precondition="Search results visible",
+        steps="Click first .open-tool-btn; tool details modal becomes visible",
+        expected="Modal #tool-details-modal has class 'visible'",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+
+    # Category filter
+    tc.append(TestCase(
+        id="CF-001",
+        feature="Category Filter",
+        title="Category dropdown shows placeholder by default",
+        precondition="Home loaded",
+        steps="Check #category-select value is empty and placeholder option exists",
+        expected="Value is '' and placeholder option present",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="CF-003",
+        feature="Category Filter",
+        title="Selecting a category with no search navigates to tools view",
+        precondition="Home loaded, no search query",
+        steps="Pick first non-empty, non-'all' option in #category-select",
+        expected="location.hash contains '#domain='",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+
+    # Domain navigation
+    tc.append(TestCase(
+        id="DN-001",
+        feature="Domain Navigation",
+        title="Clicking a domain card navigates to tools view",
+        precondition="Home loaded",
+        steps="Click first .domain-card",
+        expected="location.hash contains '#domain='",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+
+    # Tool details modal
+    tc.append(TestCase(
+        id="TD-001",
+        feature="Tool Details",
+        title="Open and close tool details modal from tools view",
+        precondition="On a domain tools page",
+        steps="Click first .open-tool-btn; modal opens; click close; modal closes",
+        expected="Modal visible toggles correctly",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+
+    # Theme toggle
+    tc.append(TestCase(
+        id="TH-001",
+        feature="Theme Toggle",
+        title="Toggling theme flips dark class on html",
+        precondition="Home loaded",
+        steps="Click #theme-toggle and observe documentElement class list",
+        expected="Presence of 'dark' class toggles",
+        type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+
     return tc
 
 
@@ -306,6 +388,101 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 'AD-001': do_AD_001,
                 'AD-002': do_AD_002,
                 'LG-001': do_LG_001,
+                # Search
+                'SR-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    results.append(
+                        (lambda: (
+                            dpage.focus('#search-bar-new'),
+                            results.append(TestResult('SR-001', 'Search', 'Search input is present and focusable',
+                                                      'pass' if dpage.evaluate("document.activeElement && document.activeElement.id === 'search-bar-new'") else 'fail',
+                                                      'focused', shot('SR-001', dpage)))
+                        ))()
+                    )
+                ),
+                'SR-002': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.fill('#search-bar-new', 'a', timeout=5000),
+                        dpage.wait_for_selector('#search-results-container .open-tool-btn', timeout=10000),
+                        count := dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length"),
+                        results.append(TestResult('SR-002', 'Search', 'Typing shows at least one result',
+                                                  'pass' if (count and int(count) >= 1) else 'fail', f'count={count}', shot('SR-002', dpage)))
+                    ))()
+                ),
+                'SR-003': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.fill('#search-bar-new', 'a', timeout=5000),
+                        dpage.wait_for_selector('#search-results-container .open-tool-btn', timeout=10000),
+                        dpage.click('#search-results-container .open-tool-btn', timeout=10000),
+                        dpage.wait_for_selector('#tool-details-modal.visible', timeout=15000),
+                        results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'pass', 'modal visible', shot('SR-003', dpage)))
+                    ))()
+                ),
+                # Category Filter
+                'CF-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#category-select', timeout=10000),
+                        val := dpage.evaluate("document.querySelector('#category-select').value"),
+                        hasPH := dpage.evaluate("!!document.querySelector('#category-select option[data-placeholder]')"),
+                        status := 'pass' if (val == '' and hasPH) else 'fail',
+                        results.append(TestResult('CF-001', 'Category Filter', 'Category dropdown shows placeholder by default', status, f"value='{val}', placeholder={hasPH}", shot('CF-001', dpage)))
+                    ))()
+                ),
+                'CF-003': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#category-select', timeout=10000),
+                        slug := dpage.evaluate("(() => { const sel=document.querySelector('#category-select'); if(!sel) return ''; for (const o of sel.options){ const v=o.value; if(v && v.toLowerCase()!=='all'){ return v; } } return ''; })()"),
+                        (dpage.select_option('#category-select', slug) if slug else None),
+                        time.sleep(0.3),
+                        h := dpage.evaluate('window.location.hash'),
+                        results.append(TestResult('CF-003', 'Category Filter', 'Selecting a category with no search navigates to tools view',
+                                                  'pass' if (isinstance(h, str) and '#domain=' in h) else 'fail', f'hash={h}', shot('CF-003', dpage)))
+                    ))()
+                ),
+                # Domain Navigation
+                'DN-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('.domain-card', timeout=10000),
+                        dpage.click('.domain-card', timeout=10000),
+                        time.sleep(0.3),
+                        h := dpage.evaluate('window.location.hash'),
+                        results.append(TestResult('DN-001', 'Domain Navigation', 'Clicking a domain card navigates to tools view',
+                                                  'pass' if (isinstance(h, str) and '#domain=' in h) else 'fail', f'hash={h}', shot('DN-001', dpage)))
+                    ))()
+                ),
+                # Tool Details
+                'TD-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('.domain-card', timeout=10000),
+                        dpage.click('.domain-card', timeout=10000),
+                        dpage.wait_for_selector('.open-tool-btn', timeout=15000),
+                        dpage.click('.open-tool-btn', timeout=15000),
+                        dpage.wait_for_selector('#tool-details-modal.visible', timeout=15000),
+                        # close modal
+                        dpage.click('#close-tool-details-modal-btn', timeout=10000),
+                        time.sleep(0.2),
+                        vis := dpage.evaluate("document.querySelector('#tool-details-modal').classList.contains('visible')"),
+                        results.append(TestResult('TD-001', 'Tool Details', 'Open and close tool details modal from tools view', 'pass' if not vis else 'fail', f'visible={vis}', shot('TD-001', dpage)))
+                    ))()
+                ),
+                # Theme Toggle
+                'TH-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        before := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        dpage.click('#theme-toggle', timeout=10000),
+                        time.sleep(0.3),
+                        after := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        results.append(TestResult('TH-001', 'Theme Toggle', 'Toggling theme flips dark class on html',
+                                                  'pass' if (before != after) else 'fail', f'before={before}, after={after}', shot('TH-001', dpage)))
+                    ))()
+                ),
             }
 
             # Execute only selected tests from plan
