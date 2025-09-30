@@ -689,7 +689,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
                     (lambda: (
                         dpage.wait_for_selector('#category-select', timeout=10000),
-                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/\.test(x.textContent||'')); return o?o.textContent:'' })()"),
+                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/.test(x.textContent||'')); return o?o.textContent:'' })()"),
                         ok := bool(allText and any(ch.isdigit() for ch in str(allText))),
                         results.append(TestResult('CF-002', 'Category Filter', 'All category reflects total count', 'pass' if ok else 'fail', f"text={allText}", shot('CF-002', dpage)))
                     ))()
@@ -835,7 +835,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                     (lambda: (
                         dpage.fill('#search-bar-new', 'a', timeout=10000),
                         time.sleep(0.3),
-                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/\.test(x.textContent||'')); return o?o.textContent:'' })()"),
+                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/.test(x.textContent||'')); return o?o.textContent:'' })()"),
                         ok := bool(allText and any(ch.isdigit() for ch in str(allText))),
                         results.append(TestResult('SR-004', 'Search', 'Category counts update when typing', 'pass' if ok else 'fail', f'text={allText}', shot('SR-004', dpage)))
                     ))()
