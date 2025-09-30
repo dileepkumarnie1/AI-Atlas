@@ -62,9 +62,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.select-tests.outputs.matrix) }}
-    env:
-      TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL || vars.TEST_USER_EMAIL || '' }}
-      TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || vars.TEST_USER_PASSWORD || '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -109,6 +106,23 @@ jobs:
       - name: Install Playwright browsers
         run: |
           python -m playwright install --with-deps
+
+      - name: Prepare optional auth envs
+        run: |
+          if [ -n "${{ secrets.TEST_USER_EMAIL }}" ]; then
+            echo "TEST_USER_EMAIL=${{ secrets.TEST_USER_EMAIL }}" >> "$GITHUB_ENV"
+          elif [ -n "${{ vars.TEST_USER_EMAIL }}" ]; then
+            echo "TEST_USER_EMAIL=${{ vars.TEST_USER_EMAIL }}" >> "$GITHUB_ENV"
+          else
+            echo "TEST_USER_EMAIL=" >> "$GITHUB_ENV"
+          fi
+          if [ -n "${{ secrets.TEST_USER_PASSWORD }}" ]; then
+            echo "TEST_USER_PASSWORD=${{ secrets.TEST_USER_PASSWORD }}" >> "$GITHUB_ENV"
+          elif [ -n "${{ vars.TEST_USER_PASSWORD }}" ]; then
+            echo "TEST_USER_PASSWORD=${{ vars.TEST_USER_PASSWORD }}" >> "$GITHUB_ENV"
+          else
+            echo "TEST_USER_PASSWORD=" >> "$GITHUB_ENV"
+          fi
 
 
       - name: Run UI tests
