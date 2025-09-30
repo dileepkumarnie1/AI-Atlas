@@ -229,7 +229,8 @@ def build_test_plan() -> List[TestCase]:
     ))
     tc.append(TestCase(
         id="CF-004",
-        feature="Category filter with search narrows results without navigation",
+        feature="Category Filter",
+        title="Category filter with search narrows results without navigation",
         precondition="Home loaded; type query first",
         steps="Type 'a'; select a specific category; verify fewer/equal results and hash unchanged",
         expected="Result count does not increase and URL hash does not include '#domain='",
