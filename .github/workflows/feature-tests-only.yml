@@ -66,7 +66,20 @@ jobs:
             URL="${TEST_BASE_URL:-}"
           fi
           if [ -z "$URL" ]; then
-            echo "TEST_BASE_URL was not provided. Pass 'base_url' input or set TEST_BASE_URL in env." >&2
+            # Auto-derive GitHub Pages URL for this repo
+            OWNER="$GITHUB_REPOSITORY_OWNER"
+            REPO="${GITHUB_REPOSITORY#*/}"
+            if echo "$REPO" | grep -qiE '\\.github\\.io$'; then
+              # User/Org site repo: owner.github.io
+              URL="https://$REPO"
+            else
+              # Project site repo: owner.github.io/repo
+              # Note: This assumes default Pages domain (no custom domain)
+              URL="https://$OWNER.github.io/$REPO"
+            fi
+          fi
+          if [ -z "$URL" ]; then
+            echo "TEST_BASE_URL was not provided and could not be derived. Pass 'base_url' input or set TEST_BASE_URL in env." >&2
             exit 1
           fi
           echo "Using TEST_BASE_URL=$URL"
