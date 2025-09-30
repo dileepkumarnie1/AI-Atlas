@@ -41,10 +41,10 @@ async function fetchNpm(pkg){
 }
 
 function scoreFromSignals(sig){
-  // Simple log-based scaler
+  // Raw log-based score (will be normalized later across all tools)
   const log = (x)=> Math.log10((x||0)+1);
   const s = 0.7*log(sig.github?.stars) + 0.2*log(sig.github?.forks) + 0.8*log(sig.npm?.weeklyDownloads);
-  return Number((s*100).toFixed(2));
+  return Number(s.toFixed(4));
 }
 
 function normalizeKey(s){
@@ -96,22 +96,44 @@ async function main(){
     const sig = { github: null, npm: null };
     if(src.github) sig.github = await fetchGithub(src.github);
     if(src.npm) sig.npm = await fetchNpm(src.npm);
-    const popularityScore = scoreFromSignals(sig);
-    raw[name] = { signals: sig, popularityScore };
+    const signalsRaw = scoreFromSignals(sig); // unnormalized
+    raw[name] = { signals: sig, signalsRaw };
+  }
+
+  // Normalize signalsRaw into 0..100 range for fair combination with mpScore
+  const rawValues = Object.values(raw).map(r => r?.signalsRaw || 0).filter(v => v>0);
+  const maxSignals = rawValues.length ? Math.max(...rawValues) : 0;
+  const signalsNormMap = {};
+  if(maxSignals > 0){
+    for(const [name, r] of Object.entries(raw)){
+      const v = r?.signalsRaw || 0;
+      signalsNormMap[name] = v>0 ? Number(((v / maxSignals) * 100).toFixed(2)) : 0;
+    }
   }
 
   // Ensure every tool has a combined score (signals + MP order + frequency)
   for(const name of allNames){
     const k = normalizeKey(name);
     const existing = raw[name];
-    const signalsScore = existing?.popularityScore || 0;
+    const signalsScore = (signalsNormMap[name] || 0); // 0..100 normalized
     const mpScore = mpOrderMap[k] || 0;
     const freqScore = Math.max(0, (freqMap[k] || 0) - 1) * 10; // +10 per extra occurrence beyond first
-    const combined = Number((signalsScore + mpScore + freqScore).toFixed(2));
+    const freqCapped = Math.min(30, freqScore); // avoid inflate by repeats
+    // Boost for real user overrides (if provided); logarithmic, mapped to 0..100
+    const actual = (overrides[name] && typeof overrides[name].actualUsers === 'number') ? overrides[name].actualUsers : null;
+    const usersScore = actual ? Math.min(100, Math.log10(actual + 1) * 20) : 0; // ~100 at 1e5+
+    // Weighted combination (emphasize curated Most Popular list; then signals; small repeat bonus)
+    // If usersScore present, prioritize it by blending as primary signal
+    const combined = (usersScore > 0)
+      ? Number((0.6*usersScore + 0.3*mpScore + 0.1*signalsScore + 0.05*freqCapped).toFixed(2))
+      : Number((0.6*mpScore + 0.35*signalsScore + 0.05*freqCapped).toFixed(2));
     raw[name] = {
       ...(existing || { signals: { github: null, npm: null } }),
+      signalsRaw: existing?.signalsRaw || 0,
+      signalsNorm: signalsScore,
       mpScore,
       freqScore,
+      usersScore,
       popularityScore: combined
     };
   }
