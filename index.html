@@ -676,6 +676,7 @@
                 selectedDomain: null,
                 searchQuery: '',
                 selectedCategory: 'all',
+                categoryExplicit: false, // whether user explicitly chose a category
                 user: null,
                 favorites: [],
                 reviews: {},
@@ -1282,18 +1283,21 @@
                         const counts = computeCategoryCounts(matches);
                         const current = state.selectedCategory || 'all';
                         const opts = [];
-                        // Placeholder-like option
-                        opts.push(`<option value="all" data-placeholder="1">-- Select a category --</option>`);
+                        // Placeholder option (empty value) and explicit All option with counts
+                        opts.push(`<option value="" data-placeholder="1">-- Select a category --</option>`);
+                        opts.push(`<option value="all">All (${counts.all || 0})</option>`);
                         for (const d of (db || [])) {
                             const c = counts[d.slug] || 0;
                             const selected = current === d.slug ? 'selected' : '';
                             opts.push(`<option value="${d.slug}" ${selected}>${escapeHtml(d.name)} (${c})</option>`);
                         }
                         sel.innerHTML = opts.join('');
-                        sel.value = current;
+                        // Determine which value should show in closed control
+                        const valueToSet = (!state.categoryExplicit && current === 'all') ? '' : current;
+                        sel.value = valueToSet;
                         // Toggle muted style when placeholder is selected
                         const setPlaceholderStyle = () => {
-                            if (sel.value === 'all') {
+                            if (sel.value === '') {
                                 sel.classList.add('text-secondary');
                             } else {
                                 sel.classList.remove('text-secondary');
@@ -1301,7 +1305,18 @@
                         };
                         setPlaceholderStyle();
                         sel.onchange = () => {
-                            const slug = sel.value || 'all';
+                            const val = sel.value;
+                            if (val === '') {
+                                // Back to placeholder state
+                                state.categoryExplicit = false;
+                                state.selectedCategory = 'all';
+                                renderSearchResults();
+                                renderCategorySelect(currentMatchesCache);
+                                setPlaceholderStyle();
+                                return;
+                            }
+                            state.categoryExplicit = true;
+                            const slug = val || 'all';
                             state.selectedCategory = slug;
                             if (!state.searchQuery.trim() && slug !== 'all') {
                                 state.selectedDomain = slug;
@@ -1364,6 +1379,7 @@
                             if (rc) rc.innerHTML = '';
                             // Reset category to placeholder on clear
                             state.selectedCategory = 'all';
+                            state.categoryExplicit = false;
                             renderCategorySelect([]);
                         });
                     }
