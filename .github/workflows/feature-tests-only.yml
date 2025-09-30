@@ -1,0 +1,112 @@
+name: Feature tests only (no deploy)
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL to test against (required unless set by environment)"
+        required: false
+        type: string
+      feature:
+        description: "Feature to test (choose 'All' for full regression)."
+        required: true
+        default: "All"
+        type: choice
+        options:
+          - All
+          - Mobile Nav
+          - Background Fix
+          - Accessibility
+          - Admin Health Endpoint
+          - Admin Dispatch Endpoint
+          - Legacy Cleanup
+
+permissions:
+  contents: read
+
+jobs:
+  select-tests:
+    name: Select tests (dropdown)
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+    steps:
+      - name: Build test matrix from dropdown
+        id: build
+        run: |
+          set -euo pipefail
+          sel='${{ inputs.feature }}'
+          if [ "$sel" = "All" ]; then
+            json='{"include":[{"feature":"ALL"}]}'
+          else
+            json=$(printf '{"include":[{"feature":"%s"}]}' "$sel")
+          fi
+          {
+            echo "matrix<<JSON"
+            echo "$json"
+            echo JSON
+          } >> "$GITHUB_OUTPUT"
+
+  ui-tests:
+    name: Playwright UI tests (tests only)
+    runs-on: ubuntu-latest
+    needs: select-tests
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.select-tests.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure TEST_BASE_URL
+        run: |
+          URL='${{ inputs.base_url }}'
+          if [ -z "$URL" ]; then
+            # Fallback to environment variable if runner/env provides it
+            URL="${TEST_BASE_URL:-}"
+          fi
+          if [ -z "$URL" ]; then
+            echo "TEST_BASE_URL was not provided. Pass 'base_url' input or set TEST_BASE_URL in env." >&2
+            exit 1
+          fi
+          echo "Using TEST_BASE_URL=$URL"
+          echo "TEST_BASE_URL=$URL" >> "$GITHUB_ENV"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r tests/requirements.txt
+
+      - name: Install Playwright browsers
+        run: |
+          python -m playwright install --with-deps
+
+      - name: Run UI tests
+        env:
+          TEST_BASE_URL: ${{ env.TEST_BASE_URL }}
+        run: |
+          FEAT='${{ matrix.feature }}'
+          SLUG=$(echo "$FEAT" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+          if [ "$FEAT" = "ALL" ]; then
+            echo "Running full regression"
+            python tests/run_ui_tests.py --out-dir "tests/output/all"
+          else
+            echo "Running feature: $FEAT"
+            python tests/run_ui_tests.py --features "$FEAT" --out-dir "tests/output/$SLUG"
+          fi
+
+      - name: Upload UI test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-artifacts-${{ matrix.feature }}
+          path: |
+            tests/**/*.csv
+            tests/**/*.xlsx
+            tests/**/screenshots/**
+          if-no-files-found: warn
