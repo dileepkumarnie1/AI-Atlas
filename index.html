@@ -1245,8 +1245,10 @@
                                 <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
                             </div>
 
-                            <!-- Category filter chips -->
-                            <div id="category-filter" class="max-w-4xl mx-auto mb-8 flex flex-wrap gap-2 justify-center"></div>
+                            <!-- Category filter dropdown -->
+                            <div class="max-w-4xl mx-auto mb-6 flex justify-center">
+                                <select id="category-select" class="search-input w-full max-w-md text-center"></select>
+                            </div>
 
                             <div id="search-results-container"></div>
 
@@ -1274,37 +1276,32 @@
                         return counts;
                     }
 
-                    function renderCategoryChips(matches) {
-                        const container = document.getElementById('category-filter');
-                        if (!container) return;
+                    function renderCategorySelect(matches) {
+                        const sel = document.getElementById('category-select');
+                        if (!sel) return;
                         const counts = computeCategoryCounts(matches);
-                        const chips = [];
-                        const activeCls = 'bg-purple-600 text-white border-purple-700';
-                        const baseCls = 'px-3 py-1 rounded-full border text-sm bg-white text-purple-700 hover:bg-purple-50 dark:bg-gray-800 dark:text-purple-200';
-                        chips.push(`<button class="cat-chip ${state.selectedCategory==='all'?activeCls:baseCls}" data-slug="all">All (${counts.all||0})</button>`);
+                        const current = state.selectedCategory || 'all';
+                        const opts = [];
+                        opts.push(`<option value="all">All (${counts.all || 0})</option>`);
                         for (const d of (db || [])) {
-                            const isActive = state.selectedCategory === d.slug;
                             const c = counts[d.slug] || 0;
-                            chips.push(`<button class="cat-chip ${isActive?activeCls:baseCls}" data-slug="${d.slug}">${escapeHtml(d.name)} (${c})</button>`);
+                            const selected = current === d.slug ? 'selected' : '';
+                            opts.push(`<option value="${d.slug}" ${selected}>${escapeHtml(d.name)} (${c})</option>`);
                         }
-                        container.innerHTML = chips.join('');
-                        container.querySelectorAll('.cat-chip').forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                const slug = e.currentTarget.getAttribute('data-slug') || 'all';
-                                state.selectedCategory = slug;
-                                // If no search query and a specific category selected, navigate to that domain view
-                                if (!state.searchQuery.trim() && slug !== 'all') {
-                                    state.selectedDomain = slug;
-                                    state.currentView = 'tools';
-                                    render();
-                                    return;
-                                }
-                                // Else, re-render search results to apply category filter
+                        sel.innerHTML = opts.join('');
+                        sel.value = current;
+                        sel.onchange = () => {
+                            const slug = sel.value || 'all';
+                            state.selectedCategory = slug;
+                            if (!state.searchQuery.trim() && slug !== 'all') {
+                                state.selectedDomain = slug;
+                                state.currentView = 'tools';
+                                render();
+                            } else {
                                 renderSearchResults();
-                                // And refresh chips to reflect active state and counts
-                                renderCategoryChips(currentMatchesCache);
-                            });
-                        });
+                                renderCategorySelect(currentMatchesCache);
+                            }
+                        };
                     }
 
                     let currentMatchesCache = [];
@@ -1333,15 +1330,15 @@
                                 openToolByName(name);
                             });
                         });
-                        // Refresh chips with match-based counts
-                        renderCategoryChips(matches);
+                        // Refresh dropdown with match-based counts
+                        renderCategorySelect(matches);
                     }
                     if (sb) {
                         sb.addEventListener('input', (e) => {
                             state.searchQuery = e.target.value;
                             renderSearchResults();
-                            // When typing, show chips with counts for the current matches
-                            renderCategoryChips(currentMatchesCache);
+                            // When typing, refresh dropdown with counts for the current matches
+                            renderCategorySelect(currentMatchesCache);
                         });
                         sb.addEventListener('keydown', (e) => {
                             if (e.key === 'Enter') e.preventDefault();
@@ -1356,12 +1353,12 @@
                             if (rc) rc.innerHTML = '';
                             // Reset category to All on clear
                             state.selectedCategory = 'all';
-                            renderCategoryChips([]);
+                            renderCategorySelect([]);
                         });
                     }
 
-                    // Initial chips render (no query -> total counts)
-                    renderCategoryChips([]);
+                    // Initial dropdown render (no query -> total counts)
+                    renderCategorySelect([]);
                     attachDomainCardListeners();
                 },
                 renderTools: () => {
