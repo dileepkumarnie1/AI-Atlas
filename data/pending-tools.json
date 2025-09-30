@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-29T20:26:02.908Z",
+  "lastUpdated": "2025-09-30T20:01:35.297Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1859,6 +1859,34 @@
       "pros": [],
       "cons": [],
       "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "midday",
+      "description": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+      "link": "https://midday.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/145366395?v=4&s=64",
+      "about": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 12,531 stars for query \"assistant\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "mem0",
+      "description": "Universal memory layer for AI Agents; Announcing OpenMemory MCP - local and secure memory management.",
+      "link": "https://mem0.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/137054526?v=4&s=64",
+      "about": "Universal memory layer for AI Agents; Announcing OpenMemory MCP - local and secure memory management.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 40,686 stars for query \"rag\""
     }
   ]
 }
