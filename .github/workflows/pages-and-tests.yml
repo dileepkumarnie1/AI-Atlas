@@ -147,11 +147,24 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
+
       - name: Prepare optional auth envs
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tests == 'true' }}
         run: |
-          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
-          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
+          if [ -n "${{ secrets.TEST_USER_EMAIL }}" ]; then
+            echo "TEST_USER_EMAIL=${{ secrets.TEST_USER_EMAIL }}" >> "$GITHUB_ENV"
+          elif [ -n "${{ vars.TEST_USER_EMAIL }}" ]; then
+            echo "TEST_USER_EMAIL=${{ vars.TEST_USER_EMAIL }}" >> "$GITHUB_ENV"
+          else
+            echo "TEST_USER_EMAIL=" >> "$GITHUB_ENV"
+          fi
+          if [ -n "${{ secrets.TEST_USER_PASSWORD }}" ]; then
+            echo "TEST_USER_PASSWORD=${{ secrets.TEST_USER_PASSWORD }}" >> "$GITHUB_ENV"
+          elif [ -n "${{ vars.TEST_USER_PASSWORD }}" ]; then
+            echo "TEST_USER_PASSWORD=${{ vars.TEST_USER_PASSWORD }}" >> "$GITHUB_ENV"
+          else
+            echo "TEST_USER_PASSWORD=" >> "$GITHUB_ENV"
+          fi
+
 
       - name: Run UI tests
         env:

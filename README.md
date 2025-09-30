@@ -367,3 +367,30 @@ Access control:
 
 - All admin functions require a Firebase ID token with custom claim `admin: true`.
 - Use the provided script to set the claim: `npm run set:admin`
+
+---
+
+## UI tests (Playwright) – features and optional auth
+
+Two GitHub Actions workflows run our Playwright-based UI test harness:
+
+- Deploy + tests on demand: `.github/workflows/pages-and-tests.yml`
+- Tests only (no deploy): `.github/workflows/feature-tests-only.yml`
+
+Feature selection
+- Both workflows expose a dropdown titled “Feature to test”. Choose a single feature (e.g., “Search”, “Theme Toggle”) or “All” for a full regression. The harness will only run the selected tests.
+
+Base URL handling
+- Deploy + tests: Uses the freshly deployed GitHub Pages URL automatically.
+- Tests only: Provide `base_url` input, or leave empty and it will auto-derive the default Pages URL for this repo (owner.github.io/repo). You can also set an environment variable `TEST_BASE_URL` to override.
+
+Optional Auth tests (Auth, Favorites, Admin Moderation)
+- These tests are skipped automatically unless credentials are provided.
+- To enable them, add either GitHub Actions Secrets or Variables:
+   - Secret/Variable: `TEST_USER_EMAIL`
+   - Secret/Variable: `TEST_USER_PASSWORD`
+- The workflows forward these to the test runner when present; otherwise tests that require auth are reported as skipped and do not fail the run.
+
+Notes
+- Admin Moderation UI is visible only when the signed-in user has an `admin: true` custom claim. See the Admin role section above for how to grant this.
+- The test artifacts (CSV/XLSX and screenshots) are uploaded per run under “ui-test-artifacts-<feature>”.

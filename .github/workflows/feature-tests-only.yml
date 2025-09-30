@@ -62,6 +62,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.select-tests.outputs.matrix) }}
+    env:
+      TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL || vars.TEST_USER_EMAIL || '' }}
+      TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || vars.TEST_USER_PASSWORD || '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -107,12 +110,6 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
-      - name: Prepare optional auth envs
-        run: |
-          # These environment variables are optional. Define repository or organization variables named
-          # TEST_USER_EMAIL and TEST_USER_PASSWORD to enable Auth/Favorites/Admin tests. If not set, tests will skip.
-          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
-          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
 
       - name: Run UI tests
         env:
