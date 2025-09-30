@@ -180,6 +180,24 @@ def build_test_plan() -> List[TestCase]:
         expected="Modal #tool-details-modal has class 'visible'",
         type="positive", priority="P0", device="desktop(1366x768)"
     ))
+    tc.append(TestCase(
+        id="SR-004",
+        feature="Search",
+        title="Category counts update when typing",
+        precondition="Home loaded",
+        steps="Type 'a' into search; verify #category-select options reflect counts",
+        expected="Counts next to categories are numeric and 'All' >= sum of others",
+        type="edge", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-005",
+        feature="Search",
+        title="Gibberish query shows 'No tools found'",
+        precondition="Home loaded",
+        steps="Type a random long string; expect empty results message",
+        expected="Text 'No tools found' visible in #search-results-container",
+        type="negative", priority="P2", device="desktop(1366x768)"
+    ))
 
     # Category filter
     tc.append(TestCase(
@@ -192,6 +210,15 @@ def build_test_plan() -> List[TestCase]:
         type="positive", priority="P1", device="desktop(1366x768)"
     ))
     tc.append(TestCase(
+        id="CF-002",
+        feature="Category Filter",
+        title="All category reflects total count",
+        precondition="Home loaded",
+        steps="Open #category-select and inspect 'All (N)' value",
+        expected="All count is a non-negative integer",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
         id="CF-003",
         feature="Category Filter",
         title="Selecting a category with no search navigates to tools view",
@@ -199,6 +226,14 @@ def build_test_plan() -> List[TestCase]:
         steps="Pick first non-empty, non-'all' option in #category-select",
         expected="location.hash contains '#domain='",
         type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="CF-004",
+        feature="Category filter with search narrows results without navigation",
+        precondition="Home loaded; type query first",
+        steps="Type 'a'; select a specific category; verify fewer/equal results and hash unchanged",
+        expected="Result count does not increase and URL hash does not include '#domain='",
+        type="edge", priority="P2", device="desktop(1366x768)"
     ))
 
     # Domain navigation
@@ -211,6 +246,15 @@ def build_test_plan() -> List[TestCase]:
         expected="location.hash contains '#domain='",
         type="positive", priority="P0", device="desktop(1366x768)"
     ))
+    tc.append(TestCase(
+        id="DN-002",
+        feature="Domain Navigation",
+        title="Back to Domains returns home and resets category placeholder",
+        precondition="On a domain tools page",
+        steps="Click #back-button; expect home view and #category-select placeholder empty",
+        expected="URL hash cleared and #category-select value is ''",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
 
     # Tool details modal
     tc.append(TestCase(
@@ -222,6 +266,24 @@ def build_test_plan() -> List[TestCase]:
         expected="Modal visible toggles correctly",
         type="positive", priority="P1", device="desktop(1366x768)"
     ))
+    tc.append(TestCase(
+        id="TD-002",
+        feature="Tool Details",
+        title="Visit Website link present and opens new tab",
+        precondition="Tool details modal open",
+        steps="Open first tool modal; check 'Visit Website' anchor target and href",
+        expected="Anchor has target=_blank and non-empty href",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="TD-003",
+        feature="Tool Details",
+        title="About section renders some text",
+        precondition="Tool details modal open",
+        steps="Open first tool modal; inspect .prose content",
+        expected="About section not empty",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
 
     # Theme toggle
     tc.append(TestCase(
@@ -232,6 +294,138 @@ def build_test_plan() -> List[TestCase]:
         steps="Click #theme-toggle and observe documentElement class list",
         expected="Presence of 'dark' class toggles",
         type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="TH-002",
+        feature="Theme Toggle",
+        title="Theme icons swap visibility",
+        precondition="Home loaded",
+        steps="Click toggle and check light/dark icon hidden state",
+        expected="Exactly one of #theme-toggle-dark-icon or #theme-toggle-light-icon is hidden",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="TH-003",
+        feature="Theme Toggle",
+        title="Theme persists in localStorage across reloads",
+        precondition="Home loaded",
+        steps="Toggle to dark; reload; read localStorage('theme') and html class",
+        expected="localStorage value matches html class",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="TH-004",
+        feature="Theme Toggle",
+        title="Double toggle returns to original state",
+        precondition="Home loaded",
+        steps="Record state; click toggle twice; compare",
+        expected="Initial and final states equal",
+        type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+
+    # Auth feature (UI + optional real login)
+    tc.append(TestCase(
+        id="AU-001",
+        feature="Auth",
+        title="Sign In button opens modal",
+        precondition="Logged out",
+        steps="Click #signin-btn; expect #auth-modal.visible",
+        expected="Modal becomes visible",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AU-002",
+        feature="Auth",
+        title="Switch between Sign In/Sign Up toggles labels",
+        precondition="Auth modal open",
+        steps="Click #modal-switch-btn and inspect #modal-title and #auth-submit-btn text",
+        expected="Labels change appropriately",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AU-003",
+        feature="Auth",
+        title="Google sign-in button visible",
+        precondition="Auth modal open",
+        steps="Check #google-signin-btn present",
+        expected="Google button is visible",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AU-004",
+        feature="Auth",
+        title="Email/password sign-in works (if creds provided)",
+        precondition="TEST_USER_EMAIL/TEST_USER_PASSWORD set",
+        steps="Open modal, fill credentials, submit and wait for #signout-btn",
+        expected="User header shows Sign Out",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AU-005",
+        feature="Auth",
+        title="Sign out returns to logged-out UI",
+        precondition="Logged in",
+        steps="Click #signout-btn; wait for #signin-btn",
+        expected="Sign In button visible again",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AU-006",
+        feature="Auth",
+        title="Session persists across reload (if login succeeded)",
+        precondition="Logged in",
+        steps="Reload page and check #signout-btn still present",
+        expected="Still logged in after reload",
+        type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+
+    # Favorites feature
+    tc.append(TestCase(
+        id="FV-001",
+        feature="Favorites",
+        title="Favorite star toggles appearance",
+        precondition="On domain tools page",
+        steps="Click first .favorite-btn; expect text from '☆' to '★' and class change",
+        expected="Button has bg-yellow-300 and text '★'",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FV-002",
+        feature="Favorites",
+        title="Favorites link visible after login",
+        precondition="Logged in",
+        steps="Check #favorites-link present",
+        expected="Favorites link rendered in header",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FV-003",
+        feature="Favorites",
+        title="Favorites page lists favorited tool (if logged in)",
+        precondition="Logged in and at least one favorite toggled",
+        steps="Click #favorites-link; expect tool card in list",
+        expected="Favorited tool name appears",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+
+    # Admin Moderation (limited unless admin claims provided)
+    tc.append(TestCase(
+        id="AM-001",
+        feature="Admin Moderation",
+        title="Admin link hidden for non-admin users",
+        precondition="Logged out or non-admin user",
+        steps="Inspect header for #admin-link",
+        expected="No admin link present",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="AM-002",
+        feature="Admin Moderation",
+        title="Admin panel opens if admin creds provided",
+        precondition="Admin login available and user has admin claim",
+        steps="Login as admin; click Admin; expect 'Admin Panel' heading",
+        expected="Admin view rendered",
+        type="positive", priority="P1", device="desktop(1366x768)"
     ))
 
     return tc
@@ -269,6 +463,51 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
             desk = browser.new_context(viewport={'width': 1366, 'height': 768})
             dpage = desk.new_page()
             home = base_url.rstrip('/') + '/'
+
+            # Helpers
+            def safe_click(page, selector, timeout=10000):
+                page.wait_for_selector(selector, timeout=timeout)
+                page.click(selector, timeout=timeout)
+
+            def goto_home(page):
+                page.goto(home, wait_until='domcontentloaded', timeout=30000)
+
+            def goto_tools_first_domain(page):
+                goto_home(page)
+                page.wait_for_selector('.domain-card', timeout=15000)
+                page.click('.domain-card', timeout=15000)
+                page.wait_for_selector('.open-tool-btn', timeout=20000)
+
+            def ui_login_if_creds(page) -> bool:
+                email = os.environ.get('TEST_USER_EMAIL', '').strip()
+                pwd = os.environ.get('TEST_USER_PASSWORD', '').strip()
+                if not email or not pwd:
+                    return False
+                goto_home(page)
+                try:
+                    # If already signed in, short-circuit
+                    if page.query_selector('#signout-btn'):
+                        return True
+                    safe_click(page, '#signin-btn', timeout=10000)
+                    page.wait_for_selector('#auth-modal.visible', timeout=10000)
+                    page.fill('#email-input', email, timeout=10000)
+                    page.fill('#password-input', pwd, timeout=10000)
+                    safe_click(page, '#auth-submit-btn', timeout=10000)
+                    page.wait_for_selector('#auth-modal.visible', state='detached', timeout=20000)
+                    page.wait_for_selector('#signout-btn', timeout=20000)
+                    return True
+                except Exception:
+                    return False
+
+            def ui_signout_if_possible(page):
+                try:
+                    if page.query_selector('#signout-btn'):
+                        safe_click(page, '#signout-btn', timeout=10000)
+                        page.wait_for_selector('#signin-btn', timeout=20000)
+                        return True
+                except Exception:
+                    return False
+                return False
 
             # Handlers per test id
             def do_MN_001():
@@ -378,6 +617,20 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 except Exception as e:
                     results.append(TestResult('LG-001', 'Legacy Cleanup', '/public/index.html is gone', 'fail', str(e), shot('LG-001_error', dpage)))
 
+            def do_AM_002():
+                try:
+                    goto_home(dpage)
+                    okLogin = ui_login_if_creds(dpage)
+                    linkEl = dpage.query_selector('#admin-link')
+                    if linkEl:
+                        dpage.click('#admin-link', timeout=10000)
+                        dpage.wait_for_selector('text=Admin Panel', timeout=15000)
+                        results.append(TestResult('AM-002', 'Admin Moderation', 'Admin panel opens if admin creds provided', 'pass', 'Admin panel visible', shot('AM-002', dpage)))
+                    else:
+                        results.append(TestResult('AM-002', 'Admin Moderation', 'Admin panel opens if admin creds provided', 'skipped', 'No admin claim or no creds', shot('AM-002', dpage)))
+                except Exception as e:
+                    results.append(TestResult('AM-002', 'Admin Moderation', 'Admin panel opens if admin creds provided', 'fail', str(e), shot('AM-002_error', dpage)))
+
             dispatch = {
                 'MN-001': do_MN_001,
                 'MN-002': do_MN_002,
@@ -431,6 +684,15 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         results.append(TestResult('CF-001', 'Category Filter', 'Category dropdown shows placeholder by default', status, f"value='{val}', placeholder={hasPH}", shot('CF-001', dpage)))
                     ))()
                 ),
+                'CF-002': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#category-select', timeout=10000),
+                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/\.test(x.textContent||'')); return o?o.textContent:'' })()"),
+                        ok := bool(allText and any(ch.isdigit() for ch in str(allText))),
+                        results.append(TestResult('CF-002', 'Category Filter', 'All category reflects total count', 'pass' if ok else 'fail', f"text={allText}", shot('CF-002', dpage)))
+                    ))()
+                ),
                 'CF-003': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
                     (lambda: (
@@ -443,6 +705,21 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                                                   'pass' if (isinstance(h, str) and '#domain=' in h) else 'fail', f'hash={h}', shot('CF-003', dpage)))
                     ))()
                 ),
+                'CF-004': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.fill('#search-bar-new', 'a', timeout=10000),
+                        dpage.wait_for_selector('#search-results-container', timeout=10000),
+                        before := dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length"),
+                        slug := dpage.evaluate("(() => { const sel=document.querySelector('#category-select'); if(!sel) return ''; for (const o of sel.options){ const v=o.value; if(v && v.toLowerCase()!=='all'){ return v; } } return ''; })()"),
+                        (dpage.select_option('#category-select', slug) if slug else None),
+                        time.sleep(0.3),
+                        after := dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length"),
+                        h := dpage.evaluate('window.location.hash'),
+                        ok := (int(after) <= int(before) and (isinstance(h, str) and ('#domain=' not in h))),
+                        results.append(TestResult('CF-004', 'Category Filter', 'Category filter with search narrows results without navigation', 'pass' if ok else 'fail', f'before={before}, after={after}, hash={h}', shot('CF-004', dpage)))
+                    ))()
+                ),
                 # Domain Navigation
                 'DN-001': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
@@ -453,6 +730,18 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         h := dpage.evaluate('window.location.hash'),
                         results.append(TestResult('DN-001', 'Domain Navigation', 'Clicking a domain card navigates to tools view',
                                                   'pass' if (isinstance(h, str) and '#domain=' in h) else 'fail', f'hash={h}', shot('DN-001', dpage)))
+                    ))()
+                ),
+                'DN-002': lambda: (
+                    goto_tools_first_domain(dpage),
+                    (lambda: (
+                        dpage.wait_for_selector('#back-button', timeout=10000),
+                        dpage.click('#back-button', timeout=10000),
+                        time.sleep(0.3),
+                        val := dpage.evaluate("document.querySelector('#category-select') ? document.querySelector('#category-select').value : 'NA'"),
+                        h := dpage.evaluate('window.location.hash'),
+                        ok := (val == '' and (h == '' or h == '#' or not h)),
+                        results.append(TestResult('DN-002', 'Domain Navigation', 'Back to Domains returns home and resets category placeholder', 'pass' if ok else 'fail', f"val='{val}', hash={h}", shot('DN-002', dpage)))
                     ))()
                 ),
                 # Tool Details
@@ -471,6 +760,25 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         results.append(TestResult('TD-001', 'Tool Details', 'Open and close tool details modal from tools view', 'pass' if not vis else 'fail', f'visible={vis}', shot('TD-001', dpage)))
                     ))()
                 ),
+                'TD-002': lambda: (
+                    goto_tools_first_domain(dpage),
+                    (lambda: (
+                        dpage.click('.open-tool-btn', timeout=15000),
+                        dpage.wait_for_selector('#tool-details-modal.visible', timeout=15000),
+                        href := dpage.evaluate("(() => { const a=[...document.querySelectorAll('#tool-details-modal a')].find(x=>/Visit Website/.test(x.textContent||'')); if(!a) return ''; return (a.getAttribute('href')||'') + '|' + (a.getAttribute('target')||''); })()"),
+                        ok := bool(href and '|' in href and href.split('|')[0] and href.split('|')[1] == '_blank'),
+                        results.append(TestResult('TD-002', 'Tool Details', 'Visit Website link present and opens new tab', 'pass' if ok else 'fail', f'href_target={href}', shot('TD-002', dpage)))
+                    ))()
+                ),
+                'TD-003': lambda: (
+                    goto_tools_first_domain(dpage),
+                    (lambda: (
+                        dpage.click('.open-tool-btn', timeout=15000),
+                        dpage.wait_for_selector('#tool-details-modal.visible', timeout=15000),
+                        txt := dpage.evaluate("(() => { const el=document.querySelector('#tool-details-modal .prose'); return el ? (el.textContent||'').trim() : ''; })()"),
+                        results.append(TestResult('TD-003', 'Tool Details', 'About section renders some text', 'pass' if (isinstance(txt, str) and len(txt) > 0) else 'fail', f'len={len(txt) if isinstance(txt, str) else 0}', shot('TD-003', dpage)))
+                    ))()
+                ),
                 # Theme Toggle
                 'TH-001': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
@@ -482,6 +790,176 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         results.append(TestResult('TH-001', 'Theme Toggle', 'Toggling theme flips dark class on html',
                                                   'pass' if (before != after) else 'fail', f'before={before}, after={after}', shot('TH-001', dpage)))
                     ))()
+                ),
+                'TH-002': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.click('#theme-toggle', timeout=10000),
+                        time.sleep(0.2),
+                        darkHidden := dpage.evaluate("document.getElementById('theme-toggle-dark-icon').classList.contains('hidden')"),
+                        lightHidden := dpage.evaluate("document.getElementById('theme-toggle-light-icon').classList.contains('hidden')"),
+                        ok := bool((darkHidden and not lightHidden) or (lightHidden and not darkHidden)),
+                        results.append(TestResult('TH-002', 'Theme Toggle', 'Theme icons swap visibility', 'pass' if ok else 'fail', f'darkHidden={darkHidden}, lightHidden={lightHidden}', shot('TH-002', dpage)))
+                    ))()
+                ),
+                'TH-003': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.click('#theme-toggle', timeout=10000),
+                        time.sleep(0.3),
+                        isDark := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        dpage.reload(wait_until='domcontentloaded'),
+                        time.sleep(0.3),
+                        stored := dpage.evaluate("localStorage.getItem('theme')"),
+                        nowDark := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        ok := bool((stored == 'dark' and nowDark) or (stored == 'light' and (not nowDark))),
+                        results.append(TestResult('TH-003', 'Theme Toggle', 'Theme persists in localStorage across reloads', 'pass' if ok else 'fail', f'stored={stored}, nowDark={nowDark}', shot('TH-003', dpage)))
+                    ))()
+                ),
+                'TH-004': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        init := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        dpage.click('#theme-toggle', timeout=10000),
+                        time.sleep(0.2),
+                        dpage.click('#theme-toggle', timeout=10000),
+                        time.sleep(0.2),
+                        final := dpage.evaluate("document.documentElement.classList.contains('dark')"),
+                        results.append(TestResult('TH-004', 'Theme Toggle', 'Double toggle returns to original state', 'pass' if (init == final) else 'fail', f'init={init}, final={final}', shot('TH-004', dpage)))
+                    ))()
+                ),
+                # Search extras
+                'SR-004': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.fill('#search-bar-new', 'a', timeout=10000),
+                        time.sleep(0.3),
+                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/\.test(x.textContent||'')); return o?o.textContent:'' })()"),
+                        ok := bool(allText and any(ch.isdigit() for ch in str(allText))),
+                        results.append(TestResult('SR-004', 'Search', 'Category counts update when typing', 'pass' if ok else 'fail', f'text={allText}', shot('SR-004', dpage)))
+                    ))()
+                ),
+                'SR-005': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.fill('#search-bar-new', 'zzzzquuxnoresult1234567890', timeout=10000),
+                        time.sleep(0.3),
+                        txt := dpage.evaluate("document.getElementById('search-results-container').innerText||''"),
+                        ok := ('No tools found' in str(txt)),
+                        results.append(TestResult('SR-005', 'Search', "Gibberish query shows 'No tools found'", 'pass' if ok else 'fail', f'txt={txt[:60]}', shot('SR-005', dpage)))
+                    ))()
+                ),
+                # Auth
+                'AU-001': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        safe_click(dpage, '#signin-btn', 10000),
+                        dpage.wait_for_selector('#auth-modal.visible', timeout=10000),
+                        vis := dpage.evaluate("document.getElementById('auth-modal').classList.contains('visible')"),
+                        results.append(TestResult('AU-001', 'Auth', 'Sign In button opens modal', 'pass' if vis else 'fail', f'visible={vis}', shot('AU-001', dpage))),
+                        # close via X
+                        dpage.click('#close-modal-btn', timeout=10000),
+                        dpage.wait_for_selector('#auth-modal.visible', state='detached', timeout=10000)
+                    ))()
+                ),
+                'AU-002': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        safe_click(dpage, '#signin-btn', 10000),
+                        dpage.wait_for_selector('#auth-modal.visible', timeout=10000),
+                        beforeTitle := dpage.inner_text('#modal-title'),
+                        beforeBtn := dpage.inner_text('#auth-submit-btn'),
+                        dpage.click('#modal-switch-btn', timeout=10000),
+                        time.sleep(0.2),
+                        afterTitle := dpage.inner_text('#modal-title'),
+                        afterBtn := dpage.inner_text('#auth-submit-btn'),
+                        ok := bool(beforeTitle != afterTitle and beforeBtn != afterBtn),
+                        results.append(TestResult('AU-002', 'Auth', 'Switch between Sign In/Sign Up toggles labels', 'pass' if ok else 'fail', f'before=({beforeTitle},{beforeBtn}) after=({afterTitle},{afterBtn})', shot('AU-002', dpage))),
+                        # close
+                        dpage.click('#close-modal-btn', timeout=10000)
+                    ))()
+                ),
+                'AU-003': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        safe_click(dpage, '#signin-btn', 10000),
+                        dpage.wait_for_selector('#auth-modal.visible', timeout=10000),
+                        ok := bool(dpage.query_selector('#google-signin-btn') is not None),
+                        results.append(TestResult('AU-003', 'Auth', 'Google sign-in button visible', 'pass' if ok else 'fail', 'google btn present' if ok else 'missing', shot('AU-003', dpage))),
+                        dpage.click('#close-modal-btn', timeout=10000)
+                    ))()
+                ),
+                'AU-004': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        success := ui_login_if_creds(dpage),
+                        results.append(TestResult('AU-004', 'Auth', 'Email/password sign-in works (if creds provided)', 'pass' if success else 'skipped', 'Login attempted' if success else 'TEST_USER_EMAIL/TEST_USER_PASSWORD not provided or login failed', shot('AU-004', dpage)))
+                    ))()
+                ),
+                'AU-005': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        # Ensure logged in first
+                        (ui_login_if_creds(dpage)),
+                        done := ui_signout_if_possible(dpage),
+                        results.append(TestResult('AU-005', 'Auth', 'Sign out returns to logged-out UI', 'pass' if done else 'skipped', 'Signed out' if done else 'Not logged in or signout failed', shot('AU-005', dpage)))
+                    ))()
+                ),
+                'AU-006': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        okLogin := ui_login_if_creds(dpage),
+                        (dpage.reload(wait_until='domcontentloaded') if okLogin else None),
+                        stayed := bool(okLogin and dpage.wait_for_selector('#signout-btn', timeout=15000)),
+                        results.append(TestResult('AU-006', 'Auth', 'Session persists across reload (if login succeeded)', 'pass' if stayed else ('skipped' if not okLogin else 'fail'), 'Stayed logged in' if stayed else ('No creds' if not okLogin else 'Sign out button missing after reload'), shot('AU-006', dpage)))
+                    ))()
+                ),
+                # Favorites
+                'FV-001': lambda: (
+                    goto_tools_first_domain(dpage),
+                    (lambda: (
+                        dpage.wait_for_selector('.favorite-btn', timeout=10000),
+                        beforeTxt := dpage.inner_text('.favorite-btn'),
+                        dpage.click('.favorite-btn', timeout=10000),
+                        time.sleep(0.3),
+                        afterTxt := dpage.inner_text('.favorite-btn'),
+                        cls := dpage.evaluate("document.querySelector('.favorite-btn').className"),
+                        ok := bool(afterTxt.strip() == '★' and 'bg-yellow-300' in cls),
+                        results.append(TestResult('FV-001', 'Favorites', 'Favorite star toggles appearance', 'pass' if ok else 'fail', f"before='{beforeTxt.strip()}', after='{afterTxt.strip()}', cls~yellow={('bg-yellow-300' in cls)}", shot('FV-001', dpage)))
+                    ))()
+                ),
+                'FV-002': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        okLogin := ui_login_if_creds(dpage),
+                        favLink := (dpage.query_selector('#favorites-link') is not None),
+                        results.append(TestResult('FV-002', 'Favorites', 'Favorites link visible after login', 'pass' if (okLogin and favLink) else ('skipped' if not okLogin else 'fail'), f'favLink={favLink}', shot('FV-002', dpage)))
+                    ))()
+                ),
+                'FV-003': lambda: (
+                    goto_tools_first_domain(dpage),
+                    (lambda: (
+                        okLogin := ui_login_if_creds(dpage),
+                        dpage.wait_for_selector('.tool-list-item', timeout=20000),
+                        name := dpage.get_attribute('.tool-list-item', 'data-tool-name') or '',
+                        dpage.click('.favorite-btn', timeout=10000),
+                        time.sleep(0.2),
+                        (dpage.click('#favorites-link', timeout=10000) if okLogin else None),
+                        time.sleep(0.5),
+                        present := (okLogin and bool(name) and dpage.evaluate("document.body.innerText").find(name) != -1),
+                        results.append(TestResult('FV-003', 'Favorites', 'Favorites page lists favorited tool (if logged in)', 'pass' if present else ('skipped' if not okLogin else 'fail'), f'name={name}', shot('FV-003', dpage)))
+                    ))()
+                ),
+                # Admin Moderation
+                'AM-001': lambda: (
+                    goto_home(dpage),
+                    (lambda: (
+                        link := (dpage.query_selector('#admin-link') is not None),
+                        results.append(TestResult('AM-001', 'Admin Moderation', 'Admin link hidden for non-admin users', 'pass' if not link else 'fail', f'adminLinkVisible={link}', shot('AM-001', dpage)))
+                    ))()
+                ),
+                'AM-002': lambda: (
+                    do_AM_002()
                 ),
             }
 

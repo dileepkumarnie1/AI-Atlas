@@ -25,6 +25,9 @@ on:
           - Domain Navigation
           - Tool Details
           - Theme Toggle
+          - Auth
+          - Favorites
+          - Admin Moderation
 
 permissions:
   contents: read
@@ -104,9 +107,18 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
+      - name: Prepare optional auth envs
+        run: |
+          # These environment variables are optional. Define repository or organization variables named
+          # TEST_USER_EMAIL and TEST_USER_PASSWORD to enable Auth/Favorites/Admin tests. If not set, tests will skip.
+          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
+          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
+
       - name: Run UI tests
         env:
           TEST_BASE_URL: ${{ env.TEST_BASE_URL }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
         run: |
           FEAT='${{ matrix.feature }}'
           SLUG=$(echo "$FEAT" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
@@ -117,6 +129,7 @@ jobs:
             echo "Running feature: $FEAT"
             python tests/run_ui_tests.py --features "$FEAT" --out-dir "tests/output/$SLUG"
           fi
+
 
       - name: Upload UI test artifacts
         if: always()

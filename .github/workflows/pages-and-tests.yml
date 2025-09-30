@@ -29,6 +29,9 @@ on:
           - Domain Navigation
           - Tool Details
           - Theme Toggle
+          - Auth
+          - Favorites
+          - Admin Moderation
 
 permissions:
   contents: read
@@ -147,6 +150,8 @@ jobs:
       - name: Run UI tests
         env:
           TEST_BASE_URL: ${{ env.TEST_BASE_URL }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
         run: |
           FEAT='${{ matrix.feature }}'
           SLUG=$(echo "$FEAT" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
@@ -157,6 +162,12 @@ jobs:
             echo "Running feature: $FEAT"
             python tests/run_ui_tests.py --features "$FEAT" --out-dir "tests/output/$SLUG"
           fi
+
+      - name: Prepare optional auth envs
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tests == 'true' }}
+        run: |
+          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
+          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
 
       - name: Upload UI test artifacts
         if: always()
