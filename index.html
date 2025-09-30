@@ -621,6 +621,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             let db = [];
+            let toolDomainMap = new Map(); // tool name -> domain slug
             let fuse = null;
             const contentArea = document.getElementById('content-area');
             const authContainer = document.getElementById('auth-container');
@@ -674,6 +675,7 @@
                 currentView: 'home',
                 selectedDomain: null,
                 searchQuery: '',
+                selectedCategory: 'all',
                 user: null,
                 favorites: [],
                 reviews: {},
@@ -1243,6 +1245,9 @@
                                 <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
                             </div>
 
+                            <!-- Category filter chips -->
+                            <div id="category-filter" class="max-w-4xl mx-auto mb-8 flex flex-wrap gap-2 justify-center"></div>
+
                             <div id="search-results-container"></div>
 
                             <h2 class="text-3xl font-bold text-primary mb-8">Explore by Domain</h2>
@@ -1257,10 +1262,61 @@
                     const clearBtn = document.getElementById('search-clear-btn');
                     const resultsContainer = document.getElementById('search-results-container');
 
+                    function computeCategoryCounts(matches) {
+                        const counts = { all: 0 };
+                        const list = matches && matches.length ? matches : (db || []).flatMap(d => (d.tools||[]));
+                        for (const d of (db || [])) counts[d.slug] = 0;
+                        for (const t of list) {
+                            const slug = toolDomainMap.get(t.name) || '';
+                            counts.all++;
+                            if (slug && slug in counts) counts[slug]++;
+                        }
+                        return counts;
+                    }
+
+                    function renderCategoryChips(matches) {
+                        const container = document.getElementById('category-filter');
+                        if (!container) return;
+                        const counts = computeCategoryCounts(matches);
+                        const chips = [];
+                        const activeCls = 'bg-purple-600 text-white border-purple-700';
+                        const baseCls = 'px-3 py-1 rounded-full border text-sm bg-white text-purple-700 hover:bg-purple-50 dark:bg-gray-800 dark:text-purple-200';
+                        chips.push(`<button class="cat-chip ${state.selectedCategory==='all'?activeCls:baseCls}" data-slug="all">All (${counts.all||0})</button>`);
+                        for (const d of (db || [])) {
+                            const isActive = state.selectedCategory === d.slug;
+                            const c = counts[d.slug] || 0;
+                            chips.push(`<button class="cat-chip ${isActive?activeCls:baseCls}" data-slug="${d.slug}">${escapeHtml(d.name)} (${c})</button>`);
+                        }
+                        container.innerHTML = chips.join('');
+                        container.querySelectorAll('.cat-chip').forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                const slug = e.currentTarget.getAttribute('data-slug') || 'all';
+                                state.selectedCategory = slug;
+                                // If no search query and a specific category selected, navigate to that domain view
+                                if (!state.searchQuery.trim() && slug !== 'all') {
+                                    state.selectedDomain = slug;
+                                    state.currentView = 'tools';
+                                    render();
+                                    return;
+                                }
+                                // Else, re-render search results to apply category filter
+                                renderSearchResults();
+                                // And refresh chips to reflect active state and counts
+                                renderCategoryChips(currentMatchesCache);
+                            });
+                        });
+                    }
+
+                    let currentMatchesCache = [];
                     function renderSearchResults() {
                         const q = (state.searchQuery || '').trim();
                         if (!q) { resultsContainer.innerHTML = ''; return; }
                         const matches = performSearch(q);
+                        currentMatchesCache = matches.slice();
+                        // Apply category filter if selected
+                        const filteredByCat = (state.selectedCategory && state.selectedCategory !== 'all')
+                            ? matches.filter(t => (toolDomainMap.get(t.name) || '') === state.selectedCategory)
+                            : matches;
                         if (!matches || matches.length === 0) {
                             resultsContainer.innerHTML = `<div class="text-secondary">No tools found for "<strong>${escapeHtml(q)}</strong>". Try different keywords.</div>`;
                             return;
@@ -1268,7 +1324,7 @@
                         resultsContainer.innerHTML = `
                             <div>
                                 <h3 class="text-xl font-semibold mb-3">Matching Tools</h3>
-                                <div class="search-results">${matches.map(renderSearchToolCard).join('')}</div>
+                                <div class="search-results">${filteredByCat.map(renderSearchToolCard).join('')}</div>
                             </div>`;
                         // attach handlers for Open buttons
                         resultsContainer.querySelectorAll('.open-tool-btn').forEach(btn => {
@@ -1277,11 +1333,15 @@
                                 openToolByName(name);
                             });
                         });
+                        // Refresh chips with match-based counts
+                        renderCategoryChips(matches);
                     }
                     if (sb) {
                         sb.addEventListener('input', (e) => {
                             state.searchQuery = e.target.value;
                             renderSearchResults();
+                            // When typing, show chips with counts for the current matches
+                            renderCategoryChips(currentMatchesCache);
                         });
                         sb.addEventListener('keydown', (e) => {
                             if (e.key === 'Enter') e.preventDefault();
@@ -1294,9 +1354,14 @@
                             if (sb) sb.value = '';
                             const rc = document.getElementById('search-results-container');
                             if (rc) rc.innerHTML = '';
+                            // Reset category to All on clear
+                            state.selectedCategory = 'all';
+                            renderCategoryChips([]);
                         });
                     }
 
+                    // Initial chips render (no query -> total counts)
+                    renderCategoryChips([]);
                     attachDomainCardListeners();
                 },
                 renderTools: () => {
@@ -1864,6 +1929,17 @@
                     const response = await fetch('public/tools.json');
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     db = await response.json();
+                    // Build quick lookup for tool -> domain
+                    toolDomainMap = new Map();
+                    if (Array.isArray(db)) {
+                        for (const section of db) {
+                            const slug = section?.slug || '';
+                            const tools = Array.isArray(section?.tools) ? section.tools : [];
+                            for (const t of tools) {
+                                if (t && t.name) toolDomainMap.set(t.name, slug);
+                            }
+                        }
+                    }
                     // Hard filter: exclude GitHub web/repo links except allowlisted tools
                     const allowGithubNames = new Set([
                         'github copilot' // keep Copilot even though it lives on github.com/features/copilot
