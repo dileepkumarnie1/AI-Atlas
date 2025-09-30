@@ -65,12 +65,32 @@ Run locally (Windows PowerShell)
 
 What it does
 - Fetches GitHub stars/forks and npm weekly downloads (tokenless)
-- Computes a combined popularity score and rank per tool
+- Normalizes signals across all tools to a 0–100 scale
+- Computes a blended popularity score and rank per tool using these weights:
+   - If `actualUsers` override exists: 60% usersScore + 30% curated “Most Popular” order + 10% normalized signals + small repeat bonus
+   - Otherwise: 60% curated “Most Popular” order + 35% normalized signals + small repeat bonus
 - Writes `public/popularity.json` and `public/popularity_ranks.json`
 
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/update-popularity.yml`
 - Schedule: daily at 07:00 IST (01:30 UTC) (cron: `30 1 * * *`)
+
+### Setting real user counts (overrides)
+
+Use `data/popularity-overrides.json` to inject real user counts that guide both display and ranking. Example:
+
+```
+{
+   "ChatGPT (OpenAI)": { "actualUsers": 100000000 },
+   "Gemini (Google)":   { "actualUsers": 50000000 },
+   "Claude (Anthropic)":{ "actualUsers": 10000000 }
+}
+```
+
+Notes
+- The updater derives a usersScore (0–100) from `log10(actualUsers+1) * 20` and blends it into the final rank.
+- Tools without overrides are still ranked via curated order and normalized signals.
+- The UI shows the actual number when present; otherwise it shows “Rank #N”.
 
 ---
 
