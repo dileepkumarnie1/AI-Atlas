@@ -1231,6 +1231,9 @@
             // --- Re-implementing core render functions to avoid code duplication ---
             const originalRenderFunctions = {
                 renderHome: () => {
+                    // Reset category selector to placeholder when entering home
+                    state.selectedCategory = 'all';
+                    state.categoryExplicit = false;
                     // Show domains and redesigned search UI
                     // No favorites overlay on homepage
                     contentArea.innerHTML = `
@@ -1240,15 +1243,19 @@
                                 <p class="max-w-2xl mx-auto text-lg md:text-xl text-secondary">A curated atlas of AI tools and applications, classified by domain.</p>
                             </div>
 
-                            <!-- Redesigned search bar -->
-                            <div class="search-wrapper mb-6">
-                                <input id="search-bar-new" class="search-input" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
-                                <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
-                            </div>
-
-                            <!-- Category filter dropdown -->
-                            <div class="max-w-4xl mx-auto mb-6 flex justify-center">
-                                <select id="category-select" class="search-input w-full max-w-md text-center placeholder-select"></select>
+                            <!-- Search + Category split row -->
+                            <div class="max-w-4xl mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
+                                <div>
+                                    <div class="search-wrapper mb-0">
+                                        <input id="search-bar-new" class="search-input w-full" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                    </div>
+                                </div>
+                                <div>
+                                    <select id="category-select" class="search-input w-full text-center"></select>
+                                </div>
+                                <div class="md:col-span-2 flex justify-end">
+                                    <button id="search-clear-btn" class="search-clear" title="Clear search">Clear</button>
+                                </div>
                             </div>
 
                             <div id="search-results-container"></div>
@@ -1476,6 +1483,9 @@
                     `;
                     document.getElementById('back-button').addEventListener('click', () => { 
                         state.currentView = 'home'; 
+                        // Reset category to placeholder when navigating back
+                        state.selectedCategory = 'all';
+                        state.categoryExplicit = false;
                         try { history.pushState('', document.title, window.location.pathname + window.location.search); } catch (e) {}
                         render(); 
                     });
