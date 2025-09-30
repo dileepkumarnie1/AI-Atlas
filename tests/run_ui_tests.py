@@ -167,7 +167,7 @@ def write_test_plan(plan: List[TestCase], out_dir: str) -> None:
             group.to_excel(w, sheet_name=feature[:31], index=False)
 
 
-def run_ui_tests(base_url: str, out_dir: str) -> List[TestResult]:
+def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[TestResult]:
     shots = os.path.join(out_dir, 'screenshots')
     os.makedirs(shots, exist_ok=True)
     results: List[TestResult] = []
@@ -181,119 +181,141 @@ def run_ui_tests(base_url: str, out_dir: str) -> List[TestResult]:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         try:
-            # Mobile context
+            # Contexts
             mobile = browser.new_context(viewport={'width': 375, 'height': 667}, device_scale_factor=2)
             mpage = mobile.new_page()
-
-            # Desktop context
             desk = browser.new_context(viewport={'width': 1366, 'height': 768})
             dpage = desk.new_page()
-
             home = base_url.rstrip('/') + '/'
 
-            # MN-001
-            try:
-                mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
-                btn = mpage.locator('#mobile-menu-btn')
-                visible = btn.is_visible()
-                results.append(TestResult('MN-001', 'Mobile Nav', 'Hamburger button appears on small screens', 'pass' if visible else 'fail', f'visible={visible}', shot('MN-001', mpage)))
-            except Exception as e:
-                results.append(TestResult('MN-001', 'Mobile Nav', 'Hamburger button appears on small screens', 'fail', str(e), shot('MN-001_error', mpage)))
+            # Handlers per test id
+            def do_MN_001():
+                try:
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    btn = mpage.locator('#mobile-menu-btn')
+                    visible = btn.is_visible()
+                    results.append(TestResult('MN-001', 'Mobile Nav', 'Hamburger button appears on small screens', 'pass' if visible else 'fail', f'visible={visible}', shot('MN-001', mpage)))
+                except Exception as e:
+                    results.append(TestResult('MN-001', 'Mobile Nav', 'Hamburger button appears on small screens', 'fail', str(e), shot('MN-001_error', mpage)))
 
-            # MN-002 + MN-003
-            try:
-                mpage.click('#mobile-menu-btn')
-                mpage.wait_for_selector('#mobile-menu-panel.open', timeout=3000)
-                # Focus trap quick check: Tab a few times stays within panel
-                mpage.keyboard.press('Tab')
-                mpage.keyboard.press('Tab')
-                mpage.keyboard.press('Shift+Tab')
-                # Close with Escape
-                mpage.keyboard.press('Escape')
-                mpage.wait_for_selector('#mobile-menu-panel.open', state='detached', timeout=3000)
-                # Re-open and close by overlay
-                mpage.click('#mobile-menu-btn')
-                mpage.wait_for_selector('#mobile-menu-panel.open', timeout=3000)
-                mpage.click('#mobile-menu-overlay')
-                mpage.wait_for_selector('#mobile-menu-panel.open', state='detached', timeout=3000)
-                results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'pass', 'Toggled open/close as expected', shot('MN-002', mpage)))
-                results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'pass', 'Basic trap behavior observed', shot('MN-003', mpage)))
-            except PWTimeout as e:
-                results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'fail', f'Timeout {e}', shot('MN-002_error', mpage)))
-                results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'skipped', 'Dependent on MN-002', shot('MN-003_skipped', mpage)))
-            except Exception as e:
-                results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'fail', str(e), shot('MN-002_error', mpage)))
-                results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'skipped', 'Dependent on MN-002', shot('MN-003_skipped', mpage)))
+            def do_MN_002():
+                try:
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    mpage.click('#mobile-menu-btn')
+                    mpage.wait_for_selector('#mobile-menu-panel.open', timeout=3000)
+                    # Close with Escape
+                    mpage.keyboard.press('Escape')
+                    mpage.wait_for_selector('#mobile-menu-panel.open', state='detached', timeout=3000)
+                    # Re-open and close by overlay
+                    mpage.click('#mobile-menu-btn')
+                    mpage.wait_for_selector('#mobile-menu-panel.open', timeout=3000)
+                    mpage.click('#mobile-menu-overlay')
+                    mpage.wait_for_selector('#mobile-menu-panel.open', state='detached', timeout=3000)
+                    results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'pass', 'Toggled open/close as expected', shot('MN-002', mpage)))
+                except PWTimeout as e:
+                    results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'fail', f'Timeout {e}', shot('MN-002_error', mpage)))
+                except Exception as e:
+                    results.append(TestResult('MN-002', 'Mobile Nav', 'Menu opens and closes via button and ESC/overlay', 'fail', str(e), shot('MN-002_error', mpage)))
 
-            # BG-001
-            try:
-                mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
-                attach = mpage.evaluate("getComputedStyle(document.body).backgroundAttachment")
-                status = 'pass' if attach.lower().strip() == 'scroll' else 'fail'
-                results.append(TestResult('BG-001', 'Background Fix', 'Mobile background uses attachment: scroll', status, f"attachment={attach}", shot('BG-001', mpage)))
-            except Exception as e:
-                results.append(TestResult('BG-001', 'Background Fix', 'Mobile background uses attachment: scroll', 'fail', str(e), shot('BG-001_error', mpage)))
+            def do_MN_003():
+                try:
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    mpage.click('#mobile-menu-btn')
+                    mpage.wait_for_selector('#mobile-menu-panel.open', timeout=3000)
+                    # Focus trap quick check
+                    mpage.keyboard.press('Tab')
+                    mpage.keyboard.press('Tab')
+                    mpage.keyboard.press('Shift+Tab')
+                    results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'pass', 'Basic trap behavior observed', shot('MN-003', mpage)))
+                except PWTimeout as e:
+                    results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'fail', f'Timeout {e}', shot('MN-003_error', mpage)))
+                except Exception as e:
+                    results.append(TestResult('MN-003', 'Mobile Nav', 'Focus trap within open menu', 'fail', str(e), shot('MN-003_error', mpage)))
 
-            # AC-001: Skip to content
-            try:
-                mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
-                # Focus the document then Tab once (skip link is first focusable)
-                mpage.keyboard.press('Tab')
-                mpage.keyboard.press('Enter')
-                # Give time for hash update
-                time.sleep(0.2)
-                url = mpage.url
-                status = 'pass' if '#content-area' in url else 'fail'
-                results.append(TestResult('AC-001', 'Accessibility', 'Skip to content link works', status, f"url={url}", shot('AC-001', mpage)))
-            except Exception as e:
-                results.append(TestResult('AC-001', 'Accessibility', 'Skip to content link works', 'fail', str(e), shot('AC-001_error', mpage)))
+            def do_BG_001():
+                try:
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    attach = mpage.evaluate("getComputedStyle(document.body).backgroundAttachment")
+                    status = 'pass' if attach.lower().strip() == 'scroll' else 'fail'
+                    results.append(TestResult('BG-001', 'Background Fix', 'Mobile background uses attachment: scroll', status, f"attachment={attach}", shot('BG-001', mpage)))
+                except Exception as e:
+                    results.append(TestResult('BG-001', 'Background Fix', 'Mobile background uses attachment: scroll', 'fail', str(e), shot('BG-001_error', mpage)))
 
-            # AC-002: Theme-color meta
-            try:
-                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
-                # Use CSS selector without quotes in attribute to avoid Python string escaping issues on Windows
-                count = dpage.evaluate('document.querySelectorAll("meta[name=theme-color]").length')
-                status = 'pass' if count >= 2 else 'fail'
-                results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', status, f"count={count}", shot('AC-002', dpage)))
-            except Exception as e:
-                results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', 'fail', str(e), shot('AC-002_error', dpage)))
+            def do_AC_001():
+                try:
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    mpage.keyboard.press('Tab')
+                    mpage.keyboard.press('Enter')
+                    time.sleep(0.2)
+                    url = mpage.url
+                    status = 'pass' if '#content-area' in url else 'fail'
+                    results.append(TestResult('AC-001', 'Accessibility', 'Skip to content link works', status, f"url={url}", shot('AC-001', mpage)))
+                except Exception as e:
+                    results.append(TestResult('AC-001', 'Accessibility', 'Skip to content link works', 'fail', str(e), shot('AC-001_error', mpage)))
 
-            # AD-001: admin-health
-            try:
-                url = base_url.rstrip('/') + '/.netlify/functions/admin-health'
-                dpage.goto(url, wait_until='load', timeout=15000)
-                code = dpage.evaluate('() => window.__PW_RES_STATUS || 0')
-                # Heuristic: playwright won't expose status directly with goto; attempt fetch
-                code = dpage.evaluate("fetch(window.location.href, {method:'GET'}).then(r=>r.status).catch(()=>0)")
-                if code == 404:
-                    results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', 'blocked', 'Endpoint 404 (likely not deployed or Netlify plan)', shot('AD-001_blocked', dpage)))
+            def do_AC_002():
+                try:
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                    count = dpage.evaluate('document.querySelectorAll("meta[name=theme-color]").length')
+                    status = 'pass' if count >= 2 else 'fail'
+                    results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', status, f"count={count}", shot('AC-002', dpage)))
+                except Exception as e:
+                    results.append(TestResult('AC-002', 'Accessibility', 'Theme-color metas present for light/dark', 'fail', str(e), shot('AC-002_error', dpage)))
+
+            def do_AD_001():
+                try:
+                    url = base_url.rstrip('/') + '/.netlify/functions/admin-health'
+                    dpage.goto(url, wait_until='load', timeout=15000)
+                    code = dpage.evaluate("fetch(window.location.href, {method:'GET'}).then(r=>r.status).catch(()=>0)")
+                    if code == 404:
+                        results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', 'blocked', 'Endpoint 404 (likely not deployed or Netlify plan)', shot('AD-001_blocked', dpage)))
+                    else:
+                        status = 'pass' if code in (401, 403) else 'fail'
+                        results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', status, f"status={code}", shot('AD-001', dpage)))
+                except Exception as e:
+                    results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', 'blocked', str(e), shot('AD-001_error', dpage)))
+
+            def do_AD_002():
+                try:
+                    url = base_url.rstrip('/') + '/.netlify/functions/admin-dispatch'
+                    code = dpage.evaluate("fetch(arguments[0], {method:'POST'}).then(r=>r.status).catch(()=>0)", url)
+                    if code == 404:
+                        results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', 'blocked', 'Endpoint 404 (likely not deployed or Netlify plan)', shot('AD-002_blocked', dpage)))
+                    else:
+                        status = 'pass' if code in (401, 403) else 'fail'
+                        results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', status, f"status={code}", shot('AD-002', dpage)))
+                except Exception as e:
+                    results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', 'blocked', str(e), shot('AD-002_error', dpage)))
+
+            def do_LG_001():
+                try:
+                    url = base_url.rstrip('/') + '/public/index.html'
+                    code = dpage.evaluate("fetch(arguments[0], {method:'GET'}).then(r=>r.status).catch(()=>0)", url)
+                    status = 'pass' if (code == 404 or code == 0 or code >= 400) else 'fail'
+                    results.append(TestResult('LG-001', 'Legacy Cleanup', '/public/index.html is gone', status, f"status={code}", shot('LG-001', dpage)))
+                except Exception as e:
+                    results.append(TestResult('LG-001', 'Legacy Cleanup', '/public/index.html is gone', 'fail', str(e), shot('LG-001_error', dpage)))
+
+            dispatch = {
+                'MN-001': do_MN_001,
+                'MN-002': do_MN_002,
+                'MN-003': do_MN_003,
+                'BG-001': do_BG_001,
+                'AC-001': do_AC_001,
+                'AC-002': do_AC_002,
+                'AD-001': do_AD_001,
+                'AD-002': do_AD_002,
+                'LG-001': do_LG_001,
+            }
+
+            # Execute only selected tests from plan
+            for tc in plan:
+                fn = dispatch.get(tc.id)
+                if fn:
+                    fn()
                 else:
-                    status = 'pass' if code in (401, 403) else 'fail'
-                    results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', status, f"status={code}", shot('AD-001', dpage)))
-            except Exception as e:
-                results.append(TestResult('AD-001', 'Admin Health Endpoint', 'Unauthenticated GET returns 401 or endpoint exists', 'blocked', str(e), shot('AD-001_error', dpage)))
-
-            # AD-002: admin-dispatch
-            try:
-                url = base_url.rstrip('/') + '/.netlify/functions/admin-dispatch'
-                # POST without auth
-                code = dpage.evaluate("fetch(arguments[0], {method:'POST'}).then(r=>r.status).catch(()=>0)", url)
-                if code == 404:
-                    results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', 'blocked', 'Endpoint 404 (likely not deployed or Netlify plan)', shot('AD-002_blocked', dpage)))
-                else:
-                    status = 'pass' if code in (401, 403) else 'fail'
-                    results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', status, f"status={code}", shot('AD-002', dpage)))
-            except Exception as e:
-                results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', 'blocked', str(e), shot('AD-002_error', dpage)))
-
-            # LG-001: legacy cleanup
-            try:
-                url = base_url.rstrip('/') + '/public/index.html'
-                code = dpage.evaluate("fetch(arguments[0], {method:'GET'}).then(r=>r.status).catch(()=>0)", url)
-                status = 'pass' if (code == 404 or code == 0 or code >= 400) else 'fail'
-                results.append(TestResult('LG-001', 'Legacy Cleanup', '/public/index.html is gone', status, f"status={code}", shot('LG-001', dpage)))
-            except Exception as e:
-                results.append(TestResult('LG-001', 'Legacy Cleanup', '/public/index.html is gone', 'fail', str(e), shot('LG-001_error', dpage)))
+                    # Unknown test id in plan
+                    results.append(TestResult(tc.id, tc.feature, tc.title, 'skipped', 'No handler for test id', ''))
 
         finally:
             browser.close()
@@ -408,7 +430,7 @@ def main():
     write_test_plan(plan, args.out_dir)
 
     # Attempt to run UI tests; note that admin endpoints may be blocked depending on deployment
-    results = run_ui_tests(args.base_url, args.out_dir)
+    results = run_ui_tests(args.base_url, args.out_dir, plan)
     write_results(results, args.out_dir)
 
     # Print a short summary
