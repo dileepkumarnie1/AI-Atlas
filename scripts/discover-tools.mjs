@@ -536,13 +536,13 @@ async function searchNpm(query, size=5){
   }catch{ return []; }
 }
 
-async function searchHN(query, hits=5){
+async function searchHN(query, hits=5, pointsMin=100, recentDays=14){
   try{
     const q = encodeURIComponent(query);
-    const since = Math.floor(Date.now()/1000) - (14*24*3600);
+    const since = Math.floor(Date.now()/1000) - (Number(recentDays)*24*3600);
     const url = `https://hn.algolia.com/api/v1/search?tags=story&query=${q}&hitsPerPage=${hits}&numericFilters=created_at_i>${since}`;
     const j = await (await fetch(url)).json();
-    return (j.hits||[]).filter(h=>h.points>=100 && h.url).map(h=>({
+    return (j.hits||[]).filter(h=>h.points>=Number(pointsMin) && h.url).map(h=>({
       source: 'hn',
       name: h.title.replace(/\s*-\s*Show HN.*$/i,'').slice(0,80),
       description: h.title,
@@ -877,7 +877,11 @@ async function main(){
     const results = [];
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
     for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
-    for(const q of (cfg.hnQueries||[])){ results.push(...await searchHN(q, 5)); }
+    for(const q of (cfg.hnQueries||[])){
+      const hnPtsMin = Number(getEnvOverride(slug,'HN_POINTS_MIN', getEnvOverride(null,'HN_POINTS_MIN', 100)));
+      const hnDays = Number(getEnvOverride(slug,'HN_RECENT_DAYS', getEnvOverride(null,'HN_RECENT_DAYS', 14)));
+      results.push(...await searchHN(q, 5, hnPtsMin, hnDays));
+    }
     // Resolve Aixploria categories: combine manual list + auto-discovered by keywords
     let aixCategories = Array.isArray(cfg.aixploriaCategories) ? [...cfg.aixploriaCategories] : [];
     if(Array.isArray(cfg.aixploriaAutoCategories) && cfg.aixploriaAutoCategories.length){
@@ -1052,6 +1056,8 @@ async function main(){
     const aixPool = domainAixPool.get(slug) || [];
     const filler = [];
     const capTarget = perDomainTargets.get(slug) ?? minPer;
+    // Track relax diagnostics
+    const relaxDiag = { passes: 0, added: 0 };
     // helper to check duplicates quickly
     const isDupName = (nm) => {
       const k = normalizeKey(nm);
@@ -1114,6 +1120,73 @@ async function main(){
         if(strict && reliability.verdict !== 'safe') continue;
         filler.push({ cand, slug, reliability });
       }
+    }
+    // Relaxed iteration: if still below min, fetch more candidates with lowered thresholds and accept with relaxed criteria
+    if((cur + filler.length) < minPer && !aixHard){
+      const relaxMaxPasses = Number(getEnvOverride(slug,'RELAX_MAX_PASSES', getEnvOverride(null,'RELAX_MAX_PASSES', 2)));
+      const perPage = Number(cfg.githubPerPage || 5);
+      const starsMin = Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500));
+      const npmSize = Number(cfg.npmSize || 5);
+      const hnPtsMinBase = Number(getEnvOverride(slug,'HN_POINTS_MIN', getEnvOverride(null,'HN_POINTS_MIN', 100)));
+      const hnDaysBase = Number(getEnvOverride(slug,'HN_RECENT_DAYS', getEnvOverride(null,'HN_RECENT_DAYS', 14)));
+      const relaxAllowUnknown = Boolean(getEnvOverride(slug,'RELAX_ALLOW_UNKNOWN', getEnvOverride(null,'RELAX_ALLOW_UNKNOWN', true)));
+      const relaxMinScore = Number(getEnvOverride(slug,'RELAX_MIN_SCORE', getEnvOverride(null,'RELAX_MIN_SCORE', 1)));
+      for(let pass=0; pass<relaxMaxPasses && (cur + filler.length) < minPer; pass++){
+        relaxDiag.passes++;
+        // progressively relax
+        const ghPer = Math.min(20, perPage * (2+pass));
+        const ghStars = Math.max(20, Math.floor(starsMin / (2+pass)));
+        const npmSz = Math.min(30, npmSize * (2+pass));
+        const hnPts = Math.max(50, Math.floor(hnPtsMinBase / (2+pass)));
+        const hnDays = Math.min(60, hnDaysBase * (2+pass));
+        const newResults = [];
+        for(const q of cfg.githubQueries||[]){ newResults.push(...await searchGithubRepos(q, ghPer, ghStars)); }
+        for(const q of cfg.npmQueries||[]){ newResults.push(...await searchNpm(q, npmSz)); }
+        for(const q of (cfg.hnQueries||[])){ newResults.push(...await searchHN(q, 10, hnPts, hnDays)); }
+        // Optionally expand Aixploria fetch size in relaxed pass
+        if(Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length){
+          const sizeFallback = Number(getEnvOverride(slug,'AIXPLORIA_SIZE_RELAXED', (cfg.aixploriaSize||30) * (2+pass)));
+          try{ newResults.push(...await searchAixploriaCategories(cfg.aixploriaCategories, sizeFallback)); }catch{}
+        }
+        // Merge into allPool, dedupe by name
+        const seenNames = new Set((domainAllPool.get(slug)||[]).map(i=>normalizeKey(i.name)));
+        const merged = (newResults||[]).filter(c=>{
+          const k = normalizeKey(c.name);
+          if(!k || seenNames.has(k)) return false; seenNames.add(k); return true;
+        });
+        if(merged.length){
+          const curAll = domainAllPool.get(slug) || [];
+          domainAllPool.set(slug, dedupeByName(curAll.concat(merged)));
+        }
+        // Accept using relaxed criteria
+        const pool = domainAllPool.get(slug) || [];
+        for(const cand of pool){
+          if(filler.length + cur >= Math.min(minPer, capTarget)) break;
+          if(isDupName(cand.name)) continue;
+          const k = normalizeKey(cand.name);
+          if(blacklistNames.has(k)) continue;
+          const host = getHostname(cand.link);
+          const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
+          if(aiOnly && !/\.ai$/i.test(host)) continue;
+          if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
+          if(PACKAGE_HOSTS.has(host)) continue;
+          if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(normalizeKey(cand.name))) continue;
+          if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) continue;
+          const classif = await classifyCandidate(cand, slug);
+          // relaxed acceptance: allow lower score threshold OR isTool
+          const inDirs = inDirectoryConsensus(cand, dirSets);
+          const enoughSignals = classif.isTool || (typeof classif.score === 'number' && classif.score >= relaxMinScore);
+          if(!(inDirs || enoughSignals)) continue;
+          const reliability = await assessReliability(cand);
+          if(reliability.verdict === 'risky') continue;
+          const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
+          if(strict && reliability.verdict !== 'safe' && !relaxAllowUnknown) continue;
+          filler.push({ cand, slug, reliability });
+          relaxDiag.added++;
+        }
+      }
+      // Attach relax diagnostics
+      diag.domains[slug].relax = relaxDiag;
     }
     // Stage filler items
     for(const {cand, reliability} of filler){

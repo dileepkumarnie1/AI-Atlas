@@ -149,16 +149,31 @@ Global thresholds
 - DISCOVERY_TRENDING_HN_RECENT_DAYS — default 14
 - DISCOVERY_PAGE_FRESHNESS_MAX_DAYS — default 90
 - DISCOVERY_GITHUB_SEARCH_RECENT_DAYS — default 180
+ - DISCOVERY_HN_POINTS_MIN — default 100 (fallback when reading Hacker News)
+ - DISCOVERY_HN_RECENT_DAYS — default 14 (fallback when reading Hacker News)
+ - DISCOVERY_RELAX_MAX_PASSES — default 2 (extra relaxed passes when a domain is underfilled)
+ - DISCOVERY_RELAX_MIN_SCORE — default 1 (page-classifier score threshold in relaxed passes)
+ - DISCOVERY_RELAX_ALLOW_UNKNOWN — default true (allow reliability verdict "unknown" in relaxed passes; set false to require "safe")
 
 Per-domain overrides (format)
 - DISCOVERY_<DOMAIN>_GITHUB_STARS_MIN — overrides stars filter for GitHub search
 - DISCOVERY_<DOMAIN>_AIXPLORIA_STRICT — one of: hard | soft | true | false
 - DISCOVERY_<DOMAIN>_AIXPLORIA_SIZE — number of items to fetch per category (default 30)
+ - DISCOVERY_<DOMAIN>_HN_POINTS_MIN — minimum HN points per story for that domain (default 100)
+ - DISCOVERY_<DOMAIN>_HN_RECENT_DAYS — lookback window in days for HN stories (default 14)
+ - DISCOVERY_<DOMAIN>_AIXPLORIA_SIZE_RELAXED — larger per-category page size during relaxed passes
+ - DISCOVERY_<DOMAIN>_RELAX_MAX_PASSES — number of relaxed passes just for this domain
+ - DISCOVERY_<DOMAIN>_RELAX_MIN_SCORE — relaxed acceptance score threshold for this domain
+ - DISCOVERY_<DOMAIN>_RELAX_ALLOW_UNKNOWN — allow reliability verdict "unknown" during relaxed passes for this domain (true/false)
 
 Notes
 - DOMAIN is the slug uppercased with non-alphanumerics replaced by underscores, e.g., `video-tools` → `VIDEO_TOOLS`.
 - Global (DISCOVERY_X) values apply to all domains unless a per-domain override is provided.
 - Hard parity means candidates must be present in Aixploria categories for that domain.
+
+Minimum per-domain results
+- The discovery script now guarantees at least 2 staged/published items per domain by default (configurable via `DISCOVERY_MIN_PER_DOMAIN` or `DISCOVERY_<DOMAIN>_MIN_PER_DOMAIN`).
+- If a domain is underfilled after the primary pass, the script performs up to `RELAX_MAX_PASSES` relaxed passes that lower thresholds (GitHub stars, npm size, HN points) and accept candidates with slightly relaxed page-classifier scores while still respecting safety checks and the GitHub-link exclusion policy.
 
 Automation (GitHub Actions)
 - Workflow: `.github/workflows/discover-tools.yml`
