@@ -147,6 +147,12 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
+      - name: Prepare optional auth envs
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tests == 'true' }}
+        run: |
+          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
+          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
+
       - name: Run UI tests
         env:
           TEST_BASE_URL: ${{ env.TEST_BASE_URL }}
@@ -162,12 +168,6 @@ jobs:
             echo "Running feature: $FEAT"
             python tests/run_ui_tests.py --features "$FEAT" --out-dir "tests/output/$SLUG"
           fi
-
-      - name: Prepare optional auth envs
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tests == 'true' }}
-        run: |
-          echo "TEST_USER_EMAIL=${TEST_USER_EMAIL:-}" >> "$GITHUB_ENV"
-          echo "TEST_USER_PASSWORD=${TEST_USER_PASSWORD:-}" >> "$GITHUB_ENV"
 
       - name: Upload UI test artifacts
         if: always()
