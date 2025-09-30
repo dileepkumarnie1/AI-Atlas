@@ -7,6 +7,9 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load as loadHTML } from 'cheerio';
+// Dry-run guard: when true, avoid network calls and emails; useful for local validation
+const DRY_RUN = /^true$/i.test(String(process.env.DRY_RUN||'').trim());
+function dryNote(msg){ if(DRY_RUN) console.log(`[dry-run] ${msg}`); }
 
 // Optional Firestore (for approval links flow)
 let fbInitTried = false;
@@ -111,6 +114,7 @@ function sameHost(u, host){
 }
 
 async function getNpmWeeklyDownloads(pkg){
+  if(DRY_RUN){ dryNote(`npm downloads skipped for ${pkg}`); return 0; }
   try{
     const url = `https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(pkg)}`;
     const j = await (await fetch(url)).json();
@@ -119,6 +123,7 @@ async function getNpmWeeklyDownloads(pkg){
 }
 
 async function checkGoogleSafeBrowsing(url){
+  if(DRY_RUN){ return { unsafe:false, reason:'dry-run' }; }
   const key = process.env.GOOGLE_SAFEBROWSING_API_KEY;
   if(!key) return { unsafe: false, reason: 'no-gsb-key' };
   try{
@@ -217,6 +222,7 @@ function looksLikeDevPackage(url){
 }
 
 async function fetchHtml(url, timeoutMs = 10000){
+  if(DRY_RUN){ dryNote(`fetchHtml skipped: ${url}`); return ''; }
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), timeoutMs);
   try{
@@ -493,6 +499,7 @@ async function writeJson(p, obj){
 }
 
 async function ghFetch(url){
+  if(DRY_RUN){ dryNote(`GitHub fetch skipped: ${url}`); return { items: [] }; }
   const headers = { 'Accept': 'application/vnd.github+json', 'User-Agent': 'ai-atlas-discovery-script' };
   const token = process.env.GITHUB_TOKEN;
   if(token) headers['Authorization'] = `Bearer ${token}`;
@@ -502,6 +509,7 @@ async function ghFetch(url){
 }
 
 async function searchGithubRepos(query, perPage=5, starsMin=500){
+  if(DRY_RUN){ dryNote(`searchGithubRepos skipped: ${query}`); return []; }
   try{
     const ghSearchRecentDays = Number(getEnvOverride(null,'GITHUB_SEARCH_RECENT_DAYS', 180));
     const since = new Date(Date.now() - ghSearchRecentDays*24*3600*1000).toISOString().slice(0,10);
@@ -521,6 +529,7 @@ async function searchGithubRepos(query, perPage=5, starsMin=500){
 }
 
 async function searchNpm(query, size=5){
+  if(DRY_RUN){ dryNote(`searchNpm skipped: ${query}`); return []; }
   try{
     const q = encodeURIComponent(query);
     const j = await (await fetch(`https://registry.npmjs.org/-/v1/search?text=${q}&size=${size}`)).json();
@@ -537,6 +546,7 @@ async function searchNpm(query, size=5){
 }
 
 async function searchHN(query, hits=5, pointsMin=100, recentDays=14){
+  if(DRY_RUN){ dryNote(`searchHN skipped: ${query}`); return []; }
   try{
     const q = encodeURIComponent(query);
     const since = Math.floor(Date.now()/1000) - (Number(recentDays)*24*3600);
@@ -556,6 +566,7 @@ async function searchHN(query, hits=5, pointsMin=100, recentDays=14){
 
 // --- Aixploria category scraping ---
 async function fetchAixploriaCategory(catUrl, perPageLimit=40){
+  if(DRY_RUN){ dryNote(`Aixploria fetch skipped: ${catUrl}`); return []; }
   try{
     const html = await fetchHtml(catUrl, 15000);
     if(!html || html === '__PDF__') return [];
@@ -633,6 +644,7 @@ async function searchAixploriaCategories(categoryUrls=[], sizePerCat=30){
 
 // --- Aixploria category auto-discovery by keywords ---
 async function fetchAixploriaCategoriesIndex(){
+  if(DRY_RUN){ dryNote('Aixploria index fetch skipped.'); return []; }
   try{
     const html = await fetchHtml('https://www.aixploria.com/en/', 15000);
     if(!html || html === '__PDF__') return [];
@@ -802,6 +814,7 @@ function toToolShape(item){
 }
 
 async function maybeSendEmail({ subject, text, html }){
+  if(DRY_RUN){ dryNote('Email suppressed in dry-run.'); return false; }
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, TO_EMAIL } = process.env;
   if(!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !TO_EMAIL){
     console.log('Email not sent (SMTP env not configured). Preview:\n', subject, '\n', text);

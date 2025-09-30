@@ -137,6 +137,11 @@ Files
 Run locally (Windows PowerShell)
 - npm run discover:tools
 
+Dry run (no network/emails)
+- Set `DRY_RUN=true` to validate logic without calling external services or sending email. Useful for quick local checks.
+   - PowerShell (one session): `$Env:DRY_RUN = "true"; npm run discover:tools`
+   - Output will include `[dry-run]` notes and still write diagnostics to `data/discovery_report.json` without staging additions.
+
 ### Discovery tuning via environment variables
 
 You can adjust discovery behavior without code changes using environment variables. Set them in CI or locally (PowerShell): `$Env:NAME = "value"` before running `npm run discover:tools`.
