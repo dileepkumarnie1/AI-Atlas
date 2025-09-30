@@ -1247,7 +1247,7 @@
 
                             <!-- Category filter dropdown -->
                             <div class="max-w-4xl mx-auto mb-6 flex justify-center">
-                                <select id="category-select" class="search-input w-full max-w-md text-center"></select>
+                                <select id="category-select" class="search-input w-full max-w-md text-center placeholder-select"></select>
                             </div>
 
                             <div id="search-results-container"></div>
@@ -1282,7 +1282,8 @@
                         const counts = computeCategoryCounts(matches);
                         const current = state.selectedCategory || 'all';
                         const opts = [];
-                        opts.push(`<option value="all">All (${counts.all || 0})</option>`);
+                        // Placeholder-like option
+                        opts.push(`<option value="all" data-placeholder="1">-- Select a category --</option>`);
                         for (const d of (db || [])) {
                             const c = counts[d.slug] || 0;
                             const selected = current === d.slug ? 'selected' : '';
@@ -1290,6 +1291,15 @@
                         }
                         sel.innerHTML = opts.join('');
                         sel.value = current;
+                        // Toggle muted style when placeholder is selected
+                        const setPlaceholderStyle = () => {
+                            if (sel.value === 'all') {
+                                sel.classList.add('text-secondary');
+                            } else {
+                                sel.classList.remove('text-secondary');
+                            }
+                        };
+                        setPlaceholderStyle();
                         sel.onchange = () => {
                             const slug = sel.value || 'all';
                             state.selectedCategory = slug;
@@ -1301,6 +1311,7 @@
                                 renderSearchResults();
                                 renderCategorySelect(currentMatchesCache);
                             }
+                            setPlaceholderStyle();
                         };
                     }
 
@@ -1351,7 +1362,7 @@
                             if (sb) sb.value = '';
                             const rc = document.getElementById('search-results-container');
                             if (rc) rc.innerHTML = '';
-                            // Reset category to All on clear
+                            // Reset category to placeholder on clear
                             state.selectedCategory = 'all';
                             renderCategorySelect([]);
                         });
