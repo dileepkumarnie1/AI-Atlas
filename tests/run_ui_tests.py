@@ -645,14 +645,10 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 # Search
                 'SR-001': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    results.append(
-                        (lambda: (
-                            dpage.focus('#search-bar-new'),
-                            results.append(TestResult('SR-001', 'Search', 'Search input is present and focusable',
-                                                      'pass' if dpage.evaluate("document.activeElement && document.activeElement.id === 'search-bar-new'") else 'fail',
-                                                      'focused', shot('SR-001', dpage)))
-                        ))()
-                    )
+                    dpage.focus('#search-bar-new'),
+                    results.append(TestResult('SR-001', 'Search', 'Search input is present and focusable',
+                                              'pass' if dpage.evaluate("document.activeElement && document.activeElement.id === 'search-bar-new'") else 'fail',
+                                              'focused', shot('SR-001', dpage)))
                 ),
                 'SR-002': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
