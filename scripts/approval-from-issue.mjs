@@ -29,10 +29,14 @@ try{
   const body = String(issue.body || '');
   const labels = (issue.labels || []).map(l => (typeof l === 'string'? l : l.name)).join(',');
 
-  // Only proceed for issues labeled 'approval'
-  if(!/\bapproval\b/i.test(labels)){
+  // Proceed if labeled 'approval' OR intent is clear from title/body
+  const hasApprovalLabel = /\bapproval\b/i.test(labels);
+  const intentFromBody = /Action:\s*(approve|reject)/i.test(body);
+  const intentFromTitle = /(Approve ID|Reject ID)/i.test(title) || /\b(approve|reject)\b/i.test(title);
+  const hasApprovalIntent = hasApprovalLabel || intentFromBody || intentFromTitle;
+  if(!hasApprovalIntent){
     setOutput('status','skipped');
-    setOutput('message','Issue not labeled approval');
+    setOutput('message','Issue not recognized as approval request (add label "approval" or include Action: approve/reject).');
     process.exit(0);
   }
 
