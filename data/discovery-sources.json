@@ -273,7 +273,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["support", "chatbot", "helpdesk", "contact center"],
-    "curated": []
+    "curated": [
+      { "name": "Intercom Fin", "link": "https://www.intercom.com/ai-agent", "description": "AI support agent for Intercom", "tags": ["Subscription"] },
+      { "name": "Zendesk AI", "link": "https://www.zendesk.com/ai/", "description": "AI routing and answers in Zendesk", "tags": ["Subscription"] }
+    ]
   },
   "legal-compliance": {
     "githubQueries": ["legal ai", "contract analysis", "contract review ai", "compliance ai", "privacy compliance"],
@@ -284,7 +287,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["legal", "contract", "compliance", "privacy"],
-    "curated": []
+    "curated": [
+      { "name": "Harvey", "link": "https://www.harvey.ai/", "description": "Legal research and drafting AI", "tags": ["Subscription"] },
+      { "name": "Spellbook", "link": "https://www.spellbook.legal/", "description": "Contract drafting in Word", "tags": ["Subscription"] }
+    ]
   },
   "healthcare-medical-ai": {
     "githubQueries": ["medical ai", "healthcare ai", "radiology ai", "medical imaging ai", "ehr ai"],
@@ -295,7 +301,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["healthcare", "medical", "ehr", "diagnostics"],
-    "curated": []
+    "curated": [
+      { "name": "Dragon Medical One", "link": "https://www.nuance.com/healthcare/dragon-medical-one.html", "description": "Clinical speech to EHR", "tags": ["Subscription"] },
+      { "name": "DeepScribe", "link": "https://www.deepscribe.ai/", "description": "Ambient AI scribe", "tags": ["Subscription"] }
+    ]
   },
   "finance-accounting": {
     "githubQueries": ["finance ai", "accounting ai", "bookkeeping ai", "invoice processing ai", "forecasting ai"],
@@ -306,7 +315,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["finance", "accounting", "invoice", "forecasting"],
-    "curated": []
+    "curated": [
+      { "name": "QuickBooks", "link": "https://quickbooks.intuit.com/", "description": "AI‑assisted bookkeeping", "tags": ["Subscription"] },
+      { "name": "Vic.ai", "link": "https://www.vic.ai/", "description": "AP automation", "tags": ["Subscription"] }
+    ]
   },
   "hr-recruitment": {
     "githubQueries": ["recruiting ai", "talent sourcing ai", "resume screening ai", "hr ai"],
@@ -317,7 +329,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["recruiting", "hr", "talent", "screening"],
-    "curated": []
+    "curated": [
+      { "name": "Eightfold AI", "link": "https://eightfold.ai/", "description": "Talent intelligence", "tags": ["Subscription"] },
+      { "name": "Paradox", "link": "https://www.paradox.ai/", "description": "Conversational recruiting", "tags": ["Subscription"] }
+    ]
   },
   "voice-speech-ai": {
     "githubQueries": ["speech recognition", "asr", "text to speech", "tts", "voice cloning", "speech synthesis"],
@@ -328,7 +343,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["speech", "voice", "tts", "asr"],
-    "curated": []
+    "curated": [
+      { "name": "Whisper", "link": "https://github.com/openai/whisper", "description": "Open ASR", "tags": ["Open Source"] },
+      { "name": "Vosk", "link": "https://alphacephei.com/vosk", "description": "Offline ASR", "tags": ["Open Source"] }
+    ]
   },
   "gaming-entertainment": {
     "githubQueries": ["game ai", "npc ai", "procedural generation", "pcg ai", "game tools ai", "streaming ai"],
@@ -339,7 +357,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["game", "npc", "pcg", "streaming"],
-    "curated": []
+    "curated": [
+      { "name": "Inworld AI", "link": "https://inworld.ai/", "description": "Intelligent NPCs", "tags": ["Subscription"] },
+      { "name": "Replica Studios", "link": "https://www.replicastudios.com/", "description": "AI voice actors", "tags": ["Subscription"] }
+    ]
   },
   "cybersecurity": {
     "githubQueries": ["security ai", "threat detection ai", "malware detection ai", "phishing detection ai", "siem ai"],
@@ -350,7 +371,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["security", "threat", "malware", "phishing"],
-    "curated": []
+    "curated": [
+      { "name": "Security Copilot", "link": "https://www.microsoft.com/security/business/ai/security-copilot", "description": "SOC assistant", "tags": ["Subscription"] },
+      { "name": "CrowdStrike Charlotte AI", "link": "https://www.crowdstrike.com/charlotte-ai/", "description": "Falcon analyst assistant", "tags": ["Subscription"] }
+    ]
   },
   "sales-crm": {
     "githubQueries": ["sales ai", "crm ai", "lead scoring ai", "email outreach ai", "sales assistant ai"],
@@ -361,7 +385,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["sales", "crm", "leads", "outreach"],
-    "curated": []
+    "curated": [
+      { "name": "Salesforce Einstein Copilot", "link": "https://www.salesforce.com/products/einstein/copilot/", "description": "CRM copilot", "tags": ["Subscription"] },
+      { "name": "HubSpot AI", "link": "https://www.hubspot.com/ai", "description": "Content + CRM AI", "tags": ["Freemium"] }
+    ]
   },
   "social-media-content": {
     "githubQueries": ["social media ai", "content scheduler ai", "caption generator ai", "social listening ai"],
@@ -372,7 +399,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["social", "content", "scheduler", "listening"],
-    "curated": []
+    "curated": [
+      { "name": "Buffer AI", "link": "https://buffer.com/ai", "description": "AI for social posts", "tags": ["Freemium"] },
+      { "name": "Hootsuite OwlyWriter", "link": "https://www.hootsuite.com/products/owlywriter-ai", "description": "AI captions", "tags": ["Subscription"] }
+    ]
   },
   "ecommerce-retail": {
     "githubQueries": ["ecommerce ai", "product recommendation", "recommender system", "pricing optimization ai", "catalog enrichment ai"],
@@ -383,7 +413,10 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["ecommerce", "retail", "recommendation", "pricing", "catalog"],
-    "curated": []
+    "curated": [
+      { "name": "Shopify Magic", "link": "https://www.shopify.com/magic", "description": "AI for store ops", "tags": ["Freemium"] },
+      { "name": "Amazon Personalize", "link": "https://aws.amazon.com/personalize/", "description": "Recommendations service", "tags": ["Subscription"] }
+    ]
   },
   "real-estate-proptech": {
     "githubQueries": ["real estate ai", "proptech ai", "property valuation ai", "listing enrichment ai"],
@@ -394,6 +427,9 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["real estate", "proptech", "valuation", "listing"],
-    "curated": []
+    "curated": [
+      { "name": "Matterport", "link": "https://matterport.com/", "description": "3D property tours", "tags": ["Freemium"] },
+      { "name": "HouseCanary", "link": "https://www.housecanary.com/", "description": "AVM & analytics", "tags": ["Subscription"] }
+    ]
   }
 }

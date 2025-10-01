@@ -4758,83 +4758,743 @@
     "slug": "customer-support-chatbots",
     "description": "Bots and platforms for automating support, helpdesks, and contact centers.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M18 13a3 3 0 01-3 3h-2l-3 3v-3H7a3 3 0 01-3-3V7a3 3 0 013-3h8a3 3 0 013 3v6z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Intercom Fin",
+        "description": "AI support agent that resolves customer questions autonomously.",
+        "link": "https://www.intercom.com/ai-agent",
+        "tags": ["Subscription", "Support", "Chatbot"],
+        "iconUrl": "https://www.intercom.com/favicon.ico",
+        "about": "Fin is Intercom’s AI agent that can instantly answer most customer queries using your help center and policies, handing off to humans when needed.",
+        "pros": [
+          "Deeply integrated with Intercom inbox and help center.",
+          "Handles secure handoffs and policy adherence.",
+          "Reduces first‑response and resolution times."
+        ],
+        "cons": [
+          "Best value when you’re already on Intercom.",
+          "Requires curated help content for accuracy.",
+          "Enterprise pricing for advanced features."
+        ]
+      },
+      {
+        "name": "Zendesk AI",
+        "description": "AI features across Zendesk for triage, answers, and agent assist.",
+        "link": "https://www.zendesk.com/ai/",
+        "tags": ["Subscription", "Support", "Agent Assist"],
+        "iconUrl": "https://www.zendesk.com/favicon.ico",
+        "about": "Zendesk AI automates intent detection, routing, and suggested answers, while assisting agents with real‑time guidance and macros.",
+        "pros": [
+          "Native to Zendesk workflows and SLAs.",
+          "Good intent/routing models.",
+          "Agent assist improves consistency."
+        ],
+        "cons": [
+          "Requires Zendesk ecosystem.",
+          "Quality depends on historical ticket data.",
+          "Costs scale with usage."
+        ]
+      },
+      {
+        "name": "Ada",
+        "description": "Automated customer service with multi‑channel chatbots and deflection.",
+        "link": "https://www.ada.cx/",
+        "tags": ["Subscription", "Support", "Automation"],
+        "iconUrl": "https://www.ada.cx/favicon.ico",
+        "about": "Ada builds no‑code, brand‑safe chatbots that resolve common support requests across web, mobile, and messaging channels.",
+        "pros": [
+          "No‑code flows empower CX teams.",
+          "Omnichannel deployment.",
+          "Strong deflection for FAQs."
+        ],
+        "cons": [
+          "Complex use cases may need developer help.",
+          "Analytics require setup to track impact.",
+          "Enterprise‑oriented pricing."
+        ]
+      }
+    ]
   },
   {
     "name": "Legal & Compliance",
     "slug": "legal-compliance",
     "description": "AI for contract analysis, legal drafting, compliance, and policy reviews.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 011 1v1h5a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h3V3a1 1 0 011-1z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Harvey",
+        "description": "Legal AI for research, drafting, and contract workflows.",
+        "link": "https://www.harvey.ai/",
+        "tags": ["Subscription", "Legal", "Drafting"],
+        "iconUrl": "https://www.harvey.ai/favicon.ico",
+        "about": "Harvey partners with leading law firms and in‑house teams to accelerate legal research and drafting with guardrails and enterprise controls.",
+        "pros": [
+          "Built for legal workflows and teams.",
+          "Emphasis on accuracy and governance.",
+          "Enterprise security posture."
+        ],
+        "cons": [
+          "Closed platform with limited public access.",
+          "Best value at firm/enterprise scale.",
+          "Specialized domain setup required."
+        ]
+      },
+      {
+        "name": "Spellbook (by Rally)",
+        "description": "AI contract drafting and review inside Microsoft Word.",
+        "link": "https://www.spellbook.legal/",
+        "tags": ["Subscription", "Contract", "Review"],
+        "iconUrl": "https://www.spellbook.legal/favicon.ico",
+        "about": "Spellbook accelerates contract drafting by suggesting clauses, flagging risks, and aligning to playbooks directly within Word.",
+        "pros": [
+          "In‑editor experience.",
+          "Playbooks and clause libraries.",
+          "Great for redlines."
+        ],
+        "cons": [
+          "MS Word dependency.",
+          "Training/playbook setup needed.",
+          "May require legal ops alignment."
+        ]
+      },
+      {
+        "name": "Luminance",
+        "description": "AI for due diligence, contract analysis, and compliance review.",
+        "link": "https://www.luminance.com/",
+        "tags": ["Subscription", "Compliance", "Contracts"],
+        "iconUrl": "https://www.luminance.com/favicon.ico",
+        "about": "Luminance applies machine learning to surface anomalies, classify clauses, and streamline large‑scale legal reviews.",
+        "pros": [
+          "Handles large document sets.",
+          "Good anomaly/cluster surfacing.",
+          "Visual dashboards for review."
+        ],
+        "cons": [
+          "Enterprise pricing.",
+          "Onboarding and data migration required.",
+          "Specialist training recommended."
+        ]
+      }
+    ]
   },
   {
     "name": "Healthcare & Medical AI",
     "slug": "healthcare-medical-ai",
     "description": "Clinical, imaging, and EHR tools for healthcare workflows and insights.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a8 8 0 100 16 8 8 0 000-16zm1 5a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Nuance Dragon Medical One",
+        "description": "Cloud speech recognition for clinical documentation into EHRs.",
+        "link": "https://www.nuance.com/healthcare/dragon-medical-one.html",
+        "tags": ["Subscription", "ASR", "Healthcare"],
+        "iconUrl": "https://www.nuance.com/favicon.ico",
+        "about": "Dragon Medical One provides high‑accuracy clinical dictation with EHR integrations, speeding up documentation and reducing burnout.",
+        "pros": [
+          "High accuracy for medical vocab.",
+          "EHR integrations.",
+          "Cloud managed."
+        ],
+        "cons": [
+          "Paid enterprise licensing.",
+          "Network dependency.",
+          "Requires clinician adoption."
+        ]
+      },
+      {
+        "name": "DeepScribe",
+        "description": "Ambient AI scribe that generates clinical notes from patient visits.",
+        "link": "https://www.deepscribe.ai/",
+        "tags": ["Subscription", "Scribing", "Healthcare"],
+        "iconUrl": "https://www.deepscribe.ai/favicon.ico",
+        "about": "DeepScribe listens to clinical encounters and drafts structured notes, freeing clinicians from manual typing.",
+        "pros": [
+          "Reduces admin burden.",
+          "Structured outputs for EHR.",
+          "Good specialty coverage."
+        ],
+        "cons": [
+          "Consent/PHI workflows required.",
+          "Quality varies by environment.",
+          "Review still needed."
+        ]
+      },
+      {
+        "name": "PathAI",
+        "description": "AI‑powered pathology for diagnostics and drug development.",
+        "link": "https://pathai.com/",
+        "tags": ["Subscription", "Diagnostics", "Healthcare"],
+        "iconUrl": "https://pathai.com/favicon.ico",
+        "about": "PathAI builds models for pathology workflows, improving accuracy and consistency in disease detection and grading.",
+        "pros": [
+          "Research and clinical collaborations.",
+          "Focus on accuracy and validation.",
+          "Supports pharma and providers."
+        ],
+        "cons": [
+          "Specialized deployment.",
+          "Regulatory constraints.",
+          "Integration with lab systems needed."
+        ]
+      }
+    ]
   },
   {
     "name": "Finance & Accounting",
     "slug": "finance-accounting",
     "description": "Bookkeeping automation, invoice processing, forecasting, and FP&A.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M4 3a1 1 0 000 2h12a1 1 0 100-2H4zm0 4a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h7a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H5a1 1 0 01-1-1z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "QuickBooks + AI",
+        "description": "Bookkeeping and invoicing with AI‑assisted categorization and insights.",
+        "link": "https://quickbooks.intuit.com/",
+        "tags": ["Subscription", "Accounting", "SMB"],
+        "iconUrl": "https://quickbooks.intuit.com/favicon.ico",
+        "about": "QuickBooks uses AI to categorize transactions, surface cash‑flow insights, and reduce manual bookkeeping.",
+        "pros": [
+          "Widely used by SMBs.",
+          "Bank feeds and rules.",
+          "Ecosystem of apps."
+        ],
+        "cons": [
+          "Advanced features on higher tiers.",
+          "Bank sync quirks occasionally.",
+          "Accountant collaboration varies by plan."
+        ]
+      },
+      {
+        "name": "Vic.ai",
+        "description": "AP automation with autonomous invoice processing and approvals.",
+        "link": "https://www.vic.ai/",
+        "tags": ["Subscription", "AP Automation", "Enterprise"],
+        "iconUrl": "https://www.vic.ai/favicon.ico",
+        "about": "Vic.ai applies AI to accounts payable, extracting and coding invoices, predicting approvals, and cutting cycle times.",
+        "pros": [
+          "High automation rates.",
+          "Good for multi‑entity finance.",
+          "Analytics on spend."
+        ],
+        "cons": [
+          "Implementation and change management.",
+          "Works best with volume.",
+          "Enterprise‑class pricing."
+        ]
+      },
+      {
+        "name": "Stripe Radar",
+        "description": "ML‑powered fraud detection and risk scoring for payments.",
+        "link": "https://stripe.com/radar",
+        "tags": ["Subscription", "Fraud", "Payments"],
+        "iconUrl": "https://stripe.com/favicon.ico",
+        "about": "Radar uses network‑level signals across Stripe to block fraud, score risk, and reduce chargebacks.",
+        "pros": [
+          "Easy enablement on Stripe.",
+          "Custom rules and reviews.",
+          "Good network effects."
+        ],
+        "cons": [
+          "Tied to Stripe processing.",
+          "Requires rule tuning.",
+          "Hard to compare against bespoke models."
+        ]
+      }
+    ]
   },
   {
     "name": "HR & Recruitment",
     "slug": "hr-recruitment",
     "description": "Sourcing, screening, and talent ops with AI for HR teams.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M13 7a3 3 0 11-6 0 3 3 0 016 0z\"/><path fill-rule=\"evenodd\" d=\"M4 14a4 4 0 014-4h4a4 4 0 014 4v2H4v-2z\" clip-rule=\"evenodd\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Eightfold AI",
+        "description": "Talent intelligence for sourcing, matching, and internal mobility.",
+        "link": "https://eightfold.ai/",
+        "tags": ["Subscription", "Talent", "Enterprise"],
+        "iconUrl": "https://eightfold.ai/favicon.ico",
+        "about": "Eightfold AI unifies candidate and employee data to power sourcing, matching, and skills‑based mobility across the talent lifecycle.",
+        "pros": [
+          "Strong candidate/job matching.",
+          "Skills graph and mobility.",
+          "Enterprise integrations."
+        ],
+        "cons": [
+          "Complex implementation.",
+          "Best for larger orgs.",
+          "Change management required."
+        ]
+      },
+      {
+        "name": "Paradox (Olivia)",
+        "description": "Conversational recruiting assistant for screening and scheduling.",
+        "link": "https://www.paradox.ai/",
+        "tags": ["Subscription", "Recruiting", "Chatbot"],
+        "iconUrl": "https://www.paradox.ai/favicon.ico",
+        "about": "Olivia automates candidate Q&A, pre‑screening, and interview scheduling via chat and SMS, especially for high‑volume roles.",
+        "pros": [
+          "Great for high‑volume hiring.",
+          "Scheduling automation.",
+          "Mobile‑first experience."
+        ],
+        "cons": [
+          "Less depth for niche roles.",
+          "Requires tight ATS integration.",
+          "Brand/voice tuning needed."
+        ]
+      },
+      {
+        "name": "hireEZ",
+        "description": "AI sourcing platform with outreach and enrichment.",
+        "link": "https://hireez.com/",
+        "tags": ["Subscription", "Sourcing", "Recruiting"],
+        "iconUrl": "https://hireez.com/favicon.ico",
+        "about": "hireEZ helps recruiters find, enrich, and engage candidates at scale with AI‑assisted search and campaigns.",
+        "pros": [
+          "Large talent data coverage.",
+          "Sequencing and outreach.",
+          "Team collaboration."
+        ],
+        "cons": [
+          "Email deliverability management needed.",
+          "Compliance varies by region.",
+          "License costs per seat."
+        ]
+      }
+    ]
   },
   {
     "name": "Voice & Speech AI",
     "slug": "voice-speech-ai",
     "description": "ASR, TTS, voice cloning, and speech enhancement technologies.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a3 3 0 00-3 3v5a3 3 0 106 0V5a3 3 0 00-3-3z\"/><path d=\"M5 10a5 5 0 0010 0h2a7 7 0 11-14 0h2z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Whisper (OpenAI)",
+        "description": "Open‑source automatic speech recognition with strong multilingual accuracy.",
+        "link": "https://github.com/openai/whisper",
+        "tags": ["Open Source", "ASR"],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "Whisper is a general‑purpose speech recognition model trained on diverse audio, delivering robust transcription across many languages.",
+        "pros": [
+          "High accuracy and robustness.",
+          "Multilingual support.",
+          "Runs locally or in the cloud."
+        ],
+        "cons": [
+          "Inference can be compute‑intensive.",
+          "Domain adaptation requires fine‑tuning.",
+          "Latency on large models."
+        ]
+      },
+      {
+        "name": "Vosk",
+        "description": "Offline speech recognition toolkit for multiple languages and platforms.",
+        "link": "https://alphacephei.com/vosk",
+        "tags": ["Open Source", "ASR", "Offline"],
+        "iconUrl": "https://alphacephei.com/favicon.ico",
+        "about": "Vosk provides lightweight ASR that works offline on servers and embedded devices, with bindings for many languages.",
+        "pros": [
+          "Runs offline with small footprints.",
+          "Cross‑platform bindings.",
+          "Good for edge devices."
+        ],
+        "cons": [
+          "Lower accuracy vs large LLM‑based ASR.",
+          "Model management required.",
+          "Limited diarization features."
+        ]
+      },
+      {
+        "name": "Coqui TTS",
+        "description": "Open‑source text‑to‑speech toolkit for training and inference.",
+        "link": "https://github.com/coqui-ai/TTS",
+        "tags": ["Open Source", "TTS"],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "Coqui TTS enables training custom neural voices and generating speech with many models and languages.",
+        "pros": [
+          "Flexible training pipeline.",
+          "Large community models.",
+          "Custom voice creation."
+        ],
+        "cons": [
+          "Training data requirements.",
+          "Compute needs for training.",
+          "Quality varies by dataset/model."
+        ]
+      }
+    ]
   },
   {
     "name": "Gaming & Entertainment",
     "slug": "gaming-entertainment",
     "description": "AI for game dev, NPCs, VTubing, content tools, and live streaming.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M6 7a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 110 4 2 2 0 010-4z\"/><path fill-rule=\"evenodd\" d=\"M4 5a4 4 0 00-4 4v2a5 5 0 005 5h10a5 5 0 005-5V9a4 4 0 00-4-4H4z\" clip-rule=\"evenodd\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Inworld AI",
+        "description": "Intelligent NPCs with personalities, memory, and real‑time dialogue.",
+        "link": "https://inworld.ai/",
+        "tags": ["Subscription", "NPC", "Gaming"],
+        "iconUrl": "https://inworld.ai/favicon.ico",
+        "about": "Inworld powers dynamic NPCs that react, emote, and converse naturally, with SDKs for popular engines.",
+        "pros": [
+          "Rich character tools and memory.",
+          "Unity/Unreal integrations.",
+          "Conversation safety features."
+        ],
+        "cons": [
+          "Online dependency for inference.",
+          "Latency considerations.",
+          "Usage‑based pricing."
+        ]
+      },
+      {
+        "name": "modl.ai",
+        "description": "Game AI services including testing bots, behavior models, and tools.",
+        "link": "https://modl.ai/",
+        "tags": ["Subscription", "Game Dev", "Automation"],
+        "iconUrl": "https://modl.ai/favicon.ico",
+        "about": "modl.ai offers AI testing bots and design tools to accelerate QA and tune gameplay using machine learning.",
+        "pros": [
+          "Automated playtesting.",
+          "Improves QA coverage.",
+          "Works with major engines."
+        ],
+        "cons": [
+          "Service engagement required.",
+          "Best for studios.",
+          "Project‑specific setup."
+        ]
+      },
+      {
+        "name": "Replica Studios",
+        "description": "AI voice actors and tools for games and films.",
+        "link": "https://www.replicastudios.com/",
+        "tags": ["Subscription", "Voice", "Gaming"],
+        "iconUrl": "https://www.replicastudios.com/favicon.ico",
+        "about": "Replica provides a library of licensable AI voices and tools for localization, prototyping, and production dialogue.",
+        "pros": [
+          "Fast iteration for VO.",
+          "Licensing tailored to games/film.",
+          "Improves localization speed."
+        ],
+        "cons": [
+          "Rights and consent diligence needed.",
+          "Quality varies by voice.",
+          "Costs scale with usage."
+        ]
+      }
+    ]
   },
   {
     "name": "Cybersecurity",
     "slug": "cybersecurity",
     "description": "Threat detection, phishing defense, malware analysis, and SOC copilots.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2l7 3v5c0 5-3.582 7.94-7 9-3.418-1.06-7-4-7-9V5l7-3z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Microsoft Security Copilot",
+        "description": "An AI assistant for security analysts across Microsoft’s security stack.",
+        "link": "https://www.microsoft.com/security/business/ai/security-copilot",
+        "tags": ["Subscription", "SOC", "Assistant"],
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "about": "Security Copilot summarizes incidents, hunts threats, and explains findings using your Microsoft security data.",
+        "pros": [
+          "Deep integration with Defender/Sentinel.",
+          "Great for triage and summaries.",
+          "Enterprise compliance posture."
+        ],
+        "cons": [
+          "Microsoft‑centric.",
+          "Access and licensing requirements.",
+          "Data residency considerations."
+        ]
+      },
+      {
+        "name": "CrowdStrike Charlotte AI",
+        "description": "Conversational security analyst for the CrowdStrike Falcon platform.",
+        "link": "https://www.crowdstrike.com/charlotte-ai/",
+        "tags": ["Subscription", "EDR", "Assistant"],
+        "iconUrl": "https://www.crowdstrike.com/favicon.ico",
+        "about": "Charlotte AI enables natural‑language queries and guided investigations across Falcon telemetry and detections.",
+        "pros": [
+          "Powerful on Falcon data.",
+          "Speeds up investigations.",
+          "Guided response workflows."
+        ],
+        "cons": [
+          "Tied to CrowdStrike ecosystem.",
+          "License tier dependent.",
+          "Requires tuned detections."
+        ]
+      },
+      {
+        "name": "Darktrace",
+        "description": "Self‑learning AI for threat detection and autonomous response.",
+        "link": "https://darktrace.com/",
+        "tags": ["Subscription", "NDR", "Threat Detection"],
+        "iconUrl": "https://darktrace.com/favicon.ico",
+        "about": "Darktrace models normal behavior in your environment to detect anomalies and can take autonomous actions to contain threats.",
+        "pros": [
+          "Strong anomaly detection.",
+          "Autonomous response.",
+          "Covers email, network, cloud."
+        ],
+        "cons": [
+          "Tuning to reduce noise.",
+          "Opaque model behavior.",
+          "Premium pricing."
+        ]
+      }
+    ]
   },
   {
     "name": "Sales & CRM",
     "slug": "sales-crm",
     "description": "AI for lead scoring, outreach, pipeline insights, and CRM copilots.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M2 11a1 1 0 011-1h4l3-3 4 4h3a1 1 0 110 2h-3l-4 4-3-3H3a1 1 0 01-1-1v-2z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Salesforce Einstein Copilot",
+        "description": "Conversational Copilot embedded across Salesforce clouds.",
+        "link": "https://www.salesforce.com/products/einstein/copilot/",
+        "tags": ["Subscription", "CRM", "Assistant"],
+        "iconUrl": "https://www.salesforce.com/favicon.ico",
+        "about": "Einstein Copilot helps reps draft emails, update records, and get pipeline insights with grounded data from Salesforce.",
+        "pros": [
+          "Native Salesforce context.",
+          "Secure data grounding.",
+          "Automates repetitive CRM work."
+        ],
+        "cons": [
+          "Salesforce licensing required.",
+          "Feature availability varies by cloud.",
+          "Customization effort for best results."
+        ]
+      },
+      {
+        "name": "HubSpot AI",
+        "description": "AI writing, content, and CRM assistance within HubSpot.",
+        "link": "https://www.hubspot.com/ai",
+        "tags": ["Freemium", "CRM", "Marketing"],
+        "iconUrl": "https://www.hubspot.com/favicon.ico",
+        "about": "HubSpot AI helps draft emails, generate content, and surface insights across Marketing, Sales, and Service Hubs.",
+        "pros": [
+          "Good for SMB and mid‑market.",
+          "Simple UX.",
+          "Free tier options."
+        ],
+        "cons": [
+          "Depth varies by hub/tier.",
+          "Less flexible than custom stacks.",
+          "May require data cleanup."
+        ]
+      },
+      {
+        "name": "Apollo AI",
+        "description": "Prospecting, enrichment, and AI‑assisted outreach.",
+        "link": "https://www.apollo.io/",
+        "tags": ["Freemium", "Prospecting", "Sales"],
+        "iconUrl": "https://www.apollo.io/favicon.ico",
+        "about": "Apollo combines a large B2B contact database with sequencing and AI to help generate and convert leads.",
+        "pros": [
+          "Large B2B dataset.",
+          "Affordable entry tier.",
+          "Sequencing built‑in."
+        ],
+        "cons": [
+          "Data accuracy varies.",
+          "Deliverability management needed.",
+          "Privacy compliance per region."
+        ]
+      }
+    ]
   },
   {
     "name": "Social Media & Content",
     "slug": "social-media-content",
     "description": "Scheduling, captioning, creative assets, and social listening with AI.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M4 3h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-4 3v-3H4a2 2 0 01-2-2V5a2 2 0 012-2z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Buffer AI Assistant",
+        "description": "Generate on‑brand social posts and ideas inside Buffer.",
+        "link": "https://buffer.com/ai",
+        "tags": ["Freemium", "Scheduling", "Content"],
+        "iconUrl": "https://buffer.com/favicon.ico",
+        "about": "Buffer’s AI helps brainstorm, draft, and repurpose content across networks, integrated with your scheduling calendar.",
+        "pros": [
+          "Tight with scheduling and analytics.",
+          "Easy brand tone prompts.",
+          "Good free tier."
+        ],
+        "cons": [
+          "Best for SMB and creators.",
+          "Limited long‑form tools.",
+          "Network feature parity varies."
+        ]
+      },
+      {
+        "name": "Hootsuite OwlyWriter AI",
+        "description": "AI captions, ideas, and repurposing for social marketers.",
+        "link": "https://www.hootsuite.com/products/owlywriter-ai",
+        "tags": ["Subscription", "Scheduling", "Content"],
+        "iconUrl": "https://www.hootsuite.com/favicon.ico",
+        "about": "OwlyWriter generates captions, repurposes posts, and drafts content calendars, integrated with Hootsuite’s suite.",
+        "pros": [
+          "Fits existing Hootsuite flows.",
+          "Helps ideation and repurposing.",
+          "Team collaboration."
+        ],
+        "cons": [
+          "Requires Hootsuite plan.",
+          "Results still need editing.",
+          "Cost scales with seats."
+        ]
+      },
+      {
+        "name": "Later AI",
+        "description": "AI tools for captions, ideas, and scheduling for creators and brands.",
+        "link": "https://later.com/ai",
+        "tags": ["Freemium", "Creator", "Content"],
+        "iconUrl": "https://later.com/favicon.ico",
+        "about": "Later offers AI caption writing and planning tools alongside their visual calendar for Instagram, TikTok, and more.",
+        "pros": [
+          "Great visual planner.",
+          "Creator‑friendly.",
+          "Affordable entry tiers."
+        ],
+        "cons": [
+          "Limited analytics vs enterprise suites.",
+          "Network limitations change over time.",
+          "AI outputs need review."
+        ]
+      }
+    ]
   },
   {
     "name": "E‑commerce & Retail",
     "slug": "ecommerce-retail",
     "description": "Recommendations, pricing, catalog enrichment, and customer experience.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M3 3a1 1 0 00-1 1v2h16V4a1 1 0 00-1-1H3zm-1 5h16l-1.5 8.5A2 2 0 0114.52 18H5.48a2 2 0 01-1.98-1.5L2 8z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Shopify Magic",
+        "description": "AI features across Shopify for product text, customer support, and more.",
+        "link": "https://www.shopify.com/magic",
+        "tags": ["Freemium", "Commerce", "Assistant"],
+        "iconUrl": "https://www.shopify.com/favicon.ico",
+        "about": "Shopify Magic helps write product descriptions, answer chats, and personalize storefront content.",
+        "pros": [
+          "Built into Shopify admin.",
+          "Fast copy generation.",
+          "Improves store ops."
+        ],
+        "cons": [
+          "Limited outside Shopify.",
+          "Quality varies by input.",
+          "Advanced features require paid plans."
+        ]
+      },
+      {
+        "name": "Amazon Personalize",
+        "description": "Managed personalization service for recommendations and ranking.",
+        "link": "https://aws.amazon.com/personalize/",
+        "tags": ["Subscription", "Recommendations", "AWS"],
+        "iconUrl": "https://aws.amazon.com/favicon.ico",
+        "about": "Personalize brings Amazon.com‑grade recommendation tech to your apps for product, content, and promotions.",
+        "pros": [
+          "Managed service with SDKs.",
+          "Good for cold‑start.",
+          "A/B evaluation tools."
+        ],
+        "cons": [
+          "Requires data pipelines.",
+          "AWS ecosystem knowledge.",
+          "Costs scale with traffic."
+        ]
+      },
+      {
+        "name": "Bloomreach Discovery",
+        "description": "AI‑powered site search, merchandising, and recommendations.",
+        "link": "https://www.bloomreach.com/en/products/discovery",
+        "tags": ["Subscription", "Search", "Merchandising"],
+        "iconUrl": "https://www.bloomreach.com/favicon.ico",
+        "about": "Discovery boosts conversion with semantic search, relevance tuning, and AI‑driven merchandising tools.",
+        "pros": [
+          "Strong commerce search relevance.",
+          "Merch rules + AI.",
+          "Enterprise integrations."
+        ],
+        "cons": [
+          "Implementation effort.",
+          "Best for mid/enterprise.",
+          "License costs."
+        ]
+      }
+    ]
   },
   {
     "name": "Real Estate & PropTech",
     "slug": "real-estate-proptech",
     "description": "Property search, valuations, listing enrichment, and market insights.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10.707 2.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 11h1v6a1 1 0 001 1h4v-4h2v4h4a1 1 0 001-1v-6h1a1 1 0 00.707-1.707l-7-7z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "Matterport",
+        "description": "3D digital twins for property listings, design, and operations.",
+        "link": "https://matterport.com/",
+        "tags": ["Freemium", "3D", "Tours"],
+        "iconUrl": "https://matterport.com/favicon.ico",
+        "about": "Matterport captures spaces into interactive 3D tours with AI features for measurement, floor plans, and virtual staging.",
+        "pros": [
+          "High‑quality 3D tours.",
+          "Measurement/floor plan tools.",
+          "Broad camera/app support."
+        ],
+        "cons": [
+          "Scanning workflow learning curve.",
+          "Hosting costs for many tours.",
+          "Best with good capture hardware."
+        ]
+      },
+      {
+        "name": "HouseCanary",
+        "description": "Property valuations, forecasting, and analytics for real estate.",
+        "link": "https://www.housecanary.com/",
+        "tags": ["Subscription", "Valuation", "Analytics"],
+        "iconUrl": "https://www.housecanary.com/favicon.ico",
+        "about": "HouseCanary provides automated valuation models (AVMs), comparables, and market analytics for lenders and investors.",
+        "pros": [
+          "Robust AVM data.",
+          "Market trend insights.",
+          "Lender/investor focus."
+        ],
+        "cons": [
+          "US‑centric data.",
+          "Enterprise contracts.",
+          "Needs integration into workflows."
+        ]
+      },
+      {
+        "name": "Reonomy",
+        "description": "Commercial real estate intelligence and property data platform.",
+        "link": "https://www.reonomy.com/",
+        "tags": ["Subscription", "CRE", "Data"],
+        "iconUrl": "https://www.reonomy.com/favicon.ico",
+        "about": "Reonomy unifies ownership, property, and transaction data to power CRE prospecting and market research.",
+        "pros": [
+          "Comprehensive CRE data.",
+          "Prospecting and outreach tools.",
+          "Data exports and integrations."
+        ],
+        "cons": [
+          "Coverage varies by region.",
+          "Data freshness considerations.",
+          "Seat‑based pricing."
+        ]
+      }
+    ]
   }
 ]
