@@ -5,6 +5,7 @@ on:
     types: [opened, labeled, reopened, edited]
 
 permissions:
+  actions: write
   contents: read
   issues: write
 

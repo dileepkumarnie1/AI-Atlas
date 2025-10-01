@@ -64,6 +64,29 @@ function keywordsFromMeta(meta){
   return Array.from(tagSet);
 }
 
+// Simple, deterministic pros/cons templates derived from tags
+function defaultProsCons(tags){
+  const t = new Set(arr(tags).map(x => String(x).toLowerCase()));
+  const pros = new Set();
+  const cons = new Set();
+  // Pricing/category
+  if (t.has('free')) pros.add('Free to start.');
+  if (t.has('freemium')) { pros.add('Free tier available.'); cons.add('Advanced features require payment.'); }
+  if (t.has('subscription')) cons.add('Subscription required for full access.');
+  if (t.has('open-source') || t.has('open source')) { pros.add('Open source and extensible.'); cons.add('Requires setup and maintenance.'); }
+  // Domains
+  if (t.has('chatbot') || t.has('llm')) { pros.add('Good for drafting and Q&A.'); cons.add('May require fact‑checking.'); }
+  if (t.has('image')) { pros.add('Generates visuals quickly.'); cons.add('Quality varies by prompt.'); }
+  if (t.has('video')) { pros.add('Accelerates video creation.'); cons.add('Render times or credit limits may apply.'); }
+  if (t.has('audio') || t.has('speech')) { pros.add('Useful for voice and audio workflows.'); cons.add('May need cleanup for artifacts.'); }
+  if (t.has('search')) { pros.add('Great for research and discovery.'); cons.add('Coverage and speed can vary.'); }
+  if (t.has('developer-tools') || t.has('code')) { pros.add('Boosts developer productivity.'); cons.add('Suggestions may need review.'); }
+  // Fallbacks
+  if (pros.size === 0) pros.add('Easy to get started.');
+  if (cons.size === 0) cons.add('May require an account or credits.');
+  return { pros: Array.from(pros).slice(0,3), cons: Array.from(cons).slice(0,3) };
+}
+
 function buildDomainDefaultTags(sections){
   // Build defaults from existing catalog: pick most common tags within each section
   const map = new Map(); // slug -> [tags]
@@ -140,7 +163,9 @@ async function main(){
       const missingIcon = !isNonEmptyStr(data.iconUrl);
       const missingAbout = !isNonEmptyStr(data.about);
       const missingTags = !Array.isArray(data.tags) || data.tags.length === 0;
-      if (!(missingDesc || missingIcon || missingAbout || missingTags)) return;
+      const missingPros = !Array.isArray(data.pros) || data.pros.length === 0;
+      const missingCons = !Array.isArray(data.cons) || data.cons.length === 0;
+      if (!(missingDesc || missingIcon || missingAbout || missingTags || missingPros || missingCons)) return;
       const info = await enrichFromLink(data.link);
       if (missingDesc && isNonEmptyStr(info.description)) updates.description = info.description;
       if (missingAbout && isNonEmptyStr(info.about)) updates.about = info.about;
@@ -151,6 +176,12 @@ async function main(){
         const defaults = domainDefaults.get(slug) || [];
         const tags = Array.from(new Set([...(inferred||[]), ...defaults])).slice(0, 8);
         if (tags.length) updates.tags = tags;
+      }
+      if (missingPros || missingCons) {
+        const tags = updates.tags || data.tags || [];
+        const pc = defaultProsCons(tags);
+        if (missingPros && Array.isArray(pc.pros) && pc.pros.length) updates.pros = pc.pros;
+        if (missingCons && Array.isArray(pc.cons) && pc.cons.length) updates.cons = pc.cons;
       }
       if (Object.keys(updates).length){
         updates.enrichedAt = new Date().toISOString();

@@ -13,6 +13,8 @@ permissions:
 jobs:
   export:
     runs-on: ubuntu-latest
+    outputs:
+      additions: ${{ steps.meta.outputs.additions }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -94,7 +96,30 @@ jobs:
           fi
           echo "Validation STRICT mode: ENFORCED (applies to NEW tools only)" >> $GITHUB_STEP_SUMMARY
 
+      - name: Flag additions
+        id: meta
+        run: |
+          if [ "${{ steps.cpr.outputs.pull-request-number }}" = "" ]; then
+            echo "additions=0" >> $GITHUB_OUTPUT
+          else
+            echo "additions=1" >> $GITHUB_OUTPUT
+          fi
+
     # Notes:
+
+  trigger-popularity:
+    if: needs.export.outputs.additions == '1'
+    needs: export
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Dispatch popularity workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: update-popularity.yml
+          ref: main
     # - Set repository secret FIREBASE_SERVICE_ACCOUNT_JSON to the raw JSON of your Firebase service account key.
     # - The exporter enforces the GitHub link exclusion policy (allowlisting GitHub Copilot).
     # - Update the cron schedule as needed.
