@@ -1421,6 +1421,21 @@ async function main(){
       </section>`;
     }));
 
+    // Optional: Build a one-click Export Tools button
+    // If APPROVAL_BASE_URL and ADMIN_APPROVAL_SIGNING_KEY are configured, generate a signed Netlify link
+    // Otherwise, fall back to the GitHub Actions workflow page
+    let exportButtonHtml = '';
+    try{
+      if (approvalBase && process.env.ADMIN_APPROVAL_SIGNING_KEY) {
+        const token = signId('export');
+        const href = `${approvalBase}/.netlify/functions/trigger-export?token=${encodeURIComponent(token)}`;
+        exportButtonHtml = `<div style="margin-top:12px;"><a href="${href}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Run Export</a><div style=\"font-size:12px;color:#57606a;margin-top:4px;\">Triggers the Export Tools workflow to append approved items to tools.json</div></div>`;
+      } else if (repoSlug) {
+        const actionsUi = `https://github.com/${repoSlug}/actions/workflows/export-tools.yml`;
+        exportButtonHtml = `<div style="margin-top:12px;"><a href="${actionsUi}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Open Export Workflow</a><div style=\"font-size:12px;color:#57606a;margin-top:4px;\">Dispatch the Export Tools workflow from GitHub Actions</div></div>`;
+      }
+    }catch{/* ignore */}
+
     const html = `
       <div style="font-family:Segoe UI,Arial,sans-serif; line-height:1.4; color:#24292f;">
         <div style="display:flex; align-items:center; gap:8px; margin:0 0 8px;">
@@ -1436,6 +1451,7 @@ async function main(){
         </table>
   ${htmlSections.join('')}
         <hr style="border:none; border-top:1px solid #d0d7de; margin:16px 0;"/>
+        ${exportButtonHtml}
         <div style="font-size:12px; color:#57606a;">You’re receiving this because discovery ran successfully. Update SMTP settings or disable emails in the workflow to stop notifications.</div>
       </div>`;
 
