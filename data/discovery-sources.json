@@ -43,25 +43,29 @@
     ]
   },
   "video-tools": {
-    "githubQueries": ["video generation", "text to video", "video-to-video", "avatar video", "automatic rotoscoping", "subtitle ai", "lip sync ai"],
+    "githubQueries": ["video generation", "text to video", "video-to-video", "avatar video", "automatic rotoscoping", "subtitle ai", "lip sync ai", "AnimateDiff", "stable video diffusion"],
     "npmQueries": ["text-to-video", "video ai", "subtitle ai", "lip sync"],
     "hnQueries": ["text to video", "video generation"],
-    "maxAdds": 4,
-    "githubStarsMin": 200,
+  "maxAdds": 5,
+  "githubStarsMin": 150,
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaStrict": "hard",
     "aixploriaCategories": [
       "https://www.aixploria.com/en/category/video-generators/",
       "https://www.aixploria.com/en/category/text-to-video-en/"
+    ],
+    "curated": [
+      { "name": "AnimateDiff", "link": "https://github.com/guoyww/AnimateDiff", "description": "Temporal extension for diffusion to create animations", "tags": ["Open Source"] },
+      { "name": "Stable Video Diffusion", "link": "https://github.com/Stability-AI/stable-video-diffusion", "description": "Open models for video generation from Stability AI", "tags": ["Open Source"] }
     ]
   },
   "code-assistance": {
-    "githubQueries": ["code assistant", "ai code", "code completion", "code llm", "copilot", "test generation ai"],
+    "githubQueries": ["code assistant", "ai code", "code completion", "code llm", "copilot", "test generation ai", "self hosted code assistant", "tabbyml"],
     "npmQueries": ["code ai", "copilot", "autocomplete ai"],
     "hnQueries": ["code assistant", "copilot"],
-    "maxAdds": 2,
-    "githubStarsMin": 800,
+  "maxAdds": 3,
+  "githubStarsMin": 500,
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaStrict": "soft",
@@ -75,11 +79,11 @@
     ]
   },
   "audio-music": {
-    "githubQueries": ["text to speech", "voice cloning", "tts", "music generation", "voice conversion", "audio separation"],
+    "githubQueries": ["text to speech", "voice cloning", "tts", "music generation", "voice conversion", "audio separation", "riffusion"],
     "npmQueries": ["tts", "voice", "speech synthesis", "music generation"],
     "hnQueries": ["voice cloning", "music generation"],
-    "maxAdds": 2,
-    "githubStarsMin": 500,
+  "maxAdds": 3,
+  "githubStarsMin": 300,
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaCategories": [
@@ -88,7 +92,8 @@
     ],
     "curated": [
       { "name": "ElevenLabs", "link": "https://elevenlabs.ai", "description": "AI voice synthesis", "tags": ["Paid"] },
-      { "name": "Aiva", "link": "https://aiva.ai", "description": "AI music generation", "tags": ["Freemium"] }
+      { "name": "Aiva", "link": "https://aiva.ai", "description": "AI music generation", "tags": ["Freemium"] },
+      { "name": "Riffusion", "link": "https://www.riffusion.com/", "description": "Real‑time music from spectrogram diffusion", "tags": ["Open Source"] }
     ]
   },
   "productivity": {
@@ -257,5 +262,138 @@
     "githubPerPage": 10,
     "npmSize": 10,
     "aixploriaAutoCategories": ["search", "semantic", "vector", "knowledge", "rag", "retrieval"]
+  }
+  ,
+  "customer-support-chatbots": {
+    "githubQueries": ["customer support ai", "chatbot", "helpdesk ai", "support automation", "contact center ai"],
+    "npmQueries": ["customer support", "chatbot", "helpdesk", "support ai"],
+    "hnQueries": ["customer support", "chatbot"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["support", "chatbot", "helpdesk", "contact center"],
+    "curated": []
+  },
+  "legal-compliance": {
+    "githubQueries": ["legal ai", "contract analysis", "contract review ai", "compliance ai", "privacy compliance"],
+    "npmQueries": ["legal ai", "contract", "gdpr", "compliance"],
+    "hnQueries": ["legal ai", "contract review"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["legal", "contract", "compliance", "privacy"],
+    "curated": []
+  },
+  "healthcare-medical-ai": {
+    "githubQueries": ["medical ai", "healthcare ai", "radiology ai", "medical imaging ai", "ehr ai"],
+    "npmQueries": ["healthcare ai", "medical", "ehr"],
+    "hnQueries": ["medical ai", "healthcare ai"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["healthcare", "medical", "ehr", "diagnostics"],
+    "curated": []
+  },
+  "finance-accounting": {
+    "githubQueries": ["finance ai", "accounting ai", "bookkeeping ai", "invoice processing ai", "forecasting ai"],
+    "npmQueries": ["accounting", "invoice", "finance ai"],
+    "hnQueries": ["accounting ai", "finance ai"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["finance", "accounting", "invoice", "forecasting"],
+    "curated": []
+  },
+  "hr-recruitment": {
+    "githubQueries": ["recruiting ai", "talent sourcing ai", "resume screening ai", "hr ai"],
+    "npmQueries": ["recruiting", "hr ai", "talent"],
+    "hnQueries": ["recruiting ai", "talent sourcing"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["recruiting", "hr", "talent", "screening"],
+    "curated": []
+  },
+  "voice-speech-ai": {
+    "githubQueries": ["speech recognition", "asr", "text to speech", "tts", "voice cloning", "speech synthesis"],
+    "npmQueries": ["speech recognition", "asr", "tts", "voice"],
+    "hnQueries": ["speech recognition", "text to speech"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["speech", "voice", "tts", "asr"],
+    "curated": []
+  },
+  "gaming-entertainment": {
+    "githubQueries": ["game ai", "npc ai", "procedural generation", "pcg ai", "game tools ai", "streaming ai"],
+    "npmQueries": ["game ai", "npc", "procedural", "vtuber"],
+    "hnQueries": ["game ai", "procedural generation"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["game", "npc", "pcg", "streaming"],
+    "curated": []
+  },
+  "cybersecurity": {
+    "githubQueries": ["security ai", "threat detection ai", "malware detection ai", "phishing detection ai", "siem ai"],
+    "npmQueries": ["security ai", "threat", "malware", "phishing"],
+    "hnQueries": ["security ai", "threat detection"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["security", "threat", "malware", "phishing"],
+    "curated": []
+  },
+  "sales-crm": {
+    "githubQueries": ["sales ai", "crm ai", "lead scoring ai", "email outreach ai", "sales assistant ai"],
+    "npmQueries": ["crm", "lead scoring", "sales ai"],
+    "hnQueries": ["sales ai", "crm"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["sales", "crm", "leads", "outreach"],
+    "curated": []
+  },
+  "social-media-content": {
+    "githubQueries": ["social media ai", "content scheduler ai", "caption generator ai", "social listening ai"],
+    "npmQueries": ["scheduler", "social", "caption", "content"],
+    "hnQueries": ["social media ai", "content generation"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["social", "content", "scheduler", "listening"],
+    "curated": []
+  },
+  "ecommerce-retail": {
+    "githubQueries": ["ecommerce ai", "product recommendation", "recommender system", "pricing optimization ai", "catalog enrichment ai"],
+    "npmQueries": ["recommendation", "pricing", "ecommerce"],
+    "hnQueries": ["recommendation", "ecommerce ai"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["ecommerce", "retail", "recommendation", "pricing", "catalog"],
+    "curated": []
+  },
+  "real-estate-proptech": {
+    "githubQueries": ["real estate ai", "proptech ai", "property valuation ai", "listing enrichment ai"],
+    "npmQueries": ["real estate", "proptech", "valuation"],
+    "hnQueries": ["real estate ai", "proptech"],
+    "maxAdds": 3,
+    "githubStarsMin": 200,
+    "githubPerPage": 10,
+    "npmSize": 10,
+    "aixploriaAutoCategories": ["real estate", "proptech", "valuation", "listing"],
+    "curated": []
   }
 }
