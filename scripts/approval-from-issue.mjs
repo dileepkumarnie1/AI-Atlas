@@ -145,11 +145,17 @@ try{
     await ref.update({ status: 'approved', resolvedAt: new Date() });
     setOutput('status','ok');
     setOutput('message',`Approved "${payload.name}" (ID ${id})`);
+    setOutput('action','approve');
+    setOutput('id', id);
+    setOutput('name', payload.name || '');
     process.exit(0);
   }else if(action === 'reject'){
     await ref.update({ status: 'rejected', resolvedAt: new Date() });
     setOutput('status','ok');
     setOutput('message',`Rejected ID ${id}`);
+    setOutput('action','reject');
+    setOutput('id', id);
+    setOutput('name', data.name || '');
     process.exit(0);
   }else{
     setOutput('status','error');

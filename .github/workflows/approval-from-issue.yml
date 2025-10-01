@@ -34,6 +34,43 @@ jobs:
         run: |
           node scripts/approval-from-issue.mjs
 
+      - name: Trigger Export Tools workflow (on approve)
+        if: ${{ steps.approval.outputs.status == 'ok' && steps.approval.outputs.action == 'approve' }}
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: export-tools.yml
+          ref: main
+
+      - name: Send notification email (SMTP) (on approve)
+        if: ${{ steps.approval.outputs.status == 'ok' && steps.approval.outputs.action == 'approve' }}
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          TOOL_NAME: ${{ steps.approval.outputs.name }}
+          PENDING_ID: ${{ steps.approval.outputs.id }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -z "${SMTP_HOST}" ] || [ -z "${SMTP_PORT}" ] || [ -z "${SMTP_USER}" ] || [ -z "${SMTP_PASS}" ] || [ -z "${TO_EMAIL}" ]; then
+            echo "SMTP not configured; skipping email"; exit 0; fi
+          node -e '
+            (async () => {
+              const nodemailer = (await import("nodemailer")).default;
+              const transporter = nodemailer.createTransport({ host: process.env.SMTP_HOST, port: Number(process.env.SMTP_PORT), secure: Number(process.env.SMTP_PORT)===465, auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } });
+              const name = process.env.TOOL_NAME || "Tool";
+              const id = process.env.PENDING_ID || "";
+              const repo = process.env.REPO || "";
+              const actionsUrl = `https://github.com/${repo}/actions/workflows/export-tools.yml`;
+              const subject = `AI Atlas — Approved: ${name}`;
+              const text = `Approved ${name} (ID ${id}). Export workflow link: ${actionsUrl}`;
+              const html = `<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.4;color:#24292f;"><h3 style="margin:0 0 8px;">AI Atlas — Approval</h3><p style="margin:0 0 8px;">Approved <strong>${name}</strong> (ID ${id}).</p><p style="margin:0 0 8px;"><a href="${actionsUrl}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Run Export</a></p><div style="color:#57606a;font-size:12px;">Opens the GitHub Actions Export Tools workflow.</div></div>`;
+              await transporter.sendMail({ from: process.env.SMTP_USER, to: process.env.TO_EMAIL, subject, text, html });
+              console.log("Email sent to", process.env.TO_EMAIL);
+            })().catch(err=>{ console.error(err); process.exit(1); });
+          '
+
       - name: Comment and close issue
         if: always()
         uses: actions/github-script@v7
