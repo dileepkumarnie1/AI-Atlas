@@ -288,6 +288,294 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
+      },
+      {
+        "name": "OpenBB",
+        "description": "Financial data platform for analysts, quants and AI agents.",
+        "link": "https://openbb.co",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Financial data platform for analysts, quants and AI agents.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/80064875?v=4&s=64"
+      },
+      {
+        "name": "Open-Assistant",
+        "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+        "link": "https://open-assistant.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/92627801?v=4&s=64"
+      },
+      {
+        "name": "chatbox",
+        "description": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
+        "link": "https://chatboxai.app?utm_medium=github",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/199570308?v=4&s=64"
+      },
+      {
+        "name": "ToolJet",
+        "description": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
+        "link": "https://tooljet.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/82193554?v=4&s=64"
+      },
+      {
+        "name": "tabby",
+        "description": "Self-hosted AI coding assistant",
+        "link": "https://tabbyml.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Self-hosted AI coding assistant",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/125617854?v=4&s=64"
+      },
+      {
+        "name": "nacos",
+        "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+        "link": "https://nacos.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/1961952?v=4&s=64"
+      },
+      {
+        "name": "fairseq",
+        "description": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
+        "link": "https://github.com/facebookresearch/fairseq",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/16943930?v=4&s=64"
+      },
+      {
+        "name": "khoj",
+        "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+        "link": "https://khoj.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/134046886?v=4&s=64"
+      },
+      {
+        "name": "qlib",
+        "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+        "link": "https://qlib.readthedocs.io/en/latest/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64"
+      },
+      {
+        "name": "MetaGPT",
+        "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+        "link": "https://mgx.dev/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/198047230?v=4&s=64"
+      },
+      {
+        "name": "Airfoil",
+        "description": "Interactive article explaining the physics of an airfoil and what makes airplanes fly",
+        "link": "https://ciechanow.ski/airfoil/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Airfoil",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://ciechanow.ski/favicon.ico"
+      },
+      {
+        "name": "Open source AI is the path forward",
+        "description": "Open source AI is the path forward",
+        "link": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Open source AI is the path forward",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://about.fb.com/wp-content/uploads/2021/10/meta-favicon.png?fit=16%2C16"
+      },
+      {
+        "name": "My AI skeptic friends are all nuts",
+        "description": "My AI skeptic friends are all nuts",
+        "link": "https://fly.io/blog/youre-all-nuts/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "My AI skeptic friends are all nuts",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://fly.io/static/images/favicon/favicon.ico"
+      },
+      {
+        "name": "haystack",
+        "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+        "link": "https://haystack.deepset.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/51827949?v=4&s=64"
+      },
+      {
+        "name": "CopilotKit",
+        "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+        "link": "https://docs.copilotkit.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/131273140?v=4&s=64"
+      },
+      {
+        "name": "TradingAgents",
+        "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+        "link": "https://arxiv.org/pdf/2412.20138",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/192884433?v=4&s=64"
+      },
+      {
+        "name": "Gemini AI",
+        "description": "Gemini 2.5 is our most intelligent AI model, capable of reasoning through its thoughts before responding, resulting in enhanced performance and improved accuracy.",
+        "link": "https://deepmind.google/technologies/gemini/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Gemini AI",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://deepmind.google/static/icons/google_deepmind_32dp.c67bb05568f4.ico"
+      },
+      {
+        "name": "Bypassing airport security via SQL injection",
+        "description": "Bypassing airport security via SQL injection",
+        "link": "https://ian.sh/tsa",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Bypassing airport security via SQL injection",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://s3.amazonaws.com/super-notion/images/a35ee276-8605-424a-9466-bacce4ec24fd.png"
+      },
+      {
+        "name": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+        "description": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+        "link": "https://arxiv.org/abs/2501.12948",
+        "tags": [
+          "Trending"
+        ],
+        "about": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png"
+      },
+      {
+        "name": "stagehand",
+        "description": "The AI Browser Automation Framework",
+        "link": "https://stagehand.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The AI Browser Automation Framework",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64"
+      },
+      {
+        "name": "mastra",
+        "description": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
+        "link": "https://mastra.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/149120496?v=4&s=64"
+      },
+      {
+        "name": "potpie",
+        "description": "Prompt-To-Agent : Create custom engineering agents for your codebase",
+        "link": "https://potpie.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Prompt-To-Agent : Create custom engineering agents for your codebase",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/148619568?v=4&s=64"
+      },
+      {
+        "name": "latitude-llm",
+        "description": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
+        "link": "https://latitude.so",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/98949449?v=4&s=64"
+      },
+      {
+        "name": "If you are good at code review, you will be good at using AI agents",
+        "description": "If you are good at code review, you will be good at using AI agents",
+        "link": "https://www.seangoedecke.com/ai-agents-and-code-review/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "If you are good at code review, you will be good at using AI agents",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.seangoedecke.com/favicon-32x32.png?v=ac7bb3aa286bd21c42741d9c9aa60cb7"
       }
     ]
   },
@@ -686,6 +974,270 @@
           "Newer ecosystem.",
           "Some features paid."
         ]
+      },
+      {
+        "name": "gpt4all",
+        "description": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+        "link": "https://nomic.ai/gpt4all",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/102670180?v=4&s=64"
+      },
+      {
+        "name": "LLMs-from-scratch",
+        "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+        "link": "https://amzn.to/4fqvn0D",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/5618407?v=4&s=64"
+      },
+      {
+        "name": "browser-use",
+        "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+        "link": "https://browser-use.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/192012301?v=4&s=64"
+      },
+      {
+        "name": "gpt_academic",
+        "description": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
+        "link": "https://github.com/binary-husky/gpt_academic/wiki/online",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/96192199?v=4&s=64"
+      },
+      {
+        "name": "gpt4free",
+        "description": "The official gpt4free repository | various collection of powerful language models | o4, o3 and deepseek r1, gpt-4.1, gemini 2.5",
+        "link": "https://t.me/g4f_channel",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The official gpt4free repository | various collection of powerful language models | o4, o3 and deepseek r1, gpt-4.1, gemini 2.5",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/98614666?v=4&s=64"
+      },
+      {
+        "name": "Flowise",
+        "description": "Build AI Agents, Visually",
+        "link": "https://flowiseai.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Build AI Agents, Visually",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/128289781?v=4&s=64"
+      },
+      {
+        "name": "ChatGLM-6B",
+        "description": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
+        "link": "https://github.com/zai-org/ChatGLM-6B",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/223098841?v=4&s=64"
+      },
+      {
+        "name": "FastChat",
+        "description": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
+        "link": "https://github.com/lm-sys/FastChat",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/126381704?v=4&s=64"
+      },
+      {
+        "name": "quivr",
+        "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+        "link": "https://core.quivr.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/159330290?v=4&s=64"
+      },
+      {
+        "name": "cherry-studio",
+        "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+        "link": "https://cherry-ai.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/187777663?v=4&s=64"
+      },
+      {
+        "name": "dspy",
+        "description": "DSPy: The framework for programming—not prompting—language models",
+        "link": "https://dspy.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "DSPy: The framework for programming—not prompting—language models",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/3046006?v=4&s=64"
+      },
+      {
+        "name": "gpt-2",
+        "description": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+        "link": "https://openai.com/blog/better-language-models/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64"
+      },
+      {
+        "name": "Orchids AI",
+        "description": "Unified AI chat assistant platform",
+        "link": "https://orchids.ai",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "Unified AI chat assistant platform",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://orchids.ai/favicon.ico"
+      },
+      {
+        "name": "DeepSeek Chat",
+        "description": "Fast, high-quality LLM chat",
+        "link": "https://chat.deepseek.com",
+        "tags": [
+          "Free"
+        ],
+        "about": "Fast, high-quality LLM chat",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://chat.deepseek.com/favicon.ico"
+      },
+      {
+        "name": "Seed Dream",
+        "description": "Creative ideation chat assistant",
+        "link": "https://seeddream.app",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "Creative ideation chat assistant",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://seeddream.app/favicon.ico"
+      },
+      {
+        "name": "Learning to Reason with LLMs",
+        "description": "Learning to Reason with LLMs",
+        "link": "https://openai.com/index/learning-to-reason-with-llms/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Learning to Reason with LLMs",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "A privacy war is raging inside the W3C",
+        "description": "A privacy war is raging inside the W3C",
+        "link": "https://www.protocol.com/policy/w3c-privacy-war",
+        "tags": [
+          "Trending"
+        ],
+        "about": "A privacy war is raging inside the W3C",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.protocol.com/favicon.ico"
+      },
+      {
+        "name": "react-native-gifted-chat",
+        "description": "💬 The most complete chat UI for React Native",
+        "link": "https://gifted.chat",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "💬 The most complete chat UI for React Native",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/388375?v=4&s=64"
+      },
+      {
+        "name": "assistant-ui",
+        "description": "Typescript/React Library for AI Chat💬🚀",
+        "link": "https://www.assistant-ui.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Typescript/React Library for AI Chat💬🚀",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/189563271?v=4&s=64"
+      },
+      {
+        "name": "gpt-oss",
+        "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+        "link": "https://openai.com/open-models",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64"
+      },
+      {
+        "name": "midday",
+        "description": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+        "link": "https://midday.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/145366395?v=4&s=64"
+      },
+      {
+        "name": "mem0",
+        "description": "Universal memory layer for AI Agents; Announcing OpenMemory MCP - local and secure memory management.",
+        "link": "https://mem0.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Universal memory layer for AI Agents; Announcing OpenMemory MCP - local and secure memory management.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/137054526?v=4&s=64"
       }
     ]
   },
@@ -980,6 +1532,114 @@
         "about": "A latent text-to-image diffusion model",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "InvokeAI",
+        "description": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
+        "link": "https://invoke-ai.github.io/InvokeAI/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/113954515?v=4&s=64"
+      },
+      {
+        "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "description": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "link": "https://www.riffusion.com/about",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.riffusion.com/favicon.ico"
+      },
+      {
+        "name": "IOPaint",
+        "description": "Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.",
+        "link": "https://www.iopaint.com/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/3998421?v=4&s=64"
+      },
+      {
+        "name": "ml-stable-diffusion",
+        "description": "Stable Diffusion with Core ML on Apple Silicon",
+        "link": "https://github.com/apple/ml-stable-diffusion",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Stable Diffusion with Core ML on Apple Silicon",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/10639145?v=4&s=64"
+      },
+      {
+        "name": "Stable Diffusion 2.0",
+        "description": "Stable Diffusion 2.0",
+        "link": "https://stability.ai/blog/stable-diffusion-v2-release",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Stable Diffusion 2.0",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/favicon.ico?format=100w"
+      },
+      {
+        "name": "Stable Video Diffusion",
+        "description": "Stable Video Diffusion",
+        "link": "https://stability.ai/news/stable-video-diffusion-open-ai-video-model",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Stable Video Diffusion",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/favicon.ico?format=100w"
+      },
+      {
+        "name": "ComfyUI",
+        "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+        "link": "https://www.comfy.org/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/121283862?v=4&s=64"
+      },
+      {
+        "name": "coai",
+        "description": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+        "link": "https://coai.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/125332171?v=4&s=64"
+      },
+      {
+        "name": "Nano Banana",
+        "description": "Gemini-powered image editing features",
+        "link": "https://nanobanana.ai",
+        "tags": [
+          "Free"
+        ],
+        "about": "Gemini-powered image editing features",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://nanobanana.ai/nano-banana-icon.svg"
       }
     ]
   },
@@ -1408,6 +2068,138 @@
         "about": "Command-line program to download videos from YouTube.com and other video sites",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "Imagen Video: high definition video generation with diffusion models",
+        "description": "Imagen Video: high definition video generation with diffusion models",
+        "link": "https://imagen.research.google/video/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Imagen Video: high definition video generation with diffusion models",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://imagen.research.google/favicon.ico"
+      },
+      {
+        "name": "mmagic",
+        "description": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+        "link": "https://mmagic.readthedocs.io/en/latest/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
+      },
+      {
+        "name": "mmaction2",
+        "description": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+        "link": "https://mmaction2.readthedocs.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
+      },
+      {
+        "name": "Tune-A-Video",
+        "description": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+        "link": "https://tuneavideo.github.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/101181824?v=4&s=64"
+      },
+      {
+        "name": "Text2Video-Zero",
+        "description": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+        "link": "https://text2video-zero.github.io/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/96586070?v=4&s=64"
+      },
+      {
+        "name": "MAGI-1",
+        "description": "MAGI-1: Autoregressive Video Generation at Scale",
+        "link": "https://sand.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "MAGI-1: Autoregressive Video Generation at Scale",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/208222005?v=4&s=64"
+      },
+      {
+        "name": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+        "description": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+        "link": "https://github.com/THUDM/CogVideo",
+        "tags": [
+          "Trending"
+        ],
+        "about": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://github.githubassets.com/favicons/favicon.png"
+      },
+      {
+        "name": "Meta’s new text-to-video AI generator is like DALL-E for video",
+        "description": "Meta’s new text-to-video AI generator is like DALL-E for video",
+        "link": "https://www.theverge.com/2022/9/29/23378210/meta-text-to-video-ai-generation-make-a-video-model-dall-e",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Meta’s new text-to-video AI generator is like DALL-E for video",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.theverge.com/static-assets/icons/favicon.ico"
+      },
+      {
+        "name": "n8n-nodes-comfyui-image-to-image",
+        "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
+        "link": "https://www.npmjs.com/package/n8n-nodes-comfyui-image-to-image",
+        "tags": [
+          "Library"
+        ],
+        "about": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "vid2avatar",
+        "description": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+        "link": "https://moygcc.github.io/vid2avatar/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64"
+      },
+      {
+        "name": "flycut-caption",
+        "description": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+        "link": "https://caption.flycut.co",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/13807549?v=4&s=64"
       }
     ]
   },
@@ -1705,6 +2497,150 @@
           "Local models require significant computational resources.",
           "User interface for configuration can be complex."
         ]
+      },
+      {
+        "name": "cc-model-switcher",
+        "description": "A simple CLI tool to switch Claude Code AI models easily",
+        "link": "https://www.npmjs.com/package/cc-model-switcher",
+        "tags": [
+          "Library"
+        ],
+        "about": "A simple CLI tool to switch Claude Code AI models easily",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@openctx/provider-linear-issues",
+        "description": "Linear Issues context for code AI and editors (OpenCtx provider)",
+        "link": "https://www.npmjs.com/package/@openctx/provider-linear-issues",
+        "tags": [
+          "Library"
+        ],
+        "about": "Linear Issues context for code AI and editors (OpenCtx provider)",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@usgupta/circuitware-cli",
+        "description": "Circuitware Code - AI-powered command-line workflow tool",
+        "link": "https://www.npmjs.com/package/@usgupta/circuitware-cli",
+        "tags": [
+          "Library"
+        ],
+        "about": "Circuitware Code - AI-powered command-line workflow tool",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "claude-forge",
+        "description": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
+        "link": "https://www.npmjs.com/package/claude-forge",
+        "tags": [
+          "Library"
+        ],
+        "about": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@edsamo/mysql-mcp-server",
+        "description": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
+        "link": "https://www.npmjs.com/package/@edsamo/mysql-mcp-server",
+        "tags": [
+          "Library"
+        ],
+        "about": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@usgupta/circuitware-code",
+        "description": "Circuitware Code - AI-powered command-line workflow tool",
+        "link": "https://www.npmjs.com/package/@usgupta/circuitware-code",
+        "tags": [
+          "Library"
+        ],
+        "about": "Circuitware Code - AI-powered command-line workflow tool",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "Warp",
+        "description": "Warp is the agentic development environment, built for coding with multiple AI agents.",
+        "link": "https://warp.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Warp is the agentic development environment, built for coding with multiple AI agents.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/71840468?v=4&s=64"
+      },
+      {
+        "name": "kestra",
+        "description": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+        "link": "https://kestra.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/59033362?v=4&s=64"
+      },
+      {
+        "name": "plandex",
+        "description": "Open source AI coding agent. Designed for large projects and real world tasks.",
+        "link": "https://plandex.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Open source AI coding agent. Designed for large projects and real world tasks.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/148917357?v=4&s=64"
+      },
+      {
+        "name": "qodo-cover",
+        "description": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+        "link": "https://qodo.ai/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/183290039?v=4&s=64"
+      },
+      {
+        "name": "kilocode",
+        "description": "Open Source AI coding assistant for planning, building, and fixing code. We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. Follow us: kilocode.ai/social",
+        "link": "https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Open Source AI coding assistant for planning, building, and fixing code. We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. Follow us: kilocode.ai/social",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/201822503?v=4&s=64"
+      },
+      {
+        "name": "cody-public-snapshot",
+        "description": "Type less, code more: Cody is an AI code assistant that uses advanced search and codebase context to help you write and fix code.",
+        "link": "https://cody.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Type less, code more: Cody is an AI code assistant that uses advanced search and codebase context to help you write and fix code.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/3979584?v=4&s=64"
       }
     ]
   },
@@ -2020,6 +2956,54 @@
           "Premium for best voices.",
           "Not for professional audio."
         ]
+      },
+      {
+        "name": "@lobehub/chat",
+        "description": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
+        "link": "https://www.npmjs.com/package/@lobehub/chat",
+        "tags": [
+          "Library"
+        ],
+        "about": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "ssml-builder",
+        "description": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
+        "link": "https://www.npmjs.com/package/ssml-builder",
+        "tags": [
+          "Library"
+        ],
+        "about": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@kajidog/aivis-cloud-cli",
+        "description": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
+        "link": "https://www.npmjs.com/package/@kajidog/aivis-cloud-cli",
+        "tags": [
+          "Library"
+        ],
+        "about": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@bentwnghk/chat",
+        "description": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
+        "link": "https://www.npmjs.com/package/@bentwnghk/chat",
+        "tags": [
+          "Library"
+        ],
+        "about": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
       }
     ]
   },
@@ -2281,6 +3265,54 @@
           "The AI is an assistant, not a full-fledged project manager.",
           "Can be simpler than what's needed for complex team projects."
         ]
+      },
+      {
+        "name": "@ckeditor/ckeditor5-ai",
+        "description": "AI Assistant feature for CKEditor 5.",
+        "link": "https://www.npmjs.com/package/@ckeditor/ckeditor5-ai",
+        "tags": [
+          "Library"
+        ],
+        "about": "AI Assistant feature for CKEditor 5.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "inbox-zero",
+        "description": "The world's best AI personal assistant for email. Open source app to help you reach inbox zero fast.",
+        "link": "https://getinboxzero.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The world's best AI personal assistant for email. Open source app to help you reach inbox zero fast.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/3090527?v=4&s=64"
+      },
+      {
+        "name": "meeting-minutes",
+        "description": "A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/ is meetly ai",
+        "link": "https://meetily.zackriya.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/ is meetly ai",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/82556810?v=4&s=64"
+      },
+      {
+        "name": "MyBrain",
+        "description": "All-in-one productivity app and AI assistant with Tasks, Notes, Calendar, Diary and Bookmarks.",
+        "link": "https://f-droid.org/packages/com.mhss.app.mybrain/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "All-in-one productivity app and AI assistant with Tasks, Notes, Calendar, Diary and Bookmarks.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/58703865?v=4&s=64"
       }
     ]
   },
@@ -2573,6 +3605,114 @@
           "The best features are part of the paid plans.",
           "The AI is an assistant, not a replacement for design skills."
         ]
+      },
+      {
+        "name": "Figma AI",
+        "description": "We’re introducing a suite of AI-powered features to help you push past creative blocks and bring your best ideas to life.",
+        "link": "https://www.figma.com/blog/introducing-figma-ai/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Figma AI",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://static.figma.com/app/icon/1/favicon.ico"
+      },
+      {
+        "name": "Figma disables AI app design tool after it copied Apple's weather app",
+        "description": "Figma disables AI app design tool after it copied Apple's weather app",
+        "link": "https://www.404media.co/figma-disables-ai-app-design-tool-after-it-copied-apples-weather-app/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Figma disables AI app design tool after it copied Apple's weather app",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.404media.co/content/images/size/w256h256/format/png/2023/08/favicon-3.svg"
+      },
+      {
+        "name": "@ai-sdk/react",
+        "description": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+        "link": "https://www.npmjs.com/package/@ai-sdk/react",
+        "tags": [
+          "Library"
+        ],
+        "about": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@ai-sdk/ui-utils",
+        "description": "Important: this is an internal API. Expect breaking changes.",
+        "link": "https://www.npmjs.com/package/@ai-sdk/ui-utils",
+        "tags": [
+          "Library"
+        ],
+        "about": "Important: this is an internal API. Expect breaking changes.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@ai-sdk/svelte",
+        "description": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+        "link": "https://www.npmjs.com/package/@ai-sdk/svelte",
+        "tags": [
+          "Library"
+        ],
+        "about": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@assistant-ui/react",
+        "description": "TypeScript/React library for AI Chat",
+        "link": "https://www.npmjs.com/package/@assistant-ui/react",
+        "tags": [
+          "Library"
+        ],
+        "about": "TypeScript/React library for AI Chat",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "text-generation-webui",
+        "description": "The definitive Web UI for local AI, with powerful features and easy setup.",
+        "link": "https://oobabooga.gumroad.com/l/deep_reason",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The definitive Web UI for local AI, with powerful features and easy setup.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/112222186?v=4&s=64"
+      },
+      {
+        "name": "upscayl",
+        "description": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+        "link": "https://upscayl.org",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/112148288?v=4&s=64"
+      },
+      {
+        "name": "ComfyUI-IF_AI_tools",
+        "description": "ComfyUI-IF_AI_tools is a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama. This tool enables you to enhance your image generation workflow by leveraging the power of language models.",
+        "link": "https://ko-fi.com/impactframes",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "ComfyUI-IF_AI_tools is a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama. This tool enables you to enhance your image generation workflow by leveraging the power of language models.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/21185218?v=4&s=64"
       }
     ]
   },
@@ -2953,6 +4093,30 @@
           "Requires well-structured data to be effective.",
           "Can have a steep learning curve for advanced features."
         ]
+      },
+      {
+        "name": "yn",
+        "description": "A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.",
+        "link": "https://yank-note.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/7115690?v=4&s=64"
+      },
+      {
+        "name": "DeepBI",
+        "description": "LLM based data scientist, AI native data application.  AI-driven infinite thinking redefines BI.",
+        "link": "https://www.deepbi.com/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "LLM based data scientist, AI native data application.  AI-driven infinite thinking redefines BI.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/151041383?v=4&s=64"
       }
     ]
   },
@@ -3105,6 +4269,30 @@
           "Export limits on free.",
           "IP diligence required."
         ]
+      },
+      {
+        "name": "threed-garden",
+        "description": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
+        "link": "https://www.npmjs.com/package/threed-garden",
+        "tags": [
+          "Library"
+        ],
+        "about": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "Sloyd",
+        "description": "AI 3D asset generation",
+        "link": "https://sloyd.ai",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "AI 3D asset generation",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://sloyd.ai/favicon.ico"
       }
     ]
   },
@@ -3219,6 +4407,78 @@
           "Azure‑biased samples.",
           "Dev‑centric setup."
         ]
+      },
+      {
+        "name": "ethical-algorithm-tester",
+        "description": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
+        "link": "https://www.npmjs.com/package/ethical-algorithm-tester",
+        "tags": [
+          "Library"
+        ],
+        "about": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@luckymachines/contracts",
+        "description": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
+        "link": "https://www.npmjs.com/package/@luckymachines/contracts",
+        "tags": [
+          "Library"
+        ],
+        "about": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@stdlib/constants-float64-exponent-bias",
+        "description": "The bias of a double-precision floating-point number's exponent.",
+        "link": "https://www.npmjs.com/package/@stdlib/constants-float64-exponent-bias",
+        "tags": [
+          "Library"
+        ],
+        "about": "The bias of a double-precision floating-point number's exponent.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@wemake.cx/bias-detection",
+        "description": "MCP server for simple bias detection in text",
+        "link": "https://www.npmjs.com/package/@wemake.cx/bias-detection",
+        "tags": [
+          "Library"
+        ],
+        "about": "MCP server for simple bias detection in text",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@pooltogether/uniform-random-number",
+        "description": "PoolTogether Solidity Modulo Bias library",
+        "link": "https://www.npmjs.com/package/@pooltogether/uniform-random-number",
+        "tags": [
+          "Library"
+        ],
+        "about": "PoolTogether Solidity Modulo Bias library",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@stdlib/constants-float32-exponent-bias",
+        "description": "The bias of a single-precision floating-point number's exponent.",
+        "link": "https://www.npmjs.com/package/@stdlib/constants-float32-exponent-bias",
+        "tags": [
+          "Library"
+        ],
+        "about": "The bias of a single-precision floating-point number's exponent.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
       }
     ]
   },
@@ -3504,6 +4764,30 @@
           "AI predictions are not financial advice and carry inherent risk.",
           "The amount of information can be overwhelming for new investors."
         ]
+      },
+      {
+        "name": "tensaikit-test",
+        "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+        "link": "https://www.npmjs.com/package/tensaikit-test",
+        "tags": [
+          "Library"
+        ],
+        "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "tensaikit",
+        "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+        "link": "https://www.npmjs.com/package/tensaikit",
+        "tags": [
+          "Library"
+        ],
+        "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
       }
     ]
   },
@@ -3665,6 +4949,102 @@
           "Learning curve.",
           "Requires workflow adoption."
         ]
+      },
+      {
+        "name": "password-prompt",
+        "description": "cross-platform masked or hidden prompt",
+        "link": "https://www.npmjs.com/package/password-prompt",
+        "tags": [
+          "Library"
+        ],
+        "about": "cross-platform masked or hidden prompt",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@listr2/prompt-adapter-inquirer",
+        "description": "Listr2 prompt adapter for inquirer.",
+        "link": "https://www.npmjs.com/package/@listr2/prompt-adapter-inquirer",
+        "tags": [
+          "Library"
+        ],
+        "about": "Listr2 prompt adapter for inquirer.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@inquirer/confirm",
+        "description": "Inquirer confirm prompt",
+        "link": "https://www.npmjs.com/package/@inquirer/confirm",
+        "tags": [
+          "Library"
+        ],
+        "about": "Inquirer confirm prompt",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@inquirer/expand",
+        "description": "Inquirer checkbox prompt",
+        "link": "https://www.npmjs.com/package/@inquirer/expand",
+        "tags": [
+          "Library"
+        ],
+        "about": "Inquirer checkbox prompt",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@inquirer/core",
+        "description": "Core Inquirer prompt API",
+        "link": "https://www.npmjs.com/package/@inquirer/core",
+        "tags": [
+          "Library"
+        ],
+        "about": "Core Inquirer prompt API",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@inquirer/rawlist",
+        "description": "Inquirer rawlist prompt",
+        "link": "https://www.npmjs.com/package/@inquirer/rawlist",
+        "tags": [
+          "Library"
+        ],
+        "about": "Inquirer rawlist prompt",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "Context-Engineering",
+        "description": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+        "link": "https://deepwiki.com/davidkimai/Context-Engineering",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/208424706?v=4&s=64"
+      },
+      {
+        "name": "langwatch",
+        "description": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+        "link": "https://langwatch.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/146763322?v=4&s=64"
       }
     ]
   },
@@ -4171,6 +5551,114 @@
           "Dependent on Zapier platform.",
           "Limited reasoning depth."
         ]
+      },
+      {
+        "name": "Why AutoGPT engineers ditched vector databases",
+        "description": "Why AutoGPT engineers ditched vector databases",
+        "link": "https://dariuszsemba.com/blog/why-autogpt-engineers-ditched-vector-databases/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Why AutoGPT engineers ditched vector databases",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://dariuszsemba.com/favicon.svg"
+      },
+      {
+        "name": "@voltagent/core",
+        "description": "VoltAgent Core - AI agent framework for JavaScript",
+        "link": "https://www.npmjs.com/package/@voltagent/core",
+        "tags": [
+          "Library"
+        ],
+        "about": "VoltAgent Core - AI agent framework for JavaScript",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@inkeep/create-agents",
+        "description": "Create an Inkeep Agent Framework project",
+        "link": "https://www.npmjs.com/package/@inkeep/create-agents",
+        "tags": [
+          "Library"
+        ],
+        "about": "Create an Inkeep Agent Framework project",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "beeai-framework",
+        "description": "BeeAI Framework - LLM Agent Framework",
+        "link": "https://www.npmjs.com/package/beeai-framework",
+        "tags": [
+          "Library"
+        ],
+        "about": "BeeAI Framework - LLM Agent Framework",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "llm-agents",
+        "description": "LLM Agent framework for Node.js",
+        "link": "https://www.npmjs.com/package/llm-agents",
+        "tags": [
+          "Library"
+        ],
+        "about": "LLM Agent framework for Node.js",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@xynehq/jaf",
+        "description": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
+        "link": "https://www.npmjs.com/package/@xynehq/jaf",
+        "tags": [
+          "Library"
+        ],
+        "about": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "cline",
+        "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/184127137?v=4&s=64"
+      },
+      {
+        "name": "eliza",
+        "description": "Autonomous agents for everyone",
+        "link": "https://eliza.how/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Autonomous agents for everyone",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/186240462?v=4&s=64"
+      },
+      {
+        "name": "claude-coder",
+        "description": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+        "link": "https://www.kodu.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/160821808?v=4&s=64"
       }
     ]
   },
@@ -4358,6 +5846,66 @@
           "Multi-step Zaps require a paid plan.",
           "The AI features are powerful but consume tasks quickly."
         ]
+      },
+      {
+        "name": "workflow-ai-plugin",
+        "description": "This library was generated with [Nx](https://nx.dev).",
+        "link": "https://www.npmjs.com/package/workflow-ai-plugin",
+        "tags": [
+          "Library"
+        ],
+        "about": "This library was generated with [Nx](https://nx.dev).",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "workflow-ai-bot",
+        "description": "This library was generated with [Nx](https://nx.dev).",
+        "link": "https://www.npmjs.com/package/workflow-ai-bot",
+        "tags": [
+          "Library"
+        ],
+        "about": "This library was generated with [Nx](https://nx.dev).",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "kapellmeister",
+        "description": "Orchestration For Animated Transitions",
+        "link": "https://www.npmjs.com/package/kapellmeister",
+        "tags": [
+          "Library"
+        ],
+        "about": "Orchestration For Animated Transitions",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@google-cloud/orchestration-airflow",
+        "description": "orchestration-airflow client for Node.js",
+        "link": "https://www.npmjs.com/package/@google-cloud/orchestration-airflow",
+        "tags": [
+          "Library"
+        ],
+        "about": "orchestration-airflow client for Node.js",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "Relevance AI",
+        "description": "Workflows and AI automation platform",
+        "link": "https://relevance.ai",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "Workflows and AI automation platform",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://relevance.ai/favicon.ico"
       }
     ]
   },
@@ -4478,6 +6026,66 @@
           "Newer ecosystem.",
           "Some features paid."
         ]
+      },
+      {
+        "name": "ai-embed-search",
+        "description": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
+        "link": "https://www.npmjs.com/package/ai-embed-search",
+        "tags": [
+          "Library"
+        ],
+        "about": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@wildcard-ai/deepcontext",
+        "description": "Advanced codebase indexing and semantic search MCP server",
+        "link": "https://www.npmjs.com/package/@wildcard-ai/deepcontext",
+        "tags": [
+          "Library"
+        ],
+        "about": "Advanced codebase indexing and semantic search MCP server",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "@llamaindex/semtools",
+        "description": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
+        "link": "https://www.npmjs.com/package/@llamaindex/semtools",
+        "tags": [
+          "Library"
+        ],
+        "about": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
+      },
+      {
+        "name": "qdrant",
+        "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+        "link": "https://qdrant.tech",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/73504361?v=4&s=64"
+      },
+      {
+        "name": "ai-knowledge-graph",
+        "description": "AI Powered Knowledge Graph Generator",
+        "link": "https://robert-mcdermott.medium.com/from-unstructured-text-to-interactive-knowledge-graphs-using-llms-dd02a1f71cd6",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "AI Powered Knowledge Graph Generator",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/7399563?v=4&s=64"
       }
     ]
   },
@@ -4749,10 +6357,81 @@
         "about": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+        "description": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+        "link": "https://1a3orn.com/sub/machine-learning-bans.html",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://1a3orn.com/favicon.ico"
+      },
+      {
+        "name": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+        "description": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+        "link": "https://gizmodo.com/ai-safety-openai-sam-altman-ouster-back-microsoft-1851038439",
+        "tags": [
+          "Trending"
+        ],
+        "about": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://gizmodo.com/favicon.png?v1"
+      },
+      {
+        "name": "Joint Statement on AI Safety and Openness",
+        "description": "Joint Statement on AI Safety and Openness",
+        "link": "https://open.mozilla.org/letter/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Joint Statement on AI Safety and Openness",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://open.mozilla.org/img/apple-touch-icon.2530f989.png"
+      },
+      {
+        "name": "Concrete AI Safety Problems",
+        "description": "Concrete AI Safety Problems",
+        "link": "https://openai.com/blog/concrete-ai-safety-problems/",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Concrete AI Safety Problems",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "Freeway guardrails are now a favorite target of thieves",
+        "description": "Freeway guardrails are now a favorite target of thieves",
+        "link": "https://laist.com/news/transportation/guardrails-aluminum-theft",
+        "tags": [
+          "Trending"
+        ],
+        "about": "Freeway guardrails are now a favorite target of thieves",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://laist.com/apple-touch-icon.png"
+      },
+      {
+        "name": "@guardrails-ai/core",
+        "description": "A Javascript wrapper for guardrails-ai",
+        "link": "https://www.npmjs.com/package/@guardrails-ai/core",
+        "tags": [
+          "Library"
+        ],
+        "about": "A Javascript wrapper for guardrails-ai",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.npmjs.com/favicon.ico"
       }
     ]
-  }
-  ,
+  },
   {
     "name": "Customer Support & Chatbots",
     "slug": "customer-support-chatbots",
@@ -4763,7 +6442,11 @@
         "name": "Intercom Fin",
         "description": "AI support agent that resolves customer questions autonomously.",
         "link": "https://www.intercom.com/ai-agent",
-        "tags": ["Subscription", "Support", "Chatbot"],
+        "tags": [
+          "Subscription",
+          "Support",
+          "Chatbot"
+        ],
         "iconUrl": "https://www.intercom.com/favicon.ico",
         "about": "Fin is Intercom’s AI agent that can instantly answer most customer queries using your help center and policies, handing off to humans when needed.",
         "pros": [
@@ -4781,7 +6464,11 @@
         "name": "Zendesk AI",
         "description": "AI features across Zendesk for triage, answers, and agent assist.",
         "link": "https://www.zendesk.com/ai/",
-        "tags": ["Subscription", "Support", "Agent Assist"],
+        "tags": [
+          "Subscription",
+          "Support",
+          "Agent Assist"
+        ],
         "iconUrl": "https://www.zendesk.com/favicon.ico",
         "about": "Zendesk AI automates intent detection, routing, and suggested answers, while assisting agents with real‑time guidance and macros.",
         "pros": [
@@ -4799,7 +6486,11 @@
         "name": "Ada",
         "description": "Automated customer service with multi‑channel chatbots and deflection.",
         "link": "https://www.ada.cx/",
-        "tags": ["Subscription", "Support", "Automation"],
+        "tags": [
+          "Subscription",
+          "Support",
+          "Automation"
+        ],
         "iconUrl": "https://www.ada.cx/favicon.ico",
         "about": "Ada builds no‑code, brand‑safe chatbots that resolve common support requests across web, mobile, and messaging channels.",
         "pros": [
@@ -4825,7 +6516,11 @@
         "name": "Harvey",
         "description": "Legal AI for research, drafting, and contract workflows.",
         "link": "https://www.harvey.ai/",
-        "tags": ["Subscription", "Legal", "Drafting"],
+        "tags": [
+          "Subscription",
+          "Legal",
+          "Drafting"
+        ],
         "iconUrl": "https://www.harvey.ai/favicon.ico",
         "about": "Harvey partners with leading law firms and in‑house teams to accelerate legal research and drafting with guardrails and enterprise controls.",
         "pros": [
@@ -4843,7 +6538,11 @@
         "name": "Spellbook (by Rally)",
         "description": "AI contract drafting and review inside Microsoft Word.",
         "link": "https://www.spellbook.legal/",
-        "tags": ["Subscription", "Contract", "Review"],
+        "tags": [
+          "Subscription",
+          "Contract",
+          "Review"
+        ],
         "iconUrl": "https://www.spellbook.legal/favicon.ico",
         "about": "Spellbook accelerates contract drafting by suggesting clauses, flagging risks, and aligning to playbooks directly within Word.",
         "pros": [
@@ -4861,7 +6560,11 @@
         "name": "Luminance",
         "description": "AI for due diligence, contract analysis, and compliance review.",
         "link": "https://www.luminance.com/",
-        "tags": ["Subscription", "Compliance", "Contracts"],
+        "tags": [
+          "Subscription",
+          "Compliance",
+          "Contracts"
+        ],
         "iconUrl": "https://www.luminance.com/favicon.ico",
         "about": "Luminance applies machine learning to surface anomalies, classify clauses, and streamline large‑scale legal reviews.",
         "pros": [
@@ -4887,7 +6590,11 @@
         "name": "Nuance Dragon Medical One",
         "description": "Cloud speech recognition for clinical documentation into EHRs.",
         "link": "https://www.nuance.com/healthcare/dragon-medical-one.html",
-        "tags": ["Subscription", "ASR", "Healthcare"],
+        "tags": [
+          "Subscription",
+          "ASR",
+          "Healthcare"
+        ],
         "iconUrl": "https://www.nuance.com/favicon.ico",
         "about": "Dragon Medical One provides high‑accuracy clinical dictation with EHR integrations, speeding up documentation and reducing burnout.",
         "pros": [
@@ -4905,7 +6612,11 @@
         "name": "DeepScribe",
         "description": "Ambient AI scribe that generates clinical notes from patient visits.",
         "link": "https://www.deepscribe.ai/",
-        "tags": ["Subscription", "Scribing", "Healthcare"],
+        "tags": [
+          "Subscription",
+          "Scribing",
+          "Healthcare"
+        ],
         "iconUrl": "https://www.deepscribe.ai/favicon.ico",
         "about": "DeepScribe listens to clinical encounters and drafts structured notes, freeing clinicians from manual typing.",
         "pros": [
@@ -4923,7 +6634,11 @@
         "name": "PathAI",
         "description": "AI‑powered pathology for diagnostics and drug development.",
         "link": "https://pathai.com/",
-        "tags": ["Subscription", "Diagnostics", "Healthcare"],
+        "tags": [
+          "Subscription",
+          "Diagnostics",
+          "Healthcare"
+        ],
         "iconUrl": "https://pathai.com/favicon.ico",
         "about": "PathAI builds models for pathology workflows, improving accuracy and consistency in disease detection and grading.",
         "pros": [
@@ -4949,7 +6664,11 @@
         "name": "QuickBooks + AI",
         "description": "Bookkeeping and invoicing with AI‑assisted categorization and insights.",
         "link": "https://quickbooks.intuit.com/",
-        "tags": ["Subscription", "Accounting", "SMB"],
+        "tags": [
+          "Subscription",
+          "Accounting",
+          "SMB"
+        ],
         "iconUrl": "https://quickbooks.intuit.com/favicon.ico",
         "about": "QuickBooks uses AI to categorize transactions, surface cash‑flow insights, and reduce manual bookkeeping.",
         "pros": [
@@ -4967,7 +6686,11 @@
         "name": "Vic.ai",
         "description": "AP automation with autonomous invoice processing and approvals.",
         "link": "https://www.vic.ai/",
-        "tags": ["Subscription", "AP Automation", "Enterprise"],
+        "tags": [
+          "Subscription",
+          "AP Automation",
+          "Enterprise"
+        ],
         "iconUrl": "https://www.vic.ai/favicon.ico",
         "about": "Vic.ai applies AI to accounts payable, extracting and coding invoices, predicting approvals, and cutting cycle times.",
         "pros": [
@@ -4985,7 +6708,11 @@
         "name": "Stripe Radar",
         "description": "ML‑powered fraud detection and risk scoring for payments.",
         "link": "https://stripe.com/radar",
-        "tags": ["Subscription", "Fraud", "Payments"],
+        "tags": [
+          "Subscription",
+          "Fraud",
+          "Payments"
+        ],
         "iconUrl": "https://stripe.com/favicon.ico",
         "about": "Radar uses network‑level signals across Stripe to block fraud, score risk, and reduce chargebacks.",
         "pros": [
@@ -5011,7 +6738,11 @@
         "name": "Eightfold AI",
         "description": "Talent intelligence for sourcing, matching, and internal mobility.",
         "link": "https://eightfold.ai/",
-        "tags": ["Subscription", "Talent", "Enterprise"],
+        "tags": [
+          "Subscription",
+          "Talent",
+          "Enterprise"
+        ],
         "iconUrl": "https://eightfold.ai/favicon.ico",
         "about": "Eightfold AI unifies candidate and employee data to power sourcing, matching, and skills‑based mobility across the talent lifecycle.",
         "pros": [
@@ -5029,7 +6760,11 @@
         "name": "Paradox (Olivia)",
         "description": "Conversational recruiting assistant for screening and scheduling.",
         "link": "https://www.paradox.ai/",
-        "tags": ["Subscription", "Recruiting", "Chatbot"],
+        "tags": [
+          "Subscription",
+          "Recruiting",
+          "Chatbot"
+        ],
         "iconUrl": "https://www.paradox.ai/favicon.ico",
         "about": "Olivia automates candidate Q&A, pre‑screening, and interview scheduling via chat and SMS, especially for high‑volume roles.",
         "pros": [
@@ -5047,7 +6782,11 @@
         "name": "hireEZ",
         "description": "AI sourcing platform with outreach and enrichment.",
         "link": "https://hireez.com/",
-        "tags": ["Subscription", "Sourcing", "Recruiting"],
+        "tags": [
+          "Subscription",
+          "Sourcing",
+          "Recruiting"
+        ],
         "iconUrl": "https://hireez.com/favicon.ico",
         "about": "hireEZ helps recruiters find, enrich, and engage candidates at scale with AI‑assisted search and campaigns.",
         "pros": [
@@ -5073,7 +6812,10 @@
         "name": "Whisper (OpenAI)",
         "description": "Open‑source automatic speech recognition with strong multilingual accuracy.",
         "link": "https://github.com/openai/whisper",
-        "tags": ["Open Source", "ASR"],
+        "tags": [
+          "Open Source",
+          "ASR"
+        ],
         "iconUrl": "https://github.com/favicon.ico",
         "about": "Whisper is a general‑purpose speech recognition model trained on diverse audio, delivering robust transcription across many languages.",
         "pros": [
@@ -5091,7 +6833,11 @@
         "name": "Vosk",
         "description": "Offline speech recognition toolkit for multiple languages and platforms.",
         "link": "https://alphacephei.com/vosk",
-        "tags": ["Open Source", "ASR", "Offline"],
+        "tags": [
+          "Open Source",
+          "ASR",
+          "Offline"
+        ],
         "iconUrl": "https://alphacephei.com/favicon.ico",
         "about": "Vosk provides lightweight ASR that works offline on servers and embedded devices, with bindings for many languages.",
         "pros": [
@@ -5109,7 +6855,10 @@
         "name": "Coqui TTS",
         "description": "Open‑source text‑to‑speech toolkit for training and inference.",
         "link": "https://github.com/coqui-ai/TTS",
-        "tags": ["Open Source", "TTS"],
+        "tags": [
+          "Open Source",
+          "TTS"
+        ],
         "iconUrl": "https://github.com/favicon.ico",
         "about": "Coqui TTS enables training custom neural voices and generating speech with many models and languages.",
         "pros": [
@@ -5135,7 +6884,11 @@
         "name": "Inworld AI",
         "description": "Intelligent NPCs with personalities, memory, and real‑time dialogue.",
         "link": "https://inworld.ai/",
-        "tags": ["Subscription", "NPC", "Gaming"],
+        "tags": [
+          "Subscription",
+          "NPC",
+          "Gaming"
+        ],
         "iconUrl": "https://inworld.ai/favicon.ico",
         "about": "Inworld powers dynamic NPCs that react, emote, and converse naturally, with SDKs for popular engines.",
         "pros": [
@@ -5153,7 +6906,11 @@
         "name": "modl.ai",
         "description": "Game AI services including testing bots, behavior models, and tools.",
         "link": "https://modl.ai/",
-        "tags": ["Subscription", "Game Dev", "Automation"],
+        "tags": [
+          "Subscription",
+          "Game Dev",
+          "Automation"
+        ],
         "iconUrl": "https://modl.ai/favicon.ico",
         "about": "modl.ai offers AI testing bots and design tools to accelerate QA and tune gameplay using machine learning.",
         "pros": [
@@ -5171,7 +6928,11 @@
         "name": "Replica Studios",
         "description": "AI voice actors and tools for games and films.",
         "link": "https://www.replicastudios.com/",
-        "tags": ["Subscription", "Voice", "Gaming"],
+        "tags": [
+          "Subscription",
+          "Voice",
+          "Gaming"
+        ],
         "iconUrl": "https://www.replicastudios.com/favicon.ico",
         "about": "Replica provides a library of licensable AI voices and tools for localization, prototyping, and production dialogue.",
         "pros": [
@@ -5197,7 +6958,11 @@
         "name": "Microsoft Security Copilot",
         "description": "An AI assistant for security analysts across Microsoft’s security stack.",
         "link": "https://www.microsoft.com/security/business/ai/security-copilot",
-        "tags": ["Subscription", "SOC", "Assistant"],
+        "tags": [
+          "Subscription",
+          "SOC",
+          "Assistant"
+        ],
         "iconUrl": "https://www.microsoft.com/favicon.ico",
         "about": "Security Copilot summarizes incidents, hunts threats, and explains findings using your Microsoft security data.",
         "pros": [
@@ -5215,7 +6980,11 @@
         "name": "CrowdStrike Charlotte AI",
         "description": "Conversational security analyst for the CrowdStrike Falcon platform.",
         "link": "https://www.crowdstrike.com/charlotte-ai/",
-        "tags": ["Subscription", "EDR", "Assistant"],
+        "tags": [
+          "Subscription",
+          "EDR",
+          "Assistant"
+        ],
         "iconUrl": "https://www.crowdstrike.com/favicon.ico",
         "about": "Charlotte AI enables natural‑language queries and guided investigations across Falcon telemetry and detections.",
         "pros": [
@@ -5233,7 +7002,11 @@
         "name": "Darktrace",
         "description": "Self‑learning AI for threat detection and autonomous response.",
         "link": "https://darktrace.com/",
-        "tags": ["Subscription", "NDR", "Threat Detection"],
+        "tags": [
+          "Subscription",
+          "NDR",
+          "Threat Detection"
+        ],
         "iconUrl": "https://darktrace.com/favicon.ico",
         "about": "Darktrace models normal behavior in your environment to detect anomalies and can take autonomous actions to contain threats.",
         "pros": [
@@ -5259,7 +7032,11 @@
         "name": "Salesforce Einstein Copilot",
         "description": "Conversational Copilot embedded across Salesforce clouds.",
         "link": "https://www.salesforce.com/products/einstein/copilot/",
-        "tags": ["Subscription", "CRM", "Assistant"],
+        "tags": [
+          "Subscription",
+          "CRM",
+          "Assistant"
+        ],
         "iconUrl": "https://www.salesforce.com/favicon.ico",
         "about": "Einstein Copilot helps reps draft emails, update records, and get pipeline insights with grounded data from Salesforce.",
         "pros": [
@@ -5277,7 +7054,11 @@
         "name": "HubSpot AI",
         "description": "AI writing, content, and CRM assistance within HubSpot.",
         "link": "https://www.hubspot.com/ai",
-        "tags": ["Freemium", "CRM", "Marketing"],
+        "tags": [
+          "Freemium",
+          "CRM",
+          "Marketing"
+        ],
         "iconUrl": "https://www.hubspot.com/favicon.ico",
         "about": "HubSpot AI helps draft emails, generate content, and surface insights across Marketing, Sales, and Service Hubs.",
         "pros": [
@@ -5295,7 +7076,11 @@
         "name": "Apollo AI",
         "description": "Prospecting, enrichment, and AI‑assisted outreach.",
         "link": "https://www.apollo.io/",
-        "tags": ["Freemium", "Prospecting", "Sales"],
+        "tags": [
+          "Freemium",
+          "Prospecting",
+          "Sales"
+        ],
         "iconUrl": "https://www.apollo.io/favicon.ico",
         "about": "Apollo combines a large B2B contact database with sequencing and AI to help generate and convert leads.",
         "pros": [
@@ -5321,7 +7106,11 @@
         "name": "Buffer AI Assistant",
         "description": "Generate on‑brand social posts and ideas inside Buffer.",
         "link": "https://buffer.com/ai",
-        "tags": ["Freemium", "Scheduling", "Content"],
+        "tags": [
+          "Freemium",
+          "Scheduling",
+          "Content"
+        ],
         "iconUrl": "https://buffer.com/favicon.ico",
         "about": "Buffer’s AI helps brainstorm, draft, and repurpose content across networks, integrated with your scheduling calendar.",
         "pros": [
@@ -5339,7 +7128,11 @@
         "name": "Hootsuite OwlyWriter AI",
         "description": "AI captions, ideas, and repurposing for social marketers.",
         "link": "https://www.hootsuite.com/products/owlywriter-ai",
-        "tags": ["Subscription", "Scheduling", "Content"],
+        "tags": [
+          "Subscription",
+          "Scheduling",
+          "Content"
+        ],
         "iconUrl": "https://www.hootsuite.com/favicon.ico",
         "about": "OwlyWriter generates captions, repurposes posts, and drafts content calendars, integrated with Hootsuite’s suite.",
         "pros": [
@@ -5357,7 +7150,11 @@
         "name": "Later AI",
         "description": "AI tools for captions, ideas, and scheduling for creators and brands.",
         "link": "https://later.com/ai",
-        "tags": ["Freemium", "Creator", "Content"],
+        "tags": [
+          "Freemium",
+          "Creator",
+          "Content"
+        ],
         "iconUrl": "https://later.com/favicon.ico",
         "about": "Later offers AI caption writing and planning tools alongside their visual calendar for Instagram, TikTok, and more.",
         "pros": [
@@ -5383,7 +7180,11 @@
         "name": "Shopify Magic",
         "description": "AI features across Shopify for product text, customer support, and more.",
         "link": "https://www.shopify.com/magic",
-        "tags": ["Freemium", "Commerce", "Assistant"],
+        "tags": [
+          "Freemium",
+          "Commerce",
+          "Assistant"
+        ],
         "iconUrl": "https://www.shopify.com/favicon.ico",
         "about": "Shopify Magic helps write product descriptions, answer chats, and personalize storefront content.",
         "pros": [
@@ -5401,7 +7202,11 @@
         "name": "Amazon Personalize",
         "description": "Managed personalization service for recommendations and ranking.",
         "link": "https://aws.amazon.com/personalize/",
-        "tags": ["Subscription", "Recommendations", "AWS"],
+        "tags": [
+          "Subscription",
+          "Recommendations",
+          "AWS"
+        ],
         "iconUrl": "https://aws.amazon.com/favicon.ico",
         "about": "Personalize brings Amazon.com‑grade recommendation tech to your apps for product, content, and promotions.",
         "pros": [
@@ -5419,7 +7224,11 @@
         "name": "Bloomreach Discovery",
         "description": "AI‑powered site search, merchandising, and recommendations.",
         "link": "https://www.bloomreach.com/en/products/discovery",
-        "tags": ["Subscription", "Search", "Merchandising"],
+        "tags": [
+          "Subscription",
+          "Search",
+          "Merchandising"
+        ],
         "iconUrl": "https://www.bloomreach.com/favicon.ico",
         "about": "Discovery boosts conversion with semantic search, relevance tuning, and AI‑driven merchandising tools.",
         "pros": [
@@ -5445,7 +7254,11 @@
         "name": "Matterport",
         "description": "3D digital twins for property listings, design, and operations.",
         "link": "https://matterport.com/",
-        "tags": ["Freemium", "3D", "Tours"],
+        "tags": [
+          "Freemium",
+          "3D",
+          "Tours"
+        ],
         "iconUrl": "https://matterport.com/favicon.ico",
         "about": "Matterport captures spaces into interactive 3D tours with AI features for measurement, floor plans, and virtual staging.",
         "pros": [
@@ -5463,7 +7276,11 @@
         "name": "HouseCanary",
         "description": "Property valuations, forecasting, and analytics for real estate.",
         "link": "https://www.housecanary.com/",
-        "tags": ["Subscription", "Valuation", "Analytics"],
+        "tags": [
+          "Subscription",
+          "Valuation",
+          "Analytics"
+        ],
         "iconUrl": "https://www.housecanary.com/favicon.ico",
         "about": "HouseCanary provides automated valuation models (AVMs), comparables, and market analytics for lenders and investors.",
         "pros": [
@@ -5481,7 +7298,11 @@
         "name": "Reonomy",
         "description": "Commercial real estate intelligence and property data platform.",
         "link": "https://www.reonomy.com/",
-        "tags": ["Subscription", "CRE", "Data"],
+        "tags": [
+          "Subscription",
+          "CRE",
+          "Data"
+        ],
         "iconUrl": "https://www.reonomy.com/favicon.ico",
         "about": "Reonomy unifies ownership, property, and transaction data to power CRE prospecting and market research.",
         "pros": [
