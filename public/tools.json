@@ -1011,6 +1011,49 @@
         ]
       },
       {
+        "name": "AnimateDiff",
+        "description": "Extend diffusion models to generate short animations from text or image prompts.",
+        "link": "https://github.com/guoyww/AnimateDiff",
+        "tags": [
+          "Open Source",
+          "Animation",
+          "Video Generation"
+        ],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "AnimateDiff is a technique and reference implementation that enables diffusion models to synthesize coherent animations by injecting temporal modules, producing smooth motion from text or image inputs.",
+        "pros": [
+          "Adds motion to existing diffusion pipelines.",
+          "Open and extensible for research and creators.",
+          "Works with popular SD ecosystems."
+        ],
+        "cons": [
+          "Setup and GPU requirements can be high.",
+          "Clip lengths are short without heavy optimization.",
+          "Quality depends on base model and settings."
+        ]
+      },
+      {
+        "name": "Stable Video Diffusion",
+        "description": "Stability AI's open video generation models for text-to-video and image-to-video.",
+        "link": "https://github.com/Stability-AI/stable-video-diffusion",
+        "tags": [
+          "Open Source",
+          "Text-to-Video"
+        ],
+        "iconUrl": "https://stability.ai/favicon.ico",
+        "about": "Stable Video Diffusion provides research weights and code to generate short, coherent video clips from text or images, showcasing strong motion and temporal consistency.",
+        "pros": [
+          "Strong temporal coherence for short clips.",
+          "Backed by Stability AI ecosystem.",
+          "Good starting point for custom pipelines."
+        ],
+        "cons": [
+          "Research preview; features evolve rapidly.",
+          "Requires significant compute for best quality.",
+          "Limited clip duration without optimizations."
+        ]
+      },
+      {
         "name": "DeepBrain AI",
         "description": "AI avatars for video presentations and explainers.",
         "link": "https://www.deepbrain.io/",
@@ -1396,6 +1439,28 @@
         ]
       },
       {
+        "name": "TabbyML",
+        "description": "Self-hosted AI code assistant for completions and chat.",
+        "link": "https://tabbyml.ai",
+        "tags": [
+          "Open Source",
+          "Code",
+          "Self-Hosted"
+        ],
+        "iconUrl": "https://tabbyml.ai/favicon.ico",
+        "about": "TabbyML is an open, self‑hostable coding assistant that provides fast, private code completions and chat across editors and languages.",
+        "pros": [
+          "On‑prem and private by design.",
+          "Good performance on commodity GPUs/CPUs.",
+          "Active OSS community."
+        ],
+        "cons": [
+          "Requires setup and ops.",
+          "Smaller model zoo than proprietary tools.",
+          "Quality depends on config and hardware."
+        ]
+      },
+      {
         "name": "Blackbox AI",
         "description": "AI code search and autocomplete for developers.",
         "link": "https://www.useblackbox.io/",
@@ -1668,6 +1733,27 @@
           "Limited to audio enhancement, not a full editor.",
           "File size and duration limits apply to the free tools.",
           "Part of Adobe's ecosystem, which may encourage paid subscriptions."
+        ]
+      },
+      {
+        "name": "Riffusion",
+        "description": "Real‑time music generation via stable diffusion on spectrograms.",
+        "link": "https://www.riffusion.com/",
+        "tags": [
+          "Open Source",
+          "Music Generation"
+        ],
+        "iconUrl": "https://www.riffusion.com/favicon.ico",
+        "about": "Riffusion generates musical audio by producing spectrogram images with diffusion and converting them back to sound, enabling prompt‑based loops and styles.",
+        "pros": [
+          "Fun, prompt‑based music loops.",
+          "Runs locally with OSS code.",
+          "Great for experimentation."
+        ],
+        "cons": [
+          "Audio quality below pro DAWs/models.",
+          "Limited composition control.",
+          "Best for short loops, not full songs."
         ]
       },
       {
@@ -4665,5 +4751,90 @@
         "cons": []
       }
     ]
+  }
+  ,
+  {
+    "name": "Customer Support & Chatbots",
+    "slug": "customer-support-chatbots",
+    "description": "Bots and platforms for automating support, helpdesks, and contact centers.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M18 13a3 3 0 01-3 3h-2l-3 3v-3H7a3 3 0 01-3-3V7a3 3 0 013-3h8a3 3 0 013 3v6z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Legal & Compliance",
+    "slug": "legal-compliance",
+    "description": "AI for contract analysis, legal drafting, compliance, and policy reviews.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 011 1v1h5a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h3V3a1 1 0 011-1z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Healthcare & Medical AI",
+    "slug": "healthcare-medical-ai",
+    "description": "Clinical, imaging, and EHR tools for healthcare workflows and insights.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a8 8 0 100 16 8 8 0 000-16zm1 5a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Finance & Accounting",
+    "slug": "finance-accounting",
+    "description": "Bookkeeping automation, invoice processing, forecasting, and FP&A.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M4 3a1 1 0 000 2h12a1 1 0 100-2H4zm0 4a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h7a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H5a1 1 0 01-1-1z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "HR & Recruitment",
+    "slug": "hr-recruitment",
+    "description": "Sourcing, screening, and talent ops with AI for HR teams.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M13 7a3 3 0 11-6 0 3 3 0 016 0z\"/><path fill-rule=\"evenodd\" d=\"M4 14a4 4 0 014-4h4a4 4 0 014 4v2H4v-2z\" clip-rule=\"evenodd\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Voice & Speech AI",
+    "slug": "voice-speech-ai",
+    "description": "ASR, TTS, voice cloning, and speech enhancement technologies.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a3 3 0 00-3 3v5a3 3 0 106 0V5a3 3 0 00-3-3z\"/><path d=\"M5 10a5 5 0 0010 0h2a7 7 0 11-14 0h2z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Gaming & Entertainment",
+    "slug": "gaming-entertainment",
+    "description": "AI for game dev, NPCs, VTubing, content tools, and live streaming.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M6 7a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 110 4 2 2 0 010-4z\"/><path fill-rule=\"evenodd\" d=\"M4 5a4 4 0 00-4 4v2a5 5 0 005 5h10a5 5 0 005-5V9a4 4 0 00-4-4H4z\" clip-rule=\"evenodd\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Cybersecurity",
+    "slug": "cybersecurity",
+    "description": "Threat detection, phishing defense, malware analysis, and SOC copilots.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2l7 3v5c0 5-3.582 7.94-7 9-3.418-1.06-7-4-7-9V5l7-3z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Sales & CRM",
+    "slug": "sales-crm",
+    "description": "AI for lead scoring, outreach, pipeline insights, and CRM copilots.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M2 11a1 1 0 011-1h4l3-3 4 4h3a1 1 0 110 2h-3l-4 4-3-3H3a1 1 0 01-1-1v-2z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Social Media & Content",
+    "slug": "social-media-content",
+    "description": "Scheduling, captioning, creative assets, and social listening with AI.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M4 3h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-4 3v-3H4a2 2 0 01-2-2V5a2 2 0 012-2z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "E‑commerce & Retail",
+    "slug": "ecommerce-retail",
+    "description": "Recommendations, pricing, catalog enrichment, and customer experience.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M3 3a1 1 0 00-1 1v2h16V4a1 1 0 00-1-1H3zm-1 5h16l-1.5 8.5A2 2 0 0114.52 18H5.48a2 2 0 01-1.98-1.5L2 8z\"/></svg>",
+    "tools": []
+  },
+  {
+    "name": "Real Estate & PropTech",
+    "slug": "real-estate-proptech",
+    "description": "Property search, valuations, listing enrichment, and market insights.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10.707 2.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 11h1v6a1 1 0 001 1h4v-4h2v4h4a1 1 0 001-1v-6h1a1 1 0 00.707-1.707l-7-7z\"/></svg>",
+    "tools": []
   }
 ]
