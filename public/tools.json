@@ -164,7 +164,6 @@
           "The ecosystem of tools is less mature than for proprietary models."
         ]
       },
-      
       {
         "name": "Meta AI",
         "description": "Consumer assistant integrated into Meta apps with image and search features.",
@@ -231,7 +230,6 @@
           "Rapid API changes."
         ]
       },
-      
       {
         "name": "Notebook LLM",
         "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
@@ -251,7 +249,6 @@
         "cons": [],
         "iconUrl": "https://notebooklm.google.com/favicon.ico"
       },
-      
       {
         "name": "Perplexity AI",
         "description": "A conversational search engine that provides direct answers with cited sources.",
@@ -272,8 +269,26 @@
           "Can be slower than a traditional search engine.",
           "Pro version required for advanced features like file uploads."
         ]
+      },
+      {
+        "name": "sim",
+        "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "link": "https://www.sim.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
       }
-      
     ]
   },
   {
@@ -4621,6 +4636,21 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://arstechnica.com/favicon.ico"
+      },
+      {
+        "name": "woodpecker",
+        "description": "Operant AI - 3D Runtime Protection",
+        "link": "https://operant.ai",
+        "tags": [
+          "developer-tools",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Operant AI - 3D Runtime Protection",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://operant.ai/favicon.ico"
       },
       {
         "name": "Zero",
