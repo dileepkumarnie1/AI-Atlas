@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2025-10-02T02:40:39.674Z",
+  "generatedAt": "2025-10-03T02:39:51.232Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 89826,
-          "forks": 10039,
-          "openIssues": 2991
+          "stars": 89900,
+          "forks": 10047,
+          "openIssues": 2999
         },
         "npm": null
       },
-      "signalsRaw": 4.2677,
-      "signalsNorm": 99.87,
+      "signalsRaw": 4.2681,
+      "signalsNorm": 99.88,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 34.95
+      "popularityScore": 34.96
     },
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41811,
+          "stars": 41816,
           "forks": 5332,
           "openIssues": 299
         },
         "npm": null
       },
       "signalsRaw": 3.9803,
-      "signalsNorm": 93.15,
+      "signalsNorm": 93.14,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -128,13 +128,13 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11778,
-          "forks": 1012,
+          "stars": 11781,
+          "forks": 1014,
           "openIssues": 310
         },
         "npm": null
       },
-      "signalsRaw": 3.4509,
+      "signalsRaw": 3.4511,
       "signalsNorm": 80.76,
       "mpScore": 0,
       "freqScore": 0,
@@ -160,13 +160,13 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32172,
-          "forks": 1600,
+          "stars": 32178,
+          "forks": 1601,
           "openIssues": 263
         },
         "npm": null
       },
-      "signalsRaw": 3.7961,
+      "signalsRaw": 3.7962,
       "signalsNorm": 88.84,
       "mpScore": 0,
       "freqScore": 0,
@@ -183,7 +183,7 @@
         "npm": null
       },
       "signalsRaw": 3.038,
-      "signalsNorm": 71.1,
+      "signalsNorm": 71.09,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -192,13 +192,13 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 88897,
-          "forks": 11072,
+          "stars": 88941,
+          "forks": 11075,
           "openIssues": 95
         },
         "npm": null
       },
-      "signalsRaw": 4.2731,
+      "signalsRaw": 4.2733,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -208,9 +208,9 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13322,
-          "forks": 1579,
-          "openIssues": 568
+          "stars": 13323,
+          "forks": 1580,
+          "openIssues": 569
         },
         "npm": null
       },
@@ -224,13 +224,13 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42829,
-          "forks": 5656,
+          "stars": 42845,
+          "forks": 5659,
           "openIssues": 13
         },
         "npm": null
       },
-      "signalsRaw": 3.9927,
+      "signalsRaw": 3.9929,
       "signalsNorm": 93.44,
       "mpScore": 0,
       "freqScore": 0,
@@ -4838,7 +4838,7 @@
     },
     {
       "name": "ComfyUI",
-      "score": 34.95,
+      "score": 34.96,
       "rank": 18
     },
     {
