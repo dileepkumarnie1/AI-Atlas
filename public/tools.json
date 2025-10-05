@@ -6461,6 +6461,28 @@
         ]
       },
       {
+        "name": "CLI",
+        "description": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence — with contextual, senior-level feedback.",
+        "link": "https://bito.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence — with contextual, senior-level feedback.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-32x32.png"
+      },
+      {
         "name": "Intercom Fin",
         "description": "AI support agent that resolves customer questions autonomously.",
         "link": "https://www.intercom.com/ai-agent",
