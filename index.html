@@ -303,16 +303,12 @@
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:1;">
         <!-- Header -->
     <a href="#content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-sm px-3 py-2 rounded z-[100]">Skip to content</a>
-    <header class="sticky top-0 backdrop-blur-lg border-b z-50">
+    <header class="sticky top-0 backdrop-blur-lg border-b z-50 bg-gradient-to-r from-[#eef2ff] via-[#f4f7ff] to-[#eef2ff] dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90 shadow-sm">
             <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
-                        <a href="#" id="home-link" class="text-2xl font-bold flex items-center">
-                            <picture class="mr-2 block w-9 h-9">
-                                <source srcset="./images/logo-ai-gyanverse.webp" type="image/webp">
-                                <img src="./images/logo-ai-gyanverse.png" alt="AI GyanVerse logo" width="36" height="36" class="w-full h-full rounded-lg border border-purple-200/50 shadow-sm object-contain bg-white/70 dark:bg-white/5" loading="lazy" decoding="async">
-                            </picture>
-                            AI GyanVerse
+                        <a href="#" id="home-link" class="flex items-center">
+                            <img src="./images/AIGyan_chequered.png" alt="AI GyanVerse" width="1920" height="488" class="h-12 md:h-14 w-auto object-contain drop-shadow-sm" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
@@ -1230,9 +1226,9 @@
                     // No favorites overlay on homepage
                     contentArea.innerHTML = `
                         <div class="relative">
-                            <div class="text-center mb-12">
-                                <h1 class="text-[2.025rem] md:text-[3.375rem] font-bold tracking-tight text-primary mb-4">Welcome to <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_4px_18px_rgba(79,70,229,0.45)]">AI GyanVerse</span></h1>
-                                <p class="max-w-2xl mx-auto text-[1.3rem] md:text-[1.44rem] text-gray-900 dark:text-gray-100">Your Gateway to Smarter AI Tools and Knowledge.</p>
+                            <div class="text-center mb-4 md:mb-5">
+                                <h1 class="text-[2.025rem] md:text-[3.375rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-800 bg-clip-text text-transparent drop-shadow-[0_6px_22px_rgba(37,20,126,0.55)]">AI GyanVerse</span></h1>
+                                <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Your Gateway to Smarter AI Tools and Knowledge.</p>
                             </div>
 
                             <!-- Search + Category split row -->
