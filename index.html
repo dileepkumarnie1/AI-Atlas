@@ -1963,15 +1963,22 @@
                     const allowGithubNames = new Set([
                         'github copilot' // keep Copilot even though it lives on github.com/features/copilot
                     ]);
-                    const isGithubHost = (url) => {
-                        try { return new URL(String(url||'')).hostname.replace(/^www\./,'').toLowerCase() === 'github.com'; } catch { return false; }
+                    const getHost = (url) => {
+                        try {
+                            return new URL(String(url || '')).hostname.replace(/^www\./, '').toLowerCase();
+                        } catch {
+                            return '';
+                        }
                     };
+                    const isGithubHost = (url) => getHost(url) === 'github.com';
+                    const isNpmHost = (url) => getHost(url) === 'npmjs.com';
                     const norm = (s)=> String(s||'').trim().toLowerCase();
                     if (Array.isArray(db)) {
                         db.forEach(sec => {
                             if (!Array.isArray(sec.tools)) return;
                             sec.tools = sec.tools.filter(t => {
                                 if (t?._commentedOut) return false;
+                                if (isNpmHost(t?.link)) return false;
                                 const nameOk = allowGithubNames.has(norm(t?.name));
                                 return nameOk || !isGithubHost(t?.link);
                             });
