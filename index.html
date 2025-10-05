@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Domain Atlas</title>
+    <title>AI GyanVerse</title>
     <!-- Mobile address bar theming -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0c">
@@ -309,7 +309,7 @@
                     <div class="flex items-center">
                         <a href="#" id="home-link" class="text-2xl font-bold flex items-center">
                             <svg class="w-8 h-8 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            AI Domain Atlas
+                            AI GyanVerse
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
@@ -375,7 +375,7 @@
 
     <footer class="border-t" style="padding-bottom: env(safe-area-inset-bottom);">
             <div class="container mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-muted">&copy; 2025 AI Domain Atlas. All rights reserved.</p>
+                <p class="text-muted">&copy; 2025 AI GyanVerse. All rights reserved.</p>
                 <p class="text-sm text-muted mt-1">
                   <a href="./CODE_OF_CONDUCT.md" class="underline">Code of Conduct</a>
                   <span class="mx-2">·</span>
@@ -1098,7 +1098,7 @@
                             const email = (submitterEmail && submitterEmail.includes('@')) ? submitterEmail : '';
                             if (email) {
                                 const ackUrl = '/.netlify/functions/notify-user';
-                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI Domain Atlas!</p>`;
+                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI GyanVerse!</p>`;
                                 try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: email, subject: 'Your tool was approved', html: ackHtml }) }); } catch {}
                             }
 
@@ -1228,8 +1228,8 @@
                     contentArea.innerHTML = `
                         <div class="relative">
                             <div class="text-center mb-12">
-                                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-primary mb-4">Discover the World of AI</h1>
-                                <p class="max-w-2xl mx-auto text-lg md:text-xl text-secondary">A curated atlas of AI tools and applications, classified by domain.</p>
+                                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-primary mb-4">Welcome to <span class="bg-gradient-to-r from-indigo-700 via-purple-700 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_4px_18px_rgba(59,7,100,0.45)]">AI GyanVerse</span></h1>
+                                <p class="max-w-2xl mx-auto text-[1.3rem] md:text-[1.44rem] text-secondary">Your Gateway to Smarter AI Tools and Knowledge.</p>
                             </div>
 
                             <!-- Search + Category split row -->
@@ -1572,7 +1572,7 @@
                                 }
                                 // Send acknowledgement to submitter if email available
                                 if (state.user?.email) {
-                                    const ackHtml = `<p>Thank you for submitting <strong>${name}</strong> to AI Domain Atlas.</p><p>We appreciate your help in improving the catalog. We’ll review your suggestion and, if it fits our criteria, we’ll add it soon.</p><p>Thanks again!</p>`;
+                                    const ackHtml = `<p>Thank you for submitting <strong>${name}</strong> to AI GyanVerse.</p><p>We appreciate your help in improving the catalog. We’ll review your suggestion and, if it fits our criteria, we’ll add it soon.</p><p>Thanks again!</p>`;
                                     try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: state.user.email, subject: 'Thanks for your tool submission', html: ackHtml }) }); } catch {}
                                 }
                                 statusEl.textContent = 'Thanks! Your submission was received.';
