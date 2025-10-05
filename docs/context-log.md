@@ -1,6 +1,6 @@
 # Context Log
 
-_Last updated: 2025-10-06_
+_Last updated: 2025-10-07_
 
 ## Using this log
 - Append a dated entry for every batch of related changes.
@@ -8,6 +8,11 @@ _Last updated: 2025-10-06_
 - Update the "Open Follow-ups" list as items are completed or new gaps are identified.
 
 ## Recent Changes
+
+### 2025-10-07
+- Removed unused prototype assets (`src/**`, `public/prompt.html`, legacy prompt enhancer backups, and redundant hero image) to slim the repository.
+- Swapped the embedded tool fallback in `public/prompt-enhancer.js` for a dynamic fetch from `public/tools.json` with caching and graceful failure handling.
+- Deduplicated repeated inline CSS blocks in `index.html` to simplify style maintenance.
 
 ### 2025-10-06
 - Investigated Audio & Music category gaps and documented tag-based grouping behavior.
@@ -23,3 +28,4 @@ _Last updated: 2025-10-06_
 - [x] Finish annotating any remaining npm entries in `public/tools.json` and report counts if required (flagged 42 npm hosts on 2025-10-06).
 - [ ] Run discovery once the new API tokens are confirmed to be available and review output for npm regressions.
 - [ ] Double-check popularity metadata to ensure npm entries no longer influence rankings.
+- [ ] Monitor Prompt Studio fallback in production to confirm the live catalog fetch works without CORS or caching regressions.

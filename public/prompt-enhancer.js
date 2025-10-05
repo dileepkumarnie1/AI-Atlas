@@ -1,7 +1,7 @@
 // ...existing code...
 (() => {
     // --- EMBEDDED TOOLS (fallback) ---
-    const toolsData = [
+    const embeddedFallbackSections = [
         { "name": "Most Popular", "slug": "most-popular", "tools": [ { "name": "ChatGPT (OpenAI)", "description": "The quintessential AI chatbot for drafting, ideation, and summarization.", "link": "https://chat.openai.com/", "tags": ["Freemium", "LLM"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" }, { "name": "Gemini (Google)", "description": "Google's powerful, multimodal AI model integrated across its ecosystem.", "link": "https://gemini.google.com/", "tags": ["Freemium", "Multimodal"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" }, { "name": "GitHub Copilot", "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.", "link": "https://github.com/features/copilot", "tags": ["Subscription", "Code"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png" } ] },
         { "name": "Language & Chat", "slug": "language-chat", "tools": [ { "name": "ChatGPT (OpenAI)", "description": "The quintessential AI chatbot for drafting, ideation, and summarization.", "link": "https://chat.openai.com/", "tags": ["Freemium", "LLM"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" }, { "name": "Gemini (Google)", "description": "Google's powerful, multimodal AI model integrated across its ecosystem.", "link": "https://gemini.google.com/", "tags": ["Freemium", "Multimodal"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" }, { "name": "Claude (Anthropic)", "description": "A safety-focused AI assistant known for its large context window and thoughtful responses.", "link": "https://claude.ai/", "tags": ["Freemium", "LLM"], "iconUrl": "https://pbs.twimg.com/profile_images/1679549573978877952/x-3245fA_400x400.jpg" }, { "name": "DeepL", "description": "A highly accurate AI-powered translation service known for its natural-sounding output.", "link": "https://www.deepl.com/translator", "tags": ["Freemium", "Translation"], "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg" } ] },
         { "name": "Image Generation", "slug": "image-generation", "tools": [ { "name": "Midjourney", "description": "A premier text-to-image AI that creates stunning, artistic visuals from prompts.", "link": "https://www.midjourney.com/", "tags": ["Paid", "Text-to-Image"], "iconUrl": "https://media.dev.to/cdn-cgi/image/width=1000,height=1000,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz1a8m29el33hpwscvl24.png" }, { "name": "Stable Diffusion", "description": "A powerful, open-source image generation model that can be run locally.", "link": "https://stability.ai/", "tags": ["Open Source", "Text-to-Image"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Stable_Diffusion_logo.svg/1200px-Stable_Diffusion_logo.svg.png" }, { "name": "DALL-E 3 (OpenAI)", "description": "OpenAI's advanced image generation model, integrated into ChatGPT Plus.", "link": "https://openai.com/dall-e-3", "tags": ["Subscription", "Text-to-Image"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/DALL-E_logo.svg/1200px-DALL-E_logo.svg.png" } ] },
@@ -9,6 +9,47 @@
         { "name": "Code Assistance", "slug": "code-assistance", "tools": [ { "name": "GitHub Copilot", "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.", "link": "https://github.com/features/copilot", "tags": ["Subscription", "Code"], "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png" } ] },
         { "name": "Audio & Music", "slug": "audio-music", "tools": [ { "name": "ElevenLabs", "description": "Best-in-class AI for generating realistic text-to-speech and voice clones.", "link": "https://elevenlabs.io/", "tags": ["Freemium", "Text-to-Speech"], "iconUrl": "https://pbs.twimg.com/profile_images/1731688753233924096/iEV8sRTG_400x400.jpg" } ] }
     ];
+
+    const FALLBACK_JSON_PATH = 'public/tools.json';
+    let cachedFallbackSections = null;
+    let fallbackFetchPromise = null;
+
+    async function loadFallbackSections(){
+        if (Array.isArray(cachedFallbackSections) && cachedFallbackSections.length) return cachedFallbackSections;
+        if (fallbackFetchPromise) return fallbackFetchPromise;
+
+        fallbackFetchPromise = (async () => {
+            try {
+                const res = await fetch(FALLBACK_JSON_PATH, { cache: 'no-store' });
+                if (res && res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data) && data.length) {
+                        cachedFallbackSections = data;
+                        return cachedFallbackSections;
+                    }
+                }
+            } catch (err) {
+                console.warn('prompt-enhancer: failed to load tools.json fallback', err);
+            }
+            cachedFallbackSections = embeddedFallbackSections;
+            return cachedFallbackSections;
+        })().finally(() => {
+            fallbackFetchPromise = null;
+        });
+
+        return fallbackFetchPromise;
+    }
+
+    async function resolveCatalogSections(){
+        try {
+            if (Array.isArray(window.db) && window.db.length) {
+                return window.db;
+            }
+        } catch (err) {
+            console.warn('prompt-enhancer: window.db lookup failed', err);
+        }
+        return loadFallbackSections();
+    }
 
     // --- UTILITIES ---
     function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,"&#39;"); }
@@ -208,16 +249,8 @@ const modalCSS = `
     }
 
     async function recommendToolForPrompt(enhancedPrompt, maxResults = 5) {
-        // prefer window.db if present (index.html data), otherwise fallback to embedded toolsData
-        let allTools = [];
-        try {
-            if (Array.isArray(window.db) && window.db.length) {
-                allTools = window.db.flatMap(d => (d.tools || []).map(t => ({ ...t, domain: d.name })));
-            }
-        } catch (e) {}
-        if (!allTools.length) {
-            allTools = toolsData.flatMap(d => (d.tools || []).map(t => ({ ...t, domain: d.name })));
-        }
+        const sections = await resolveCatalogSections();
+        const allTools = (Array.isArray(sections) ? sections : []).flatMap(d => (d.tools || []).map(t => ({ ...t, domain: d.name })));
 
         const keywords = extractKeywords(enhancedPrompt);
         const text = (enhancedPrompt||'').toLowerCase();
@@ -378,21 +411,25 @@ const modalCSS = `
     function populateToolSelect(sel) {
         if (!sel) return;
         sel.innerHTML = `<option value="">Automatic tool suggestion</option>`;
-        const all = toolsData.flatMap(d => (d.tools||[]).map(t => ({ ...t, domain: d.name })));
-        const byDomain = all.reduce((acc, t) => {
-            (acc[t.domain] = acc[t.domain] || []).push(t);
-            return acc;
-        }, {});
-        Object.keys(byDomain).forEach(domain => {
-            const group = document.createElement('optgroup');
-            group.label = domain;
-            byDomain[domain].forEach(t => {
-                const opt = document.createElement('option');
-                opt.value = t.name;
-                opt.textContent = `${t.name} · ${(t.tags||[]).slice(0,3).join(', ')}`;
-                group.appendChild(opt);
+        resolveCatalogSections().then(sections => {
+            const all = (Array.isArray(sections) ? sections : []).flatMap(d => (d.tools||[]).map(t => ({ ...t, domain: d.name })));
+            const byDomain = all.reduce((acc, t) => {
+                (acc[t.domain] = acc[t.domain] || []).push(t);
+                return acc;
+            }, {});
+            Object.keys(byDomain).forEach(domain => {
+                const group = document.createElement('optgroup');
+                group.label = domain;
+                byDomain[domain].forEach(t => {
+                    const opt = document.createElement('option');
+                    opt.value = t.name;
+                    opt.textContent = `${t.name} · ${(t.tags||[]).slice(0,3).join(', ')}`;
+                    group.appendChild(opt);
+                });
+                sel.appendChild(group);
             });
-            sel.appendChild(group);
+        }).catch(err => {
+            console.warn('prompt-enhancer: failed to populate select', err);
         });
     }
 
