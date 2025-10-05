@@ -36,6 +36,10 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           GOOGLE_SAFEBROWSING_API_KEY: ${{ secrets.GOOGLE_SAFEBROWSING_API_KEY }}
+          PRODUCT_HUNT_TOKEN: ${{ secrets['PRODUCT_HUNT_TOKEN'] }}
+          BUILTWITH_API_KEY: ${{ secrets['BUILTWITH_API_KEY'] }}
+          SIMILARTECH_API_KEY: ${{ secrets['SIMILARTECH_API_KEY'] }}
+          CRUNCHBASE_API_KEY: ${{ secrets['CRUNCHBASE_API_KEY'] }}
           # Prefer a Secret if provided; else fall back to Actions Variable
           RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT || 'true' }}
           GLOBAL_MAX_NEW_TOOLS: 90
