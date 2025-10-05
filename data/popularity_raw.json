@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-05T02:50:53.528Z",
+  "generatedAt": "2025-10-05T03:39:05.437Z",
   "raw": {
     "ComfyUI": {
       "signals": {
@@ -160,7 +160,7 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32171,
+          "stars": 32170,
           "forks": 1601,
           "openIssues": 265
         },
@@ -192,7 +192,7 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 88982,
+          "stars": 88985,
           "forks": 11091,
           "openIssues": 95
         },
@@ -210,7 +210,7 @@
         "github": {
           "stars": 13328,
           "forks": 1580,
-          "openIssues": 570
+          "openIssues": 571
         },
         "npm": null
       },
