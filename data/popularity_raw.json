@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2025-10-04T02:35:03.543Z",
+  "generatedAt": "2025-10-05T02:50:53.528Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 89958,
-          "forks": 10055,
-          "openIssues": 3000
+          "stars": 90004,
+          "forks": 10068,
+          "openIssues": 3010
         },
         "npm": null
       },
-      "signalsRaw": 4.2683,
-      "signalsNorm": 99.88,
+      "signalsRaw": 4.2686,
+      "signalsNorm": 99.89,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -20,13 +20,13 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41815,
-          "forks": 5335,
+          "stars": 41809,
+          "forks": 5333,
           "openIssues": 299
         },
         "npm": null
       },
-      "signalsRaw": 3.9804,
+      "signalsRaw": 3.9803,
       "signalsNorm": 93.14,
       "mpScore": 0,
       "freqScore": 0,
@@ -52,18 +52,18 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 2432,
+          "stars": 2430,
           "forks": 346,
           "openIssues": 55
         },
         "npm": null
       },
-      "signalsRaw": 2.8784,
-      "signalsNorm": 67.36,
+      "signalsRaw": 2.8781,
+      "signalsNorm": 67.35,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 23.58
+      "popularityScore": 23.57
     },
     "Midjourney": {
       "signals": {
@@ -128,7 +128,7 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11781,
+          "stars": 11779,
           "forks": 1014,
           "openIssues": 310
         },
@@ -160,14 +160,14 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32178,
-          "forks": 1602,
-          "openIssues": 263
+          "stars": 32171,
+          "forks": 1601,
+          "openIssues": 265
         },
         "npm": null
       },
-      "signalsRaw": 3.7963,
-      "signalsNorm": 88.84,
+      "signalsRaw": 3.7962,
+      "signalsNorm": 88.83,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -177,12 +177,12 @@
       "signals": {
         "github": {
           "stars": 3800,
-          "forks": 458,
+          "forks": 459,
           "openIssues": 70
         },
         "npm": null
       },
-      "signalsRaw": 3.0383,
+      "signalsRaw": 3.0385,
       "signalsNorm": 71.1,
       "mpScore": 0,
       "freqScore": 0,
@@ -192,13 +192,13 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 88966,
-          "forks": 11084,
+          "stars": 88982,
+          "forks": 11091,
           "openIssues": 95
         },
         "npm": null
       },
-      "signalsRaw": 4.2734,
+      "signalsRaw": 4.2735,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -208,14 +208,14 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13326,
+          "stars": 13328,
           "forks": 1580,
           "openIssues": 570
         },
         "npm": null
       },
       "signalsRaw": 3.5271,
-      "signalsNorm": 82.54,
+      "signalsNorm": 82.53,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -224,8 +224,8 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42856,
-          "forks": 5663,
+          "stars": 42855,
+          "forks": 5661,
           "openIssues": 13
         },
         "npm": null
@@ -4913,7 +4913,7 @@
     },
     {
       "name": "DreamStudio",
-      "score": 23.58,
+      "score": 23.57,
       "rank": 33
     },
     {
