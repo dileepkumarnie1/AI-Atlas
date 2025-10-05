@@ -38,14 +38,14 @@ jobs:
           GOOGLE_SAFEBROWSING_API_KEY: ${{ secrets.GOOGLE_SAFEBROWSING_API_KEY }}
           # Prefer a Secret if provided; else fall back to Actions Variable
           RELIABILITY_STRICT: ${{ secrets.RELIABILITY_STRICT != '' && secrets.RELIABILITY_STRICT || vars.RELIABILITY_STRICT || 'true' }}
-          GLOBAL_MAX_NEW_TOOLS: 6
-          # Enforce .ai-only domains and coverage
-          DISCOVERY_DOMAINS_AI_ONLY: true
-          DISCOVERY_MIN_PER_DOMAIN: 2
+          GLOBAL_MAX_NEW_TOOLS: 90
+          # Allow non-.ai domains while keeping quality filters in code
+          DISCOVERY_DOMAINS_AI_ONLY: false
+          DISCOVERY_MIN_PER_DOMAIN: 6
           # Relax parity for selected domains (soft parity) while .ai-only remains enforced
-          DISCOVERY_IMAGE_GENERATION_AIXPLORIA_STRICT: soft
-          DISCOVERY_LANGUAGE_CHAT_AIXPLORIA_STRICT: soft
-          DISCOVERY_CODE_ASSISTANCE_AIXPLORIA_STRICT: soft
+          DISCOVERY_IMAGE_GENERATION_AIXPLORIA_STRICT: false
+          DISCOVERY_LANGUAGE_CHAT_AIXPLORIA_STRICT: false
+          DISCOVERY_CODE_ASSISTANCE_AIXPLORIA_STRICT: false
           # Approval flow config (optional): base URL for Netlify function and signing key
           APPROVAL_BASE_URL: ${{ vars.APPROVAL_BASE_URL }}
           ADMIN_APPROVAL_SIGNING_KEY: ${{ secrets.ADMIN_APPROVAL_SIGNING_KEY }}

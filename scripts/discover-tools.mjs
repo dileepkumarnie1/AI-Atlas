@@ -1,5 +1,7 @@
 // Discover new tools for each domain and append to public/tools.json
-// Sources: GitHub Search API (repos), npm search, Hacker News Algolia (stories)
+// Sources: GitHub Search API (repos), npm search, Hacker News Algolia (stories),
+// Product Hunt GraphQL, BuiltWith Lists API, SimilarTech API, Crunchbase Search,
+// and optional manual curated lists.
 // Sends an email summary if SMTP env vars are provided.
 
 import 'dotenv/config';
@@ -47,6 +49,43 @@ const ALIASES_JSON = path.join(DATA_DIR, 'aliases.json');
 function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
 function normalizeKeyLoose(s){ return normalizeKey(s).replace(/[^a-z0-9]+/g,''); }
 
+function numberOr(val, fallback){
+  const n = Number(val);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+function boolOr(val, fallback){
+  if(typeof val === 'boolean') return val;
+  if(val === null || val === undefined) return fallback;
+  if(typeof val === 'number') return val !== 0;
+  if(typeof val === 'string'){
+    if(/^true$/i.test(val)) return true;
+    if(/^false$/i.test(val)) return false;
+  }
+  return Boolean(val);
+}
+
+const RELAX_DEFAULTS = {
+  maxPasses: Math.max(0, Math.floor(numberOr(process.env.RELAX_MAX_PASSES_DEFAULT, 2))),
+  minScore: numberOr(process.env.RELAX_MIN_SCORE_DEFAULT, 1),
+  allowUnknown: boolOr(process.env.RELAX_ALLOW_UNKNOWN_DEFAULT, true),
+  scaleBase: Math.max(1, numberOr(process.env.RELAX_SCALE_BASE, 2)),
+  githubPerCap: Math.max(5, numberOr(process.env.RELAX_GITHUB_PER_CAP, 40)),
+  githubStarsFloor: Math.max(5, numberOr(process.env.RELAX_GITHUB_STARS_FLOOR, 20)),
+  npmSizeCap: Math.max(5, numberOr(process.env.RELAX_NPM_SIZE_CAP, 40)),
+  hnHitsBase: Math.max(3, numberOr(process.env.RELAX_HN_HITS_BASE, 10)),
+  hnHitsCap: Math.max(5, numberOr(process.env.RELAX_HN_HITS_CAP, 20)),
+  hnPointsFloor: Math.max(10, numberOr(process.env.RELAX_HN_POINTS_FLOOR, 40)),
+  hnDaysCap: Math.max(7, numberOr(process.env.RELAX_HN_DAYS_CAP, 60)),
+  aixMultiplier: Math.max(1, numberOr(process.env.RELAX_AIX_MULTIPLIER, 2)),
+  aixSizeCap: Math.max(10, numberOr(process.env.RELAX_AIX_SIZE_CAP, 150)),
+  sampleLimit: Math.max(0, Math.floor(numberOr(process.env.RELAX_SAMPLE_LIMIT, 5)))
+};
+
+const RELAX_GLOBAL_SAMPLE_LIMIT = Math.max(RELAX_DEFAULTS.sampleLimit * 4, 20);
+
+const DISABLE_NPM_DISCOVERY = boolOr(process.env.DISABLE_NPM_DISCOVERY, true);
+
 // --- Env overrides helpers ---
 function slugToEnv(slug){
   return String(slug||'').trim().toUpperCase().replace(/[^A-Z0-9]+/g,'_');
@@ -86,6 +125,12 @@ const CONTENT_SUBDOMAIN_PREFIXES = ['blog','docs','help','support','kb','develop
 // Package registries and developer-only hubs; usually not end-user tools
 const PACKAGE_HOSTS = new Set([
   'npmjs.com','pypi.org','rubygems.org','crates.io','pkg.go.dev','packagist.org','nuget.org'
+]);
+
+const RELAXED_CLASSIFIER_DOMAINS = new Set([
+  'marketing-seo','productivity','workflow-automation','sales-crm','social-media-content',
+  'customer-support-chatbots','legal-compliance','finance-accounting','hr-recruitment',
+  'healthcare-medical-ai','education','ai-safety-ethics','cybersecurity','most-popular'
 ]);
 
 // Exclusion policy: avoid GitHub-hosted repo pages as final tool links, except allowlisted branded products
@@ -275,19 +320,26 @@ function extractOgType($){
 
 function pageToolSignals($){
   const signals = [];
-  const bodyText = $('body').text().slice(0, 200000); // cap for performance
+  const metaDescription = $('meta[name="description"]').attr('content') || $('meta[property="og:description"]').attr('content') || '';
+  const twitterDescription = $('meta[name="twitter:description"]').attr('content') || '';
+  const bodyRaw = $('body').text();
+  const combinedText = `${metaDescription} ${twitterDescription} ${bodyRaw}`.slice(0, 200000);
   // CTA signals
   const ctaNeedles = [
     'sign up','signup','get started','start for free','start free','try it free','try now','open app','launch app',
-    'add to chrome','add to vscode','install extension','download app','start trial','use for free','create account'
+    'add to chrome','add to vscode','install extension','download app','start trial','use for free','create account',
+    'book a demo','request demo','schedule a demo','talk to sales','request a quote','see pricing','compare plans'
   ];
-  if(textIncludesAny(bodyText, ctaNeedles)) signals.push('cta');
+  if(textIncludesAny(combinedText, ctaNeedles)) signals.push('cta');
   // Pricing
-  const pricingNeedles = ['pricing','plans','plan','tiers','billing'];
-  if(textIncludesAny(bodyText, pricingNeedles)) signals.push('pricing');
+  const pricingNeedles = ['pricing','plans','plan','tiers','billing','quote','pricing table','cost'];
+  if(textIncludesAny(combinedText, pricingNeedles)) signals.push('pricing');
   // Auth nav
-  const authNeedles = ['log in','login','sign in','account','dashboard'];
-  if(textIncludesAny(bodyText, authNeedles)) signals.push('auth');
+  const authNeedles = ['log in','login','sign in','account','dashboard','my account'];
+  if(textIncludesAny(combinedText, authNeedles)) signals.push('auth');
+  if(metaDescription && textIncludesAny(metaDescription, ['ai','automation','assistant','copilot','intelligence'])){
+    signals.push('meta:ai');
+  }
   // Product-ish OG metadata
   const og = extractOgType($);
   if(og.includes('product') || og.includes('website')) signals.push(`og:${og||'website'}`);
@@ -297,7 +349,7 @@ function pageToolSignals($){
   if(ld.some(t => t.includes('article') || t.includes('blogposting'))) signals.push('jsonld:article');
   // Buttons and links
   const btnText = $('a,button').map((_,el)=>$(el).text().trim().toLowerCase()).get().join(' ');
-  const btnNeedles = ['try','get started','sign up','start free','pricing','launch'];
+  const btnNeedles = ['try','get started','sign up','start free','pricing','launch','demo','book demo','request demo'];
   if(textIncludesAny(btnText, btnNeedles)) signals.push('buttons');
   return { signals, ld, og };
 }
@@ -336,13 +388,10 @@ async function classifyCandidate(cand, domainSlug){
   const ctaish = signals.includes('cta') || signals.includes('buttons');
   const hasPricing = signals.includes('pricing');
   const hasAuth = signals.includes('auth');
-  const score = (hasProductSchema?2:0) + (ctaish?1:0) + (hasPricing?1:0) + (hasAuth?1:0);
-  const threshold = strictClassifier ? 2 : 1;
-  // If homepage path and strict mode, require stronger signals
-  const path = getPathname(url);
-  if(strictClassifier && path === '/' && score < 3){
-    return { isTool:false, reason:`weak-homepage score=${score}`, category:'content' };
-  }
+  const metaAi = signals.includes('meta:ai');
+  const score = (hasProductSchema?2:0) + (ctaish?1:0) + (hasPricing?1:0) + (hasAuth?1:0) + (metaAi?1:0);
+  const domain = String(domainSlug||'').toLowerCase();
+  const threshold = strictClassifier ? (RELAXED_CLASSIFIER_DOMAINS.has(domain) ? 1 : 2) : 1;
   const isTool = score >= threshold;
   return { isTool, reason: `signals:${signals.join(',')||'none'} score=${score}`, category: isTool?'tool':'content', score };
 }
@@ -564,6 +613,337 @@ async function searchHN(query, hits=5, pointsMin=100, recentDays=14){
   }catch{ return []; }
 }
 
+// --- Product Hunt GraphQL ---
+const PRODUCT_HUNT_GRAPHQL_ENDPOINT = 'https://api.producthunt.com/v2/api/graphql';
+
+function getProductHuntToken(){
+  return String(process.env.PRODUCT_HUNT_TOKEN||'').trim();
+}
+
+function asProductHuntLink(node){
+  const productUrl = node?.website || node?.websiteUrl || node?.url || (node?.productLinks?.edges?.[0]?.node?.url);
+  if(productUrl && /^https?:\/\//i.test(productUrl)) return productUrl;
+  const slug = node?.slug || node?.name;
+  return slug ? `https://www.producthunt.com/posts/${String(slug).trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-')}` : '';
+}
+
+async function productHuntGraphql(query, variables){
+  const token = getProductHuntToken();
+  if(!token) return null;
+  if(DRY_RUN){ dryNote(`Product Hunt fetch skipped for ${JSON.stringify({ query })}`); return null; }
+  try{
+    const res = await fetch(PRODUCT_HUNT_GRAPHQL_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ query, variables })
+    });
+    if(!res.ok){
+      console.warn(`Product Hunt API error ${res.status}`);
+      return null;
+    }
+    return await res.json();
+  }catch(err){
+    console.warn('Product Hunt API request failed:', err?.message || err);
+    return null;
+  }
+}
+
+async function searchProductHuntPosts(queries = [], limit = 6){
+  const token = getProductHuntToken();
+  if(!token || !queries.length) return [];
+  const results = [];
+  const gql = `query SearchPosts($term:String!, $first:Int!){ posts(order:RANKING, query:$term, first:$first){ edges{ node{ id name tagline url website websiteUrl slug votesCount productLinks(first:1){ edges{ node{ url } } } thumbnail{ url } } } } }`;
+  for(const term of queries){
+    const data = await productHuntGraphql(gql, { term, first: limit });
+    const edges = data?.data?.posts?.edges || [];
+    for(const edge of edges){
+      const node = edge?.node;
+      if(!node) continue;
+      const link = asProductHuntLink(node);
+      if(!link) continue;
+      results.push({
+        source: 'producthunt',
+        name: node.name,
+        description: node.tagline || '',
+        link,
+        iconUrl: node.thumbnail?.url,
+        tags: ['Product Hunt'],
+        metrics: { votes: node.votesCount || 0 },
+        reason: `Product Hunt search for "${term}" (${node.votesCount || 0} votes)`
+      });
+    }
+  }
+  return results;
+}
+
+async function searchProductHuntTopics(topics = [], limit = 5){
+  const token = getProductHuntToken();
+  if(!token || !topics.length) return [];
+  const results = [];
+  const gql = `query TopicPosts($slug:String!, $first:Int!){ topic(slug:$slug){ name slug posts(first:$first){ edges{ node{ id name tagline url website websiteUrl slug votesCount thumbnail{ url } } } } } }`;
+  for(const slug of topics){
+    const data = await productHuntGraphql(gql, { slug, first: limit });
+    const edges = data?.data?.topic?.posts?.edges || [];
+    for(const edge of edges){
+      const node = edge?.node;
+      if(!node) continue;
+      const link = asProductHuntLink(node);
+      if(!link) continue;
+      results.push({
+        source: 'producthunt',
+        name: node.name,
+        description: node.tagline || '',
+        link,
+        iconUrl: node.thumbnail?.url,
+        tags: ['Product Hunt'],
+        metrics: { votes: node.votesCount || 0 },
+        reason: `Product Hunt topic "${slug}" (${node.votesCount || 0} votes)`
+      });
+    }
+  }
+  return results;
+}
+
+// --- BuiltWith Lists API ---
+function getBuiltWithKey(){
+  return String(process.env.BUILTWITH_API_KEY||'').trim();
+}
+
+function normalizeDomainName(host){
+  if(!host) return '';
+  const clean = String(host).replace(/^https?:\/\//i,'').replace(/\/$/,'');
+  const parts = clean.split('/')[0].split('.');
+  if(parts.length <= 1) return clean;
+  const namePart = parts.slice(-2)[0];
+  return namePart.charAt(0).toUpperCase() + namePart.slice(1);
+}
+
+function extractBuiltWithSites(payload){
+  if(!payload) return [];
+  const buckets = [];
+  if(Array.isArray(payload?.Results)) buckets.push(...payload.Results);
+  if(Array.isArray(payload?.Technologies)) buckets.push(...payload.Technologies);
+  if(payload?.Result) buckets.push(payload.Result);
+  const sites = [];
+  for(const bucket of buckets){
+    const matches = bucket?.Matches || bucket?.Results || bucket?.Sites || bucket?.Websites || bucket?.Domains || [];
+    if(Array.isArray(matches)){
+      for(const match of matches){
+        const domain = match?.Domain || match?.domain || match?.Site || match?.URL || match?.Url;
+        if(!domain) continue;
+        const url = /^https?:\/\//i.test(domain) ? domain : `https://${domain}`;
+        sites.push({
+          domain,
+          url,
+          title: match?.Title || match?.SiteTitle || normalizeDomainName(domain),
+          meta: match
+        });
+      }
+    }
+  }
+  return sites;
+}
+
+async function searchBuiltWithTechnologies(technologies = [], limit = 10){
+  const key = getBuiltWithKey();
+  if(!key || !technologies.length) return [];
+  const results = [];
+  for(const tech of technologies){
+    if(DRY_RUN){ dryNote(`BuiltWith fetch skipped for ${tech}`); continue; }
+    try{
+      const url = `https://api.builtwith.com/lists9/api.json?KEY=${encodeURIComponent(key)}&TECH=${encodeURIComponent(tech)}&COUNT=${encodeURIComponent(limit)}`;
+      const res = await fetch(url);
+      if(!res.ok){ console.warn(`BuiltWith API error ${res.status}`); continue; }
+      const data = await res.json();
+      const sites = extractBuiltWithSites(data).slice(0, limit);
+      for(const site of sites){
+        results.push({
+          source: 'builtwith',
+          name: site.title || normalizeDomainName(site.domain),
+          description: `Site using ${tech}`,
+          link: site.url,
+          tags: ['BuiltWith'],
+          metrics: { tech: tech, source: 'builtwith' },
+          reason: `BuiltWith technology match for ${tech}`
+        });
+      }
+    }catch(err){
+      console.warn('BuiltWith fetch failed:', err?.message || err);
+    }
+  }
+  return results;
+}
+
+// --- SimilarTech API ---
+function getSimilarTechKey(){
+  return String(process.env.SIMILARTECH_API_KEY||'').trim();
+}
+
+async function searchSimilarTechTechnologies(technologies = [], limit = 10){
+  const key = getSimilarTechKey();
+  if(!key || !technologies.length) return [];
+  const results = [];
+  for(const tech of technologies){
+    if(DRY_RUN){ dryNote(`SimilarTech fetch skipped for ${tech}`); continue; }
+    try{
+      const url = `https://api.similartech.com/v1/technologies/${encodeURIComponent(tech)}/websites?key=${encodeURIComponent(key)}&limit=${encodeURIComponent(limit)}`;
+      const res = await fetch(url);
+      if(!res.ok){ console.warn(`SimilarTech API error ${res.status}`); continue; }
+      const data = await res.json();
+      const sites = data?.results?.websites || data?.websites || [];
+      for(const site of sites.slice(0, limit)){
+        const domain = site?.domain || site?.url || site?.site || '';
+        if(!domain) continue;
+        const urlNorm = /^https?:\/\//i.test(domain) ? domain : `https://${domain}`;
+        results.push({
+          source: 'similartech',
+          name: site?.title || normalizeDomainName(domain),
+          description: site?.description || `Website detected with ${tech}`,
+          link: urlNorm,
+          tags: ['SimilarTech'],
+          metrics: { tech, rank: site?.rank },
+          reason: `SimilarTech detection for ${tech}`
+        });
+      }
+    }catch(err){
+      console.warn('SimilarTech fetch failed:', err?.message || err);
+    }
+  }
+  return results;
+}
+
+// --- Crunchbase API ---
+function getCrunchbaseKey(){
+  return String(process.env.CRUNCHBASE_USER_KEY||process.env.CRUNCHBASE_API_KEY||'').trim();
+}
+
+async function searchCrunchbaseOrganizations(queries = [], limit = 10){
+  const key = getCrunchbaseKey();
+  if(!key || !queries.length) return [];
+  const endpoint = `https://api.crunchbase.com/api/v4/searches/organizations?user_key=${encodeURIComponent(key)}`;
+  const results = [];
+  for(const term of queries){
+    if(DRY_RUN){ dryNote(`Crunchbase fetch skipped for ${term}`); continue; }
+    try{
+      const body = {
+        field_ids: ['identifier','name','short_description','profile_image_url','rank_org','permalink','homepage_url'],
+        order: [{ field_id: 'rank_org', sort: 'asc' }],
+        limit,
+        query: [
+          { type:'predicate', field_id:'organization_types', operator_id:'includes', values:['company'] },
+          { type:'predicate', field_id:'name', operator_id:'contains', values:[term] }
+        ]
+      };
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+        body: JSON.stringify(body)
+      });
+      if(!res.ok){ console.warn(`Crunchbase API error ${res.status}`); continue; }
+      const data = await res.json();
+      const entities = data?.entities || [];
+      for(const ent of entities){
+        const props = ent?.properties || {};
+        const name = props.name || ent?.identifier?.value;
+        const link = props.homepage_url || (ent?.identifier?.uuid ? `https://www.crunchbase.com/organization/${ent.identifier.uuid}` : '');
+        if(!name || !link) continue;
+        results.push({
+          source: 'crunchbase',
+          name,
+          description: props.short_description || '',
+          link,
+          iconUrl: props.profile_image_url,
+          tags: ['Crunchbase'],
+          metrics: { rank: props.rank_org, crunchbase: true },
+          reason: `Crunchbase company search for "${term}"`
+        });
+      }
+    }catch(err){
+      console.warn('Crunchbase fetch failed:', err?.message || err);
+    }
+  }
+  return results;
+}
+
+// --- Manual curated lists ---
+function listLabel(entry){
+  if(typeof entry === 'string') return entry;
+  if(entry?.label) return entry.label;
+  if(entry?.name) return entry.name;
+  if(entry?.path) return entry.path;
+  if(entry?.url) return entry.url;
+  return 'manual list';
+}
+
+async function readManualListData(entry){
+  if(Array.isArray(entry?.items)) return entry.items;
+  if(entry?.inline && Array.isArray(entry.inline)) return entry.inline;
+  if(entry?.url){
+    if(DRY_RUN){ dryNote(`Manual list url skipped: ${entry.url}`); return []; }
+    try{
+      const res = await fetch(entry.url);
+      if(!res.ok){ console.warn(`Manual list URL error ${res.status}`); return []; }
+      const text = await res.text();
+      try{ return JSON.parse(text); }catch{
+        return text.split(/\r?\n/).map(line=>line.trim()).filter(Boolean).map(line=>{
+          const [name, link, description] = line.split('|').map(part=>part?.trim());
+          if(!name || !link) return null;
+          return { name, link, description };
+        }).filter(Boolean);
+      }
+    }catch(err){
+      console.warn('Manual list fetch failed:', err?.message || err);
+      return [];
+    }
+  }
+  const pathValue = typeof entry === 'string' ? entry : entry?.path;
+  if(pathValue){
+    const abs = path.isAbsolute(pathValue) ? pathValue : path.join(root, pathValue);
+    try{
+      const text = await fs.readFile(abs, 'utf8');
+      try{ return JSON.parse(text); }catch{
+        return text.split(/\r?\n/).map(line=>line.trim()).filter(Boolean).map(line=>{
+          const [name, link, description] = line.split('|').map(part=>part?.trim());
+          if(!name || !link) return null;
+          return { name, link, description };
+        }).filter(Boolean);
+      }
+    }catch(err){
+      console.warn('Manual list file load failed:', err?.message || err);
+      return [];
+    }
+  }
+  return [];
+}
+
+async function loadManualLists(entries = []){
+  if(!entries.length) return [];
+  const results = [];
+  for(const entryRaw of entries){
+    const entry = typeof entryRaw === 'string' ? { path: entryRaw } : entryRaw || {};
+    const label = listLabel(entryRaw);
+    const limit = Number(entry.limit || entry.count || 50);
+    const items = await readManualListData(entry);
+    if(!Array.isArray(items) || !items.length) continue;
+    for(const item of items.slice(0, limit)){
+      if(!item || !item.name || !item.link) continue;
+      results.push({
+        source: entry.source || 'manual',
+        name: String(item.name),
+        description: item.description || entry.description || 'Curated list pick',
+        link: String(item.link),
+        tags: Array.isArray(item.tags) && item.tags.length ? item.tags : (Array.isArray(entry.tags) ? entry.tags : ['Curated']),
+        metrics: { list: label },
+        reason: item.reason || entry.reason || `Manual list: ${label}`
+      });
+    }
+  }
+  return results;
+}
+
 // --- Aixploria category scraping ---
 async function fetchAixploriaCategory(catUrl, perPageLimit=40){
   if(DRY_RUN){ dryNote(`Aixploria fetch skipped: ${catUrl}`); return []; }
@@ -680,14 +1060,18 @@ function chooseBest(cands){
     // De-emphasize traction; primarily prefer curated and directory picks
     let score = 0;
     // Strongly prefer curated items in ranking so they are considered in global selection
-    if(String(c.source).toLowerCase() === 'curated') score += 1_000_000;
+    const src = String(c.source).toLowerCase();
+    if(src === 'curated' || src === 'manual' || src === 'manual-list') score += 1_000_000;
     // Prefer verified/featured picks from Aixploria directory
-    if(String(c.source).toLowerCase() === 'aixploria'){
+    if(src === 'aixploria'){
       if(c.metrics?.aixploria?.verified) score += 100_000;
       if(c.metrics?.aixploria?.featured) score += 50_000;
       // Base boost so directory items surface even with limited other metrics
       score += 20_000;
     }
+    if(src === 'producthunt') score += 80_000;
+    if(src === 'crunchbase') score += 60_000;
+    if(src === 'builtwith' || src === 'similartech') score += 40_000;
     return { ...c, _score: score };
   }).sort((a,b)=>b._score - a._score);
   return withScore;
@@ -701,11 +1085,70 @@ function dedupeByName(items){
   });
 }
 
+function isCuratedSource(source){
+  const s = String(source||'').toLowerCase();
+  return s === 'curated' || s === 'manual' || s === 'manual-list';
+}
+
+function getRelaxOptions(slug, cfg = {}){
+  const relaxCfg = cfg.relax || {};
+  const envOr = (key, fallback) => getEnvOverride(slug, key, getEnvOverride(null, key, fallback));
+  const maxPassesRaw = envOr('RELAX_MAX_PASSES', relaxCfg.maxPasses ?? RELAX_DEFAULTS.maxPasses);
+  const minScoreRaw = envOr('RELAX_MIN_SCORE', relaxCfg.minScore ?? RELAX_DEFAULTS.minScore);
+  const allowUnknownRaw = envOr('RELAX_ALLOW_UNKNOWN', relaxCfg.allowUnknown ?? RELAX_DEFAULTS.allowUnknown);
+  const scaleBaseRaw = envOr('RELAX_SCALE_BASE', relaxCfg.scaleBase ?? RELAX_DEFAULTS.scaleBase);
+  const githubPerCapRaw = envOr('RELAX_GITHUB_PER_CAP', relaxCfg.githubPerCap ?? RELAX_DEFAULTS.githubPerCap);
+  const githubStarsFloorRaw = envOr('RELAX_GITHUB_STARS_FLOOR', relaxCfg.githubStarsFloor ?? RELAX_DEFAULTS.githubStarsFloor);
+  const npmSizeCapRaw = envOr('RELAX_NPM_SIZE_CAP', relaxCfg.npmSizeCap ?? RELAX_DEFAULTS.npmSizeCap);
+  const hnHitsBaseRaw = envOr('RELAX_HN_HITS_BASE', relaxCfg.hnHitsBase ?? RELAX_DEFAULTS.hnHitsBase);
+  const hnHitsCapRaw = envOr('RELAX_HN_HITS_CAP', relaxCfg.hnHitsCap ?? RELAX_DEFAULTS.hnHitsCap);
+  const hnPointsFloorRaw = envOr('RELAX_HN_POINTS_FLOOR', relaxCfg.hnPointsFloor ?? RELAX_DEFAULTS.hnPointsFloor);
+  const hnDaysCapRaw = envOr('RELAX_HN_DAYS_CAP', relaxCfg.hnDaysCap ?? RELAX_DEFAULTS.hnDaysCap);
+  const aixMultiplierRaw = envOr('RELAX_AIX_MULTIPLIER', relaxCfg.aixMultiplier ?? RELAX_DEFAULTS.aixMultiplier);
+  const aixSizeCapRaw = envOr('RELAX_AIX_SIZE_CAP', relaxCfg.aixSizeCap ?? RELAX_DEFAULTS.aixSizeCap);
+  const sampleLimitRaw = envOr('RELAX_SAMPLE_LIMIT', relaxCfg.sampleLimit ?? RELAX_DEFAULTS.sampleLimit);
+
+  const maxPasses = Math.max(0, Math.floor(numberOr(maxPassesRaw, RELAX_DEFAULTS.maxPasses)));
+  const minScore = numberOr(minScoreRaw, RELAX_DEFAULTS.minScore);
+  const allowUnknown = boolOr(allowUnknownRaw, RELAX_DEFAULTS.allowUnknown);
+  const scaleBase = Math.max(1, numberOr(scaleBaseRaw, RELAX_DEFAULTS.scaleBase));
+  const githubPerCap = Math.max(5, numberOr(githubPerCapRaw, RELAX_DEFAULTS.githubPerCap));
+  const githubStarsFloor = Math.max(1, numberOr(githubStarsFloorRaw, RELAX_DEFAULTS.githubStarsFloor));
+  const npmSizeCap = Math.max(5, numberOr(npmSizeCapRaw, RELAX_DEFAULTS.npmSizeCap));
+  const hnHitsBase = Math.max(1, numberOr(hnHitsBaseRaw, RELAX_DEFAULTS.hnHitsBase));
+  const hnHitsCap = Math.max(hnHitsBase, numberOr(hnHitsCapRaw, RELAX_DEFAULTS.hnHitsCap));
+  const hnPointsFloor = Math.max(1, numberOr(hnPointsFloorRaw, RELAX_DEFAULTS.hnPointsFloor));
+  const hnDaysCap = Math.max(1, numberOr(hnDaysCapRaw, RELAX_DEFAULTS.hnDaysCap));
+  const aixMultiplier = Math.max(1, numberOr(aixMultiplierRaw, RELAX_DEFAULTS.aixMultiplier));
+  const aixSizeCap = Math.max(5, numberOr(aixSizeCapRaw, RELAX_DEFAULTS.aixSizeCap));
+  const sampleLimit = Math.max(0, Math.floor(numberOr(sampleLimitRaw, RELAX_DEFAULTS.sampleLimit)));
+
+  return {
+    maxPasses,
+    minScore,
+    allowUnknown,
+    scaleBase,
+    githubPerCap,
+    githubStarsFloor,
+    npmSizeCap,
+    hnHitsBase,
+    hnHitsCap,
+    hnPointsFloor,
+    hnDaysCap,
+    aixMultiplier,
+    aixSizeCap,
+    sampleLimit
+  };
+}
+
 function isLikelyAITool(item, domainSlug){
   const name = (item.name||'').toLowerCase();
   const desc = (item.description||'').toLowerCase();
   const link = (item.link||'').toLowerCase();
   const source = (item.source||'').toLowerCase();
+  const host = getHostname(item.link||'');
+  const includes = (needles)=>needles.some(k=> name.includes(k) || desc.includes(k));
+  const hasHostAi = host.endsWith('.ai') || /\.ai\//.test(link);
   // Exclude obvious non-products or non-AI
   const banned = [
     'awesome', 'awesome-', 'list of', 'torrent', 'downloader', 'youtube-dl', 'ytdl',
@@ -714,8 +1157,10 @@ function isLikelyAITool(item, domainSlug){
   ];
   if(banned.some(b=> name.includes(b) || desc.includes(b) || link.includes(b))) return false;
   // Positive AI signals
-  const aiSignals = [' ai', 'gpt', 'ml', 'machine learning', 'deep learning', 'diffusion', 'transformer', 'llm', 'language model', 'rag'];
-  const hasAISignal = aiSignals.some(k => name.includes(k.trim()) || desc.includes(k));
+  const aiSignals = [' ai', 'gpt', 'ml', 'machine learning', 'deep learning', 'diffusion', 'transformer', 'llm', 'language model', 'rag',
+    'gen ai', 'generative', 'copilot', 'autonomous agents', 'ai-powered', 'ai powered', 'ai-driven', 'ai driven',
+    'intelligent automation', 'predictive ai', 'ai assistant'];
+  const hasAISignal = aiSignals.some(k => name.includes(k.trim()) || desc.includes(k) || link.includes(k.trim()));
   // HN items must include explicit AI signals to avoid generic popular posts
   if(source === 'hn' && !hasAISignal) return false;
   // Domain-specific requirements
@@ -723,81 +1168,113 @@ function isLikelyAITool(item, domainSlug){
   if(dom === 'video-tools'){
     const vid = desc.includes('video') || name.includes('video');
     const gen = ['text-to-video','video generation','avatar','lip sync','subtitle','rotoscoping'].some(k=> desc.includes(k) || name.includes(k));
-    return vid && (gen || hasAISignal);
+    return vid && (gen || hasAISignal || hasHostAi);
   }
   if(dom === 'language-chat'){
-    const chat = ['chat','assistant','llm','language model','gpt','rag'].some(k=> name.includes(k) || desc.includes(k));
-    return chat || hasAISignal;
+    const chat = ['chat','assistant','llm','language model','gpt','rag','conversation','dialogue'].some(k=> name.includes(k) || desc.includes(k));
+    return chat || hasAISignal || hasHostAi;
   }
   if(dom === 'most-popular'){
-    return hasAISignal || ['platform','assistant','agent','copilot','studio'].some(k=> name.includes(k) || desc.includes(k));
+    return hasAISignal || includes(['platform','assistant','agent','copilot','studio']) || hasHostAi;
   }
   if(dom === 'image-generation'){
-    const img = name.includes('image') || desc.includes('image') || desc.includes('diffusion') || desc.includes('stable diffusion');
-    return img && (hasAISignal || desc.includes('diffusion') || desc.includes('controlnet'));
+    const img = includes(['image','visual','photo','art','design']) || desc.includes('diffusion') || desc.includes('stable diffusion');
+    return img && (hasAISignal || desc.includes('diffusion') || desc.includes('controlnet') || hasHostAi);
   }
   if(dom === 'code-assistance'){
-    const codey = ['code','coding','programming','refactor','autocomplete','copilot','lint','debug'].some(k=> name.includes(k) || desc.includes(k));
-    return codey || hasAISignal;
+    const codey = includes(['code','coding','programming','developer','ide','autocomplete','copilot','lint','debug']);
+    return codey || hasAISignal || hasHostAi;
   }
   if(dom === 'audio-music'){
-    const au = ['audio','voice','speech','tts','music','song','synthesis','cloning'].some(k=> name.includes(k) || desc.includes(k));
-    return au && hasAISignal;
+    const au = includes(['audio','voice','speech','tts','music','song','synthesis','cloning','podcast']);
+    return au && (hasAISignal || includes(['studio','generator','synthesizer','convert','clone']) || hasHostAi);
   }
   if(dom === 'productivity'){
-    const prod = ['meeting','notes','calendar','email','document','summary','transcript','todo','assistant'].some(k=> name.includes(k) || desc.includes(k));
-    return prod && hasAISignal;
+    const prod = includes(['meeting','notes','calendar','email','document','summary','transcript','todo','assistant','workspace','knowledge base','project']);
+    return prod && (hasAISignal || includes(['automation','copilot','planner','organizer','summarize','smart','intelligent','workflow']) || hasHostAi);
   }
   if(dom === 'design-tools'){
-    const des = ['design','figma','ui','ux','logo','mockup','wireframe','upscale','inpaint'].some(k=> name.includes(k) || desc.includes(k));
-    return des && hasAISignal;
+    const des = includes(['design','figma','ui','ux','logo','mockup','wireframe','upscale','inpaint','proto']);
+    return des && (hasAISignal || includes(['generator','assistant','copilot','automate','render']) || hasHostAi);
   }
   if(dom === 'research'){
-    const res = ['paper','pdf','citation','summarization','literature','arxiv','semantic'].some(k=> name.includes(k) || desc.includes(k));
-    return res && hasAISignal;
+    const res = includes(['paper','pdf','citation','summarization','literature','arxiv','semantic','research','knowledge']);
+    return res && (hasAISignal || includes(['review','analyze','summarize','synthesize']) || hasHostAi);
   }
   if(dom === 'marketing-seo'){
-    const mkt = ['seo','keyword','ad','campaign','copy','content'].some(k=> name.includes(k) || desc.includes(k));
-    return mkt && hasAISignal;
+    const mkt = includes(['seo','keyword','ad','campaign','copy','content','growth','marketing','brand']);
+    return mkt && (hasAISignal || includes(['automation','generator','assistant','optimize','optimizer','writer','studio','copilot','personalize']) || hasHostAi);
   }
   if(dom === 'data-analysis' || dom === 'data-analytics'){
-    const data = ['sql','data','pandas','notebook','analysis','etl','bi','chart','visualization','insight','vector'].some(k=> name.includes(k) || desc.includes(k));
-    return data && hasAISignal;
+    const data = includes(['sql','data','pandas','notebook','analysis','etl','bi','chart','visualization','insight','vector','analytics']);
+    return data && (hasAISignal || includes(['automation','assistant','copilot','insight','predict','forecast']) || hasHostAi);
   }
   if(dom === '3d-modeling'){
-    const threed = ['3d','nerf','gaussian','mesh','sdf','splatting','render','blender'].some(k=> name.includes(k) || desc.includes(k));
-    return threed && hasAISignal;
+    const threed = includes(['3d','nerf','gaussian','mesh','sdf','splatting','render','blender','asset']);
+    return threed && (hasAISignal || includes(['generate','convert','model','creator']) || hasHostAi);
   }
   if(dom === 'ethical-ai' || dom === 'ai-safety-ethics'){
-    const safe = ['safety','guardrail','bias','fairness','privacy','interpretability','red team','jailbreak','toxicity'].some(k=> name.includes(k) || desc.includes(k));
-    return safe;
+    const safe = includes(['safety','guardrail','bias','fairness','privacy','interpretability','red team','jailbreak','toxicity','alignment']);
+    return safe || hasAISignal || hasHostAi;
   }
   if(dom === 'education'){
-    const edu = ['tutor','quiz','flashcard','learn','course','student','teacher'].some(k=> name.includes(k) || desc.includes(k));
-    return edu && hasAISignal;
+    const edu = includes(['tutor','quiz','flashcard','learn','course','student','teacher','lesson','homework','study','assessment']);
+    return edu && (hasAISignal || includes(['adaptive','personalized','assistant','automated','generator','coach']) || hasHostAi);
   }
   if(dom === 'crypto'){
-    const c = ['crypto','defi','trading','blockchain'].some(k=> name.includes(k) || desc.includes(k));
-    return c && hasAISignal;
+    const c = includes(['crypto','defi','trading','blockchain','web3','token']);
+    return c && (hasAISignal || includes(['bot','agent','automation','signal','copilot']) || hasHostAi);
   }
   if(dom === 'prompt-enhancers'){
-    const p = ['prompt','few-shot','template','jailbreak','guardrails','system prompt'].some(k=> name.includes(k) || desc.includes(k));
-    return p || hasAISignal;
+    const p = includes(['prompt','few-shot','template','jailbreak','guardrails','system prompt','prompting']);
+    return p || hasAISignal || hasHostAi;
   }
   if(dom === 'most-famous-agentic-ais'){
-    const ag = ['agent','autogpt','babyagi','multi-agent','crew'].some(k=> name.includes(k) || desc.includes(k));
-    return ag || hasAISignal;
+    const ag = includes(['agent','autogpt','babyagi','multi-agent','crew','autonomous','planner']);
+    return ag || hasAISignal || hasHostAi;
   }
   if(dom === 'workflow-automation'){
-    const wf = ['workflow','automation','orchestration','pipeline','zapier','n8n'].some(k=> name.includes(k) || desc.includes(k));
-    return wf && hasAISignal;
+    const wf = includes(['workflow','automation','orchestration','pipeline','zapier','n8n','playbook','runbook','integration']);
+    return wf && (hasAISignal || includes(['builder','assistant','copilot','compose','automate','trigger','integration']) || hasHostAi);
   }
   if(dom === 'search-knowledge-discovery'){
-    const s = ['search','semantic','vector','rag','knowledge','qa','retrieval'].some(k=> name.includes(k) || desc.includes(k));
-    return s && hasAISignal;
+    const s = includes(['search','semantic','vector','rag','knowledge','qa','retrieval','discovery','answer']);
+    return s && (hasAISignal || includes(['assistant','copilot','automation','insight','index']) || hasHostAi);
   }
-  // Default: require any AI signal
-  return hasAISignal;
+  if(dom === 'sales-crm'){
+    const sales = includes(['sales','crm','pipeline','deal','lead','prospect','revenue','account','seller']);
+    return sales && (hasAISignal || includes(['assistant','automation','copilot','predict','forecast','insight','scoring']) || hasHostAi);
+  }
+  if(dom === 'customer-support-chatbots'){
+    const support = includes(['support','chatbot','helpdesk','contact center','ticket','support agent','knowledge base']);
+    return support && (hasAISignal || includes(['automation','assistant','answer','resolve','self-service','deflection','copilot','routing']) || hasHostAi);
+  }
+  if(dom === 'social-media-content'){
+    const social = includes(['social','instagram','tiktok','facebook','twitter','linkedin','caption','scheduler','post','content']);
+    return social && (hasAISignal || includes(['generator','automation','assistant','planner','calendar','copilot','optimize']) || hasHostAi);
+  }
+  if(dom === 'legal-compliance'){
+    const legal = includes(['legal','contract','agreement','privacy','compliance','policy','governance','risk']);
+    return legal && (hasAISignal || includes(['review','analysis','automation','copilot','assistant','draft','clause']) || hasHostAi);
+  }
+  if(dom === 'finance-accounting'){
+    const finance = includes(['finance','accounting','bookkeeping','invoice','payable','receivable','forecast','cashflow','expense']);
+    return finance && (hasAISignal || includes(['automation','reconcile','close','copilot','insight','assistant','predict']) || hasHostAi);
+  }
+  if(dom === 'healthcare-medical-ai'){
+    const health = includes(['health','medical','ehr','patient','clinic','radiology','diagnostic','care','provider']);
+    return health && (hasAISignal || includes(['assistant','scribe','automation','copilot','predict','insight','triage']) || hasHostAi);
+  }
+  if(dom === 'hr-recruitment'){
+    const hr = includes(['recruit','talent','candidate','resume','hiring','hr','people','employee','onboarding']);
+    return hr && (hasAISignal || includes(['assistant','automation','match','score','copilot','screen','shortlist']) || hasHostAi);
+  }
+  if(dom === 'cybersecurity'){
+    const sec = includes(['security','threat','malware','phishing','siem','incident','soc','vulnerability','attack']);
+    return sec && (hasAISignal || includes(['detect','prevent','monitor','assistant','copilot','response','automated','intel']) || hasHostAi);
+  }
+  // Default: require a strong AI hint or AI-branded host
+  return hasAISignal || hasHostAi;
 }
 
 function toToolShape(item){
@@ -869,7 +1346,8 @@ async function main(){
     strict: strictMode,
     hasGSBKey,
     domains: {},
-    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStops: 0 }
+    totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStops: 0, relax: { triggered: 0, passes: 0, added: 0, considered: 0 } },
+    relaxSamples: []
   };
   // Global candidate pool to allow selecting top-N across all domains
   const globalCandidates = [];
@@ -885,15 +1363,41 @@ async function main(){
   diag.domains[slug] = diag.domains[slug] || { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStop: false };
     const perPage = Number(cfg.githubPerPage || 5);
   const starsMin = Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500));
-    const npmSize = Number(cfg.npmSize || 5);
+  const npmSize = Math.max(0, Number(cfg.npmSize ?? 0));
+  const shouldSearchNpm = !DISABLE_NPM_DISCOVERY && Array.isArray(cfg.npmQueries) && cfg.npmQueries.length && npmSize > 0;
     const maxAdds = Number(cfg.maxAdds || 2);
     const results = [];
     for(const q of cfg.githubQueries||[]){ results.push(...await searchGithubRepos(q, perPage, starsMin)); }
-    for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
+    if(shouldSearchNpm){
+      for(const q of cfg.npmQueries||[]){ results.push(...await searchNpm(q, npmSize)); }
+    }
     for(const q of (cfg.hnQueries||[])){
       const hnPtsMin = Number(getEnvOverride(slug,'HN_POINTS_MIN', getEnvOverride(null,'HN_POINTS_MIN', 100)));
       const hnDays = Number(getEnvOverride(slug,'HN_RECENT_DAYS', getEnvOverride(null,'HN_RECENT_DAYS', 14)));
       results.push(...await searchHN(q, 5, hnPtsMin, hnDays));
+    }
+    if(Array.isArray(cfg.productHuntQueries) && cfg.productHuntQueries.length){
+      const phLimit = Number(getEnvOverride(slug,'PRODUCT_HUNT_LIMIT', cfg.productHuntLimit || 6));
+      results.push(...await searchProductHuntPosts(cfg.productHuntQueries, phLimit));
+    }
+    if(Array.isArray(cfg.productHuntTopics) && cfg.productHuntTopics.length){
+      const phTopicLimit = Number(getEnvOverride(slug,'PRODUCT_HUNT_TOPIC_LIMIT', cfg.productHuntTopicLimit || 5));
+      results.push(...await searchProductHuntTopics(cfg.productHuntTopics, phTopicLimit));
+    }
+    if(Array.isArray(cfg.builtWithTechnologies) && cfg.builtWithTechnologies.length){
+      const bwLimit = Number(getEnvOverride(slug,'BUILTWITH_LIMIT', cfg.builtWithLimit || 10));
+      results.push(...await searchBuiltWithTechnologies(cfg.builtWithTechnologies, bwLimit));
+    }
+    if(Array.isArray(cfg.similarTechTechnologies) && cfg.similarTechTechnologies.length){
+      const stLimit = Number(getEnvOverride(slug,'SIMILARTECH_LIMIT', cfg.similarTechLimit || 10));
+      results.push(...await searchSimilarTechTechnologies(cfg.similarTechTechnologies, stLimit));
+    }
+    if(Array.isArray(cfg.crunchbaseQueries) && cfg.crunchbaseQueries.length){
+      const cbLimit = Number(getEnvOverride(slug,'CRUNCHBASE_LIMIT', cfg.crunchbaseLimit || 10));
+      results.push(...await searchCrunchbaseOrganizations(cfg.crunchbaseQueries, cbLimit));
+    }
+    if(Array.isArray(cfg.manualLists) && cfg.manualLists.length){
+      results.push(...await loadManualLists(cfg.manualLists));
     }
     // Resolve Aixploria categories: combine manual list + auto-discovered by keywords
     let aixCategories = Array.isArray(cfg.aixploriaCategories) ? [...cfg.aixploriaCategories] : [];
@@ -971,7 +1475,7 @@ async function main(){
     if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
     if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
     // Curated entries bypass AI-signal heuristic (still subject to reliability checks)
-    if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
+  if(!isCuratedSource(cand.source) && !isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
     // Prefer reliable sources/domains for the link itself
     const host = getHostname(cand.link);
     const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
@@ -1069,8 +1573,15 @@ async function main(){
     const aixPool = domainAixPool.get(slug) || [];
     const filler = [];
     const capTarget = perDomainTargets.get(slug) ?? minPer;
+    const relaxOpts = getRelaxOptions(slug, cfg);
     // Track relax diagnostics
-    const relaxDiag = { passes: 0, added: 0 };
+    const relaxDiag = {
+      passes: 0,
+      added: 0,
+      considered: 0,
+      settings: { maxPasses: relaxOpts.maxPasses, minScore: relaxOpts.minScore, allowUnknown: relaxOpts.allowUnknown },
+      samples: []
+    };
     // helper to check duplicates quickly
     const isDupName = (nm) => {
       const k = normalizeKey(nm);
@@ -1097,7 +1608,7 @@ async function main(){
     const envStrict = getEnvOverride(slug,'AIXPLORIA_STRICT', undefined);
     const aixMode = (envStrict !== undefined ? envStrict : (cfg.aixploriaStrict ?? ((Array.isArray(cfg.aixploriaCategories) || Array.isArray(cfg.aixploriaAutoCategories)) ? 'soft' : false)));
     const aixHard = (aixMode === 'hard');
-    if((cur + filler.length) < minPer && !aixHard){
+    if((cur + filler.length) < minPer && !aixHard && relaxOpts.maxPasses > 0){
       const allPool = domainAllPool.get(slug) || [];
       for(const cand of allPool){
         if(filler.length + cur >= Math.min(minPer, capTarget)) break;
@@ -1114,7 +1625,8 @@ async function main(){
         if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
         if(PACKAGE_HOSTS.has(host)) continue;
         // Page classification and acceptance
-        if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) continue;
+        if(!isCuratedSource(cand.source) && !isLikelyAITool(cand, slug)) continue;
+        relaxDiag.considered++;
         const classif = await classifyCandidate(cand, slug);
         if(!classif.isTool) continue;
         const inDirs = inDirectoryConsensus(cand, dirSets);
@@ -1135,30 +1647,33 @@ async function main(){
       }
     }
     // Relaxed iteration: if still below min, fetch more candidates with lowered thresholds and accept with relaxed criteria
-    if((cur + filler.length) < minPer && !aixHard){
-      const relaxMaxPasses = Number(getEnvOverride(slug,'RELAX_MAX_PASSES', getEnvOverride(null,'RELAX_MAX_PASSES', 2)));
-      const perPage = Number(cfg.githubPerPage || 5);
-      const starsMin = Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500));
-      const npmSize = Number(cfg.npmSize || 5);
-      const hnPtsMinBase = Number(getEnvOverride(slug,'HN_POINTS_MIN', getEnvOverride(null,'HN_POINTS_MIN', 100)));
-      const hnDaysBase = Number(getEnvOverride(slug,'HN_RECENT_DAYS', getEnvOverride(null,'HN_RECENT_DAYS', 14)));
-      const relaxAllowUnknown = Boolean(getEnvOverride(slug,'RELAX_ALLOW_UNKNOWN', getEnvOverride(null,'RELAX_ALLOW_UNKNOWN', true)));
-      const relaxMinScore = Number(getEnvOverride(slug,'RELAX_MIN_SCORE', getEnvOverride(null,'RELAX_MIN_SCORE', 1)));
-      for(let pass=0; pass<relaxMaxPasses && (cur + filler.length) < minPer; pass++){
+    if((cur + filler.length) < minPer && !aixHard && relaxOpts.maxPasses > 0){
+      const perPage = Math.max(1, Number(cfg.githubPerPage || 5));
+      const starsMin = Math.max(1, Number(getEnvOverride(slug,'GITHUB_STARS_MIN', cfg.githubStarsMin || 500)));
+  const baseNpmSize = Math.max(0, Number(cfg.npmSize ?? 0));
+      const hnPtsMinBase = Math.max(1, Number(getEnvOverride(slug,'HN_POINTS_MIN', getEnvOverride(null,'HN_POINTS_MIN', 100))));
+      const hnDaysBase = Math.max(1, Number(getEnvOverride(slug,'HN_RECENT_DAYS', getEnvOverride(null,'HN_RECENT_DAYS', 14))));
+      const baseAixSize = Math.max(5, Number(getEnvOverride(slug,'AIXPLORIA_SIZE', cfg.aixploriaSize||30)));
+      for(let pass=0; pass<relaxOpts.maxPasses && (cur + filler.length) < minPer; pass++){
         relaxDiag.passes++;
         // progressively relax
-        const ghPer = Math.min(20, perPage * (2+pass));
-        const ghStars = Math.max(20, Math.floor(starsMin / (2+pass)));
-        const npmSz = Math.min(30, npmSize * (2+pass));
-        const hnPts = Math.max(50, Math.floor(hnPtsMinBase / (2+pass)));
-        const hnDays = Math.min(60, hnDaysBase * (2+pass));
+        const scale = Math.max(1, relaxOpts.scaleBase + pass);
+        const ghPer = Math.min(relaxOpts.githubPerCap, Math.round(perPage * scale));
+        const ghStars = Math.max(relaxOpts.githubStarsFloor, Math.floor(starsMin / scale));
+  const shouldSearchNpmRelax = !DISABLE_NPM_DISCOVERY && Array.isArray(cfg.npmQueries) && cfg.npmQueries.length && baseNpmSize > 0;
+  const npmSz = shouldSearchNpmRelax ? Math.min(relaxOpts.npmSizeCap, Math.round(Math.max(1, baseNpmSize) * scale)) : 0;
+        const hnHits = Math.min(relaxOpts.hnHitsCap, Math.round(relaxOpts.hnHitsBase * scale));
+        const hnPts = Math.max(relaxOpts.hnPointsFloor, Math.floor(hnPtsMinBase / scale));
+        const hnDays = Math.min(relaxOpts.hnDaysCap, Math.round(hnDaysBase * scale));
         const newResults = [];
         for(const q of cfg.githubQueries||[]){ newResults.push(...await searchGithubRepos(q, ghPer, ghStars)); }
-        for(const q of cfg.npmQueries||[]){ newResults.push(...await searchNpm(q, npmSz)); }
-        for(const q of (cfg.hnQueries||[])){ newResults.push(...await searchHN(q, 10, hnPts, hnDays)); }
+        if(shouldSearchNpmRelax){
+          for(const q of cfg.npmQueries||[]){ newResults.push(...await searchNpm(q, npmSz)); }
+        }
+        for(const q of (cfg.hnQueries||[])){ newResults.push(...await searchHN(q, hnHits, hnPts, hnDays)); }
         // Optionally expand Aixploria fetch size in relaxed pass
         if(Array.isArray(cfg.aixploriaCategories) && cfg.aixploriaCategories.length){
-          const sizeFallback = Number(getEnvOverride(slug,'AIXPLORIA_SIZE_RELAXED', (cfg.aixploriaSize||30) * (2+pass)));
+          const sizeFallback = Math.max(5, Math.min(relaxOpts.aixSizeCap, Math.round(baseAixSize * Math.max(1, relaxOpts.aixMultiplier + pass))));
           try{ newResults.push(...await searchAixploriaCategories(cfg.aixploriaCategories, sizeFallback)); }catch{}
         }
         // Merge into allPool, dedupe by name
@@ -1184,22 +1699,43 @@ async function main(){
           if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
           if(PACKAGE_HOSTS.has(host)) continue;
           if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(normalizeKey(cand.name))) continue;
-          if(cand.source !== 'curated' && !isLikelyAITool(cand, slug)) continue;
+          if(!isCuratedSource(cand.source) && !isLikelyAITool(cand, slug)) continue;
+          relaxDiag.considered++;
           const classif = await classifyCandidate(cand, slug);
           // relaxed acceptance: allow lower score threshold OR isTool
           const inDirs = inDirectoryConsensus(cand, dirSets);
-          const enoughSignals = classif.isTool || (typeof classif.score === 'number' && classif.score >= relaxMinScore);
+          const enoughSignals = classif.isTool || (typeof classif.score === 'number' && classif.score >= relaxOpts.minScore);
           if(!(inDirs || enoughSignals)) continue;
           const reliability = await assessReliability(cand);
           if(reliability.verdict === 'risky') continue;
           const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
-          if(strict && reliability.verdict !== 'safe' && !relaxAllowUnknown) continue;
+          if(strict && reliability.verdict !== 'safe' && !relaxOpts.allowUnknown) continue;
           filler.push({ cand, slug, reliability });
           relaxDiag.added++;
+          if(relaxOpts.sampleLimit > 0 && Array.isArray(relaxDiag.samples) && relaxDiag.samples.length < relaxOpts.sampleLimit){
+            relaxDiag.samples.push({
+              name: cand.name,
+              source: cand.source,
+              reliability: reliability.verdict,
+              score: typeof classif.score === 'number' ? classif.score : null,
+              reason: cand.reason,
+              link: cand.link
+            });
+          }
         }
       }
-      // Attach relax diagnostics
-      diag.domains[slug].relax = relaxDiag;
+    }
+    // Attach relax diagnostics and aggregate totals
+    diag.domains[slug].relax = relaxDiag;
+    if(relaxDiag.passes > 0) diag.totals.relax.triggered += 1;
+    diag.totals.relax.passes += relaxDiag.passes;
+    diag.totals.relax.added += relaxDiag.added;
+    diag.totals.relax.considered += relaxDiag.considered;
+    if(Array.isArray(relaxDiag.samples) && relaxDiag.samples.length){
+      for(const sample of relaxDiag.samples){
+        if(diag.relaxSamples.length >= Math.max(RELAX_GLOBAL_SAMPLE_LIMIT, RELAX_DEFAULTS.sampleLimit)) break;
+        diag.relaxSamples.push({ domain: slug, ...sample });
+      }
     }
     // Stage filler items
     for(const {cand, reliability} of filler){

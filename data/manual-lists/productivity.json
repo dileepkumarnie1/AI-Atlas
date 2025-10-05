@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Motion AI",
+    "link": "https://www.usemotion.com/ai",
+    "description": "Intelligent scheduling assistant that plans your day automatically",
+    "tags": ["Subscription"],
+    "reason": "Popular AI time-blocking copilot"
+  },
+  {
+    "name": "Sembly AI",
+    "link": "https://www.sembly.ai",
+    "description": "AI meeting assistant with smart summaries and action items",
+    "tags": ["Freemium"],
+    "reason": "Consistent market leader in meeting intelligence"
+  },
+  {
+    "name": "Supernormal",
+    "link": "https://supernormal.com",
+    "description": "Auto-generated meeting notes for Google Meet, Zoom, and Teams",
+    "tags": ["Freemium"],
+    "reason": "High retention productivity app"
+  },
+  {
+    "name": "Ellie AI",
+    "link": "https://ellieai.com",
+    "description": "AI email assistant that drafts thoughtful replies",
+    "tags": ["Freemium"],
+    "reason": "Personalized email copilot"
+  },
+  {
+    "name": "Reflect Notes",
+    "link": "https://reflect.app",
+    "description": "Lightweight AI-linked note taking and spaced repetition",
+    "tags": ["Subscription"],
+    "reason": "Beloved by PKM community"
+  }
+]

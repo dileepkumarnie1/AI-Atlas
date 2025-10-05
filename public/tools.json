@@ -2300,6 +2300,8 @@
         ]
       },
       {
+        "_commentedOut": true,
+        "_comment": "NPM package source disabled",
         "name": "cc-model-switcher",
         "description": "A simple CLI tool to switch Claude Code AI models easily",
         "link": "https://www.npmjs.com/package/cc-model-switcher",
@@ -2312,6 +2314,8 @@
         "iconUrl": "https://www.npmjs.com/favicon.ico"
       },
       {
+        "_commentedOut": true,
+        "_comment": "NPM package source disabled",
         "name": "claude-forge",
         "description": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
         "link": "https://www.npmjs.com/package/claude-forge",
