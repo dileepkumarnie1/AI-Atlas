@@ -2003,7 +2003,8 @@
         "about": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Pictory",
@@ -2219,7 +2220,8 @@
         "about": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@openctx/provider-linear-issues",
@@ -2231,7 +2233,8 @@
         "about": "Linear Issues context for code AI and editors (OpenCtx provider)",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@usgupta/circuitware-cli",
@@ -2243,7 +2246,8 @@
         "about": "Circuitware Code - AI-powered command-line workflow tool",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@usgupta/circuitware-code",
@@ -2255,7 +2259,8 @@
         "about": "Circuitware Code - AI-powered command-line workflow tool",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Amazon CodeWhisperer",
@@ -2664,7 +2669,8 @@
         "about": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@kajidog/aivis-cloud-cli",
@@ -2676,7 +2682,8 @@
         "about": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@lobehub/chat",
@@ -2688,7 +2695,8 @@
         "about": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Adobe Podcast",
@@ -2923,7 +2931,8 @@
         "about": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Stable Audio (Stability AI)",
@@ -3027,7 +3036,8 @@
         "about": "AI Assistant feature for CKEditor 5.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "DeepL",
@@ -3336,7 +3346,8 @@
         "about": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@ai-sdk/svelte",
@@ -3348,7 +3359,8 @@
         "about": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@ai-sdk/ui-utils",
@@ -3360,7 +3372,8 @@
         "about": "Important: this is an internal API. Expect breaking changes.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@assistant-ui/react",
@@ -3372,7 +3385,8 @@
         "about": "TypeScript/React library for AI Chat",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Airbnb’s design to live and work anywhere",
@@ -4296,7 +4310,8 @@
         "about": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       }
     ]
   },
@@ -4316,7 +4331,8 @@
         "about": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@pooltogether/uniform-random-number",
@@ -4328,7 +4344,8 @@
         "about": "PoolTogether Solidity Modulo Bias library",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@stdlib/constants-float32-exponent-bias",
@@ -4340,7 +4357,8 @@
         "about": "The bias of a single-precision floating-point number's exponent.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@stdlib/constants-float64-exponent-bias",
@@ -4352,7 +4370,8 @@
         "about": "The bias of a double-precision floating-point number's exponent.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@wemake.cx/bias-detection",
@@ -4364,7 +4383,8 @@
         "about": "MCP server for simple bias detection in text",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "ethical-algorithm-tester",
@@ -4376,7 +4396,8 @@
         "about": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Fairlearn",
@@ -4757,7 +4778,8 @@
         "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "tensaikit-test",
@@ -4769,7 +4791,8 @@
         "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "TokenMetrics",
@@ -4811,7 +4834,8 @@
         "about": "Inquirer confirm prompt",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@inquirer/core",
@@ -4823,7 +4847,8 @@
         "about": "Core Inquirer prompt API",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@inquirer/expand",
@@ -4835,7 +4860,8 @@
         "about": "Inquirer checkbox prompt",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@inquirer/rawlist",
@@ -4847,7 +4873,8 @@
         "about": "Inquirer rawlist prompt",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@listr2/prompt-adapter-inquirer",
@@ -4859,7 +4886,8 @@
         "about": "Listr2 prompt adapter for inquirer.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "AIPRM",
@@ -4961,7 +4989,8 @@
         "about": "cross-platform masked or hidden prompt",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Prompt Perfect",
@@ -5068,7 +5097,8 @@
         "about": "Create an Inkeep Agent Framework project",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@voltagent/core",
@@ -5080,7 +5110,8 @@
         "about": "VoltAgent Core - AI agent framework for JavaScript",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@xynehq/jaf",
@@ -5092,7 +5123,8 @@
         "about": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Adept",
@@ -5162,7 +5194,8 @@
         "about": "BeeAI Framework - LLM Agent Framework",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Camel-AI",
@@ -5456,7 +5489,8 @@
         "about": "LLM Agent framework for Node.js",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Manus",
@@ -5682,7 +5716,8 @@
         "about": "orchestration-airflow client for Node.js",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "airflow",
@@ -5740,7 +5775,8 @@
         "about": "Orchestration For Animated Transitions",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Make (formerly Integromat)",
@@ -5875,7 +5911,8 @@
         "about": "This library was generated with [Nx](https://nx.dev).",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "workflow-ai-plugin",
@@ -5887,7 +5924,8 @@
         "about": "This library was generated with [Nx](https://nx.dev).",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Zapier",
@@ -5929,7 +5967,8 @@
         "about": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "@wildcard-ai/deepcontext",
@@ -5941,7 +5980,8 @@
         "about": "Advanced codebase indexing and semantic search MCP server",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "ai-embed-search",
@@ -5953,7 +5993,8 @@
         "about": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "ai-knowledge-graph",
@@ -6109,7 +6150,8 @@
         "about": "A Javascript wrapper for guardrails-ai",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
+        "iconUrl": "https://www.npmjs.com/favicon.ico",
+        "_commentedOut": true
       },
       {
         "name": "Aequitas",

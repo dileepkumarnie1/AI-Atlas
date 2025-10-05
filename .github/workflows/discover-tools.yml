@@ -57,6 +57,9 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node ./scripts/discover-tools.mjs
 
+      - name: Quarantine npm registry entries
+        run: node ./scripts/flag-npm-tools.mjs
+
       - name: Create branch for changes
         id: create_branch
         run: |
