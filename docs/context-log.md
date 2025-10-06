@@ -4,6 +4,7 @@ _Last updated: 2025-10-07_
 
 ## Using this log
 - Append a dated entry for every batch of related changes.
+- Run `npm run context:log -- --entry "<summary>"` (repeat `--entry` for multiple bullets) to automatically insert new notes and refresh the "Last updated" stamp.
 - Cross-check new requests against the "Recent Changes" section before starting work to avoid duplicating completed tasks.
 - Update the "Open Follow-ups" list as items are completed or new gaps are identified.
 
@@ -14,6 +15,8 @@ _Last updated: 2025-10-07_
 - Swapped the embedded tool fallback in `public/prompt-enhancer.js` for a dynamic fetch from `public/tools.json` with caching and graceful failure handling.
 - Deduplicated repeated inline CSS blocks in `index.html` to simplify style maintenance.
 
+- Added scripts/update-context-log.mjs to automate context log updates.
+- Documented npm run context:log helper and smoke-tested command usage.
 ### 2025-10-06
 - Investigated Audio & Music category gaps and documented tag-based grouping behavior.
 - Disabled npm-based ingestion in `scripts/discover-tools.mjs`, added manual lists, and wired Product Hunt, BuiltWith, SimilarTech, and Crunchbase integrations.
