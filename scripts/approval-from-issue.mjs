@@ -16,6 +16,38 @@ function hmacSign(s, secret){
   return crypto.createHmac('sha256', secret).update(String(s)).digest('hex');
 }
 
+const DUP_STOPWORDS = new Set(['ai','the','and','of','for','app','apps','tool','tools','platform','labs','studio','framework','kit','sdk','api','model','models','agent','agents','chat','assistant','bot','bots']);
+
+function normalizeKey(value){
+  return String(value||'').trim().toLowerCase();
+}
+
+function canonicalName(value){
+  const tokens = String(value||'')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,' ')
+    .split(' ')
+    .filter(t => t && !DUP_STOPWORDS.has(t));
+  return tokens.join(' ');
+}
+
+function normalizeUrlForComparison(url){
+  if(!url) return '';
+  try{
+    const u = new URL(String(url));
+    u.hash = '';
+    u.hostname = u.hostname.replace(/^www\./,'').toLowerCase();
+    const params = new URLSearchParams(u.search);
+    params.sort();
+    const query = params.toString();
+    u.search = query ? `?${query}` : '';
+    u.pathname = u.pathname ? u.pathname.replace(/\/+$/,'') || '/' : '/';
+    return u.toString();
+  }catch{
+    return String(url||'').trim().toLowerCase();
+  }
+}
+
 try{
   const eventPath = process.env.GITHUB_EVENT_PATH;
   if(!eventPath || !fs.existsSync(eventPath)){
@@ -151,6 +183,30 @@ try{
     process.exit(0);
   }else if(action === 'reject'){
     await ref.update({ status: 'rejected', resolvedAt: new Date() });
+    try{
+      const rejects = db.collection('discovery_rejections');
+      const normalizedName = normalizeKey(data.name || id);
+      const canonical = canonicalName(data.name || '');
+      const normalizedLink = normalizeUrlForComparison(data.link || '');
+      const hashSource = `${canonical || ''}::${normalizedName || ''}::${normalizedLink || ''}`;
+      const docId = crypto.createHash('sha256').update(hashSource || id).digest('hex').slice(0, 40);
+      const payload = {
+        name: data.name || '',
+        normalizedName,
+        canonicalName: canonical,
+        link: data.link || '',
+        normalizedLink,
+        domainSlug: data.domainSlug || '',
+        domainName: data.domainName || '',
+        pendingId: id,
+        source: data.source || 'discovery-issue',
+        rejectedAt: new Date().toISOString(),
+        reason: 'issue-rejection'
+      };
+      await rejects.doc(docId).set(payload, { merge: true });
+    }catch(err){
+      console.warn('Failed to record rejection in discovery_rejections:', err?.message || err);
+    }
     setOutput('status','ok');
     setOutput('message',`Rejected ID ${id}`);
     setOutput('action','reject');

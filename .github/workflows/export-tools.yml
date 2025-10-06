@@ -2,9 +2,6 @@ name: Export Firestore tools to public/tools.json
 
 on:
   workflow_dispatch: {}
-  schedule:
-    # Daily at 04:15 UTC
-    - cron: '15 4 * * *'
 
 permissions:
   contents: write
@@ -122,4 +119,4 @@ jobs:
           ref: main
     # - Set repository secret FIREBASE_SERVICE_ACCOUNT_JSON to the raw JSON of your Firebase service account key.
     # - The exporter enforces the GitHub link exclusion policy (allowlisting GitHub Copilot).
-    # - Update the cron schedule as needed.
+  # - Run this workflow manually via GitHub Actions when an export is needed.

@@ -35,13 +35,6 @@ jobs:
         run: |
           node scripts/approval-from-issue.mjs
 
-      - name: Trigger Export Tools workflow (on approve)
-        if: ${{ steps.approval.outputs.status == 'ok' && steps.approval.outputs.action == 'approve' }}
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: export-tools.yml
-          ref: main
-
       - name: Send notification email (SMTP) (on approve)
         if: ${{ steps.approval.outputs.status == 'ok' && steps.approval.outputs.action == 'approve' }}
         env:

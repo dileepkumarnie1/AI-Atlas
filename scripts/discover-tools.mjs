@@ -154,6 +154,23 @@ function getOrigin(u){
   } catch { return ''; }
 }
 
+function normalizeUrlForComparison(u){
+  if(!u) return '';
+  try{
+    const url = new URL(String(u));
+    url.hash = '';
+    url.hostname = url.hostname.replace(/^www\./,'').toLowerCase();
+    const params = new URLSearchParams(url.search);
+    params.sort();
+    const query = params.toString();
+    url.search = query ? `?${query}` : '';
+    url.pathname = url.pathname ? url.pathname.replace(/\/+$/,'') || '/' : '/';
+    return url.toString();
+  }catch{
+    return String(u||'').trim().toLowerCase();
+  }
+}
+
 function sameHost(u, host){
   try{ return new URL(u).hostname.replace(/^www\./,'').toLowerCase() === host; }catch{ return false; }
 }
@@ -1331,9 +1348,34 @@ async function main(){
   const existingCanonicalNames = new Set(sections.flatMap(sec => (sec.tools||[]).map(t=>canonicalName(t.name))));
   const pendingItems = Array.isArray(pending?.items) ? pending.items : [];
   for(const it of pendingItems){ existingNames.add(normalizeKey(it.name)); existingNamesLoose.add(normalizeKeyLoose(it.name)); existingCanonicalNames.add(canonicalName(it.name)); }
-  const blacklistNames = new Set((blacklist?.names||[]).map(normalizeKey));
+  const listedBlacklistNames = Array.isArray(blacklist?.names) ? blacklist.names : [];
+  const blacklistNames = new Set(listedBlacklistNames.map(normalizeKey));
+  const blacklistCanonicalNames = new Set(listedBlacklistNames.map(canonicalName).filter(Boolean));
+  const blacklistLinks = new Set();
   const aliasMap = new Map(Object.entries(aliases?.aliases||{}).map(([a,c])=>[normalizeKey(a), normalizeKey(c)]));
   const directPublish = /^true$/i.test(String(process.env.DIRECT_PUBLISH||''));
+
+  let rejectionRecords = [];
+  await initFirebaseIfPossible();
+  if(getFirestoreSafe){
+    try{
+      const dbFb = getFirestoreSafe();
+      if(dbFb){
+        const snap = await dbFb.collection('discovery_rejections').get();
+        rejectionRecords = snap?.docs?.map(doc => ({ id: doc.id, ...(doc.data()||{}) })) || [];
+      }
+    }catch(err){
+      console.warn('Failed to load discovery_rejections:', err?.message || err);
+    }
+  }
+  for(const rec of rejectionRecords){
+    const nameNorm = normalizeKey(rec.normalizedName || rec.name);
+    if(nameNorm) blacklistNames.add(nameNorm);
+    const canon = canonicalName(rec.canonicalName || rec.name);
+    if(canon) blacklistCanonicalNames.add(canon);
+    const linkNorm = normalizeUrlForComparison(rec.normalizedLink || rec.link);
+    if(linkNorm) blacklistLinks.add(linkNorm);
+  }
 
   // Config flags for diagnostics and CI visibility
   const strictMode = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
@@ -1345,6 +1387,7 @@ async function main(){
     timestamp: new Date().toISOString(),
     strict: strictMode,
     hasGSBKey,
+    rejectionsLoaded: rejectionRecords.length,
     domains: {},
     totals: { candidates: 0, added: 0, staged: 0, published: 0, skips: { duplicate:0, alias:0, blacklist:0, notAi:0, risky:0, strictUnknown:0, githubHost:0, notTool:0, blogHost:0, devPackage:0, notTrending:0, notInDirectories:0, notInAixploria:0, nonAiDomain:0 }, maxAddsStops: 0, relax: { triggered: 0, passes: 0, added: 0, considered: 0 } },
     relaxSamples: []
@@ -1468,12 +1511,13 @@ async function main(){
     const k = normalizeKey(cand.name);
     const kl = normalizeKeyLoose(cand.name);
     const kc = canonicalName(cand.name);
+  const linkKey = normalizeUrlForComparison(cand.link);
     // direct name/loose matches
     if(existingNames.has(k) || existingNamesLoose.has(kl) || (kc && existingCanonicalNames.has(kc))) { diag.domains[slug].skips.duplicate++; diag.totals.skips.duplicate++; continue; }
     // alias match: map candidate alias -> canonical and see if present
     const aliasCanonical = aliasMap.get(k) || aliasMap.get(kl);
     if(aliasCanonical && (existingNames.has(aliasCanonical) || existingNamesLoose.has(normalizeKeyLoose(aliasCanonical)))) { diag.domains[slug].skips.alias++; diag.totals.skips.alias++; continue; }
-    if(blacklistNames.has(k)) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
+  if(blacklistNames.has(k) || (kc && blacklistCanonicalNames.has(kc)) || (linkKey && blacklistLinks.has(linkKey))) { diag.domains[slug].skips.blacklist++; diag.totals.skips.blacklist++; continue; }
     // Curated entries bypass AI-signal heuristic (still subject to reliability checks)
   if(!isCuratedSource(cand.source) && !isLikelyAITool(cand, slug)) { diag.domains[slug].skips.notAi++; diag.totals.skips.notAi++; continue; }
     // Prefer reliable sources/domains for the link itself
@@ -1596,7 +1640,9 @@ async function main(){
       if(aiOnly && !/\.ai$/i.test(hostA)) continue;
       if(isDupName(cand.name)) continue;
       const k = normalizeKey(cand.name);
-      if(blacklistNames.has(k)) continue;
+  const kc = canonicalName(cand.name);
+  const linkKey = normalizeUrlForComparison(cand.link);
+  if(blacklistNames.has(k) || (kc && blacklistCanonicalNames.has(kc)) || (linkKey && blacklistLinks.has(linkKey))) continue;
       // Basic reliability
       const reliability = await assessReliability(cand);
       const strict = /^true$/i.test(String(process.env.RELIABILITY_STRICT||'').trim());
@@ -1618,7 +1664,9 @@ async function main(){
         if(aiOnly && !/\.ai$/i.test(hostB)) continue;
         if(isDupName(cand.name)) continue;
         const k = normalizeKey(cand.name);
-        if(blacklistNames.has(k)) continue;
+  const kc = canonicalName(cand.name);
+  const linkKey = normalizeUrlForComparison(cand.link);
+  if(blacklistNames.has(k) || (kc && blacklistCanonicalNames.has(kc)) || (linkKey && blacklistLinks.has(linkKey))) continue;
         const host = getHostname(cand.link);
         const candNameNorm = normalizeKey(cand.name);
         if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)) continue;
@@ -1692,7 +1740,9 @@ async function main(){
           if(filler.length + cur >= Math.min(minPer, capTarget)) break;
           if(isDupName(cand.name)) continue;
           const k = normalizeKey(cand.name);
-          if(blacklistNames.has(k)) continue;
+          const kc = canonicalName(cand.name);
+          const linkKey = normalizeUrlForComparison(cand.link);
+          if(blacklistNames.has(k) || (kc && blacklistCanonicalNames.has(kc)) || (linkKey && blacklistLinks.has(linkKey))) continue;
           const host = getHostname(cand.link);
           const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
           if(aiOnly && !/\.ai$/i.test(host)) continue;
