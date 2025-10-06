@@ -542,6 +542,28 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64"
       },
       {
+        "name": "supabase",
+        "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+        "link": "https://supabase.com",
+        "tags": [
+          "image",
+          "search",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
+      },
+      {
         "name": "tabby",
         "description": "Self-hosted AI coding assistant",
         "link": "https://tabbyml.com",
@@ -1193,6 +1215,31 @@
         ]
       },
       {
+        "name": "repomix",
+        "description": "Pack your codebase into AI-friendly formats",
+        "link": "https://repomix.com",
+        "tags": [
+          "developer-tools",
+          "image",
+          "automation",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Pack your codebase into AI-friendly formats",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://repomix.com/images/repomix-logo.svg"
+      },
+      {
         "name": "Seed Dream",
         "description": "Creative ideation chat assistant",
         "link": "https://seeddream.app",
@@ -1375,6 +1422,24 @@
           "Limited advanced controls.",
           "Web-based only."
         ]
+      },
+      {
+        "name": "easydiffusion",
+        "description": "A simple 1-click way to create beautiful images on your computer, by installing Stable Diffusion. No dependencies or technical knowledge required",
+        "link": "https://easydiffusion.github.io/",
+        "tags": [
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "A simple 1-click way to create beautiful images on your computer, by installing Stable Diffusion. No dependencies or technical knowledge required",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://easydiffusion.github.io/favicon.ico?1"
       },
       {
         "name": "Fotor AI",
@@ -2597,6 +2662,26 @@
         ]
       },
       {
+        "name": "sweep",
+        "description": "Sweep is the best AI assistant for JetBrains.",
+        "link": "https://sweep.dev",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "Freemium"
+        ],
+        "about": "Sweep is the best AI assistant for JetBrains.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://sweep.dev/favicon.ico"
+      },
+      {
         "name": "TabbyML",
         "description": "Self-hosted AI code assistant for completions and chat.",
         "link": "https://tabbyml.ai",
@@ -2781,6 +2866,23 @@
           "Not a full DAW.",
           "Some artifacts possible."
         ]
+      },
+      {
+        "name": "ComfyUI-DeepFuze",
+        "description": "Home - CogiDigm",
+        "link": "https://cogidigm.com/",
+        "tags": [
+          "image",
+          "Freemium"
+        ],
+        "about": "Home - CogiDigm",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://cogidigm.com/favicon.ico"
       },
       {
         "name": "Descript Overdub",
@@ -3061,6 +3163,35 @@
         ]
       },
       {
+        "name": "Ellie AI",
+        "description": "Ellie learns from your writing style and crafts replies as if they were written by you",
+        "link": "https://ellieai.com",
+        "tags": [
+          "chatbot",
+          "education",
+          "freemium",
+          "subscription",
+          "open source",
+          "suite",
+          "library",
+          "Freemium",
+          "Subscription",
+          "Open Source"
+        ],
+        "about": "Ellie learns from your writing style and crafts replies as if they were written by you",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible.",
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://tryellie.com/assets/favicon32.png"
+      },
+      {
         "name": "Fireflies.ai",
         "description": "An AI meeting assistant that transcribes, summarizes, and analyzes voice conversations.",
         "link": "https://fireflies.ai/",
@@ -3266,6 +3397,36 @@
         ]
       },
       {
+        "name": "Reflect Notes",
+        "description": "A beautifully minimalist note-taking app designed to mirror the way you think. Now with a native AI integration.",
+        "link": "https://reflect.app",
+        "tags": [
+          "chatbot",
+          "education",
+          "design",
+          "freemium",
+          "subscription",
+          "open source",
+          "suite",
+          "library",
+          "Freemium",
+          "Subscription",
+          "Open Source"
+        ],
+        "about": "A beautifully minimalist note-taking app designed to mirror the way you think. Now with a native AI integration.",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible.",
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://reflect.app/home/build/q-171a9a33.png"
+      },
+      {
         "name": "SaneBox",
         "description": "An AI-powered tool for cleaning up and organizing your email inbox.",
         "link": "https://www.sanebox.com/",
@@ -3287,6 +3448,34 @@
         ]
       },
       {
+        "name": "Sembly AI",
+        "description": "Automatically generate accurate meeting notes and transcripts. Sembly joins your meetings, works in the background, and delivers summaries you can trust.",
+        "link": "https://www.sembly.ai",
+        "tags": [
+          "chatbot",
+          "image",
+          "summarization",
+          "search",
+          "agents",
+          "automation",
+          "marketing",
+          "design",
+          "Freemium"
+        ],
+        "about": "Automatically generate accurate meeting notes and transcripts. Sembly joins your meetings, works in the background, and delivers summaries you can trust.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.sembly.ai/wp-content/uploads/2023/01/fi.png"
+      },
+      {
         "name": "Suno AI",
         "description": "Create full songs from a simple text prompt.",
         "link": "https://www.suno.ai/",
@@ -3306,6 +3495,34 @@
           "Vocal quality varies.",
           "Commercial use paid."
         ]
+      },
+      {
+        "name": "Supernormal",
+        "description": "AI-Powered meetings · Supernormal",
+        "link": "https://supernormal.com",
+        "tags": [
+          "image",
+          "freemium",
+          "subscription",
+          "open source",
+          "suite",
+          "library",
+          "Freemium",
+          "Subscription",
+          "Open Source"
+        ],
+        "about": "AI-Powered meetings · Supernormal",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://supernormal.com/favicon.ico"
       },
       {
         "name": "Todoist",
@@ -5779,6 +5996,32 @@
         "_commentedOut": true
       },
       {
+        "name": "Levity",
+        "description": "Levity automatically classifies incoming emails and attachments based on your custom categories so you can sort, route and prioritize without manual tagging.",
+        "link": "https://www.levity.ai",
+        "tags": [
+          "chatbot",
+          "image",
+          "translation",
+          "search",
+          "automation",
+          "design",
+          "Freemium"
+        ],
+        "about": "Levity automatically classifies incoming emails and attachments based on your custom categories so you can sort, route and prioritize without manual tagging.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/fvm5Dc9MqiYme75wQ3QhRGyr94.png"
+      },
+      {
         "name": "Make (formerly Integromat)",
         "description": "A powerful, visual workflow automation platform for building complex integrations.",
         "link": "https://www.make.com/",
@@ -6064,6 +6307,57 @@
         ]
       },
       {
+        "name": "memvid",
+        "description": "Store AI Memory as video files. Branch like Git. Carry anywhere in 50KB.",
+        "link": "https://www.memvid.com",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "video",
+          "search",
+          "automation",
+          "design",
+          "documents",
+          "Freemium"
+        ],
+        "about": "Store AI Memory as video files. Branch like Git. Carry anywhere in 50KB.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Accelerates video creation.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Render times or credit limits may apply.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.memvid.com/icon.svg?f5e078e6749e6104"
+      },
+      {
+        "name": "mindsdb",
+        "description": "MindsDB enables humans, AI agents, and applications to get highly accurate answers across disparate data sources and types.",
+        "link": "https://mindsdb.com",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "automation",
+          "education",
+          "design",
+          "Freemium"
+        ],
+        "about": "MindsDB enables humans, AI agents, and applications to get highly accurate answers across disparate data sources and types.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/UJ4DLRkQg1Br58aLyKUSr1fVkM.png"
+      },
+      {
         "name": "Neeva AI (legacy)",
         "description": "AI-powered search engine with direct answers (now acquired by Snowflake).",
         "link": "https://neeva.com/",
@@ -6084,6 +6378,30 @@
           "Acquired by Snowflake.",
           "Consumer product sunset."
         ]
+      },
+      {
+        "name": "octocode-mcp",
+        "description": "Powerful GitHub MCP server for AI code intelligence. Transform repositories with advanced MCP integration, featuring RAG, LLM, and semantic code search for developers and AI assistants.",
+        "link": "https://octocode.ai/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "search",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Powerful GitHub MCP server for AI code intelligence. Transform repositories with advanced MCP integration, featuring RAG, LLM, and semantic code search for developers and AI assistants.",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://octocode.ai/favicon-16x16.png?v=2"
       },
       {
         "name": "qdrant",
@@ -6186,6 +6504,24 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://gizmodo.com/favicon.png?v1"
+      },
+      {
+        "name": "agentic_security",
+        "description": "Open-source LLM Vulnerability Scanner for safe and reliable AI.",
+        "link": "https://agentic-security.vercel.app",
+        "tags": [
+          "agents",
+          "design",
+          "Open Source"
+        ],
+        "about": "Open-source LLM Vulnerability Scanner for safe and reliable AI.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png"
       },
       {
         "name": "AI behavior guardrails should be public",
@@ -6367,6 +6703,24 @@
           "Setup can be complex.",
           "Focuses on tabular data."
         ]
+      },
+      {
+        "name": "invariant",
+        "description": "We help agent builders create reliable, robust and secure products.",
+        "link": "https://invariantlabs.ai",
+        "tags": [
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "We help agent builders create reliable, robust and secure products.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://invariantlabs.ai/theme/icon/apple-touch-icon.png"
       },
       {
         "name": "Joint Statement on AI Safety and Openness",
@@ -6603,6 +6957,33 @@
         ]
       },
       {
+        "name": "lawglance",
+        "description": "Free, open-source initiative democratizing legal knowledge through Agentic AI workflows, RAG, and LLMs. Access Indian laws, constitutional guidance, and legal insights 24/7 with context-aware reasoning.",
+        "link": "https://lawglance.com/",
+        "tags": [
+          "chatbot",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "education",
+          "design",
+          "Open Source"
+        ],
+        "about": "Free, open-source initiative democratizing legal knowledge through Agentic AI workflows, RAG, and LLMs. Access Indian laws, constitutional guidance, and legal insights 24/7 with context-aware reasoning.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://lawglance.com/favicon.ico"
+      },
+      {
         "name": "Luminance",
         "description": "AI for due diligence, contract analysis, and compliance review.",
         "link": "https://www.luminance.com/",
@@ -6623,6 +7004,26 @@
           "Onboarding and data migration required.",
           "Specialist training recommended."
         ]
+      },
+      {
+        "name": "Spellbook",
+        "description": "Legal AI Contract Review &amp; Drafting | Spellbook",
+        "link": "https://www.spellbook.legal/",
+        "tags": [
+          "image",
+          "agents",
+          "design",
+          "documents",
+          "Freemium"
+        ],
+        "about": "Legal AI Contract Review &amp; Drafting | Spellbook",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://www.spellbook.legal/favicon.ico"
       },
       {
         "name": "Spellbook (by Rally)",
@@ -6697,6 +7098,31 @@
           "Quality varies by environment.",
           "Review still needed."
         ]
+      },
+      {
+        "name": "MONAI",
+        "description": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "link": "https://monai.io/",
+        "tags": [
+          "developer-tools",
+          "search",
+          "education",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "pros": [
+          "Open source and extensible.",
+          "Great for research and discovery.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Coverage and speed can vary.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://monai.io/assets/logo/MONAI-logo_favicon.png"
       },
       {
         "name": "Nuance Dragon Medical One",
