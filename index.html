@@ -798,14 +798,14 @@
                 // Prefer rank from generated ranks map if available
                 const directRank = Number(popularityRanksMap[key] || 0);
                 if (directRank > 0) {
-                    return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">Rank #${directRank}</span>`;
+                    return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">#${directRank}</span>`;
                 }
                 // Else compute from Most Popular section order
                 const rankScore = Number(mostPopularOrderMap[key] || 0);
                 if (rankScore > 0) {
                     const values = Object.values(mostPopularOrderMap).sort((a,b)=>b-a);
                     const rank = values.indexOf(rankScore) + 1;
-                    if (rank > 0) return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">Rank #${rank}</span>`;
+                    if (rank > 0) return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 whitespace-nowrap dark:bg-amber-900/30 dark:border-amber-700 dark:text-amber-200">#${rank}</span>`;
                 }
                 return `<span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-gray-600 whitespace-nowrap dark:bg-gray-800/40 dark:border-gray-700 dark:text-gray-300">N/A</span>`;
             }

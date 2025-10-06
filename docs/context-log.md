@@ -1,6 +1,6 @@
 # Context Log
 
-_Last updated: 2025-10-07_
+_Last updated: 2025-10-06_
 
 ## Using this log
 - Append a dated entry for every batch of related changes.
@@ -27,6 +27,7 @@ _Last updated: 2025-10-07_
 - Added `scripts/flag-npm-tools.mjs` and marked 42 npm-hosted entries in `public/tools.json` with `_commentedOut: true`; verified zero visible npm links remain.
 - Wired the npm quarantine script into `.github/workflows/discover-tools.yml` so every discovery run auto-flags registry links before PR creation.
 
+- Shortened popularity badge text to '#N' in UI and README.
 ## Open Follow-ups
 - [x] Finish annotating any remaining npm entries in `public/tools.json` and report counts if required (flagged 42 npm hosts on 2025-10-06).
 - [ ] Run discovery once the new API tokens are confirmed to be available and review output for npm regressions.

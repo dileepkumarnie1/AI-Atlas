@@ -21,7 +21,7 @@ This project powers a lightweight SPA that lists AI tools by domain, shows popul
 
 The UI shows a badge for each tool:
 - "N users" when an explicit numeric count is known
-- Otherwise "Rank #N" derived from popularity signals
+- Otherwise "#N" derived from popularity signals
 - Fallback to "N/A" if neither is available
 
 ---
@@ -90,7 +90,7 @@ Use `data/popularity-overrides.json` to inject real user counts that guide both 
 Notes
 - The updater derives a usersScore (0–100) from `log10(actualUsers+1) * 20` and blends it into the final rank.
 - Tools without overrides are still ranked via curated order and normalized signals.
-- The UI shows the actual number when present; otherwise it shows “Rank #N”.
+- The UI shows the actual number when present; otherwise it shows “#N”.
 
 ---
 
