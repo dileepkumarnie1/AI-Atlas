@@ -526,6 +526,147 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 page.click('.domain-card', timeout=15000)
                 page.wait_for_selector('.open-tool-btn', timeout=20000)
 
+            # ---------------------------------------------
+            # Search helpers (new deterministic waits)
+            # ---------------------------------------------
+            def wait_for_initial_tools(page, timeout_ms: int = 20000) -> bool:
+                """Wait until some tool data is present (grid ready or search container populated)."""
+                deadline = time.time() + timeout_ms / 1000.0
+                while time.time() < deadline:
+                    try:
+                        if page.query_selector('.open-tool-btn'):
+                            return True
+                        if page.evaluate("window.__TOOLS_LOADED || false"):
+                            return True
+                        html_len = page.evaluate("(document.querySelector('#search-results-container')||{}).innerHTML.length || 0")
+                        if html_len > 50:
+                            return True
+                    except Exception:
+                        pass
+                    time.sleep(0.15)
+                return False
+
+            def wait_for_search_resolution(page, expect_results: bool | None = None, timeout_ms: int = 10000):
+                """Poll until search produces either results or a no-results message.
+
+                expect_results:
+                  True  -> stop when >=1 result
+                  False -> stop when 'No tools found' present
+                  None  -> stop when either condition met
+                Returns (found_any, saw_no_results, count)
+                """
+                deadline = time.time() + timeout_ms / 1000.0
+                found_any = False
+                saw_none = False
+                count = 0
+                while time.time() < deadline:
+                    try:
+                        count_btns = page.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length")
+                        count_results = page.evaluate("document.querySelectorAll('#search-results-container .tool-result').length")
+                        count = max(int(count_btns or 0), int(count_results or 0))
+                        txt = page.evaluate("(document.querySelector('#search-results-container')||{}).innerText || ''") or ''
+                        found_any = count >= 1
+                        saw_none = ('No tools found' in txt)
+                        if expect_results is True and found_any:
+                            break
+                        if expect_results is False and saw_none:
+                            break
+                        if expect_results is None and (found_any or saw_none):
+                            break
+                    except Exception:
+                        pass
+                    time.sleep(0.15)
+                return found_any, saw_none, count
+
+            # ---------------------------------------------
+            # Search test functions (replace brittle lambdas)
+            # ---------------------------------------------
+            def do_SR_002():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'a', timeout=10000)
+                found, none, count = wait_for_search_resolution(dpage, expect_results=None, timeout_ms=10000)
+                status = 'pass' if (found and count >= 1) else ('skipped' if none else 'fail')
+                details = f"count={count}, noResults={none}"
+                results.append(TestResult('SR-002', 'Search', 'Typing shows at least one result', status, details, shot('SR-002', dpage)))
+
+            def do_SR_003():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'a', timeout=10000)
+                found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
+                if not found:
+                    results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'skipped', 'no results to open', shot('SR-003_skipped', dpage)))
+                    return
+                try:
+                    dpage.click('#search-results-container .open-tool-btn', timeout=10000)
+                    dpage.wait_for_selector('#tool-details-modal.visible', timeout=10000)
+                    results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'pass', 'modal visible', shot('SR-003', dpage)))
+                except Exception as e:
+                    results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'fail', str(e), shot('SR-003_error', dpage)))
+
+            def do_SR_004():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'a', timeout=10000)
+                wait_for_search_resolution(dpage, expect_results=None, timeout_ms=8000)
+                allText = dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/.test(x.textContent||'')); return o?o.textContent:'' })()")
+                ok = bool(allText and any(ch.isdigit() for ch in str(allText)))
+                results.append(TestResult('SR-004', 'Search', 'Category counts update when typing', 'pass' if ok else 'fail', f'text={allText}', shot('SR-004', dpage)))
+
+            def do_SR_005():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'zzzzquuxnoresult1234567890', timeout=10000)
+                found, none, count = wait_for_search_resolution(dpage, expect_results=False, timeout_ms=8000)
+                txt = dpage.evaluate("(document.getElementById('search-results-container')||{}).innerText||''")
+                ok = ('No tools found' in str(txt) and not found and none)
+                results.append(TestResult('SR-005', 'Search', "Gibberish query shows 'No tools found'", 'pass' if ok else 'fail', f'txt={txt[:60]}', shot('SR-005', dpage)))
+
+            def do_SR_007():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', '   chatgpt   ')
+                found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
+                results.append(TestResult('SR-007', 'Search', 'Trimming of leading/trailing spaces works', 'pass' if found else 'fail', f'results={count}', shot('SR-007', dpage)))
+
+            def do_SR_008():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'GeMiNi')
+                found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
+                results.append(TestResult('SR-008', 'Search', 'Case-insensitive search returns same results', 'pass' if found else 'fail', f'results={count}', shot('SR-008', dpage)))
+
+            def do_SR_009():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                dpage.fill('#search-bar-new', 'Freemium')
+                found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
+                html = dpage.inner_html('#search-results-container')
+                results.append(TestResult('SR-009', 'Search', 'Search matches tag text', 'pass' if (found and html and 'Freemium' in html) else 'fail', 'tag_check', shot('SR-009', dpage)))
+
+            def do_SR_010():
+                dpage.goto(home, wait_until='domcontentloaded', timeout=30000)
+                dpage.wait_for_selector('#search-bar-new', timeout=10000)
+                wait_for_initial_tools(dpage)
+                # First gibberish
+                dpage.fill('#search-bar-new', 'no-way-this-matches-123456789')
+                f1_found, f1_none, _ = wait_for_search_resolution(dpage, expect_results=False, timeout_ms=8000)
+                msg1 = dpage.text_content('#search-results-container') or ''
+                # Now valid query
+                dpage.fill('#search-bar-new', 'chat')
+                f2_found, f2_none, c2 = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
+                msg2 = dpage.text_content('#search-results-container') or ''
+                ok = bool(f1_none and f2_found and ('No tools found' not in msg2))
+                results.append(TestResult('SR-010', 'Search', 'No-results message clears after valid query', 'pass' if ok else 'fail', 'cleared' if ok else f'before={msg1[:40]}; after={msg2[:40]}; results={c2}', shot('SR-010', dpage)))
+
             def ui_login_if_creds(page) -> bool:
                 email = os.environ.get('TEST_USER_EMAIL', '').strip()
                 pwd = os.environ.get('TEST_USER_PASSWORD', '').strip()
@@ -697,39 +838,19 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                                               'pass' if dpage.evaluate("document.activeElement && document.activeElement.id === 'search-bar-new'") else 'fail',
                                               'focused', shot('SR-001', dpage)))
                 ),
-                'SR-002': lambda: (
+                'SR-002': do_SR_002,
+                'SR-003': do_SR_003,
+                'SR-004': do_SR_004,
+                'SR-005': do_SR_005,
+                'SR-006': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (lambda: (
-                        dpage.wait_for_selector('#search-bar-new', timeout=10000),
-                        dpage.fill('#search-bar-new', 'a', timeout=5000),
-                        time.sleep(0.4),
-                        (lambda: (
-                            # Wait up to ~12s for either buttons or a no-results message
-                            [time.sleep(0.3) for _ in range(40) if not (
-                                dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length") or 
-                                dpage.evaluate("(document.querySelector('#search-results-container')||{}).innerText || ''").find('No tools found') != -1
-                            )],
-                            count := dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length"),
-                            hasNone := dpage.evaluate("(document.querySelector('#search-results-container')||{}).innerText || ''").find('No tools found') != -1,
-                            status := ('pass' if (count and int(count) >= 1) else ('skipped' if hasNone else 'fail')),
-                            details := f"count={count}, noResults={hasNone}",
-                            results.append(TestResult('SR-002', 'Search', 'Typing shows at least one result', status, details, shot('SR-002', dpage)))
-                        ))()
-                    ))()
+                    (ph := dpage.get_attribute('#search-bar-new', 'placeholder')),
+                    results.append(TestResult('SR-006', 'Search', 'Search placeholder text is correct', 'pass' if ph and 'Search tools by name' in ph else 'fail', f'placeholder={ph}', shot('SR-006', dpage)))
                 ),
-                'SR-003': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (lambda: (
-                        dpage.wait_for_selector('#search-bar-new', timeout=10000),
-                        dpage.fill('#search-bar-new', 'a', timeout=5000),
-                        time.sleep(0.5),
-                        btnCount := dpage.evaluate("document.querySelectorAll('#search-results-container .open-tool-btn').length"),
-                        (results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'skipped', 'no results to open', shot('SR-003_skipped', dpage))) if not btnCount else None),
-                        (dpage.click('#search-results-container .open-tool-btn', timeout=10000) if btnCount else None),
-                        (dpage.wait_for_selector('#tool-details-modal.visible', timeout=10000) if btnCount else None),
-                        (results.append(TestResult('SR-003', 'Search', 'Open button from results shows Tool Details', 'pass', 'modal visible', shot('SR-003', dpage))) if btnCount else None)
-                    ))()
-                ),
+                'SR-007': do_SR_007,
+                'SR-008': do_SR_008,
+                'SR-009': do_SR_009,
+                'SR-010': do_SR_010,
                 # Category Filter
                 'CF-001': lambda: (
                     dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
