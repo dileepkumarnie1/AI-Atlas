@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2025-10-07T02:41:25.754Z",
+  "generatedAt": "2025-10-07T05:45:05.178Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 90280,
-          "forks": 10093,
-          "openIssues": 3018
+          "stars": 90298,
+          "forks": 10094,
+          "openIssues": 3020
         },
         "npm": null
       },
-      "signalsRaw": 4.2697,
+      "signalsRaw": 4.2698,
       "signalsNorm": 99.9,
       "mpScore": 0,
       "freqScore": 0,
@@ -20,7 +20,7 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41819,
+          "stars": 41820,
           "forks": 5332,
           "openIssues": 299
         },
@@ -192,8 +192,8 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 89046,
-          "forks": 11113,
+          "stars": 89052,
+          "forks": 11114,
           "openIssues": 95
         },
         "npm": null
@@ -208,14 +208,14 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13341,
+          "stars": 13342,
           "forks": 1580,
           "openIssues": 574
         },
         "npm": null
       },
-      "signalsRaw": 3.5274,
-      "signalsNorm": 82.53,
+      "signalsRaw": 3.5275,
+      "signalsNorm": 82.54,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -224,7 +224,7 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42873,
+          "stars": 42874,
           "forks": 5672,
           "openIssues": 13
         },
