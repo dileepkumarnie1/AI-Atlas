@@ -3305,6 +3305,34 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/82556810?v=4&s=64"
       },
       {
+        "name": "Mem",
+        "description": "Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
+        "link": "https://mem.ai",
+        "tags": [
+          "search",
+          "freemium",
+          "subscription",
+          "open source",
+          "suite",
+          "library",
+          "Freemium",
+          "Subscription",
+          "Open Source"
+        ],
+        "about": "Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://mem.ai/favicons/favicon.ico"
+      },
+      {
         "name": "Microsoft Copilot for M365",
         "description": "AI across Word, Excel, PowerPoint, Outlook, and Teams.",
         "link": "https://www.microsoft.com/microsoft-365/copilot",
