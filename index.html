@@ -49,12 +49,12 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.65); /* increased opacity */
+            background: rgba(255,255,255,0.85); /* increased opacity */
             z-index: 0;
             pointer-events: none;
         }
         html.dark #background-overlay {
-            background: rgba(30,41,59,0.65);
+            background: rgba(30,41,59,0.85);
         }
         /* Mobile: avoid iOS background-attachment jank */
         @media (max-width: 768px) {
@@ -1394,15 +1394,13 @@
                         !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
 
-                    // Helper to render a vertical list of tools in a single card (empty groups collapse)
+                    // Helper to render a vertical list of tools in a single card.
+                    // NOTE: Empty groups are no longer rendered at all to avoid grid gaps & "jumbled" ordering.
                     function renderGroupCard(title, tools, color, totalCount) {
                         const countBadge = ` <span class=\"text-sm font-semibold text-secondary\">(${totalCount})</span>`;
-                        const isEmpty = tools.length === 0;
-                        const collapseClasses = isEmpty ? 'group-empty h-0 opacity-0 scale-95 pointer-events-none -m-px p-0 border-dashed' : 'group-filled';
                         return `
-                            <div class="pricing-group bg-card border border-color rounded-xl transition-all duration-300 ease-out overflow-hidden ${collapseClasses} ${isEmpty ? 'border-transparent' : 'p-4'} flex flex-col ${isEmpty ? '' : 'min-h-[120px]'}">
+                            <div class="pricing-group bg-card border border-color rounded-xl p-4 flex flex-col min-h-[120px]">
                                 <h3 class="text-xl font-bold mb-3 flex items-center gap-2" style="color:${color}">${title}${countBadge}</h3>
-                                ${isEmpty ? '<div class=\"text-xs text-muted mb-2 hidden\">No tools in this tier</div>' : ''}
                                 <ul class="flex flex-col gap-3">
                                     ${tools.map(tool => {
                                         const toolId = tool.name;
@@ -1444,9 +1442,9 @@
                         { title: 'Paid/Subscription', tools: paid, color: '#f59e42' },
                         { title: 'Open Source', tools: openSource, color: '#10b981' }
                     ];
-                    // We always render all groups (empty groups animate collapsed) but grid columns still based on non-empty groups for best spacing
+                    // Only render non-empty groups to prevent layout gaps.
                     const nonEmptyGroups = groupData.filter(g => g.tools.length > 0);
-                    const groupCards = groupData.map(g => renderGroupCard(g.title, g.tools, g.color, g.tools.length)).join('');
+                    const groupCards = nonEmptyGroups.map(g => renderGroupCard(g.title, g.tools, g.color, g.tools.length)).join('');
                     const groupCount = Math.max(1, Math.min(nonEmptyGroups.length || 1, 4));
                     const gridColsClass = groupCount === 1 ? 'grid-cols-1' : groupCount === 2 ? 'grid-cols-1 sm:grid-cols-2' : groupCount === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
 
