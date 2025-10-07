@@ -141,6 +141,28 @@
         "cons": []
       },
       {
+        "name": "DocsGPT",
+        "description": "DocsGPT Cloud by Arc53: An open-source assistant designed to provide instant answers about documents.DocsGPT seamlessly integrates with various data sources, chatbots, and internal tools, enhancing team productivity and customer engagement.",
+        "link": "https://app.docsgpt.cloud/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "design",
+          "documents",
+          "Open Source"
+        ],
+        "about": "DocsGPT Cloud by Arc53: An open-source assistant designed to provide instant answers about documents.DocsGPT seamlessly integrates with various data sources, chatbots, and internal tools, enhancing team productivity and customer engagement.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://app.docsgpt.cloud/apple-touch-icon.png"
+      },
+      {
         "name": "fairseq",
         "description": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
         "link": "https://github.com/facebookresearch/fairseq",
@@ -4097,6 +4119,31 @@
         "iconUrl": "https://jonstokes.com/favicon.ico"
       },
       {
+        "name": "ALwrity",
+        "description": "Alwrity, complete AI content creation toolkit. Factual &amp; Web researched Writing assistant for Blog articles, research reports, essay, story. Create personalized AI Agents content team. Free &amp; Open Source AI writer.",
+        "link": "https://alwrity.com",
+        "tags": [
+          "chatbot",
+          "image",
+          "search",
+          "agents",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Alwrity, complete AI content creation toolkit. Factual &amp; Web researched Writing assistant for Blog articles, research reports, essay, story. Create personalized AI Agents content team. Free &amp; Open Source AI writer.",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://static.wixstatic.com/media/a56ba3_e9473bf58a3b48d49fc6dc5a689727a1%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/a56ba3_e9473bf58a3b48d49fc6dc5a689727a1%7Emv2.png"
+      },
+      {
         "name": "Anyword",
         "description": "AI copy with predictive performance scoring.",
         "link": "https://anyword.com/",
@@ -6571,6 +6618,23 @@
         "iconUrl": "https://openai.com/favicon.ico"
       },
       {
+        "name": "Decepticon",
+        "description": "PurpleAILAB, Decepticon",
+        "link": "https://purplelab.framer.ai",
+        "tags": [
+          "agents",
+          "Freemium"
+        ],
+        "about": "PurpleAILAB, Decepticon",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://purplelab.framer.ai/favicon.ico"
+      },
+      {
         "name": "Fairlearn",
         "description": "Open-source toolkit for assessing and improving fairness in AI systems.",
         "link": "https://fairlearn.org/",
@@ -6591,6 +6655,24 @@
           "Not a plug-and-play solution.",
           "Focuses on tabular data."
         ]
+      },
+      {
+        "name": "fast-llm-security-guardrails",
+        "description": "Secure your AI agents with runtime protection and security testing. Detect prompt injections, data leaks, and vulnerabilities. OWASP LLM Top 10 compliant. Built by ex-Google, Meta, and Amazon security engineers.",
+        "link": "https://zenguard.ai/",
+        "tags": [
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Secure your AI agents with runtime protection and security testing. Detect prompt injections, data leaks, and vulnerabilities. OWASP LLM Top 10 compliant. Built by ex-Google, Meta, and Amazon security engineers.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://zenguard.ai/favicon.png"
       },
       {
         "name": "Freeway guardrails are now a favorite target of thieves",
@@ -6861,6 +6943,32 @@
         ]
       },
       {
+        "name": "ClaraVerse",
+        "description": "Complete AI development suite with LumaUI web dev, ComfyUI image generation, N8N automation, and local LLMs. 100% private and offline.",
+        "link": "https://claraverse.space",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "image",
+          "agents",
+          "automation",
+          "design",
+          "Freemium"
+        ],
+        "about": "Complete AI development suite with LumaUI web dev, ComfyUI image generation, N8N automation, and local LLMs. 100% private and offline.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/badboysm890/ClaraVerse/d54cfd0f39794f5a5e1727fc8c059074209ec8eb/public/favicon.ico"
+      },
+      {
         "name": "CLI",
         "description": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence — with contextual, senior-level feedback.",
         "link": "https://bito.ai",
@@ -6881,6 +6989,25 @@
           "Suggestions may need review."
         ],
         "iconUrl": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-32x32.png"
+      },
+      {
+        "name": "cursor-free-vip",
+        "description": "Built to make you extraordinarily productive, Cursor is the best way to code with AI.",
+        "link": "https://www.cursor.com/",
+        "tags": [
+          "developer-tools",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Built to make you extraordinarily productive, Cursor is the best way to code with AI.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.cursor.com/marketing-static/apple-touch-icon.png"
       },
       {
         "name": "Intercom Fin",
@@ -6934,6 +7061,27 @@
     "description": "AI for contract analysis, legal drafting, compliance, and policy reviews.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 011 1v1h5a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h3V3a1 1 0 011-1z\"/></svg>",
     "tools": [
+      {
+        "name": "comp",
+        "description": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "link": "https://trycomp.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://trycomp.ai/favicon.ico"
+      },
       {
         "name": "Harvey",
         "description": "Legal AI for research, drafting, and contract workflows.",
