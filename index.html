@@ -1427,11 +1427,12 @@
                     }
 
                     // Compose the group cards, omitting empty groups and adjusting grid columns
+                    // Reordered so Open Source appears as the rightmost column consistently
                     const groupData = [
-                        { title: 'Open Source', tools: openSource, color: '#10b981' },
                         { title: 'Free', tools: free, color: '#22d3ee' },
                         { title: 'Freemium', tools: freemium, color: '#6366f1' },
-                        { title: 'Paid/Subscription', tools: paid, color: '#f59e42' }
+                        { title: 'Paid/Subscription', tools: paid, color: '#f59e42' },
+                        { title: 'Open Source', tools: openSource, color: '#10b981' }
                     ];
                     const nonEmptyGroups = groupData.filter(g => g.tools.length > 0);
                     const groupCards = nonEmptyGroups.map(g => renderGroupCard(g.title, g.tools, g.color)).join('');
