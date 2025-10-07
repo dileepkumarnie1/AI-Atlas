@@ -19,6 +19,7 @@ _Last updated: 2025-10-07_
 - Documented npm run context:log helper and smoke-tested command usage.
 - Added archival whitelist + restore flags + CI workflow.
 - Added --blocklist override, integrity warnings, and archive:dry npm script.
+- UI: Reordered pricing groups so Open Source column always appears at far right.
 ### 2025-10-06
 - Investigated Audio & Music category gaps and documented tag-based grouping behavior.
 - Disabled npm-based ingestion in `scripts/discover-tools.mjs`, added manual lists, and wired Product Hunt, BuiltWith, SimilarTech, and Crunchbase integrations.
