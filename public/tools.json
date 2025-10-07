@@ -298,6 +298,31 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/98949449?v=4&s=64"
       },
       {
+        "name": "leon",
+        "description": "Leon is an open-source personal assistant who can live on your server. He is built on the top of Node.js, Python and artificial intelligence concepts.",
+        "link": "https://getleon.ai",
+        "tags": [
+          "chatbot",
+          "image",
+          "speech",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Leon is an open-source personal assistant who can live on your server. He is built on the top of Node.js, Python and artificial intelligence concepts.",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://getleon.ai/img/favicon.png"
+      },
+      {
         "name": "Llama (Meta)",
         "description": "Meta's family of powerful, open-source large language models for research and commercial use.",
         "link": "https://llama.meta.com/",
