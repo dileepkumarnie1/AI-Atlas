@@ -1088,6 +1088,30 @@
           "Some features paid."
         ]
       }
+      ,
+      {
+        "name": "Writer",
+        "description": "Enterprise generative AI platform for accurate, on-brand content.",
+        "link": "https://writer.com",
+        "tags": [
+          "Subscription",
+          "Enterprise",
+          "Copywriting",
+          "Brand Voice"
+        ],
+        "iconUrl": "https://writer.com/wp-content/themes/writer/favicon/favicon-32x32.png",
+        "about": "Writer is an enterprise-grade generative AI platform that lets organizations ground models in their own data, brand, and style guidelines so every output is consistent, accurate, and compliant across teams.",
+        "pros": [
+          "Supports brand and style governance.",
+          "Private data grounding improves factual accuracy.",
+          "Enterprise security and compliance features."
+        ],
+        "cons": [
+          "Higher cost for smaller teams.",
+          "Setup and data integration required.",
+          "Less oriented to open-ended creative exploration."
+        ]
+      }
     ]
   },
   {
@@ -1483,6 +1507,30 @@
         "about": "A latent text-to-image diffusion model",
         "pros": [],
         "cons": []
+      }
+      ,
+      {
+        "name": "Krea AI",
+        "description": "Real-time interactive image generation and enhancement suite.",
+        "link": "https://www.krea.ai",
+        "tags": [
+          "Freemium",
+          "Real-time",
+          "Upscaling",
+          "Design"
+        ],
+        "iconUrl": "https://www.krea.ai/favicon.ico",
+        "about": "Krea AI offers real-time, interactive image generation where visuals evolve instantly with prompts, sketches, and color cues, plus powerful enhancement and upscaling tools for moving from ideation to production quality.",
+        "pros": [
+          "Interactive real-time creative workflow.",
+          "High-quality enhancement and upscaling.",
+          "Supports varied use cases: concepting, patterns, assets."
+        ],
+        "cons": [
+          "Advanced features limited on free tier.",
+          "Real-time rendering can be resource intensive.",
+          "Learning curve beyond simple prompt tools."
+        ]
       }
     ]
   },
@@ -2549,6 +2597,30 @@
           "Not for professional audio."
         ]
       }
+      ,
+      {
+        "name": "Mutable.ai",
+        "description": "AI accelerates refactoring, modernization, docs, and tests.",
+        "link": "https://mutable.ai",
+        "tags": [
+          "Freemium",
+          "Refactoring",
+          "Testing",
+          "Code Quality"
+        ],
+        "iconUrl": "https://mutable.ai/favicon.ico",
+        "about": "Mutable.ai focuses on improving existing codebases—suggesting refactors, generating tests, modernizing patterns, and producing documentation for faster, higher-quality maintenance work.",
+        "pros": [
+          "Speeds large-scale refactoring.",
+          "Improves code quality and test coverage.",
+          "Integrates with common Git workflows."
+        ],
+        "cons": [
+          "Changes require developer review.",
+          "May struggle with unconventional architectures.",
+          "Advanced capabilities behind paid plan."
+        ]
+      }
     ]
   },
   {
@@ -2987,6 +3059,30 @@
           "Most AI features require a paid plan.",
           "The AI is an assistant, not a full-fledged project manager.",
           "Can be simpler than what's needed for complex team projects."
+        ]
+      }
+      ,
+      {
+        "name": "Clockwise",
+        "description": "AI smart calendar optimizing schedules for focus time.",
+        "link": "https://www.getclockwise.com",
+        "tags": [
+          "Freemium",
+          "Calendar",
+          "Scheduling",
+          "Team Productivity"
+        ],
+        "iconUrl": "https://www.getclockwise.com/favicon.ico",
+        "about": "Clockwise reorganizes team calendars to reduce fragmentation, resolve conflicts, and protect focus time while respecting preferences and constraints.",
+        "pros": [
+          "Increases deep work blocks.",
+          "Automates meeting optimization.",
+          "Strong free tier for individuals."
+        ],
+        "cons": [
+          "Best value when whole team adopts.",
+          "Occasional unexpected meeting moves.",
+          "Limited to major calendar providers."
         ]
       }
     ]
