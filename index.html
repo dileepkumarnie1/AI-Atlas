@@ -61,6 +61,13 @@
             body { background-attachment: scroll !important; }
         }
         /* ...existing code... */
+        /* Pricing group animations */
+        .pricing-group { transition: height 0.3s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease, margin 0.25s ease, border-color 0.25s ease; }
+        .pricing-group.group-empty { height: 0 !important; opacity: 0 !important; transform: scale(.97); }
+        .pricing-group.group-filled { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) {
+            .pricing-group { transition: none; }
+        }
     :root {
         --bg-primary: transparent; /* Let the image show through */
         --bg-primary-translucent: rgba(244, 244, 245, 0.9); /* Keep for other elements if needed */
@@ -1387,12 +1394,15 @@
                         !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
 
-                    // Helper to render a vertical list of tools in a single card
-                    function renderGroupCard(title, tools, color) {
-                        if (!tools.length) return '';
+                    // Helper to render a vertical list of tools in a single card (empty groups collapse)
+                    function renderGroupCard(title, tools, color, totalCount) {
+                        const countBadge = ` <span class=\"text-sm font-semibold text-secondary\">(${totalCount})</span>`;
+                        const isEmpty = tools.length === 0;
+                        const collapseClasses = isEmpty ? 'group-empty h-0 opacity-0 scale-95 pointer-events-none -m-px p-0 border-dashed' : 'group-filled';
                         return `
-                            <div class="bg-card border border-color rounded-xl p-4 flex flex-col min-h-[120px]">
-                                <h3 class="text-xl font-bold mb-3" style="color:${color}">${title}</h3>
+                            <div class="pricing-group bg-card border border-color rounded-xl transition-all duration-300 ease-out overflow-hidden ${collapseClasses} ${isEmpty ? 'border-transparent' : 'p-4'} flex flex-col ${isEmpty ? '' : 'min-h-[120px]'}">
+                                <h3 class="text-xl font-bold mb-3 flex items-center gap-2" style="color:${color}">${title}${countBadge}</h3>
+                                ${isEmpty ? '<div class=\"text-xs text-muted mb-2 hidden\">No tools in this tier</div>' : ''}
                                 <ul class="flex flex-col gap-3">
                                     ${tools.map(tool => {
                                         const toolId = tool.name;
@@ -1434,10 +1444,10 @@
                         { title: 'Paid/Subscription', tools: paid, color: '#f59e42' },
                         { title: 'Open Source', tools: openSource, color: '#10b981' }
                     ];
+                    // We always render all groups (empty groups animate collapsed) but grid columns still based on non-empty groups for best spacing
                     const nonEmptyGroups = groupData.filter(g => g.tools.length > 0);
-                    const groupCards = nonEmptyGroups.map(g => renderGroupCard(g.title, g.tools, g.color)).join('');
-                    // Dynamically set grid columns based on number of non-empty groups (min 1, max 4)
-                    const groupCount = Math.max(1, Math.min(nonEmptyGroups.length, 4));
+                    const groupCards = groupData.map(g => renderGroupCard(g.title, g.tools, g.color, g.tools.length)).join('');
+                    const groupCount = Math.max(1, Math.min(nonEmptyGroups.length || 1, 4));
                     const gridColsClass = groupCount === 1 ? 'grid-cols-1' : groupCount === 2 ? 'grid-cols-1 sm:grid-cols-2' : groupCount === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
 
                     contentArea.innerHTML = `
