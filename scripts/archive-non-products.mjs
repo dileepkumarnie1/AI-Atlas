@@ -21,6 +21,18 @@ const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
 const VERBOSE = args.includes('--verbose');
 
+// CLI argument helpers
+function getArgValue(flag){
+  const idx = args.indexOf(flag);
+  if(idx !== -1 && idx < args.length - 1) return args[idx+1];
+  return undefined;
+}
+
+// New flags
+const WHITELIST_FILE = getArgValue('--whitelist');
+const RESTORE_ALL = args.includes('--restore-all');
+const RESTORE_LIST = getArgValue('--restore'); // comma separated names
+
 const ROOT = path.resolve(process.cwd());
 const TOOLS_PATH = path.join(ROOT, 'public', 'tools.json');
 const ARCHIVE_PATH = path.join(ROOT, 'public', 'non_product_archive.json');
@@ -74,7 +86,95 @@ const BLOCKLIST = new Set([
 function loadJson(p){return JSON.parse(fs.readFileSync(p,'utf-8'));}
 function saveJson(p,obj){fs.writeFileSync(p, JSON.stringify(obj,null,2));}
 
+function loadWhitelist(){
+  if(!WHITELIST_FILE) return new Set();
+  try {
+    const p = path.isAbsolute(WHITELIST_FILE) ? WHITELIST_FILE : path.join(ROOT, WHITELIST_FILE);
+    if(!fs.existsSync(p)){
+      console.error(`Whitelist file not found: ${p}`);
+      process.exit(1);
+    }
+    const list = JSON.parse(fs.readFileSync(p,'utf-8'));
+    if(!Array.isArray(list)){
+      console.error('Whitelist JSON must be an array of names.');
+      process.exit(1);
+    }
+    return new Set(list.map(s=>String(s)));
+  } catch(e){
+    console.error('Failed to load whitelist:', e.message);
+    process.exit(1);
+  }
+}
+
+function restoreTools(){
+  if(!fs.existsSync(ARCHIVE_PATH)){
+    console.error('No archive file to restore from.');
+    process.exit(1);
+  }
+  if(!fs.existsSync(TOOLS_PATH)){
+    console.error('Missing tools.json');
+    process.exit(1);
+  }
+  const archiveObj = loadJson(ARCHIVE_PATH);
+  const data = loadJson(TOOLS_PATH);
+  if(!Array.isArray(data)){
+    console.error('tools.json root must be an array.');
+    process.exit(1);
+  }
+  if(!archiveObj || !Array.isArray(archiveObj.items)){
+    console.error('Archive file malformed (items array missing).');
+    process.exit(1);
+  }
+  let namesToRestore;
+  if(RESTORE_ALL) {
+    namesToRestore = new Set(archiveObj.items.map(i=>i.tool?.name));
+  } else if(RESTORE_LIST){
+    namesToRestore = new Set(RESTORE_LIST.split(',').map(s=>s.trim()).filter(Boolean));
+  } else {
+    console.error('Specify --restore-all or --restore <name1,name2>');
+    process.exit(1);
+  }
+
+  const remainingArchiveItems = [];
+  let restoredCount = 0;
+  // Map of categoryIndex -> tools array length reference (we insert at end if original index out of range)
+  archiveObj.items.forEach(entry => {
+    const name = entry.tool?.name;
+    if(!name || !namesToRestore.has(name)) { remainingArchiveItems.push(entry); return; }
+    const catIdx = entry.categoryIndex;
+    if(!data[catIdx]){
+      console.warn(`Original category index ${catIdx} no longer exists for ${name}, skipping.`);
+      remainingArchiveItems.push(entry); return;
+    }
+    if(!Array.isArray(data[catIdx].tools)) data[catIdx].tools = [];
+    // Avoid duplicate if tool with same name already present in category
+    if(data[catIdx].tools.some(t=>t && t.name === name)){
+      console.warn(`Tool ${name} already exists in category index ${catIdx}, skipping re-add.`);
+      // drop from archive anyway to avoid perpetual restore attempts
+    } else {
+      data[catIdx].tools.push(entry.tool);
+      restoredCount++;
+      if(VERBOSE) console.log('[restore]', name);
+    }
+  });
+
+  if(DRY){
+    console.log(`Dry run: would restore ${restoredCount} tools.`);
+    return;
+  }
+  saveJson(TOOLS_PATH, data);
+  archiveObj.items = remainingArchiveItems;
+  archiveObj.removedCount = archiveObj.items.length;
+  archiveObj.restoredAt = new Date().toISOString();
+  saveJson(ARCHIVE_PATH, archiveObj);
+  console.log(`Restored ${restoredCount} tools from archive.`);
+}
+
 function main(){
+  // Handle restore mode first
+  if(RESTORE_ALL || RESTORE_LIST){
+    return restoreTools();
+  }
   if(!fs.existsSync(TOOLS_PATH)){
     console.error('Missing tools.json');
     process.exit(1);
@@ -84,16 +184,37 @@ function main(){
     console.error('tools.json root must be an array of category objects');
     process.exit(1);
   }
+  const whitelist = loadWhitelist();
   const archived = [];
   let removedCount = 0;
+  let skippedCount = 0;
+
+  // Build a set of already archived names (to avoid duplicate re-archiving if script run multiple times without modifying blocklist)
+  const existingArchiveNames = new Set();
+  if(fs.existsSync(ARCHIVE_PATH)){
+    try {
+      const prev = loadJson(ARCHIVE_PATH);
+      if(prev && Array.isArray(prev.items)){
+        prev.items.forEach(i=>{ if(i.tool && i.tool.name) existingArchiveNames.add(i.tool.name); });
+      }
+    } catch{/* ignore */}
+  }
   data.forEach((cat, idx)=>{
     if(!cat || !Array.isArray(cat.tools)) return;
     const kept = [];
     for(const tool of cat.tools){
-      if(tool && BLOCKLIST.has(tool.name)){
-        removedCount++;
-        archived.push({ originalCategorySlug: cat.slug || cat.name || 'unknown', categoryIndex: idx, tool });
-        if(VERBOSE) console.log('[archive]', tool.name);
+      const name = tool?.name;
+      if(!name){ kept.push(tool); continue; }
+      if(whitelist.has(name)) { kept.push(tool); continue; }
+      if(BLOCKLIST.has(name)){
+        if(existingArchiveNames.has(name)){
+          skippedCount++;
+          kept.push(tool); // already archived previously; keep current occurrence (shouldn't happen if source already cleaned)
+        } else {
+          removedCount++;
+            archived.push({ originalCategorySlug: cat.slug || cat.name || 'unknown', categoryIndex: idx, tool });
+            if(VERBOSE) console.log('[archive]', name);
+        }
       } else {
         kept.push(tool);
       }
@@ -102,7 +223,7 @@ function main(){
   });
 
   if(DRY){
-    console.log(`Dry run: would archive ${removedCount} entries.`);
+    console.log(`Dry run: would archive ${removedCount} entries.${skippedCount?` (skipped ${skippedCount} already archived)`:''}`);
     return;
   }
 
@@ -121,7 +242,7 @@ function main(){
     } catch(e){ /* ignore parse errors; start fresh */ }
   }
   saveJson(ARCHIVE_PATH, archiveObj);
-  console.log(`Archived ${removedCount} entries to non_product_archive.json`);
+  console.log(`Archived ${removedCount} entries to non_product_archive.json${skippedCount?`, skipped ${skippedCount} already archived.`:'.'}`);
 }
 
 // Entry point detection that works cross-platform (Windows path vs file URL)

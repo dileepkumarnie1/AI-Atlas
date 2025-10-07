@@ -26,6 +26,82 @@ The UI shows a badge for each tool:
 
 ---
 
+## Non-product archival workflow
+
+Purpose: keep `public/tools.json` focused on real, user-facing AI products while preserving removed items in an auditable archive file.
+
+Script: `scripts/archive-non-products.mjs`
+
+Archive file: `public/non_product_archive.json`
+
+Archive entry schema:
+```
+{
+   archivedAt: ISO timestamp of last run that added entries,
+   removedCount: total entries currently in archive,
+   restoredAt?: ISO timestamp of last restore (if any),
+   items: [
+      {
+         originalCategorySlug: string,
+         categoryIndex: number,
+         tool: { name, description, link, ... }
+      }
+   ]
+}
+```
+
+### Modes
+
+Archiving (default): removes any tool whose name is in the internal BLOCKLIST constant and appends it to the archive (unless already archived).
+
+Restore: reinserts archived tools back into their original category index.
+
+### Flags
+
+`--dry-run`   : Show what would change without writing files.
+`--verbose`   : Log each archived or restored name.
+`--whitelist <file>` : JSON array of tool names to *never* archive even if on blocklist.
+`--restore-all` : Restore all archived items (ignores blocklist).
+`--restore <name1,name2>` : Restore only the specified comma-separated tool names.
+
+Examples (PowerShell):
+```
+node scripts/archive-non-products.mjs --dry-run --whitelist data/whitelist.json
+node scripts/archive-non-products.mjs --verbose --whitelist data/whitelist.json
+node scripts/archive-non-products.mjs --restore-all --verbose
+node scripts/archive-non-products.mjs --restore "fairseq,Airfoil" --dry-run
+```
+
+### Duplicate protection
+
+The script skips re-archiving names already present in `non_product_archive.json` and reports a skipped count.
+
+### Whitelist
+
+File: `data/whitelist.json` (created empty). Add product names you want immune from blocklist removal.
+
+### CI Automation
+
+Workflow: `.github/workflows/archive-non-products.yml`
+
+Dispatch inputs:
+- apply (true/false): when false (default) runs dry-run
+- whitelist: path to whitelist file (default `data/whitelist.json`)
+- verbose: enable verbose logging
+- restore_all: set true to restore everything
+- restore_list: comma-separated names to restore (ignored if restore_all=true)
+
+Run from GitHub → Actions → Archive Non-Product Tools → Run workflow.
+
+If `apply=true` and changes occur, the workflow commits with message `chore: archive non-product tools (CI)`.
+
+### Maintenance tips
+- Review the BLOCKLIST periodically; move any legitimate products off it.
+- Keep whitelist small—prefer pruning blocklist when appropriate.
+- After a restore, consider adding the restored names to whitelist if you expect future blocklist hits.
+
+---
+
 ## Exclusion policy: GitHub-hosted links
 
 This site hides tools whose primary link points to GitHub (for example, repository README pages) to reduce noise from non-web apps and repos. One exception is allowlisted:
