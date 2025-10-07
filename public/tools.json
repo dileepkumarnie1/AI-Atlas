@@ -1915,6 +1915,29 @@
           "Some features paid."
         ]
       }
+      ,
+      {
+        "name": "Opus Clip",
+        "description": "AI repurposing tool that turns long videos into viral short clips automatically.",
+        "link": "https://www.opus.pro",
+        "tags": [
+          "Freemium",
+          "Video Repurposing",
+          "Social Media"
+        ],
+        "iconUrl": "https://www.opus.pro/favicon.ico",
+        "about": "Opus Clip uses AI to identify the most engaging segments of long-form video content (podcasts, webinars, interviews) and converts them into short, captioned, social-media-ready clips with automated framing, dynamic captions, and virality scoring.",
+        "pros": [
+          "Automatic highlight detection saves editing time.",
+          "Dynamic captions and reframing for multiple aspect ratios.",
+          "Virality score helps prioritize best clips."
+        ],
+        "cons": [
+          "Free tier limits export quality and volume.",
+          "AI cuts occasionally miss full context.",
+          "Brand styling customization limited on lower tiers."
+        ]
+      }
     ]
   },
   {
@@ -2595,30 +2618,6 @@
           "Windows only.",
           "Premium for best voices.",
           "Not for professional audio."
-        ]
-      }
-      ,
-      {
-        "name": "Mutable.ai",
-        "description": "AI accelerates refactoring, modernization, docs, and tests.",
-        "link": "https://mutable.ai",
-        "tags": [
-          "Freemium",
-          "Refactoring",
-          "Testing",
-          "Code Quality"
-        ],
-        "iconUrl": "https://mutable.ai/favicon.ico",
-        "about": "Mutable.ai focuses on improving existing codebases—suggesting refactors, generating tests, modernizing patterns, and producing documentation for faster, higher-quality maintenance work.",
-        "pros": [
-          "Speeds large-scale refactoring.",
-          "Improves code quality and test coverage.",
-          "Integrates with common Git workflows."
-        ],
-        "cons": [
-          "Changes require developer review.",
-          "May struggle with unconventional architectures.",
-          "Advanced capabilities behind paid plan."
         ]
       }
     ]
