@@ -199,6 +199,53 @@ def build_test_plan() -> List[TestCase]:
         type="negative", priority="P2", device="desktop(1366x768)"
     ))
 
+    # Newly added extended search coverage
+    tc.append(TestCase(
+        id="SR-006",
+        feature="Search",
+        title="Search placeholder text is correct",
+        precondition="Home loaded",
+        steps="Read placeholder attribute of #search-bar-new",
+        expected="Placeholder equals 'Search tools by name, tag or description...'",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-007",
+        feature="Search",
+        title="Trimming of leading/trailing spaces works",
+        precondition="Home loaded",
+        steps="Type '   chatgpt   ' (with spaces)",
+        expected="Results returned (>=1) despite extra spaces",
+        type="edge", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-008",
+        feature="Search",
+        title="Case-insensitive search returns same results",
+        precondition="Home loaded",
+        steps="Type 'GeMiNi' (mixed case)",
+        expected="At least one result relevant to 'gemini'",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-009",
+        feature="Search",
+        title="Search matches tag text",
+        precondition="Home loaded",
+        steps="Type a known tag like 'Freemium'",
+        expected="One or more results have a tag containing 'Freemium'",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="SR-010",
+        feature="Search",
+        title="No-results message clears after valid query",
+        precondition="Home loaded",
+        steps="Type random gibberish then replace with 'chat'",
+        expected="'No tools found' disappears and results list repopulates",
+        type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+
     # Category filter
     tc.append(TestCase(
         id="CF-001",
@@ -859,6 +906,38 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         results.append(TestResult('SR-005', 'Search', "Gibberish query shows 'No tools found'", 'pass' if ok else 'fail', f'txt={txt[:60]}', shot('SR-005', dpage)))
                     ))()
                 ),
+                'SR-006': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (ph := dpage.get_attribute('#search-bar-new', 'placeholder')),
+                    results.append(TestResult('SR-006', 'Search', 'Search placeholder text is correct', 'pass' if ph and 'Search tools by name' in ph else 'fail', f'placeholder={ph}', shot('SR-006', dpage)))
+                ),
+                'SR-007': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (dpage.fill('#search-bar-new', '   chatgpt   '), time.sleep(0.5)),
+                    (count := len(dpage.query_selector_all('#search-results-container .tool-result'))),
+                    results.append(TestResult('SR-007', 'Search', 'Trimming of leading/trailing spaces works', 'pass' if count >= 1 else 'fail', f'results={count}', shot('SR-007', dpage)))
+                ),
+                'SR-008': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (dpage.fill('#search-bar-new', 'GeMiNi'), time.sleep(0.5)),
+                    (count := len(dpage.query_selector_all('#search-results-container .tool-result'))),
+                    results.append(TestResult('SR-008', 'Search', 'Case-insensitive search returns same results', 'pass' if count >= 1 else 'fail', f'results={count}', shot('SR-008', dpage)))
+                ),
+                'SR-009': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (dpage.fill('#search-bar-new', 'Freemium'), time.sleep(0.5)),
+                    (html := dpage.inner_html('#search-results-container')),
+                    results.append(TestResult('SR-009', 'Search', 'Search matches tag text', 'pass' if html and 'Freemium' in html else 'fail', 'tag_check', shot('SR-009', dpage)))
+                ),
+                'SR-010': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (dpage.fill('#search-bar-new', 'no-way-this-matches-123456789'), time.sleep(0.4)),
+                    (msg1 := dpage.text_content('#search-results-container')),
+                    (dpage.fill('#search-bar-new', 'chat'), time.sleep(0.5)),
+                    (msg2 := dpage.text_content('#search-results-container')),
+                    (ok := (msg1 and 'No tools found' in msg1 and msg2 and 'No tools found' not in msg2)),
+                    results.append(TestResult('SR-010', 'Search', 'No-results message clears after valid query', 'pass' if ok else 'fail', 'cleared' if ok else f'before={msg1[:40] if msg1 else msg1}; after={msg2[:40] if msg2 else msg2}', shot('SR-010', dpage)))
+                ),
                 # Auth
                 'AU-001': lambda: (
                     goto_home(dpage),
@@ -909,7 +988,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 'AU-005': lambda: (
                     goto_home(dpage),
                     (lambda: (
-                        # Ensure logged in first
                         (ui_login_if_creds(dpage)),
                         done := ui_signout_if_possible(dpage),
                         results.append(TestResult('AU-005', 'Auth', 'Sign out returns to logged-out UI', 'pass' if done else 'skipped', 'Signed out' if done else 'Not logged in or signout failed', shot('AU-005', dpage)))
