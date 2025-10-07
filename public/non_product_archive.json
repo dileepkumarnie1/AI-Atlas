@@ -1,6 +1,6 @@
 {
-  "archivedAt": "2025-10-07T16:01:36.507Z",
-  "removedCount": 87,
+  "archivedAt": "2025-10-07T18:44:20.712Z",
+  "removedCount": 115,
   "items": [
     {
       "originalCategorySlug": "most-popular",
@@ -1475,6 +1475,496 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://arstechnica.com/favicon.ico"
+      }
+    },
+    {
+      "originalCategorySlug": "most-popular",
+      "categoryIndex": 0,
+      "tool": {
+        "name": "nacos",
+        "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+        "link": "https://nacos.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/1961952?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "most-popular",
+      "categoryIndex": 0,
+      "tool": {
+        "name": "sim",
+        "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "link": "https://www.sim.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
+      }
+    },
+    {
+      "originalCategorySlug": "most-popular",
+      "categoryIndex": 0,
+      "tool": {
+        "name": "stagehand",
+        "description": "The AI Browser Automation Framework",
+        "link": "https://stagehand.dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The AI Browser Automation Framework",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "most-popular",
+      "categoryIndex": 0,
+      "tool": {
+        "name": "TradingAgents",
+        "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+        "link": "https://arxiv.org/pdf/2412.20138",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/192884433?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "language-chat",
+      "categoryIndex": 1,
+      "tool": {
+        "name": "assistant-ui",
+        "description": "Typescript/React Library for AI Chat💬🚀",
+        "link": "https://www.assistant-ui.com",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Typescript/React Library for AI Chat💬🚀",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/189563271?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "language-chat",
+      "categoryIndex": 1,
+      "tool": {
+        "name": "gpt-2",
+        "description": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+        "link": "https://openai.com/blog/better-language-models/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "language-chat",
+      "categoryIndex": 1,
+      "tool": {
+        "name": "LLMs-from-scratch",
+        "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+        "link": "https://amzn.to/4fqvn0D",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/5618407?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "language-chat",
+      "categoryIndex": 1,
+      "tool": {
+        "name": "react-native-gifted-chat",
+        "description": "💬 The most complete chat UI for React Native",
+        "link": "https://gifted.chat",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "💬 The most complete chat UI for React Native",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/388375?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "language-chat",
+      "categoryIndex": 1,
+      "tool": {
+        "name": "transformers",
+        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+        "link": "https://huggingface.co/transformers",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
+        "about": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+        "pros": [],
+        "cons": []
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "deeplake",
+        "description": "Database for AI. Store Vectors, Images, Texts, Videos, etc. Use with LLMs/LangChain. Store, query, version, & visualize any AI data. Stream data in real-time to PyTorch/TensorFlow. https://activeloop.ai",
+        "link": "https://activeloop.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/34816118?v=4&s=64",
+        "about": "Database for AI. Store Vectors, Images, Texts, Videos, etc. Use with LLMs/LangChain. Store, query, version, & visualize any AI data. Stream data in real-time to PyTorch/TensorFlow. https://activeloop.ai",
+        "pros": [],
+        "cons": []
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "diffusers",
+        "description": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
+        "link": "https://huggingface.co/docs/diffusers",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
+        "about": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
+        "pros": [],
+        "cons": []
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "flycut-caption",
+        "description": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+        "link": "https://caption.flycut.co",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/13807549?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "mmaction2",
+        "description": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+        "link": "https://mmaction2.readthedocs.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "mmagic",
+        "description": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+        "link": "https://mmagic.readthedocs.io/en/latest/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "Text2Video-Zero",
+        "description": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+        "link": "https://text2video-zero.github.io/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/96586070?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "Tune-A-Video",
+        "description": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+        "link": "https://tuneavideo.github.io",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/101181824?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "video-tools",
+      "categoryIndex": 3,
+      "tool": {
+        "name": "vid2avatar",
+        "description": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+        "link": "https://moygcc.github.io/vid2avatar/",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "design-tools",
+      "categoryIndex": 7,
+      "tool": {
+        "name": "text-generation-webui",
+        "description": "The definitive Web UI for local AI, with powerful features and easy setup.",
+        "link": "https://oobabooga.gumroad.com/l/deep_reason",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "The definitive Web UI for local AI, with powerful features and easy setup.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/112222186?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "prompt-enhancers",
+      "categoryIndex": 15,
+      "tool": {
+        "name": "Context-Engineering",
+        "description": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+        "link": "https://deepwiki.com/davidkimai/Context-Engineering",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/208424706?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "most-famous-agentic-ais",
+      "categoryIndex": 16,
+      "tool": {
+        "name": "claude-coder",
+        "description": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+        "link": "https://www.kodu.ai",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/160821808?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "most-famous-agentic-ais",
+      "categoryIndex": 16,
+      "tool": {
+        "name": "cline",
+        "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+        "link": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/184127137?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "search-knowledge-discovery",
+      "categoryIndex": 18,
+      "tool": {
+        "name": "qdrant",
+        "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+        "link": "https://qdrant.tech",
+        "tags": [
+          "Open Source"
+        ],
+        "about": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://avatars.githubusercontent.com/u/73504361?v=4&s=64"
+      }
+    },
+    {
+      "originalCategorySlug": "ai-safety-ethics",
+      "categoryIndex": 19,
+      "tool": {
+        "name": "gateway",
+        "description": "A blazing fast AI Gateway with integrated guardrails. Route to 200+ LLMs, 50+ AI Guardrails with 1 fast & friendly API.",
+        "link": "https://portkey.ai/features/ai-gateway",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/131141116?v=4&s=64",
+        "about": "A blazing fast AI Gateway with integrated guardrails. Route to 200+ LLMs, 50+ AI Guardrails with 1 fast & friendly API.",
+        "pros": [],
+        "cons": []
+      }
+    },
+    {
+      "originalCategorySlug": "ai-safety-ethics",
+      "categoryIndex": 19,
+      "tool": {
+        "name": "woodpecker",
+        "description": "Operant AI - 3D Runtime Protection",
+        "link": "https://operant.ai",
+        "tags": [
+          "developer-tools",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Operant AI - 3D Runtime Protection",
+        "pros": [],
+        "cons": [],
+        "iconUrl": "https://operant.ai/favicon.ico"
+      }
+    },
+    {
+      "originalCategorySlug": "ai-safety-ethics",
+      "categoryIndex": 19,
+      "tool": {
+        "name": "Zero",
+        "description": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
+        "link": "https://mail0.link",
+        "tags": [
+          "Open Source"
+        ],
+        "iconUrl": "https://avatars.githubusercontent.com/u/198371852?v=4&s=64",
+        "about": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
+        "pros": [],
+        "cons": []
+      }
+    },
+    {
+      "originalCategorySlug": "legal-compliance",
+      "categoryIndex": 21,
+      "tool": {
+        "name": "comp",
+        "description": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "link": "https://trycomp.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://trycomp.ai/favicon.ico"
+      }
+    },
+    {
+      "originalCategorySlug": "healthcare-medical-ai",
+      "categoryIndex": 22,
+      "tool": {
+        "name": "MONAI",
+        "description": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "link": "https://monai.io/",
+        "tags": [
+          "developer-tools",
+          "search",
+          "education",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "pros": [
+          "Open source and extensible.",
+          "Great for research and discovery.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Coverage and speed can vary.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://monai.io/assets/logo/MONAI-logo_favicon.png"
+      }
+    },
+    {
+      "originalCategorySlug": "voice-speech-ai",
+      "categoryIndex": 25,
+      "tool": {
+        "name": "Vosk",
+        "description": "Offline speech recognition toolkit for multiple languages and platforms.",
+        "link": "https://alphacephei.com/vosk",
+        "tags": [
+          "Open Source",
+          "ASR",
+          "Offline"
+        ],
+        "iconUrl": "https://alphacephei.com/favicon.ico",
+        "about": "Vosk provides lightweight ASR that works offline on servers and embedded devices, with bindings for many languages.",
+        "pros": [
+          "Runs offline with small footprints.",
+          "Cross‑platform bindings.",
+          "Good for edge devices."
+        ],
+        "cons": [
+          "Lower accuracy vs large LLM‑based ASR.",
+          "Model management required.",
+          "Limited diarization features."
+        ]
       }
     }
   ]

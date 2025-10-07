@@ -374,18 +374,6 @@
         ]
       },
       {
-        "name": "nacos",
-        "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
-        "link": "https://nacos.io",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/1961952?v=4&s=64"
-      },
-      {
         "name": "Notebook LLM",
         "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
         "link": "https://notebooklm.google.com/",
@@ -474,37 +462,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64"
       },
       {
-        "name": "sim",
-        "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
-        "link": "https://www.sim.ai",
-        "tags": [
-          "developer-tools",
-          "image",
-          "search",
-          "agents",
-          "automation",
-          "design",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
-      },
-      {
-        "name": "stagehand",
-        "description": "The AI Browser Automation Framework",
-        "link": "https://stagehand.dev",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "The AI Browser Automation Framework",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64"
-      },
-      {
         "name": "tabby",
         "description": "Self-hosted AI coding assistant",
         "link": "https://tabbyml.com",
@@ -527,18 +484,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/82193554?v=4&s=64"
-      },
-      {
-        "name": "TradingAgents",
-        "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-        "link": "https://arxiv.org/pdf/2412.20138",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/192884433?v=4&s=64"
       }
     ]
   },
@@ -548,18 +493,6 @@
     "description": "Tools for conversation, content generation, summarization, and translation.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
-      {
-        "name": "assistant-ui",
-        "description": "Typescript/React Library for AI Chat💬🚀",
-        "link": "https://www.assistant-ui.com",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Typescript/React Library for AI Chat💬🚀",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/189563271?v=4&s=64"
-      },
       {
         "name": "AutoGPT",
         "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
@@ -795,18 +728,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/96192199?v=4&s=64"
       },
       {
-        "name": "gpt-2",
-        "description": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
-        "link": "https://openai.com/blog/better-language-models/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Code for the paper \"Language Models are Unsupervised Multitask Learners\"",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/14957082?v=4&s=64"
-      },
-      {
         "name": "gpt-oss",
         "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
         "link": "https://openai.com/open-models",
@@ -895,18 +816,6 @@
         "about": "🦜🔗 Build context-aware reasoning applications",
         "pros": [],
         "cons": []
-      },
-      {
-        "name": "LLMs-from-scratch",
-        "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
-        "link": "https://amzn.to/4fqvn0D",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/5618407?v=4&s=64"
       },
       {
         "name": "mem0",
@@ -1099,18 +1008,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/159330290?v=4&s=64"
       },
       {
-        "name": "react-native-gifted-chat",
-        "description": "💬 The most complete chat UI for React Native",
-        "link": "https://gifted.chat",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "💬 The most complete chat UI for React Native",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/388375?v=4&s=64"
-      },
-      {
         "name": "Replika",
         "description": "AI companion for conversation and emotional support.",
         "link": "https://replika.com/",
@@ -1167,18 +1064,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://seeddream.app/favicon.ico"
-      },
-      {
-        "name": "transformers",
-        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
-        "link": "https://huggingface.co/transformers",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
-        "about": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
-        "pros": [],
-        "cons": []
       },
       {
         "name": "You.com",
@@ -1672,18 +1557,6 @@
         ]
       },
       {
-        "name": "deeplake",
-        "description": "Database for AI. Store Vectors, Images, Texts, Videos, etc. Use with LLMs/LangChain. Store, query, version, & visualize any AI data. Stream data in real-time to PyTorch/TensorFlow. https://activeloop.ai",
-        "link": "https://activeloop.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/34816118?v=4&s=64",
-        "about": "Database for AI. Store Vectors, Images, Texts, Videos, etc. Use with LLMs/LangChain. Store, query, version, & visualize any AI data. Stream data in real-time to PyTorch/TensorFlow. https://activeloop.ai",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Descript",
         "description": "An all-in-one audio and video editor that works like a document.",
         "link": "https://www.descript.com/",
@@ -1703,30 +1576,6 @@
           "The free tier is quite limited.",
           "Subscription is necessary for any serious work."
         ]
-      },
-      {
-        "name": "diffusers",
-        "description": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
-        "link": "https://huggingface.co/docs/diffusers",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
-        "about": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "flycut-caption",
-        "description": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
-        "link": "https://caption.flycut.co",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "A complete video subtitle editing React component with AI-powered speech recognition and visual editing capabilities.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/13807549?v=4&s=64"
       },
       {
         "name": "Google Veo",
@@ -1892,30 +1741,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/208222005?v=4&s=64"
       },
       {
-        "name": "mmaction2",
-        "description": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
-        "link": "https://mmaction2.readthedocs.io",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
-      },
-      {
-        "name": "mmagic",
-        "description": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
-        "link": "https://mmagic.readthedocs.io/en/latest/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unlock the magic 🪄: Generative-AI (AIGC), easy-to-use APIs, awsome model zoo, diffusion models, for text-to-image generation, image/video restoration/enhancement, etc.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
-      },
-      {
         "name": "Pictory",
         "description": "AI video creation from text and blog posts.",
         "link": "https://pictory.ai/",
@@ -2022,30 +1847,6 @@
         ]
       },
       {
-        "name": "Text2Video-Zero",
-        "description": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
-        "link": "https://text2video-zero.github.io/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "[ICCV 2023 Oral] Text-to-Image Diffusion Models are Zero-Shot Video Generators",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/96586070?v=4&s=64"
-      },
-      {
-        "name": "Tune-A-Video",
-        "description": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
-        "link": "https://tuneavideo.github.io",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "[ICCV 2023] Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/101181824?v=4&s=64"
-      },
-      {
         "name": "Veed.io",
         "description": "Online video editor with AI-powered features.",
         "link": "https://www.veed.io/",
@@ -2065,18 +1866,6 @@
           "Export limits.",
           "Some features paid."
         ]
-      },
-      {
-        "name": "vid2avatar",
-        "description": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
-        "link": "https://moygcc.github.io/vid2avatar/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Vid2Avatar: 3D Avatar Reconstruction from Videos in the Wild via Self-supervised Scene Decomposition (CVPR2023)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64"
       }
     ]
   },
@@ -3402,18 +3191,6 @@
         ]
       },
       {
-        "name": "text-generation-webui",
-        "description": "The definitive Web UI for local AI, with powerful features and easy setup.",
-        "link": "https://oobabooga.gumroad.com/l/deep_reason",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "The definitive Web UI for local AI, with powerful features and easy setup.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/112222186?v=4&s=64"
-      },
-      {
         "name": "Tome",
         "description": "An AI-powered tool for generating entire presentations and narrative documents.",
         "link": "https://tome.app/",
@@ -4420,18 +4197,6 @@
         ]
       },
       {
-        "name": "Context-Engineering",
-        "description": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
-        "link": "https://deepwiki.com/davidkimai/Context-Engineering",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "\"Context engineering is the delicate art and science of filling the context window with just the right information for the next step.\" — Andrej Karpathy. A frontier, first-principles handbook inspired by Karpathy and 3Blue1Brown for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/208424706?v=4&s=64"
-      },
-      {
         "name": "FlowGPT",
         "description": "Community-driven prompt marketplace and discovery platform.",
         "link": "https://flowgpt.com/",
@@ -4649,30 +4414,6 @@
           "Mostly research-focused.",
           "Limited adoption."
         ]
-      },
-      {
-        "name": "claude-coder",
-        "description": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
-        "link": "https://www.kodu.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/160821808?v=4&s=64"
-      },
-      {
-        "name": "cline",
-        "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
-        "link": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/184127137?v=4&s=64"
       },
       {
         "name": "CrewAI",
@@ -5476,18 +5217,6 @@
         "iconUrl": "https://octocode.ai/favicon-16x16.png?v=2"
       },
       {
-        "name": "qdrant",
-        "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
-        "link": "https://qdrant.tech",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/73504361?v=4&s=64"
-      },
-      {
         "name": "ragflow",
         "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
         "link": "https://ragflow.io",
@@ -5650,18 +5379,6 @@
         "iconUrl": "https://zenguard.ai/favicon.png"
       },
       {
-        "name": "gateway",
-        "description": "A blazing fast AI Gateway with integrated guardrails. Route to 200+ LLMs, 50+ AI Guardrails with 1 fast & friendly API.",
-        "link": "https://portkey.ai/features/ai-gateway",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/131141116?v=4&s=64",
-        "about": "A blazing fast AI Gateway with integrated guardrails. Route to 200+ LLMs, 50+ AI Guardrails with 1 fast & friendly API.",
-        "pros": [],
-        "cons": []
-      },
-      {
         "name": "Google PAIR",
         "description": "Google’s People + AI Research initiative for responsible AI.",
         "link": "https://pair.withgoogle.com/",
@@ -5810,33 +5527,6 @@
           "Requires expertise.",
           "Best for organizations."
         ]
-      },
-      {
-        "name": "woodpecker",
-        "description": "Operant AI - 3D Runtime Protection",
-        "link": "https://operant.ai",
-        "tags": [
-          "developer-tools",
-          "design",
-          "api",
-          "Freemium"
-        ],
-        "about": "Operant AI - 3D Runtime Protection",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://operant.ai/favicon.ico"
-      },
-      {
-        "name": "Zero",
-        "description": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
-        "link": "https://mail0.link",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/198371852?v=4&s=64",
-        "about": "Experience email the way you want with Mail0 – the first open source email app that puts your privacy and safety first. Join the discord: https://mail0.link/discord",
-        "pros": [],
-        "cons": []
       }
     ]
   },
@@ -5987,27 +5677,6 @@
     "description": "AI for contract analysis, legal drafting, compliance, and policy reviews.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 011 1v1h5a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h3V3a1 1 0 011-1z\"/></svg>",
     "tools": [
-      {
-        "name": "comp",
-        "description": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
-        "link": "https://trycomp.ai",
-        "tags": [
-          "developer-tools",
-          "image",
-          "agents",
-          "Freemium"
-        ],
-        "about": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
-        "pros": [
-          "Generates visuals quickly.",
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Quality varies by prompt.",
-          "Suggestions may need review."
-        ],
-        "iconUrl": "https://trycomp.ai/favicon.ico"
-      },
       {
         "name": "Harvey",
         "description": "Legal AI for research, drafting, and contract workflows.",
@@ -6172,31 +5841,6 @@
           "Quality varies by environment.",
           "Review still needed."
         ]
-      },
-      {
-        "name": "MONAI",
-        "description": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
-        "link": "https://monai.io/",
-        "tags": [
-          "developer-tools",
-          "search",
-          "education",
-          "design",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
-        "pros": [
-          "Open source and extensible.",
-          "Great for research and discovery.",
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Requires setup and maintenance.",
-          "Coverage and speed can vary.",
-          "Suggestions may need review."
-        ],
-        "iconUrl": "https://monai.io/assets/logo/MONAI-logo_favicon.png"
       },
       {
         "name": "Nuance Dragon Medical One",
@@ -6417,28 +6061,6 @@
           "Training data requirements.",
           "Compute needs for training.",
           "Quality varies by dataset/model."
-        ]
-      },
-      {
-        "name": "Vosk",
-        "description": "Offline speech recognition toolkit for multiple languages and platforms.",
-        "link": "https://alphacephei.com/vosk",
-        "tags": [
-          "Open Source",
-          "ASR",
-          "Offline"
-        ],
-        "iconUrl": "https://alphacephei.com/favicon.ico",
-        "about": "Vosk provides lightweight ASR that works offline on servers and embedded devices, with bindings for many languages.",
-        "pros": [
-          "Runs offline with small footprints.",
-          "Cross‑platform bindings.",
-          "Good for edge devices."
-        ],
-        "cons": [
-          "Lower accuracy vs large LLM‑based ASR.",
-          "Model management required.",
-          "Limited diarization features."
         ]
       },
       {
