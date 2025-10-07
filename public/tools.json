@@ -6,30 +6,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
-        "name": "Airfoil",
-        "description": "Interactive article explaining the physics of an airfoil and what makes airplanes fly",
-        "link": "https://ciechanow.ski/airfoil/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Airfoil",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://ciechanow.ski/favicon.ico"
-      },
-      {
-        "name": "Bypassing airport security via SQL injection",
-        "description": "Bypassing airport security via SQL injection",
-        "link": "https://ian.sh/tsa",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Bypassing airport security via SQL injection",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://s3.amazonaws.com/super-notion/images/a35ee276-8605-424a-9466-bacce4ec24fd.png"
-      },
-      {
         "name": "chatbox",
         "description": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
         "link": "https://chatboxai.app?utm_medium=github",
@@ -117,18 +93,6 @@
         ]
       },
       {
-        "name": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
-        "description": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
-        "link": "https://arxiv.org/abs/2501.12948",
-        "tags": [
-          "Trending"
-        ],
-        "about": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png"
-      },
-      {
         "name": "dify",
         "description": "Production-ready platform for agentic workflow development.",
         "link": "https://dify.ai",
@@ -161,18 +125,6 @@
           "Suggestions may need review."
         ],
         "iconUrl": "https://app.docsgpt.cloud/apple-touch-icon.png"
-      },
-      {
-        "name": "fairseq",
-        "description": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
-        "link": "https://github.com/facebookresearch/fairseq",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/16943930?v=4&s=64"
       },
       {
         "name": "Gemini (Google)",
@@ -260,18 +212,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/51827949?v=4&s=64"
-      },
-      {
-        "name": "If you are good at code review, you will be good at using AI agents",
-        "description": "If you are good at code review, you will be good at using AI agents",
-        "link": "https://www.seangoedecke.com/ai-agents-and-code-review/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "If you are good at code review, you will be good at using AI agents",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.seangoedecke.com/favicon-32x32.png?v=ac7bb3aa286bd21c42741d9c9aa60cb7"
       },
       {
         "name": "khoj",
@@ -434,18 +374,6 @@
         ]
       },
       {
-        "name": "My AI skeptic friends are all nuts",
-        "description": "My AI skeptic friends are all nuts",
-        "link": "https://fly.io/blog/youre-all-nuts/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "My AI skeptic friends are all nuts",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://fly.io/static/images/favicon/favicon.ico"
-      },
-      {
         "name": "nacos",
         "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
         "link": "https://nacos.io",
@@ -475,18 +403,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://notebooklm.google.com/favicon.ico"
-      },
-      {
-        "name": "Open source AI is the path forward",
-        "description": "Open source AI is the path forward",
-        "link": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Open source AI is the path forward",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://about.fb.com/wp-content/uploads/2021/10/meta-favicon.png?fit=16%2C16"
       },
       {
         "name": "Open-Assistant",
@@ -589,28 +505,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/158221360?v=4&s=64"
       },
       {
-        "name": "supabase",
-        "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
-        "link": "https://supabase.com",
-        "tags": [
-          "image",
-          "search",
-          "design",
-          "api",
-          "Freemium"
-        ],
-        "about": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
-        "pros": [
-          "Generates visuals quickly.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "Quality varies by prompt.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
-      },
-      {
         "name": "tabby",
         "description": "Self-hosted AI coding assistant",
         "link": "https://tabbyml.com",
@@ -654,18 +548,6 @@
     "description": "Tools for conversation, content generation, summarization, and translation.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
-      {
-        "name": "A privacy war is raging inside the W3C",
-        "description": "A privacy war is raging inside the W3C",
-        "link": "https://www.protocol.com/policy/w3c-privacy-war",
-        "tags": [
-          "Trending"
-        ],
-        "about": "A privacy war is raging inside the W3C",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.protocol.com/favicon.ico"
-      },
       {
         "name": "assistant-ui",
         "description": "Typescript/React Library for AI Chat💬🚀",
@@ -1013,18 +895,6 @@
         "about": "🦜🔗 Build context-aware reasoning applications",
         "pros": [],
         "cons": []
-      },
-      {
-        "name": "Learning to Reason with LLMs",
-        "description": "Learning to Reason with LLMs",
-        "link": "https://openai.com/index/learning-to-reason-with-llms/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Learning to Reason with LLMs",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://openai.com/favicon.ico"
       },
       {
         "name": "LLMs-from-scratch",
@@ -1718,30 +1588,6 @@
         ]
       },
       {
-        "name": "Stable Diffusion 2.0",
-        "description": "Stable Diffusion 2.0",
-        "link": "https://stability.ai/blog/stable-diffusion-v2-release",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Stable Diffusion 2.0",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/favicon.ico?format=100w"
-      },
-      {
-        "name": "Stable Video Diffusion",
-        "description": "Stable Video Diffusion",
-        "link": "https://stability.ai/news/stable-video-diffusion-open-ai-video-model",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Stable Video Diffusion",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/favicon.ico?format=100w"
-      },
-      {
         "name": "stable-diffusion",
         "description": "A latent text-to-image diffusion model",
         "link": "https://ommer-lab.com/research/latent-diffusion-models/",
@@ -1782,18 +1628,6 @@
           "Clip lengths are short without heavy optimization.",
           "Quality depends on base model and settings."
         ]
-      },
-      {
-        "name": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
-        "description": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
-        "link": "https://github.com/THUDM/CogVideo",
-        "tags": [
-          "Trending"
-        ],
-        "about": "CogVideo: Large-Scale Pretraining for Text-to-Video Generation via Transformers",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://github.githubassets.com/favicons/favicon.png"
       },
       {
         "name": "D-ID",
@@ -1950,18 +1784,6 @@
         "cons": []
       },
       {
-        "name": "Imagen Video: high definition video generation with diffusion models",
-        "description": "Imagen Video: high definition video generation with diffusion models",
-        "link": "https://imagen.research.google/video/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Imagen Video: high definition video generation with diffusion models",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://imagen.research.google/favicon.ico"
-      },
-      {
         "name": "InVideo",
         "description": "An online video editor with AI-powered features for quick video creation.",
         "link": "https://invideo.io/",
@@ -2070,18 +1892,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/208222005?v=4&s=64"
       },
       {
-        "name": "Meta’s new text-to-video AI generator is like DALL-E for video",
-        "description": "Meta’s new text-to-video AI generator is like DALL-E for video",
-        "link": "https://www.theverge.com/2022/9/29/23378210/meta-text-to-video-ai-generation-make-a-video-model-dall-e",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Meta’s new text-to-video AI generator is like DALL-E for video",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.theverge.com/static-assets/icons/favicon.ico"
-      },
-      {
         "name": "mmaction2",
         "description": "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark",
         "link": "https://mmaction2.readthedocs.io",
@@ -2104,19 +1914,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/10245193?v=4&s=64"
-      },
-      {
-        "name": "n8n-nodes-comfyui-image-to-image",
-        "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
-        "link": "https://www.npmjs.com/package/n8n-nodes-comfyui-image-to-image",
-        "tags": [
-          "Library"
-        ],
-        "about": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, image+video processing, and text-to-video generation using stable diffusion workflows",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
       },
       {
         "name": "Pictory",
@@ -2204,27 +2001,6 @@
         ]
       },
       {
-        "name": "Stable Video Diffusion",
-        "description": "Stability AI's open video generation models for text-to-video and image-to-video.",
-        "link": "https://github.com/Stability-AI/stable-video-diffusion",
-        "tags": [
-          "Open Source",
-          "Text-to-Video"
-        ],
-        "iconUrl": "https://stability.ai/favicon.ico",
-        "about": "Stable Video Diffusion provides research weights and code to generate short, coherent video clips from text or images, showcasing strong motion and temporal consistency.",
-        "pros": [
-          "Strong temporal coherence for short clips.",
-          "Backed by Stability AI ecosystem.",
-          "Good starting point for custom pipelines."
-        ],
-        "cons": [
-          "Research preview; features evolve rapidly.",
-          "Requires significant compute for best quality.",
-          "Limited clip duration without optimizations."
-        ]
-      },
-      {
         "name": "Synthesia",
         "description": "Create professional videos with AI avatars and voiceovers in minutes.",
         "link": "https://www.synthesia.io/",
@@ -2301,18 +2077,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/29098423?v=4&s=64"
-      },
-      {
-        "name": "youtube-dl",
-        "description": "Command-line program to download videos from YouTube.com and other video sites",
-        "link": "http://ytdl-org.github.io/youtube-dl/",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/48381040?v=4&s=64",
-        "about": "Command-line program to download videos from YouTube.com and other video sites",
-        "pros": [],
-        "cons": []
       }
     ]
   },
@@ -2322,58 +2086,6 @@
     "description": "AI-powered tools that help you write, debug, and optimize code faster.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 01-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
-      {
-        "name": "@edsamo/mysql-mcp-server",
-        "description": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
-        "link": "https://www.npmjs.com/package/@edsamo/mysql-mcp-server",
-        "tags": [
-          "Library"
-        ],
-        "about": "MySQL Model Context Protocol Server for VS Code AI extensions with any MySQL server",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@openctx/provider-linear-issues",
-        "description": "Linear Issues context for code AI and editors (OpenCtx provider)",
-        "link": "https://www.npmjs.com/package/@openctx/provider-linear-issues",
-        "tags": [
-          "Library"
-        ],
-        "about": "Linear Issues context for code AI and editors (OpenCtx provider)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@usgupta/circuitware-cli",
-        "description": "Circuitware Code - AI-powered command-line workflow tool",
-        "link": "https://www.npmjs.com/package/@usgupta/circuitware-cli",
-        "tags": [
-          "Library"
-        ],
-        "about": "Circuitware Code - AI-powered command-line workflow tool",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@usgupta/circuitware-code",
-        "description": "Circuitware Code - AI-powered command-line workflow tool",
-        "link": "https://www.npmjs.com/package/@usgupta/circuitware-code",
-        "tags": [
-          "Library"
-        ],
-        "about": "Circuitware Code - AI-powered command-line workflow tool",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "Amazon CodeWhisperer",
         "description": "Amazon's AI coding companion, with a generous free tier for individuals.",
@@ -2417,34 +2129,6 @@
         ]
       },
       {
-        "_commentedOut": true,
-        "_comment": "NPM package source disabled",
-        "name": "cc-model-switcher",
-        "description": "A simple CLI tool to switch Claude Code AI models easily",
-        "link": "https://www.npmjs.com/package/cc-model-switcher",
-        "tags": [
-          "Library"
-        ],
-        "about": "A simple CLI tool to switch Claude Code AI models easily",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
-      },
-      {
-        "_commentedOut": true,
-        "_comment": "NPM package source disabled",
-        "name": "claude-forge",
-        "description": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
-        "link": "https://www.npmjs.com/package/claude-forge",
-        "tags": [
-          "Library"
-        ],
-        "about": "Forge your ideas into reality with Claude Code - AI-powered project shaping for Claude Code",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico"
-      },
-      {
         "name": "Codeium",
         "description": "Free AI code completion and chat for individuals across many IDEs.",
         "link": "https://codeium.com/",
@@ -2476,19 +2160,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/3979584?v=4&s=64"
-      },
-      {
-        "name": "Copilot regurgitating Quake code, including sweary comments",
-        "description": "Copilot regurgitating Quake code, including sweary comments",
-        "link": "https://twitter.com/mitsuhiko/status/1410886329924194309",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Copilot regurgitating Quake code, including sweary comments",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://twitter.com/favicon.ico"
       },
       {
         "name": "Cursor",
@@ -2576,32 +2247,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/201822503?v=4&s=64"
-      },
-      {
-        "name": "Kite – Programming Copilot",
-        "description": "Kite – Programming Copilot",
-        "link": "https://kite.com",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Kite – Programming Copilot",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://kite.com/favicon.ico"
-      },
-      {
-        "name": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
-        "description": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
-        "link": "https://hub.continue.dev/explore/assistants",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Launch HN: Continue (YC S23) – Create custom AI code assistants",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://hub.continue.dev/favicon.ico"
       },
       {
         "name": "LibreChat",
@@ -2791,45 +2436,6 @@
     "description": "Generate music, voiceovers, and sound effects with AI.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3V3z\" /></svg>",
     "tools": [
-      {
-        "name": "@bentwnghk/chat",
-        "description": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
-        "link": "https://www.npmjs.com/package/@bentwnghk/chat",
-        "tags": [
-          "Library"
-        ],
-        "about": "Mr.🆖 AI - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@kajidog/aivis-cloud-cli",
-        "description": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
-        "link": "https://www.npmjs.com/package/@kajidog/aivis-cloud-cli",
-        "tags": [
-          "Library"
-        ],
-        "about": "Aivis Cloud CLI - Text-to-speech synthesis and model management",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@lobehub/chat",
-        "description": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
-        "link": "https://www.npmjs.com/package/@lobehub/chat",
-        "tags": [
-          "Library"
-        ],
-        "about": "Lobe Chat - an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Supports one-click free deployment of your private ChatGPT/LLM web application.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "Adobe Podcast",
         "description": "A web-based tool with AI-powered features for cleaning up and improving voice recordings.",
@@ -3071,19 +2677,6 @@
         ]
       },
       {
-        "name": "ssml-builder",
-        "description": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
-        "link": "https://www.npmjs.com/package/ssml-builder",
-        "tags": [
-          "Library"
-        ],
-        "about": "This package creates Speech Synthesis Markup Language (SSML) using the builder pattern.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "Stable Audio (Stability AI)",
         "description": "An AI music and sound effect generator with audio-to-audio capabilities.",
         "link": "https://www.stableaudio.com/",
@@ -3175,19 +2768,6 @@
     "description": "Enhance your workflow with AI-powered summarizers, notetakers, and schedulers.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 000 2h2a1 1 0 100-2H9z\" /><path fill-rule=\"evenodd\" d=\"M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
-      {
-        "name": "@ckeditor/ckeditor5-ai",
-        "description": "AI Assistant feature for CKEditor 5.",
-        "link": "https://www.npmjs.com/package/@ckeditor/ckeditor5-ai",
-        "tags": [
-          "Library"
-        ],
-        "about": "AI Assistant feature for CKEditor 5.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "DeepL",
         "description": "Highly accurate AI-powered translation service.",
@@ -3629,71 +3209,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z\" /><path fill-rule=\"evenodd\" d=\"M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
-        "name": "@ai-sdk/react",
-        "description": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
-        "link": "https://www.npmjs.com/package/@ai-sdk/react",
-        "tags": [
-          "Library"
-        ],
-        "about": "[React](https://react.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@ai-sdk/svelte",
-        "description": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
-        "link": "https://www.npmjs.com/package/@ai-sdk/svelte",
-        "tags": [
-          "Library"
-        ],
-        "about": "[Svelte](https://svelte.dev/) UI components for the [AI SDK](https://ai-sdk.dev/docs):",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@ai-sdk/ui-utils",
-        "description": "Important: this is an internal API. Expect breaking changes.",
-        "link": "https://www.npmjs.com/package/@ai-sdk/ui-utils",
-        "tags": [
-          "Library"
-        ],
-        "about": "Important: this is an internal API. Expect breaking changes.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@assistant-ui/react",
-        "description": "TypeScript/React library for AI Chat",
-        "link": "https://www.npmjs.com/package/@assistant-ui/react",
-        "tags": [
-          "Library"
-        ],
-        "about": "TypeScript/React library for AI Chat",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "Airbnb’s design to live and work anywhere",
-        "description": "Airbnb’s design to live and work anywhere",
-        "link": "https://news.airbnb.com/airbnbs-design-to-live-and-work-anywhere/",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Airbnb’s design to live and work anywhere",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://news.airbnb.com/favicon.ico"
-      },
-      {
         "name": "Beautiful.ai",
         "description": "AI‑assisted slide design with smart templates.",
         "link": "https://www.beautiful.ai/",
@@ -3748,19 +3263,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/21185218?v=4&s=64"
       },
       {
-        "name": "FAA K-12 Airport Design Challenge in Minecraft",
-        "description": "FAA K-12 Airport Design Challenge in Minecraft",
-        "link": "https://www.faa.gov/airport-design-challenge",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "FAA K-12 Airport Design Challenge in Minecraft",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://faa.gov/favicon.ico"
-      },
-      {
         "name": "Figma AI",
         "description": "We’re introducing a suite of AI-powered features to help you push past creative blocks and bring your best ideas to life.",
         "link": "https://www.figma.com/blog/introducing-figma-ai/",
@@ -3793,18 +3295,6 @@
           "Can be a collection of single-task tools rather than one cohesive AI.",
           "Quality and reliability of plugins can vary."
         ]
-      },
-      {
-        "name": "Figma disables AI app design tool after it copied Apple's weather app",
-        "description": "Figma disables AI app design tool after it copied Apple's weather app",
-        "link": "https://www.404media.co/figma-disables-ai-app-design-tool-after-it-copied-apples-weather-app/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Figma disables AI app design tool after it copied Apple's weather app",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.404media.co/content/images/size/w256h256/format/png/2023/08/favicon-3.svg"
       },
       {
         "name": "Framer AI",
@@ -3889,32 +3379,6 @@
           "The interface can be overwhelming with so many options.",
           "The AI's understanding of 'good' color combinations is subjective."
         ]
-      },
-      {
-        "name": "Paper Airplane Designs",
-        "description": "Paper Airplane Designs",
-        "link": "https://www.foldnfly.com/",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Paper Airplane Designs",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://foldnfly.com/favicon.ico"
-      },
-      {
-        "name": "Paper Airplane Designs (2013)",
-        "description": "Paper Airplane Designs (2013)",
-        "link": "https://www.foldnfly.com/#/1-1-1-1-1-1-1-1-2",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Paper Airplane Designs (2013)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://foldnfly.com/favicon.ico"
       },
       {
         "name": "Spline AI",
@@ -4075,19 +3539,6 @@
         ]
       },
       {
-        "name": "Financial Time Series Forecasting with Deep Learning: A Literature Review",
-        "description": "Financial Time Series Forecasting with Deep Learning: A Literature Review",
-        "link": "https://arxiv.org/abs/1911.13288",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Financial Time Series Forecasting with Deep Learning: A Literature Review",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://arxiv.org/favicon.ico"
-      },
-      {
         "name": "Litmaps",
         "description": "Visual literature maps to discover related research.",
         "link": "https://www.litmaps.com/",
@@ -4159,19 +3610,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\" /><path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\" /></svg>",
     "tools": [
       {
-        "name": "AI Content Generation, Part 1: Machine Learning Basics",
-        "description": "AI Content Generation, Part 1: Machine Learning Basics",
-        "link": "https://www.jonstokes.com/p/ai-content-generation-part-1-machine",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "AI Content Generation, Part 1: Machine Learning Basics",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://jonstokes.com/favicon.ico"
-      },
-      {
         "name": "ALwrity",
         "description": "Alwrity, complete AI content creation toolkit. Factual &amp; Web researched Writing assistant for Blog articles, research reports, essay, story. Create personalized AI Agents content team. Free &amp; Open Source AI writer.",
         "link": "https://alwrity.com",
@@ -4237,19 +3675,6 @@
           "Generated content always requires fact-checking for accuracy.",
           "Lacks built-in SEO optimization tools and a plagiarism checker."
         ]
-      },
-      {
-        "name": "Deep Learning for Procedural Content Generation – a survey",
-        "description": "Deep Learning for Procedural Content Generation – a survey",
-        "link": "https://arxiv.org/abs/2010.04548",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Deep Learning for Procedural Content Generation – a survey",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://arxiv.org/favicon.ico"
       },
       {
         "name": "Frase",
@@ -4462,32 +3887,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 2a1 1 0 01.993.883L11 3v1.055A7.002 7.002 0 0118 11a1 1 0 11-2 0 5 5 0 00-5-5V3a1 1 0 01-1-1zm-5 4a1 1 0 011 1v1.055A7.002 7.002 0 0114 15a1 1 0 11-2 0 5 5 0 00-5-5V9a1 1 0 01-1-1z\" clip-rule=\"evenodd\" /><path d=\"M3 11a1 1 0 011-1h1.055A7.002 7.002 0 0111 4a1 1 0 110 2 5 5 0 00-5 5H5a1 1 0 01-1-1z\" /></svg>",
     "tools": [
       {
-        "name": "3D Gaussian Splatting as Markov Chain Monte Carlo",
-        "description": "3D Gaussian Splatting as Markov Chain Monte Carlo",
-        "link": "https://ubc-vision.github.io/3dgs-mcmc/",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "3D Gaussian Splatting as Markov Chain Monte Carlo",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://ubc-vision.github.io/favicon.ico"
-      },
-      {
-        "name": "AI for generative design: Plain text to 3D Designs",
-        "description": "AI for generative design: Plain text to 3D Designs",
-        "link": "https://blog.insightdatascience.com/ai-for-3d-generative-design-17503d0b3943",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "AI for generative design: Plain text to 3D Designs",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://blog.insightdatascience.com/favicon.ico"
-      },
-      {
         "name": "Blockade Labs Skybox",
         "description": "Generate 360° skyboxes and environments from prompts.",
         "link": "https://skybox.blockadelabs.com/",
@@ -4507,19 +3906,6 @@
           "Style constraints.",
           "Credits needed for HD."
         ]
-      },
-      {
-        "name": "DreamFusion: Text-to-3D using 2D Diffusion",
-        "description": "DreamFusion: Text-to-3D using 2D Diffusion",
-        "link": "https://dreamfusion3d.github.io",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "DreamFusion: Text-to-3D using 2D Diffusion",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://dreamfusion3d.github.io/favicon.ico"
       },
       {
         "name": "Kaedim",
@@ -4616,19 +4002,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://sloyd.ai/favicon.ico"
-      },
-      {
-        "name": "threed-garden",
-        "description": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
-        "link": "https://www.npmjs.com/package/threed-garden",
-        "tags": [
-          "Library"
-        ],
-        "about": "ThreeD Garden: WebGL 3D Environment Interface for Next.JS React TypeScript Three.JS React-Three Physics, 2D Paper.JS; APIs: Apollo GraphQL, WordPress; CSS: Tailwind, Radix-UI; Libraries: FarmBot 3D; AI: OpenAI, DeepSeek",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
       }
     ]
   },
@@ -4638,84 +4011,6 @@
     "description": "Tools and platforms for ensuring fairness, transparency, and accountability in AI.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 1.944A11.954 11.954 0 012.166 5.002a11.954 11.954 0 0115.668 0A11.954 11.954 0 0110 1.944zM10 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z\" clip-rule=\"evenodd\" /><path d=\"M10 4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 4.5zM10 12a1 1 0 100 2 1 1 0 000-2z\" /></svg>",
     "tools": [
-      {
-        "name": "@luckymachines/contracts",
-        "description": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
-        "link": "https://www.npmjs.com/package/@luckymachines/contracts",
-        "tags": [
-          "Library"
-        ],
-        "about": "Lucky Machines contracts for betting dapps. Includes multi-draw and automatic payout on win. Only allows bets on machines that have been sufficiently funded.  Utilizes Chainlink VRF for provable fairness.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@pooltogether/uniform-random-number",
-        "description": "PoolTogether Solidity Modulo Bias library",
-        "link": "https://www.npmjs.com/package/@pooltogether/uniform-random-number",
-        "tags": [
-          "Library"
-        ],
-        "about": "PoolTogether Solidity Modulo Bias library",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@stdlib/constants-float32-exponent-bias",
-        "description": "The bias of a single-precision floating-point number's exponent.",
-        "link": "https://www.npmjs.com/package/@stdlib/constants-float32-exponent-bias",
-        "tags": [
-          "Library"
-        ],
-        "about": "The bias of a single-precision floating-point number's exponent.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@stdlib/constants-float64-exponent-bias",
-        "description": "The bias of a double-precision floating-point number's exponent.",
-        "link": "https://www.npmjs.com/package/@stdlib/constants-float64-exponent-bias",
-        "tags": [
-          "Library"
-        ],
-        "about": "The bias of a double-precision floating-point number's exponent.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@wemake.cx/bias-detection",
-        "description": "MCP server for simple bias detection in text",
-        "link": "https://www.npmjs.com/package/@wemake.cx/bias-detection",
-        "tags": [
-          "Library"
-        ],
-        "about": "MCP server for simple bias detection in text",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "ethical-algorithm-tester",
-        "description": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
-        "link": "https://www.npmjs.com/package/ethical-algorithm-tester",
-        "tags": [
-          "Library"
-        ],
-        "about": "The **`ethical-algorithm-tester`** package provides tools for analyzing bias, fairness, transparency, and accountability in algorithmic decision-making. This package is useful for developers and data scientists who want to ensure that their algorithms ope",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "Fairlearn",
         "description": "Fairness metrics and mitigation for Python ML.",
@@ -4892,19 +4187,6 @@
           "Subscription for full use.",
           "Requires curricular alignment."
         ]
-      },
-      {
-        "name": "One AI Tutor Per Child: Personalized learning is finally here",
-        "description": "One AI Tutor Per Child: Personalized learning is finally here",
-        "link": "https://saigaddam.medium.com/one-ai-tutor-per-child-personalized-learning-is-finally-here-e3727d84a2d7",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "One AI Tutor Per Child: Personalized learning is finally here",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://saigaddam.medium.com/favicon.ico"
       },
       {
         "name": "Photomath",
@@ -5086,32 +4368,6 @@
         ]
       },
       {
-        "name": "tensaikit",
-        "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
-        "link": "https://www.npmjs.com/package/tensaikit",
-        "tags": [
-          "Library"
-        ],
-        "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "tensaikit-test",
-        "description": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
-        "link": "https://www.npmjs.com/package/tensaikit-test",
-        "tags": [
-          "Library"
-        ],
-        "about": "An autonomous DeFi AI Agent Kit on Katana enabling AI agents to plan and execute on-chain financial operations.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "TokenMetrics",
         "description": "AI-driven crypto analytics and investment research platform.",
         "link": "https://www.tokenmetrics.com/",
@@ -5141,71 +4397,6 @@
     "description": "Tools and libraries to craft, refine, and manage high-quality prompts for LLMs and image models.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M5 3l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2zM15 7l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3zM11 13l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z\"/></svg>",
     "tools": [
-      {
-        "name": "@inquirer/confirm",
-        "description": "Inquirer confirm prompt",
-        "link": "https://www.npmjs.com/package/@inquirer/confirm",
-        "tags": [
-          "Library"
-        ],
-        "about": "Inquirer confirm prompt",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@inquirer/core",
-        "description": "Core Inquirer prompt API",
-        "link": "https://www.npmjs.com/package/@inquirer/core",
-        "tags": [
-          "Library"
-        ],
-        "about": "Core Inquirer prompt API",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@inquirer/expand",
-        "description": "Inquirer checkbox prompt",
-        "link": "https://www.npmjs.com/package/@inquirer/expand",
-        "tags": [
-          "Library"
-        ],
-        "about": "Inquirer checkbox prompt",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@inquirer/rawlist",
-        "description": "Inquirer rawlist prompt",
-        "link": "https://www.npmjs.com/package/@inquirer/rawlist",
-        "tags": [
-          "Library"
-        ],
-        "about": "Inquirer rawlist prompt",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@listr2/prompt-adapter-inquirer",
-        "description": "Listr2 prompt adapter for inquirer.",
-        "link": "https://www.npmjs.com/package/@listr2/prompt-adapter-inquirer",
-        "tags": [
-          "Library"
-        ],
-        "about": "Listr2 prompt adapter for inquirer.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "AIPRM",
         "description": "A library of curated prompt templates for ChatGPT and other LLMs.",
@@ -5295,19 +4486,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/146763322?v=4&s=64"
-      },
-      {
-        "name": "password-prompt",
-        "description": "cross-platform masked or hidden prompt",
-        "link": "https://www.npmjs.com/package/password-prompt",
-        "tags": [
-          "Library"
-        ],
-        "about": "cross-platform masked or hidden prompt",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
       },
       {
         "name": "Prompt Perfect",
@@ -5405,45 +4583,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z\" /></svg>",
     "tools": [
       {
-        "name": "@inkeep/create-agents",
-        "description": "Create an Inkeep Agent Framework project",
-        "link": "https://www.npmjs.com/package/@inkeep/create-agents",
-        "tags": [
-          "Library"
-        ],
-        "about": "Create an Inkeep Agent Framework project",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@voltagent/core",
-        "description": "VoltAgent Core - AI agent framework for JavaScript",
-        "link": "https://www.npmjs.com/package/@voltagent/core",
-        "tags": [
-          "Library"
-        ],
-        "about": "VoltAgent Core - AI agent framework for JavaScript",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@xynehq/jaf",
-        "description": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
-        "link": "https://www.npmjs.com/package/@xynehq/jaf",
-        "tags": [
-          "Library"
-        ],
-        "about": "Juspay Agent Framework - A purely functional agent framework with immutable state and composable tools",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "Adept",
         "description": "An AI research lab building a foundational model for actions and general intelligence.",
         "link": "https://www.adept.ai/",
@@ -5487,32 +4626,6 @@
           "The free version has significant limitations on agent capabilities and runtime.",
           "Less powerful and flexible than code-based agent frameworks."
         ]
-      },
-      {
-        "name": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
-        "description": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
-        "link": "https://www.tallahassee.com/story/news/2020/12/07/agents-raid-home-fired-florida-data-scientist-who-built-covid-19-dashboard-rebekah-jones/6482817002/",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Agents raid home of fired Florida data scientist who built Covid-19 dashboard",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://tallahassee.com/favicon.ico"
-      },
-      {
-        "name": "beeai-framework",
-        "description": "BeeAI Framework - LLM Agent Framework",
-        "link": "https://www.npmjs.com/package/beeai-framework",
-        "tags": [
-          "Library"
-        ],
-        "about": "BeeAI Framework - LLM Agent Framework",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
       },
       {
         "name": "Camel-AI",
@@ -5797,19 +4910,6 @@
         ]
       },
       {
-        "name": "llm-agents",
-        "description": "LLM Agent framework for Node.js",
-        "link": "https://www.npmjs.com/package/llm-agents",
-        "tags": [
-          "Library"
-        ],
-        "about": "LLM Agent framework for Node.js",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "Manus",
         "description": "Commercial autonomous agent capable of independent planning and execution.",
         "link": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
@@ -5853,19 +4953,6 @@
           "Requires trusting the service with personal information and login credentials.",
           "Still in active development, with some features in beta."
         ]
-      },
-      {
-        "name": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
-        "description": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
-        "link": "https://answers.microsoft.com/en-us/msoffice/forum/msoffice_onedrivefb-mso_o365brs/onedrive-for-business-open-is-very-slow-on-linux/3d33dc1b-3cc3-4c24-9998-9ab96bad31fc",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "Onedrive is slow on Linux but fast with a “Windows” user-agent (2016)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://answers.microsoft.com/favicon.ico"
       },
       {
         "name": "OpenAI Assistants API",
@@ -5981,18 +5068,6 @@
         ]
       },
       {
-        "name": "Why AutoGPT engineers ditched vector databases",
-        "description": "Why AutoGPT engineers ditched vector databases",
-        "link": "https://dariuszsemba.com/blog/why-autogpt-engineers-ditched-vector-databases/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Why AutoGPT engineers ditched vector databases",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://dariuszsemba.com/favicon.svg"
-      },
-      {
         "name": "Zapier AI Agents",
         "description": "Automation agents connecting 8000+ apps via triggers and actions.",
         "link": "https://zapier.com/blog/ai-agents/",
@@ -6023,31 +5098,6 @@
     "description": "Tools that connect different apps and automate repetitive tasks using AI.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z\" /><path d=\"M4 9a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H5a1 1 0 01-1-1V9z\" /><path d=\"M4 15a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-1z\" /><path d=\"M10 15a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1z\" /><path d=\"M10 9a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1V9z\" /></svg>",
     "tools": [
-      {
-        "name": "@google-cloud/orchestration-airflow",
-        "description": "orchestration-airflow client for Node.js",
-        "link": "https://www.npmjs.com/package/@google-cloud/orchestration-airflow",
-        "tags": [
-          "Library"
-        ],
-        "about": "orchestration-airflow client for Node.js",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "airflow",
-        "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
-        "link": "https://airflow.apache.org/",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "https://avatars.githubusercontent.com/u/47359?v=4&s=64",
-        "about": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
-        "pros": [],
-        "cons": []
-      },
       {
         "name": "Bardeen",
         "description": "An AI-first browser automation tool to automate repetitive tasks and workflows.",
@@ -6081,19 +5131,6 @@
         "about": "FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG retrieval, and visual AI workflow orchestration, letting you easily develop and deploy complex question-answering systems without the need for extensive setup or configuration.",
         "pros": [],
         "cons": []
-      },
-      {
-        "name": "kapellmeister",
-        "description": "Orchestration For Animated Transitions",
-        "link": "https://www.npmjs.com/package/kapellmeister",
-        "tags": [
-          "Library"
-        ],
-        "about": "Orchestration For Animated Transitions",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
       },
       {
         "name": "Levity",
@@ -6245,32 +5282,6 @@
         ]
       },
       {
-        "name": "workflow-ai-bot",
-        "description": "This library was generated with [Nx](https://nx.dev).",
-        "link": "https://www.npmjs.com/package/workflow-ai-bot",
-        "tags": [
-          "Library"
-        ],
-        "about": "This library was generated with [Nx](https://nx.dev).",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "workflow-ai-plugin",
-        "description": "This library was generated with [Nx](https://nx.dev).",
-        "link": "https://www.npmjs.com/package/workflow-ai-plugin",
-        "tags": [
-          "Library"
-        ],
-        "about": "This library was generated with [Nx](https://nx.dev).",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "Zapier",
         "description": "Connects your web apps to automate workflows, now with added AI capabilities.",
         "link": "https://zapier.com/",
@@ -6300,45 +5311,6 @@
     "description": "Advanced AI search engines and knowledge management tools.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1111.293 3.707l4.147 4.147a1 1 0 01-1.414 1.414l-4.147-4.147A6 6 0 012 8z\"/></svg>",
     "tools": [
-      {
-        "name": "@llamaindex/semtools",
-        "description": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
-        "link": "https://www.npmjs.com/package/@llamaindex/semtools",
-        "tags": [
-          "Library"
-        ],
-        "about": "Semantic search and document parsing tools for the command line (Rust-backed, npm-distributed)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "@wildcard-ai/deepcontext",
-        "description": "Advanced codebase indexing and semantic search MCP server",
-        "link": "https://www.npmjs.com/package/@wildcard-ai/deepcontext",
-        "tags": [
-          "Library"
-        ],
-        "about": "Advanced codebase indexing and semantic search MCP server",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
-        "name": "ai-embed-search",
-        "description": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
-        "link": "https://www.npmjs.com/package/ai-embed-search",
-        "tags": [
-          "Library"
-        ],
-        "about": "Smart. Simple. Local. AI-powered semantic search in TypeScript using transformer embeddings. No cloud, no API keys — 100% offline.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
       {
         "name": "ai-knowledge-graph",
         "description": "AI Powered Knowledge Graph Generator",
@@ -6559,19 +5531,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v4a1 1 0 002 0V5zm-1 8a1 1 0 100 2 1 1 0 000-2z\" clip-rule=\"evenodd\"/></svg>",
     "tools": [
       {
-        "name": "@guardrails-ai/core",
-        "description": "A Javascript wrapper for guardrails-ai",
-        "link": "https://www.npmjs.com/package/@guardrails-ai/core",
-        "tags": [
-          "Library"
-        ],
-        "about": "A Javascript wrapper for guardrails-ai",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://www.npmjs.com/favicon.ico",
-        "_commentedOut": true
-      },
-      {
         "name": "Aequitas",
         "description": "Bias and fairness audit toolkit for data scientists and policymakers.",
         "link": "http://aequitas.dssg.io/",
@@ -6594,18 +5553,6 @@
         ]
       },
       {
-        "name": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
-        "description": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
-        "link": "https://gizmodo.com/ai-safety-openai-sam-altman-ouster-back-microsoft-1851038439",
-        "tags": [
-          "Trending"
-        ],
-        "about": "After OpenAI's blowup, it seems pretty clear that 'AI safety' isn't a real thing",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://gizmodo.com/favicon.png?v1"
-      },
-      {
         "name": "agentic_security",
         "description": "Open-source LLM Vulnerability Scanner for safe and reliable AI.",
         "link": "https://agentic-security.vercel.app",
@@ -6622,19 +5569,6 @@
           "May require an account or credits."
         ],
         "iconUrl": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png"
-      },
-      {
-        "name": "AI behavior guardrails should be public",
-        "description": "AI behavior guardrails should be public",
-        "link": "https://twitter.com/ID_AA_Carmack/status/1760360183945965853",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "AI behavior guardrails should be public",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://twitter.com/favicon.ico"
       },
       {
         "name": "Anthropic Constitutional AI",
@@ -6657,18 +5591,6 @@
           "Research-heavy.",
           "Requires technical understanding."
         ]
-      },
-      {
-        "name": "Concrete AI Safety Problems",
-        "description": "Concrete AI Safety Problems",
-        "link": "https://openai.com/blog/concrete-ai-safety-problems/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Concrete AI Safety Problems",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://openai.com/favicon.ico"
       },
       {
         "name": "Decepticon",
@@ -6726,18 +5648,6 @@
           "May require an account or credits."
         ],
         "iconUrl": "https://zenguard.ai/favicon.png"
-      },
-      {
-        "name": "Freeway guardrails are now a favorite target of thieves",
-        "description": "Freeway guardrails are now a favorite target of thieves",
-        "link": "https://laist.com/news/transportation/guardrails-aluminum-theft",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Freeway guardrails are now a favorite target of thieves",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://laist.com/apple-touch-icon.png"
       },
       {
         "name": "gateway",
@@ -6858,30 +5768,6 @@
         "iconUrl": "https://invariantlabs.ai/theme/icon/apple-touch-icon.png"
       },
       {
-        "name": "Joint Statement on AI Safety and Openness",
-        "description": "Joint Statement on AI Safety and Openness",
-        "link": "https://open.mozilla.org/letter/",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Joint Statement on AI Safety and Openness",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://open.mozilla.org/img/apple-touch-icon.2530f989.png"
-      },
-      {
-        "name": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
-        "description": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
-        "link": "https://1a3orn.com/sub/machine-learning-bans.html",
-        "tags": [
-          "Trending"
-        ],
-        "about": "Many AI safety orgs have tried to criminalize currently-existing open-source AI",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://1a3orn.com/favicon.ico"
-      },
-      {
         "name": "Microsoft Responsible AI Toolbox",
         "description": "Suite of tools for responsible AI development, including interpretability, fairness, and error analysis.",
         "link": "https://responsibleaitoolbox.ai/",
@@ -6924,19 +5810,6 @@
           "Requires expertise.",
           "Best for organizations."
         ]
-      },
-      {
-        "name": "US and UK refuse to sign AI safety declaration at summit",
-        "description": "US and UK refuse to sign AI safety declaration at summit",
-        "link": "https://arstechnica.com/ai/2025/02/us-and-uk-refuse-to-sign-ai-safety-declaration-at-summit/",
-        "tags": [
-          "Trending",
-          "Freemium"
-        ],
-        "about": "US and UK refuse to sign AI safety declaration at summit",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://arstechnica.com/favicon.ico"
       },
       {
         "name": "woodpecker",
