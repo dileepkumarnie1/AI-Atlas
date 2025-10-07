@@ -30,7 +30,9 @@ on:
           - Admin Moderation
 
 permissions:
-  contents: read
+  contents: read      # allow checkout and artifact upload
+  issues: write       # needed for creating/updating failure issue
+  pull-requests: write # needed for sticky PR comments
 
 jobs:
   select-tests:
