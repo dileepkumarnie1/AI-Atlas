@@ -30,6 +30,7 @@ function getArgValue(flag){
 
 // New flags
 const WHITELIST_FILE = getArgValue('--whitelist');
+const BLOCKLIST_FILE = getArgValue('--blocklist');
 const RESTORE_ALL = args.includes('--restore-all');
 const RESTORE_LIST = getArgValue('--restore'); // comma separated names
 
@@ -37,7 +38,8 @@ const ROOT = path.resolve(process.cwd());
 const TOOLS_PATH = path.join(ROOT, 'public', 'tools.json');
 const ARCHIVE_PATH = path.join(ROOT, 'public', 'non_product_archive.json');
 
-const BLOCKLIST = new Set([
+// Built-in default blocklist (can be overridden with --blocklist <file>)
+let BLOCKLIST = new Set([
   // Articles / news / commentary
   'Airfoil',
   'Bypassing airport security via SQL injection',
@@ -86,24 +88,24 @@ const BLOCKLIST = new Set([
 function loadJson(p){return JSON.parse(fs.readFileSync(p,'utf-8'));}
 function saveJson(p,obj){fs.writeFileSync(p, JSON.stringify(obj,null,2));}
 
-function loadWhitelist(){
-  if(!WHITELIST_FILE) return new Set();
-  try {
-    const p = path.isAbsolute(WHITELIST_FILE) ? WHITELIST_FILE : path.join(ROOT, WHITELIST_FILE);
-    if(!fs.existsSync(p)){
-      console.error(`Whitelist file not found: ${p}`);
-      process.exit(1);
-    }
-    const list = JSON.parse(fs.readFileSync(p,'utf-8'));
-    if(!Array.isArray(list)){
-      console.error('Whitelist JSON must be an array of names.');
-      process.exit(1);
-    }
-    return new Set(list.map(s=>String(s)));
-  } catch(e){
-    console.error('Failed to load whitelist:', e.message);
+function loadListFile(label, filePath){
+  const p = path.isAbsolute(filePath) ? filePath : path.join(ROOT, filePath);
+  if(!fs.existsSync(p)){
+    console.error(`${label} file not found: ${p}`);
     process.exit(1);
   }
+  const list = JSON.parse(fs.readFileSync(p,'utf-8'));
+  if(!Array.isArray(list)){
+    console.error(`${label} JSON must be an array of names.`);
+    process.exit(1);
+  }
+  return new Set(list.map(s=>String(s)));
+}
+
+function loadWhitelist(){
+  if(!WHITELIST_FILE) return new Set();
+  try { return loadListFile('Whitelist', WHITELIST_FILE); }
+  catch(e){ console.error('Failed to load whitelist:', e.message); process.exit(1);}  
 }
 
 function restoreTools(){
@@ -170,6 +172,17 @@ function restoreTools(){
   console.log(`Restored ${restoredCount} tools from archive.`);
 }
 
+function loadBlocklistOverride(){
+  if(!BLOCKLIST_FILE) return; // keep default
+  try {
+    BLOCKLIST = loadListFile('Blocklist', BLOCKLIST_FILE);
+    if(VERBOSE) console.log(`[info] Loaded custom blocklist with ${BLOCKLIST.size} entries.`);
+  } catch(e){
+    console.error('Failed to load blocklist override:', e.message);
+    process.exit(1);
+  }
+}
+
 function main(){
   // Handle restore mode first
   if(RESTORE_ALL || RESTORE_LIST){
@@ -184,10 +197,12 @@ function main(){
     console.error('tools.json root must be an array of category objects');
     process.exit(1);
   }
+  loadBlocklistOverride();
   const whitelist = loadWhitelist();
   const archived = [];
   let removedCount = 0;
   let skippedCount = 0;
+  let integrityWarnings = 0;
 
   // Build a set of already archived names (to avoid duplicate re-archiving if script run multiple times without modifying blocklist)
   const existingArchiveNames = new Set();
@@ -216,6 +231,11 @@ function main(){
             if(VERBOSE) console.log('[archive]', name);
         }
       } else {
+        // Integrity: if a name previously archived reappears and is NOT currently blocklisted (maybe re-added manually), warn
+        if(existingArchiveNames.has(name)){
+          integrityWarnings++;
+          if(VERBOSE) console.warn('[integrity-warning] Previously archived name present and not blocklisted:', name);
+        }
         kept.push(tool);
       }
     }
@@ -223,7 +243,7 @@ function main(){
   });
 
   if(DRY){
-    console.log(`Dry run: would archive ${removedCount} entries.${skippedCount?` (skipped ${skippedCount} already archived)`:''}`);
+    console.log(`Dry run: would archive ${removedCount} entries.${skippedCount?` (skipped ${skippedCount} already archived)`:''}${integrityWarnings?` (integrity warnings: ${integrityWarnings})`:''}`);
     return;
   }
 
@@ -242,7 +262,7 @@ function main(){
     } catch(e){ /* ignore parse errors; start fresh */ }
   }
   saveJson(ARCHIVE_PATH, archiveObj);
-  console.log(`Archived ${removedCount} entries to non_product_archive.json${skippedCount?`, skipped ${skippedCount} already archived.`:'.'}`);
+  console.log(`Archived ${removedCount} entries to non_product_archive.json${skippedCount?`, skipped ${skippedCount} already archived`:''}${integrityWarnings?`, integrity warnings: ${integrityWarnings}`:''}.`);
 }
 
 // Entry point detection that works cross-platform (Windows path vs file URL)
