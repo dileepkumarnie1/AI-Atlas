@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 function parseArgs(argv){
   const args = { _: [] };
@@ -129,6 +130,44 @@ function ensureSection(content, date, entries){
   return content.slice(0, sectionStart) + updatedSection + remainder;
 }
 
+function stripConventionalPrefix(msg){
+  const m = msg.match(/^(feat|fix|docs|chore|refactor|test|ci)(\([^)]*\))?:\s*(.*)$/i);
+  return m ? m[3].trim() : msg.trim();
+}
+
+function harvestCommitsForDate(date){
+  // date format YYYY-MM-DD
+  let output;
+  try {
+    // Get commits with date in ISO short format; include hash for potential future de-dupe
+    output = execSync(`git log --since="${date}T00:00:00" --until="${date}T23:59:59" --pretty=%h||%ad||%s --date=short`, { stdio: 'pipe' }).toString();
+  } catch { return []; }
+  const lines = output.split(/\r?\n/).filter(Boolean);
+  const seen = new Set();
+  const bullets = [];
+  for(const line of lines){
+    const [_hash, d, subject] = line.split('||');
+    if(d !== date) continue; // guard
+    if(!subject) continue;
+    if(/^(merge|pull|checkout|rebase)/i.test(subject)) continue;
+    const clean = stripConventionalPrefix(subject)
+      .replace(/\s+/g,' ') // collapse whitespace
+      .replace(/\.$/, ''); // drop trailing period
+    if(!clean) continue;
+    if(seen.has(clean)) continue;
+    seen.add(clean);
+    bullets.push(clean);
+  }
+  return bullets;
+}
+
+function getLastLoggedDate(content){
+  const headings = [...content.matchAll(/^###\s+(\d{4}-\d{2}-\d{2})$/gm)].map(m=>m[1]);
+  if(headings.length === 0) return null;
+  // headings already in file order (latest appears first after insertion strategy). Sort just in case.
+  return headings.sort().pop();
+}
+
 async function main(){
   const args = parseArgs(process.argv);
   const date = args.date ? String(args.date) : new Date().toISOString().slice(0, 10);
@@ -154,9 +193,21 @@ async function main(){
 
   const directEntries = normalizeEntries(valueBucket);
   const fileEntries = await readAdditionalEntries(args.file || args.input);
-  const entries = [...directEntries, ...fileEntries];
+
+  let autoCommitEntries = [];
+  let existingContentForAuto;
+  if(args['auto-commits']){
+    try { existingContentForAuto = await fs.readFile(logPath,'utf8'); } catch {/* ignore */}
+    autoCommitEntries = harvestCommitsForDate(date);
+  }
+  let entries = [...directEntries, ...fileEntries, ...autoCommitEntries];
+  entries = normalizeEntries(entries);
   if(entries.length === 0){
-    console.error('No summary entries provided. Use --entry, positional text, or --file to supply content.');
+    if(args['allow-empty']){
+      console.log('No entries to add (allow-empty).');
+      return;
+    }
+    console.error('No summary entries provided. Use --entry, positional text, --file, or --auto-commits.');
     process.exit(1);
   }
 
@@ -174,7 +225,7 @@ async function main(){
   updated = ensureSection(updated, date, entries);
 
   if(updated === content){
-    console.log('Context log is already up to date.');
+    console.log('Context log is already up to date (no new unique bullets).');
     return;
   }
 

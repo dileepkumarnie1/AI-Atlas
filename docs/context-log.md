@@ -1,6 +1,6 @@
 # Context Log
 
-_Last updated: 2025-10-06_
+_Last updated: 2025-10-07_
 
 ## Using this log
 - Append a dated entry for every batch of related changes.
@@ -17,6 +17,8 @@ _Last updated: 2025-10-06_
 
 - Added scripts/update-context-log.mjs to automate context log updates.
 - Documented npm run context:log helper and smoke-tested command usage.
+- Added archival whitelist + restore flags + CI workflow.
+- Added --blocklist override, integrity warnings, and archive:dry npm script.
 ### 2025-10-06
 - Investigated Audio & Music category gaps and documented tag-based grouping behavior.
 - Disabled npm-based ingestion in `scripts/discover-tools.mjs`, added manual lists, and wired Product Hunt, BuiltWith, SimilarTech, and Crunchbase integrations.
