@@ -462,6 +462,55 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64"
       },
       {
+        "name": "sim",
+        "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "link": "https://www.sim.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
+      },
+      {
+        "name": "supabase",
+        "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+        "link": "https://supabase.com",
+        "tags": [
+          "image",
+          "search",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
+      },
+      {
         "name": "tabby",
         "description": "Self-hosted AI coding assistant",
         "link": "https://tabbyml.com",
@@ -1066,30 +1115,6 @@
         "iconUrl": "https://seeddream.app/favicon.ico"
       },
       {
-        "name": "You.com",
-        "description": "AI-powered search and chat engine with privacy focus.",
-        "link": "https://you.com/",
-        "tags": [
-          "Search",
-          "Chat",
-          "Privacy",
-          "Freemium"
-        ],
-        "iconUrl": "https://you.com/favicon.ico",
-        "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
-        "pros": [
-          "Customizable search.",
-          "Integrated chat.",
-          "No tracking."
-        ],
-        "cons": [
-          "Results can vary.",
-          "Newer ecosystem.",
-          "Some features paid."
-        ]
-      }
-      ,
-      {
         "name": "Writer",
         "description": "Enterprise generative AI platform for accurate, on-brand content.",
         "link": "https://writer.com",
@@ -1110,6 +1135,29 @@
           "Higher cost for smaller teams.",
           "Setup and data integration required.",
           "Less oriented to open-ended creative exploration."
+        ]
+      },
+      {
+        "name": "You.com",
+        "description": "AI-powered search and chat engine with privacy focus.",
+        "link": "https://you.com/",
+        "tags": [
+          "Search",
+          "Chat",
+          "Privacy",
+          "Freemium"
+        ],
+        "iconUrl": "https://you.com/favicon.ico",
+        "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
+        "pros": [
+          "Customizable search.",
+          "Integrated chat.",
+          "No tracking."
+        ],
+        "cons": [
+          "Results can vary.",
+          "Newer ecosystem.",
+          "Some features paid."
         ]
       }
     ]
@@ -1334,6 +1382,29 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/3998421?v=4&s=64"
       },
       {
+        "name": "Krea AI",
+        "description": "Real-time interactive image generation and enhancement suite.",
+        "link": "https://www.krea.ai",
+        "tags": [
+          "Freemium",
+          "Real-time",
+          "Upscaling",
+          "Design"
+        ],
+        "iconUrl": "https://www.krea.ai/favicon.ico",
+        "about": "Krea AI offers real-time, interactive image generation where visuals evolve instantly with prompts, sketches, and color cues, plus powerful enhancement and upscaling tools for moving from ideation to production quality.",
+        "pros": [
+          "Interactive real-time creative workflow.",
+          "High-quality enhancement and upscaling.",
+          "Supports varied use cases: concepting, patterns, assets."
+        ],
+        "cons": [
+          "Advanced features limited on free tier.",
+          "Real-time rendering can be resource intensive.",
+          "Learning curve beyond simple prompt tools."
+        ]
+      },
+      {
         "name": "Leonardo Ai",
         "description": "A platform for generating game assets, concept art, and other artistic images.",
         "link": "https://leonardo.ai/",
@@ -1507,30 +1578,6 @@
         "about": "A latent text-to-image diffusion model",
         "pros": [],
         "cons": []
-      }
-      ,
-      {
-        "name": "Krea AI",
-        "description": "Real-time interactive image generation and enhancement suite.",
-        "link": "https://www.krea.ai",
-        "tags": [
-          "Freemium",
-          "Real-time",
-          "Upscaling",
-          "Design"
-        ],
-        "iconUrl": "https://www.krea.ai/favicon.ico",
-        "about": "Krea AI offers real-time, interactive image generation where visuals evolve instantly with prompts, sketches, and color cues, plus powerful enhancement and upscaling tools for moving from ideation to production quality.",
-        "pros": [
-          "Interactive real-time creative workflow.",
-          "High-quality enhancement and upscaling.",
-          "Supports varied use cases: concepting, patterns, assets."
-        ],
-        "cons": [
-          "Advanced features limited on free tier.",
-          "Real-time rendering can be resource intensive.",
-          "Learning curve beyond simple prompt tools."
-        ]
       }
     ]
   },
@@ -1789,6 +1836,28 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/208222005?v=4&s=64"
       },
       {
+        "name": "Opus Clip",
+        "description": "AI repurposing tool that turns long videos into viral short clips automatically.",
+        "link": "https://www.opus.pro",
+        "tags": [
+          "Freemium",
+          "Video Repurposing",
+          "Social Media"
+        ],
+        "iconUrl": "https://www.opus.pro/favicon.ico",
+        "about": "Opus Clip uses AI to identify the most engaging segments of long-form video content (podcasts, webinars, interviews) and converts them into short, captioned, social-media-ready clips with automated framing, dynamic captions, and virality scoring.",
+        "pros": [
+          "Automatic highlight detection saves editing time.",
+          "Dynamic captions and reframing for multiple aspect ratios.",
+          "Virality score helps prioritize best clips."
+        ],
+        "cons": [
+          "Free tier limits export quality and volume.",
+          "AI cuts occasionally miss full context.",
+          "Brand styling customization limited on lower tiers."
+        ]
+      },
+      {
         "name": "Pictory",
         "description": "AI video creation from text and blog posts.",
         "link": "https://pictory.ai/",
@@ -1913,29 +1982,6 @@
           "Watermarks on free plan.",
           "Export limits.",
           "Some features paid."
-        ]
-      }
-      ,
-      {
-        "name": "Opus Clip",
-        "description": "AI repurposing tool that turns long videos into viral short clips automatically.",
-        "link": "https://www.opus.pro",
-        "tags": [
-          "Freemium",
-          "Video Repurposing",
-          "Social Media"
-        ],
-        "iconUrl": "https://www.opus.pro/favicon.ico",
-        "about": "Opus Clip uses AI to identify the most engaging segments of long-form video content (podcasts, webinars, interviews) and converts them into short, captioned, social-media-ready clips with automated framing, dynamic captions, and virality scoring.",
-        "pros": [
-          "Automatic highlight detection saves editing time.",
-          "Dynamic captions and reframing for multiple aspect ratios.",
-          "Virality score helps prioritize best clips."
-        ],
-        "cons": [
-          "Free tier limits export quality and volume.",
-          "AI cuts occasionally miss full context.",
-          "Brand styling customization limited on lower tiers."
         ]
       }
     ]
@@ -2629,6 +2675,29 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 000 2h2a1 1 0 100-2H9z\" /><path fill-rule=\"evenodd\" d=\"M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
+        "name": "Clockwise",
+        "description": "AI smart calendar optimizing schedules for focus time.",
+        "link": "https://www.getclockwise.com",
+        "tags": [
+          "Freemium",
+          "Calendar",
+          "Scheduling",
+          "Team Productivity"
+        ],
+        "iconUrl": "https://www.getclockwise.com/favicon.ico",
+        "about": "Clockwise reorganizes team calendars to reduce fragmentation, resolve conflicts, and protect focus time while respecting preferences and constraints.",
+        "pros": [
+          "Increases deep work blocks.",
+          "Automates meeting optimization.",
+          "Strong free tier for individuals."
+        ],
+        "cons": [
+          "Best value when whole team adopts.",
+          "Occasional unexpected meeting moves.",
+          "Limited to major calendar providers."
+        ]
+      },
+      {
         "name": "DeepL",
         "description": "Highly accurate AI-powered translation service.",
         "link": "https://www.deepl.com/translator",
@@ -3060,30 +3129,6 @@
           "Can be simpler than what's needed for complex team projects."
         ]
       }
-      ,
-      {
-        "name": "Clockwise",
-        "description": "AI smart calendar optimizing schedules for focus time.",
-        "link": "https://www.getclockwise.com",
-        "tags": [
-          "Freemium",
-          "Calendar",
-          "Scheduling",
-          "Team Productivity"
-        ],
-        "iconUrl": "https://www.getclockwise.com/favicon.ico",
-        "about": "Clockwise reorganizes team calendars to reduce fragmentation, resolve conflicts, and protect focus time while respecting preferences and constraints.",
-        "pros": [
-          "Increases deep work blocks.",
-          "Automates meeting optimization.",
-          "Strong free tier for individuals."
-        ],
-        "cons": [
-          "Best value when whole team adopts.",
-          "Occasional unexpected meeting moves.",
-          "Limited to major calendar providers."
-        ]
-      }
     ]
   },
   {
@@ -3112,6 +3157,27 @@
           "Less freeform.",
           "Limited offline use."
         ]
+      },
+      {
+        "name": "browser",
+        "description": "The AI-native web browser built from scratch for machines. Not a fork. Not a patch. Fast, scalable web automation with a minimal memory footprint. 10x faster, 10x less RAM, and 100x better than Chrome headless.",
+        "link": "https://lightpanda.io",
+        "tags": [
+          "image",
+          "agents",
+          "automation",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "The AI-native web browser built from scratch for machines. Not a fork. Not a patch. Fast, scalable web automation with a minimal memory footprint. 10x faster, 10x less RAM, and 100x better than Chrome headless.",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://cdn.lightpanda.io/website/assets/images/favicon/apple-icon-57x57.png"
       },
       {
         "name": "Canva Magic Design",
@@ -3263,6 +3329,24 @@
           "The interface can be overwhelming with so many options.",
           "The AI's understanding of 'good' color combinations is subjective."
         ]
+      },
+      {
+        "name": "onlook",
+        "description": "The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.",
+        "link": "https://onlook.com",
+        "tags": [
+          "developer-tools",
+          "design",
+          "Freemium"
+        ],
+        "about": "The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://onlook.com/favicon.ico"
       },
       {
         "name": "Spline AI",
@@ -3641,6 +3725,29 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z\" /></svg>",
     "tools": [
       {
+        "name": "dataline",
+        "description": "Chat with your data - AI-driven data analysis and visualization tool.",
+        "link": "https://dataline.app",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "image",
+          "Freemium"
+        ],
+        "about": "Chat with your data - AI-driven data analysis and visualization tool.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://dataline.app/favicon.ico"
+      },
+      {
         "name": "DeepBI",
         "description": "LLM based data scientist, AI native data application.  AI-driven infinite thinking redefines BI.",
         "link": "https://www.deepbi.com/",
@@ -3693,6 +3800,29 @@
           "May struggle with very complex or poorly structured data.",
           "Requires a paid plan for advanced data sources."
         ]
+      },
+      {
+        "name": "pandas-ai",
+        "description": "Build AI Agents in 3 Lines of Code",
+        "link": "https://pandas-ai.com",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Build AI Agents in 3 Lines of Code",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://pandas-ai.com/assets/logos/icon.png"
       },
       {
         "name": "Power BI Copilot",
@@ -4935,6 +5065,34 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z\" /><path d=\"M4 9a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H5a1 1 0 01-1-1V9z\" /><path d=\"M4 15a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-1z\" /><path d=\"M10 15a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1z\" /><path d=\"M10 9a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1V9z\" /></svg>",
     "tools": [
       {
+        "name": "activepieces",
+        "description": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more — under the supervision of your IT ninjas",
+        "link": "https://www.activepieces.com",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "automation",
+          "marketing",
+          "design",
+          "api",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more — under the supervision of your IT ninjas",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.activepieces.com/favicon.ico"
+      },
+      {
         "name": "Bardeen",
         "description": "An AI-first browser automation tool to automate repetitive tasks and workflows.",
         "link": "https://www.bardeen.ai/",
@@ -5059,6 +5217,29 @@
           "Fewer pre-built integrations than commercial competitors.",
           "The user interface is more technical and less polished."
         ]
+      },
+      {
+        "name": "nanobrowser",
+        "description": "Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key.",
+        "link": "https://nanobrowser.ai",
+        "tags": [
+          "image",
+          "agents",
+          "automation",
+          "api",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://nanobrowser.ai/favicon.png"
       },
       {
         "name": "Relevance AI",
@@ -5288,6 +5469,24 @@
         ]
       },
       {
+        "name": "Nucleoid",
+        "description": "Nucleoid is a declarative, logic-based, contextual runtime for Neuro-Symbolic AI that builds knowledge graph to process adaptive reasoning and decision-making.",
+        "link": "https://nucleoid.ai",
+        "tags": [
+          "developer-tools",
+          "design",
+          "Freemium"
+        ],
+        "about": "Nucleoid is a declarative, logic-based, contextual runtime for Neuro-Symbolic AI that builds knowledge graph to process adaptive reasoning and decision-making.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://cdn.nucleoid.com/media/icon.png"
+      },
+      {
         "name": "octocode-mcp",
         "description": "Powerful GitHub MCP server for AI code intelligence. Transform repositories with advanced MCP integration, featuring RAG, LLM, and semantic code search for developers and AI assistants.",
         "link": "https://octocode.ai/",
@@ -5417,6 +5616,27 @@
         ]
       },
       {
+        "name": "archestra",
+        "description": "Enterprise-grade platform enabling non-technical users to safely leverage AI agents and MCP (Model Context Protocol) servers with security guardrails and compliance.",
+        "link": "https://www.archestra.ai",
+        "tags": [
+          "search",
+          "agents",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Enterprise-grade platform enabling non-technical users to safely leverage AI agents and MCP (Model Context Protocol) servers with security guardrails and compliance.",
+        "pros": [
+          "Open source and extensible.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.archestra.ai/favicon.ico"
+      },
+      {
         "name": "Decepticon",
         "description": "PurpleAILAB, Decepticon",
         "link": "https://purplelab.framer.ai",
@@ -5472,6 +5692,27 @@
           "May require an account or credits."
         ],
         "iconUrl": "https://zenguard.ai/favicon.png"
+      },
+      {
+        "name": "gateway",
+        "description": "The world",
+        "link": "https://portkey.ai/features/ai-gateway",
+        "tags": [
+          "developer-tools",
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "The world",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://portkey.ai/favicon.ico"
       },
       {
         "name": "Google PAIR",
@@ -5622,6 +5863,25 @@
           "Requires expertise.",
           "Best for organizations."
         ]
+      },
+      {
+        "name": "woodpecker",
+        "description": "Operant AI - 3D Runtime Protection",
+        "link": "https://operant.ai",
+        "tags": [
+          "developer-tools",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Operant AI - 3D Runtime Protection",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://operant.ai/favicon.ico"
       }
     ]
   },
@@ -5772,6 +6032,27 @@
     "description": "AI for contract analysis, legal drafting, compliance, and policy reviews.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M9 2a1 1 0 011 1v1h5a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h3V3a1 1 0 011-1z\"/></svg>",
     "tools": [
+      {
+        "name": "comp",
+        "description": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "link": "https://trycomp.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "AI that handles compliance for you at startup speed. The effortless way to get SOC 2, HIPAA, GDPR, and ISO 27001 compliant in hours, not months.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://trycomp.ai/favicon.ico"
+      },
       {
         "name": "Harvey",
         "description": "Legal AI for research, drafting, and contract workflows.",
@@ -5936,6 +6217,31 @@
           "Quality varies by environment.",
           "Review still needed."
         ]
+      },
+      {
+        "name": "MONAI",
+        "description": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "link": "https://monai.io/",
+        "tags": [
+          "developer-tools",
+          "search",
+          "education",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "MONAI is the leading open-source framework for healthcare imaging AI, trusted by researchers and clinicians worldwide. Build, train, and deploy medical AI solutions with industry-standard tools.",
+        "pros": [
+          "Open source and extensible.",
+          "Great for research and discovery.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Coverage and speed can vary.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://monai.io/assets/logo/MONAI-logo_favicon.png"
       },
       {
         "name": "Nuance Dragon Medical One",
@@ -6474,6 +6780,27 @@
           "Network limitations change over time.",
           "AI outputs need review."
         ]
+      },
+      {
+        "name": "postiz-app",
+        "description": "Streamline your social media with Postiz. Schedule posts, analyze performance, and manage all accounts in one place.",
+        "link": "https://postiz.com",
+        "tags": [
+          "developer-tools",
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Streamline your social media with Postiz. Schedule posts, analyze performance, and manage all accounts in one place.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://postiz.com/favicon.ico"
       }
     ]
   },
@@ -6602,6 +6929,28 @@
         ]
       },
       {
+        "name": "real-estate-ai-agent",
+        "description": "Award winning proxy networks, powerful web scrapers, and ready-to-use datasets for download. Welcome to the world&#039;s #1 web data platform.",
+        "link": "https://brightdata.com/",
+        "tags": [
+          "developer-tools",
+          "image",
+          "automation",
+          "api",
+          "Freemium"
+        ],
+        "about": "Award winning proxy networks, powerful web scrapers, and ready-to-use datasets for download. Welcome to the world&#039;s #1 web data platform.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://brightdata.com/wp-content/themes/brightdata/assets/images/favicon.png"
+      },
+      {
         "name": "Reonomy",
         "description": "Commercial real estate intelligence and property data platform.",
         "link": "https://www.reonomy.com/",
@@ -6622,6 +6971,58 @@
           "Data freshness considerations.",
           "Seat‑based pricing."
         ]
+      }
+    ]
+  },
+  {
+    "name": "E Commerce Retail",
+    "slug": "e-commerce-retail",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
+      {
+        "name": "storecraft",
+        "description": "Storecraft - Next Gen Commerce-As-Code",
+        "link": "https://storecraft.app",
+        "tags": [
+          "developer-tools",
+          "Freemium"
+        ],
+        "about": "Storecraft - Next Gen Commerce-As-Code",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://storecraft.app/favicon.svg"
+      }
+    ]
+  },
+  {
+    "name": "Most Famous Agentic Ai S",
+    "slug": "most-famous-agentic-ai-s",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
+      {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://agent-zero.ai/res/favicon_round.png"
       }
     ]
   }
