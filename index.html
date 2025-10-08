@@ -1942,6 +1942,7 @@
 
             async function initialize() {
                 try {
+                    try { window.__TOOLS_READY = false; } catch(e) {}
                     const response = await fetch('public/tools.json');
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     db = await response.json();
@@ -2031,6 +2032,8 @@
                 window.addEventListener('hashchange', () => { applyHashRoute(); render(); });
 
                 render();
+                // Mark tools/search UI ready after first successful render cycle
+                try { window.__TOOLS_READY = true; } catch(e) {}
             }
             
             function setupTheme() {

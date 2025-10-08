@@ -534,6 +534,9 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 deadline = time.time() + timeout_ms / 1000.0
                 while time.time() < deadline:
                     try:
+                        # Prefer explicit readiness flag if exposed by app
+                        if page.evaluate("window.__TOOLS_READY === true"):
+                            return True
                         if page.query_selector('.open-tool-btn'):
                             return True
                         if page.evaluate("window.__TOOLS_LOADED || false"):
@@ -632,8 +635,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', '   chatgpt   ')
-                # Allow results to populate fully (Fuse + rendering) before evaluation
-                time.sleep(5)
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 results.append(TestResult('SR-007', 'Search', 'Trimming of leading/trailing spaces works', 'pass' if found else 'fail', f'results={count}', shot('SR-007', dpage)))
 
@@ -642,8 +643,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', 'GeMiNi')
-                # Extra stabilization delay to ensure case-insensitive matching handled
-                time.sleep(5)
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 results.append(TestResult('SR-008', 'Search', 'Case-insensitive search returns same results', 'pass' if found else 'fail', f'results={count}', shot('SR-008', dpage)))
 
@@ -652,8 +651,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', 'Freemium')
-                # Wait for tag-based filtering/rendering (some tools may lazy-load icons)
-                time.sleep(5)
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 html = dpage.inner_html('#search-results-container')
                 results.append(TestResult('SR-009', 'Search', 'Search matches tag text', 'pass' if (found and html and 'Freemium' in html) else 'fail', 'tag_check', shot('SR-009', dpage)))
