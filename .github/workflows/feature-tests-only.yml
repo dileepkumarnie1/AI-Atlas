@@ -105,9 +105,39 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r tests/requirements.txt
 
-      - name: Install Playwright browsers
+      - name: Compute Playwright cache key
+        id: pw-cache
         run: |
-          python -m playwright install --with-deps
+          set -euo pipefail
+          # Determine installed Playwright Python package version (already installed via requirements)
+          PW_VERSION=$(python -c "import importlib.metadata as md; print(md.version('playwright'))" 2>/dev/null || echo unknown)
+          echo "Detected Playwright version: $PW_VERSION"
+          echo "version=$PW_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Restore Playwright browser cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ runner.os }}-${{ steps.pw-cache.outputs.version }}
+          restore-keys: |
+            playwright-browsers-${{ runner.os }}-
+
+      - name: Install Chromium browser (if missing)
+        run: |
+          set -euo pipefail
+          if [ ! -d "$HOME/.cache/ms-playwright/chromium" ]; then
+            echo "Chromium not in cache - installing (with system deps)"
+            python -m playwright install --with-deps chromium
+          else
+            echo "Chromium already cached - skipping install"
+          fi
+          # Remove other browsers if present (keep cache lean)
+          for OTHER in firefox webkit; do
+            if [ -d "$HOME/.cache/ms-playwright/$OTHER" ]; then
+              echo "Removing unnecessary browser $OTHER";
+              rm -rf "$HOME/.cache/ms-playwright/$OTHER" || true;
+            fi
+          done
 
       - name: Prepare optional auth envs
         run: |
