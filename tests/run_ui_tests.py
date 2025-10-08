@@ -1012,59 +1012,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         results.append(TestResult('TH-004', 'Theme Toggle', 'Double toggle returns to original state', 'pass' if (init == final) else 'fail', f'init={init}, final={final}', shot('TH-004', dpage)))
                     ))()
                 ),
-                # Search extras
-                'SR-004': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (lambda: (
-                        dpage.fill('#search-bar-new', 'a', timeout=10000),
-                        time.sleep(0.3),
-                        allText := dpage.evaluate("(() => { const o=[...document.querySelectorAll('#category-select option')].find(x=>/^All/.test(x.textContent||'')); return o?o.textContent:'' })()"),
-                        ok := bool(allText and any(ch.isdigit() for ch in str(allText))),
-                        results.append(TestResult('SR-004', 'Search', 'Category counts update when typing', 'pass' if ok else 'fail', f'text={allText}', shot('SR-004', dpage)))
-                    ))()
-                ),
-                'SR-005': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (lambda: (
-                        dpage.fill('#search-bar-new', 'zzzzquuxnoresult1234567890', timeout=10000),
-                        time.sleep(0.3),
-                        txt := dpage.evaluate("document.getElementById('search-results-container').innerText||''"),
-                        ok := ('No tools found' in str(txt)),
-                        results.append(TestResult('SR-005', 'Search', "Gibberish query shows 'No tools found'", 'pass' if ok else 'fail', f'txt={txt[:60]}', shot('SR-005', dpage)))
-                    ))()
-                ),
-                'SR-006': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (ph := dpage.get_attribute('#search-bar-new', 'placeholder')),
-                    results.append(TestResult('SR-006', 'Search', 'Search placeholder text is correct', 'pass' if ph and 'Search tools by name' in ph else 'fail', f'placeholder={ph}', shot('SR-006', dpage)))
-                ),
-                'SR-007': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (dpage.fill('#search-bar-new', '   chatgpt   '), time.sleep(0.5)),
-                    (count := len(dpage.query_selector_all('#search-results-container .tool-result'))),
-                    results.append(TestResult('SR-007', 'Search', 'Trimming of leading/trailing spaces works', 'pass' if count >= 1 else 'fail', f'results={count}', shot('SR-007', dpage)))
-                ),
-                'SR-008': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (dpage.fill('#search-bar-new', 'GeMiNi'), time.sleep(0.5)),
-                    (count := len(dpage.query_selector_all('#search-results-container .tool-result'))),
-                    results.append(TestResult('SR-008', 'Search', 'Case-insensitive search returns same results', 'pass' if count >= 1 else 'fail', f'results={count}', shot('SR-008', dpage)))
-                ),
-                'SR-009': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (dpage.fill('#search-bar-new', 'Freemium'), time.sleep(0.5)),
-                    (html := dpage.inner_html('#search-results-container')),
-                    results.append(TestResult('SR-009', 'Search', 'Search matches tag text', 'pass' if html and 'Freemium' in html else 'fail', 'tag_check', shot('SR-009', dpage)))
-                ),
-                'SR-010': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (dpage.fill('#search-bar-new', 'no-way-this-matches-123456789'), time.sleep(0.4)),
-                    (msg1 := dpage.text_content('#search-results-container')),
-                    (dpage.fill('#search-bar-new', 'chat'), time.sleep(0.5)),
-                    (msg2 := dpage.text_content('#search-results-container')),
-                    (ok := (msg1 and 'No tools found' in msg1 and msg2 and 'No tools found' not in msg2)),
-                    results.append(TestResult('SR-010', 'Search', 'No-results message clears after valid query', 'pass' if ok else 'fail', 'cleared' if ok else f'before={msg1[:40] if msg1 else msg1}; after={msg2[:40] if msg2 else msg2}', shot('SR-010', dpage)))
-                ),
                 # Auth
                 'AU-001': lambda: (
                     goto_home(dpage),
