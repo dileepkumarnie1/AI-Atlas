@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI GyanVerse</title>
+    <title>AI ToolVerse</title>
     <!-- Mobile address bar theming -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0c">
@@ -315,7 +315,7 @@
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
                         <a href="#" id="home-link" class="flex items-center">
-                            <img src="./images/AIGyan_chequered.png" alt="AI GyanVerse" width="1920" height="488" class="h-12 md:h-14 w-auto object-contain drop-shadow-sm" loading="lazy" decoding="async">
+                            <img src="./images/AIGyan_chequered.png" alt="AI ToolVerse" width="1920" height="488" class="h-12 md:h-14 w-auto object-contain drop-shadow-sm" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
@@ -381,7 +381,7 @@
 
     <footer class="border-t" style="padding-bottom: env(safe-area-inset-bottom);">
             <div class="container mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-muted">&copy; 2025 AI GyanVerse. All rights reserved.</p>
+                <p class="text-muted">&copy; 2025 AI ToolVerse. All rights reserved.</p>
                 <p class="text-sm text-muted mt-1">
                   <a href="./CODE_OF_CONDUCT.md" class="underline">Code of Conduct</a>
                   <span class="mx-2">·</span>
@@ -1107,7 +1107,7 @@
                             const email = (submitterEmail && submitterEmail.includes('@')) ? submitterEmail : '';
                             if (email) {
                                 const ackUrl = '/.netlify/functions/notify-user';
-                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI GyanVerse!</p>`;
+                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI ToolVerse!</p>`;
                                 try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: email, subject: 'Your tool was approved', html: ackHtml }) }); } catch {}
                             }
 
@@ -1237,8 +1237,8 @@
                     contentArea.innerHTML = `
                         <div class="relative">
                             <div class="text-center mb-4 md:mb-5">
-                                <h1 class="text-[2.025rem] md:text-[3.375rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-800 bg-clip-text text-transparent drop-shadow-[0_6px_22px_rgba(37,20,126,0.55)]">AI GyanVerse</span></h1>
-                                <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Your Gateway to Smarter AI Tools and Knowledge.</p>
+                                <h1 class="text-[2.025rem] md:text-[3.375rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-800 bg-clip-text text-transparent drop-shadow-[0_6px_22px_rgba(37,20,126,0.55)]">AI ToolVerse</span></h1>
+                                <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Where AI knowledge and tools meet.</p>
                             </div>
 
                             <!-- Search + Category split row -->
@@ -1583,7 +1583,7 @@
                                 }
                                 // Send acknowledgement to submitter if email available
                                 if (state.user?.email) {
-                                    const ackHtml = `<p>Thank you for submitting <strong>${name}</strong> to AI GyanVerse.</p><p>We appreciate your help in improving the catalog. We’ll review your suggestion and, if it fits our criteria, we’ll add it soon.</p><p>Thanks again!</p>`;
+                                    const ackHtml = `<p>Thank you for submitting <strong>${name}</strong> to AI ToolVerse.</p><p>We appreciate your help in improving the catalog. We’ll review your suggestion and, if it fits our criteria, we’ll add it soon.</p><p>Thanks again!</p>`;
                                     try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: state.user.email, subject: 'Thanks for your tool submission', html: ackHtml }) }); } catch {}
                                 }
                                 statusEl.textContent = 'Thanks! Your submission was received.';
