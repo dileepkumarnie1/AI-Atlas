@@ -38,4 +38,5 @@ data/discovery_report.json
 __pycache__/
 *.pyc
 tests/__pycache__/
+tests/output/
 chat_summary.md
