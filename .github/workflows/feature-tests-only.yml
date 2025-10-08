@@ -322,3 +322,4 @@ jobs:
             gh issue close "$issue_number" || true
           else
             echo "No open failure issue to close." 
+          fi
