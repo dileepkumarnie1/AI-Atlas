@@ -859,6 +859,9 @@
                                 <div>
                                     <div class="text-lg font-bold text-primary">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
                                     <div class="text-sm text-secondary">${escapeHtml(tool.description || '')}</div>
+                                    <div class="flex flex-wrap gap-1 mt-1">
+                                        ${(tool.tags||[]).slice(0, 4).map(tag => `<span class="text-xs tag px-2 py-1 rounded-full whitespace-nowrap">${escapeHtml(tag)}</span>`).join('')}
+                                    </div>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2">
