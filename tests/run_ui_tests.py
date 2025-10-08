@@ -635,6 +635,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', '   chatgpt   ')
+                time.sleep(5)  # explicit stabilization delay
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 results.append(TestResult('SR-007', 'Search', 'Trimming of leading/trailing spaces works', 'pass' if found else 'fail', f'results={count}', shot('SR-007', dpage)))
 
@@ -643,6 +644,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', 'GeMiNi')
+                time.sleep(5)  # explicit stabilization delay
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 results.append(TestResult('SR-008', 'Search', 'Case-insensitive search returns same results', 'pass' if found else 'fail', f'results={count}', shot('SR-008', dpage)))
 
@@ -651,6 +653,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 dpage.wait_for_selector('#search-bar-new', timeout=10000)
                 wait_for_initial_tools(dpage)
                 dpage.fill('#search-bar-new', 'Freemium')
+                time.sleep(5)  # explicit stabilization delay
                 found, none, count = wait_for_search_resolution(dpage, expect_results=True, timeout_ms=10000)
                 html = dpage.inner_html('#search-results-container')
                 results.append(TestResult('SR-009', 'Search', 'Search matches tag text', 'pass' if (found and html and 'Freemium' in html) else 'fail', 'tag_check', shot('SR-009', dpage)))
