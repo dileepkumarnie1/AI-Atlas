@@ -374,6 +374,24 @@
         ]
       },
       {
+        "name": "mlflow",
+        "description": "MLflow",
+        "link": "https://mlflow.org",
+        "tags": [
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "MLflow",
+        "pros": [
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://mlflow.org/img/mlflow-favicon.ico"
+      },
+      {
         "name": "Notebook LLM",
         "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
         "link": "https://notebooklm.google.com/",
@@ -1277,6 +1295,31 @@
         ]
       },
       {
+        "name": "deeplake",
+        "description": "Activeloop&#x27;s AI data analyst is for teams that work with complex, unstructured data. Search, index, and retrieve text, images, video, and audio in one place.",
+        "link": "https://activeloop.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "video",
+          "audio",
+          "search",
+          "Freemium"
+        ],
+        "about": "Activeloop&#x27;s AI data analyst is for teams that work with complex, unstructured data. Search, index, and retrieve text, images, video, and audio in one place.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Accelerates video creation.",
+          "Useful for voice and audio workflows."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Render times or credit limits may apply.",
+          "May need cleanup for artifacts."
+        ],
+        "iconUrl": "https://activeloop.ai/favicon-32x32.png?v=f10fa296f4fa621b5b31a72bb489f553"
+      },
+      {
         "name": "DreamStudio",
         "description": "Official web app for Stable Diffusion image generation.",
         "link": "https://dreamstudio.ai/",
@@ -2087,6 +2130,29 @@
           "Can be resource-intensive.",
           "Still a newer product, so some features may be less polished than established editors."
         ]
+      },
+      {
+        "name": "daytona",
+        "description": "Deploy Al code with confidence using Daytona",
+        "link": "https://daytona.io",
+        "tags": [
+          "developer-tools",
+          "image",
+          "agents",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Deploy Al code with confidence using Daytona",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://daytona.io/favicon.ico"
       },
       {
         "name": "GitHub Copilot",
@@ -4191,6 +4257,35 @@
         ]
       },
       {
+        "name": "memobase",
+        "description": "Memobase enables AI apps with long term memory through structured user profiles, powering personalized interactions across sessions. Open source and cloud-ready.",
+        "link": "https://memobase.io",
+        "tags": [
+          "agents",
+          "design",
+          "open-source",
+          "freemium",
+          "subscription",
+          "language",
+          "tutoring",
+          "teacher tools",
+          "Open Source",
+          "Freemium",
+          "Subscription"
+        ],
+        "about": "Memobase enables AI apps with long term memory through structured user profiles, powering personalized interactions across sessions. Open source and cloud-ready.",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/2iwCpe4qn3OOwqtRoheVR9lfU.png"
+      },
+      {
         "name": "Photomath",
         "description": "Step‑by‑step math solutions via camera input.",
         "link": "https://photomath.com/",
@@ -4231,6 +4326,31 @@
           "Most advanced features require a Quizlet Plus subscription.",
           "Less structured than a full curriculum like Khanmigo."
         ]
+      },
+      {
+        "name": "uxie",
+        "description": "Revolutionise your Learning Experience.",
+        "link": "https://uxie.vercel.app",
+        "tags": [
+          "education",
+          "design",
+          "freemium",
+          "subscription",
+          "language",
+          "tutoring",
+          "teacher tools",
+          "Freemium",
+          "Subscription"
+        ],
+        "about": "Revolutionise your Learning Experience.",
+        "pros": [
+          "Free tier available."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access."
+        ],
+        "iconUrl": "https://uxie.vercel.app/favicon.ico"
       }
     ]
   },
@@ -5353,6 +5473,24 @@
         "cons": []
       },
       {
+        "name": "cosdata",
+        "description": "Cosdata delivers high-performance vector search solutions, including OSS and Serverless options, designed for enterprise-scale AI applications.",
+        "link": "https://www.cosdata.io",
+        "tags": [
+          "search",
+          "design",
+          "Freemium"
+        ],
+        "about": "Cosdata delivers high-performance vector search solutions, including OSS and Serverless options, designed for enterprise-scale AI applications.",
+        "pros": [
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.cosdata.io/favicon.ico"
+      },
+      {
         "name": "Elicit",
         "description": "AI research assistant for finding and synthesizing papers.",
         "link": "https://elicit.org/",
@@ -5509,6 +5647,32 @@
           "Coverage and speed can vary."
         ],
         "iconUrl": "https://octocode.ai/favicon-16x16.png?v=2"
+      },
+      {
+        "name": "probe",
+        "description": "AI-friendly, fully local, semantic code search tool designed to power the next generation of AI coding assistants",
+        "link": "https://probeai.dev/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "search",
+          "automation",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "AI-friendly, fully local, semantic code search tool designed to power the next generation of AI coding assistants",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://probeai.dev/favicon.ico"
       },
       {
         "name": "ragflow",
@@ -5841,6 +6005,27 @@
           "Best for Python/ML workflows.",
           "Some tools in preview."
         ]
+      },
+      {
+        "name": "modelbench",
+        "description": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for “chat” style systems.",
+        "link": "https://mlcommons.org/ailuminate",
+        "tags": [
+          "chatbot",
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for “chat” style systems.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://mlcommons.org/wp-content/themes/mlcommons/build/img/favicon/apple-touch-icon.png"
       },
       {
         "name": "OpenAI Red Teaming",
