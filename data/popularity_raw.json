@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2025-10-09T02:44:09.190Z",
+  "generatedAt": "2025-10-09T04:01:57.513Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 90451,
-          "forks": 10111,
+          "stars": 90454,
+          "forks": 10113,
           "openIssues": 3021
         },
         "npm": null
@@ -52,14 +52,14 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 2430,
+          "stars": 2429,
           "forks": 346,
           "openIssues": 55
         },
         "npm": null
       },
-      "signalsRaw": 2.8781,
-      "signalsNorm": 67.34,
+      "signalsRaw": 2.878,
+      "signalsNorm": 67.33,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -155,7 +155,7 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32207,
+          "stars": 32208,
           "forks": 1605,
           "openIssues": 265
         },
@@ -187,7 +187,7 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 89125,
+          "stars": 89126,
           "forks": 11125,
           "openIssues": 96
         },
@@ -214,7 +214,7 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42917,
+          "stars": 42919,
           "forks": 5675,
           "openIssues": 14
         },
