@@ -288,8 +288,31 @@
         .search-wrapper { max-width: 900px; margin: 0 auto 1.5rem; display:flex; gap:8px; align-items:center; }
         .search-input { flex:1; padding:0.75rem 1rem; border-radius:0.75rem; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); }
         .search-clear { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.75rem; border-radius:0.5rem; color:var(--text-secondary); }
-        .search-results { margin-top:1rem; display:grid; gap:12px; }
-        @media(min-width:768px) { .search-results { grid-template-columns: repeat(2, 1fr); } }
+        .search-results { margin-top:1rem; display:grid; gap:12px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        @media(min-width:768px) { .search-results { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media(min-width:1024px) { .search-results { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+        .tile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            aspect-ratio: 1 / 1; /* square */
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .tile-card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+        html.dark .tile-card:hover { box-shadow: 0 8px 18px rgba(0,0,0,.25), 0 0 12px rgba(76, 29, 149, 0.25); }
+    .tile-title { font-weight: 700; color: var(--text-primary); font-size: 0.95rem; line-height: 1.2; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; }
+    .tile-desc { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
+        .tile-tags { display:flex; gap:6px; flex-wrap: wrap; justify-content: center; }
+        .tile-actions { display:flex; gap:8px; align-items:center; justify-content:center; }
+        .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
+        .pager-btn[disabled] { opacity:.5; cursor: not-allowed; }
 
         /* Tool Details Modal Styles */
         #tool-details-modal-content {
@@ -849,25 +872,19 @@
                 }
             }
 
-            function renderSearchToolCard(tool) {
-                const iconHtml = iconImgHtml(tool, 40, 'mr-4 flex-shrink-0');
+            function renderSearchTile(tool) {
+                const iconHtml = iconImgHtml(tool, 56, 'mb-2');
                 return `
-                    <div class="tool-result tool-list-item card-hover-effect p-4 bg-white rounded-lg border">
-                        <div class="flex items-center justify-between gap-4">
-                            <div class="flex items-center">
-                                ${iconHtml}
-                                <div>
-                                    <div class="text-lg font-bold text-primary">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
-                                    <div class="text-sm text-secondary">${escapeHtml(tool.description || '')}</div>
-                                    <div class="flex flex-wrap gap-1 mt-1">
-                                        ${(tool.tags||[]).slice(0, 4).map(tag => `<span class="text-xs tag px-2 py-1 rounded-full whitespace-nowrap">${escapeHtml(tag)}</span>`).join('')}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="px-3 py-1 rounded border text-sm open-tool-btn" data-name="${escapeHtml(tool.name)}">Open</button>
-                                <a href="${tool.link || '#'}" target="_blank" class="bg-purple-600 text-white px-3 py-1 rounded text-sm">Visit</a>
-                            </div>
+                    <div class="tile-card card-hover-effect" role="listitem">
+                        <div class="flex flex-col items-center">
+                            ${iconHtml}
+                            <div class="tile-title">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
+                            <div class="tile-desc mt-1">${escapeHtml(tool.description || '')}</div>
+                        </div>
+                        <div class="tile-tags mt-1">${(tool.tags||[]).slice(0, 3).map(tag => `<span class="text-xs tag px-2 py-1 rounded-full whitespace-nowrap">${escapeHtml(tag)}</span>`).join('')}</div>
+                        <div class="tile-actions mt-2">
+                            <button class="px-3 py-1 rounded border text-sm open-tool-btn" data-name="${escapeHtml(tool.name)}">Open</button>
+                            <a href="${tool.link || '#'}" target="_blank" class="bg-purple-600 text-white px-3 py-1 rounded text-sm">Visit</a>
                         </div>
                     </div>
                 `;
@@ -1342,6 +1359,7 @@
                                 // Back to placeholder state
                                 state.categoryExplicit = false;
                                 state.selectedCategory = 'all';
+                                searchPage = 1;
                                 renderSearchResults();
                                 renderCategorySelect(currentMatchesCache);
                                 setPlaceholderStyle();
@@ -1355,6 +1373,7 @@
                                 state.currentView = 'tools';
                                 render();
                             } else {
+                                searchPage = 1;
                                 renderSearchResults();
                                 renderCategorySelect(currentMatchesCache);
                             }
@@ -1363,6 +1382,8 @@
                     }
 
                     let currentMatchesCache = [];
+                    let searchPage = 1; // local page state within renderHome scope
+                    const PAGE_SIZE = 5;
                     function renderSearchResults() {
                         const q = (state.searchQuery || '').trim();
                         if (!q) { resultsContainer.innerHTML = ''; return; }
@@ -1376,24 +1397,44 @@
                             resultsContainer.innerHTML = `<div class="text-secondary">No tools found for "<strong>${escapeHtml(q)}</strong>". Try different keywords.</div>`;
                             return;
                         }
+                        // pagination calculations
+                        const total = filteredByCat.length;
+                        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+                        if (searchPage > totalPages) searchPage = totalPages;
+                        const start = (searchPage - 1) * PAGE_SIZE;
+                        const end = start + PAGE_SIZE;
+                        const pageItems = filteredByCat.slice(start, end);
+
                         resultsContainer.innerHTML = `
-                            <div>
-                                <h3 class="text-xl font-semibold mb-3">Matching Tools</h3>
-                                <div class="search-results">${filteredByCat.map(renderSearchToolCard).join('')}</div>
+                            <div class="mb-2 flex items-center justify-between">
+                                <h3 class="text-xl font-semibold">Matching Tools</h3>
+                                <div class="text-sm text-secondary">${start + 1}-${Math.min(end, total)} of ${total}</div>
+                            </div>
+                            <div class="search-results" role="list">${pageItems.map(renderSearchTile).join('')}</div>
+                            <div class="flex items-center justify-end gap-2 mt-3">
+                                <button class="pager-btn" id="prev-page" ${searchPage<=1?'disabled':''} aria-label="Previous">◀</button>
+                                <span class="text-sm text-secondary">Page ${searchPage} / ${totalPages}</span>
+                                <button class="pager-btn" id="next-page" ${searchPage>=totalPages?'disabled':''} aria-label="Next">▶</button>
                             </div>`;
                         // attach handlers for Open buttons
                         resultsContainer.querySelectorAll('.open-tool-btn').forEach(btn => {
                             btn.addEventListener('click', (e) => {
+                                e.preventDefault();
                                 const name = e.currentTarget.getAttribute('data-name');
-                                openToolByName(name);
+                                if (name) openToolByName(name);
                             });
                         });
+                        const prev = resultsContainer.querySelector('#prev-page');
+                        const next = resultsContainer.querySelector('#next-page');
+                        if (prev) prev.onclick = () => { if (searchPage > 1) { searchPage--; renderSearchResults(); } };
+                        if (next) next.onclick = () => { if (searchPage < totalPages) { searchPage++; renderSearchResults(); } };
                         // Refresh dropdown with match-based counts
                         renderCategorySelect(matches);
                     }
                     if (sb) {
                         sb.addEventListener('input', (e) => {
                             state.searchQuery = e.target.value;
+                            searchPage = 1;
                             renderSearchResults();
                             // When typing, refresh dropdown with counts for the current matches
                             renderCategorySelect(currentMatchesCache);
@@ -1819,36 +1860,24 @@
                 if (!authContainer) return;
                 state.user = user;
                 if (user) {
-                    // Show user email and sign out
-                    let favoritesList = '';
-                    if (Array.isArray(state.favorites) && state.favorites.length > 0 && Array.isArray(db)) {
-                        // Flatten all tools for lookup
-                        const allTools = db.flatMap(d => d.tools || []);
-                        const favTools = state.favorites.map(fid => allTools.find(t => t.name === fid)).filter(Boolean);
-                        favoritesList = `
-                            <div class="mt-2 text-left">
-                                <div class="text-xs text-muted mb-1">Favorites:</div>
-                                <ul class="list-disc ml-5">
-                                    ${favTools.map(tool => `<li class="text-sm text-primary">${escapeHtml(tool.name)}</li>`).join('')}
-                                </ul>
-                            </div>
-                        `;
-                    }
+                    // Show user email/uid and sign out button in header
+                    const label = escapeHtml(user.email || user.uid || 'Account');
                     authContainer.innerHTML = `
-                        <span class="text-sm text-primary mr-2">${user.email || user.displayName || 'Account'}</span>
-                        <button id="signout-btn" class="px-3 py-1 rounded border text-sm bg-secondary text-primary hover:bg-purple-100">Sign Out</button>
-                        ${favoritesList}
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-secondary">${label}</span>
+                            <button id="signout-btn" class="px-3 py-1 rounded border text-sm bg-secondary text-primary">Sign Out</button>
+                        </div>
                     `;
-                    document.getElementById('signout-btn').addEventListener('click', handleSignOut);
-                    // Load user profile data from Firestore
-                    loadUserProfileToState(user).then(render);
+                    const btn = document.getElementById('signout-btn');
+                    if (btn) btn.addEventListener('click', handleSignOut);
                 } else {
-                    // Show sign in button
+                    // Show sign in button in header
                     authContainer.innerHTML = `
                         <button id="signin-btn" class="px-3 py-1 rounded border text-sm bg-purple-600 text-white hover:bg-purple-700">Sign In</button>
                     `;
-                    document.getElementById('signin-btn').addEventListener('click', () => openModal(true));
-                    // Clear user data from state
+                    const btn = document.getElementById('signin-btn');
+                    if (btn) btn.addEventListener('click', () => openModal(true));
+                    // Clear user-specific state
                     state.favorites = [];
                     state.reviews = {};
                     state.comparisons = [];
