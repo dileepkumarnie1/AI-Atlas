@@ -342,7 +342,7 @@
                 <div class="flex items-center justify-between h-[68px] md:h-[84px]">
                     <div class="flex items-center">
                         <a href="#" id="home-link" class="flex items-center" title="AI ToolVerse">
-                            <img src="./images/tool_verse_new_logo_upd.png" alt="AI ToolVerse" class="h-[2.8rem] md:h-[3.2rem] lg:h-16 w-auto object-contain drop-shadow-sm" loading="lazy" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.src='./images/tool_verse_new_logo.png';">
+                            <img src="./images/tool_verse_new_logo_upd.png" alt="AI ToolVerse" class="h-[2.52rem] md:h-[2.88rem] lg:h-[3.6rem] w-auto object-contain drop-shadow-sm" loading="lazy" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.src='./images/tool_verse_new_logo.png';">
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
@@ -356,9 +356,9 @@
                         </button>
                         <div class="hidden md:block">
                             <div id="main-nav" class="ml-6 flex items-baseline space-x-4">
-                                <a href="#" id="domains-link" class="px-3 py-2 rounded-md text-sm font-medium">Domains</a>
-                                <a href="#" id="submit-link" class="px-3 py-2 rounded-md text-sm font-medium">Submit a Tool</a>
-                                <a href="#" id="about-link" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+                                <a href="#" id="domains-link" class="px-3 py-2 rounded-md text-base font-medium">Domains</a>
+                                <a href="#" id="submit-link" class="px-3 py-2 rounded-md text-base font-medium">Submit a Tool</a>
+                                <a href="#" id="about-link" class="px-3 py-2 rounded-md text-base font-medium">About</a>
                             </div>
                         </div>
                         <div id="auth-container" class="flex items-center ml-4">
@@ -379,9 +379,9 @@
                 </button>
             </div>
             <nav class="px-4 pb-6 flex flex-col gap-2">
-                <a href="#" id="m-domains-link" class="px-3 py-2 rounded-md text-sm font-medium">Domains</a>
-                <a href="#" id="m-submit-link" class="px-3 py-2 rounded-md text-sm font-medium">Submit a Tool</a>
-                <a href="#" id="m-about-link" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a href="#" id="m-domains-link" class="px-3 py-2 rounded-md text-base font-medium">Domains</a>
+                <a href="#" id="m-submit-link" class="px-3 py-2 rounded-md text-base font-medium">Submit a Tool</a>
+                <a href="#" id="m-about-link" class="px-3 py-2 rounded-md text-base font-medium">About</a>
             </nav>
             <div class="px-4 pb-6 border-t border-color">
                 <div id="m-auth-container" class="pt-4"></div>
@@ -1877,7 +1877,7 @@
                 } else {
                     // Show sign in button in header
                     authContainer.innerHTML = `
-                        <button id="signin-btn" class="px-3 py-1 rounded border text-sm bg-purple-600 text-white hover:bg-purple-700">Sign In</button>
+                        <button id="signin-btn" class="px-3 py-1 rounded border text-base bg-purple-600 text-white hover:bg-purple-700">Sign In</button>
                     `;
                     const btn = document.getElementById('signin-btn');
                     if (btn) btn.addEventListener('click', () => openModal(true));
