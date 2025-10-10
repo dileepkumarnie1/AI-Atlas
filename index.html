@@ -78,7 +78,9 @@
         --text-muted: #71717a;
         --border-color: #e4e4e7;
         --header-bg: linear-gradient(to right, rgba(250, 245, 255, 0.8), rgba(255, 255, 255, 0.8));
-        --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+    --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+    /* Additional bottom drop shadow for header depth */
+    --header-bottom-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.28);
         --scrollbar-track: #e4e4e7;
         --scrollbar-thumb: #a1a1aa;
         --scrollbar-thumb-hover: #71717a;
@@ -96,7 +98,8 @@
         --text-muted: #71717a;
         --border-color: #27272a;
         --header-bg: linear-gradient(to right, rgba(30, 27, 75, 0.8), rgba(17, 17, 17, 0.8));
-        --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    --header-bottom-shadow: 0 14px 24px -14px rgba(0, 0, 0, 0.55);
         --scrollbar-track: #1a1a1a;
         --scrollbar-thumb: #4a4a4a;
         --scrollbar-thumb-hover: #5a5a5a;
@@ -127,7 +130,8 @@
         header { 
             background: var(--header-bg); 
             border-color: var(--border-color);
-            box-shadow: var(--header-shadow);
+            /* Stack a stronger bottom shadow for separation from hero */
+            box-shadow: var(--header-shadow), var(--header-bottom-shadow) !important;
             padding-top: env(safe-area-inset-top);
         }
         #home-link { color: var(--text-primary); }
