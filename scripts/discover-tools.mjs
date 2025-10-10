@@ -1892,6 +1892,33 @@ async function main(){
           withMl.sort((a,b)=> (Number(b.mlScore||-1) - Number(a.mlScore||-1)) );
           pending.items = withMl;
           await writeJson(PENDING_JSON, pending);
+          // Optional: write ML fields back to Firestore submissions if available
+          try {
+            await initFirebaseIfPossible();
+            const dbFb = getFirestoreSafe && getFirestoreSafe();
+            if (dbFb) {
+              const col = dbFb.collection('submissions');
+              for (const it of withMl) {
+                const title = String(it.name||it.title||'').trim();
+                if (!title) continue;
+                // Find by title field or fallback by link if unique
+                const q = await col.where('title','==', title).limit(1).get();
+                let ref = q?.docs?.[0]?.ref;
+                if (!ref && it.link) {
+                  const q2 = await col.where('link','==', String(it.link)).limit(1).get();
+                  ref = q2?.docs?.[0]?.ref;
+                }
+                if (ref) {
+                  const patch = { mlScore: Number(it.mlScore||0), mlDecision: String(it.mlDecision||''), mlVersion: String(it.mlVersion||'v1') };
+                  if (Array.isArray(it.mlSimilar)) patch.mlSimilar = it.mlSimilar.slice(0,3);
+                  await ref.set(patch, { merge: true });
+                }
+              }
+              console.log('[ml] wrote ML fields to Firestore submissions');
+            }
+          } catch (e) {
+            console.warn('[ml] Firestore write skipped/failed:', e?.message||e);
+          }
           // Publish scored file for Admin UI widget
           try{
             const dest = path.join(PUBLIC_DIR, 'pending-tools.scored.json');

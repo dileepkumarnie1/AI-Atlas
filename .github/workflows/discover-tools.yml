@@ -27,6 +27,18 @@ jobs:
         run: |
           npm ci || npm i
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install ML dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f ml/requirements.txt ]; then
+            python -m pip install -r ml/requirements.txt
+          fi
+
       - name: Discover tools
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

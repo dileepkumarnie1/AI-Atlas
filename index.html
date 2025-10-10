@@ -993,7 +993,12 @@
                                             const r = await fetch('/pending-tools.scored.json', { cache: 'no-store' });
                                             if (r.ok) {
                                                 const arr = await r.json();
-                                                (arr||[]).forEach(x => { const k = String(x.name||'').toLowerCase(); if(k) scoredMap.set(k, x); });
+                                                (arr||[]).forEach(x => {
+                                                    const k = String(x.name||'').toLowerCase();
+                                                    if(k) scoredMap.set(k, x);
+                                                    const lk = (()=>{ try{return new URL(x.link||'').hostname.toLowerCase();}catch{return '';} })();
+                                                    if(lk && !scoredMap.has(lk)) scoredMap.set(lk, x);
+                                                });
                                             }
                                         } catch {}
                                         const pending = subs.filter(s => String(s.status||'pending') === 'pending');
@@ -1018,13 +1023,16 @@
                                                                     <td class="py-2 pr-4">
                                                                         ${(() => {
                                                                                 const key = String(s.title||s.name||'').toLowerCase();
-                                                                                const hint = scoredMap.get(key);
+                                                                                let hint = scoredMap.get(key);
+                                                                                if(!hint && s.link){
+                                                                                    try { const host = new URL(s.link).hostname.toLowerCase(); hint = scoredMap.get(host) || hint; } catch {}
+                                                                                }
                                                                                 if (!hint) return '<div class="text-xs text-muted">No ML hint</div>';
                                                                                 const dec = String(hint.mlDecision||'').toLowerCase();
                                                                                 const score = typeof hint.mlScore === 'number' ? hint.mlScore.toFixed(2) : '—';
                                                                                 const badgeCls = dec === 'approve' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
                                                                                 const sims = Array.isArray(hint.mlSimilar) ? hint.mlSimilar.slice(0,3) : [];
-                                                                                const similarHtml = sims.length ? `<div class="mt-1 text-xs text-secondary">Similar: ${sims.map(x=>escapeHtml(x.name)).join(', ')}</div>` : '';
+                                                                                const similarHtml = sims.length ? `<div class="mt-1 text-xs text-secondary">Similar: ${sims.map(x=>`${escapeHtml(x.name)}${x.domainSlug?` (${escapeHtml(x.domainSlug)})`:''}`).join(', ')}</div>` : '';
                                                                                 return `<div class="inline-flex items-center gap-2 text-xs"><span class="px-2 py-0.5 rounded ${badgeCls}">Model: ${dec==='approve'?'Approve':'Reject'} (${score})</span></div>${similarHtml}`;
                                                                         })()}
                                                                         <div class="mt-2 flex gap-2">
