@@ -6,6 +6,9 @@
 
 import 'dotenv/config';
 import fs from 'node:fs/promises';
+import { exec as execCb } from 'node:child_process';
+import { promisify } from 'node:util';
+const exec = promisify(execCb);
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load as loadHTML } from 'cheerio';
@@ -44,6 +47,7 @@ const DISCOVERY_SOURCES = path.join(DATA_DIR, 'discovery-sources.json');
 const DISCOVERY_LOG = path.join(DATA_DIR, 'discovery_log.json');
 const BLACKLIST_JSON = path.join(DATA_DIR, 'blacklist.json');
 const PENDING_JSON = path.join(DATA_DIR, 'pending-tools.json');
+const PENDING_SCORED_JSON = path.join(DATA_DIR, 'pending-tools.scored.json');
 const ALIASES_JSON = path.join(DATA_DIR, 'aliases.json');
 
 function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
@@ -1848,6 +1852,59 @@ async function main(){
   if(!directPublish){
     pending.lastUpdated = new Date().toISOString();
     await writeJson(PENDING_JSON, pending);
+
+    // --- ML scoring integration: score pending items and enrich/filter ---
+    try{
+      const disableMl = /^true$/i.test(String(process.env.DISABLE_ML_SCORING||'').trim());
+      if(!disableMl){
+        console.log('[ml] scoring pending tools...');
+        try{
+          await exec(`python ./ml/score_candidates.py`, { cwd: root });
+        }catch(err){
+          console.warn('[ml] scoring failed (python). Falling back without ML.', err?.stderr || err?.message || err);
+        }
+        // If scored file exists, merge into pending and optionally filter
+        try{
+          const scoredRaw = await fs.readFile(PENDING_SCORED_JSON, 'utf-8');
+          const scored = JSON.parse(scoredRaw);
+          const byName = new Map();
+          for(const s of Array.isArray(scored)?scored:[]){
+            const k = normalizeKey(s.name);
+            if(k) byName.set(k, s);
+          }
+          const threshold = Number(process.env.ML_REJECT_BELOW || 0.4);
+          const withMl = [];
+          for(const it of Array.isArray(pending.items)? pending.items : []){
+            const match = byName.get(normalizeKey(it.name));
+            if(match){
+              const { mlScore, mlDecision, mlSimilar, mlVersion } = match;
+              const enriched = { ...it, mlScore, mlDecision, mlSimilar, mlVersion };
+              // Optionally skip low-scored rejects
+              if(String(mlDecision).toLowerCase()==='reject' && Number(mlScore||0) < threshold){
+                continue; // skip
+              }
+              withMl.push(enriched);
+            }else{
+              withMl.push(it);
+            }
+          }
+          // Sort by mlScore desc when present
+          withMl.sort((a,b)=> (Number(b.mlScore||-1) - Number(a.mlScore||-1)) );
+          pending.items = withMl;
+          await writeJson(PENDING_JSON, pending);
+          // Publish scored file for Admin UI widget
+          try{
+            const dest = path.join(PUBLIC_DIR, 'pending-tools.scored.json');
+            await fs.copyFile(PENDING_SCORED_JSON, dest);
+            console.log('[ml] published scored file to public/pending-tools.scored.json');
+          }catch(e){ console.warn('[ml] failed to publish scored file to public:', e?.message||e); }
+        }catch(err){
+          console.warn('[ml] no scored output found or parse failed:', err?.message || err);
+        }
+      }
+    }catch(err){
+      console.warn('[ml] scoring integration error:', err?.message || err);
+    }
   }
   const now = new Date().toISOString();
   const logNew = { lastRun: now, additions, ...logPrev };

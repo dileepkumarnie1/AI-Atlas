@@ -987,6 +987,15 @@
                                         const container = document.getElementById('admin-submissions');
                                         const historyEl = document.getElementById('admin-history');
                                         const subs = await fetchSubmissionsList();
+                                        // Try to fetch scored hints (optional)
+                                        let scoredMap = new Map();
+                                        try {
+                                            const r = await fetch('/pending-tools.scored.json', { cache: 'no-store' });
+                                            if (r.ok) {
+                                                const arr = await r.json();
+                                                (arr||[]).forEach(x => { const k = String(x.name||'').toLowerCase(); if(k) scoredMap.set(k, x); });
+                                            }
+                                        } catch {}
                                         const pending = subs.filter(s => String(s.status||'pending') === 'pending');
                                         const approved = subs.filter(s => String(s.status||'') === 'approved');
                                         container.innerHTML = pending.length ? `
@@ -1001,14 +1010,27 @@
                               </tr>
                             </thead>
                             <tbody>
-                                                            ${pending.map(s => `
+                                                                                                                        ${pending.map(s => `
                                 <tr class="border-t border-color">
                                   <td class="py-2 pr-4">${escapeHtml(s.title || s.name || s.link || s.id)}</td>
-                                  <td class="py-2 pr-4">${escapeHtml(s.status || 'pending')}</td>
+                                                                    <td class="py-2 pr-4">${escapeHtml(s.status || 'pending')}</td>
                                                                     <td class="py-2 pr-4">${escapeHtml(s.createdBy || s.submitterEmail || s.email || '')}</td>
-                                  <td class="py-2 pr-4 flex gap-2">
+                                                                    <td class="py-2 pr-4">
+                                                                        ${(() => {
+                                                                                const key = String(s.title||s.name||'').toLowerCase();
+                                                                                const hint = scoredMap.get(key);
+                                                                                if (!hint) return '<div class="text-xs text-muted">No ML hint</div>';
+                                                                                const dec = String(hint.mlDecision||'').toLowerCase();
+                                                                                const score = typeof hint.mlScore === 'number' ? hint.mlScore.toFixed(2) : '—';
+                                                                                const badgeCls = dec === 'approve' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+                                                                                const sims = Array.isArray(hint.mlSimilar) ? hint.mlSimilar.slice(0,3) : [];
+                                                                                const similarHtml = sims.length ? `<div class="mt-1 text-xs text-secondary">Similar: ${sims.map(x=>escapeHtml(x.name)).join(', ')}</div>` : '';
+                                                                                return `<div class="inline-flex items-center gap-2 text-xs"><span class="px-2 py-0.5 rounded ${badgeCls}">Model: ${dec==='approve'?'Approve':'Reject'} (${score})</span></div>${similarHtml}`;
+                                                                        })()}
+                                                                        <div class="mt-2 flex gap-2">
                                                                         <button class="admin-approve-add px-2 py-1 rounded border text-xs bg-green-100 text-green-800" data-id="${escapeHtml(s.id)}" data-title="${escapeHtml(s.title || '')}" data-link="${escapeHtml(s.link || '')}" data-domain="${escapeHtml(s.domain || '')}" data-description="${escapeHtml(s.description || '')}" data-email="${escapeHtml(s.submitterEmail || s.createdBy || '')}">Approve & Add</button>
                                                                         <button class="admin-reject px-2 py-1 rounded border text-xs bg-red-100 text-red-700" data-id="${escapeHtml(s.id)}">Reject</button>
+                                                                        </div>
                                   </td>
                                 </tr>`).join('')}
                             </tbody>
