@@ -1323,11 +1323,11 @@
                     const topStripEl = document.getElementById('top-tools-strip');
 
                     // --- Top Tools rotating strip (logo + name only) ---
-                    function stripIconImgHtml(tool, size=32) {
+                    function stripIconImgHtml(tool, size=44) {
                         const { primary, secondary, placeholder } = buildIconSources(tool, size);
                         const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
-                        // Inline border-radius to guarantee circular shape (doesn't rely on Tailwind precedence)
-                        return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px" class="flex-shrink-0" onerror="${onerr}">`;
+                        // Inline border-radius + subtle ring to guarantee circular shape and match screenshot style
+                        return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px;border:1px solid rgba(0,0,0,0.08);background:#fff;object-fit:cover" class="flex-shrink-0" onerror="${onerr}">`;
                     }
                     function scoreToolForTop(tool) {
                         try {
@@ -1364,9 +1364,9 @@
                             .map(x => x.tool);
                     }
 
-                    const TOP_VISIBLE = 6;
-                    const STEP_MS = 2500; // time per slide step
-                    const TRANSITION_MS = 700; // slide animation duration
+                    const TOP_VISIBLE = 5;
+                    const STEP_MS = 2000; // time per slide step
+                    const TRANSITION_MS = 500; // slide animation duration
                     const topTools = computeTopTools(20);
 
                     // Keep globals to clean up between renders
@@ -1379,16 +1379,16 @@
                         const visible = Math.min(TOP_VISIBLE, topTools.length);
                         // duplicate first `visible` items to end for seamless looping
                         const trackTools = topTools.concat(topTools.slice(0, visible));
-                        const itemWidthCalc = 'calc((100% - (5 * 0.75rem)) / 6)'; // 5 gaps of 0.75rem for 6 items
+                        const itemWidthCalc = 'calc((100% - (4 * 0.75rem)) / 5)'; // 4 gaps of 0.75rem for 5 items
                         const items = trackTools.map((t, idx) => `
-                            <div class="top-item flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-color card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
-                                ${stripIconImgHtml(t, 36)}
-                                <span class="text-sm font-medium truncate" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
+                            <div class="top-item flex flex-col items-center justify-center px-2 py-2 card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
+                                ${stripIconImgHtml(t, 44)}
+                                <span class="mt-2 text-sm font-medium text-center truncate w-full" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
                             </div>
                         `);
                         topStripEl.innerHTML = `
                             <div id="top-strip-container" class="bg-secondary/40 border border-color rounded-xl p-3 overflow-hidden">
-                                <div id="top-strip-track" class="flex items-center gap-3 will-change-transform" style="transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
+                                <div id="top-strip-track" class="flex items-start gap-3 will-change-transform" style="transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
                                     ${items.join('')}
                                 </div>
                             </div>
