@@ -22,7 +22,9 @@
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
         "serve:functions": "npx netlify dev --dir=.",
         "test:ui": "python ./tests/run_ui_tests.py",
-        "context:log": "node ./scripts/update-context-log.mjs"
+        "context:log": "node ./scripts/update-context-log.mjs",
+        "ml:train": "python ./ml/train_moderation_model.py",
+        "ml:score": "python ./ml/score_candidates.py"
     ,"archive:dry": "node ./scripts/archive-non-products.mjs --dry-run --whitelist data/whitelist.json"
     ,"tools:schema:validate": "node ./scripts/validate-tools-schema.mjs"
     },
