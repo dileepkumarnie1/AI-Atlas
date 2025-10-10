@@ -6,6 +6,25 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
+        "name": "airbyte",
+        "description": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
+        "link": "https://airbyte.com",
+        "tags": [
+          "developer-tools",
+          "education",
+          "design",
+          "Open Source"
+        ],
+        "about": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://airbyte.com/favicon.ico"
+      },
+      {
         "name": "chatbox",
         "description": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
         "link": "https://chatboxai.app?utm_medium=github",
@@ -2868,6 +2887,34 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/3090527?v=4&s=64"
       },
       {
+        "name": "joinly",
+        "description": "Make your meetings accessible to AI Agents with joinly.ai",
+        "link": "https://joinly.ai",
+        "tags": [
+          "agents",
+          "automation",
+          "freemium",
+          "subscription",
+          "open source",
+          "suite",
+          "library",
+          "Freemium",
+          "Subscription",
+          "Open Source"
+        ],
+        "about": "Make your meetings accessible to AI Agents with joinly.ai",
+        "pros": [
+          "Free tier available.",
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Advanced features require payment.",
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://joinly.ai/favicon.ico"
+      },
+      {
         "name": "meeting-minutes",
         "description": "A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/ is meetly ai",
         "link": "https://meetily.zackriya.com",
@@ -4598,6 +4645,28 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/146763322?v=4&s=64"
       },
       {
+        "name": "LearnPrompt",
+        "description": "Learn Prompting is the largest and most comprehensive course in prompt engineering available on the internet, with over 60 content modules, translated into 9 languages, and a thriving community.",
+        "link": "https://www.learnprompt.pro/",
+        "tags": [
+          "chatbot",
+          "image",
+          "translation",
+          "education",
+          "Freemium"
+        ],
+        "about": "Learn Prompting is the largest and most comprehensive course in prompt engineering available on the internet, with over 60 content modules, translated into 9 languages, and a thriving community.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://www.learnprompt.pro/img/favicon.ico"
+      },
+      {
         "name": "Prompt Perfect",
         "description": "Refines your initial idea into a clear, detailed prompt for better outputs.",
         "link": "https://promptperfect.jina.ai/",
@@ -4618,6 +4687,29 @@
           "Not a substitute for domain knowledge.",
           "Pro features gated."
         ]
+      },
+      {
+        "name": "prompt-layer-library",
+        "description": "PromptLayer - Your workbench for AI engineering. Platform for prompt management, prompt evaluations, and LLM observability",
+        "link": "https://www.promptlayer.com",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "agents",
+          "automation",
+          "design",
+          "Freemium"
+        ],
+        "about": "PromptLayer - Your workbench for AI engineering. Platform for prompt management, prompt evaluations, and LLM observability",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.promptlayer.com/favicon.ico"
       },
       {
         "name": "promptfoo",
@@ -7208,6 +7300,27 @@
           "May require fact‑checking."
         ],
         "iconUrl": "https://agent-zero.ai/res/favicon_round.png"
+      },
+      {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
       }
     ]
   }
