@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2025-10-10T02:44:37.673Z",
+  "generatedAt": "2025-10-10T18:43:44.132Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 90535,
-          "forks": 10126,
-          "openIssues": 3021
+          "stars": 90624,
+          "forks": 10132,
+          "openIssues": 3024
         },
         "npm": null
       },
-      "signalsRaw": 4.2709,
+      "signalsRaw": 4.2712,
       "signalsNorm": 99.92,
       "mpScore": 0,
       "freqScore": 0,
@@ -20,8 +20,8 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41832,
-          "forks": 5333,
+          "stars": 41835,
+          "forks": 5334,
           "openIssues": 299
         },
         "npm": null
@@ -128,7 +128,7 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11787,
+          "stars": 11789,
           "forks": 1015,
           "openIssues": 310
         },
@@ -155,13 +155,13 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32217,
-          "forks": 1606,
-          "openIssues": 266
+          "stars": 32222,
+          "forks": 1610,
+          "openIssues": 268
         },
         "npm": null
       },
-      "signalsRaw": 3.7969,
+      "signalsRaw": 3.7971,
       "signalsNorm": 88.83,
       "mpScore": 0,
       "freqScore": 0,
@@ -187,13 +187,13 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 89169,
-          "forks": 11129,
+          "stars": 89200,
+          "forks": 11133,
           "openIssues": 97
         },
         "npm": null
       },
-      "signalsRaw": 4.2745,
+      "signalsRaw": 4.2746,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -203,24 +203,24 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13359,
+          "stars": 13364,
           "forks": 1581,
-          "openIssues": 574
+          "openIssues": 575
         },
         "npm": null
       },
-      "signalsRaw": 3.5279
+      "signalsRaw": 3.528
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42933,
-          "forks": 5680,
+          "stars": 42939,
+          "forks": 5678,
           "openIssues": 14
         },
         "npm": null
       },
-      "signalsRaw": 3.9938,
+      "signalsRaw": 3.9939,
       "signalsNorm": 93.43,
       "mpScore": 0,
       "freqScore": 0,
