@@ -821,6 +821,39 @@
                 }
                 return Number.isFinite(n) && n > 0 ? n : null;
             }
+
+            // --- Search result hygiene: exclusions + de-duplication by name ---
+            const EXCLUDED_TOOLS_BY_NAME = new Set([
+                'gemini for workspace'
+            ]);
+            function normName(s){ return String(s||'').trim().toLowerCase(); }
+            function isExcludedTool(tool){ return EXCLUDED_TOOLS_BY_NAME.has(normName(tool?.name)); }
+            // choose the better variant when the same tool appears in multiple domains
+            function pickBetterVariant(a, b){
+                const ua = getUsersCount(a) || 0;
+                const ub = getUsersCount(b) || 0;
+                if (ua !== ub) return ua > ub ? a : b;
+                const la = (a?.description||'').length;
+                const lb = (b?.description||'').length;
+                if (la !== lb) return la > lb ? a : b;
+                const ia = a?.iconUrl ? 1 : 0;
+                const ib = b?.iconUrl ? 1 : 0;
+                if (ia !== ib) return ia > ib ? a : b;
+                // fallback: keep first (a)
+                return a;
+            }
+            function dedupeAndFilterTools(list){
+                const out = new Map();
+                for (const t of (list||[])){
+                    if (!t || !t.name) continue;
+                    if (isExcludedTool(t)) continue;
+                    const k = normName(t.name);
+                    const cur = out.get(k);
+                    if (!cur) out.set(k, t);
+                    else out.set(k, pickBetterVariant(cur, t));
+                }
+                return Array.from(out.values());
+            }
             function usersBadgeHtml(tool) {
                 const n = getUsersCount(tool);
                 if (n) {
@@ -853,8 +886,9 @@
                             const results = fuse.search(query, { limit: 50 });
                             // Fuse v6 returns array of { item, score } objects; some configs may return item directly
                             const mapped = Array.isArray(results) ? results.map(r => (r && r.item) ? r.item : r) : [];
-                            console.debug('performSearch (fuse) query=', query, 'matches=', mapped.length);
-                            return mapped;
+                            const cleaned = dedupeAndFilterTools(mapped);
+                            console.debug('performSearch (fuse) query=', query, 'matches=', mapped.length, 'after dedupe/exclude=', cleaned.length);
+                            return cleaned;
                         } catch (fe) {
                             console.warn('Fuse search threw, falling back to substring match', fe);
                         }
@@ -868,8 +902,9 @@
                         const tags = Array.isArray(t.tags) ? t.tags.join(' ').toLowerCase() : (String(t.tags || '')).toLowerCase();
                         return name.includes(ql) || desc.includes(ql) || tags.includes(ql);
                     }).slice(0, 50);
-                    console.debug('performSearch (fallback) query=', query, 'matches=', filtered.length);
-                    return filtered;
+                    const cleaned = dedupeAndFilterTools(filtered);
+                    console.debug('performSearch (fallback) query=', query, 'matches=', filtered.length, 'after dedupe/exclude=', cleaned.length);
+                    return cleaned;
                 } catch (e) {
                     console.error('performSearch error', e);
                     return [];
@@ -1343,7 +1378,7 @@
                     }
 
                     function computeTopTools(limit = 20) {
-                        const allTools = (db || []).flatMap(d => d.tools || []);
+                        const allTools = (db || []).flatMap(d => d.tools || []).filter(t => !isExcludedTool(t));
                         // de-duplicate by name (case-insensitive)
                         const seen = new Map();
                         for (const t of allTools) {
@@ -1601,17 +1636,19 @@
                     const domain = db.find(d => d.slug === state.selectedDomain);
                     if (!domain) { originalRenderFunctions.renderHome(); return; }
 
+                    const domainTools = (domain.tools || []).filter(t => !isExcludedTool(t));
+
                     // Group tools by pricing model
-                    const openSource = (domain.tools || []).filter(t => (t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase())));
-                    const free = (domain.tools || []).filter(t =>
+                    const openSource = (domainTools || []).filter(t => (t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase())));
+                    const free = (domainTools || []).filter(t =>
                         !(t.tags||[]).some(tag => /open ?source|freemium|paid|subscription|enterprise/i.test(tag)) &&
                         ((t.tags||[]).some(tag => /free/i.test(tag)) || (t.price && t.price.toLowerCase() === 'free'))
                     );
-                    const freemium = (domain.tools || []).filter(t =>
+                    const freemium = (domainTools || []).filter(t =>
                         (t.tags||[]).some(tag => /freemium/i.test(String(tag))) &&
                         !(t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
-                    const paid = (domain.tools || []).filter(t =>
+                    const paid = (domainTools || []).filter(t =>
                         (t.tags||[]).some(tag => /paid|subscription|subscribe|premium|enterprise/i.test(String(tag))) &&
                         !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
                     );
