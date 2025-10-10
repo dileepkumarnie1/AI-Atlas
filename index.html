@@ -1323,7 +1323,7 @@
                     const topStripEl = document.getElementById('top-tools-strip');
 
                     // --- Top Tools rotating strip (logo + name only) ---
-                    function stripIconImgHtml(tool, size=44) {
+                    function stripIconImgHtml(tool, size=48) {
                         const { primary, secondary, placeholder } = buildIconSources(tool, size);
                         const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
                         // Inline border-radius + subtle ring to guarantee circular shape and match screenshot style
@@ -1379,16 +1379,16 @@
                         const visible = Math.min(TOP_VISIBLE, topTools.length);
                         // duplicate first `visible` items to end for seamless looping
                         const trackTools = topTools.concat(topTools.slice(0, visible));
-                        const itemWidthCalc = 'calc((100% - (4 * 0.75rem)) / 5)'; // 4 gaps of 0.75rem for 5 items
+                        const itemWidthCalc = 'calc((100% - (4 * 0.6rem)) / 5)'; // 4 gaps of 0.6rem for 5 items
                         const items = trackTools.map((t, idx) => `
                             <div class="top-item flex flex-col items-center justify-center px-2 py-2 card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
-                                ${stripIconImgHtml(t, 44)}
+                                ${stripIconImgHtml(t, 48)}
                                 <span class="mt-2 text-sm font-medium text-center truncate w-full" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
                             </div>
                         `);
                         topStripEl.innerHTML = `
                             <div id="top-strip-container" class="bg-secondary/40 border border-color rounded-xl p-3 overflow-hidden">
-                                <div id="top-strip-track" class="flex items-start gap-3 will-change-transform" style="transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
+                                <div id="top-strip-track" class="flex items-start will-change-transform" style="gap:0.6rem; transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
                                     ${items.join('')}
                                 </div>
                             </div>
