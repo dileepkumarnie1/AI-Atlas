@@ -1306,7 +1306,7 @@
 
                             <div id="search-results-container"></div>
 
-                            <h2 class="text-3xl font-bold text-primary mb-8">Explore by Domain</h2>
+                            <h2 class="text-3xl font-bold text-primary mb-8">Explore AI tools by domain</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                                 ${ (db || []).map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
                             </div>
