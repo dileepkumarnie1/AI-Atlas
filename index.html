@@ -1402,7 +1402,7 @@
                     const TOP_VISIBLE = 5;
                     const STEP_MS = 2000; // time per slide step
                     const TRANSITION_MS = 500; // slide animation duration
-                    const GAP_REM = 0.45; // reduced by ~25% from 0.6rem
+                    const GAP_REM = 0.45; // reduced by ~25% from 0.6rem (visible spacing)
                     const EDGE_FADE_PX = 48; // fade width on both ends for 3D effect
                     const topTools = computeTopTools(20);
 
@@ -1418,35 +1418,26 @@
                         const trackTools = topTools.concat(topTools.slice(0, visible));
                         const itemWidthCalc = `calc((100% - (4 * ${GAP_REM}rem)) / 5)`; // 4 gaps for 5 items
                         const items = trackTools.map((t, idx) => `
-                            <div class="top-item flex flex-col items-center justify-center px-2 py-2 card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
+                            <div class="top-item flex flex-col items-center justify-center px-1 py-2 card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
                                 ${stripIconImgHtml(t, 48)}
                                 <span class="mt-2 text-sm font-medium text-center truncate w-full" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
                             </div>
                         `);
                         topStripEl.innerHTML = `
-                            <div class="flex items-center justify-end mb-2">
-                                <label class="inline-flex items-center gap-2 text-xs text-secondary cursor-pointer select-none">
-                                    <input type="checkbox" id="manual-strip-toggle" class="accent-purple-600">
-                                    Manual
-                                </label>
-                            </div>
-                            <div id="top-strip-container" class="relative bg-secondary/40 border border-color rounded-2xl p-3 overflow-hidden">
-                                <div id="top-strip-viewport" class="overflow-hidden rounded-full" style="-webkit-mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%);">
-                                    <div id="top-strip-track" class="flex items-start will-change-transform" style="gap:${GAP_REM}rem; transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
-                                        ${items.join('')}
+                            <div class="max-w-4xl mx-auto">
+                                <div id="top-strip-container" class="relative bg-secondary/40 border border-color rounded-2xl p-3 overflow-hidden">
+                                    <div id="top-strip-viewport" class="overflow-hidden rounded-full" style="cursor:grab; -webkit-mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%);">
+                                        <div id="top-strip-track" class="flex items-start will-change-transform" style="gap:${GAP_REM}rem; transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
+                                            ${items.join('')}
+                                        </div>
                                     </div>
                                 </div>
-                                <button id="top-strip-prev" class="hidden md:flex items-center justify-center absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/80 border border-color text-primary shadow-sm hover:bg-white" aria-label="Previous" title="Previous">◀</button>
-                                <button id="top-strip-next" class="hidden md:flex items-center justify-center absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/80 border border-color text-primary shadow-sm hover:bg-white" aria-label="Next" title="Next">▶</button>
                             </div>
                         `;
 
                         const trackEl = document.getElementById('top-strip-track');
                         const containerEl = document.getElementById('top-strip-container');
                         const viewportEl = document.getElementById('top-strip-viewport');
-                        const manualToggle = document.getElementById('manual-strip-toggle');
-                        const prevBtn = document.getElementById('top-strip-prev');
-                        const nextBtn = document.getElementById('top-strip-next');
                         if (!trackEl || !containerEl) return;
 
                         // Click handler: map by current step offset when invoked
@@ -1460,7 +1451,11 @@
 
                         let step = 0; // number of items shifted
                         let deltaX = 0; // distance per step in px
-                        let manualMode = false;
+                        let isDragging = false;
+                        let dragStartX = 0;
+                        let dragDx = 0;
+                        let stepAtDown = 0;
+                        let didDrag = false;
 
                         function measureDelta() {
                             const items = trackEl.querySelectorAll('.top-item');
@@ -1517,36 +1512,48 @@
 
                         // Pause on hover
                         containerEl.addEventListener('mouseenter', () => { if (window.topStripInterval) { clearInterval(window.topStripInterval); window.topStripInterval = null; } });
-                        containerEl.addEventListener('mouseleave', () => { if (!window.topStripInterval && !manualMode) startRotation(); });
+                        containerEl.addEventListener('mouseleave', () => { if (!window.topStripInterval && !isDragging) startRotation(); });
 
-                        // Manual toggle: show controls and pause/resume
-                        if (manualToggle) {
-                            manualToggle.addEventListener('change', () => {
-                                manualMode = !!manualToggle.checked;
-                                if (manualMode) {
-                                    if (window.topStripInterval) { clearInterval(window.topStripInterval); window.topStripInterval = null; }
-                                    if (prevBtn) prevBtn.classList.remove('hidden');
-                                    if (nextBtn) nextBtn.classList.remove('hidden');
-                                } else {
-                                    if (prevBtn) prevBtn.classList.add('hidden');
-                                    if (nextBtn) nextBtn.classList.add('hidden');
-                                    if (!window.topStripInterval) startRotation();
-                                }
-                            });
-                        }
-
-                        // Prev/Next buttons when in manual mode
-                        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); backwardOne(); });
-                        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); forwardOne(); });
-
-                        // Keyboard support in manual mode
+                        // Drag-to-scroll with snap
                         if (viewportEl) {
-                            viewportEl.setAttribute('tabindex', '0');
-                            viewportEl.addEventListener('keydown', (e) => {
-                                if (!manualMode) return;
-                                if (e.key === 'ArrowRight') { e.preventDefault(); forwardOne(); }
-                                if (e.key === 'ArrowLeft') { e.preventDefault(); backwardOne(); }
-                            });
+                            const onPointerDown = (e) => {
+                                isDragging = true; didDrag = false; dragDx = 0; stepAtDown = step;
+                                dragStartX = e.clientX || (e.touches && e.touches[0]?.clientX) || 0;
+                                viewportEl.style.cursor = 'grabbing';
+                                if (window.topStripInterval) { clearInterval(window.topStripInterval); window.topStripInterval = null; }
+                                viewportEl.setPointerCapture && viewportEl.setPointerCapture(e.pointerId || 0);
+                            };
+                            const onPointerMove = (e) => {
+                                if (!isDragging) return;
+                                const x = e.clientX || (e.touches && e.touches[0]?.clientX) || 0;
+                                dragDx = x - dragStartX;
+                                if (Math.abs(dragDx) > 3) didDrag = true;
+                                const base = stepAtDown * deltaX;
+                                trackEl.style.transition = 'none';
+                                trackEl.style.transform = `translateX(${-(base - dragDx)}px)`;
+                            };
+                            const onPointerUp = () => {
+                                if (!isDragging) return;
+                                isDragging = false;
+                                viewportEl.style.cursor = 'grab';
+                                // snap to nearest item
+                                const shift = Math.round(dragDx / deltaX);
+                                let newStep = stepAtDown - shift;
+                                newStep = Math.max(0, Math.min(topTools.length, newStep));
+                                step = newStep;
+                                applyTransform(true);
+                                // resume rotation after short delay
+                                setTimeout(() => { if (!window.topStripInterval) startRotation(); }, 1200);
+                            };
+                            // Pointer events (also cover touch on modern browsers)
+                            viewportEl.addEventListener('pointerdown', onPointerDown);
+                            viewportEl.addEventListener('pointermove', onPointerMove);
+                            viewportEl.addEventListener('pointerup', onPointerUp);
+                            viewportEl.addEventListener('pointercancel', onPointerUp);
+                            // Fallback for touch-only
+                            viewportEl.addEventListener('touchstart', onPointerDown, { passive: true });
+                            viewportEl.addEventListener('touchmove', onPointerMove, { passive: true });
+                            viewportEl.addEventListener('touchend', onPointerUp);
                         }
 
                         // Start
