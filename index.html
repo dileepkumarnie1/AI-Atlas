@@ -228,18 +228,27 @@
 
     .prose { color: var(--text-secondary); }
         .prose h1, .prose h2, .prose h5, .prose h6 { color: var(--text-primary); }
-    /* Footer styles */
-    .site-footer { background-color: #161b2e; color: #e5e7eb; }
-    .site-footer .footer-link { color: #cbd5e1; }
-    .site-footer .footer-link:hover { color: #ffffff; text-decoration: underline; }
-    .site-footer .footer-icon { color: #cbd5e1; }
-    .site-footer .footer-icon:hover { color: #ffffff; }
-    .site-footer .footer-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #eef2ff; }
-    .site-footer .footer-input::placeholder { color: #a5b4fc; }
+    /* Footer styles (light by default, with dark-mode overrides) */
+    .site-footer { background-color: #eef2ff; color: #111827; }
+    .site-footer .footer-link { color: #374151; }
+    .site-footer .footer-link:hover { color: #1f2937; text-decoration: underline; }
+    .site-footer .footer-icon { color: #6b7280; }
+    .site-footer .footer-icon:hover { color: #374151; }
+    .site-footer .footer-input { background: #ffffff; border: 1px solid #e5e7eb; color: #1f2937; }
+    .site-footer .footer-input::placeholder { color: #6b7280; }
     .site-footer .footer-button { background: #4f46e5; color: white; }
     .site-footer .footer-button:hover { background: #4338ca; }
-    /* Slight top padding so hero never sits under header due to async font loads */
-    #content-area { padding-top: 1.25rem; }
+    .site-footer hr { border-color: rgba(0,0,0,0.08); }
+    html.dark .site-footer { background-color: #1f2937; color: #e5e7eb; }
+    html.dark .site-footer .footer-link { color: #cbd5e1; }
+    html.dark .site-footer .footer-link:hover { color: #ffffff; }
+    html.dark .site-footer .footer-icon { color: #cbd5e1; }
+    html.dark .site-footer .footer-icon:hover { color: #ffffff; }
+    html.dark .site-footer .footer-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #eef2ff; }
+    html.dark .site-footer .footer-input::placeholder { color: #a5b4fc; }
+    html.dark .site-footer hr { border-color: rgba(255,255,255,0.1); }
+    /* Slight top padding so top sections never sit under header on any page */
+    #content-area { padding-top: 2rem; }
 
         .tool-details {
             max-height: 0;
@@ -596,7 +605,7 @@
             function apply(){
                 if (!header || !spacer) return;
                 const h = header.getBoundingClientRect().height;
-                const extra = 24; // larger buffer so hero text never clips under header
+                const extra = 40; // larger buffer so top sections never clip under header (all pages)
                 spacer.style.height = (h + extra) + 'px';
             }
             window.addEventListener('load', apply);
