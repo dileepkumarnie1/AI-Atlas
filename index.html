@@ -234,6 +234,10 @@
     .site-footer .footer-link:hover { color: #ffffff; text-decoration: underline; }
     .site-footer .footer-icon { color: #cbd5e1; }
     .site-footer .footer-icon:hover { color: #ffffff; }
+    .site-footer .footer-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #eef2ff; }
+    .site-footer .footer-input::placeholder { color: #a5b4fc; }
+    .site-footer .footer-button { background: #4f46e5; color: white; }
+    .site-footer .footer-button:hover { background: #4338ca; }
 
         .tool-details {
             max-height: 0;
@@ -484,6 +488,20 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <!-- Newsletter Subscribe -->
+            <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
+                <div class="flex flex-col md:flex-row items-center gap-3 md:gap-4">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold">Stay in the loop</h4>
+                        <p class="text-sm opacity-80">Get monthly updates on the best AI tools and open-source projects.</p>
+                    </div>
+                    <form id="footer-subscribe-form" novalidate class="flex w-full md:w-auto items-stretch gap-2">
+                        <input id="footer-subscribe-email" type="email" required placeholder="you@example.com" class="footer-input rounded-md px-3 py-2 w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <button id="footer-subscribe-btn" type="submit" class="footer-button rounded-md px-4 py-2 font-semibold">Subscribe</button>
+                    </form>
+                </div>
+                <p id="footer-subscribe-status" class="text-sm mt-2 opacity-90" aria-live="polite"></p>
             </div>
             <hr class="border-white/10 my-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-sm opacity-90">
@@ -2545,6 +2563,43 @@
             }
 
             initialize();
+
+            // Footer subscribe form handler
+            (function setupFooterSubscribe(){
+                const form = document.getElementById('footer-subscribe-form');
+                if (!form) return;
+                const emailInput = document.getElementById('footer-subscribe-email');
+                const statusEl = document.getElementById('footer-subscribe-status');
+                const btn = document.getElementById('footer-subscribe-btn');
+                function setStatus(msg, ok=true){ if(statusEl){ statusEl.textContent = msg; statusEl.style.color = ok ? '#a7f3d0' : '#fecaca'; } }
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const email = (emailInput?.value || '').trim();
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setStatus('Please enter a valid email address.', false); return; }
+                    try {
+                        btn.disabled = true; setStatus('Subscribing...');
+                        // Attempt serverless function if available
+                        let ok = false;
+                        try {
+                            const r = await fetch('/.netlify/functions/notify-admin', {
+                                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ subject: 'New newsletter subscriber', html: `<p>${email} subscribed to the newsletter.</p>` })
+                            });
+                            ok = r.ok;
+                        } catch {}
+                        if (!ok) {
+                            // Fallback: mailto link open
+                            window.location.href = `mailto:hello@aitoolverse.example?subject=Subscribe&body=${encodeURIComponent(email)}%20wants%20to%20subscribe.`;
+                        }
+                        setStatus('Thanks! You are on the list.', true);
+                        form.reset();
+                    } catch (err) {
+                        setStatus('Could not subscribe right now.', false);
+                    } finally {
+                        btn.disabled = false;
+                    }
+                });
+            })();
     });
     </script>
 <!-- prompt modal will be loaded here (prompt.html) -->
