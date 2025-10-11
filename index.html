@@ -2304,10 +2304,13 @@
                     if (Array.isArray(db)) {
                         db.forEach(sec => {
                             if (!Array.isArray(sec.tools)) return;
+                            const isGithubSection = String(sec.slug||'') === 'github-ai-projects';
                             sec.tools = sec.tools.filter(t => {
                                 if (t?._commentedOut) return false;
                                 if (isNpmHost(t?.link)) return false;
                                 const nameOk = allowGithubNames.has(norm(t?.name));
+                                // Allow GitHub links in the special GitHub section, but keep the policy elsewhere
+                                if (isGithubSection) return true;
                                 return nameOk || !isGithubHost(t?.link);
                             });
                         });
