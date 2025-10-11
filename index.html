@@ -548,16 +548,33 @@
             }
         })();
 
-        // --- Policy banner (dismissible) ---
+        // --- Policy banner (dismissible)
+        // Show only in local/dev environments or when explicitly enabled via ?debugBanner=1
         (function setupPolicyBanner(){
             try {
                 const banner = document.getElementById('policy-banner');
                 const dismiss = document.getElementById('policy-banner-dismiss');
+                if (!banner) return;
+
+                const host = (location && location.hostname) ? location.hostname : '';
+                const isLocalHost = host === 'localhost' || host === '127.0.0.1' || host.endsWith('.local');
+                const isPrivateA = /^10\./.test(host);
+                const isPrivateB = /^192\.168\./.test(host);
+                const isPrivateC = /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host);
+                const isFileProto = (location && location.protocol === 'file:');
+                const isDev = isLocalHost || isPrivateA || isPrivateB || isPrivateC || isFileProto;
+                const params = new URLSearchParams(location.search || '');
+                const debugForce = params.get('debugBanner') === '1';
+
+                if (!(isDev || debugForce)) {
+                    // Ensure hidden in production deployments
+                    banner.classList.add('hidden');
+                    return;
+                }
+
                 const KEY = 'hidePolicyBanner_v1';
                 const hidden = (window.localStorage && localStorage.getItem(KEY) === 'true');
-                if (!hidden) {
-                    banner.classList.remove('hidden');
-                }
+                if (!hidden) banner.classList.remove('hidden');
                 dismiss?.addEventListener('click', () => {
                     banner.classList.add('hidden');
                     if (window.localStorage) localStorage.setItem(KEY, 'true');
