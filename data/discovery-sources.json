@@ -549,4 +549,38 @@
       { "name": "HouseCanary", "link": "https://www.housecanary.com/", "description": "AVM & analytics", "tags": ["Subscription"] }
     ]
   }
+  ,
+  "github-ai-projects": {
+    "githubQueries": [
+      "pytorch",
+      "tensorflow",
+      "transformers huggingface",
+      "llama.cpp",
+      "vllm",
+      "stable diffusion webui",
+      "comfyui",
+      "openai whisper",
+      "langchain",
+      "text generation webui",
+      "open webui"
+    ],
+  "maxAdds": 5,
+    "githubStarsMin": 500,
+    "githubPerPage": 10,
+    "npmSize": 0,
+    "aixploriaStrict": false,
+    "curated": [
+      { "name": "PyTorch", "link": "https://github.com/pytorch/pytorch", "description": "Deep learning framework", "tags": ["Open Source"] },
+      { "name": "TensorFlow", "link": "https://github.com/tensorflow/tensorflow", "description": "Machine learning platform", "tags": ["Open Source"] },
+      { "name": "Transformers", "link": "https://github.com/huggingface/transformers", "description": "State-of-the-art NLP models", "tags": ["Open Source"] },
+      { "name": "llama.cpp", "link": "https://github.com/ggerganov/llama.cpp", "description": "LLM inference in C/C++", "tags": ["Open Source"] },
+      { "name": "vLLM", "link": "https://github.com/vllm-project/vllm", "description": "Fast LLM serving", "tags": ["Open Source"] },
+      { "name": "Stable Diffusion WebUI", "link": "https://github.com/AUTOMATIC1111/stable-diffusion-webui", "description": "SD web UI", "tags": ["Open Source"] },
+      { "name": "ComfyUI", "link": "https://github.com/comfyorg/comfyui", "description": "Node-based SD workflow", "tags": ["Open Source"] },
+      { "name": "OpenAI Whisper", "link": "https://github.com/openai/whisper", "description": "ASR model", "tags": ["Open Source"] },
+      { "name": "LangChain", "link": "https://github.com/langchain-ai/langchain", "description": "LLM app framework", "tags": ["Open Source"] },
+      { "name": "Text Generation WebUI", "link": "https://github.com/oobabooga/text-generation-webui", "description": "LLM inference UI", "tags": ["Open Source"] },
+      { "name": "Open WebUI", "link": "https://github.com/open-webui/open-webui", "description": "Self-hosted chat UI", "tags": ["Open Source"] }
+    ]
+  }
 }

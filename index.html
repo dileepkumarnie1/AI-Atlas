@@ -1019,6 +1019,26 @@
                 }
             }
 
+            // Pinned domains helper: ensure important categories are visible first on home and in dropdowns
+            const PINNED_DOMAIN_SLUGS = ['github-ai-projects'];
+            function getOrderedDomains() {
+                try {
+                    const list = Array.isArray(db) ? db.map((d, i) => ({ d, i })) : [];
+                    list.sort((a, b) => {
+                        const aSlug = String(a.d?.slug || '');
+                        const bSlug = String(b.d?.slug || '');
+                        const aPin = PINNED_DOMAIN_SLUGS.indexOf(aSlug);
+                        const bPin = PINNED_DOMAIN_SLUGS.indexOf(bSlug);
+                        const aRank = aPin === -1 ? Number.MAX_SAFE_INTEGER : aPin;
+                        const bRank = bPin === -1 ? Number.MAX_SAFE_INTEGER : bPin;
+                        if (aRank !== bRank) return aRank - bRank;
+                        // Stable fallback using original index
+                        return a.i - b.i;
+                    });
+                    return list.map(x => x.d);
+                } catch { return Array.isArray(db) ? db : []; }
+            }
+
             async function approveSubmission(id) {
                 try {
                     await updateDoc(doc(firestore, 'submissions', id), { status: 'approved', approvedAt: serverTimestamp() });
@@ -1363,7 +1383,7 @@
 
                             <h2 class="text-3xl font-bold text-primary mb-8">Explore AI tools by domain</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                                ${ (db || []).map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
+                                ${ getOrderedDomains().map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
                             </div>
                         </div>
                     `;
@@ -1601,7 +1621,7 @@
                         // Placeholder option (empty value) and explicit All option with counts
                         opts.push(`<option value="" data-placeholder="1">-- Select a category --</option>`);
                         opts.push(`<option value="all">All (${counts.all || 0})</option>`);
-                        for (const d of (db || [])) {
+                        for (const d of getOrderedDomains()) {
                             const c = counts[d.slug] || 0;
                             const selected = current === d.slug ? 'selected' : '';
                             opts.push(`<option value="${d.slug}" ${selected}>${escapeHtml(d.name)} (${c})</option>`);

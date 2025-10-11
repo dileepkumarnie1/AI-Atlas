@@ -384,7 +384,9 @@ async function classifyCandidate(cand, domainSlug){
   // Quick prechecks
   if(/\.pdf(\?|$)/i.test(url)) return { isTool:false, reason:'pdf-link', category:'content' };
   if(host === 'arxiv.org' && /(^|\/)pdf(\/|$)/.test(getPathname(url))) return { isTool:false, reason:'pdf-link', category:'content' };
-  if(looksLikeDevPackage(url)) return { isTool:false, reason:'dev-package', category:'dev-package' };
+  // Allow GitHub repo pages specifically for the GitHub AI Projects domain
+  const allowGithubForDomain = String(domainSlug||'').toLowerCase() === 'github-ai-projects';
+  if(looksLikeDevPackage(url) && !(allowGithubForDomain && host === GITHUB_HOST)) return { isTool:false, reason:'dev-package', category:'dev-package' };
   if(looksLikeBlogOrDocs(url)) return { isTool:false, reason:'blog/docs', category:'content' };
   // Fetch and inspect
   const html = await fetchHtml(url);
@@ -1528,7 +1530,9 @@ async function main(){
     const host = getHostname(cand.link);
     const aiOnly = /^true$/i.test(String(process.env.DOMAINS_AI_ONLY||process.env.DISCOVERY_DOMAINS_AI_ONLY||'').trim());
     const candNameNorm = normalizeKey(cand.name);
-    if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
+    // Permit GitHub repo links only for the special GitHub AI Projects domain
+    const allowGithubForDomain = String(slug||'').toLowerCase() === 'github-ai-projects';
+    if(host === GITHUB_HOST && !allowGithubForDomain && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)){
       diag.domains[slug].skips.githubHost++; diag.totals.skips.githubHost = (diag.totals.skips.githubHost||0)+1; continue;
     }
     if(aiOnly && !/\.ai$/i.test(host)){
@@ -1673,7 +1677,7 @@ async function main(){
   if(blacklistNames.has(k) || (kc && blacklistCanonicalNames.has(kc)) || (linkKey && blacklistLinks.has(linkKey))) continue;
         const host = getHostname(cand.link);
         const candNameNorm = normalizeKey(cand.name);
-        if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)) continue;
+  if(host === GITHUB_HOST && String(slug||'').toLowerCase() !== 'github-ai-projects' && !ALLOWLIST_GITHUB_NAMES.has(candNameNorm)) continue;
         if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
         if(PACKAGE_HOSTS.has(host)) continue;
         // Page classification and acceptance
@@ -1752,7 +1756,7 @@ async function main(){
           if(aiOnly && !/\.ai$/i.test(host)) continue;
           if(BLOG_HOSTS.has(host) || /^blog\./i.test(host)) continue;
           if(PACKAGE_HOSTS.has(host)) continue;
-          if(host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(normalizeKey(cand.name))) continue;
+          if(host === GITHUB_HOST && String(slug||'').toLowerCase() !== 'github-ai-projects' && !ALLOWLIST_GITHUB_NAMES.has(normalizeKey(cand.name))) continue;
           if(!isCuratedSource(cand.source) && !isLikelyAITool(cand, slug)) continue;
           relaxDiag.considered++;
           const classif = await classifyCandidate(cand, slug);

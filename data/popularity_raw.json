@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2025-10-11T02:37:15.723Z",
+  "generatedAt": "2025-10-11T08:21:16.207Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 90641,
-          "forks": 10135,
+          "stars": 90658,
+          "forks": 10134,
           "openIssues": 3024
         },
         "npm": null
       },
-      "signalsRaw": 4.2713,
+      "signalsRaw": 4.2714,
       "signalsNorm": 99.92,
       "mpScore": 0,
       "freqScore": 0,
@@ -155,7 +155,7 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32225,
+          "stars": 32224,
           "forks": 1610,
           "openIssues": 268
         },
@@ -187,13 +187,13 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 89212,
-          "forks": 11134,
-          "openIssues": 97
+          "stars": 89224,
+          "forks": 11135,
+          "openIssues": 98
         },
         "npm": null
       },
-      "signalsRaw": 4.2746,
+      "signalsRaw": 4.2747,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -203,13 +203,13 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13367,
-          "forks": 1584,
+          "stars": 13369,
+          "forks": 1585,
           "openIssues": 575
         },
         "npm": null
       },
-      "signalsRaw": 3.5283
+      "signalsRaw": 3.5284
     },
     "Coqui TTS": {
       "signals": {
@@ -4150,6 +4150,18 @@
       "freqScore": 0,
       "usersScore": 0,
       "popularityScore": 0
+    },
+    "GitHub AI Projects": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
     }
   },
   "ranked": [
@@ -5867,6 +5879,11 @@
       "name": "Reonomy",
       "score": 0,
       "rank": 343
+    },
+    {
+      "name": "GitHub AI Projects",
+      "score": 0,
+      "rank": 344
     }
   ]
 }
