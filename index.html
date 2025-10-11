@@ -1449,7 +1449,7 @@
                         const trackTools = topTools.concat(topTools.slice(0, visible));
                         const itemWidthCalc = `calc((100% - (4 * ${GAP_REM}rem)) / 5)`; // 4 gaps for 5 items
                         const items = trackTools.map((t, idx) => `
-                            <div class="top-item flex flex-col items-center justify-center px-1 py-2 card-hover-effect min-w-0" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
+                            <div class="top-item flex flex-col items-center justify-center px-1 py-2 card-hover-effect min-w-0" data-real-idx="${idx % topTools.length}" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
                                 ${stripIconImgHtml(t, 48)}
                                 <span class="mt-2 text-sm font-medium text-center truncate w-full" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
                             </div>
@@ -1471,21 +1471,18 @@
                         const viewportEl = document.getElementById('top-strip-viewport');
                         if (!trackEl || !containerEl) return;
 
-                        // Delegated click handler to ensure items open reliably (even with pointer capture)
-                        if (viewportEl) {
-                            viewportEl.addEventListener('click', (e) => {
-                                // If a drag happened, ignore click
-                                if (typeof didDrag !== 'undefined' && didDrag) return;
-                                const item = e.target && e.target.closest ? e.target.closest('.top-item') : null;
-                                if (!item) return;
-                                const items = Array.from(trackEl.querySelectorAll('.top-item'));
-                                const idx = items.indexOf(item);
-                                if (idx < 0) return;
-                                const realIdx = idx % topTools.length;
-                                const t = topTools[realIdx];
-                                if (t) openToolByName(t.name);
-                            });
-                        }
+                        // Direct item handlers (click + pointerup) using data-real-idx
+                        trackEl.querySelectorAll('.top-item').forEach((el) => {
+                            const handler = (e) => {
+                                if (didDrag) return; // ignore after drag
+                                const ri = Number(el.getAttribute('data-real-idx'));
+                                if (!Number.isFinite(ri)) return;
+                                const t = topTools[ri];
+                                if (t && t.name) openToolByName(t.name);
+                            };
+                            el.addEventListener('click', handler);
+                            el.addEventListener('pointerup', handler);
+                        });
 
                         let step = 0; // number of items shifted
                         let deltaX = 0; // distance per step in px
@@ -1559,7 +1556,6 @@
                                 dragStartX = e.clientX || (e.touches && e.touches[0]?.clientX) || 0;
                                 viewportEl.style.cursor = 'grabbing';
                                 if (window.topStripInterval) { clearInterval(window.topStripInterval); window.topStripInterval = null; }
-                                viewportEl.setPointerCapture && viewportEl.setPointerCapture(e.pointerId || 0);
                             };
                             const onPointerMove = (e) => {
                                 if (!isDragging) return;
