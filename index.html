@@ -336,11 +336,12 @@
         .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
         .pager-btn[disabled] { opacity:.5; cursor: not-allowed; }
 
-        /* Category rail helpers */
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .cat-chip { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .4rem .75rem; border-radius:9999px; white-space: nowrap; }
-        .cat-chip[aria-pressed="true"] { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.35); color: var(--text-primary); }
+    /* Horizontal scrollers */
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .domain-chip { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .5rem .8rem; border-radius:9999px; display:flex; align-items:center; gap:.5rem; white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease; }
+    .domain-chip:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.08); }
+    .crumb-btn { width:32px; height:32px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-color); background: var(--bg-card); border-radius:9999px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
 
         /* Tool Details Modal Styles */
         #tool-details-modal-content {
@@ -1501,17 +1502,27 @@
                                 </div>
                             </div>
 
-                            <!-- Category rail (single line, scrollable) -->
-                            <div id="category-rail-root" class="max-w-4xl mx-auto mb-5"></div>
-
                             <div id="search-results-container"></div>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
                             <div id="top-tools-strip" class="mb-6"></div>
 
-                            <h2 class="text-3xl font-bold text-primary mb-8">Explore AI tools by domain</h2>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                                ${ getOrderedDomains().map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
+                            <h2 class="text-3xl font-bold text-primary mb-5">Explore AI tools by domain</h2>
+                            <div class="max-w-5xl mx-auto mb-10 relative">
+                                <button id="dom-left" class="crumb-btn absolute -left-1 top-1/2 -translate-y-1/2" aria-label="Previous">◀</button>
+                                <div id="dom-viewport" class="overflow-x-auto no-scrollbar" style="scroll-snap-type:x mandatory;">
+                                    <div id="dom-track" class="flex items-stretch gap-3 px-8 py-2" style="scroll-behavior:smooth;">
+                                        ${ getOrderedDomains().map(domain => `
+                                            <a href="#" class="domain-chip shrink-0" style="scroll-snap-align:start" data-slug="${domain.slug}" title="${escapeHtml(domain.name)}">
+                                                <span class="text-purple-500">${domain.icon || ''}</span>
+                                                <span class="font-semibold">${escapeHtml(domain.name)}</span>
+                                            </a>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                <button id="dom-right" class="crumb-btn absolute -right-1 top-1/2 -translate-y-1/2" aria-label="Next">▶</button>
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-0 w-10" style="background:linear-gradient(to right, var(--bg-primary), transparent);"></div>
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 w-10" style="background:linear-gradient(to left, var(--bg-primary), transparent);"></div>
                             </div>
                         </div>
                     `;
@@ -1521,7 +1532,6 @@
                     const clearBtn = null; // clear removed
                     const resultsContainer = document.getElementById('search-results-container');
                     const topStripEl = document.getElementById('top-tools-strip');
-                    const categoryRailRoot = document.getElementById('category-rail-root');
 
                     // --- Top Tools rotating strip (logo + name only) ---
                     function stripIconImgHtml(tool, size=48) {
@@ -1734,84 +1744,35 @@
                     // initial render
                     renderTopStrip();
 
-                    // --- Category rail ---
-                    function renderCategoryRail(matches) {
-                        if (!categoryRailRoot) return;
-                        const counts = computeCategoryCounts(matches);
-                        const cats = getOrderedDomains();
-                        const active = state.categoryExplicit ? (state.selectedCategory || 'all') : '';
-                        const chips = cats.map(c => {
-                            const ccount = counts[c.slug] || 0;
-                            return `<button class="cat-chip" role="button" data-slug="${c.slug}" aria-pressed="${active===c.slug}">${escapeHtml(c.name)} <span class="opacity-70">(${ccount})</span></button>`;
-                        });
-                        const allActive = active==='' ? 'true' : 'false';
-                        const allChip = `<button class="cat-chip" role="button" data-slug="all" aria-pressed="${allActive}">All <span class="opacity-70">(${counts.all || 0})</span></button>`;
-                        const exploreChip = `<a href="#" id="all-categories-link" class="cat-chip">All categories ›</a>`;
-                        categoryRailRoot.innerHTML = `
-                            <div class="relative">
-                                <button id="cat-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full border border-color bg-card px-2 py-1 shadow-sm" aria-label="Scroll left">◀</button>
-                                <div id="cat-viewport" class="overflow-x-auto no-scrollbar">
-                                    <div id="cat-track" class="flex items-center gap-2 px-8 py-2" style="scroll-snap-type:x mandatory;">
-                                        <span class="shrink-0" style="scroll-snap-align:start">${allChip}</span>
-                                        ${chips.map(html => `<span class="shrink-0" style="scroll-snap-align:start">${html}</span>`).join('')}
-                                        <span class="shrink-0" style="scroll-snap-align:start">${exploreChip}</span>
-                                    </div>
-                                </div>
-                                <button id="cat-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full border border-color bg-card px-2 py-1 shadow-sm" aria-label="Scroll right">▶</button>
-                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-0 w-6" style="background:linear-gradient(to right, var(--bg-primary), transparent);"></div>
-                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 w-6" style="background:linear-gradient(to left, var(--bg-primary), transparent);"></div>
-                            </div>`;
-
-                        const viewport = document.getElementById('cat-viewport');
-                        const left = document.getElementById('cat-left');
-                        const right = document.getElementById('cat-right');
-                        const track = document.getElementById('cat-track');
-                        const by = () => Math.max(200, Math.floor(viewport.clientWidth * 0.8));
-                        if (left) left.onclick = () => viewport.scrollBy({ left: -by(), behavior: 'smooth' });
-                        if (right) right.onclick = () => viewport.scrollBy({ left: by(), behavior: 'smooth' });
-                        // Drag-to-scroll
-                        let down = false, startX = 0, startLeft = 0;
-                        viewport.addEventListener('pointerdown', (e) => { down = true; startX = e.clientX; startLeft = viewport.scrollLeft; viewport.style.cursor='grabbing'; });
-                        viewport.addEventListener('pointermove', (e) => { if (!down) return; viewport.scrollLeft = startLeft - (e.clientX - startX); });
-                        const endDrag = () => { down = false; viewport.style.cursor='grab'; };
-                        viewport.addEventListener('pointerup', endDrag);
-                        viewport.addEventListener('pointercancel', endDrag);
-                        viewport.addEventListener('mouseleave', () => { if (down) endDrag(); });
-                        // Click handling
-                        track.querySelectorAll('.cat-chip').forEach(btn => {
-                            const slug = btn.getAttribute('data-slug');
+                    // Wire horizontal domain scroller
+                    const domViewport = document.getElementById('dom-viewport');
+                    const domLeft = document.getElementById('dom-left');
+                    const domRight = document.getElementById('dom-right');
+                    const domTrack = document.getElementById('dom-track');
+                    const scrollByAmt = () => Math.max(240, Math.floor(domViewport.clientWidth * 0.9));
+                    if (domLeft) domLeft.onclick = () => domViewport.scrollBy({ left: -scrollByAmt(), behavior: 'smooth' });
+                    if (domRight) domRight.onclick = () => domViewport.scrollBy({ left: scrollByAmt(), behavior: 'smooth' });
+                    // Snap and drag
+                    let dDown=false, dStartX=0, dStartLeft=0;
+                    domViewport.addEventListener('pointerdown', (e) => { dDown=true; dStartX=e.clientX; dStartLeft=domViewport.scrollLeft; domViewport.style.cursor='grabbing'; });
+                    domViewport.addEventListener('pointermove', (e) => { if (!dDown) return; domViewport.scrollLeft = dStartLeft - (e.clientX - dStartX); });
+                    const dEnd = () => { dDown=false; domViewport.style.cursor='grab'; };
+                    domViewport.addEventListener('pointerup', dEnd);
+                    domViewport.addEventListener('pointercancel', dEnd);
+                    domViewport.addEventListener('mouseleave', () => { if (dDown) dEnd(); });
+                    // Click navigation
+                    domTrack.querySelectorAll('.domain-chip').forEach(a => {
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const slug = a.getAttribute('data-slug');
                             if (!slug) return;
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                if (slug === 'all') {
-                                    state.categoryExplicit = false;
-                                    state.selectedCategory = 'all';
-                                    searchPage = 1;
-                                    renderSearchResults();
-                                    renderCategorySelect(currentMatchesCache);
-                                    renderCategoryRail(currentMatchesCache);
-                                    return;
-                                }
-                                state.categoryExplicit = true;
-                                state.selectedCategory = slug;
-                                if (!state.searchQuery.trim()) {
-                                    state.selectedDomain = slug;
-                                    state.currentView = 'tools';
-                                    render();
-                                } else {
-                                    searchPage = 1;
-                                    renderSearchResults();
-                                    renderCategorySelect(currentMatchesCache);
-                                    renderCategoryRail(currentMatchesCache);
-                                }
-                            });
+                            state.currentView = 'tools';
+                            state.selectedDomain = slug;
+                            try { location.hash = `#domain=${encodeURIComponent(slug)}`; } catch (e) {}
+                            window.scrollTo(0,0);
+                            render();
                         });
-                        const allLink = document.getElementById('all-categories-link');
-                        if (allLink) allLink.addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'home'; alert('Full category index coming soon.'); });
-                    }
-
-                    // Initial render of category rail (no matches -> total counts)
-                    renderCategoryRail([]);
+                    });
 
                     function computeCategoryCounts(matches) {
                         const counts = { all: 0 };
@@ -1937,7 +1898,6 @@
                             renderSearchResults();
                             // When typing, refresh dropdown with counts for the current matches
                             renderCategorySelect(currentMatchesCache);
-                            renderCategoryRail(currentMatchesCache);
                         });
                         sb.addEventListener('keydown', (e) => {
                             if (e.key === 'Enter') e.preventDefault();
@@ -1947,7 +1907,6 @@
 
                     // Initial dropdown render (no query -> total counts)
                     renderCategorySelect([]);
-                    renderCategoryRail([]);
                     attachDomainCardListeners();
                 },
                 renderTools: () => {
