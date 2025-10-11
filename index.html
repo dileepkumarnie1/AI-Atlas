@@ -133,6 +133,8 @@
             /* Stack a stronger bottom shadow for separation from hero */
             box-shadow: var(--header-shadow), var(--header-bottom-shadow) !important;
             padding-top: env(safe-area-inset-top);
+            position: fixed; /* keep visible while scrolling */
+            top: 0; left: 0; right: 0; width: 100%; z-index: 50;
         }
         #home-link { color: var(--text-primary); }
         nav a { color: var(--text-secondary); }
@@ -226,6 +228,12 @@
 
         .prose { color: var(--text-secondary); }
         .prose h1, .prose h2, .prose h5, .prose h6 { color: var(--text-primary); }
+    /* Footer styles */
+    .site-footer { background-color: #0e1220; color: #e5e7eb; }
+    .site-footer .footer-link { color: #cbd5e1; }
+    .site-footer .footer-link:hover { color: #ffffff; text-decoration: underline; }
+    .site-footer .footer-icon { color: #cbd5e1; }
+    .site-footer .footer-icon:hover { color: #ffffff; }
 
         .tool-details {
             max-height: 0;
@@ -337,7 +345,7 @@
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:1;">
         <!-- Header -->
     <a href="#content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-sm px-3 py-2 rounded z-[100]">Skip to content</a>
-    <header class="sticky top-0 backdrop-blur-lg border-b z-50 bg-gradient-to-r from-[#eef2ff] via-[#f4f7ff] to-[#eef2ff] dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90 shadow-sm">
+    <header id="site-header" class="backdrop-blur-lg border-b bg-gradient-to-r from-[#eef2ff] via-[#f4f7ff] to-[#eef2ff] dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90 shadow-sm">
             <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-[68px] md:h-[84px]">
                     <div class="flex items-center">
@@ -369,7 +377,10 @@
             </nav>
         </header>
 
-        <!-- Mobile menu panel -->
+    <!-- Spacer to offset fixed header height -->
+    <div id="header-spacer" aria-hidden="true"></div>
+
+    <!-- Mobile menu panel -->
         <div id="mobile-menu-overlay" class="mobile-menu-overlay" tabindex="-1" aria-hidden="true"></div>
         <aside id="mobile-menu-panel" class="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <div class="p-4 flex items-center justify-between">
@@ -406,16 +417,87 @@
             </div>
         </main>
 
-    <footer class="border-t" style="padding-bottom: env(safe-area-inset-bottom);">
-            <div class="container mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-muted">&copy; 2025 AI ToolVerse. All rights reserved.</p>
-                <p class="text-sm text-muted mt-1">
-                  <a href="./CODE_OF_CONDUCT.md" class="underline">Code of Conduct</a>
-                  <span class="mx-2">·</span>
-                  This site is powered by <a class="underline" href="https://www.netlify.com/" rel="noopener noreferrer" target="_blank">Netlify</a>
+    <footer class="site-footer" style="padding-bottom: env(safe-area-inset-bottom);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                <!-- Brand & Disclosure -->
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="./images/tool_verse_new_logo_upd.png" alt="AI ToolVerse" class="h-9 w-auto" onerror="this.onerror=null; this.src='./images/tool_verse_new_logo.png';">
+                        <span class="text-xl font-semibold">AI ToolVerse</span>
+                    </div>
+                    <p class="text-sm leading-6 opacity-90">
+                        Editorial Note: We strive for accurate, helpful listings curated by humans. Some links may be affiliate links that help support the project—at no extra cost to you.
+                    </p>
+                </div>
+                <!-- Categories -->
+                <div class="md:col-span-2">
+                    <h4 class="text-base font-semibold mb-3">Categories</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link">Productivity Tools</a></li>
+                        <li><a href="#" class="footer-link">Image Generators</a></li>
+                        <li><a href="#" class="footer-link">Text Generators</a></li>
+                        <li><a href="#" class="footer-link">Video Tools</a></li>
+                        <li><a href="#" class="footer-link">Art Generators</a></li>
+                        <li><a href="#" class="footer-link">Audio Generators</a></li>
+                        <li><a href="#" class="footer-link">All AI Tools</a></li>
+                    </ul>
+                </div>
+                <!-- Resources -->
+                <div class="md:col-span-3">
+                    <h4 class="text-base font-semibold mb-3">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link">Best AI Art Generators</a></li>
+                        <li><a href="#" class="footer-link">Best AI Image Generators</a></li>
+                        <li><a href="#" class="footer-link">Best AI Chatbots</a></li>
+                        <li><a href="#" class="footer-link">Best AI Text Generators</a></li>
+                        <li><a href="#" class="footer-link">Best AI 3D Generators</a></li>
+                        <li><a href="#" class="footer-link">All Resources</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div class="md:col-span-2">
+                    <h4 class="text-base font-semibold mb-3">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Advertise</a></li>
+                        <li><a href="#" class="footer-link">Submit a Tool</a></li>
+                        <li><a href="#" class="footer-link">Request a Feature</a></li>
+                        <li><a href="#" class="footer-link">Update a Tool</a></li>
+                    </ul>
+                    <div class="flex items-center gap-4 mt-4 opacity-80">
+                        <!-- Simple social icons -->
+                        <a href="#" aria-label="LinkedIn" class="footer-icon"> 
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.84-2.2 3.8-2.2 4.07 0 4.82 2.68 4.82 6.17V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V24h-4V8z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="footer-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 0 0 1.88-2.35 8.51 8.51 0 0 1-2.7 1.03 4.25 4.25 0 0 0-7.3 3.88 12.06 12.06 0 0 1-8.75-4.44 4.24 4.24 0 0 0 1.31 5.66 4.2 4.2 0 0 1-1.93-.53v.05a4.25 4.25 0 0 0 3.41 4.16 4.27 4.27 0 0 1-1.92.07 4.26 4.26 0 0 0 3.97 2.95A8.52 8.52 0 0 1 2 19.54 12.02 12.02 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.35 8.35 0 0 0 22.46 6z"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="footer-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.8-2.2c-.8-.8-1.6-.8-2-1C17.9 2.5 12 2.5 12 2.5h0s-5.9 0-8.7.5c-.4.1-1.2.2-2 1-.6.6-.8 2.2-.8 2.2S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.2c.8.8 1.8.8 2.2.9 1.6.2 6.8.5 8.8.5s8.7-.1 8.7-.1 1.2-.1 2-.9c.6-.6.8-2.2.8-2.2s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.5 14.6V7.9l6.3 3.3-6.3 3.4z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="footer-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-2.5a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="footer-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.7c0-2.6 1.5-4 3.8-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-white/10 my-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-sm opacity-90">
+                <p>&copy; 2025 AI ToolVerse. All rights reserved.</p>
+                <p>
+                    <a href="./CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
+                    <span class="mx-2">·</span>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <span class="mx-2">·</span>
+                    <a href="#" class="footer-link">Terms of Service</a>
                 </p>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     
     <!-- Auth Modal -->
@@ -452,7 +534,7 @@
 
     <!-- Firebase SDK -->
     <script type="module">
-        // --- THEME TOGGLE LOGIC ---
+    // --- THEME TOGGLE LOGIC ---
         function setupTheme() {
             const themeToggleBtn = document.getElementById('theme-toggle');
             const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -486,6 +568,22 @@
             }
         }
         setupTheme();
+
+        // Fixed header spacer adjuster
+        (function headerSpacer(){
+            const header = document.getElementById('site-header');
+            const spacer = document.getElementById('header-spacer');
+            function apply(){
+                if (!header || !spacer) return;
+                const h = header.getBoundingClientRect().height;
+                spacer.style.height = h + 'px';
+            }
+            window.addEventListener('load', apply);
+            window.addEventListener('resize', apply);
+            const ro = (window.ResizeObserver) ? new ResizeObserver(apply) : null;
+            if (ro && header) ro.observe(header);
+            apply();
+        })();
 
         // --- MOBILE MENU LOGIC ---
         (function mobileMenu(){
