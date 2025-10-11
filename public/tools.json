@@ -6,6 +6,25 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "iconUrl": "https://agent-zero.ai/res/favicon_round.png",
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ]
+      },
+      {
         "name": "airbyte",
         "description": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
         "link": "https://airbyte.com",
@@ -89,6 +108,24 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/131273140?v=4&s=64"
+      },
+      {
+        "name": "cube",
+        "description": "Cube: Agentic Analytics Platform",
+        "link": "https://cube.dev",
+        "tags": [
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "Cube: Agentic Analytics Platform",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://cube.dev/favicon.ico"
       },
       {
         "name": "DeepSeek",
@@ -499,6 +536,27 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64"
       },
       {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg",
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ]
+      },
+      {
         "name": "sim",
         "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
         "link": "https://www.sim.ai",
@@ -570,46 +628,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/82193554?v=4&s=64"
-      },
-      {
-        "name": "agent-zero",
-        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "link": "https://agent-zero.ai",
-        "tags": [
-          "chatbot",
-          "agents",
-          "design",
-          "Freemium"
-        ],
-        "iconUrl": "https://agent-zero.ai/res/favicon_round.png",
-        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "pros": [
-          "Good for drafting and Q&A."
-        ],
-        "cons": [
-          "May require fact‑checking."
-        ]
-      },
-      {
-        "name": "RA.Aid",
-        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "link": "https://ra-aid.ai/",
-        "tags": [
-          "chatbot",
-          "search",
-          "agents",
-          "Open Source"
-        ],
-        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg",
-        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
-        ]
       }
     ]
   },
@@ -1712,6 +1730,29 @@
         ]
       },
       {
+        "name": "brainrot.js",
+        "description": "Create viral brainrot videos instantly with AI. Generate funny celebrity dialogues, memes, and more. The ultimate brainrot maker for content creators.",
+        "link": "https://brainrotjs.com",
+        "tags": [
+          "developer-tools",
+          "video",
+          "audio",
+          "Freemium"
+        ],
+        "about": "Create viral brainrot videos instantly with AI. Generate funny celebrity dialogues, memes, and more. The ultimate brainrot maker for content creators.",
+        "pros": [
+          "Accelerates video creation.",
+          "Useful for voice and audio workflows.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Render times or credit limits may apply.",
+          "May need cleanup for artifacts.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://brainrotjs.com/favicon.ico"
+      },
+      {
         "name": "D-ID",
         "description": "Create talking head videos from photos using AI.",
         "link": "https://www.d-id.com/",
@@ -2296,6 +2337,26 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://librechat.ai/apple-touch-icon.png"
+      },
+      {
+        "name": "OpenSpec",
+        "description": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "link": "https://openspec.dev/",
+        "tags": [
+          "agents",
+          "design",
+          "api",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "pros": [
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://openspec.dev/_astro/openspec_icon_light.BXKVBxjB.svg"
       },
       {
         "name": "Phind",
@@ -3953,6 +4014,24 @@
           "May struggle with very complex or poorly structured data.",
           "Requires a paid plan for advanced data sources."
         ]
+      },
+      {
+        "name": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+        "description": "The document processing platform built for the next generation.",
+        "link": "https://www.extend.ai/",
+        "tags": [
+          "design",
+          "documents",
+          "Freemium"
+        ],
+        "about": "The document processing platform built for the next generation.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/9KPaQFUCjiIzr7MGbTjIzCGKJ4g.png"
       },
       {
         "name": "pandas-ai",
@@ -5623,6 +5702,24 @@
         "iconUrl": "https://www.cosdata.io/favicon.ico"
       },
       {
+        "name": "crawlee",
+        "description": "Crawlee · Build reliable crawlers. Fast.",
+        "link": "https://crawlee.dev",
+        "tags": [
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Crawlee · Build reliable crawlers. Fast.",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://crawlee.dev/favicon.ico"
+      },
+      {
         "name": "Elicit",
         "description": "AI research assistant for finding and synthesizing papers.",
         "link": "https://elicit.org/",
@@ -6229,6 +6326,24 @@
           "Analytics require setup to track impact.",
           "Enterprise‑oriented pricing."
         ]
+      },
+      {
+        "name": "ai-chatbot",
+        "description": "A free, open-source chatbot template that helps you build powerful AI applications.",
+        "link": "https://chat-sdk.dev",
+        "tags": [
+          "chatbot",
+          "design",
+          "Open Source"
+        ],
+        "about": "A free, open-source chatbot template that helps you build powerful AI applications.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://chat-sdk.dev/favicon.ico"
       },
       {
         "name": "ClaraVerse",
@@ -7219,6 +7334,232 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10.707 2.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 11h1v6a1 1 0 001 1h4v-4h2v4h4a1 1 0 001-1v-6h1a1 1 0 00.707-1.707l-7-7z\"/></svg>",
     "tools": [
       {
+        "name": "GitHub AI Projects",
+        "slug": "github-ai-projects",
+        "description": "Top open-source AI projects on GitHub with high stars and strong community traction.",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .5C5.73.5.98 5.24.98 11.52c0 4.86 3.15 8.97 7.51 10.42.55.1.75-.24.75-.54 0-.26-.01-.95-.01-1.86-3.05.66-3.69-1.47-3.69-1.47-.5-1.26-1.22-1.6-1.22-1.6-.99-.68.07-.66.07-.66 1.09.08 1.66 1.12 1.66 1.12.98 1.66 2.58 1.18 3.22.9.1-.72.38-1.18.69-1.46-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.19 1.13-2.96-.11-.28-.49-1.41.11-2.94 0 0 .92-.29 3.02 1.13.88-.25 1.82-.38 2.76-.38s1.88.13 2.76.38c2.1-1.42 3.02-1.13 3.02-1.13.6 1.53.22 2.66.11 2.94.7.77 1.13 1.76 1.13 2.96 0 4.22-2.57 5.14-5.02 5.41.39.34.73 1.01.73 2.04 0 1.47-.01 2.65-.01 3.01 0 .3.2.65.75.54 4.36-1.45 7.51-5.56 7.51-10.42C23.02 5.24 18.27.5 12 .5z\"/></svg>",
+        "tools": [
+          {
+            "name": "PyTorch",
+            "description": "An open source deep learning platform that provides a flexible, dynamic computation graph and GPU acceleration.",
+            "link": "https://github.com/pytorch/pytorch",
+            "tags": [
+              "Open Source",
+              "Library",
+              "DL",
+              "GPU"
+            ],
+            "about": "PyTorch is a leading deep learning framework used in research and production, known for its dynamic computation graph and strong ecosystem.",
+            "pros": [
+              "Dynamic graph & eager execution",
+              "Large ecosystem (TorchVision, Lightning)",
+              "Backed by Meta, widely adopted"
+            ],
+            "cons": [
+              "Model export/ONNX nuances",
+              "Binary size and install time"
+            ]
+          },
+          {
+            "name": "TensorFlow",
+            "description": "An end-to-end open source platform for machine learning from Google.",
+            "link": "https://github.com/tensorflow/tensorflow",
+            "tags": [
+              "Open Source",
+              "Library",
+              "DL",
+              "Serving"
+            ],
+            "about": "TensorFlow supports training and inference across CPUs, GPUs, TPUs with production-grade deployment tooling.",
+            "pros": [
+              "Production-ready at scale",
+              "TF-Serving, TF Lite, TPU support"
+            ],
+            "cons": [
+              "Higher learning curve vs PyTorch",
+              "Multiple APIs to choose from"
+            ]
+          },
+          {
+            "name": "Transformers (HF)",
+            "description": "State-of-the-art NLP, vision, and audio models with simple APIs from Hugging Face.",
+            "link": "https://github.com/huggingface/transformers",
+            "tags": [
+              "Open Source",
+              "Library",
+              "LLM",
+              "NLP",
+              "Vision"
+            ],
+            "about": "Transformers provides thousands of pretrained models for tasks on text, vision, and audio, with unified Trainer/Inference APIs.",
+            "pros": [
+              "Huge model zoo & docs",
+              "Simple pipelines",
+              "Strong community"
+            ],
+            "cons": [
+              "Large model sizes",
+              "Rapid API surface changes"
+            ]
+          },
+          {
+            "name": "llama.cpp",
+            "description": "In‑ference of LLaMA and other LLMs in pure C/C++ locally, optimized for CPUs/metal.",
+            "link": "https://github.com/ggerganov/llama.cpp",
+            "tags": [
+              "Open Source",
+              "LLM",
+              "Local",
+              "Inference"
+            ],
+            "about": "llama.cpp enables running LLMs efficiently on commodity hardware (CPU/GPU), with many frontends and quantization options.",
+            "pros": [
+              "Runs locally on laptops",
+              "Great performance via quantization"
+            ],
+            "cons": [
+              "Model conversion/quantization steps",
+              "Limited context vs server GPUs"
+            ]
+          },
+          {
+            "name": "vLLM",
+            "description": "High-throughput, memory-efficient inference and serving for LLMs.",
+            "link": "https://github.com/vllm-project/vllm",
+            "tags": [
+              "Open Source",
+              "Serving",
+              "LLM",
+              "GPU"
+            ],
+            "about": "vLLM delivers production-grade LLM serving with PagedAttention and optimized batching for significant throughput gains.",
+            "pros": [
+              "Excellent throughput",
+              "Production features (serving/HTTP)"
+            ],
+            "cons": [
+              "GPU-focused",
+              "Fast-moving project"
+            ]
+          },
+          {
+            "name": "Stable Diffusion WebUI",
+            "description": "A feature-rich, browser-based UI for Stable Diffusion with extensive extensions.",
+            "link": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+            "tags": [
+              "Open Source",
+              "Diffusion",
+              "Images"
+            ],
+            "about": "AUTOMATIC1111's UI is the most popular local SD front-end supporting txt2img, img2img, ControlNet, LoRA, and more.",
+            "pros": [
+              "Huge plugin ecosystem",
+              "Powerful workflows"
+            ],
+            "cons": [
+              "Setup can be heavy",
+              "GPU VRAM requirements"
+            ]
+          },
+          {
+            "name": "ComfyUI",
+            "description": "Node-based, GPU-accelerated Stable Diffusion workflow engine.",
+            "link": "https://github.com/comfyanonymous/ComfyUI",
+            "tags": [
+              "Open Source",
+              "Diffusion",
+              "Workflow"
+            ],
+            "about": "ComfyUI provides a modular, visual pipeline builder for SD with advanced control and optimizations.",
+            "pros": [
+              "Visual workflow editor",
+              "Flexible and extensible"
+            ],
+            "cons": [
+              "Learning curve for nodes",
+              "Performance tuning needed"
+            ]
+          },
+          {
+            "name": "OpenAI Whisper",
+            "description": "Robust speech recognition model trained on 680k hours of multilingual data.",
+            "link": "https://github.com/openai/whisper",
+            "tags": [
+              "Open Source",
+              "ASR",
+              "Audio"
+            ],
+            "about": "Whisper performs multilingual speech recognition, translation, and language identification with strong accuracy.",
+            "pros": [
+              "Great accuracy on many languages",
+              "Easy CLI/API"
+            ],
+            "cons": [
+              "Real-time needs GPU",
+              "Large model sizes"
+            ]
+          },
+          {
+            "name": "LangChain",
+            "description": "Framework for building LLM applications with chains, tools, and agents.",
+            "link": "https://github.com/langchain-ai/langchain",
+            "tags": [
+              "Open Source",
+              "Framework",
+              "LLM",
+              "Agents"
+            ],
+            "about": "LangChain helps orchestrate prompts, retrieval, tools, and agents across many LLM providers.",
+            "pros": [
+              "Rich ecosystem & integrations",
+              "Rapid prototyping"
+            ],
+            "cons": [
+              "Evolving APIs",
+              "Can introduce complexity"
+            ]
+          },
+          {
+            "name": "Text Generation WebUI",
+            "description": "A versatile browser UI for running and chatting with local and remote LLMs.",
+            "link": "https://github.com/oobabooga/text-generation-webui",
+            "tags": [
+              "Open Source",
+              "LLM",
+              "Local"
+            ],
+            "about": "TGW supports many backends (llama.cpp, exllama, vLLM, Transformers) and model formats with a rich extension ecosystem.",
+            "pros": [
+              "Supports many backends",
+              "Plugin ecosystem"
+            ],
+            "cons": [
+              "Backend compatibility quirks",
+              "Setup steps vary"
+            ]
+          },
+          {
+            "name": "Open WebUI",
+            "description": "Modern, extensible web UI for local and remote LLMs (Ollama, vLLM, and more).",
+            "link": "https://github.com/open-webui/open-webui",
+            "tags": [
+              "Open Source",
+              "LLM",
+              "UI"
+            ],
+            "about": "Open WebUI offers a polished chat interface with RAG, agents, and multi-backend support for local/hosted models.",
+            "pros": [
+              "Clean UX",
+              "Good RAG/agent features"
+            ],
+            "cons": [
+              "Rapid updates may break plugins",
+              "Self-hosting overhead"
+            ]
+          }
+        ]
+      },
+      {
         "name": "HouseCanary",
         "description": "Property valuations, forecasting, and analytics for real estate.",
         "link": "https://www.housecanary.com/",
@@ -7306,113 +7647,78 @@
           "Seat‑based pricing."
         ]
       }
-      ,
+    ]
+  },
+  {
+    "name": "Most Famous Agentic Ai S",
+    "slug": "most-famous-agentic-ai-s",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
       {
-        "name": "GitHub AI Projects",
-        "slug": "github-ai-projects",
-        "description": "Top open-source AI projects on GitHub with high stars and strong community traction.",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .5C5.73.5.98 5.24.98 11.52c0 4.86 3.15 8.97 7.51 10.42.55.1.75-.24.75-.54 0-.26-.01-.95-.01-1.86-3.05.66-3.69-1.47-3.69-1.47-.5-1.26-1.22-1.6-1.22-1.6-.99-.68.07-.66.07-.66 1.09.08 1.66 1.12 1.66 1.12.98 1.66 2.58 1.18 3.22.9.1-.72.38-1.18.69-1.46-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.19 1.13-2.96-.11-.28-.49-1.41.11-2.94 0 0 .92-.29 3.02 1.13.88-.25 1.82-.38 2.76-.38s1.88.13 2.76.38c2.1-1.42 3.02-1.13 3.02-1.13.6 1.53.22 2.66.11 2.94.7.77 1.13 1.76 1.13 2.96 0 4.22-2.57 5.14-5.02 5.41.39.34.73 1.01.73 2.04 0 1.47-.01 2.65-.01 3.01 0 .3.2.65.75.54 4.36-1.45 7.51-5.56 7.51-10.42C23.02 5.24 18.27.5 12 .5z\"/></svg>",
-        "tools": [
-          {
-            "name": "PyTorch",
-            "description": "An open source deep learning platform that provides a flexible, dynamic computation graph and GPU acceleration.",
-            "link": "https://github.com/pytorch/pytorch",
-            "tags": ["Open Source", "Library", "DL", "GPU"],
-            "about": "PyTorch is a leading deep learning framework used in research and production, known for its dynamic computation graph and strong ecosystem.",
-            "pros": ["Dynamic graph & eager execution", "Large ecosystem (TorchVision, Lightning)", "Backed by Meta, widely adopted"],
-            "cons": ["Model export/ONNX nuances", "Binary size and install time"]
-          },
-          {
-            "name": "TensorFlow",
-            "description": "An end-to-end open source platform for machine learning from Google.",
-            "link": "https://github.com/tensorflow/tensorflow",
-            "tags": ["Open Source", "Library", "DL", "Serving"],
-            "about": "TensorFlow supports training and inference across CPUs, GPUs, TPUs with production-grade deployment tooling.",
-            "pros": ["Production-ready at scale", "TF-Serving, TF Lite, TPU support"],
-            "cons": ["Higher learning curve vs PyTorch", "Multiple APIs to choose from"]
-          },
-          {
-            "name": "Transformers (HF)",
-            "description": "State-of-the-art NLP, vision, and audio models with simple APIs from Hugging Face.",
-            "link": "https://github.com/huggingface/transformers",
-            "tags": ["Open Source", "Library", "LLM", "NLP", "Vision"],
-            "about": "Transformers provides thousands of pretrained models for tasks on text, vision, and audio, with unified Trainer/Inference APIs.",
-            "pros": ["Huge model zoo & docs", "Simple pipelines", "Strong community"],
-            "cons": ["Large model sizes", "Rapid API surface changes"]
-          },
-          {
-            "name": "llama.cpp",
-            "description": "In‑ference of LLaMA and other LLMs in pure C/C++ locally, optimized for CPUs/metal.",
-            "link": "https://github.com/ggerganov/llama.cpp",
-            "tags": ["Open Source", "LLM", "Local", "Inference"],
-            "about": "llama.cpp enables running LLMs efficiently on commodity hardware (CPU/GPU), with many frontends and quantization options.",
-            "pros": ["Runs locally on laptops", "Great performance via quantization"],
-            "cons": ["Model conversion/quantization steps", "Limited context vs server GPUs"]
-          },
-          {
-            "name": "vLLM",
-            "description": "High-throughput, memory-efficient inference and serving for LLMs.",
-            "link": "https://github.com/vllm-project/vllm",
-            "tags": ["Open Source", "Serving", "LLM", "GPU"],
-            "about": "vLLM delivers production-grade LLM serving with PagedAttention and optimized batching for significant throughput gains.",
-            "pros": ["Excellent throughput", "Production features (serving/HTTP)"],
-            "cons": ["GPU-focused", "Fast-moving project"]
-          },
-          {
-            "name": "Stable Diffusion WebUI",
-            "description": "A feature-rich, browser-based UI for Stable Diffusion with extensive extensions.",
-            "link": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-            "tags": ["Open Source", "Diffusion", "Images"],
-            "about": "AUTOMATIC1111's UI is the most popular local SD front-end supporting txt2img, img2img, ControlNet, LoRA, and more.",
-            "pros": ["Huge plugin ecosystem", "Powerful workflows"],
-            "cons": ["Setup can be heavy", "GPU VRAM requirements"]
-          },
-          {
-            "name": "ComfyUI",
-            "description": "Node-based, GPU-accelerated Stable Diffusion workflow engine.",
-            "link": "https://github.com/comfyanonymous/ComfyUI",
-            "tags": ["Open Source", "Diffusion", "Workflow"],
-            "about": "ComfyUI provides a modular, visual pipeline builder for SD with advanced control and optimizations.",
-            "pros": ["Visual workflow editor", "Flexible and extensible"],
-            "cons": ["Learning curve for nodes", "Performance tuning needed"]
-          },
-          {
-            "name": "OpenAI Whisper",
-            "description": "Robust speech recognition model trained on 680k hours of multilingual data.",
-            "link": "https://github.com/openai/whisper",
-            "tags": ["Open Source", "ASR", "Audio"],
-            "about": "Whisper performs multilingual speech recognition, translation, and language identification with strong accuracy.",
-            "pros": ["Great accuracy on many languages", "Easy CLI/API"],
-            "cons": ["Real-time needs GPU", "Large model sizes"]
-          },
-          {
-            "name": "LangChain",
-            "description": "Framework for building LLM applications with chains, tools, and agents.",
-            "link": "https://github.com/langchain-ai/langchain",
-            "tags": ["Open Source", "Framework", "LLM", "Agents"],
-            "about": "LangChain helps orchestrate prompts, retrieval, tools, and agents across many LLM providers.",
-            "pros": ["Rich ecosystem & integrations", "Rapid prototyping"],
-            "cons": ["Evolving APIs", "Can introduce complexity"]
-          },
-          {
-            "name": "Text Generation WebUI",
-            "description": "A versatile browser UI for running and chatting with local and remote LLMs.",
-            "link": "https://github.com/oobabooga/text-generation-webui",
-            "tags": ["Open Source", "LLM", "Local"],
-            "about": "TGW supports many backends (llama.cpp, exllama, vLLM, Transformers) and model formats with a rich extension ecosystem.",
-            "pros": ["Supports many backends", "Plugin ecosystem"],
-            "cons": ["Backend compatibility quirks", "Setup steps vary"]
-          },
-          {
-            "name": "Open WebUI",
-            "description": "Modern, extensible web UI for local and remote LLMs (Ollama, vLLM, and more).",
-            "link": "https://github.com/open-webui/open-webui",
-            "tags": ["Open Source", "LLM", "UI"],
-            "about": "Open WebUI offers a polished chat interface with RAG, agents, and multi-backend support for local/hosted models.",
-            "pros": ["Clean UX", "Good RAG/agent features"],
-            "cons": ["Rapid updates may break plugins", "Self-hosting overhead"]
-          }
-        ]
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://agent-zero.ai/res/favicon_round.png"
+      },
+      {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
+      }
+    ]
+  },
+  {
+    "name": "E Commerce Retail",
+    "slug": "e-commerce-retail",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
+      {
+        "name": "storecraft",
+        "description": "Storecraft - Next Gen Commerce-As-Code",
+        "link": "https://storecraft.app",
+        "tags": [
+          "developer-tools",
+          "Freemium"
+        ],
+        "about": "Storecraft - Next Gen Commerce-As-Code",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://storecraft.app/favicon.svg"
       }
     ]
   }
