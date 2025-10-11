@@ -1,4 +1,5 @@
 {
+  "airbyte": 0,
   "chatbox": 0,
   "ChatGPT (OpenAI)": 100000000,
   "Claude (Anthropic)": 10000000,
@@ -31,6 +32,8 @@
   "supabase": 0,
   "tabby": 0,
   "ToolJet": 0,
+  "agent-zero": 0,
+  "RA.Aid": 0,
   "AutoGPT": 0,
   "browser-use": 0,
   "Character.AI": 0,
@@ -147,6 +150,7 @@
   "Fireflies.ai": 0,
   "Gemini for Workspace": 0,
   "inbox-zero": 0,
+  "joinly": 0,
   "meeting-minutes": 0,
   "Mem": 0,
   "Microsoft Copilot for M365": 0,
@@ -225,7 +229,9 @@
   "FlowGPT": 0,
   "Langfuse": 0,
   "langwatch": 0,
+  "LearnPrompt": 0,
   "Prompt Perfect": 0,
+  "prompt-layer-library": 0,
   "promptfoo": 0,
   "PromptHero": 0,
   "PromptLayer": 0,
@@ -329,10 +335,9 @@
   "Amazon Personalize": 0,
   "Bloomreach Discovery": 0,
   "Shopify Magic": 0,
+  "storecraft": 0,
   "HouseCanary": 0,
   "Matterport": 0,
   "real-estate-ai-agent": 0,
-  "Reonomy": 0,
-  "storecraft": 0,
-  "agent-zero": 0
+  "Reonomy": 0
 }
