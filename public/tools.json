@@ -171,7 +171,8 @@
         "description": "Gemini 2.5 is our most intelligent AI model, capable of reasoning through its thoughts before responding, resulting in enhanced performance and improved accuracy.",
         "link": "https://deepmind.google/technologies/gemini/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Gemini AI",
         "pros": [],
@@ -487,18 +488,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/148619568?v=4&s=64"
       },
       {
-        "name": "qlib",
-        "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
-        "link": "https://qlib.readthedocs.io/en/latest/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64"
-      },
-      {
         "name": "sim",
         "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
         "link": "https://www.sim.ai",
@@ -665,18 +654,6 @@
         ]
       },
       {
-        "name": "ChatGLM-6B",
-        "description": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
-        "link": "https://github.com/zai-org/ChatGLM-6B",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/223098841?v=4&s=64"
-      },
-      {
         "name": "ChatGPT (OpenAI)",
         "description": "The quintessential AI chatbot for drafting, ideation, and summarization.",
         "link": "https://chat.openai.com/",
@@ -776,18 +753,6 @@
         "iconUrl": "https://avatars.githubusercontent.com/u/3046006?v=4&s=64"
       },
       {
-        "name": "FastChat",
-        "description": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
-        "link": "https://github.com/lm-sys/FastChat",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/126381704?v=4&s=64"
-      },
-      {
         "name": "Flowise",
         "description": "Build AI Agents, Visually",
         "link": "https://flowiseai.com",
@@ -840,18 +805,6 @@
           "Not always up-to-date.",
           "Limited in some regions."
         ]
-      },
-      {
-        "name": "gpt_academic",
-        "description": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
-        "link": "https://github.com/binary-husky/gpt_academic/wiki/online",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/96192199?v=4&s=64"
       },
       {
         "name": "gpt-oss",
@@ -1123,12 +1076,12 @@
       },
       {
         "name": "quivr",
-        "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+        "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
         "link": "https://core.quivr.com",
         "tags": [
           "Open Source"
         ],
-        "about": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want. ",
+        "about": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/159330290?v=4&s=64"
@@ -1571,18 +1524,6 @@
         ]
       },
       {
-        "name": "ml-stable-diffusion",
-        "description": "Stable Diffusion with Core ML on Apple Silicon",
-        "link": "https://github.com/apple/ml-stable-diffusion",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Stable Diffusion with Core ML on Apple Silicon",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://avatars.githubusercontent.com/u/10639145?v=4&s=64"
-      },
-      {
         "name": "Nano Banana",
         "description": "Gemini-powered image editing features",
         "link": "https://nanobanana.ai",
@@ -1641,7 +1582,8 @@
         "description": "Riffusion – Stable Diffusion fine-tuned to generate music",
         "link": "https://www.riffusion.com/about",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Riffusion – Stable Diffusion fine-tuned to generate music",
         "pros": [],
@@ -1689,28 +1631,6 @@
     "description": "Generate and edit video content using AI-powered features.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 001.553.832l3-2a1 1 0 000-1.664l-3-2z\" /></svg>",
     "tools": [
-      {
-        "name": "AnimateDiff",
-        "description": "Extend diffusion models to generate short animations from text or image prompts.",
-        "link": "https://github.com/guoyww/AnimateDiff",
-        "tags": [
-          "Open Source",
-          "Animation",
-          "Video Generation"
-        ],
-        "iconUrl": "https://github.com/favicon.ico",
-        "about": "AnimateDiff is a technique and reference implementation that enables diffusion models to synthesize coherent animations by injecting temporal modules, producing smooth motion from text or image inputs.",
-        "pros": [
-          "Adds motion to existing diffusion pipelines.",
-          "Open and extensible for research and creators.",
-          "Works with popular SD ecosystems."
-        ],
-        "cons": [
-          "Setup and GPU requirements can be high.",
-          "Clip lengths are short without heavy optimization.",
-          "Quality depends on base model and settings."
-        ]
-      },
       {
         "name": "D-ID",
         "description": "Create talking head videos from photos using AI.",
@@ -3370,7 +3290,8 @@
         "description": "We’re introducing a suite of AI-powered features to help you push past creative blocks and bring your best ideas to life.",
         "link": "https://www.figma.com/blog/introducing-figma-ai/",
         "tags": [
-          "Trending"
+          "Trending",
+          "Freemium"
         ],
         "about": "Figma AI",
         "pros": [],
@@ -6759,50 +6680,7 @@
     "slug": "voice-speech-ai",
     "description": "ASR, TTS, voice cloning, and speech enhancement technologies.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a3 3 0 00-3 3v5a3 3 0 106 0V5a3 3 0 00-3-3z\"/><path d=\"M5 10a5 5 0 0010 0h2a7 7 0 11-14 0h2z\"/></svg>",
-    "tools": [
-      {
-        "name": "Coqui TTS",
-        "description": "Open‑source text‑to‑speech toolkit for training and inference.",
-        "link": "https://github.com/coqui-ai/TTS",
-        "tags": [
-          "Open Source",
-          "TTS"
-        ],
-        "iconUrl": "https://github.com/favicon.ico",
-        "about": "Coqui TTS enables training custom neural voices and generating speech with many models and languages.",
-        "pros": [
-          "Flexible training pipeline.",
-          "Large community models.",
-          "Custom voice creation."
-        ],
-        "cons": [
-          "Training data requirements.",
-          "Compute needs for training.",
-          "Quality varies by dataset/model."
-        ]
-      },
-      {
-        "name": "Whisper (OpenAI)",
-        "description": "Open‑source automatic speech recognition with strong multilingual accuracy.",
-        "link": "https://github.com/openai/whisper",
-        "tags": [
-          "Open Source",
-          "ASR"
-        ],
-        "iconUrl": "https://github.com/favicon.ico",
-        "about": "Whisper is a general‑purpose speech recognition model trained on diverse audio, delivering robust transcription across many languages.",
-        "pros": [
-          "High accuracy and robustness.",
-          "Multilingual support.",
-          "Runs locally or in the cloud."
-        ],
-        "cons": [
-          "Inference can be compute‑intensive.",
-          "Domain adaptation requires fine‑tuning.",
-          "Latency on large models."
-        ]
-      }
-    ]
+    "tools": []
   },
   {
     "name": "Gaming & Entertainment",
