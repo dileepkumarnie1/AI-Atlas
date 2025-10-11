@@ -73,6 +73,7 @@
         --bg-primary-translucent: rgba(244, 244, 245, 0.9); /* Keep for other elements if needed */
         --bg-secondary: #e4e4e7;
         --bg-card: #ffffff;
+        --header-offset: 80px; /* default header offset for fixed header */
         --text-primary: #18181b;
         --text-secondary: #52525b;
         --text-muted: #71717a;
@@ -145,6 +146,7 @@
         footer p { color: var(--text-muted); }
         #search-bar { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); }
         #search-bar::placeholder { color: var(--text-muted); }
+    main { padding-top: var(--header-offset); }
 
         .domain-card, .feature-card {
             border: 1px solid var(--border-color);
@@ -598,7 +600,9 @@
                 if (!header || !spacer) return;
                 const h = header.getBoundingClientRect().height;
                 const extra = 64; // even larger buffer so top sections never clip under header (all pages)
-                spacer.style.height = (h + extra) + 'px';
+                const total = h + extra;
+                spacer.style.height = total + 'px';
+                try { document.documentElement.style.setProperty('--header-offset', total + 'px'); } catch {}
             }
             window.addEventListener('load', apply);
             window.addEventListener('resize', apply);
