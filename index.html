@@ -1408,7 +1408,7 @@
                         } catch { return 0; }
                     }
 
-                    function computeTopTools(limit = 20) {
+                    function computeTopTools(limit = 30) {
                         const allTools = (db || []).flatMap(d => d.tools || []).filter(t => !isExcludedTool(t));
                         // de-duplicate by name (case-insensitive)
                         const seen = new Map();
@@ -1435,7 +1435,7 @@
                     const TRANSITION_MS = 500; // slide animation duration
                     const GAP_REM = 0.45; // reduced by ~25% from 0.6rem (visible spacing)
                     const EDGE_FADE_PX = 48; // fade width on both ends for 3D effect
-                    const topTools = computeTopTools(20);
+                    const topTools = computeTopTools(30);
 
                     // Keep globals to clean up between renders
                     if (window.topStripInterval) { try { clearInterval(window.topStripInterval); } catch {} window.topStripInterval = null; }
@@ -1471,14 +1471,21 @@
                         const viewportEl = document.getElementById('top-strip-viewport');
                         if (!trackEl || !containerEl) return;
 
-                        // Click handler: map by current step offset when invoked
-                        trackEl.querySelectorAll('.top-item').forEach((el, idx) => {
-                            el.addEventListener('click', () => {
+                        // Delegated click handler to ensure items open reliably (even with pointer capture)
+                        if (viewportEl) {
+                            viewportEl.addEventListener('click', (e) => {
+                                // If a drag happened, ignore click
+                                if (typeof didDrag !== 'undefined' && didDrag) return;
+                                const item = e.target && e.target.closest ? e.target.closest('.top-item') : null;
+                                if (!item) return;
+                                const items = Array.from(trackEl.querySelectorAll('.top-item'));
+                                const idx = items.indexOf(item);
+                                if (idx < 0) return;
                                 const realIdx = idx % topTools.length;
                                 const t = topTools[realIdx];
                                 if (t) openToolByName(t.name);
                             });
-                        });
+                        }
 
                         let step = 0; // number of items shifted
                         let deltaX = 0; // distance per step in px
@@ -1573,6 +1580,8 @@
                                 newStep = Math.max(0, Math.min(topTools.length, newStep));
                                 step = newStep;
                                 applyTransform(true);
+                                // If movement was significant, mark that a drag occurred to suppress click
+                                didDrag = Math.abs(dragDx) > 3;
                                 // resume rotation after short delay
                                 setTimeout(() => { if (!window.topStripInterval) startRotation(); }, 1200);
                             };
