@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-06T10:54:46.973Z",
+  "lastUpdated": "2025-10-11T08:19:25.935Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -1887,6 +1887,1160 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 40,686 stars for query \"rag\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "big-AGI",
+      "description": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud.",
+      "link": "https://big-agi.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/32999?v=4&s=64",
+      "about": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 6,649 stars for query \"text to image\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Review-Gate",
+      "description": "Review-Gate V2 is a powerful rule for the Cursor IDE that helps you get up to 5x more value from your monthly requests. It creates an interactive loop where the AI waits for your follow-up commands—via text, voice, or image upload—allowing you to perform deep, iterative work all within a single request.",
+      "link": "https://www.youtube.com/watch?v=mZmNM-AIf4M",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/83905676?v=4&s=64",
+      "about": "Review-Gate V2 is a powerful rule for the Cursor IDE that helps you get up to 5x more value from your monthly requests. It creates an interactive loop where the AI waits for your follow-up commands—via text, voice, or image upload—allowing you to perform deep, iterative work all within a single request.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,522 stars for query \"text to image\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "FastVideo",
+      "description": "A unified inference and post-training framework for accelerated video generation.",
+      "link": "https://hao-ai-lab.github.io/FastVideo",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/149045815?v=4&s=64",
+      "about": "A unified inference and post-training framework for accelerated video generation.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,397 stars for query \"video generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "ttt-video-dit",
+      "description": "Official PyTorch implementation of One-Minute Video Generation with Test-Time Training",
+      "link": "https://test-time-training.github.io/video-dit",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/67626822?v=4&s=64",
+      "about": "Official PyTorch implementation of One-Minute Video Generation with Test-Time Training",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,238 stars for query \"video generation\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "Microsoft 365 Copilot's commercial failure",
+      "description": "Microsoft 365 Copilot's commercial failure",
+      "link": "https://www.perspectives.plus/p/microsoft-365-copilot-commercial-failure",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Microsoft 365 Copilot's commercial failure",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (197 points) for \"copilot\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "clone-voice",
+      "description": "A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频",
+      "link": "https://pyvideotrans.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/3378335?v=4&s=64",
+      "about": "A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 8,786 stars for query \"voice cloning\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "wunjo.wladradchenko.ru",
+      "description": "Wunjo CE: Face Swap, Lip Sync, Control Remove Objects & Text & Background, Restyling, Audio Separator, Clone Voice, Video Generation. Open Source, Local & Free.",
+      "link": "https://wunjo.online",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/56233697?v=4&s=64",
+      "about": "Wunjo CE: Face Swap, Lip Sync, Control Remove Objects & Text & Background, Restyling, Audio Separator, Clone Voice, Video Generation. Open Source, Local & Free.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,064 stars for query \"voice cloning\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "web-builder",
+      "description": "AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern responsive UIs, dynamic customizable components, multi-theme, and multi-language web applications.",
+      "link": "https://builder.design",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/13775821?v=4&s=64",
+      "about": "AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern responsive UIs, dynamic customizable components, multi-theme, and multi-language web applications.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 501 stars for query \"ui generation\""
+    },
+    {
+      "domain": "Marketing & SEO",
+      "name": "short-video-factory",
+      "description": "一键生成产品营销与泛内容短视频，AI批量自动剪辑，高颜值跨平台桌面端工具 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross platform desktop tool",
+      "link": "https://short-video-factory.yils.blog",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/62397373?v=4&s=64",
+      "about": "一键生成产品营销与泛内容短视频，AI批量自动剪辑，高颜值跨平台桌面端工具 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross platform desktop tool",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,900 stars for query \"content generation marketing\""
+    },
+    {
+      "domain": "Data Analysis",
+      "name": "WatchAlert",
+      "description": "🚀A lightweight, cloud-native multi-data source monitoring and alerting engine that supports AI-driven intelligent alert analysis, designed to help upgrade your monitoring system architecture. Feel free to try it out and show your support with a kind star🤩 🚀一款轻量级云原生多数据源监控告警引擎, 支持 AI 智能告警分析, 快来用它升级你们的监控系统架构吧！帮忙点个免费的Star 🤩",
+      "link": "https://cairry.github.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/188568020?v=4&s=64",
+      "about": "🚀A lightweight, cloud-native multi-data source monitoring and alerting engine that supports AI-driven intelligent alert analysis, designed to help upgrade your monitoring system architecture. Feel free to try it out and show your support with a kind star🤩 🚀一款轻量级云原生多数据源监控告警引擎, 支持 AI 智能告警分析, 快来用它升级你们的监控系统架构吧！帮忙点个免费的Star 🤩",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 766 stars for query \"data analysis ai\""
+    },
+    {
+      "domain": "Data Analysis",
+      "name": "xpert",
+      "description": "Xpert AI is an AI agents and data analysis platform for enterprises to make business decisions.",
+      "link": "https://mtda.cloud/en/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/184586987?v=4&s=64",
+      "about": "Xpert AI is an AI agents and data analysis platform for enterprises to make business decisions.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 271 stars for query \"data analysis ai\""
+    },
+    {
+      "domain": "3D Modeling",
+      "name": "t2v_metrics",
+      "description": "Evaluating text-to-image/video/3D models with VQAScore",
+      "link": "https://linzhiqiu.github.io/papers/vqascore/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/10042427?v=4&s=64",
+      "about": "Evaluating text-to-image/video/3D models with VQAScore",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 343 stars for query \"text to 3d\""
+    },
+    {
+      "domain": "3D Modeling",
+      "name": "renderformer",
+      "description": "Official Code Release for [SIGGRAPH 2025] RenderFormer: Transformer-based Neural Rendering of Triangle Meshes with Global Illumination",
+      "link": "https://microsoft.github.io/renderformer/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
+      "about": "Official Code Release for [SIGGRAPH 2025] RenderFormer: Transformer-based Neural Rendering of Triangle Meshes with Global Illumination",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 811 stars for query \"neural rendering\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "shap",
+      "description": "A game theoretic approach to explain the output of any machine learning model.",
+      "link": "https://shap.readthedocs.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/60805229?v=4&s=64",
+      "about": "A game theoretic approach to explain the output of any machine learning model.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 24,512 stars for query \"model interpretability\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "captum",
+      "description": "Model interpretability and understanding for PyTorch",
+      "link": "https://captum.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/107212512?v=4&s=64",
+      "about": "Model interpretability and understanding for PyTorch",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 5,417 stars for query \"model interpretability\""
+    },
+    {
+      "domain": "Education",
+      "name": "Khanmigo",
+      "description": "AI tutor from Khan Academy",
+      "link": "https://www.khanacademy.org/khan-labs",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "AI tutor from Khan Academy",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Crypto",
+      "name": "heurist-agent-framework",
+      "description": "A flexible multi-interface AI agent framework for building agents with reasoning, tool use, memory, deep research, blockchain interaction, MCP, and agents-as-a-service.",
+      "link": "https://agent.heurist.ai/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/140984204?v=4&s=64",
+      "about": "A flexible multi-interface AI agent framework for building agents with reasoning, tool use, memory, deep research, blockchain interaction, MCP, and agents-as-a-service.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 674 stars for query \"blockchain ai\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "PromptAgent",
+      "description": "This is the official repo for \"PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization\". PromptAgent is a novel automatic prompt optimization method that autonomously crafts prompts equivalent in quality to those handcrafted by experts, i.e., expert-level prompts.",
+      "link": "https://arxiv.org/abs/2310.16427",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/109049819?v=4&s=64",
+      "about": "This is the official repo for \"PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization\". PromptAgent is a novel automatic prompt optimization method that autonomously crafts prompts equivalent in quality to those handcrafted by experts, i.e., expert-level prompts.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 328 stars for query \"prompt optimizer\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "structured-prompt-builder",
+      "description": "A lightweight, browser‑first tool for designing well‑structured AI prompts with a clean UI, live previews, a local Prompt Library, and optional Gemini‑powered prompt optimization.",
+      "link": "https://structured-prompt-builder.vercel.app",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/67579112?v=4&s=64",
+      "about": "A lightweight, browser‑first tool for designing well‑structured AI prompts with a clean UI, live previews, a local Prompt Library, and optional Gemini‑powered prompt optimization.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 241 stars for query \"prompt optimizer\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "CodeMender: an AI agent for code security",
+      "description": "CodeMender: an AI agent for code security",
+      "link": "https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "CodeMender: an AI agent for code security",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (198 points) for \"agents\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "gpt-researcher",
+      "description": "LLM based autonomous agent that conducts deep local and web research on any topic and generates a long report with citations.",
+      "link": "https://gptr.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/13554167?v=4&s=64",
+      "about": "LLM based autonomous agent that conducts deep local and web research on any topic and generates a long report with citations.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 23,764 stars for query \"autonomous agents\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "graphrag",
+      "description": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
+      "link": "https://microsoft.github.io/graphrag/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
+      "about": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 28,576 stars for query \"rag\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "txtai",
+      "description": "💡 All-in-one open-source AI framework for semantic search, LLM orchestration and language model workflows",
+      "link": "https://neuml.github.io/txtai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/59890304?v=4&s=64",
+      "about": "💡 All-in-one open-source AI framework for semantic search, LLM orchestration and language model workflows",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 11,688 stars for query \"semantic search\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "Viper",
+      "description": "Adversary simulation and Red teaming platform with AI",
+      "link": "https://www.viperrtp.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/17685281?v=4&s=64",
+      "about": "Adversary simulation and Red teaming platform with AI",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,544 stars for query \"red teaming ai\""
+    },
+    {
+      "domain": "AI Safety & Ethics",
+      "name": "ad-rss-lib",
+      "description": "Library implementing the Responsibility Sensitive Safety model (RSS) for Autonomous Vehicles",
+      "link": "https://intel.github.io/ad-rss-lib/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/17888862?v=4&s=64",
+      "about": "Library implementing the Responsibility Sensitive Safety model (RSS) for Autonomous Vehicles",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 349 stars for query \"model safety\""
+    },
+    {
+      "domain": "Healthcare & Medical AI",
+      "name": "hi-ml",
+      "description": "HI-ML toolbox for deep learning for medical imaging and Azure integration",
+      "link": "https://aka.ms/hi-ml",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/6154722?v=4&s=64",
+      "about": "HI-ML toolbox for deep learning for medical imaging and Azure integration",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 297 stars for query \"medical ai\""
+    },
+    {
+      "domain": "Finance & Accounting",
+      "name": "Brex Empower",
+      "description": "AI expense automation for finance teams",
+      "link": "https://www.brex.com/empower",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "AI expense automation for finance teams",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "HR & Recruitment",
+      "name": "Paradox",
+      "description": "Conversational recruiting",
+      "link": "https://www.paradox.ai/",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "Conversational recruiting",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Voice & Speech AI",
+      "name": "Vosk",
+      "description": "Offline ASR",
+      "link": "https://alphacephei.com/vosk",
+      "tags": [
+        "Open Source"
+      ],
+      "about": "Offline ASR",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Voice & Speech AI",
+      "name": "speechbrain",
+      "description": "A PyTorch-based Speech Toolkit",
+      "link": "http://speechbrain.github.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/54749030?v=4&s=64",
+      "about": "A PyTorch-based Speech Toolkit",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 10,537 stars for query \"asr\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "LLMUnity",
+      "description": "Create characters in Unity with LLMs!",
+      "link": "https://undream.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/154805784?v=4&s=64",
+      "about": "Create characters in Unity with LLMs!",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,302 stars for query \"npc ai\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "npc-studio",
+      "description": "the IDE for research, built from the ground up with AI integrations",
+      "link": "https://enpisi.com/npc-studio",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/209010789?v=4&s=64",
+      "about": "the IDE for research, built from the ground up with AI integrations",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 136 stars for query \"npc ai\""
+    },
+    {
+      "domain": "Cybersecurity",
+      "name": "AskJOE",
+      "description": "AI-Powered Malware Analysis & Threat Intelligence for Ghidra Transform your static analysis workflow with cutting-edge AI capabilities, comprehensive malware detection, and advanced threat intelligence.",
+      "link": "https://www.securityjoes.com/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/51166653?v=4&s=64",
+      "about": "AI-Powered Malware Analysis & Threat Intelligence for Ghidra Transform your static analysis workflow with cutting-edge AI capabilities, comprehensive malware detection, and advanced threat intelligence.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 141 stars for query \"threat detection ai\""
+    },
+    {
+      "domain": "Sales & CRM",
+      "name": "Clari Copilot",
+      "description": "Revenue intelligence assistant for sales teams",
+      "link": "https://www.clari.com/products/copilot/",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "Revenue intelligence assistant for sales teams",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "E‑commerce & Retail",
+      "name": "OpenTSLM: Language models that understand time series",
+      "description": "OpenTSLM: Language models that understand time series",
+      "link": "https://www.opentslm.com/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "OpenTSLM: Language models that understand time series",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (279 points) for \"recommendation\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Taskade AI",
+      "description": "Collaborative AI workspace for teams",
+      "link": "https://www.taskade.com/ai",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "Collaborative AI workspace for teams",
+      "pros": [],
+      "cons": [],
+      "reason": "Launch darling for collaborative copilots"
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Fathom AI Notetaker",
+      "description": "Automatically records, transcribes, and summarizes calls",
+      "link": "https://fathom.video",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "Automatically records, transcribes, and summarizes calls",
+      "pros": [],
+      "cons": [],
+      "reason": "Top Product Hunt winner for meeting intelligence"
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "Forethought SupportGPT",
+      "description": "Agent assist and automated support answers",
+      "link": "https://forethought.ai/supportgpt/",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "Agent assist and automated support answers",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "Ultimate",
+      "description": "Support automation copilot",
+      "link": "https://www.ultimate.ai",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "Support automation copilot",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Social Media & Content",
+      "name": "Lately AI",
+      "description": "Repurpose long-form content into social posts",
+      "link": "https://www.lately.ai",
+      "tags": [
+        "Subscription"
+      ],
+      "about": "Repurpose long-form content into social posts",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Social Media & Content",
+      "name": "Metricool AI",
+      "description": "AI-assisted planning and captions",
+      "link": "https://metricool.com/ai/",
+      "tags": [
+        "Freemium"
+      ],
+      "about": "AI-assisted planning and captions",
+      "pros": [],
+      "cons": [],
+      "reason": "Curated high-quality tool"
+    },
+    {
+      "domain": "Most Popular",
+      "name": "ai",
+      "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
+      "link": "https://ai-sdk.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/14985020?v=4&s=64",
+      "about": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 18,369 stars for query \"ai toolkit\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "NextChat",
+      "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
+      "link": "https://nextnext.chat",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/153288546?v=4&s=64",
+      "about": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 86,044 stars for query \"ai assistant\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "link": "https://huggingface.co/transformers",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/25720743?v=4&s=64",
+      "about": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,50,874 stars for query \"llm\""
+    },
+    {
+      "domain": "Legal & Compliance",
+      "name": "mythril",
+      "description": "Mythril is a symbolic-execution-based securty analysis tool for EVM bytecode. It detects security vulnerabilities in smart contracts built for Ethereum and other EVM-compatible blockchains.",
+      "link": "https://mythx.io/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/99803152?v=4&s=64",
+      "about": "Mythril is a symbolic-execution-based securty analysis tool for EVM bytecode. It detects security vulnerabilities in smart contracts built for Ethereum and other EVM-compatible blockchains.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,120 stars for query \"contract analysis\""
+    },
+    {
+      "domain": "Legal & Compliance",
+      "name": "heimdall-rs",
+      "description": "Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts.",
+      "link": "http://heimdall.rs",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/64037729?v=4&s=64",
+      "about": "Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,399 stars for query \"contract analysis\""
+    },
+    {
+      "domain": "Legal & Compliance",
+      "name": "ciso-assistant-community",
+      "description": "CISO Assistant is a one-stop-shop for GRC, covering Risk, AppSec, Compliance/Audit Management, Privacy and supporting +100 frameworks worldwide with auto-mapping: NIST CSF, ISO 27001, SOC2, CIS, PCI DSS, NIS2, CMMC, PSPF, GDPR, HIPAA, Essential Eight, NYDFS-500, DORA, NIST AI RMF, 800-53, CyFun, AirCyber, NCSC, ECC, SCF and so much more",
+      "link": "https://intuitem.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/71849524?v=4&s=64",
+      "about": "CISO Assistant is a one-stop-shop for GRC, covering Risk, AppSec, Compliance/Audit Management, Privacy and supporting +100 frameworks worldwide with auto-mapping: NIST CSF, ISO 27001, SOC2, CIS, PCI DSS, NIS2, CMMC, PSPF, GDPR, HIPAA, Essential Eight, NYDFS-500, DORA, NIST AI RMF, 800-53, CyFun, AirCyber, NCSC, ECC, SCF and so much more",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,258 stars for query \"compliance ai\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "adk-python",
+      "description": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+      "link": "https://google.github.io/adk-docs/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/1342004?v=4&s=64",
+      "about": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 13,607 stars for query \"ai toolkit\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "The AI coding trap",
+      "description": "The AI coding trap",
+      "link": "https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap",
+      "tags": [
+        "Trending"
+      ],
+      "about": "The AI coding trap",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (685 points) for \"AI\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "R2R",
+      "description": "SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.",
+      "link": "https://r2r-docs.sciphi.ai/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/148402514?v=4&s=64",
+      "about": "SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,359 stars for query \"retrieval augmented generation\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "krita-ai-diffusion",
+      "description": "Streamlined interface for generating images with AI in Krita. Inpaint and outpaint with optional text prompt, no tweaking required.",
+      "link": "https://www.interstice.cloud",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/6485914?v=4&s=64",
+      "about": "Streamlined interface for generating images with AI in Krita. Inpaint and outpaint with optional text prompt, no tweaking required.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 9,211 stars for query \"inpainting\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Phantom",
+      "description": "Phantom: Subject-Consistent Video Generation via Cross-Modal Alignment",
+      "link": "https://phantom-video.github.io/Phantom/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/198594796?v=4&s=64",
+      "about": "Phantom: Subject-Consistent Video Generation via Cross-Modal Alignment",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,434 stars for query \"video generation\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "MagicTime",
+      "description": "[TPAMI 2025🔥] MagicTime: Time-lapse Video Generation Models as Metamorphic Simulators",
+      "link": "https://pku-yuangroup.github.io/MagicTime/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/135824553?v=4&s=64",
+      "about": "[TPAMI 2025🔥] MagicTime: Time-lapse Video Generation Models as Metamorphic Simulators",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,336 stars for query \"video generation\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "magenta-js",
+      "description": "Magenta.js: Music and Art Generation with Machine Learning in the browser",
+      "link": "https://magenta.tensorflow.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/17187941?v=4&s=64",
+      "about": "Magenta.js: Music and Art Generation with Machine Learning in the browser",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,078 stars for query \"music generation\""
+    },
+    {
+      "domain": "Audio & Music",
+      "name": "AudioMuse-AI",
+      "description": "AudioMuse-AI is an Open Source Dockerized environment that brings automatic playlist generation to your self-hosted music library. Using powerful tools like Librosa and ONNX, it performs sonic analysis on your audio files locally, allowing you to curate the perfect playlist for any mood or occasion without relying on external APIs.",
+      "link": "https://neptunehub.github.io/AudioMuse-AI/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/171392533?v=4&s=64",
+      "about": "AudioMuse-AI is an Open Source Dockerized environment that brings automatic playlist generation to your self-hosted music library. Using powerful tools like Librosa and ONNX, it performs sonic analysis on your audio files locally, allowing you to curate the perfect playlist for any mood or occasion without relying on external APIs.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 419 stars for query \"music generation\""
+    },
+    {
+      "domain": "Productivity",
+      "name": "oneclick-subtitles-generator",
+      "description": "🎬 Auto-subtitle videos with AI transcription, translation, voice cloning & professional rendering",
+      "link": "https://oneclick-subtitles-generator.vercel.app",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/169233418?v=4&s=64",
+      "about": "🎬 Auto-subtitle videos with AI transcription, translation, voice cloning & professional rendering",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 139 stars for query \"transcription ai\""
+    },
+    {
+      "domain": "Marketing & SEO",
+      "name": "aigotools",
+      "description": "AigoTools can help users quickly create and manage website directory, with built-in site auto-crawling features, and also provides internationalization, SEO, image storage, and other functions. It allows users to quickly deploy their own directory site online.",
+      "link": "https://www.aigotools.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/33251742?v=4&s=64",
+      "about": "AigoTools can help users quickly create and manage website directory, with built-in site auto-crawling features, and also provides internationalization, SEO, image storage, and other functions. It allows users to quickly deploy their own directory site online.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 638 stars for query \"seo ai\""
+    },
+    {
+      "domain": "Data Analysis",
+      "name": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+      "description": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+      "link": "https://www.extend.ai/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (59 points) for \"data automation\""
+    },
+    {
+      "domain": "3D Modeling",
+      "name": "diffusion-renderer",
+      "description": "[CVPR'25 Oral] Official implementation for \"DiffusionRenderer: Neural Inverse and Forward Rendering with Video Diffusion Models\"",
+      "link": "https://research.nvidia.com/labs/toronto-ai/DiffusionRenderer/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/49653101?v=4&s=64",
+      "about": "[CVPR'25 Oral] Official implementation for \"DiffusionRenderer: Neural Inverse and Forward Rendering with Video Diffusion Models\"",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 277 stars for query \"neural rendering\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "lit",
+      "description": "The Learning Interpretability Tool: Interactively analyze ML models to understand their behavior in an extensible and framework agnostic interface.",
+      "link": "https://pair-code.github.io/lit",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/29804435?v=4&s=64",
+      "about": "The Learning Interpretability Tool: Interactively analyze ML models to understand their behavior in an extensible and framework agnostic interface.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,596 stars for query \"model interpretability\""
+    },
+    {
+      "domain": "Ethical AI",
+      "name": "shapash",
+      "description": "🔅 Shapash: User-friendly Explainability and Interpretability to Develop Reliable and Transparent Machine Learning Models",
+      "link": "https://maif.github.io/shapash/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/33632930?v=4&s=64",
+      "about": "🔅 Shapash: User-friendly Explainability and Interpretability to Develop Reliable and Transparent Machine Learning Models",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,960 stars for query \"model interpretability\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "Paper2Agent: Stanford Reimagining Research Papers as Interactive AI Agents",
+      "description": "Paper2Agent: Stanford Reimagining Research Papers as Interactive AI Agents",
+      "link": "https://arxiv.org/abs/2509.06917",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Paper2Agent: Stanford Reimagining Research Papers as Interactive AI Agents",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (152 points) for \"agents\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "Effective context engineering for AI agents",
+      "description": "Effective context engineering for AI agents",
+      "link": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Effective context engineering for AI agents",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (147 points) for \"agents\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "trigger.dev",
+      "description": "Trigger.dev – build and deploy fully‑managed AI agents and workflows",
+      "link": "https://trigger.dev/changelog",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/95297378?v=4&s=64",
+      "about": "Trigger.dev – build and deploy fully‑managed AI agents and workflows",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 12,560 stars for query \"workflow automation ai\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "tracecat",
+      "description": "All-in-one AI automation platform (workflows, agents, cases, tables) for security, IT, and infra teams.",
+      "link": "https://tracecat.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/137193901?v=4&s=64",
+      "about": "All-in-one AI automation platform (workflows, agents, cases, tables) for security, IT, and infra teams.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,285 stars for query \"workflow automation ai\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "nixiesearch",
+      "description": "Hybrid search engine, combining best features of text and semantic search worlds",
+      "link": "https://www.nixiesearch.ai/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/139566121?v=4&s=64",
+      "about": "Hybrid search engine, combining best features of text and semantic search worlds",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 507 stars for query \"semantic search\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "infinity",
+      "description": "The AI-native database built for LLM applications, providing incredibly fast hybrid search of dense vector, sparse vector, tensor (multi-vector), and full-text.",
+      "link": "https://infiniflow.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/69962740?v=4&s=64",
+      "about": "The AI-native database built for LLM applications, providing incredibly fast hybrid search of dense vector, sparse vector, tensor (multi-vector), and full-text.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,115 stars for query \"vector search\""
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "ai-chatbot",
+      "description": "A full-featured, hackable Next.js AI chatbot built by Vercel",
+      "link": "https://chat-sdk.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/14985020?v=4&s=64",
+      "about": "A full-featured, hackable Next.js AI chatbot built by Vercel",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 18,271 stars for query \"chatbot\""
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "ImageMagick",
+      "description": "ImageMagick is a free, open-source software suite for creating, editing, converting, and displaying images. It supports 200+ formats and offers powerful command-line tools and APIs for automation, scripting, and integration across platforms.",
+      "link": "https://imagemagick.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/12486768?v=4&s=64",
+      "about": "ImageMagick is a free, open-source software suite for creating, editing, converting, and displaying images. It supports 200+ formats and offers powerful command-line tools and APIs for automation, scripting, and integration across platforms.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 14,665 stars for query \"support automation\""
+    },
+    {
+      "domain": "Legal & Compliance",
+      "name": "deal",
+      "description": "🤝 Design by contract for Python. Write bug-free code. Add a few decorators, get static analysis and tests for free.",
+      "link": "https://deal.readthedocs.io/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/48201596?v=4&s=64",
+      "about": "🤝 Design by contract for Python. Write bug-free code. Add a few decorators, get static analysis and tests for free.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 836 stars for query \"contract analysis\""
+    },
+    {
+      "domain": "Legal & Compliance",
+      "name": "compl-ai",
+      "description": "An open-source compliance-centered evaluation framework for Generative AI models",
+      "link": "https://compl-ai.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/184132995?v=4&s=64",
+      "about": "An open-source compliance-centered evaluation framework for Generative AI models",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 167 stars for query \"compliance ai\""
+    },
+    {
+      "domain": "Healthcare & Medical AI",
+      "name": "doctor-dok",
+      "description": "Doctor Dok is an AI based medical data framework and patient's med vault. Parse any health related PDF/Image to JSON and then use Chat GPT / LLama to discuss it! WARNING: Don't decide on your health based on AI Chat - it's just for Research purposes.",
+      "link": "http://doctordok.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/91542504?v=4&s=64",
+      "about": "Doctor Dok is an AI based medical data framework and patient's med vault. Parse any health related PDF/Image to JSON and then use Chat GPT / LLama to discuss it! WARNING: Don't decide on your health based on AI Chat - it's just for Research purposes.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 94 stars for query \"healthcare ai\""
+    },
+    {
+      "domain": "Finance & Accounting",
+      "name": "TaxHacker",
+      "description": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
+      "link": "https://taxhacker.app",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/176344?v=4&s=64",
+      "about": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 510 stars for query \"accounting ai\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "I built and launched the first AirPods-Controlled Game",
+      "description": "I built and launched the first AirPods-Controlled Game",
+      "link": "https://apps.apple.com/us/app/ridepods-race-with-head/id6752268828",
+      "tags": [
+        "Trending"
+      ],
+      "about": "I built and launched the first AirPods-Controlled Game",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (222 points) for \"game ai\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "Show HN: FLE v0.3 – Claude Code Plays Factorio",
+      "description": "Show HN: FLE v0.3 – Claude Code Plays Factorio",
+      "link": "https://jackhopkins.github.io/factorio-learning-environment/versions/0.3.0.html",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Show HN: FLE v0.3 – Claude Code Plays Factorio",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (75 points) for \"game ai\""
+    },
+    {
+      "domain": "Sales & CRM",
+      "name": "iceburgcrm",
+      "description": "Laravel CRM  - PHP CRM -  AI CRM - Metadata CRM.  Iceburg CRM is Open Source, metadata driven, extendable, unlimited relationships, convertable modules, 29 default themes, light/dark themes.  It also have optional AI Abilities  Using AI describe your CRM and use AI to Create it.",
+      "link": "https://www.iceburg.ca",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/118024971?v=4&s=64",
+      "about": "Laravel CRM  - PHP CRM -  AI CRM - Metadata CRM.  Iceburg CRM is Open Source, metadata driven, extendable, unlimited relationships, convertable modules, 29 default themes, light/dark themes.  It also have optional AI Abilities  Using AI describe your CRM and use AI to Create it.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 212 stars for query \"crm ai\""
+    },
+    {
+      "domain": "Social Media & Content",
+      "name": "obsei",
+      "description": "Obsei is a low code AI powered automation tool. It can be used in various business flows like social listening, AI based alerting, brand image analysis, comparative study and more .",
+      "link": "https://obsei.com/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/86866992?v=4&s=64",
+      "about": "Obsei is a low code AI powered automation tool. It can be used in various business flows like social listening, AI based alerting, brand image analysis, comparative study and more .",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,345 stars for query \"social listening ai\""
+    },
+    {
+      "domain": "Real Estate & PropTech",
+      "name": "Apple defined ICE as a \"protected class\" in blocking anti-ICE apps",
+      "description": "Apple defined ICE as a \"protected class\" in blocking anti-ICE apps",
+      "link": "https://boingboing.net/2025/10/08/report-apple-defined-ice-as-a-protected-class-in-blocking-discriminatory-anti-ice-apps.html",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Apple defined ICE as a \"protected class\" in blocking anti-ICE apps",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (143 points) for \"proptech\""
+    },
+    {
+      "domain": "Real Estate & PropTech",
+      "name": "Show HN: AI Code Detector – detect AI-generated code with 95% accuracy",
+      "description": "Show HN: AI Code Detector – detect AI-generated code with 95% accuracy",
+      "link": "https://code-detector.ai/",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Show HN: AI Code Detector – detect AI-generated code with 95% accuracy",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (72 points) for \"real estate ai\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "context7",
+      "description": "Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors",
+      "link": "https://context7.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/74989412?v=4&s=64",
+      "about": "Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 33,244 stars for query \"ai code\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "opencode",
+      "description": "The AI coding agent built for the terminal.",
+      "link": "https://opencode.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/66570915?v=4&s=64",
+      "about": "The AI coding agent built for the terminal.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 27,244 stars for query \"ai code\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "agenticSeek",
+      "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
+      "link": "http://agenticseek.tech",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/49105846?v=4&s=64",
+      "about": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 22,112 stars for query \"code llm\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "goose",
+      "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "link": "https://block.github.io/goose/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/185116535?v=4&s=64",
+      "about": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 20,230 stars for query \"code llm\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "opcode",
+      "description": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.",
+      "link": "https://opcode.sh",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/176251414?v=4&s=64",
+      "about": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 18,096 stars for query \"code llm\""
     }
   ]
 }
