@@ -1019,23 +1019,17 @@
                 }
             }
 
-            // Pinned domains helper: ensure important categories are visible first on home and in dropdowns
-            const PINNED_DOMAIN_SLUGS = ['github-ai-projects'];
+            // Domain ordering helper: place 'github-ai-projects' at the 8th position (index 7) on home and dropdowns
             function getOrderedDomains() {
                 try {
-                    const list = Array.isArray(db) ? db.map((d, i) => ({ d, i })) : [];
-                    list.sort((a, b) => {
-                        const aSlug = String(a.d?.slug || '');
-                        const bSlug = String(b.d?.slug || '');
-                        const aPin = PINNED_DOMAIN_SLUGS.indexOf(aSlug);
-                        const bPin = PINNED_DOMAIN_SLUGS.indexOf(bSlug);
-                        const aRank = aPin === -1 ? Number.MAX_SAFE_INTEGER : aPin;
-                        const bRank = bPin === -1 ? Number.MAX_SAFE_INTEGER : bPin;
-                        if (aRank !== bRank) return aRank - bRank;
-                        // Stable fallback using original index
-                        return a.i - b.i;
-                    });
-                    return list.map(x => x.d);
+                    const list = Array.isArray(db) ? db.slice() : [];
+                    const idx = list.findIndex(d => String(d?.slug || '') === 'github-ai-projects');
+                    if (idx !== -1) {
+                        const section = list.splice(idx, 1)[0];
+                        const insertAt = Math.min(7, list.length); // 0-based -> 7 means 8th position
+                        list.splice(insertAt, 0, section);
+                    }
+                    return list;
                 } catch { return Array.isArray(db) ? db : []; }
             }
 
@@ -1741,21 +1735,6 @@
 
                     const domainTools = (domain.tools || []).filter(t => !isExcludedTool(t));
 
-                    // Group tools by pricing model
-                    const openSource = (domainTools || []).filter(t => (t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase())));
-                    const free = (domainTools || []).filter(t =>
-                        !(t.tags||[]).some(tag => /open ?source|freemium|paid|subscription|enterprise/i.test(tag)) &&
-                        ((t.tags||[]).some(tag => /free/i.test(tag)) || (t.price && t.price.toLowerCase() === 'free'))
-                    );
-                    const freemium = (domainTools || []).filter(t =>
-                        (t.tags||[]).some(tag => /freemium/i.test(String(tag))) &&
-                        !(t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
-                    );
-                    const paid = (domainTools || []).filter(t =>
-                        (t.tags||[]).some(tag => /paid|subscription|subscribe|premium|enterprise/i.test(String(tag))) &&
-                        !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
-                    );
-
                     // Helper to render a vertical list of tools in a single card.
                     // NOTE: Empty groups are no longer rendered at all to avoid grid gaps & "jumbled" ordering.
                     function renderGroupCard(title, tools, color, totalCount) {
@@ -1795,19 +1774,66 @@
                             </div>
                         `;
                     }
+                    // For GitHub AI Projects, relax grouping to tag-based 4 custom groups so items don't disappear due to pricing tags
+                    let groupData;
+                    if (domain.slug === 'github-ai-projects') {
+                        const normalize = (arr) => (Array.isArray(arr) ? arr : []).map(x => String(x).toLowerCase());
+                        const byTag = {
+                            frameworks: [],
+                            agents: [],
+                            models: [],
+                            utilities: []
+                        };
+                        for (const t of domainTools) {
+                            const tags = normalize(t.tags);
+                            const name = String(t.name || '').toLowerCase();
+                            const desc = String(t.description || '').toLowerCase();
+                            const text = tags.join(' ') + ' ' + name + ' ' + desc;
+                            if (/(framework|sdk|library|toolkit|api|package|plugin)/i.test(text)) {
+                                byTag.frameworks.push(t);
+                            } else if (/(agent|agents|orchestr|workflow|automation|assistant|autonomous)/i.test(text)) {
+                                byTag.agents.push(t);
+                            } else if (/(llm|model|inference|transformer|diffusion|vision|speech|tts|asr|nlp)/i.test(text)) {
+                                byTag.models.push(t);
+                            } else {
+                                byTag.utilities.push(t);
+                            }
+                        }
+                        groupData = [
+                            { title: 'Frameworks & SDKs', tools: byTag.frameworks, color: '#0ea5e9' },
+                            { title: 'Agents & Orchestration', tools: byTag.agents, color: '#7c3aed' },
+                            { title: 'Models & Inference', tools: byTag.models, color: '#059669' },
+                            { title: 'Apps & Utilities', tools: byTag.utilities, color: '#f59e0b' }
+                        ];
+                    } else {
+                        // Default pricing-based grouping for other domains
+                        const openSource = (domainTools || []).filter(t => (t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase())));
+                        const free = (domainTools || []).filter(t =>
+                            !(t.tags||[]).some(tag => /open ?source|freemium|paid|subscription|enterprise/i.test(tag)) &&
+                            ((t.tags||[]).some(tag => /free/i.test(tag)) || (t.price && t.price.toLowerCase() === 'free'))
+                        );
+                        const freemium = (domainTools || []).filter(t =>
+                            (t.tags||[]).some(tag => /freemium/i.test(String(tag))) &&
+                            !(t.tags||[]).some(tag => /(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
+                        );
+                        const paid = (domainTools || []).filter(t =>
+                            (t.tags||[]).some(tag => /paid|subscription|subscribe|premium|enterprise/i.test(String(tag))) &&
+                            !(t.tags||[]).some(tag => /freemium|free|(^oss$)|open[\s-]?source/i.test(String(tag).toLowerCase()))
+                        );
+                        groupData = [
+                            { title: 'Free', tools: free, color: '#22d3ee' },
+                            { title: 'Freemium', tools: freemium, color: '#6366f1' },
+                            { title: 'Paid/Subscription', tools: paid, color: '#f59e42' },
+                            { title: 'Open Source', tools: openSource, color: '#10b981' }
+                        ];
+                    }
 
-                    // Compose the group cards, omitting empty groups and adjusting grid columns
-                    // Reordered so Open Source appears as the rightmost column consistently
-                    const groupData = [
-                        { title: 'Free', tools: free, color: '#22d3ee' },
-                        { title: 'Freemium', tools: freemium, color: '#6366f1' },
-                        { title: 'Paid/Subscription', tools: paid, color: '#f59e42' },
-                        { title: 'Open Source', tools: openSource, color: '#10b981' }
-                    ];
                     // Only render non-empty groups to prevent layout gaps.
                     const nonEmptyGroups = groupData.filter(g => g.tools.length > 0);
-                    const groupCards = nonEmptyGroups.map(g => renderGroupCard(g.title, g.tools, g.color, g.tools.length)).join('');
-                    const groupCount = Math.max(1, Math.min(nonEmptyGroups.length || 1, 4));
+                    // If all groups are empty (edge case), show all tools under Utilities as fallback
+                    const effectiveGroups = nonEmptyGroups.length > 0 ? nonEmptyGroups : [{ title: 'All Tools', tools: domainTools, color: '#6b7280' }];
+                    const groupCards = effectiveGroups.map(g => renderGroupCard(g.title, g.tools, g.color, g.tools.length)).join('');
+                    const groupCount = Math.max(1, Math.min(effectiveGroups.length || 1, 4));
                     const gridColsClass = groupCount === 1 ? 'grid-cols-1' : groupCount === 2 ? 'grid-cols-1 sm:grid-cols-2' : groupCount === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
 
                     contentArea.innerHTML = `
