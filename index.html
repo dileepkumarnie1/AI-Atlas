@@ -226,10 +226,10 @@
         .text-secondary { color: var(--text-secondary); }
         .text-muted { color: var(--text-muted); }
 
-        .prose { color: var(--text-secondary); }
+    .prose { color: var(--text-secondary); }
         .prose h1, .prose h2, .prose h5, .prose h6 { color: var(--text-primary); }
     /* Footer styles */
-    .site-footer { background-color: #0e1220; color: #e5e7eb; }
+    .site-footer { background-color: #161b2e; color: #e5e7eb; }
     .site-footer .footer-link { color: #cbd5e1; }
     .site-footer .footer-link:hover { color: #ffffff; text-decoration: underline; }
     .site-footer .footer-icon { color: #cbd5e1; }
@@ -238,6 +238,8 @@
     .site-footer .footer-input::placeholder { color: #a5b4fc; }
     .site-footer .footer-button { background: #4f46e5; color: white; }
     .site-footer .footer-button:hover { background: #4338ca; }
+    /* Slight top padding so hero never sits under header due to async font loads */
+    #content-area { padding-top: 0.5rem; }
 
         .tool-details {
             max-height: 0;
@@ -594,7 +596,8 @@
             function apply(){
                 if (!header || !spacer) return;
                 const h = header.getBoundingClientRect().height;
-                spacer.style.height = h + 'px';
+                const extra = 8; // add a small buffer so hero text never clips under header
+                spacer.style.height = (h + extra) + 'px';
             }
             window.addEventListener('load', apply);
             window.addEventListener('resize', apply);
