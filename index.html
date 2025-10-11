@@ -336,6 +336,12 @@
         .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
         .pager-btn[disabled] { opacity:.5; cursor: not-allowed; }
 
+        /* Category rail helpers */
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .cat-chip { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .4rem .75rem; border-radius:9999px; white-space: nowrap; }
+        .cat-chip[aria-pressed="true"] { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.35); color: var(--text-primary); }
+
         /* Tool Details Modal Styles */
         #tool-details-modal-content {
             max-width: 600px;
@@ -1484,7 +1490,7 @@
                             </div>
 
                             <!-- Search + Category split row -->
-                            <div class="max-w-4xl mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
+                            <div class="max-w-4xl mx-auto mb-4 grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
                                 <div>
                                     <div class="search-wrapper mb-0">
                                         <input id="search-bar-new" class="search-input w-full" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
@@ -1494,6 +1500,9 @@
                                     <select id="category-select" class="search-input w-full text-center"></select>
                                 </div>
                             </div>
+
+                            <!-- Category rail (single line, scrollable) -->
+                            <div id="category-rail-root" class="max-w-4xl mx-auto mb-5"></div>
 
                             <div id="search-results-container"></div>
 
@@ -1512,6 +1521,7 @@
                     const clearBtn = null; // clear removed
                     const resultsContainer = document.getElementById('search-results-container');
                     const topStripEl = document.getElementById('top-tools-strip');
+                    const categoryRailRoot = document.getElementById('category-rail-root');
 
                     // --- Top Tools rotating strip (logo + name only) ---
                     function stripIconImgHtml(tool, size=48) {
@@ -1724,6 +1734,85 @@
                     // initial render
                     renderTopStrip();
 
+                    // --- Category rail ---
+                    function renderCategoryRail(matches) {
+                        if (!categoryRailRoot) return;
+                        const counts = computeCategoryCounts(matches);
+                        const cats = getOrderedDomains();
+                        const active = state.categoryExplicit ? (state.selectedCategory || 'all') : '';
+                        const chips = cats.map(c => {
+                            const ccount = counts[c.slug] || 0;
+                            return `<button class="cat-chip" role="button" data-slug="${c.slug}" aria-pressed="${active===c.slug}">${escapeHtml(c.name)} <span class="opacity-70">(${ccount})</span></button>`;
+                        });
+                        const allActive = active==='' ? 'true' : 'false';
+                        const allChip = `<button class="cat-chip" role="button" data-slug="all" aria-pressed="${allActive}">All <span class="opacity-70">(${counts.all || 0})</span></button>`;
+                        const exploreChip = `<a href="#" id="all-categories-link" class="cat-chip">All categories ›</a>`;
+                        categoryRailRoot.innerHTML = `
+                            <div class="relative">
+                                <button id="cat-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full border border-color bg-card px-2 py-1 shadow-sm" aria-label="Scroll left">◀</button>
+                                <div id="cat-viewport" class="overflow-x-auto no-scrollbar">
+                                    <div id="cat-track" class="flex items-center gap-2 px-8 py-2" style="scroll-snap-type:x mandatory;">
+                                        <span class="shrink-0" style="scroll-snap-align:start">${allChip}</span>
+                                        ${chips.map(html => `<span class="shrink-0" style="scroll-snap-align:start">${html}</span>`).join('')}
+                                        <span class="shrink-0" style="scroll-snap-align:start">${exploreChip}</span>
+                                    </div>
+                                </div>
+                                <button id="cat-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full border border-color bg-card px-2 py-1 shadow-sm" aria-label="Scroll right">▶</button>
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-0 w-6" style="background:linear-gradient(to right, var(--bg-primary), transparent);"></div>
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 w-6" style="background:linear-gradient(to left, var(--bg-primary), transparent);"></div>
+                            </div>`;
+
+                        const viewport = document.getElementById('cat-viewport');
+                        const left = document.getElementById('cat-left');
+                        const right = document.getElementById('cat-right');
+                        const track = document.getElementById('cat-track');
+                        const by = () => Math.max(200, Math.floor(viewport.clientWidth * 0.8));
+                        if (left) left.onclick = () => viewport.scrollBy({ left: -by(), behavior: 'smooth' });
+                        if (right) right.onclick = () => viewport.scrollBy({ left: by(), behavior: 'smooth' });
+                        // Drag-to-scroll
+                        let down = false, startX = 0, startLeft = 0;
+                        viewport.addEventListener('pointerdown', (e) => { down = true; startX = e.clientX; startLeft = viewport.scrollLeft; viewport.style.cursor='grabbing'; });
+                        viewport.addEventListener('pointermove', (e) => { if (!down) return; viewport.scrollLeft = startLeft - (e.clientX - startX); });
+                        const endDrag = () => { down = false; viewport.style.cursor='grab'; };
+                        viewport.addEventListener('pointerup', endDrag);
+                        viewport.addEventListener('pointercancel', endDrag);
+                        viewport.addEventListener('mouseleave', () => { if (down) endDrag(); });
+                        // Click handling
+                        track.querySelectorAll('.cat-chip').forEach(btn => {
+                            const slug = btn.getAttribute('data-slug');
+                            if (!slug) return;
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if (slug === 'all') {
+                                    state.categoryExplicit = false;
+                                    state.selectedCategory = 'all';
+                                    searchPage = 1;
+                                    renderSearchResults();
+                                    renderCategorySelect(currentMatchesCache);
+                                    renderCategoryRail(currentMatchesCache);
+                                    return;
+                                }
+                                state.categoryExplicit = true;
+                                state.selectedCategory = slug;
+                                if (!state.searchQuery.trim()) {
+                                    state.selectedDomain = slug;
+                                    state.currentView = 'tools';
+                                    render();
+                                } else {
+                                    searchPage = 1;
+                                    renderSearchResults();
+                                    renderCategorySelect(currentMatchesCache);
+                                    renderCategoryRail(currentMatchesCache);
+                                }
+                            });
+                        });
+                        const allLink = document.getElementById('all-categories-link');
+                        if (allLink) allLink.addEventListener('click', (e) => { e.preventDefault(); state.currentView = 'home'; alert('Full category index coming soon.'); });
+                    }
+
+                    // Initial render of category rail (no matches -> total counts)
+                    renderCategoryRail([]);
+
                     function computeCategoryCounts(matches) {
                         const counts = { all: 0 };
                         const list = matches && matches.length ? matches : (db || []).flatMap(d => (d.tools||[]));
@@ -1848,6 +1937,7 @@
                             renderSearchResults();
                             // When typing, refresh dropdown with counts for the current matches
                             renderCategorySelect(currentMatchesCache);
+                            renderCategoryRail(currentMatchesCache);
                         });
                         sb.addEventListener('keydown', (e) => {
                             if (e.key === 'Enter') e.preventDefault();
@@ -1857,6 +1947,7 @@
 
                     // Initial dropdown render (no query -> total counts)
                     renderCategorySelect([]);
+                    renderCategoryRail([]);
                     attachDomainCardListeners();
                 },
                 renderTools: () => {
