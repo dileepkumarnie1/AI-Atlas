@@ -239,16 +239,8 @@
     .site-footer .footer-button { background: #4f46e5; color: white; }
     .site-footer .footer-button:hover { background: #4338ca; }
     .site-footer hr { border-color: rgba(0,0,0,0.08); }
-    html.dark .site-footer { background-color: #1f2937; color: #e5e7eb; }
-    html.dark .site-footer .footer-link { color: #cbd5e1; }
-    html.dark .site-footer .footer-link:hover { color: #ffffff; }
-    html.dark .site-footer .footer-icon { color: #cbd5e1; }
-    html.dark .site-footer .footer-icon:hover { color: #ffffff; }
-    html.dark .site-footer .footer-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #eef2ff; }
-    html.dark .site-footer .footer-input::placeholder { color: #a5b4fc; }
-    html.dark .site-footer hr { border-color: rgba(255,255,255,0.1); }
     /* Slight top padding so top sections never sit under header on any page */
-    #content-area { padding-top: 2rem; }
+    #content-area { padding-top: 3rem; }
 
         .tool-details {
             max-height: 0;
@@ -605,7 +597,7 @@
             function apply(){
                 if (!header || !spacer) return;
                 const h = header.getBoundingClientRect().height;
-                const extra = 40; // larger buffer so top sections never clip under header (all pages)
+                const extra = 64; // even larger buffer so top sections never clip under header (all pages)
                 spacer.style.height = (h + extra) + 'px';
             }
             window.addEventListener('load', apply);
