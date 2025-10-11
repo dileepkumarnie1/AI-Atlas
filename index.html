@@ -239,7 +239,7 @@
     .site-footer .footer-button { background: #4f46e5; color: white; }
     .site-footer .footer-button:hover { background: #4338ca; }
     /* Slight top padding so hero never sits under header due to async font loads */
-    #content-area { padding-top: 0.5rem; }
+    #content-area { padding-top: 1.25rem; }
 
         .tool-details {
             max-height: 0;
@@ -596,7 +596,7 @@
             function apply(){
                 if (!header || !spacer) return;
                 const h = header.getBoundingClientRect().height;
-                const extra = 8; // add a small buffer so hero text never clips under header
+                const extra = 24; // larger buffer so hero text never clips under header
                 spacer.style.height = (h + extra) + 'px';
             }
             window.addEventListener('load', apply);
