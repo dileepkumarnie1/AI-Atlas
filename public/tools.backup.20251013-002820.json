@@ -22,7 +22,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://airbyte.com/favicon.svg"
+        "iconUrl": "https://airbyte.com/favicon.ico"
       },
       {
         "name": "chatbox",
@@ -177,7 +177,7 @@
         "about": "Gemini AI",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://deepmind.google/favicon.svg"
+        "iconUrl": "https://deepmind.google/static/icons/google_deepmind_32dp.c67bb05568f4.ico"
       },
       {
         "name": "Grok (xAI)",
@@ -259,7 +259,7 @@
           "May require fact‑checking.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://getleon.ai/favicon.svg"
+        "iconUrl": "https://getleon.ai/img/favicon.png"
       },
       {
         "name": "Llama (Meta)",
@@ -303,7 +303,7 @@
           "Assistant",
           "Consumer"
         ],
-        "iconUrl": "https://www.meta.ai/favicon.svg",
+        "iconUrl": "https://about.meta.com/favicon.ico",
         "about": "Meta AI offers chat, image generation, and search‑enhanced answers across Meta properties, focusing on mainstream, mobile‑first usage.",
         "pros": [
           "Broad reach across Meta apps.",
@@ -337,7 +337,7 @@
           "Assistant",
           "Ecosystem"
         ],
-        "iconUrl": "https://copilot.microsoft.com/favicon.svg",
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
         "about": "Microsoft Copilot brings generative AI to everyday workflows across web, desktop, and productivity apps, offering chat, image generation, and contextual help.",
         "pros": [
           "Deep OS and M365 integration.",
@@ -359,7 +359,7 @@
           "LLM",
           "Lightweight"
         ],
-        "iconUrl": "https://chat.mistral.ai/favicon.svg",
+        "iconUrl": "https://mistral.ai/favicon.ico",
         "about": "Mistral’s chat app provides snappy responses and strong coding/writing with lean models that run efficiently.",
         "pros": [
           "Responsive.",
@@ -388,7 +388,7 @@
         "cons": [
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://mlflow.org/favicon.svg"
+        "iconUrl": "https://mlflow.org/img/mlflow-favicon.ico"
       },
       {
         "name": "Notebook LLM",
@@ -407,7 +407,7 @@
         "about": "Sign in - Google Accounts",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://notebooklm.google.com/favicon.svg"
+        "iconUrl": "https://notebooklm.google.com/favicon.ico"
       },
       {
         "name": "Open-Assistant",
@@ -491,7 +491,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://www.sim.ai/favicon.svg"
+        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
       },
       {
         "name": "supabase",
@@ -513,7 +513,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://supabase.com/favicon.svg"
+        "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
       },
       {
         "name": "tabby",
@@ -549,7 +549,7 @@
           "design",
           "Freemium"
         ],
-        "iconUrl": "https://agent-zero.ai/favicon.svg",
+        "iconUrl": "https://agent-zero.ai/res/favicon_round.png",
         "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
         "pros": [
           "Good for drafting and Q&A."
@@ -619,7 +619,7 @@
           "Freemium",
           "Personas"
         ],
-        "iconUrl": "https://beta.character.ai/favicon.svg",
+        "iconUrl": "https://beta.character.ai/favicon.ico",
         "about": "Create and chat with custom personalities for entertainment, brainstorming, and roleplay.",
         "pros": [
           "Huge community of personas.",
@@ -717,7 +717,7 @@
         "about": "Fast, high-quality LLM chat",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://chat.deepseek.com/favicon.svg"
+        "iconUrl": "https://chat.deepseek.com/favicon.ico"
       },
       {
         "name": "dspy",
@@ -772,7 +772,7 @@
           "Free",
           "LLM"
         ],
-        "iconUrl": "https://bard.google.com/favicon.svg",
+        "iconUrl": "https://bard.google.com/favicon.ico",
         "about": "Bard is Google's conversational AI, designed for creative writing, Q&A, and productivity.",
         "pros": [
           "Free to use.",
@@ -850,7 +850,7 @@
           "Subscription",
           "Content"
         ],
-        "iconUrl": "https://www.jasper.ai/favicon.svg",
+        "iconUrl": "https://www.jasper.ai/favicon.ico",
         "about": "Jasper is a leading AI writing assistant for marketers, bloggers, and businesses, offering templates and tone control.",
         "pros": [
           "Great for marketing copy.",
@@ -895,7 +895,7 @@
           "Freemium",
           "Search"
         ],
-        "iconUrl": "https://copilot.microsoft.com/favicon.svg",
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
         "about": "Brings web‑aware chat, image creation, and graph‑based answers in one place.",
         "pros": [
           "Good web grounding.",
@@ -928,7 +928,7 @@
           "Free",
           "LLM"
         ],
-        "iconUrl": "https://chat.mistral.ai/favicon.svg",
+        "iconUrl": "https://mistral.ai/favicon.ico",
         "about": "Concise, code‑friendly responses with efficient open models.",
         "pros": [
           "Quick replies.",
@@ -975,7 +975,7 @@
         "about": "Unified AI chat assistant platform",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://orchids.ai/favicon.svg"
+        "iconUrl": "https://orchids.ai/favicon.ico"
       },
       {
         "name": "pathway",
@@ -988,7 +988,7 @@
         "about": "Pathway - Fundamentally changing the way models think",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://pathway.com/favicon.svg"
+        "iconUrl": "https://pathway.com/favicon-96x96.png"
       },
       {
         "name": "Perplexity AI",
@@ -1040,7 +1040,7 @@
           "Freemium",
           "Paraphrasing"
         ],
-        "iconUrl": "https://quillbot.com/favicon.svg",
+        "iconUrl": "https://quillbot.com/favicon.ico",
         "about": "QuillBot helps rewrite, summarize, and improve clarity of text for students, writers, and professionals.",
         "pros": [
           "Easy paraphrasing.",
@@ -1073,7 +1073,7 @@
           "Freemium",
           "Companion"
         ],
-        "iconUrl": "https://replika.com/favicon.svg",
+        "iconUrl": "https://replika.com/favicon.ico",
         "about": "Replika is an AI chatbot designed for personal conversation, support, and companionship.",
         "pros": [
           "Emotional support.",
@@ -1121,7 +1121,7 @@
         "about": "Creative ideation chat assistant",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://seeddream.app/favicon.svg"
+        "iconUrl": "https://seeddream.app/favicon.ico"
       },
       {
         "name": "Writer",
@@ -1133,7 +1133,7 @@
           "Copywriting",
           "Brand Voice"
         ],
-        "iconUrl": "https://writer.com/favicon.svg",
+        "iconUrl": "https://writer.com/wp-content/themes/writer/favicon/favicon-32x32.png",
         "about": "Writer is an enterprise-grade generative AI platform that lets organizations ground models in their own data, brand, and style guidelines so every output is consistent, accurate, and compliant across teams.",
         "pros": [
           "Supports brand and style governance.",
@@ -1156,7 +1156,7 @@
           "Privacy",
           "Freemium"
         ],
-        "iconUrl": "https://you.com/favicon.svg",
+        "iconUrl": "https://you.com/favicon.ico",
         "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
         "pros": [
           "Customizable search.",
@@ -1206,7 +1206,7 @@
           "Freemium",
           "Design"
         ],
-        "iconUrl": "https://www.canva.com/favicon.svg",
+        "iconUrl": "https://www.canva.com/favicon.ico",
         "about": "Canva AI offers text-to-image, Magic Design, and other generative features for easy content creation.",
         "pros": [
           "Beginner-friendly.",
@@ -1227,7 +1227,7 @@
           "Freemium",
           "Enhancement"
         ],
-        "iconUrl": "https://clipdrop.co/favicon.svg",
+        "iconUrl": "https://clipdrop.co/favicon.ico",
         "about": "Clipdrop provides tools for background removal, relighting, upscaling, and more using AI.",
         "pros": [
           "Fast and accurate.",
@@ -1308,7 +1308,7 @@
           "Render times or credit limits may apply.",
           "May need cleanup for artifacts."
         ],
-        "iconUrl": "https://activeloop.ai/favicon.svg"
+        "iconUrl": "https://activeloop.ai/favicon-32x32.png?v=f10fa296f4fa621b5b31a72bb489f553"
       },
       {
         "name": "DreamStudio",
@@ -1318,7 +1318,7 @@
           "Freemium",
           "Text-to-Image"
         ],
-        "iconUrl": "https://dreamstudio.ai/favicon.svg",
+        "iconUrl": "https://dreamstudio.ai/favicon.ico",
         "about": "DreamStudio is the official web interface for Stable Diffusion, offering easy prompt-based image creation.",
         "pros": [
           "Official SD interface.",
@@ -1347,7 +1347,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://easydiffusion.github.io/favicon.svg"
+        "iconUrl": "https://easydiffusion.github.io/favicon.ico?1"
       },
       {
         "name": "Fotor AI",
@@ -1357,7 +1357,7 @@
           "Freemium",
           "Photo Editing"
         ],
-        "iconUrl": "https://www.fotor.com/favicon.svg",
+        "iconUrl": "https://www.fotor.com/favicon.ico",
         "about": "Fotor AI offers one-click photo enhancement, background removal, and creative effects.",
         "pros": [
           "Easy photo editing.",
@@ -1425,7 +1425,7 @@
           "Upscaling",
           "Design"
         ],
-        "iconUrl": "https://www.krea.ai/favicon.svg",
+        "iconUrl": "https://www.krea.ai/favicon.ico",
         "about": "Krea AI offers real-time, interactive image generation where visuals evolve instantly with prompts, sketches, and color cues, plus powerful enhancement and upscaling tools for moving from ideation to production quality.",
         "pros": [
           "Interactive real-time creative workflow.",
@@ -1522,7 +1522,7 @@
           "Freemium",
           "Text-to-Image"
         ],
-        "iconUrl": "https://nightcafe.studio/favicon.svg",
+        "iconUrl": "https://nightcafe.studio/favicon.ico",
         "about": "Create art quickly using style presets; join community challenges to explore prompts.",
         "pros": [
           "Easy to start.",
@@ -1543,7 +1543,7 @@
           "Freemium",
           "Text-to-Image"
         ],
-        "iconUrl": "https://playground.com/favicon.svg",
+        "iconUrl": "https://playground.com/favicon.ico",
         "about": "Fast, creative generations with good text rendering and an easy prompt UI.",
         "pros": [
           "Great typography.",
@@ -1567,7 +1567,7 @@
         "about": "Riffusion – Stable Diffusion fine-tuned to generate music",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.riffusion.com/favicon.svg"
+        "iconUrl": "https://www.riffusion.com/favicon.ico"
       },
       {
         "name": "Stable Diffusion",
@@ -1618,7 +1618,7 @@
           "Freemium",
           "Talking Head"
         ],
-        "iconUrl": "https://www.d-id.com/favicon.svg",
+        "iconUrl": "https://www.d-id.com/favicon.ico",
         "about": "D-ID animates photos into talking head videos for presentations, learning, and more.",
         "pros": [
           "Easy to use.",
@@ -1639,7 +1639,7 @@
           "Subscription",
           "Avatars"
         ],
-        "iconUrl": "https://www.deepbrain.io/favicon.svg",
+        "iconUrl": "https://www.deepbrain.io/favicon.ico",
         "about": "DeepBrain AI generates realistic AI avatars for video content, news, and training.",
         "pros": [
           "Lifelike avatars.",
@@ -1682,7 +1682,7 @@
           "Text-to-Video",
           "Freemium"
         ],
-        "iconUrl": "https://deepmind.google/favicon.svg",
+        "iconUrl": "https://www.google.com/favicon.ico",
         "about": "Advanced T2V with strong scene coherence and camera control showcased in research demos.",
         "pros": [
           "High fidelity.",
@@ -1757,7 +1757,7 @@
           "Freemium",
           "Video Effects"
         ],
-        "iconUrl": "https://www.kaiber.ai/favicon.svg",
+        "iconUrl": "https://www.kaiber.ai/favicon.ico",
         "about": "Turn static images into animated clips and apply stylistic transformations easily.",
         "pros": [
           "Great styles.",
@@ -1811,7 +1811,7 @@
           "Freemium",
           "Text-to-Video"
         ],
-        "iconUrl": "https://lumalabs.ai/favicon.svg",
+        "iconUrl": "https://lumalabs.ai/favicon.ico",
         "about": "Generates cinematic clips with good motion and style adherence from short prompts.",
         "pros": [
           "Crisp visuals.",
@@ -1845,7 +1845,7 @@
           "Video Repurposing",
           "Social Media"
         ],
-        "iconUrl": "https://www.opus.pro/favicon.svg",
+        "iconUrl": "https://www.opus.pro/favicon.ico",
         "about": "Opus Clip uses AI to identify the most engaging segments of long-form video content (podcasts, webinars, interviews) and converts them into short, captioned, social-media-ready clips with automated framing, dynamic captions, and virality scoring.",
         "pros": [
           "Automatic highlight detection saves editing time.",
@@ -1866,7 +1866,7 @@
           "Freemium",
           "Text-to-Video"
         ],
-        "iconUrl": "https://pictory.ai/favicon.svg",
+        "iconUrl": "https://pictory.ai/favicon.ico",
         "about": "Pictory turns scripts and blog posts into short videos with AI narration and visuals.",
         "pros": [
           "Fast video creation.",
@@ -1972,7 +1972,7 @@
           "Freemium",
           "Editing"
         ],
-        "iconUrl": "https://www.veed.io/favicon.svg",
+        "iconUrl": "https://www.veed.io/favicon.ico",
         "about": "Veed.io offers video editing, subtitles, and AI tools for content creators.",
         "pros": [
           "Beginner-friendly.",
@@ -2022,7 +2022,7 @@
           "Freemium",
           "Code"
         ],
-        "iconUrl": "https://www.useblackbox.io/favicon.svg",
+        "iconUrl": "https://www.useblackbox.io/favicon.ico",
         "about": "Blackbox AI provides code search, autocomplete, and code generation for multiple languages.",
         "pros": [
           "Fast code search.",
@@ -2043,7 +2043,7 @@
           "Free",
           "Autocomplete"
         ],
-        "iconUrl": "https://codeium.com/favicon.svg",
+        "iconUrl": "https://codeium.com/favicon.ico",
         "about": "Fast, privacy‑friendly completions and inline chat with broad language support.",
         "pros": [
           "Free for individuals.",
@@ -2110,7 +2110,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://daytona.io/favicon.svg"
+        "iconUrl": "https://daytona.io/favicon.ico"
       },
       {
         "name": "JetBrains AI Assistant",
@@ -2249,7 +2249,7 @@
           "Freemium",
           "Repo Chat"
         ],
-        "iconUrl": "https://sourcegraph.com/favicon.svg",
+        "iconUrl": "https://sourcegraph.com/favicon.ico",
         "about": "Understands big monorepos, references, and symbols to answer and refactor at scale.",
         "pros": [
           "Great code navigation context.",
@@ -2280,7 +2280,7 @@
           "May require fact‑checking.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://sweep.dev/favicon.svg"
+        "iconUrl": "https://sweep.dev/favicon.ico"
       },
       {
         "name": "TabbyML",
@@ -2291,7 +2291,7 @@
           "Code",
           "Self-Hosted"
         ],
-        "iconUrl": "https://tabbyml.ai/favicon.svg",
+        "iconUrl": "https://tabbyml.ai/favicon.ico",
         "about": "TabbyML is an open, self‑hostable coding assistant that provides fast, private code completions and chat across editors and languages.",
         "pros": [
           "On‑prem and private by design.",
@@ -2395,7 +2395,7 @@
           "Freemium",
           "Audio Enhancement"
         ],
-        "iconUrl": "https://auphonic.com/favicon.svg",
+        "iconUrl": "https://auphonic.com/favicon.ico",
         "about": "Post‑production for podcasts and videos with target loudness and cleanup.",
         "pros": [
           "Reliable results.",
@@ -2416,7 +2416,7 @@
           "Freemium",
           "Audio Enhancement"
         ],
-        "iconUrl": "https://cleanvoice.ai/favicon.svg",
+        "iconUrl": "https://cleanvoice.ai/favicon.ico",
         "about": "Cleanvoice AI removes filler words, stutters, and background noise from audio files.",
         "pros": [
           "Fast cleanup.",
@@ -2444,7 +2444,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://cogidigm.com/favicon.svg"
+        "iconUrl": "https://cogidigm.com/favicon.ico"
       },
       {
         "name": "Descript Overdub",
@@ -2454,7 +2454,7 @@
           "Freemium",
           "Voice Cloning"
         ],
-        "iconUrl": "https://www.descript.com/favicon.svg",
+        "iconUrl": "https://www.descript.com/favicon.ico",
         "about": "Descript Overdub allows you to create a digital voice clone for editing and generating audio content.",
         "pros": [
           "Easy voice cloning.",
@@ -2499,7 +2499,7 @@
         "about": "Google's advanced music generation model and two new AI experiments",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://deepmind.google/favicon.svg"
+        "iconUrl": "https://deepmind.google/favicon.ico"
       },
       {
         "name": "Kits AI",
@@ -2509,7 +2509,7 @@
           "Freemium",
           "Music"
         ],
-        "iconUrl": "https://www.kits.ai/favicon.svg",
+        "iconUrl": "https://www.kits.ai/favicon.ico",
         "about": "Convert vocals between timbres, build custom voices, and explore curated model library.",
         "pros": [
           "Creator‑focused.",
@@ -2551,7 +2551,7 @@
           "Freemium",
           "Text-to-Speech"
         ],
-        "iconUrl": "https://play.ht/favicon.svg",
+        "iconUrl": "https://play.ht/favicon.ico",
         "about": "Large voice library, SSML controls, and cloning for podcasts, videos, and products.",
         "pros": [
           "High quality voices.",
@@ -2572,7 +2572,7 @@
           "Open Source",
           "Music Generation"
         ],
-        "iconUrl": "https://www.riffusion.com/favicon.svg",
+        "iconUrl": "https://www.riffusion.com/favicon.ico",
         "about": "Riffusion generates musical audio by producing spectrogram images with diffusion and converting them back to sound, enabling prompt‑based loops and styles.",
         "pros": [
           "Fun, prompt‑based music loops.",
@@ -2656,7 +2656,7 @@
           "Freemium",
           "Voice"
         ],
-        "iconUrl": "https://www.voicemod.net/favicon.svg",
+        "iconUrl": "https://www.voicemod.net/favicon.ico",
         "about": "Voicemod AI lets you transform your voice in real time for gaming, streaming, and content creation.",
         "pros": [
           "Fun effects.",
@@ -2687,7 +2687,7 @@
           "Scheduling",
           "Team Productivity"
         ],
-        "iconUrl": "https://www.getclockwise.com/favicon.svg",
+        "iconUrl": "https://www.getclockwise.com/favicon.ico",
         "about": "Clockwise reorganizes team calendars to reduce fragmentation, resolve conflicts, and protect focus time while respecting preferences and constraints.",
         "pros": [
           "Increases deep work blocks.",
@@ -2727,7 +2727,7 @@
           "Subscription required for full access.",
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://ellieai.com/favicon.svg"
+        "iconUrl": "https://tryellie.com/assets/favicon32.png"
       },
       {
         "name": "Fireflies.ai",
@@ -2758,7 +2758,7 @@
           "Subscription",
           "Suite"
         ],
-        "iconUrl": "https://workspace.google.com/favicon.svg",
+        "iconUrl": "https://www.google.com/favicon.ico",
         "about": "Write, analyze, and visualize with AI in Google Workspace apps.",
         "pros": [
           "Native Workspace UX.",
@@ -2809,7 +2809,7 @@
           "Subscription required for full access.",
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://joinly.ai/favicon.svg"
+        "iconUrl": "https://joinly.ai/favicon.ico"
       },
       {
         "name": "meeting-minutes",
@@ -2849,7 +2849,7 @@
           "Subscription required for full access.",
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://mem.ai/favicon.svg"
+        "iconUrl": "https://mem.ai/favicons/favicon.ico"
       },
       {
         "name": "Microsoft Copilot for M365",
@@ -2859,7 +2859,7 @@
           "Subscription",
           "Suite"
         ],
-        "iconUrl": "https://www.microsoft.com/favicon.svg",
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
         "about": "Drafts, analyzes, and visualizes directly inside M365 apps using your tenant data.",
         "pros": [
           "Deep app integration.",
@@ -2935,7 +2935,7 @@
           "Freemium",
           "Meetings"
         ],
-        "iconUrl": "https://otter.ai/favicon.svg",
+        "iconUrl": "https://otter.ai/favicon.ico",
         "about": "Real‑time capture and searchable transcripts for Zoom, Meet, and Teams.",
         "pros": [
           "Accurate live transcripts.",
@@ -2946,6 +2946,27 @@
           "Quality depends on audio.",
           "Limits on free tier.",
           "Data governance for enterprises."
+        ]
+      },
+      {
+        "name": "Poe by Quora",
+        "description": "Aggregator for multiple leading AI chatbots and models.",
+        "link": "https://poe.com/",
+        "tags": [
+          "Freemium",
+          "Aggregator"
+        ],
+        "iconUrl": "https://poe.com/favicon.ico",
+        "about": "Poe lets you chat with a variety of AI models (OpenAI, Anthropic, Google, etc.) in one place.",
+        "pros": [
+          "Multiple models in one app.",
+          "Custom bots.",
+          "Fast switching."
+        ],
+        "cons": [
+          "Premium for best models.",
+          "Quality varies.",
+          "Limited free usage."
         ]
       },
       {
@@ -3095,7 +3116,7 @@
           "Subscription required for full access.",
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://supernormal.com/favicon.svg"
+        "iconUrl": "https://supernormal.com/favicon.ico"
       },
       {
         "name": "Todoist",
@@ -3134,7 +3155,7 @@
           "Subscription",
           "Presentations"
         ],
-        "iconUrl": "https://www.beautiful.ai/favicon.svg",
+        "iconUrl": "https://www.beautiful.ai/favicon.ico",
         "about": "Helps craft polished decks quickly using smart templates and design constraints.",
         "pros": [
           "Polished output.",
@@ -3166,7 +3187,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://lightpanda.io/favicon.svg"
+        "iconUrl": "https://cdn.lightpanda.io/website/assets/images/favicon/apple-icon-57x57.png"
       },
       {
         "name": "Canva Magic Design",
@@ -3212,7 +3233,7 @@
         "about": "Figma AI",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://www.figma.com/favicon.svg"
+        "iconUrl": "https://static.figma.com/app/icon/1/favicon.ico"
       },
       {
         "name": "Figma AI (Diagram)",
@@ -3336,7 +3357,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://onlook.com/favicon.svg"
+        "iconUrl": "https://onlook.com/favicon.ico"
       },
       {
         "name": "Spline AI",
@@ -3346,7 +3367,7 @@
           "Freemium",
           "3D"
         ],
-        "iconUrl": "https://spline.design/favicon.svg",
+        "iconUrl": "https://spline.design/favicon.ico",
         "about": "Generate and edit 3D scenes and assets with AI prompts in a web editor.",
         "pros": [
           "Low barrier to 3D.",
@@ -3492,7 +3513,7 @@
           "Freemium",
           "Discovery"
         ],
-        "iconUrl": "https://www.litmaps.com/favicon.svg",
+        "iconUrl": "https://www.litmaps.com/favicon.ico",
         "about": "Map citations and topics to explore adjacent and seminal works quickly.",
         "pros": [
           "Great for scoping.",
@@ -3513,7 +3534,7 @@
           "Subscription",
           "Summarization"
         ],
-        "iconUrl": "https://www.scholarcy.com/favicon.svg",
+        "iconUrl": "https://www.scholarcy.com/favicon.ico",
         "about": "Extracts key points, figures, and references to accelerate reviews.",
         "pros": [
           "Saves time.",
@@ -3534,7 +3555,7 @@
           "Freemium",
           "Citations"
         ],
-        "iconUrl": "https://scite.ai/favicon.svg",
+        "iconUrl": "https://scite.ai/favicon.ico",
         "about": "See supporting, contrasting, and mentioning citations to judge evidence.",
         "pros": [
           "Great context.",
@@ -3588,7 +3609,7 @@
           "Subscription",
           "Copywriting"
         ],
-        "iconUrl": "https://anyword.com/favicon.svg",
+        "iconUrl": "https://anyword.com/favicon.ico",
         "about": "Generate and test marketing copy variants with audience‑based predictions.",
         "pros": [
           "Performance scoring.",
@@ -3630,7 +3651,7 @@
           "Subscription",
           "SEO"
         ],
-        "iconUrl": "https://www.frase.io/favicon.svg",
+        "iconUrl": "https://www.frase.io/favicon.ico",
         "about": "Research SERPs, create outlines, and optimize content for target keywords.",
         "pros": [
           "Solid briefs.",
@@ -3672,7 +3693,7 @@
           "Subscription",
           "SEO"
         ],
-        "iconUrl": "https://www.marketmuse.com/favicon.svg",
+        "iconUrl": "https://www.marketmuse.com/favicon.ico",
         "about": "Identify topics, gaps, and authority opportunities; score drafts for coverage.",
         "pros": [
           "Robust topic modeling.",
@@ -3735,7 +3756,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://dataline.app/favicon.svg"
+        "iconUrl": "https://dataline.app/favicon.ico"
       },
       {
         "name": "DeepBI",
@@ -3757,7 +3778,7 @@
           "Freemium",
           "Notebook"
         ],
-        "iconUrl": "https://hex.tech/favicon.svg",
+        "iconUrl": "https://hex.tech/favicon.ico",
         "about": "Blend SQL, Python, and charts; ship data apps with AI‑assisted analysis and docs.",
         "pros": [
           "Great UX.",
@@ -3823,7 +3844,7 @@
           "BI",
           "Subscription"
         ],
-        "iconUrl": "https://learn.microsoft.com/favicon.svg",
+        "iconUrl": "https://learn.microsoft.com/favicon.ico",
         "about": "Ask questions of your data and generate summaries, DAX, and visuals in Power BI.",
         "pros": [
           "Great for NL queries.",
@@ -3886,7 +3907,7 @@
           "Freemium",
           "Environment"
         ],
-        "iconUrl": "https://skybox.blockadelabs.com/favicon.svg",
+        "iconUrl": "https://blockadelabs.com/favicon.ico",
         "about": "Create panoramic HDRIs/backgrounds for 3D scenes quickly.",
         "pros": [
           "Great for environment mood.",
@@ -3907,7 +3928,7 @@
           "Subscription",
           "Text-to-3D"
         ],
-        "iconUrl": "https://www.kaedim3d.com/favicon.svg",
+        "iconUrl": "https://www.kaedim3d.com/favicon.ico",
         "about": "Accelerates concept‑to‑asset workflows with human QA options.",
         "pros": [
           "Production‑minded.",
@@ -3970,7 +3991,7 @@
           "Freemium",
           "Text-to-3D"
         ],
-        "iconUrl": "https://www.meshy.ai/favicon.svg",
+        "iconUrl": "https://www.meshy.ai/favicon.ico",
         "about": "Generate meshes and materials from prompts, with web preview and export.",
         "pros": [
           "Fast 3D generations.",
@@ -3993,7 +4014,7 @@
         "about": "AI 3D asset generation",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://sloyd.ai/favicon.svg"
+        "iconUrl": "https://sloyd.ai/favicon.ico"
       }
     ]
   },
@@ -4011,7 +4032,7 @@
           "Open Source",
           "Fairness"
         ],
-        "iconUrl": "https://fairlearn.org/favicon.svg",
+        "iconUrl": "https://fairlearn.org/favicon.ico",
         "about": "Assess and improve model fairness with metrics, visualizations, and reducers.",
         "pros": [
           "Easy Python integration.",
@@ -4075,7 +4096,7 @@
           "Open Source",
           "Fairness"
         ],
-        "iconUrl": "https://aif360.mybluemix.net/favicon.svg",
+        "iconUrl": "https://www.ibm.com/favicon.ico",
         "about": "Metrics and algorithms to assess fairness and reduce bias across the ML lifecycle.",
         "pros": [
           "Rich metrics.",
@@ -4096,7 +4117,7 @@
           "Open Source",
           "Responsible AI"
         ],
-        "iconUrl": "https://responsibleaitoolbox.ai/favicon.svg",
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
         "about": "Suite of OSS tools (Error Analysis, InterpretML, Fairlearn integrations) for responsible AI.",
         "pros": [
           "Broad coverage.",
@@ -4125,7 +4146,7 @@
           "Subscription",
           "Language"
         ],
-        "iconUrl": "https://www.duolingo.com/favicon.svg",
+        "iconUrl": "https://www.duolingo.com/favicon.ico",
         "about": "Enhanced language learning with conversational practice and granular feedback.",
         "pros": [
           "Engaging.",
@@ -4167,7 +4188,7 @@
           "Freemium",
           "Teacher Tools"
         ],
-        "iconUrl": "https://www.magicschool.ai/favicon.svg",
+        "iconUrl": "https://www.magicschool.ai/favicon.ico",
         "about": "Save prep time with structured outputs aligned to classroom needs.",
         "pros": [
           "Educator‑focused.",
@@ -4217,7 +4238,7 @@
           "Freemium",
           "Math"
         ],
-        "iconUrl": "https://photomath.com/favicon.svg",
+        "iconUrl": "https://photomath.com/favicon.ico",
         "about": "Scan problems and learn steps with explanations and alternate methods.",
         "pros": [
           "Great for practice.",
@@ -4274,7 +4295,7 @@
           "Advanced features require payment.",
           "Subscription required for full access."
         ],
-        "iconUrl": "https://uxie.vercel.app/favicon.svg"
+        "iconUrl": "https://uxie.vercel.app/favicon.ico"
       }
     ]
   },
@@ -4336,7 +4357,7 @@
           "Subscription",
           "Analytics"
         ],
-        "iconUrl": "https://app.intotheblock.com/favicon.svg",
+        "iconUrl": "https://intotheblock.com/favicon.ico",
         "about": "Explore holders, on‑chain flows, derivatives metrics, and signals.",
         "pros": [
           "Rich indicators.",
@@ -4357,7 +4378,7 @@
           "Freemium",
           "Research"
         ],
-        "iconUrl": "https://messari.io/favicon.svg",
+        "iconUrl": "https://messari.io/favicon.ico",
         "about": "Curated research library with data tools for due diligence and monitoring.",
         "pros": [
           "Quality reports.",
@@ -4378,7 +4399,7 @@
           "Subscription",
           "Analytics"
         ],
-        "iconUrl": "https://www.nansen.ai/favicon.svg",
+        "iconUrl": "https://www.nansen.ai/favicon.ico",
         "about": "Identify entity wallets, follow flows, and analyze behavior trends.",
         "pros": [
           "Best‑in‑class labels.",
@@ -4475,7 +4496,7 @@
           "Discovery",
           "Freemium"
         ],
-        "iconUrl": "https://flowgpt.com/favicon.svg",
+        "iconUrl": "https://flowgpt.com/favicon.ico",
         "about": "Browse, share, and rate prompts for a wide range of models and tasks, from productivity to creative writing.",
         "pros": [
           "Crowdsourced variety.",
@@ -4496,7 +4517,7 @@
           "Open Source",
           "Observability"
         ],
-        "iconUrl": "https://langfuse.com/favicon.svg",
+        "iconUrl": "https://langfuse.com/favicon.ico",
         "about": "Monitor LLM app performance and quality with structured tracing and evaluations.",
         "pros": [
           "Rich tracing.",
@@ -4541,7 +4562,7 @@
           "May require fact‑checking.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://www.learnprompt.pro/favicon.svg"
+        "iconUrl": "https://www.learnprompt.pro/img/favicon.ico"
       },
       {
         "name": "Prompt Perfect",
@@ -4552,7 +4573,7 @@
           "Refinement",
           "Assistant"
         ],
-        "iconUrl": "https://promptperfect.jina.ai/favicon.svg",
+        "iconUrl": "https://promptperfect.jina.ai/favicon.ico",
         "about": "Prompt Perfect helps users iteratively rephrase and enrich prompts to improve LLM response quality and reliability.",
         "pros": [
           "Beginner-friendly.",
@@ -4586,7 +4607,7 @@
           "May require fact‑checking.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://www.promptlayer.com/favicon.svg"
+        "iconUrl": "https://www.promptlayer.com/favicon.ico"
       },
       {
         "name": "promptfoo",
@@ -4596,7 +4617,7 @@
           "Open Source",
           "Testing"
         ],
-        "iconUrl": "https://www.promptfoo.dev/favicon.svg",
+        "iconUrl": "https://www.promptfoo.dev/favicon.ico",
         "about": "Define eval datasets and run regressions to keep prompts reliable.",
         "pros": [
           "Great for CI.",
@@ -5766,6 +5787,28 @@
         "iconUrl": "https://purplelab.framer.ai/favicon.ico"
       },
       {
+        "name": "Fairlearn",
+        "description": "Open-source toolkit for assessing and improving fairness in AI systems.",
+        "link": "https://fairlearn.org/",
+        "tags": [
+          "Open Source",
+          "Fairness",
+          "Bias Detection"
+        ],
+        "iconUrl": "https://fairlearn.org/_static/fairlearn-logo.svg",
+        "about": "Fairlearn provides algorithms and metrics to evaluate and mitigate unfairness in machine learning models.",
+        "pros": [
+          "Open source.",
+          "Integrates with scikit-learn.",
+          "Comprehensive fairness metrics."
+        ],
+        "cons": [
+          "Requires Python/ML knowledge.",
+          "Not a plug-and-play solution.",
+          "Focuses on tabular data."
+        ]
+      },
+      {
         "name": "fast-llm-security-guardrails",
         "description": "Secure your AI agents with runtime protection and security testing. Detect prompt injections, data leaks, and vulnerabilities. OWASP LLM Top 10 compliant. Built by ex-Google, Meta, and Amazon security engineers.",
         "link": "https://zenguard.ai/",
@@ -5871,6 +5914,28 @@
         ]
       },
       {
+        "name": "IBM AI Fairness 360",
+        "description": "Comprehensive open-source toolkit to help detect and mitigate bias in machine learning models.",
+        "link": "https://aif360.mybluemix.net/",
+        "tags": [
+          "Open Source",
+          "Bias Detection",
+          "Mitigation"
+        ],
+        "iconUrl": "https://aif360.mybluemix.net/static/images/logo.png",
+        "about": "AI Fairness 360 (AIF360) offers metrics and algorithms to check and reduce bias in datasets and models.",
+        "pros": [
+          "Extensive documentation.",
+          "Multiple bias metrics.",
+          "Active community."
+        ],
+        "cons": [
+          "Requires Python/ML expertise.",
+          "Setup can be complex.",
+          "Focuses on tabular data."
+        ]
+      },
+      {
         "name": "invariant",
         "description": "We help agent builders create reliable, robust and secure products.",
         "link": "https://invariantlabs.ai",
@@ -5887,6 +5952,28 @@
           "May require an account or credits."
         ],
         "iconUrl": "https://invariantlabs.ai/theme/icon/apple-touch-icon.png"
+      },
+      {
+        "name": "Microsoft Responsible AI Toolbox",
+        "description": "Suite of tools for responsible AI development, including interpretability, fairness, and error analysis.",
+        "link": "https://responsibleaitoolbox.ai/",
+        "tags": [
+          "Open Source",
+          "Responsible AI",
+          "Interpretability"
+        ],
+        "iconUrl": "https://responsibleaitoolbox.ai/assets/logo.svg",
+        "about": "Microsoft's Responsible AI Toolbox provides dashboards and libraries for error analysis, fairness, and model interpretability.",
+        "pros": [
+          "Comprehensive suite.",
+          "Visualization dashboards.",
+          "Open source."
+        ],
+        "cons": [
+          "Requires technical setup.",
+          "Best for Python/ML workflows.",
+          "Some tools in preview."
+        ]
       },
       {
         "name": "modelbench",

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-10-12T18:52:04.206Z",
+  "generatedAt": "2025-10-12T18:59:22.784Z",
   "summary": {
     "sections": 33,
-    "totalTools": 345,
+    "totalTools": 341,
     "uniqueTools": 333,
-    "duplicates": 12,
+    "duplicates": 8,
     "missingIcons": 0,
-    "lowQualityIcons": 163,
+    "lowQualityIcons": 162,
     "githubOutsideDomain": 0
   },
   "duplicates": [
@@ -43,22 +43,6 @@
       ]
     },
     {
-      "name": "Fairlearn",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "ethical-ai",
-          "link": "https://fairlearn.org",
-          "iconUrl": "https://fairlearn.org/favicon.ico"
-        },
-        {
-          "section": "ai-safety-ethics",
-          "link": "https://fairlearn.org/",
-          "iconUrl": "https://fairlearn.org/_static/fairlearn-logo.svg"
-        }
-      ]
-    },
-    {
       "name": "Gemini (Google)",
       "count": 2,
       "occurrences": [
@@ -75,50 +59,18 @@
       ]
     },
     {
-      "name": "IBM AI Fairness 360",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "ethical-ai",
-          "link": "https://aif360.mybluemix.net",
-          "iconUrl": "https://www.ibm.com/favicon.ico"
-        },
-        {
-          "section": "ai-safety-ethics",
-          "link": "https://aif360.mybluemix.net/",
-          "iconUrl": "https://aif360.mybluemix.net/static/images/logo.png"
-        }
-      ]
-    },
-    {
       "name": "Microsoft Copilot",
       "count": 2,
       "occurrences": [
         {
           "section": "most-popular",
           "link": "https://copilot.microsoft.com/",
-          "iconUrl": "https://www.microsoft.com/favicon.ico"
+          "iconUrl": "https://copilot.microsoft.com/favicon.svg"
         },
         {
           "section": "language-chat",
           "link": "https://copilot.microsoft.com/",
-          "iconUrl": "https://www.microsoft.com/favicon.ico"
-        }
-      ]
-    },
-    {
-      "name": "Microsoft Responsible AI Toolbox",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "ethical-ai",
-          "link": "https://responsibleaitoolbox.ai",
-          "iconUrl": "https://www.microsoft.com/favicon.ico"
-        },
-        {
-          "section": "ai-safety-ethics",
-          "link": "https://responsibleaitoolbox.ai/",
-          "iconUrl": "https://responsibleaitoolbox.ai/assets/logo.svg"
+          "iconUrl": "https://copilot.microsoft.com/favicon.svg"
         }
       ]
     },
@@ -129,12 +81,12 @@
         {
           "section": "most-popular",
           "link": "https://chat.mistral.ai/",
-          "iconUrl": "https://mistral.ai/favicon.ico"
+          "iconUrl": "https://chat.mistral.ai/favicon.svg"
         },
         {
           "section": "language-chat",
           "link": "https://chat.mistral.ai/",
-          "iconUrl": "https://mistral.ai/favicon.ico"
+          "iconUrl": "https://chat.mistral.ai/favicon.svg"
         }
       ]
     },
@@ -151,22 +103,6 @@
           "section": "language-chat",
           "link": "https://www.perplexity.ai/",
           "iconUrl": "https://seeklogo.com/images/P/perplexity-ai-logo-13120A6638-seeklogo.com.png"
-        }
-      ]
-    },
-    {
-      "name": "Poe by Quora",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "language-chat",
-          "link": "https://poe.com/",
-          "iconUrl": "https://pbs.twimg.com/profile_images/1620823549298188288/IO-pI20c_400x400.jpg"
-        },
-        {
-          "section": "productivity",
-          "link": "https://poe.com/",
-          "iconUrl": "https://poe.com/favicon.ico"
         }
       ]
     },
@@ -193,7 +129,7 @@
         {
           "section": "language-chat",
           "link": "https://you.com/",
-          "iconUrl": "https://you.com/favicon.ico"
+          "iconUrl": "https://you.com/favicon.svg"
         },
         {
           "section": "search-knowledge-discovery",
@@ -209,601 +145,595 @@
       "name": "airbyte",
       "section": "most-popular",
       "link": "https://airbyte.com",
-      "iconUrl": "https://airbyte.com/favicon.ico"
+      "iconUrl": "https://airbyte.com/favicon.svg"
     },
     {
       "name": "Gemini AI",
       "section": "most-popular",
       "link": "https://deepmind.google/technologies/gemini/",
-      "iconUrl": "https://deepmind.google/static/icons/google_deepmind_32dp.c67bb05568f4.ico"
+      "iconUrl": "https://deepmind.google/favicon.svg"
     },
     {
       "name": "leon",
       "section": "most-popular",
       "link": "https://getleon.ai",
-      "iconUrl": "https://getleon.ai/img/favicon.png"
+      "iconUrl": "https://getleon.ai/favicon.svg"
     },
     {
       "name": "Meta AI",
       "section": "most-popular",
       "link": "https://www.meta.ai/",
-      "iconUrl": "https://about.meta.com/favicon.ico"
+      "iconUrl": "https://www.meta.ai/favicon.svg"
     },
     {
       "name": "Microsoft Copilot",
       "section": "most-popular",
       "link": "https://copilot.microsoft.com/",
-      "iconUrl": "https://www.microsoft.com/favicon.ico"
+      "iconUrl": "https://copilot.microsoft.com/favicon.svg"
     },
     {
       "name": "Mistral Le Chat",
       "section": "most-popular",
       "link": "https://chat.mistral.ai/",
-      "iconUrl": "https://mistral.ai/favicon.ico"
+      "iconUrl": "https://chat.mistral.ai/favicon.svg"
     },
     {
       "name": "mlflow",
       "section": "most-popular",
       "link": "https://mlflow.org",
-      "iconUrl": "https://mlflow.org/img/mlflow-favicon.ico"
+      "iconUrl": "https://mlflow.org/favicon.svg"
     },
     {
       "name": "Notebook LLM",
       "section": "most-popular",
       "link": "https://notebooklm.google.com/",
-      "iconUrl": "https://notebooklm.google.com/favicon.ico"
+      "iconUrl": "https://notebooklm.google.com/favicon.svg"
     },
     {
       "name": "sim",
       "section": "most-popular",
       "link": "https://www.sim.ai",
-      "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
+      "iconUrl": "https://www.sim.ai/favicon.svg"
     },
     {
       "name": "supabase",
       "section": "most-popular",
       "link": "https://supabase.com",
-      "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
+      "iconUrl": "https://supabase.com/favicon.svg"
     },
     {
       "name": "agent-zero",
       "section": "most-popular",
       "link": "https://agent-zero.ai",
-      "iconUrl": "https://agent-zero.ai/res/favicon_round.png"
+      "iconUrl": "https://agent-zero.ai/favicon.svg"
     },
     {
       "name": "Character.AI",
       "section": "language-chat",
       "link": "https://beta.character.ai/",
-      "iconUrl": "https://beta.character.ai/favicon.ico"
+      "iconUrl": "https://beta.character.ai/favicon.svg"
     },
     {
       "name": "DeepSeek Chat",
       "section": "language-chat",
       "link": "https://chat.deepseek.com",
-      "iconUrl": "https://chat.deepseek.com/favicon.ico"
+      "iconUrl": "https://chat.deepseek.com/favicon.svg"
     },
     {
       "name": "Google Bard",
       "section": "language-chat",
       "link": "https://bard.google.com/",
-      "iconUrl": "https://bard.google.com/favicon.ico"
+      "iconUrl": "https://bard.google.com/favicon.svg"
     },
     {
       "name": "Jasper AI",
       "section": "language-chat",
       "link": "https://www.jasper.ai/",
-      "iconUrl": "https://www.jasper.ai/favicon.ico"
+      "iconUrl": "https://www.jasper.ai/favicon.svg"
     },
     {
       "name": "Microsoft Copilot",
       "section": "language-chat",
       "link": "https://copilot.microsoft.com/",
-      "iconUrl": "https://www.microsoft.com/favicon.ico"
+      "iconUrl": "https://copilot.microsoft.com/favicon.svg"
     },
     {
       "name": "Mistral Le Chat",
       "section": "language-chat",
       "link": "https://chat.mistral.ai/",
-      "iconUrl": "https://mistral.ai/favicon.ico"
+      "iconUrl": "https://chat.mistral.ai/favicon.svg"
     },
     {
       "name": "Orchids AI",
       "section": "language-chat",
       "link": "https://orchids.ai",
-      "iconUrl": "https://orchids.ai/favicon.ico"
+      "iconUrl": "https://orchids.ai/favicon.svg"
     },
     {
       "name": "pathway",
       "section": "language-chat",
       "link": "https://pathway.com",
-      "iconUrl": "https://pathway.com/favicon-96x96.png"
+      "iconUrl": "https://pathway.com/favicon.svg"
     },
     {
       "name": "QuillBot",
       "section": "language-chat",
       "link": "https://quillbot.com/",
-      "iconUrl": "https://quillbot.com/favicon.ico"
+      "iconUrl": "https://quillbot.com/favicon.svg"
     },
     {
       "name": "Replika",
       "section": "language-chat",
       "link": "https://replika.com/",
-      "iconUrl": "https://replika.com/favicon.ico"
+      "iconUrl": "https://replika.com/favicon.svg"
     },
     {
       "name": "Seed Dream",
       "section": "language-chat",
       "link": "https://seeddream.app",
-      "iconUrl": "https://seeddream.app/favicon.ico"
+      "iconUrl": "https://seeddream.app/favicon.svg"
     },
     {
       "name": "Writer",
       "section": "language-chat",
       "link": "https://writer.com",
-      "iconUrl": "https://writer.com/wp-content/themes/writer/favicon/favicon-32x32.png"
+      "iconUrl": "https://writer.com/favicon.svg"
     },
     {
       "name": "You.com",
       "section": "language-chat",
       "link": "https://you.com/",
-      "iconUrl": "https://you.com/favicon.ico"
+      "iconUrl": "https://you.com/favicon.svg"
     },
     {
       "name": "Canva AI",
       "section": "image-generation",
       "link": "https://www.canva.com/ai/",
-      "iconUrl": "https://www.canva.com/favicon.ico"
+      "iconUrl": "https://www.canva.com/favicon.svg"
     },
     {
       "name": "Clipdrop",
       "section": "image-generation",
       "link": "https://clipdrop.co/",
-      "iconUrl": "https://clipdrop.co/favicon.ico"
+      "iconUrl": "https://clipdrop.co/favicon.svg"
     },
     {
       "name": "deeplake",
       "section": "image-generation",
       "link": "https://activeloop.ai",
-      "iconUrl": "https://activeloop.ai/favicon-32x32.png?v=f10fa296f4fa621b5b31a72bb489f553"
+      "iconUrl": "https://activeloop.ai/favicon.svg"
     },
     {
       "name": "DreamStudio",
       "section": "image-generation",
       "link": "https://dreamstudio.ai/",
-      "iconUrl": "https://dreamstudio.ai/favicon.ico"
+      "iconUrl": "https://dreamstudio.ai/favicon.svg"
     },
     {
       "name": "easydiffusion",
       "section": "image-generation",
       "link": "https://easydiffusion.github.io/",
-      "iconUrl": "https://easydiffusion.github.io/favicon.ico?1"
+      "iconUrl": "https://easydiffusion.github.io/favicon.svg"
     },
     {
       "name": "Fotor AI",
       "section": "image-generation",
       "link": "https://www.fotor.com/ai/",
-      "iconUrl": "https://www.fotor.com/favicon.ico"
+      "iconUrl": "https://www.fotor.com/favicon.svg"
     },
     {
       "name": "Krea AI",
       "section": "image-generation",
       "link": "https://www.krea.ai",
-      "iconUrl": "https://www.krea.ai/favicon.ico"
+      "iconUrl": "https://www.krea.ai/favicon.svg"
     },
     {
       "name": "NightCafe",
       "section": "image-generation",
       "link": "https://nightcafe.studio/",
-      "iconUrl": "https://nightcafe.studio/favicon.ico"
+      "iconUrl": "https://nightcafe.studio/favicon.svg"
     },
     {
       "name": "Playground v2 (Playground AI)",
       "section": "image-generation",
       "link": "https://playground.com/",
-      "iconUrl": "https://playground.com/favicon.ico"
+      "iconUrl": "https://playground.com/favicon.svg"
     },
     {
       "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
       "section": "image-generation",
       "link": "https://www.riffusion.com/about",
-      "iconUrl": "https://www.riffusion.com/favicon.ico"
+      "iconUrl": "https://www.riffusion.com/favicon.svg"
     },
     {
       "name": "D-ID",
       "section": "video-tools",
       "link": "https://www.d-id.com/",
-      "iconUrl": "https://www.d-id.com/favicon.ico"
+      "iconUrl": "https://www.d-id.com/favicon.svg"
     },
     {
       "name": "DeepBrain AI",
       "section": "video-tools",
       "link": "https://www.deepbrain.io/",
-      "iconUrl": "https://www.deepbrain.io/favicon.ico"
+      "iconUrl": "https://www.deepbrain.io/favicon.svg"
     },
     {
       "name": "Google Veo",
       "section": "video-tools",
       "link": "https://deepmind.google/technologies/veo/",
-      "iconUrl": "https://www.google.com/favicon.ico"
+      "iconUrl": "https://deepmind.google/favicon.svg"
     },
     {
       "name": "Kaiber",
       "section": "video-tools",
       "link": "https://www.kaiber.ai/",
-      "iconUrl": "https://www.kaiber.ai/favicon.ico"
+      "iconUrl": "https://www.kaiber.ai/favicon.svg"
     },
     {
       "name": "Luma Dream Machine",
       "section": "video-tools",
       "link": "https://lumalabs.ai/dream-machine",
-      "iconUrl": "https://lumalabs.ai/favicon.ico"
+      "iconUrl": "https://lumalabs.ai/favicon.svg"
     },
     {
       "name": "Opus Clip",
       "section": "video-tools",
       "link": "https://www.opus.pro",
-      "iconUrl": "https://www.opus.pro/favicon.ico"
+      "iconUrl": "https://www.opus.pro/favicon.svg"
     },
     {
       "name": "Pictory",
       "section": "video-tools",
       "link": "https://pictory.ai/",
-      "iconUrl": "https://pictory.ai/favicon.ico"
+      "iconUrl": "https://pictory.ai/favicon.svg"
     },
     {
       "name": "Veed.io",
       "section": "video-tools",
       "link": "https://www.veed.io/",
-      "iconUrl": "https://www.veed.io/favicon.ico"
+      "iconUrl": "https://www.veed.io/favicon.svg"
     },
     {
       "name": "Blackbox AI",
       "section": "code-assistance",
       "link": "https://www.useblackbox.io/",
-      "iconUrl": "https://www.useblackbox.io/favicon.ico"
+      "iconUrl": "https://www.useblackbox.io/favicon.svg"
     },
     {
       "name": "Codeium",
       "section": "code-assistance",
       "link": "https://codeium.com/",
-      "iconUrl": "https://codeium.com/favicon.ico"
+      "iconUrl": "https://codeium.com/favicon.svg"
     },
     {
       "name": "daytona",
       "section": "code-assistance",
       "link": "https://daytona.io",
-      "iconUrl": "https://daytona.io/favicon.ico"
+      "iconUrl": "https://daytona.io/favicon.svg"
     },
     {
       "name": "Sourcegraph Cody",
       "section": "code-assistance",
       "link": "https://sourcegraph.com/cody",
-      "iconUrl": "https://sourcegraph.com/favicon.ico"
+      "iconUrl": "https://sourcegraph.com/favicon.svg"
     },
     {
       "name": "sweep",
       "section": "code-assistance",
       "link": "https://sweep.dev",
-      "iconUrl": "https://sweep.dev/favicon.ico"
+      "iconUrl": "https://sweep.dev/favicon.svg"
     },
     {
       "name": "TabbyML",
       "section": "code-assistance",
       "link": "https://tabbyml.ai",
-      "iconUrl": "https://tabbyml.ai/favicon.ico"
+      "iconUrl": "https://tabbyml.ai/favicon.svg"
     },
     {
       "name": "Auphonic",
       "section": "audio-music",
       "link": "https://auphonic.com/",
-      "iconUrl": "https://auphonic.com/favicon.ico"
+      "iconUrl": "https://auphonic.com/favicon.svg"
     },
     {
       "name": "Cleanvoice AI",
       "section": "audio-music",
       "link": "https://cleanvoice.ai/",
-      "iconUrl": "https://cleanvoice.ai/favicon.ico"
+      "iconUrl": "https://cleanvoice.ai/favicon.svg"
     },
     {
       "name": "ComfyUI-DeepFuze",
       "section": "audio-music",
       "link": "https://cogidigm.com/",
-      "iconUrl": "https://cogidigm.com/favicon.ico"
+      "iconUrl": "https://cogidigm.com/favicon.svg"
     },
     {
       "name": "Descript Overdub",
       "section": "audio-music",
       "link": "https://www.descript.com/overdub",
-      "iconUrl": "https://www.descript.com/favicon.ico"
+      "iconUrl": "https://www.descript.com/favicon.svg"
     },
     {
       "name": "Google's advanced music generation model and two new AI experiments",
       "section": "audio-music",
       "link": "https://deepmind.google/discover/blog/transforming-the-future-of-music-creation/",
-      "iconUrl": "https://deepmind.google/favicon.ico"
+      "iconUrl": "https://deepmind.google/favicon.svg"
     },
     {
       "name": "Kits AI",
       "section": "audio-music",
       "link": "https://www.kits.ai/",
-      "iconUrl": "https://www.kits.ai/favicon.ico"
+      "iconUrl": "https://www.kits.ai/favicon.svg"
     },
     {
       "name": "Play.ht",
       "section": "audio-music",
       "link": "https://play.ht/",
-      "iconUrl": "https://play.ht/favicon.ico"
+      "iconUrl": "https://play.ht/favicon.svg"
     },
     {
       "name": "Riffusion",
       "section": "audio-music",
       "link": "https://www.riffusion.com/",
-      "iconUrl": "https://www.riffusion.com/favicon.ico"
+      "iconUrl": "https://www.riffusion.com/favicon.svg"
     },
     {
       "name": "Voicemod AI",
       "section": "audio-music",
       "link": "https://www.voicemod.net/",
-      "iconUrl": "https://www.voicemod.net/favicon.ico"
+      "iconUrl": "https://www.voicemod.net/favicon.svg"
     },
     {
       "name": "Clockwise",
       "section": "productivity",
       "link": "https://www.getclockwise.com",
-      "iconUrl": "https://www.getclockwise.com/favicon.ico"
+      "iconUrl": "https://www.getclockwise.com/favicon.svg"
     },
     {
       "name": "Ellie AI",
       "section": "productivity",
       "link": "https://ellieai.com",
-      "iconUrl": "https://tryellie.com/assets/favicon32.png"
+      "iconUrl": "https://ellieai.com/favicon.svg"
     },
     {
       "name": "Gemini for Workspace",
       "section": "productivity",
       "link": "https://workspace.google.com/products/gemini/",
-      "iconUrl": "https://www.google.com/favicon.ico"
+      "iconUrl": "https://workspace.google.com/favicon.svg"
     },
     {
       "name": "joinly",
       "section": "productivity",
       "link": "https://joinly.ai",
-      "iconUrl": "https://joinly.ai/favicon.ico"
+      "iconUrl": "https://joinly.ai/favicon.svg"
     },
     {
       "name": "Mem",
       "section": "productivity",
       "link": "https://mem.ai",
-      "iconUrl": "https://mem.ai/favicons/favicon.ico"
+      "iconUrl": "https://mem.ai/favicon.svg"
     },
     {
       "name": "Microsoft Copilot for M365",
       "section": "productivity",
       "link": "https://www.microsoft.com/microsoft-365/copilot",
-      "iconUrl": "https://www.microsoft.com/favicon.ico"
+      "iconUrl": "https://www.microsoft.com/favicon.svg"
     },
     {
       "name": "Otter.ai",
       "section": "productivity",
       "link": "https://otter.ai/",
-      "iconUrl": "https://otter.ai/favicon.ico"
-    },
-    {
-      "name": "Poe by Quora",
-      "section": "productivity",
-      "link": "https://poe.com/",
-      "iconUrl": "https://poe.com/favicon.ico"
+      "iconUrl": "https://otter.ai/favicon.svg"
     },
     {
       "name": "Supernormal",
       "section": "productivity",
       "link": "https://supernormal.com",
-      "iconUrl": "https://supernormal.com/favicon.ico"
+      "iconUrl": "https://supernormal.com/favicon.svg"
     },
     {
       "name": "Beautiful.ai",
       "section": "design-tools",
       "link": "https://www.beautiful.ai/",
-      "iconUrl": "https://www.beautiful.ai/favicon.ico"
+      "iconUrl": "https://www.beautiful.ai/favicon.svg"
     },
     {
       "name": "browser",
       "section": "design-tools",
       "link": "https://lightpanda.io",
-      "iconUrl": "https://cdn.lightpanda.io/website/assets/images/favicon/apple-icon-57x57.png"
+      "iconUrl": "https://lightpanda.io/favicon.svg"
     },
     {
       "name": "Figma AI",
       "section": "design-tools",
       "link": "https://www.figma.com/blog/introducing-figma-ai/",
-      "iconUrl": "https://static.figma.com/app/icon/1/favicon.ico"
+      "iconUrl": "https://www.figma.com/favicon.svg"
     },
     {
       "name": "onlook",
       "section": "design-tools",
       "link": "https://onlook.com",
-      "iconUrl": "https://onlook.com/favicon.ico"
+      "iconUrl": "https://onlook.com/favicon.svg"
     },
     {
       "name": "Spline AI",
       "section": "design-tools",
       "link": "https://spline.design/",
-      "iconUrl": "https://spline.design/favicon.ico"
+      "iconUrl": "https://spline.design/favicon.svg"
     },
     {
       "name": "Litmaps",
       "section": "research",
       "link": "https://www.litmaps.com/",
-      "iconUrl": "https://www.litmaps.com/favicon.ico"
+      "iconUrl": "https://www.litmaps.com/favicon.svg"
     },
     {
       "name": "Scholarcy",
       "section": "research",
       "link": "https://www.scholarcy.com/",
-      "iconUrl": "https://www.scholarcy.com/favicon.ico"
+      "iconUrl": "https://www.scholarcy.com/favicon.svg"
     },
     {
       "name": "Scite",
       "section": "research",
       "link": "https://scite.ai/",
-      "iconUrl": "https://scite.ai/favicon.ico"
+      "iconUrl": "https://scite.ai/favicon.svg"
     },
     {
       "name": "Anyword",
       "section": "marketing-seo",
       "link": "https://anyword.com/",
-      "iconUrl": "https://anyword.com/favicon.ico"
+      "iconUrl": "https://anyword.com/favicon.svg"
     },
     {
       "name": "Frase",
       "section": "marketing-seo",
       "link": "https://www.frase.io/",
-      "iconUrl": "https://www.frase.io/favicon.ico"
+      "iconUrl": "https://www.frase.io/favicon.svg"
     },
     {
       "name": "MarketMuse",
       "section": "marketing-seo",
       "link": "https://www.marketmuse.com/",
-      "iconUrl": "https://www.marketmuse.com/favicon.ico"
+      "iconUrl": "https://www.marketmuse.com/favicon.svg"
     },
     {
       "name": "dataline",
       "section": "data-analysis",
       "link": "https://dataline.app",
-      "iconUrl": "https://dataline.app/favicon.ico"
+      "iconUrl": "https://dataline.app/favicon.svg"
     },
     {
       "name": "Hex Magic",
       "section": "data-analysis",
       "link": "https://hex.tech/",
-      "iconUrl": "https://hex.tech/favicon.ico"
+      "iconUrl": "https://hex.tech/favicon.svg"
     },
     {
       "name": "Power BI Copilot",
       "section": "data-analysis",
       "link": "https://learn.microsoft.com/power-bi/create-reports/copilot",
-      "iconUrl": "https://learn.microsoft.com/favicon.ico"
+      "iconUrl": "https://learn.microsoft.com/favicon.svg"
     },
     {
       "name": "Blockade Labs Skybox",
       "section": "3d-modeling",
       "link": "https://skybox.blockadelabs.com/",
-      "iconUrl": "https://blockadelabs.com/favicon.ico"
+      "iconUrl": "https://skybox.blockadelabs.com/favicon.svg"
     },
     {
       "name": "Kaedim",
       "section": "3d-modeling",
       "link": "https://www.kaedim3d.com/",
-      "iconUrl": "https://www.kaedim3d.com/favicon.ico"
+      "iconUrl": "https://www.kaedim3d.com/favicon.svg"
     },
     {
       "name": "Meshy",
       "section": "3d-modeling",
       "link": "https://www.meshy.ai/",
-      "iconUrl": "https://www.meshy.ai/favicon.ico"
+      "iconUrl": "https://www.meshy.ai/favicon.svg"
     },
     {
       "name": "Sloyd",
       "section": "3d-modeling",
       "link": "https://sloyd.ai",
-      "iconUrl": "https://sloyd.ai/favicon.ico"
+      "iconUrl": "https://sloyd.ai/favicon.svg"
     },
     {
       "name": "Fairlearn",
       "section": "ethical-ai",
       "link": "https://fairlearn.org",
-      "iconUrl": "https://fairlearn.org/favicon.ico"
+      "iconUrl": "https://fairlearn.org/favicon.svg"
     },
     {
       "name": "IBM AI Fairness 360",
       "section": "ethical-ai",
       "link": "https://aif360.mybluemix.net",
-      "iconUrl": "https://www.ibm.com/favicon.ico"
+      "iconUrl": "https://aif360.mybluemix.net/favicon.svg"
     },
     {
       "name": "Microsoft Responsible AI Toolbox",
       "section": "ethical-ai",
       "link": "https://responsibleaitoolbox.ai",
-      "iconUrl": "https://www.microsoft.com/favicon.ico"
+      "iconUrl": "https://responsibleaitoolbox.ai/favicon.svg"
     },
     {
       "name": "Duolingo Max",
       "section": "education",
       "link": "https://www.duolingo.com/",
-      "iconUrl": "https://www.duolingo.com/favicon.ico"
+      "iconUrl": "https://www.duolingo.com/favicon.svg"
     },
     {
       "name": "MagicSchool AI",
       "section": "education",
       "link": "https://www.magicschool.ai/",
-      "iconUrl": "https://www.magicschool.ai/favicon.ico"
+      "iconUrl": "https://www.magicschool.ai/favicon.svg"
     },
     {
       "name": "Photomath",
       "section": "education",
       "link": "https://photomath.com/",
-      "iconUrl": "https://photomath.com/favicon.ico"
+      "iconUrl": "https://photomath.com/favicon.svg"
     },
     {
       "name": "uxie",
       "section": "education",
       "link": "https://uxie.vercel.app",
-      "iconUrl": "https://uxie.vercel.app/favicon.ico"
+      "iconUrl": "https://uxie.vercel.app/favicon.svg"
     },
     {
       "name": "IntoTheBlock",
       "section": "crypto",
       "link": "https://app.intotheblock.com/",
-      "iconUrl": "https://intotheblock.com/favicon.ico"
+      "iconUrl": "https://app.intotheblock.com/favicon.svg"
     },
     {
       "name": "Messari",
       "section": "crypto",
       "link": "https://messari.io/",
-      "iconUrl": "https://messari.io/favicon.ico"
+      "iconUrl": "https://messari.io/favicon.svg"
     },
     {
       "name": "Nansen",
       "section": "crypto",
       "link": "https://www.nansen.ai/",
-      "iconUrl": "https://www.nansen.ai/favicon.ico"
+      "iconUrl": "https://www.nansen.ai/favicon.svg"
     },
     {
       "name": "FlowGPT",
       "section": "prompt-enhancers",
       "link": "https://flowgpt.com/",
-      "iconUrl": "https://flowgpt.com/favicon.ico"
+      "iconUrl": "https://flowgpt.com/favicon.svg"
     },
     {
       "name": "Langfuse",
       "section": "prompt-enhancers",
       "link": "https://langfuse.com/",
-      "iconUrl": "https://langfuse.com/favicon.ico"
+      "iconUrl": "https://langfuse.com/favicon.svg"
     },
     {
       "name": "LearnPrompt",
       "section": "prompt-enhancers",
       "link": "https://www.learnprompt.pro/",
-      "iconUrl": "https://www.learnprompt.pro/img/favicon.ico"
+      "iconUrl": "https://www.learnprompt.pro/favicon.svg"
     },
     {
       "name": "Prompt Perfect",
       "section": "prompt-enhancers",
       "link": "https://promptperfect.jina.ai/",
-      "iconUrl": "https://promptperfect.jina.ai/favicon.ico"
+      "iconUrl": "https://promptperfect.jina.ai/favicon.svg"
     },
     {
       "name": "prompt-layer-library",
       "section": "prompt-enhancers",
       "link": "https://www.promptlayer.com",
-      "iconUrl": "https://www.promptlayer.com/favicon.ico"
+      "iconUrl": "https://www.promptlayer.com/favicon.svg"
     },
     {
       "name": "promptfoo",
       "section": "prompt-enhancers",
       "link": "https://www.promptfoo.dev",
-      "iconUrl": "https://www.promptfoo.dev/favicon.ico"
+      "iconUrl": "https://www.promptfoo.dev/favicon.svg"
     },
     {
       "name": "PromptHero",
