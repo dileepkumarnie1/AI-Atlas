@@ -22,6 +22,7 @@
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
         "report:hygiene": "node ./scripts/generate-hygiene-report.mjs",
     "report:hygiene:summary": "node ./scripts/build-hygiene-summaries.mjs",
+    "fix:hygiene:safe": "node ./scripts/apply-hygiene-fixes.mjs",
     "serve:static": "npx http-server ./ -p 8080 -c-1",
         "test:ui": "python ./tests/run_ui_tests.py",
         "context:log": "node ./scripts/update-context-log.mjs",

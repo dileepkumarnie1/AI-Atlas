@@ -180,27 +180,6 @@
         "iconUrl": "https://deepmind.google/static/icons/google_deepmind_32dp.c67bb05568f4.ico"
       },
       {
-        "name": "GitHub Copilot",
-        "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.",
-        "link": "https://github.com/features/copilot",
-        "tags": [
-          "Subscription",
-          "Code"
-        ],
-        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png",
-        "about": "GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of various code editors by autocompleting code. It understands context from comments and code to suggest individual lines and whole functions instantly.",
-        "pros": [
-          "Dramatically speeds up coding and reduces boilerplate.",
-          "Integrates seamlessly into popular code editors.",
-          "Learns from your coding style."
-        ],
-        "cons": [
-          "Requires a subscription after the trial period.",
-          "Suggestions can sometimes be non-optimal or contain subtle bugs.",
-          "Raises questions about code originality and licensing."
-        ]
-      },
-      {
         "name": "Grok (xAI)",
         "description": "An AI chatbot by xAI with real-time access to the X (formerly Twitter) platform.",
         "link": "https://grok.x.ai/",
@@ -2134,27 +2113,6 @@
         "iconUrl": "https://daytona.io/favicon.ico"
       },
       {
-        "name": "GitHub Copilot",
-        "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.",
-        "link": "https://github.com/features/copilot",
-        "tags": [
-          "Subscription",
-          "Code"
-        ],
-        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png",
-        "about": "GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of various code editors by autocompleting code. It understands context from comments and code to suggest individual lines and whole functions instantly.",
-        "pros": [
-          "Dramatically speeds up coding and reduces boilerplate.",
-          "Integrates seamlessly into popular code editors.",
-          "Learns from your coding style."
-        ],
-        "cons": [
-          "Requires a subscription after the trial period.",
-          "Suggestions can sometimes be non-optimal or contain subtle bugs.",
-          "Raises questions about code originality and licensing."
-        ]
-      },
-      {
         "name": "JetBrains AI Assistant",
         "description": "Native AI coding features across JetBrains IDEs.",
         "link": "https://www.jetbrains.com/ai/",
@@ -2740,27 +2698,6 @@
           "Best value when whole team adopts.",
           "Occasional unexpected meeting moves.",
           "Limited to major calendar providers."
-        ]
-      },
-      {
-        "name": "DeepL",
-        "description": "Highly accurate AI-powered translation service.",
-        "link": "https://www.deepl.com/translator",
-        "tags": [
-          "Freemium",
-          "Translation"
-        ],
-        "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg",
-        "about": "DeepL is a deep learning-based translation service known for its natural-sounding output.",
-        "pros": [
-          "High translation accuracy.",
-          "Nuanced output.",
-          "API available."
-        ],
-        "cons": [
-          "Free version limits.",
-          "Fewer languages than Google.",
-          "Pro for document translation."
         ]
       },
       {
@@ -7191,6 +7128,28 @@
     "slug": "github-ai-projects",
     "description": "Top open-source AI projects on GitHub with high stars and strong community traction.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .5C5.73.5.98 5.24.98 11.52c0 4.86 3.15 8.97 7.51 10.42.55.1.75-.24.75-.54 0-.26-.01-.95-.01-1.86-3.05.66-3.69-1.47-3.69-1.47-.5-1.26-1.22-1.6-1.22-1.6-.99-.68.07-.66.07-.66 1.09.08 1.66 1.12 1.66 1.12.98 1.66 2.58 1.18 3.22.9.1-.72.38-1.18.69-1.46-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.19 1.13-2.96-.11-.28-.49-1.41.11-2.94 0 0 .92-.29 3.02 1.13.88-.25 1.82-.38 2.76-.38s1.88.13 2.76.38c2.1-1.42 3.02-1.13 3.02-1.13.6 1.53.22 2.66.11 2.94.7.77 1.13 1.76 1.13 2.96 0 4.22-2.57 5.14-5.02 5.41.39.34.73 1.01.73 2.04 0 1.47-.01 2.65-.01 3.01 0 .3.2.65.75.54 4.36-1.45 7.51-5.56 7.51-10.42C23.02 5.24 18.27.5 12 .5z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "GitHub Copilot",
+        "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.",
+        "link": "https://github.com/features/copilot",
+        "tags": [
+          "Subscription",
+          "Code"
+        ],
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png",
+        "about": "GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of various code editors by autocompleting code. It understands context from comments and code to suggest individual lines and whole functions instantly.",
+        "pros": [
+          "Dramatically speeds up coding and reduces boilerplate.",
+          "Integrates seamlessly into popular code editors.",
+          "Learns from your coding style."
+        ],
+        "cons": [
+          "Requires a subscription after the trial period.",
+          "Suggestions can sometimes be non-optimal or contain subtle bugs.",
+          "Raises questions about code originality and licensing."
+        ]
+      }
+    ]
   }
 ]
