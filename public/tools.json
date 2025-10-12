@@ -3049,27 +3049,6 @@
         "iconUrl": "https://www.sembly.ai/wp-content/uploads/2023/01/fi.png"
       },
       {
-        "name": "Suno AI",
-        "description": "Create full songs from a simple text prompt.",
-        "link": "https://www.suno.ai/",
-        "tags": [
-          "Freemium",
-          "Music Generation"
-        ],
-        "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg",
-        "about": "Suno is an AI music generator that creates complete songs in various genres from a short text description.",
-        "pros": [
-          "Easy song creation.",
-          "Multiple genres.",
-          "Free tier available."
-        ],
-        "cons": [
-          "Limited control.",
-          "Vocal quality varies.",
-          "Commercial use paid."
-        ]
-      },
-      {
         "name": "Supernormal",
         "description": "AI-Powered meetings · Supernormal",
         "link": "https://supernormal.com",
@@ -4619,7 +4598,7 @@
           "Gallery",
           "Freemium"
         ],
-        "iconUrl": "https://prompthero.com/favicon.ico",
+        "iconUrl": "https://prompthero.com/favicon.svg",
         "about": "Discover successful prompts with example outputs for popular image models; great for learning prompt patterns and styles.",
         "pros": [
           "Visual examples.",
@@ -4640,7 +4619,7 @@
           "Freemium",
           "Prompt Ops"
         ],
-        "iconUrl": "https://promptlayer.com/favicon.ico",
+        "iconUrl": "https://promptlayer.com/favicon.svg",
         "about": "Organize prompts, track usage, and collaborate on prompt libraries.",
         "pros": [
           "Great organization.",
@@ -5132,7 +5111,7 @@
           "Business",
           "Freemium"
         ],
-        "iconUrl": "https://zapier.com/favicon.ico",
+        "iconUrl": "https://zapier.com/favicon.svg",
         "about": "Zapier extends its no-code automation with AI-powered agents that monitor triggers and act across apps, enabling natural language workflow creation.",
         "pros": [
           "Highly practical for businesses.",
@@ -5179,7 +5158,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://www.activepieces.com/favicon.ico"
+        "iconUrl": "https://www.activepieces.com/favicon.svg"
       },
       {
         "name": "Bardeen",
@@ -5328,7 +5307,7 @@
           "Requires setup and maintenance.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://nanobrowser.ai/favicon.png"
+        "iconUrl": "https://nanobrowser.ai/favicon.svg"
       },
       {
         "name": "Relevance AI",
@@ -5340,7 +5319,7 @@
         "about": "Workflows and AI automation platform",
         "pros": [],
         "cons": [],
-        "iconUrl": "https://relevance.ai/favicon.ico"
+        "iconUrl": "https://relevance.ai/favicon.svg"
       },
       {
         "name": "Tray.io",
@@ -5457,7 +5436,7 @@
         "cons": [
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://www.cosdata.io/favicon.ico"
+        "iconUrl": "https://www.cosdata.io/favicon.svg"
       },
       {
         "name": "Glean",
@@ -5468,7 +5447,7 @@
           "Search",
           "Subscription"
         ],
-        "iconUrl": "https://www.glean.com/favicon.ico",
+        "iconUrl": "https://www.glean.com/favicon.svg",
         "about": "Glean connects to all your company’s apps and surfaces answers, files, and people instantly using AI.",
         "pros": [
           "Unified search across apps.",
@@ -5541,7 +5520,7 @@
           "Consumer",
           "Freemium"
         ],
-        "iconUrl": "https://neeva.com/favicon.ico",
+        "iconUrl": "https://neeva.com/favicon.svg",
         "about": "Neeva was a consumer search engine that used AI to provide direct answers and ad-free results.",
         "pros": [
           "Ad-free experience.",
@@ -5594,7 +5573,7 @@
           "May require fact‑checking.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://octocode.ai/favicon-16x16.png?v=2"
+        "iconUrl": "https://octocode.ai/favicon.svg"
       },
       {
         "name": "probe",
@@ -5620,7 +5599,7 @@
           "May require fact‑checking.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://probeai.dev/favicon.ico"
+        "iconUrl": "https://probeai.dev/favicon.svg"
       },
       {
         "name": "ragflow",
@@ -5633,29 +5612,6 @@
         "about": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
         "pros": [],
         "cons": []
-      },
-      {
-        "name": "You.com",
-        "description": "AI-powered search and chat engine with privacy focus.",
-        "link": "https://you.com/",
-        "tags": [
-          "Search",
-          "Chat",
-          "Privacy",
-          "Freemium"
-        ],
-        "iconUrl": "https://you.com/favicon.ico",
-        "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
-        "pros": [
-          "Customizable search.",
-          "Integrated chat.",
-          "No tracking."
-        ],
-        "cons": [
-          "Results can vary.",
-          "Newer ecosystem.",
-          "Some features paid."
-        ]
       }
     ]
   },
@@ -5703,7 +5659,7 @@
         "cons": [
           "May require an account or credits."
         ],
-        "iconUrl": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png"
+        "iconUrl": "https://agentic-security.vercel.app/favicon.svg"
       },
       {
         "name": "Anthropic Constitutional AI",
@@ -5714,7 +5670,7 @@
           "Research",
           "Freemium"
         ],
-        "iconUrl": "https://www.anthropic.com/favicon.ico",
+        "iconUrl": "https://www.anthropic.com/favicon.svg",
         "about": "Constitutional AI is Anthropic’s method for training models to be helpful, harmless, and honest.",
         "pros": [
           "Innovative alignment method.",
@@ -5746,7 +5702,7 @@
           "Requires setup and maintenance.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://www.archestra.ai/favicon.ico"
+        "iconUrl": "https://www.archestra.ai/favicon.svg"
       },
       {
         "name": "Decepticon",
@@ -5763,7 +5719,7 @@
         "cons": [
           "May require an account or credits."
         ],
-        "iconUrl": "https://purplelab.framer.ai/favicon.ico"
+        "iconUrl": "https://purplelab.framer.ai/favicon.svg"
       },
       {
         "name": "fast-llm-security-guardrails",
@@ -5781,7 +5737,7 @@
         "cons": [
           "May require an account or credits."
         ],
-        "iconUrl": "https://zenguard.ai/favicon.png"
+        "iconUrl": "https://zenguard.ai/favicon.svg"
       },
       {
         "name": "gateway",
@@ -5802,7 +5758,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://portkey.ai/favicon.ico"
+        "iconUrl": "https://portkey.ai/favicon.svg"
       },
       {
         "name": "Google PAIR",
@@ -5813,7 +5769,7 @@
           "Research",
           "Freemium"
         ],
-        "iconUrl": "https://pair.withgoogle.com/favicon.ico",
+        "iconUrl": "https://pair.withgoogle.com/favicon.svg",
         "about": "PAIR provides tools, guidelines, and research for building responsible, human-centered AI.",
         "pros": [
           "Open resources.",
@@ -5907,7 +5863,7 @@
           "May require fact‑checking.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://mlcommons.org/wp-content/themes/mlcommons/build/img/favicon/apple-touch-icon.png"
+        "iconUrl": "https://mlcommons.org/favicon.svg"
       },
       {
         "name": "OpenAI Red Teaming",
@@ -5918,7 +5874,7 @@
           "Testing",
           "Freemium"
         ],
-        "iconUrl": "https://openai.com/favicon.ico",
+        "iconUrl": "https://openai.com/favicon.svg",
         "about": "OpenAI’s red teaming resources help organizations test AI models for safety, robustness, and misuse.",
         "pros": [
           "Industry-leading guidance.",
@@ -5948,7 +5904,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://operant.ai/favicon.ico"
+        "iconUrl": "https://operant.ai/favicon.svg"
       }
     ]
   },
@@ -5967,7 +5923,7 @@
           "Support",
           "Automation"
         ],
-        "iconUrl": "https://www.ada.cx/favicon.ico",
+        "iconUrl": "https://www.ada.cx/favicon.svg",
         "about": "Ada builds no‑code, brand‑safe chatbots that resolve common support requests across web, mobile, and messaging channels.",
         "pros": [
           "No‑code flows empower CX teams.",
@@ -6004,7 +5960,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://raw.githubusercontent.com/badboysm890/ClaraVerse/d54cfd0f39794f5a5e1727fc8c059074209ec8eb/public/favicon.ico"
+        "iconUrl": "https://claraverse.space/favicon.svg"
       },
       {
         "name": "CLI",
@@ -6056,7 +6012,7 @@
           "Support",
           "Chatbot"
         ],
-        "iconUrl": "https://www.intercom.com/favicon.ico",
+        "iconUrl": "https://www.intercom.com/favicon.svg",
         "about": "Fin is Intercom’s AI agent that can instantly answer most customer queries using your help center and policies, handing off to humans when needed.",
         "pros": [
           "Deeply integrated with Intercom inbox and help center.",
@@ -6078,7 +6034,7 @@
           "Support",
           "Agent Assist"
         ],
-        "iconUrl": "https://www.zendesk.com/favicon.ico",
+        "iconUrl": "https://www.zendesk.com/favicon.svg",
         "about": "Zendesk AI automates intent detection, routing, and suggested answers, while assisting agents with real‑time guidance and macros.",
         "pros": [
           "Native to Zendesk workflows and SLAs.",
@@ -6118,7 +6074,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://trycomp.ai/favicon.ico"
+        "iconUrl": "https://trycomp.ai/favicon.svg"
       },
       {
         "name": "Harvey",
@@ -6129,7 +6085,7 @@
           "Legal",
           "Drafting"
         ],
-        "iconUrl": "https://www.harvey.ai/favicon.ico",
+        "iconUrl": "https://www.harvey.ai/favicon.svg",
         "about": "Harvey partners with leading law firms and in‑house teams to accelerate legal research and drafting with guardrails and enterprise controls.",
         "pros": [
           "Built for legal workflows and teams.",
@@ -6167,7 +6123,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://lawglance.com/favicon.ico"
+        "iconUrl": "https://lawglance.com/favicon.svg"
       },
       {
         "name": "Luminance",
@@ -6178,7 +6134,7 @@
           "Compliance",
           "Contracts"
         ],
-        "iconUrl": "https://www.luminance.com/favicon.ico",
+        "iconUrl": "https://www.luminance.com/favicon.svg",
         "about": "Luminance applies machine learning to surface anomalies, classify clauses, and streamline large‑scale legal reviews.",
         "pros": [
           "Handles large document sets.",
@@ -6209,7 +6165,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://www.spellbook.legal/favicon.ico"
+        "iconUrl": "https://www.spellbook.legal/favicon.svg"
       },
       {
         "name": "Spellbook (by Rally)",
@@ -6220,7 +6176,7 @@
           "Contract",
           "Review"
         ],
-        "iconUrl": "https://www.spellbook.legal/favicon.ico",
+        "iconUrl": "https://www.spellbook.legal/favicon.svg",
         "about": "Spellbook accelerates contract drafting by suggesting clauses, flagging risks, and aligning to playbooks directly within Word.",
         "pros": [
           "In‑editor experience.",
@@ -6253,7 +6209,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://verifywise.ai/favicon.ico"
+        "iconUrl": "https://verifywise.ai/favicon.svg"
       }
     ]
   },
@@ -6272,7 +6228,7 @@
           "Scribing",
           "Healthcare"
         ],
-        "iconUrl": "https://www.deepscribe.ai/favicon.ico",
+        "iconUrl": "https://www.deepscribe.ai/favicon.svg",
         "about": "DeepScribe listens to clinical encounters and drafts structured notes, freeing clinicians from manual typing.",
         "pros": [
           "Reduces admin burden.",
@@ -6319,7 +6275,7 @@
           "ASR",
           "Healthcare"
         ],
-        "iconUrl": "https://www.nuance.com/favicon.ico",
+        "iconUrl": "https://www.nuance.com/favicon.svg",
         "about": "Dragon Medical One provides high‑accuracy clinical dictation with EHR integrations, speeding up documentation and reducing burnout.",
         "pros": [
           "High accuracy for medical vocab.",
@@ -6341,7 +6297,7 @@
           "Diagnostics",
           "Healthcare"
         ],
-        "iconUrl": "https://pathai.com/favicon.ico",
+        "iconUrl": "https://pathai.com/favicon.svg",
         "about": "PathAI builds models for pathology workflows, improving accuracy and consistency in disease detection and grading.",
         "pros": [
           "Research and clinical collaborations.",
@@ -6371,7 +6327,7 @@
           "Accounting",
           "SMB"
         ],
-        "iconUrl": "https://quickbooks.intuit.com/favicon.ico",
+        "iconUrl": "https://quickbooks.intuit.com/favicon.svg",
         "about": "QuickBooks uses AI to categorize transactions, surface cash‑flow insights, and reduce manual bookkeeping.",
         "pros": [
           "Widely used by SMBs.",
@@ -6393,7 +6349,7 @@
           "Fraud",
           "Payments"
         ],
-        "iconUrl": "https://stripe.com/favicon.ico",
+        "iconUrl": "https://stripe.com/favicon.svg",
         "about": "Radar uses network‑level signals across Stripe to block fraud, score risk, and reduce chargebacks.",
         "pros": [
           "Easy enablement on Stripe.",
@@ -6415,7 +6371,7 @@
           "AP Automation",
           "Enterprise"
         ],
-        "iconUrl": "https://www.vic.ai/favicon.ico",
+        "iconUrl": "https://www.vic.ai/favicon.svg",
         "about": "Vic.ai applies AI to accounts payable, extracting and coding invoices, predicting approvals, and cutting cycle times.",
         "pros": [
           "High automation rates.",
@@ -6445,7 +6401,7 @@
           "Talent",
           "Enterprise"
         ],
-        "iconUrl": "https://eightfold.ai/favicon.ico",
+        "iconUrl": "https://eightfold.ai/favicon.svg",
         "about": "Eightfold AI unifies candidate and employee data to power sourcing, matching, and skills‑based mobility across the talent lifecycle.",
         "pros": [
           "Strong candidate/job matching.",
@@ -6467,7 +6423,7 @@
           "Sourcing",
           "Recruiting"
         ],
-        "iconUrl": "https://hireez.com/favicon.ico",
+        "iconUrl": "https://hireez.com/favicon.svg",
         "about": "hireEZ helps recruiters find, enrich, and engage candidates at scale with AI‑assisted search and campaigns.",
         "pros": [
           "Large talent data coverage.",
@@ -6489,7 +6445,7 @@
           "Recruiting",
           "Chatbot"
         ],
-        "iconUrl": "https://www.paradox.ai/favicon.ico",
+        "iconUrl": "https://www.paradox.ai/favicon.svg",
         "about": "Olivia automates candidate Q&A, pre‑screening, and interview scheduling via chat and SMS, especially for high‑volume roles.",
         "pros": [
           "Great for high‑volume hiring.",
@@ -6526,7 +6482,7 @@
           "NPC",
           "Gaming"
         ],
-        "iconUrl": "https://inworld.ai/favicon.ico",
+        "iconUrl": "https://inworld.ai/favicon.svg",
         "about": "Inworld powers dynamic NPCs that react, emote, and converse naturally, with SDKs for popular engines.",
         "pros": [
           "Rich character tools and memory.",
@@ -6548,7 +6504,7 @@
           "Game Dev",
           "Automation"
         ],
-        "iconUrl": "https://modl.ai/favicon.ico",
+        "iconUrl": "https://modl.ai/favicon.svg",
         "about": "modl.ai offers AI testing bots and design tools to accelerate QA and tune gameplay using machine learning.",
         "pros": [
           "Automated playtesting.",
@@ -6570,7 +6526,7 @@
           "Voice",
           "Gaming"
         ],
-        "iconUrl": "https://www.replicastudios.com/favicon.ico",
+        "iconUrl": "https://www.replicastudios.com/favicon.svg",
         "about": "Replica provides a library of licensable AI voices and tools for localization, prototyping, and production dialogue.",
         "pros": [
           "Fast iteration for VO.",
@@ -6600,7 +6556,7 @@
           "EDR",
           "Assistant"
         ],
-        "iconUrl": "https://www.crowdstrike.com/favicon.ico",
+        "iconUrl": "https://www.crowdstrike.com/favicon.svg",
         "about": "Charlotte AI enables natural‑language queries and guided investigations across Falcon telemetry and detections.",
         "pros": [
           "Powerful on Falcon data.",
@@ -6622,7 +6578,7 @@
           "NDR",
           "Threat Detection"
         ],
-        "iconUrl": "https://darktrace.com/favicon.ico",
+        "iconUrl": "https://darktrace.com/favicon.svg",
         "about": "Darktrace models normal behavior in your environment to detect anomalies and can take autonomous actions to contain threats.",
         "pros": [
           "Strong anomaly detection.",
@@ -6644,7 +6600,7 @@
           "SOC",
           "Assistant"
         ],
-        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "iconUrl": "https://www.microsoft.com/favicon.svg",
         "about": "Security Copilot summarizes incidents, hunts threats, and explains findings using your Microsoft security data.",
         "pros": [
           "Deep integration with Defender/Sentinel.",
@@ -6674,7 +6630,7 @@
           "Prospecting",
           "Sales"
         ],
-        "iconUrl": "https://www.apollo.io/favicon.ico",
+        "iconUrl": "https://www.apollo.io/favicon.svg",
         "about": "Apollo combines a large B2B contact database with sequencing and AI to help generate and convert leads.",
         "pros": [
           "Large B2B dataset.",
@@ -6696,7 +6652,7 @@
           "CRM",
           "Marketing"
         ],
-        "iconUrl": "https://www.hubspot.com/favicon.ico",
+        "iconUrl": "https://www.hubspot.com/favicon.svg",
         "about": "HubSpot AI helps draft emails, generate content, and surface insights across Marketing, Sales, and Service Hubs.",
         "pros": [
           "Good for SMB and mid‑market.",
@@ -6718,7 +6674,7 @@
           "CRM",
           "Assistant"
         ],
-        "iconUrl": "https://www.salesforce.com/favicon.ico",
+        "iconUrl": "https://www.salesforce.com/favicon.svg",
         "about": "Einstein Copilot helps reps draft emails, update records, and get pipeline insights with grounded data from Salesforce.",
         "pros": [
           "Native Salesforce context.",
@@ -6748,7 +6704,7 @@
           "Scheduling",
           "Content"
         ],
-        "iconUrl": "https://buffer.com/favicon.ico",
+        "iconUrl": "https://buffer.com/favicon.svg",
         "about": "Buffer’s AI helps brainstorm, draft, and repurpose content across networks, integrated with your scheduling calendar.",
         "pros": [
           "Tight with scheduling and analytics.",
@@ -6770,7 +6726,7 @@
           "Scheduling",
           "Content"
         ],
-        "iconUrl": "https://www.hootsuite.com/favicon.ico",
+        "iconUrl": "https://www.hootsuite.com/favicon.svg",
         "about": "OwlyWriter generates captions, repurposes posts, and drafts content calendars, integrated with Hootsuite’s suite.",
         "pros": [
           "Fits existing Hootsuite flows.",
@@ -6792,7 +6748,7 @@
           "Creator",
           "Content"
         ],
-        "iconUrl": "https://later.com/favicon.ico",
+        "iconUrl": "https://later.com/favicon.svg",
         "about": "Later offers AI caption writing and planning tools alongside their visual calendar for Instagram, TikTok, and more.",
         "pros": [
           "Great visual planner.",
@@ -6824,7 +6780,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://postiz.com/favicon.ico"
+        "iconUrl": "https://postiz.com/favicon.svg"
       }
     ]
   },
@@ -6843,7 +6799,7 @@
           "Recommendations",
           "AWS"
         ],
-        "iconUrl": "https://aws.amazon.com/favicon.ico",
+        "iconUrl": "https://aws.amazon.com/favicon.svg",
         "about": "Personalize brings Amazon.com‑grade recommendation tech to your apps for product, content, and promotions.",
         "pros": [
           "Managed service with SDKs.",
@@ -6865,7 +6821,7 @@
           "Search",
           "Merchandising"
         ],
-        "iconUrl": "https://www.bloomreach.com/favicon.ico",
+        "iconUrl": "https://www.bloomreach.com/favicon.svg",
         "about": "Discovery boosts conversion with semantic search, relevance tuning, and AI‑driven merchandising tools.",
         "pros": [
           "Strong commerce search relevance.",
@@ -6887,7 +6843,7 @@
           "Commerce",
           "Assistant"
         ],
-        "iconUrl": "https://www.shopify.com/favicon.ico",
+        "iconUrl": "https://www.shopify.com/favicon.svg",
         "about": "Shopify Magic helps write product descriptions, answer chats, and personalize storefront content.",
         "pros": [
           "Built into Shopify admin.",
@@ -6934,7 +6890,7 @@
           "Valuation",
           "Analytics"
         ],
-        "iconUrl": "https://www.housecanary.com/favicon.ico",
+        "iconUrl": "https://www.housecanary.com/favicon.svg",
         "about": "HouseCanary provides automated valuation models (AVMs), comparables, and market analytics for lenders and investors.",
         "pros": [
           "Robust AVM data.",
@@ -6956,7 +6912,7 @@
           "3D",
           "Tours"
         ],
-        "iconUrl": "https://matterport.com/favicon.ico",
+        "iconUrl": "https://matterport.com/favicon.svg",
         "about": "Matterport captures spaces into interactive 3D tours with AI features for measurement, floor plans, and virtual staging.",
         "pros": [
           "High‑quality 3D tours.",
@@ -6989,7 +6945,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://brightdata.com/wp-content/themes/brightdata/assets/images/favicon.png"
+        "iconUrl": "https://brightdata.com/favicon.svg"
       },
       {
         "name": "Reonomy",
@@ -7000,7 +6956,7 @@
           "CRE",
           "Data"
         ],
-        "iconUrl": "https://www.reonomy.com/favicon.ico",
+        "iconUrl": "https://www.reonomy.com/favicon.svg",
         "about": "Reonomy unifies ownership, property, and transaction data to power CRE prospecting and market research.",
         "pros": [
           "Comprehensive CRE data.",

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-10-12T18:59:22.784Z",
+  "generatedAt": "2025-10-12T19:20:28.430Z",
   "summary": {
     "sections": 33,
-    "totalTools": 341,
+    "totalTools": 339,
     "uniqueTools": 333,
-    "duplicates": 8,
+    "duplicates": 6,
     "missingIcons": 0,
-    "lowQualityIcons": 162,
+    "lowQualityIcons": 161,
     "githubOutsideDomain": 0
   },
   "duplicates": [
@@ -103,38 +103,6 @@
           "section": "language-chat",
           "link": "https://www.perplexity.ai/",
           "iconUrl": "https://seeklogo.com/images/P/perplexity-ai-logo-13120A6638-seeklogo.com.png"
-        }
-      ]
-    },
-    {
-      "name": "Suno AI",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "audio-music",
-          "link": "https://www.suno.ai/",
-          "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg"
-        },
-        {
-          "section": "productivity",
-          "link": "https://www.suno.ai/",
-          "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg"
-        }
-      ]
-    },
-    {
-      "name": "You.com",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "language-chat",
-          "link": "https://you.com/",
-          "iconUrl": "https://you.com/favicon.svg"
-        },
-        {
-          "section": "search-knowledge-discovery",
-          "link": "https://you.com/",
-          "iconUrl": "https://you.com/favicon.ico"
         }
       ]
     }
@@ -739,349 +707,343 @@
       "name": "PromptHero",
       "section": "prompt-enhancers",
       "link": "https://prompthero.com/",
-      "iconUrl": "https://prompthero.com/favicon.ico"
+      "iconUrl": "https://prompthero.com/favicon.svg"
     },
     {
       "name": "PromptLayer",
       "section": "prompt-enhancers",
       "link": "https://promptlayer.com/",
-      "iconUrl": "https://promptlayer.com/favicon.ico"
+      "iconUrl": "https://promptlayer.com/favicon.svg"
     },
     {
       "name": "Zapier AI Agents",
       "section": "most-famous-agentic-ais",
       "link": "https://zapier.com/blog/ai-agents/",
-      "iconUrl": "https://zapier.com/favicon.ico"
+      "iconUrl": "https://zapier.com/favicon.svg"
     },
     {
       "name": "activepieces",
       "section": "workflow-automation",
       "link": "https://www.activepieces.com",
-      "iconUrl": "https://www.activepieces.com/favicon.ico"
+      "iconUrl": "https://www.activepieces.com/favicon.svg"
     },
     {
       "name": "nanobrowser",
       "section": "workflow-automation",
       "link": "https://nanobrowser.ai",
-      "iconUrl": "https://nanobrowser.ai/favicon.png"
+      "iconUrl": "https://nanobrowser.ai/favicon.svg"
     },
     {
       "name": "Relevance AI",
       "section": "workflow-automation",
       "link": "https://relevance.ai",
-      "iconUrl": "https://relevance.ai/favicon.ico"
+      "iconUrl": "https://relevance.ai/favicon.svg"
     },
     {
       "name": "cosdata",
       "section": "search-knowledge-discovery",
       "link": "https://www.cosdata.io",
-      "iconUrl": "https://www.cosdata.io/favicon.ico"
+      "iconUrl": "https://www.cosdata.io/favicon.svg"
     },
     {
       "name": "Glean",
       "section": "search-knowledge-discovery",
       "link": "https://www.glean.com/",
-      "iconUrl": "https://www.glean.com/favicon.ico"
+      "iconUrl": "https://www.glean.com/favicon.svg"
     },
     {
       "name": "Neeva AI (legacy)",
       "section": "search-knowledge-discovery",
       "link": "https://neeva.com/",
-      "iconUrl": "https://neeva.com/favicon.ico"
+      "iconUrl": "https://neeva.com/favicon.svg"
     },
     {
       "name": "octocode-mcp",
       "section": "search-knowledge-discovery",
       "link": "https://octocode.ai/",
-      "iconUrl": "https://octocode.ai/favicon-16x16.png?v=2"
+      "iconUrl": "https://octocode.ai/favicon.svg"
     },
     {
       "name": "probe",
       "section": "search-knowledge-discovery",
       "link": "https://probeai.dev/",
-      "iconUrl": "https://probeai.dev/favicon.ico"
-    },
-    {
-      "name": "You.com",
-      "section": "search-knowledge-discovery",
-      "link": "https://you.com/",
-      "iconUrl": "https://you.com/favicon.ico"
+      "iconUrl": "https://probeai.dev/favicon.svg"
     },
     {
       "name": "agentic_security",
       "section": "ai-safety-ethics",
       "link": "https://agentic-security.vercel.app",
-      "iconUrl": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png"
+      "iconUrl": "https://agentic-security.vercel.app/favicon.svg"
     },
     {
       "name": "Anthropic Constitutional AI",
       "section": "ai-safety-ethics",
       "link": "https://www.anthropic.com/constitution",
-      "iconUrl": "https://www.anthropic.com/favicon.ico"
+      "iconUrl": "https://www.anthropic.com/favicon.svg"
     },
     {
       "name": "archestra",
       "section": "ai-safety-ethics",
       "link": "https://www.archestra.ai",
-      "iconUrl": "https://www.archestra.ai/favicon.ico"
+      "iconUrl": "https://www.archestra.ai/favicon.svg"
     },
     {
       "name": "Decepticon",
       "section": "ai-safety-ethics",
       "link": "https://purplelab.framer.ai",
-      "iconUrl": "https://purplelab.framer.ai/favicon.ico"
+      "iconUrl": "https://purplelab.framer.ai/favicon.svg"
     },
     {
       "name": "fast-llm-security-guardrails",
       "section": "ai-safety-ethics",
       "link": "https://zenguard.ai/",
-      "iconUrl": "https://zenguard.ai/favicon.png"
+      "iconUrl": "https://zenguard.ai/favicon.svg"
     },
     {
       "name": "gateway",
       "section": "ai-safety-ethics",
       "link": "https://portkey.ai/features/ai-gateway",
-      "iconUrl": "https://portkey.ai/favicon.ico"
+      "iconUrl": "https://portkey.ai/favicon.svg"
     },
     {
       "name": "Google PAIR",
       "section": "ai-safety-ethics",
       "link": "https://pair.withgoogle.com/",
-      "iconUrl": "https://pair.withgoogle.com/favicon.ico"
+      "iconUrl": "https://pair.withgoogle.com/favicon.svg"
     },
     {
       "name": "modelbench",
       "section": "ai-safety-ethics",
       "link": "https://mlcommons.org/ailuminate",
-      "iconUrl": "https://mlcommons.org/wp-content/themes/mlcommons/build/img/favicon/apple-touch-icon.png"
+      "iconUrl": "https://mlcommons.org/favicon.svg"
     },
     {
       "name": "OpenAI Red Teaming",
       "section": "ai-safety-ethics",
       "link": "https://openai.com/research/red-teaming",
-      "iconUrl": "https://openai.com/favicon.ico"
+      "iconUrl": "https://openai.com/favicon.svg"
     },
     {
       "name": "woodpecker",
       "section": "ai-safety-ethics",
       "link": "https://operant.ai",
-      "iconUrl": "https://operant.ai/favicon.ico"
+      "iconUrl": "https://operant.ai/favicon.svg"
     },
     {
       "name": "Ada",
       "section": "customer-support-chatbots",
       "link": "https://www.ada.cx/",
-      "iconUrl": "https://www.ada.cx/favicon.ico"
+      "iconUrl": "https://www.ada.cx/favicon.svg"
     },
     {
       "name": "ClaraVerse",
       "section": "customer-support-chatbots",
       "link": "https://claraverse.space",
-      "iconUrl": "https://raw.githubusercontent.com/badboysm890/ClaraVerse/d54cfd0f39794f5a5e1727fc8c059074209ec8eb/public/favicon.ico"
+      "iconUrl": "https://claraverse.space/favicon.svg"
     },
     {
       "name": "Intercom Fin",
       "section": "customer-support-chatbots",
       "link": "https://www.intercom.com/ai-agent",
-      "iconUrl": "https://www.intercom.com/favicon.ico"
+      "iconUrl": "https://www.intercom.com/favicon.svg"
     },
     {
       "name": "Zendesk AI",
       "section": "customer-support-chatbots",
       "link": "https://www.zendesk.com/ai/",
-      "iconUrl": "https://www.zendesk.com/favicon.ico"
+      "iconUrl": "https://www.zendesk.com/favicon.svg"
     },
     {
       "name": "comp",
       "section": "legal-compliance",
       "link": "https://trycomp.ai",
-      "iconUrl": "https://trycomp.ai/favicon.ico"
+      "iconUrl": "https://trycomp.ai/favicon.svg"
     },
     {
       "name": "Harvey",
       "section": "legal-compliance",
       "link": "https://www.harvey.ai/",
-      "iconUrl": "https://www.harvey.ai/favicon.ico"
+      "iconUrl": "https://www.harvey.ai/favicon.svg"
     },
     {
       "name": "lawglance",
       "section": "legal-compliance",
       "link": "https://lawglance.com/",
-      "iconUrl": "https://lawglance.com/favicon.ico"
+      "iconUrl": "https://lawglance.com/favicon.svg"
     },
     {
       "name": "Luminance",
       "section": "legal-compliance",
       "link": "https://www.luminance.com/",
-      "iconUrl": "https://www.luminance.com/favicon.ico"
+      "iconUrl": "https://www.luminance.com/favicon.svg"
     },
     {
       "name": "Spellbook",
       "section": "legal-compliance",
       "link": "https://www.spellbook.legal/",
-      "iconUrl": "https://www.spellbook.legal/favicon.ico"
+      "iconUrl": "https://www.spellbook.legal/favicon.svg"
     },
     {
       "name": "Spellbook (by Rally)",
       "section": "legal-compliance",
       "link": "https://www.spellbook.legal/",
-      "iconUrl": "https://www.spellbook.legal/favicon.ico"
+      "iconUrl": "https://www.spellbook.legal/favicon.svg"
     },
     {
       "name": "verifywise",
       "section": "legal-compliance",
       "link": "https://verifywise.ai",
-      "iconUrl": "https://verifywise.ai/favicon.ico"
+      "iconUrl": "https://verifywise.ai/favicon.svg"
     },
     {
       "name": "DeepScribe",
       "section": "healthcare-medical-ai",
       "link": "https://www.deepscribe.ai/",
-      "iconUrl": "https://www.deepscribe.ai/favicon.ico"
+      "iconUrl": "https://www.deepscribe.ai/favicon.svg"
     },
     {
       "name": "Nuance Dragon Medical One",
       "section": "healthcare-medical-ai",
       "link": "https://www.nuance.com/healthcare/dragon-medical-one.html",
-      "iconUrl": "https://www.nuance.com/favicon.ico"
+      "iconUrl": "https://www.nuance.com/favicon.svg"
     },
     {
       "name": "PathAI",
       "section": "healthcare-medical-ai",
       "link": "https://pathai.com/",
-      "iconUrl": "https://pathai.com/favicon.ico"
+      "iconUrl": "https://pathai.com/favicon.svg"
     },
     {
       "name": "QuickBooks + AI",
       "section": "finance-accounting",
       "link": "https://quickbooks.intuit.com/",
-      "iconUrl": "https://quickbooks.intuit.com/favicon.ico"
+      "iconUrl": "https://quickbooks.intuit.com/favicon.svg"
     },
     {
       "name": "Stripe Radar",
       "section": "finance-accounting",
       "link": "https://stripe.com/radar",
-      "iconUrl": "https://stripe.com/favicon.ico"
+      "iconUrl": "https://stripe.com/favicon.svg"
     },
     {
       "name": "Vic.ai",
       "section": "finance-accounting",
       "link": "https://www.vic.ai/",
-      "iconUrl": "https://www.vic.ai/favicon.ico"
+      "iconUrl": "https://www.vic.ai/favicon.svg"
     },
     {
       "name": "Eightfold AI",
       "section": "hr-recruitment",
       "link": "https://eightfold.ai/",
-      "iconUrl": "https://eightfold.ai/favicon.ico"
+      "iconUrl": "https://eightfold.ai/favicon.svg"
     },
     {
       "name": "hireEZ",
       "section": "hr-recruitment",
       "link": "https://hireez.com/",
-      "iconUrl": "https://hireez.com/favicon.ico"
+      "iconUrl": "https://hireez.com/favicon.svg"
     },
     {
       "name": "Paradox (Olivia)",
       "section": "hr-recruitment",
       "link": "https://www.paradox.ai/",
-      "iconUrl": "https://www.paradox.ai/favicon.ico"
+      "iconUrl": "https://www.paradox.ai/favicon.svg"
     },
     {
       "name": "Inworld AI",
       "section": "gaming-entertainment",
       "link": "https://inworld.ai/",
-      "iconUrl": "https://inworld.ai/favicon.ico"
+      "iconUrl": "https://inworld.ai/favicon.svg"
     },
     {
       "name": "modl.ai",
       "section": "gaming-entertainment",
       "link": "https://modl.ai/",
-      "iconUrl": "https://modl.ai/favicon.ico"
+      "iconUrl": "https://modl.ai/favicon.svg"
     },
     {
       "name": "Replica Studios",
       "section": "gaming-entertainment",
       "link": "https://www.replicastudios.com/",
-      "iconUrl": "https://www.replicastudios.com/favicon.ico"
+      "iconUrl": "https://www.replicastudios.com/favicon.svg"
     },
     {
       "name": "CrowdStrike Charlotte AI",
       "section": "cybersecurity",
       "link": "https://www.crowdstrike.com/charlotte-ai/",
-      "iconUrl": "https://www.crowdstrike.com/favicon.ico"
+      "iconUrl": "https://www.crowdstrike.com/favicon.svg"
     },
     {
       "name": "Darktrace",
       "section": "cybersecurity",
       "link": "https://darktrace.com/",
-      "iconUrl": "https://darktrace.com/favicon.ico"
+      "iconUrl": "https://darktrace.com/favicon.svg"
     },
     {
       "name": "Microsoft Security Copilot",
       "section": "cybersecurity",
       "link": "https://www.microsoft.com/security/business/ai/security-copilot",
-      "iconUrl": "https://www.microsoft.com/favicon.ico"
+      "iconUrl": "https://www.microsoft.com/favicon.svg"
     },
     {
       "name": "Apollo AI",
       "section": "sales-crm",
       "link": "https://www.apollo.io/",
-      "iconUrl": "https://www.apollo.io/favicon.ico"
+      "iconUrl": "https://www.apollo.io/favicon.svg"
     },
     {
       "name": "HubSpot AI",
       "section": "sales-crm",
       "link": "https://www.hubspot.com/ai",
-      "iconUrl": "https://www.hubspot.com/favicon.ico"
+      "iconUrl": "https://www.hubspot.com/favicon.svg"
     },
     {
       "name": "Salesforce Einstein Copilot",
       "section": "sales-crm",
       "link": "https://www.salesforce.com/products/einstein/copilot/",
-      "iconUrl": "https://www.salesforce.com/favicon.ico"
+      "iconUrl": "https://www.salesforce.com/favicon.svg"
     },
     {
       "name": "Buffer AI Assistant",
       "section": "social-media-content",
       "link": "https://buffer.com/ai",
-      "iconUrl": "https://buffer.com/favicon.ico"
+      "iconUrl": "https://buffer.com/favicon.svg"
     },
     {
       "name": "Hootsuite OwlyWriter AI",
       "section": "social-media-content",
       "link": "https://www.hootsuite.com/products/owlywriter-ai",
-      "iconUrl": "https://www.hootsuite.com/favicon.ico"
+      "iconUrl": "https://www.hootsuite.com/favicon.svg"
     },
     {
       "name": "Later AI",
       "section": "social-media-content",
       "link": "https://later.com/ai",
-      "iconUrl": "https://later.com/favicon.ico"
+      "iconUrl": "https://later.com/favicon.svg"
     },
     {
       "name": "postiz-app",
       "section": "social-media-content",
       "link": "https://postiz.com",
-      "iconUrl": "https://postiz.com/favicon.ico"
+      "iconUrl": "https://postiz.com/favicon.svg"
     },
     {
       "name": "Amazon Personalize",
       "section": "ecommerce-retail",
       "link": "https://aws.amazon.com/personalize/",
-      "iconUrl": "https://aws.amazon.com/favicon.ico"
+      "iconUrl": "https://aws.amazon.com/favicon.svg"
     },
     {
       "name": "Bloomreach Discovery",
       "section": "ecommerce-retail",
       "link": "https://www.bloomreach.com/en/products/discovery",
-      "iconUrl": "https://www.bloomreach.com/favicon.ico"
+      "iconUrl": "https://www.bloomreach.com/favicon.svg"
     },
     {
       "name": "Shopify Magic",
       "section": "ecommerce-retail",
       "link": "https://www.shopify.com/magic",
-      "iconUrl": "https://www.shopify.com/favicon.ico"
+      "iconUrl": "https://www.shopify.com/favicon.svg"
     },
     {
       "name": "storecraft",
@@ -1093,25 +1055,25 @@
       "name": "HouseCanary",
       "section": "real-estate-proptech",
       "link": "https://www.housecanary.com/",
-      "iconUrl": "https://www.housecanary.com/favicon.ico"
+      "iconUrl": "https://www.housecanary.com/favicon.svg"
     },
     {
       "name": "Matterport",
       "section": "real-estate-proptech",
       "link": "https://matterport.com/",
-      "iconUrl": "https://matterport.com/favicon.ico"
+      "iconUrl": "https://matterport.com/favicon.svg"
     },
     {
       "name": "real-estate-ai-agent",
       "section": "real-estate-proptech",
       "link": "https://brightdata.com/",
-      "iconUrl": "https://brightdata.com/wp-content/themes/brightdata/assets/images/favicon.png"
+      "iconUrl": "https://brightdata.com/favicon.svg"
     },
     {
       "name": "Reonomy",
       "section": "real-estate-proptech",
       "link": "https://www.reonomy.com/",
-      "iconUrl": "https://www.reonomy.com/favicon.ico"
+      "iconUrl": "https://www.reonomy.com/favicon.svg"
     }
   ],
   "githubOutsideDomain": []

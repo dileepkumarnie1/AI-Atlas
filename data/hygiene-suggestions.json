@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-12T18:59:30.742Z",
+  "generatedAt": "2025-10-12T19:20:29.205Z",
   "githubDomainSlug": "github-ai-projects",
   "duplicates": [
     {
@@ -49,34 +49,6 @@
         "link": "https://www.perplexity.ai/"
       },
       "remove": []
-    },
-    {
-      "name": "Suno AI",
-      "keep": {
-        "section": "audio-music",
-        "link": "https://www.suno.ai/"
-      },
-      "remove": [
-        {
-          "section": "productivity",
-          "link": "https://www.suno.ai/",
-          "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg"
-        }
-      ]
-    },
-    {
-      "name": "You.com",
-      "keep": {
-        "section": "language-chat",
-        "link": "https://you.com/"
-      },
-      "remove": [
-        {
-          "section": "search-knowledge-discovery",
-          "link": "https://you.com/",
-          "iconUrl": "https://you.com/favicon.ico"
-        }
-      ]
     }
   ],
   "moves": [],
@@ -1275,7 +1247,7 @@
         "name": "PromptHero",
         "section": "prompt-enhancers",
         "link": "https://prompthero.com/",
-        "current": "https://prompthero.com/favicon.ico",
+        "current": "https://prompthero.com/favicon.svg",
         "candidates": [
           "https://prompthero.com/favicon.svg",
           "https://prompthero.com/apple-touch-icon.png",
@@ -1287,7 +1259,7 @@
         "name": "PromptLayer",
         "section": "prompt-enhancers",
         "link": "https://promptlayer.com/",
-        "current": "https://promptlayer.com/favicon.ico",
+        "current": "https://promptlayer.com/favicon.svg",
         "candidates": [
           "https://promptlayer.com/favicon.svg",
           "https://promptlayer.com/apple-touch-icon.png",
@@ -1299,7 +1271,7 @@
         "name": "Zapier AI Agents",
         "section": "most-famous-agentic-ais",
         "link": "https://zapier.com/blog/ai-agents/",
-        "current": "https://zapier.com/favicon.ico",
+        "current": "https://zapier.com/favicon.svg",
         "candidates": [
           "https://zapier.com/favicon.svg",
           "https://zapier.com/apple-touch-icon.png",
@@ -1311,7 +1283,7 @@
         "name": "activepieces",
         "section": "workflow-automation",
         "link": "https://www.activepieces.com",
-        "current": "https://www.activepieces.com/favicon.ico",
+        "current": "https://www.activepieces.com/favicon.svg",
         "candidates": [
           "https://www.activepieces.com/favicon.svg",
           "https://www.activepieces.com/apple-touch-icon.png",
@@ -1323,7 +1295,7 @@
         "name": "nanobrowser",
         "section": "workflow-automation",
         "link": "https://nanobrowser.ai",
-        "current": "https://nanobrowser.ai/favicon.png",
+        "current": "https://nanobrowser.ai/favicon.svg",
         "candidates": [
           "https://nanobrowser.ai/favicon.svg",
           "https://nanobrowser.ai/apple-touch-icon.png",
@@ -1335,7 +1307,7 @@
         "name": "Relevance AI",
         "section": "workflow-automation",
         "link": "https://relevance.ai",
-        "current": "https://relevance.ai/favicon.ico",
+        "current": "https://relevance.ai/favicon.svg",
         "candidates": [
           "https://relevance.ai/favicon.svg",
           "https://relevance.ai/apple-touch-icon.png",
@@ -1347,7 +1319,7 @@
         "name": "cosdata",
         "section": "search-knowledge-discovery",
         "link": "https://www.cosdata.io",
-        "current": "https://www.cosdata.io/favicon.ico",
+        "current": "https://www.cosdata.io/favicon.svg",
         "candidates": [
           "https://www.cosdata.io/favicon.svg",
           "https://www.cosdata.io/apple-touch-icon.png",
@@ -1359,7 +1331,7 @@
         "name": "Glean",
         "section": "search-knowledge-discovery",
         "link": "https://www.glean.com/",
-        "current": "https://www.glean.com/favicon.ico",
+        "current": "https://www.glean.com/favicon.svg",
         "candidates": [
           "https://www.glean.com/favicon.svg",
           "https://www.glean.com/apple-touch-icon.png",
@@ -1371,7 +1343,7 @@
         "name": "Neeva AI (legacy)",
         "section": "search-knowledge-discovery",
         "link": "https://neeva.com/",
-        "current": "https://neeva.com/favicon.ico",
+        "current": "https://neeva.com/favicon.svg",
         "candidates": [
           "https://neeva.com/favicon.svg",
           "https://neeva.com/apple-touch-icon.png",
@@ -1383,7 +1355,7 @@
         "name": "octocode-mcp",
         "section": "search-knowledge-discovery",
         "link": "https://octocode.ai/",
-        "current": "https://octocode.ai/favicon-16x16.png?v=2",
+        "current": "https://octocode.ai/favicon.svg",
         "candidates": [
           "https://octocode.ai/favicon.svg",
           "https://octocode.ai/apple-touch-icon.png",
@@ -1395,7 +1367,7 @@
         "name": "probe",
         "section": "search-knowledge-discovery",
         "link": "https://probeai.dev/",
-        "current": "https://probeai.dev/favicon.ico",
+        "current": "https://probeai.dev/favicon.svg",
         "candidates": [
           "https://probeai.dev/favicon.svg",
           "https://probeai.dev/apple-touch-icon.png",
@@ -1404,22 +1376,10 @@
         "recommended": "https://probeai.dev/favicon.svg"
       },
       {
-        "name": "You.com",
-        "section": "search-knowledge-discovery",
-        "link": "https://you.com/",
-        "current": "https://you.com/favicon.ico",
-        "candidates": [
-          "https://you.com/favicon.svg",
-          "https://you.com/apple-touch-icon.png",
-          "https://you.com/favicon.ico"
-        ],
-        "recommended": "https://you.com/favicon.svg"
-      },
-      {
         "name": "agentic_security",
         "section": "ai-safety-ethics",
         "link": "https://agentic-security.vercel.app",
-        "current": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png",
+        "current": "https://agentic-security.vercel.app/favicon.svg",
         "candidates": [
           "https://agentic-security.vercel.app/favicon.svg",
           "https://agentic-security.vercel.app/apple-touch-icon.png",
@@ -1431,7 +1391,7 @@
         "name": "Anthropic Constitutional AI",
         "section": "ai-safety-ethics",
         "link": "https://www.anthropic.com/constitution",
-        "current": "https://www.anthropic.com/favicon.ico",
+        "current": "https://www.anthropic.com/favicon.svg",
         "candidates": [
           "https://www.anthropic.com/favicon.svg",
           "https://www.anthropic.com/apple-touch-icon.png",
@@ -1443,7 +1403,7 @@
         "name": "archestra",
         "section": "ai-safety-ethics",
         "link": "https://www.archestra.ai",
-        "current": "https://www.archestra.ai/favicon.ico",
+        "current": "https://www.archestra.ai/favicon.svg",
         "candidates": [
           "https://www.archestra.ai/favicon.svg",
           "https://www.archestra.ai/apple-touch-icon.png",
@@ -1455,7 +1415,7 @@
         "name": "Decepticon",
         "section": "ai-safety-ethics",
         "link": "https://purplelab.framer.ai",
-        "current": "https://purplelab.framer.ai/favicon.ico",
+        "current": "https://purplelab.framer.ai/favicon.svg",
         "candidates": [
           "https://purplelab.framer.ai/favicon.svg",
           "https://purplelab.framer.ai/apple-touch-icon.png",
@@ -1467,7 +1427,7 @@
         "name": "fast-llm-security-guardrails",
         "section": "ai-safety-ethics",
         "link": "https://zenguard.ai/",
-        "current": "https://zenguard.ai/favicon.png",
+        "current": "https://zenguard.ai/favicon.svg",
         "candidates": [
           "https://zenguard.ai/favicon.svg",
           "https://zenguard.ai/apple-touch-icon.png",
@@ -1479,7 +1439,7 @@
         "name": "gateway",
         "section": "ai-safety-ethics",
         "link": "https://portkey.ai/features/ai-gateway",
-        "current": "https://portkey.ai/favicon.ico",
+        "current": "https://portkey.ai/favicon.svg",
         "candidates": [
           "https://portkey.ai/favicon.svg",
           "https://portkey.ai/apple-touch-icon.png",
@@ -1491,7 +1451,7 @@
         "name": "Google PAIR",
         "section": "ai-safety-ethics",
         "link": "https://pair.withgoogle.com/",
-        "current": "https://pair.withgoogle.com/favicon.ico",
+        "current": "https://pair.withgoogle.com/favicon.svg",
         "candidates": [
           "https://pair.withgoogle.com/favicon.svg",
           "https://pair.withgoogle.com/apple-touch-icon.png",
@@ -1503,7 +1463,7 @@
         "name": "modelbench",
         "section": "ai-safety-ethics",
         "link": "https://mlcommons.org/ailuminate",
-        "current": "https://mlcommons.org/wp-content/themes/mlcommons/build/img/favicon/apple-touch-icon.png",
+        "current": "https://mlcommons.org/favicon.svg",
         "candidates": [
           "https://mlcommons.org/favicon.svg",
           "https://mlcommons.org/apple-touch-icon.png",
@@ -1515,7 +1475,7 @@
         "name": "OpenAI Red Teaming",
         "section": "ai-safety-ethics",
         "link": "https://openai.com/research/red-teaming",
-        "current": "https://openai.com/favicon.ico",
+        "current": "https://openai.com/favicon.svg",
         "candidates": [
           "https://openai.com/favicon.svg",
           "https://openai.com/apple-touch-icon.png",
@@ -1527,7 +1487,7 @@
         "name": "woodpecker",
         "section": "ai-safety-ethics",
         "link": "https://operant.ai",
-        "current": "https://operant.ai/favicon.ico",
+        "current": "https://operant.ai/favicon.svg",
         "candidates": [
           "https://operant.ai/favicon.svg",
           "https://operant.ai/apple-touch-icon.png",
@@ -1539,7 +1499,7 @@
         "name": "Ada",
         "section": "customer-support-chatbots",
         "link": "https://www.ada.cx/",
-        "current": "https://www.ada.cx/favicon.ico",
+        "current": "https://www.ada.cx/favicon.svg",
         "candidates": [
           "https://www.ada.cx/favicon.svg",
           "https://www.ada.cx/apple-touch-icon.png",
@@ -1551,7 +1511,7 @@
         "name": "ClaraVerse",
         "section": "customer-support-chatbots",
         "link": "https://claraverse.space",
-        "current": "https://raw.githubusercontent.com/badboysm890/ClaraVerse/d54cfd0f39794f5a5e1727fc8c059074209ec8eb/public/favicon.ico",
+        "current": "https://claraverse.space/favicon.svg",
         "candidates": [
           "https://claraverse.space/favicon.svg",
           "https://claraverse.space/apple-touch-icon.png",
@@ -1563,7 +1523,7 @@
         "name": "Intercom Fin",
         "section": "customer-support-chatbots",
         "link": "https://www.intercom.com/ai-agent",
-        "current": "https://www.intercom.com/favicon.ico",
+        "current": "https://www.intercom.com/favicon.svg",
         "candidates": [
           "https://www.intercom.com/favicon.svg",
           "https://www.intercom.com/apple-touch-icon.png",
@@ -1575,7 +1535,7 @@
         "name": "Zendesk AI",
         "section": "customer-support-chatbots",
         "link": "https://www.zendesk.com/ai/",
-        "current": "https://www.zendesk.com/favicon.ico",
+        "current": "https://www.zendesk.com/favicon.svg",
         "candidates": [
           "https://www.zendesk.com/favicon.svg",
           "https://www.zendesk.com/apple-touch-icon.png",
@@ -1587,7 +1547,7 @@
         "name": "comp",
         "section": "legal-compliance",
         "link": "https://trycomp.ai",
-        "current": "https://trycomp.ai/favicon.ico",
+        "current": "https://trycomp.ai/favicon.svg",
         "candidates": [
           "https://trycomp.ai/favicon.svg",
           "https://trycomp.ai/apple-touch-icon.png",
@@ -1599,7 +1559,7 @@
         "name": "Harvey",
         "section": "legal-compliance",
         "link": "https://www.harvey.ai/",
-        "current": "https://www.harvey.ai/favicon.ico",
+        "current": "https://www.harvey.ai/favicon.svg",
         "candidates": [
           "https://www.harvey.ai/favicon.svg",
           "https://www.harvey.ai/apple-touch-icon.png",
@@ -1611,7 +1571,7 @@
         "name": "lawglance",
         "section": "legal-compliance",
         "link": "https://lawglance.com/",
-        "current": "https://lawglance.com/favicon.ico",
+        "current": "https://lawglance.com/favicon.svg",
         "candidates": [
           "https://lawglance.com/favicon.svg",
           "https://lawglance.com/apple-touch-icon.png",
@@ -1623,7 +1583,7 @@
         "name": "Luminance",
         "section": "legal-compliance",
         "link": "https://www.luminance.com/",
-        "current": "https://www.luminance.com/favicon.ico",
+        "current": "https://www.luminance.com/favicon.svg",
         "candidates": [
           "https://www.luminance.com/favicon.svg",
           "https://www.luminance.com/apple-touch-icon.png",
@@ -1635,7 +1595,7 @@
         "name": "Spellbook",
         "section": "legal-compliance",
         "link": "https://www.spellbook.legal/",
-        "current": "https://www.spellbook.legal/favicon.ico",
+        "current": "https://www.spellbook.legal/favicon.svg",
         "candidates": [
           "https://www.spellbook.legal/favicon.svg",
           "https://www.spellbook.legal/apple-touch-icon.png",
@@ -1647,7 +1607,7 @@
         "name": "Spellbook (by Rally)",
         "section": "legal-compliance",
         "link": "https://www.spellbook.legal/",
-        "current": "https://www.spellbook.legal/favicon.ico",
+        "current": "https://www.spellbook.legal/favicon.svg",
         "candidates": [
           "https://www.spellbook.legal/favicon.svg",
           "https://www.spellbook.legal/apple-touch-icon.png",
@@ -1659,7 +1619,7 @@
         "name": "verifywise",
         "section": "legal-compliance",
         "link": "https://verifywise.ai",
-        "current": "https://verifywise.ai/favicon.ico",
+        "current": "https://verifywise.ai/favicon.svg",
         "candidates": [
           "https://verifywise.ai/favicon.svg",
           "https://verifywise.ai/apple-touch-icon.png",
@@ -1671,7 +1631,7 @@
         "name": "DeepScribe",
         "section": "healthcare-medical-ai",
         "link": "https://www.deepscribe.ai/",
-        "current": "https://www.deepscribe.ai/favicon.ico",
+        "current": "https://www.deepscribe.ai/favicon.svg",
         "candidates": [
           "https://www.deepscribe.ai/favicon.svg",
           "https://www.deepscribe.ai/apple-touch-icon.png",
@@ -1683,7 +1643,7 @@
         "name": "Nuance Dragon Medical One",
         "section": "healthcare-medical-ai",
         "link": "https://www.nuance.com/healthcare/dragon-medical-one.html",
-        "current": "https://www.nuance.com/favicon.ico",
+        "current": "https://www.nuance.com/favicon.svg",
         "candidates": [
           "https://www.nuance.com/favicon.svg",
           "https://www.nuance.com/apple-touch-icon.png",
@@ -1695,7 +1655,7 @@
         "name": "PathAI",
         "section": "healthcare-medical-ai",
         "link": "https://pathai.com/",
-        "current": "https://pathai.com/favicon.ico",
+        "current": "https://pathai.com/favicon.svg",
         "candidates": [
           "https://pathai.com/favicon.svg",
           "https://pathai.com/apple-touch-icon.png",
@@ -1707,7 +1667,7 @@
         "name": "QuickBooks + AI",
         "section": "finance-accounting",
         "link": "https://quickbooks.intuit.com/",
-        "current": "https://quickbooks.intuit.com/favicon.ico",
+        "current": "https://quickbooks.intuit.com/favicon.svg",
         "candidates": [
           "https://quickbooks.intuit.com/favicon.svg",
           "https://quickbooks.intuit.com/apple-touch-icon.png",
@@ -1719,7 +1679,7 @@
         "name": "Stripe Radar",
         "section": "finance-accounting",
         "link": "https://stripe.com/radar",
-        "current": "https://stripe.com/favicon.ico",
+        "current": "https://stripe.com/favicon.svg",
         "candidates": [
           "https://stripe.com/favicon.svg",
           "https://stripe.com/apple-touch-icon.png",
@@ -1731,7 +1691,7 @@
         "name": "Vic.ai",
         "section": "finance-accounting",
         "link": "https://www.vic.ai/",
-        "current": "https://www.vic.ai/favicon.ico",
+        "current": "https://www.vic.ai/favicon.svg",
         "candidates": [
           "https://www.vic.ai/favicon.svg",
           "https://www.vic.ai/apple-touch-icon.png",
@@ -1743,7 +1703,7 @@
         "name": "Eightfold AI",
         "section": "hr-recruitment",
         "link": "https://eightfold.ai/",
-        "current": "https://eightfold.ai/favicon.ico",
+        "current": "https://eightfold.ai/favicon.svg",
         "candidates": [
           "https://eightfold.ai/favicon.svg",
           "https://eightfold.ai/apple-touch-icon.png",
@@ -1755,7 +1715,7 @@
         "name": "hireEZ",
         "section": "hr-recruitment",
         "link": "https://hireez.com/",
-        "current": "https://hireez.com/favicon.ico",
+        "current": "https://hireez.com/favicon.svg",
         "candidates": [
           "https://hireez.com/favicon.svg",
           "https://hireez.com/apple-touch-icon.png",
@@ -1767,7 +1727,7 @@
         "name": "Paradox (Olivia)",
         "section": "hr-recruitment",
         "link": "https://www.paradox.ai/",
-        "current": "https://www.paradox.ai/favicon.ico",
+        "current": "https://www.paradox.ai/favicon.svg",
         "candidates": [
           "https://www.paradox.ai/favicon.svg",
           "https://www.paradox.ai/apple-touch-icon.png",
@@ -1779,7 +1739,7 @@
         "name": "Inworld AI",
         "section": "gaming-entertainment",
         "link": "https://inworld.ai/",
-        "current": "https://inworld.ai/favicon.ico",
+        "current": "https://inworld.ai/favicon.svg",
         "candidates": [
           "https://inworld.ai/favicon.svg",
           "https://inworld.ai/apple-touch-icon.png",
@@ -1791,7 +1751,7 @@
         "name": "modl.ai",
         "section": "gaming-entertainment",
         "link": "https://modl.ai/",
-        "current": "https://modl.ai/favicon.ico",
+        "current": "https://modl.ai/favicon.svg",
         "candidates": [
           "https://modl.ai/favicon.svg",
           "https://modl.ai/apple-touch-icon.png",
@@ -1803,7 +1763,7 @@
         "name": "Replica Studios",
         "section": "gaming-entertainment",
         "link": "https://www.replicastudios.com/",
-        "current": "https://www.replicastudios.com/favicon.ico",
+        "current": "https://www.replicastudios.com/favicon.svg",
         "candidates": [
           "https://www.replicastudios.com/favicon.svg",
           "https://www.replicastudios.com/apple-touch-icon.png",
@@ -1815,7 +1775,7 @@
         "name": "CrowdStrike Charlotte AI",
         "section": "cybersecurity",
         "link": "https://www.crowdstrike.com/charlotte-ai/",
-        "current": "https://www.crowdstrike.com/favicon.ico",
+        "current": "https://www.crowdstrike.com/favicon.svg",
         "candidates": [
           "https://www.crowdstrike.com/favicon.svg",
           "https://www.crowdstrike.com/apple-touch-icon.png",
@@ -1827,7 +1787,7 @@
         "name": "Darktrace",
         "section": "cybersecurity",
         "link": "https://darktrace.com/",
-        "current": "https://darktrace.com/favicon.ico",
+        "current": "https://darktrace.com/favicon.svg",
         "candidates": [
           "https://darktrace.com/favicon.svg",
           "https://darktrace.com/apple-touch-icon.png",
@@ -1839,7 +1799,7 @@
         "name": "Microsoft Security Copilot",
         "section": "cybersecurity",
         "link": "https://www.microsoft.com/security/business/ai/security-copilot",
-        "current": "https://www.microsoft.com/favicon.ico",
+        "current": "https://www.microsoft.com/favicon.svg",
         "candidates": [
           "https://www.microsoft.com/favicon.svg",
           "https://www.microsoft.com/apple-touch-icon.png",
@@ -1851,7 +1811,7 @@
         "name": "Apollo AI",
         "section": "sales-crm",
         "link": "https://www.apollo.io/",
-        "current": "https://www.apollo.io/favicon.ico",
+        "current": "https://www.apollo.io/favicon.svg",
         "candidates": [
           "https://www.apollo.io/favicon.svg",
           "https://www.apollo.io/apple-touch-icon.png",
@@ -1863,7 +1823,7 @@
         "name": "HubSpot AI",
         "section": "sales-crm",
         "link": "https://www.hubspot.com/ai",
-        "current": "https://www.hubspot.com/favicon.ico",
+        "current": "https://www.hubspot.com/favicon.svg",
         "candidates": [
           "https://www.hubspot.com/favicon.svg",
           "https://www.hubspot.com/apple-touch-icon.png",
@@ -1875,7 +1835,7 @@
         "name": "Salesforce Einstein Copilot",
         "section": "sales-crm",
         "link": "https://www.salesforce.com/products/einstein/copilot/",
-        "current": "https://www.salesforce.com/favicon.ico",
+        "current": "https://www.salesforce.com/favicon.svg",
         "candidates": [
           "https://www.salesforce.com/favicon.svg",
           "https://www.salesforce.com/apple-touch-icon.png",
@@ -1887,7 +1847,7 @@
         "name": "Buffer AI Assistant",
         "section": "social-media-content",
         "link": "https://buffer.com/ai",
-        "current": "https://buffer.com/favicon.ico",
+        "current": "https://buffer.com/favicon.svg",
         "candidates": [
           "https://buffer.com/favicon.svg",
           "https://buffer.com/apple-touch-icon.png",
@@ -1899,7 +1859,7 @@
         "name": "Hootsuite OwlyWriter AI",
         "section": "social-media-content",
         "link": "https://www.hootsuite.com/products/owlywriter-ai",
-        "current": "https://www.hootsuite.com/favicon.ico",
+        "current": "https://www.hootsuite.com/favicon.svg",
         "candidates": [
           "https://www.hootsuite.com/favicon.svg",
           "https://www.hootsuite.com/apple-touch-icon.png",
@@ -1911,7 +1871,7 @@
         "name": "Later AI",
         "section": "social-media-content",
         "link": "https://later.com/ai",
-        "current": "https://later.com/favicon.ico",
+        "current": "https://later.com/favicon.svg",
         "candidates": [
           "https://later.com/favicon.svg",
           "https://later.com/apple-touch-icon.png",
@@ -1923,7 +1883,7 @@
         "name": "postiz-app",
         "section": "social-media-content",
         "link": "https://postiz.com",
-        "current": "https://postiz.com/favicon.ico",
+        "current": "https://postiz.com/favicon.svg",
         "candidates": [
           "https://postiz.com/favicon.svg",
           "https://postiz.com/apple-touch-icon.png",
@@ -1935,7 +1895,7 @@
         "name": "Amazon Personalize",
         "section": "ecommerce-retail",
         "link": "https://aws.amazon.com/personalize/",
-        "current": "https://aws.amazon.com/favicon.ico",
+        "current": "https://aws.amazon.com/favicon.svg",
         "candidates": [
           "https://aws.amazon.com/favicon.svg",
           "https://aws.amazon.com/apple-touch-icon.png",
@@ -1947,7 +1907,7 @@
         "name": "Bloomreach Discovery",
         "section": "ecommerce-retail",
         "link": "https://www.bloomreach.com/en/products/discovery",
-        "current": "https://www.bloomreach.com/favicon.ico",
+        "current": "https://www.bloomreach.com/favicon.svg",
         "candidates": [
           "https://www.bloomreach.com/favicon.svg",
           "https://www.bloomreach.com/apple-touch-icon.png",
@@ -1959,7 +1919,7 @@
         "name": "Shopify Magic",
         "section": "ecommerce-retail",
         "link": "https://www.shopify.com/magic",
-        "current": "https://www.shopify.com/favicon.ico",
+        "current": "https://www.shopify.com/favicon.svg",
         "candidates": [
           "https://www.shopify.com/favicon.svg",
           "https://www.shopify.com/apple-touch-icon.png",
@@ -1983,7 +1943,7 @@
         "name": "HouseCanary",
         "section": "real-estate-proptech",
         "link": "https://www.housecanary.com/",
-        "current": "https://www.housecanary.com/favicon.ico",
+        "current": "https://www.housecanary.com/favicon.svg",
         "candidates": [
           "https://www.housecanary.com/favicon.svg",
           "https://www.housecanary.com/apple-touch-icon.png",
@@ -1995,7 +1955,7 @@
         "name": "Matterport",
         "section": "real-estate-proptech",
         "link": "https://matterport.com/",
-        "current": "https://matterport.com/favicon.ico",
+        "current": "https://matterport.com/favicon.svg",
         "candidates": [
           "https://matterport.com/favicon.svg",
           "https://matterport.com/apple-touch-icon.png",
@@ -2007,7 +1967,7 @@
         "name": "real-estate-ai-agent",
         "section": "real-estate-proptech",
         "link": "https://brightdata.com/",
-        "current": "https://brightdata.com/wp-content/themes/brightdata/assets/images/favicon.png",
+        "current": "https://brightdata.com/favicon.svg",
         "candidates": [
           "https://brightdata.com/favicon.svg",
           "https://brightdata.com/apple-touch-icon.png",
@@ -2019,7 +1979,7 @@
         "name": "Reonomy",
         "section": "real-estate-proptech",
         "link": "https://www.reonomy.com/",
-        "current": "https://www.reonomy.com/favicon.ico",
+        "current": "https://www.reonomy.com/favicon.svg",
         "candidates": [
           "https://www.reonomy.com/favicon.svg",
           "https://www.reonomy.com/apple-touch-icon.png",

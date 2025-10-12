@@ -1,15 +1,15 @@
 # Tools Hygiene Report
 
-Generated: 2025-10-12T18:59:22.784Z
+Generated: 2025-10-12T19:20:28.430Z
 
 ## Summary
 
 - Sections: 33
-- Total tools (occurrences): 341
+- Total tools (occurrences): 339
 - Unique tools: 333
-- Duplicates: 8
+- Duplicates: 6
 - Missing icons: 0
-- Low-quality icons: 162
+- Low-quality icons: 161
 - GitHub links outside GitHub domain: 0
 
 ---
@@ -34,12 +34,6 @@ Generated: 2025-10-12T18:59:22.784Z
 - Perplexity AI — 2 occurrences
   - most-popular — https://www.perplexity.ai/
   - language-chat — https://www.perplexity.ai/
-- Suno AI — 2 occurrences
-  - audio-music — https://www.suno.ai/
-  - productivity — https://www.suno.ai/
-- You.com — 2 occurrences
-  - language-chat — https://you.com/
-  - search-knowledge-discovery — https://you.com/
 
 ## GitHub outside GitHub domain (sample)
 
@@ -47,7 +41,7 @@ Generated: 2025-10-12T18:59:22.784Z
 ## Icon issues
 
 - Missing icons: 0
-- Low-quality icons: 162
+- Low-quality icons: 161
 
 Recommended sources:
 - GitHub: https://avatars.githubusercontent.com/<org-or-user>?s=128&v=4

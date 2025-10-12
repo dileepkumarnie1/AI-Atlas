@@ -14,6 +14,20 @@ const LIMIT_DEDUP = Number(process.env.LIMIT_DEDUP || 3);
 
 function normalizeKey(s){ return String(s||'').trim().toLowerCase(); }
 
+function getHostname(link){
+  try { return new URL(String(link||'')).hostname; } catch { return ''; }
+}
+
+// Build a resilient fallback icon URL given a tool link
+function buildFallbackIcon(link, size=64){
+  const host = getHostname(link);
+  if(!host) return '';
+  const s2 = `https://www.google.com/s2/favicons?domain=${host}&sz=${size}`;
+  const duck = `https://icons.duckduckgo.com/ip3/${host}.ico`;
+  // Prefer Google S2 (PNG, consistent), then DuckDuckGo
+  return s2 || duck;
+}
+
 function findSection(db, sectionId){
   const sid = String(sectionId||'').trim();
   const sidNorm = normalizeKey(sid);
@@ -45,7 +59,11 @@ async function main(){
     if(!sec) continue;
     const idx = findToolIndexByName(sec, m.name);
     if(idx === -1) continue;
-    const rec = String(m.recommended||'').trim();
+    // Choose recommendation; if absent, derive a safe fallback from the tool link
+    let rec = String(m.recommended||'').trim();
+    if(!rec){
+      rec = buildFallbackIcon(sec.tools[idx]?.link);
+    }
     if(!rec) continue;
     if(!sec.tools[idx].iconUrl || sec.tools[idx].iconUrl !== rec){
       sec.tools[idx].iconUrl = rec;
@@ -60,7 +78,15 @@ async function main(){
     if(!sec) continue;
     const idx = findToolIndexByName(sec, l.name);
     if(idx === -1) continue;
-    const rec = String(l.recommended||'').trim();
+    // Prefer recommended; else any candidate; else fallback from link
+    let rec = String(l.recommended||'').trim();
+    if(!rec){
+      const candidates = Array.isArray(l.candidates) ? l.candidates : [];
+      rec = String(candidates.find(u => String(u||'').trim())||'').trim();
+    }
+    if(!rec){
+      rec = buildFallbackIcon(sec.tools[idx]?.link);
+    }
     if(!rec) continue;
     if(sec.tools[idx].iconUrl !== rec){
       sec.tools[idx].iconUrl = rec;
@@ -98,6 +124,19 @@ async function main(){
       if(idx !== -1){
         sec.tools.splice(idx, 1);
         changes++;
+      }
+    }
+  }
+
+  // 5) Final pass: ensure every tool has some icon. If missing, use fallback from its link
+  for(const sec of db){
+    const tools = Array.isArray(sec.tools) ? sec.tools : [];
+    for(const t of tools){
+      if(!t) continue;
+      const hasIcon = Boolean(String(t.iconUrl||'').trim());
+      if(!hasIcon){
+        const fb = buildFallbackIcon(t.link);
+        if(fb){ t.iconUrl = fb; changes++; }
       }
     }
   }
