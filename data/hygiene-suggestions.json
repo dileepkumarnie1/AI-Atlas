@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-12T18:32:41.598Z",
+  "generatedAt": "2025-10-12T18:40:23.540Z",
   "githubDomainSlug": "github-ai-projects",
   "duplicates": [
     {
@@ -17,20 +17,6 @@
         "link": "https://claude.ai/"
       },
       "remove": []
-    },
-    {
-      "name": "DeepL",
-      "keep": {
-        "section": "language-chat",
-        "link": "https://www.deepl.com/translator"
-      },
-      "remove": [
-        {
-          "section": "productivity",
-          "link": "https://www.deepl.com/translator",
-          "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg"
-        }
-      ]
     },
     {
       "name": "Elicit",
@@ -65,14 +51,6 @@
       "keep": {
         "section": "language-chat",
         "link": "https://gemini.google.com/"
-      },
-      "remove": []
-    },
-    {
-      "name": "GitHub Copilot",
-      "keep": {
-        "section": "code-assistance",
-        "link": "https://github.com/features/copilot"
       },
       "remove": []
     },
@@ -171,20 +149,7 @@
       ]
     }
   ],
-  "moves": [
-    {
-      "name": "GitHub Copilot",
-      "from": "most-popular",
-      "to": "github-ai-projects",
-      "link": "https://github.com/features/copilot"
-    },
-    {
-      "name": "GitHub Copilot",
-      "from": "code-assistance",
-      "to": "github-ai-projects",
-      "link": "https://github.com/features/copilot"
-    }
-  ],
+  "moves": [],
   "icons": {
     "missing": [],
     "lowQuality": [

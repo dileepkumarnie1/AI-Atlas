@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2025-10-12T18:11:59.491Z",
+  "generatedAt": "2025-10-12T18:40:21.042Z",
   "summary": {
     "sections": 33,
-    "totalTools": 348,
+    "totalTools": 346,
     "uniqueTools": 333,
-    "duplicates": 15,
+    "duplicates": 13,
     "missingIcons": 0,
     "lowQualityIcons": 163,
-    "githubOutsideDomain": 2
+    "githubOutsideDomain": 0
   },
   "duplicates": [
     {
@@ -39,22 +39,6 @@
           "section": "language-chat",
           "link": "https://claude.ai/",
           "iconUrl": "https://pbs.twimg.com/profile_images/1679549573978877952/x-3245fA_400x400.jpg"
-        }
-      ]
-    },
-    {
-      "name": "DeepL",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "language-chat",
-          "link": "https://www.deepl.com/translator",
-          "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg"
-        },
-        {
-          "section": "productivity",
-          "link": "https://www.deepl.com/translator",
-          "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg"
         }
       ]
     },
@@ -103,22 +87,6 @@
           "section": "language-chat",
           "link": "https://gemini.google.com/",
           "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg"
-        }
-      ]
-    },
-    {
-      "name": "GitHub Copilot",
-      "count": 2,
-      "occurrences": [
-        {
-          "section": "most-popular",
-          "link": "https://github.com/features/copilot",
-          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png"
-        },
-        {
-          "section": "code-assistance",
-          "link": "https://github.com/features/copilot",
-          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png"
         }
       ]
     },
@@ -1069,16 +1037,5 @@
       "iconUrl": "https://www.reonomy.com/favicon.ico"
     }
   ],
-  "githubOutsideDomain": [
-    {
-      "name": "GitHub Copilot",
-      "section": "most-popular",
-      "link": "https://github.com/features/copilot"
-    },
-    {
-      "name": "GitHub Copilot",
-      "section": "code-assistance",
-      "link": "https://github.com/features/copilot"
-    }
-  ]
+  "githubOutsideDomain": []
 }

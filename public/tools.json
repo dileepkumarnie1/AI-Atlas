@@ -5481,27 +5481,6 @@
         "iconUrl": "https://www.cosdata.io/favicon.ico"
       },
       {
-        "name": "Elicit",
-        "description": "AI research assistant for finding and synthesizing papers.",
-        "link": "https://elicit.org/",
-        "tags": [
-          "Research",
-          "Free"
-        ],
-        "iconUrl": "https://pbs.twimg.com/profile_images/1533929299458850816/Yyn20k3g_400x400.jpg",
-        "about": "Elicit uses language models to automate research workflows, find papers, and extract key information.",
-        "pros": [
-          "Accelerates literature reviews.",
-          "Summarizes findings.",
-          "Free to use."
-        ],
-        "cons": [
-          "Focus on academic papers.",
-          "Summaries may miss nuance.",
-          "Requires critical evaluation."
-        ]
-      },
-      {
         "name": "Glean",
         "description": "Enterprise AI search and knowledge discovery platform.",
         "link": "https://www.glean.com/",
