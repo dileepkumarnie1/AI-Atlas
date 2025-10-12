@@ -85,9 +85,9 @@ async function main(){
       }
       // De-dup candidates
       candidates = Array.from(new Set(candidates));
-      iconLowQ.push({ name: l.name, section: l.section, current: l.iconUrl, candidates, recommended: candidates[0]||'' });
+      iconLowQ.push({ name: l.name, section: l.section, link: l.link, current: l.iconUrl, candidates, recommended: candidates[0]||'' });
     }catch{
-      iconLowQ.push({ name: l.name, section: l.section, current: l.iconUrl, candidates: [], recommended: '' });
+      iconLowQ.push({ name: l.name, section: l.section, link: l.link, current: l.iconUrl, candidates: [], recommended: '' });
     }
   }
 

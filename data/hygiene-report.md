@@ -1,13 +1,13 @@
 # Tools Hygiene Report
 
-Generated: 2025-10-12T18:40:21.042Z
+Generated: 2025-10-12T18:52:04.206Z
 
 ## Summary
 
 - Sections: 33
-- Total tools (occurrences): 346
+- Total tools (occurrences): 345
 - Unique tools: 333
-- Duplicates: 13
+- Duplicates: 12
 - Missing icons: 0
 - Low-quality icons: 163
 - GitHub links outside GitHub domain: 0
@@ -22,9 +22,6 @@ Generated: 2025-10-12T18:40:21.042Z
 - Claude (Anthropic) — 2 occurrences
   - most-popular — https://claude.ai/
   - language-chat — https://claude.ai/
-- Elicit — 2 occurrences
-  - research — https://elicit.org/
-  - search-knowledge-discovery — https://elicit.org/
 - Fairlearn — 2 occurrences
   - ethical-ai — https://fairlearn.org
   - ai-safety-ethics — https://fairlearn.org/

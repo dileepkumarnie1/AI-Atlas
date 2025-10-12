@@ -51,7 +51,7 @@ async function main(){
       }else{
         const iu = iconUrl.toLowerCase();
         if(iu.endsWith('.ico') || iu.includes('/favicon')){
-          lowQualityIcons.push({ name, section: secSlug, iconUrl });
+          lowQualityIcons.push({ name, section: secSlug, link, iconUrl });
         }
       }
 
