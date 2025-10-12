@@ -19,8 +19,17 @@ async function readJsonSafe(p){
   try{ const s = await fs.readFile(p, 'utf8'); return JSON.parse(s); }catch{ return {}; }
 }
 
+const GH_TOKEN = process.env.GITHUB_TOKEN || '';
+
 async function fetchJson(url){
-  const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' }});
+  const headers = {};
+  // Add GitHub headers only for GitHub API endpoints
+  if(url.startsWith('https://api.github.com/')){
+    headers['Accept'] = 'application/vnd.github+json';
+    headers['User-Agent'] = 'ai-atlas-popularity-script';
+    if(GH_TOKEN) headers['Authorization'] = `Bearer ${GH_TOKEN}`;
+  }
+  const res = await fetch(url, { headers });
   if(!res.ok) throw new Error(`Failed ${url}: ${res.status}`);
   return res.json();
 }
