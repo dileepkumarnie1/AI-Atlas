@@ -28,22 +28,65 @@ async function fetchJson(url){
 async function fetchGithub(repo){
   // repo format: owner/name
   try{
-    const j = await fetchJson(`https://api.github.com/repos/${repo}`);
-    return { stars: j.stargazers_count || 0, forks: j.forks_count || 0, openIssues: j.open_issues_count || 0 };
-  }catch{ return { stars:0, forks:0, openIssues:0 }; }
+    const base = await fetchJson(`https://api.github.com/repos/${repo}`);
+    // commits in last 90 days (approx): use commits API with since param; unauthenticated has low rate limits
+    const since = new Date(Date.now() - 90*24*60*60*1000).toISOString();
+    let commitCount90 = 0;
+    try{
+      const commits = await fetchJson(`https://api.github.com/repos/${repo}/commits?since=${encodeURIComponent(since)}&per_page=100`);
+      commitCount90 = Array.isArray(commits) ? commits.length : 0;
+    }catch{ /* ignore rate limit */ }
+    // latest release recency
+    let daysSinceRelease = null;
+    try{
+      const rel = await fetchJson(`https://api.github.com/repos/${repo}/releases/latest`);
+      const published = rel?.published_at ? new Date(rel.published_at).getTime() : null;
+      if(published){ daysSinceRelease = Math.max(0, Math.round((Date.now() - published)/(1000*60*60*24))); }
+    }catch{ /* no releases or rate limit */ }
+    return {
+      stars: base.stargazers_count || 0,
+      forks: base.forks_count || 0,
+      openIssues: base.open_issues_count || 0,
+      commitCount90,
+      daysSinceRelease
+    };
+  }catch{ return { stars:0, forks:0, openIssues:0, commitCount90:0, daysSinceRelease:null }; }
 }
 
 async function fetchNpm(pkg){
   try{
-    const j = await fetchJson(`https://api.npmjs.org/downloads/point/last-week/${pkg}`);
-    return { weeklyDownloads: j.downloads || 0 };
-  }catch{ return { weeklyDownloads:0 }; }
+    const week = await fetchJson(`https://api.npmjs.org/downloads/point/last-week/${pkg}`);
+    const month = await fetchJson(`https://api.npmjs.org/downloads/point/last-month/${pkg}`);
+    return { weeklyDownloads: week.downloads || 0, monthlyDownloads: month.downloads || 0 };
+  }catch{ return { weeklyDownloads:0, monthlyDownloads:0 }; }
+}
+
+async function fetchPypi(project){
+  // Simple JSON API doesn't provide downloads; use pypistats.org JSON if available without auth (best-effort)
+  try{
+    const lastMonth = await fetchJson(`https://pypistats.org/api/packages/${project}/recent`);
+    // sum last_month across installer categories where available
+    const dl = lastMonth?.data?.last_month || 0;
+    return { monthlyDownloads: dl };
+  }catch{ return { monthlyDownloads: 0 }; }
 }
 
 function scoreFromSignals(sig){
   // Raw log-based score (will be normalized later across all tools)
   const log = (x)=> Math.log10((x||0)+1);
-  const s = 0.7*log(sig.github?.stars) + 0.2*log(sig.github?.forks) + 0.8*log(sig.npm?.weeklyDownloads);
+  const stars = 0.6*log(sig.github?.stars);
+  const forks = 0.15*log(sig.github?.forks);
+  const npmDls = 0.6*log(sig.npm?.monthlyDownloads || sig.npm?.weeklyDownloads);
+  const pypiDls = 0.5*log(sig.pypi?.monthlyDownloads);
+  const commits = 0.3*log(sig.github?.commitCount90);
+  // release freshness: newer is better; map daysSinceRelease to a decay 0..1, then scale to 0..0.3
+  let relFresh = 0;
+  if (typeof sig.github?.daysSinceRelease === 'number' && sig.github.daysSinceRelease >= 0){
+    const days = sig.github.daysSinceRelease;
+    const decay = 1 / (1 + days/90); // ~0.5 at 90 days, ~0.25 at 270 days
+    relFresh = 0.3 * decay;
+  }
+  const s = stars + forks + npmDls + pypiDls + commits + relFresh;
   return Number(s.toFixed(4));
 }
 
@@ -93,9 +136,10 @@ async function main(){
   const freqMap = buildFrequencyMap(db); // integer counts
 
   for(const [name, src] of entries){
-    const sig = { github: null, npm: null };
+    const sig = { github: null, npm: null, pypi: null };
     if(src.github) sig.github = await fetchGithub(src.github);
     if(src.npm) sig.npm = await fetchNpm(src.npm);
+    if(src.pypi) sig.pypi = await fetchPypi(src.pypi);
     const signalsRaw = scoreFromSignals(sig); // unnormalized
     raw[name] = { signals: sig, signalsRaw };
   }

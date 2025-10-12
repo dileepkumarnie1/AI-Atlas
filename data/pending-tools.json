@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-11T08:19:25.935Z",
+  "lastUpdated": "2025-10-12T17:52:46.814Z",
   "items": [
     {
       "domain": "Most Popular",
@@ -3041,6 +3041,369 @@
       "pros": [],
       "cons": [],
       "reason": "High GitHub traction: 18,096 stars for query \"code llm\""
+    },
+    {
+      "domain": "Most Popular",
+      "name": "Microsoft only lets you opt out of AI photo scanning 3x a year",
+      "description": "Microsoft only lets you opt out of AI photo scanning 3x a year",
+      "link": "https://hardware.slashdot.org/story/25/10/11/0238213/microsofts-onedrive-begins-testing-face-recognizing-ai-for-photos-for-some-preview-users",
+      "tags": [
+        "Trending"
+      ],
+      "about": "Microsoft only lets you opt out of AI photo scanning 3x a year",
+      "pros": [],
+      "cons": [],
+      "reason": "HN discussion (756 points) for \"AI\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "LightRAG",
+      "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+      "link": "https://arxiv.org/abs/2410.05779",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/118165258?v=4&s=64",
+      "about": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 21,711 stars for query \"retrieval augmented generation\""
+    },
+    {
+      "domain": "Language & Chat",
+      "name": "AutoRAG",
+      "description": "AutoRAG: An Open-Source Framework for Retrieval-Augmented Generation (RAG) Evaluation & Optimization with AutoML-Style Automation",
+      "link": "https://marker-inc-korea.github.io/AutoRAG/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/74290595?v=4&s=64",
+      "about": "AutoRAG: An Open-Source Framework for Retrieval-Augmented Generation (RAG) Evaluation & Optimization with AutoML-Style Automation",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,346 stars for query \"retrieval augmented generation\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "Unique3D",
+      "description": "[NeurIPS 2024] Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image",
+      "link": "https://wukailu.github.io/Unique3D/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/170070530?v=4&s=64",
+      "about": "[NeurIPS 2024] Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,474 stars for query \"image generation\""
+    },
+    {
+      "domain": "Image Generation",
+      "name": "uform",
+      "description": "Pocket-Sized Multimodal AI for content understanding and generation across multilingual texts, images, and 🔜 video, up to 5x faster than OpenAI CLIP and LLaVA 🖼️ & 🖋️",
+      "link": "https://unum-cloud.github.io/uform/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/56397513?v=4&s=64",
+      "about": "Pocket-Sized Multimodal AI for content understanding and generation across multilingual texts, images, and 🔜 video, up to 5x faster than OpenAI CLIP and LLaVA 🖼️ & 🖋️",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,181 stars for query \"text to image\""
+    },
+    {
+      "domain": "Video Tools",
+      "name": "Show-1",
+      "description": "[IJCV] Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation",
+      "link": "https://showlab.github.io/Show-1/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/101181824?v=4&s=64",
+      "about": "[IJCV] Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,130 stars for query \"text to video\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "pytorch-lightning",
+      "description": "Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.",
+      "link": "https://lightning.ai/pytorch-lightning/?utm_source=ptl_readme&utm_medium=referral&utm_campaign=ptl_readme",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/58386951?v=4&s=64",
+      "about": "Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 30,243 stars for query \"ai code\""
+    },
+    {
+      "domain": "Code Assistance",
+      "name": "OpenHands",
+      "description": "🙌 OpenHands: Code Less, Make More",
+      "link": "https://all-hands.dev",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/169105795?v=4&s=64",
+      "about": "🙌 OpenHands: Code Less, Make More",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 64,136 stars for query \"code llm\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "cursor-talk-to-figma-mcp",
+      "description": "CTTF: MCP integration between Cursor and Figma, allowing Cursor Agentic AI to communicate with Figma for reading designs and modifying them programmatically.",
+      "link": "https://x.com/sonnylazuardi/status/1901325190388428999",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/17284363?v=4&s=64",
+      "about": "CTTF: MCP integration between Cursor and Figma, allowing Cursor Agentic AI to communicate with Figma for reading designs and modifying them programmatically.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 5,500 stars for query \"design ai\""
+    },
+    {
+      "domain": "Design Tools",
+      "name": "zadig",
+      "description": "Zadig: An AI-powered, cloud-native, distributed DevOps platform designed for developers",
+      "link": "https://koderover.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/59965645?v=4&s=64",
+      "about": "Zadig: An AI-powered, cloud-native, distributed DevOps platform designed for developers",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,075 stars for query \"design ai\""
+    },
+    {
+      "domain": "Education",
+      "name": "APIAuto",
+      "description": "☔ 敏捷开发最强大易用的接口工具，机器学习零代码测试与 AI 问答、生成代码与静态检查、生成文档与光标悬浮注释，腾讯、华为、SHEIN、传音、工行等使用 ☔ The most advanced tool for HTTP API. Machine learning no-code testing and AI assistant, generating codes and static analysis, generating comments and floating hints. Used by Tencent, Huawei, SHEIN, TRANSSION, ICBC, etc.",
+      "link": "http://apijson.cn/api",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/5738175?v=4&s=64",
+      "about": "☔ 敏捷开发最强大易用的接口工具，机器学习零代码测试与 AI 问答、生成代码与静态检查、生成文档与光标悬浮注释，腾讯、华为、SHEIN、传音、工行等使用 ☔ The most advanced tool for HTTP API. Machine learning no-code testing and AI assistant, generating codes and static analysis, generating comments and floating hints. Used by Tencent, Huawei, SHEIN, TRANSSION, ICBC, etc.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,123 stars for query \"learning assistant ai\""
+    },
+    {
+      "domain": "Education",
+      "name": "neuro",
+      "description": "🔮 Neuro.js is machine learning library for building AI assistants and chat-bots.",
+      "link": "https://neuro.js.org/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/28426493?v=4&s=64",
+      "about": "🔮 Neuro.js is machine learning library for building AI assistants and chat-bots.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 200 stars for query \"learning assistant ai\""
+    },
+    {
+      "domain": "Crypto",
+      "name": "pybroker",
+      "description": "Algorithmic Trading in Python with Machine Learning",
+      "link": "https://www.pybroker.com",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/328665?v=4&s=64",
+      "about": "Algorithmic Trading in Python with Machine Learning",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,822 stars for query \"crypto ai\""
+    },
+    {
+      "domain": "Prompt Enhancers",
+      "name": "qoa",
+      "description": "Minimal interactive command-line prompts library",
+      "link": "https://klaudiosinani.com/qoa",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/12670537?v=4&s=64",
+      "about": "Minimal interactive command-line prompts library",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,051 stars for query \"prompt library\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "GPTCache",
+      "description": "Semantic cache for LLMs. Fully integrated with LangChain and llama_index. ",
+      "link": "https://gptcache.readthedocs.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/18416694?v=4&s=64",
+      "about": "Semantic cache for LLMs. Fully integrated with LangChain and llama_index. ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,790 stars for query \"autogpt\""
+    },
+    {
+      "domain": "Most famous agentic AI's",
+      "name": "OpenDAN-Personal-AI-OS",
+      "description": "OpenDAN is an open source Personal AI OS , which consolidates various AI modules in one place for your personal use.",
+      "link": "https://opendan.ai",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/126534313?v=4&s=64",
+      "about": "OpenDAN is an open source Personal AI OS , which consolidates various AI modules in one place for your personal use.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,935 stars for query \"autogpt\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "bytechef",
+      "description": "Open-source, low-code, extendable API integration & workflow automation platform. Integrate your organization or your SaaS product with any third party API",
+      "link": "https://www.bytechef.io",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/90719245?v=4&s=64",
+      "about": "Open-source, low-code, extendable API integration & workflow automation platform. Integrate your organization or your SaaS product with any third party API",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 622 stars for query \"zapier ai\""
+    },
+    {
+      "domain": "Workflow Automation",
+      "name": "anything",
+      "description": "✨ If Posthog built Zapier. Feature complete, Fullstack,  AI Automation framework made for users. ",
+      "link": "https://tryanything.xyz",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/127688570?v=4&s=64",
+      "about": "✨ If Posthog built Zapier. Feature complete, Fullstack,  AI Automation framework made for users. ",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 300 stars for query \"zapier ai\""
+    },
+    {
+      "domain": "Search & Knowledge Discovery",
+      "name": "paper-qa",
+      "description": "High accuracy RAG for answering questions from scientific documents with citations",
+      "link": "https://futurehouse.gitbook.io/futurehouse-cookbook",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/131727825?v=4&s=64",
+      "about": "High accuracy RAG for answering questions from scientific documents with citations",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,758 stars for query \"document qa\""
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "testcontainers-dotnet",
+      "description": "A library to support tests with throwaway instances of Docker containers for all compatible .NET Standard versions.",
+      "link": "https://dotnet.testcontainers.org",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/13393021?v=4&s=64",
+      "about": "A library to support tests with throwaway instances of Docker containers for all compatible .NET Standard versions.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 4,138 stars for query \"support automation\""
+    },
+    {
+      "domain": "Customer Support & Chatbots",
+      "name": "dreame-vacuum",
+      "description": "Home Assistant integration for Dreame robot vacuums with map support",
+      "link": "https://community.home-assistant.io/t/custom-component-dreame-vacuum",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/19640547?v=4&s=64",
+      "about": "Home Assistant integration for Dreame robot vacuums with map support",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 1,471 stars for query \"support automation\""
+    },
+    {
+      "domain": "Voice & Speech AI",
+      "name": "ASRT_SpeechRecognition",
+      "description": "A Deep-Learning-Based Chinese Speech Recognition System 基于深度学习的中文语音识别系统",
+      "link": "https://asrt.ailemon.net",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/13351449?v=4&s=64",
+      "about": "A Deep-Learning-Based Chinese Speech Recognition System 基于深度学习的中文语音识别系统",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 8,252 stars for query \"speech recognition\""
+    },
+    {
+      "domain": "Voice & Speech AI",
+      "name": "sherpa-onnx",
+      "description": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, x86_64 servers, websocket server/client, support 12 programming languages",
+      "link": "https://k2-fsa.github.io/sherpa/onnx/index.html",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/71431748?v=4&s=64",
+      "about": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, x86_64 servers, websocket server/client, support 12 programming languages",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 7,730 stars for query \"asr\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "ruby_llm",
+      "description": "One beautiful Ruby API for OpenAI, Anthropic, Gemini, Bedrock, OpenRouter, DeepSeek, Ollama, VertexAI, Perplexity, Mistral, GPUStack & OpenAI compatible APIs. Chat, Vision, Audio, PDF, Images, Embeddings, Tools, Streaming & Rails integration.",
+      "link": "https://rubyllm.com/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/106617?v=4&s=64",
+      "about": "One beautiful Ruby API for OpenAI, Anthropic, Gemini, Bedrock, OpenRouter, DeepSeek, Ollama, VertexAI, Perplexity, Mistral, GPUStack & OpenAI compatible APIs. Chat, Vision, Audio, PDF, Images, Embeddings, Tools, Streaming & Rails integration.",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 3,064 stars for query \"streaming ai\""
+    },
+    {
+      "domain": "Gaming & Entertainment",
+      "name": "DeepClaude",
+      "description": "Unleash Next-Level AI! 🚀  💻 Code Generation: DeepSeek r1 + Claude 3.7 Sonnet - Unparalleled Performance! 📝 Content Creation: DeepSeek r1 + Gemini 2.5 Pro - Superior Quality! 🔌 OpenAI-Compatible. 🌊 Streaming & Non-Streaming Support.  ✨ Experience the Future of AI – Today! Click to Try Now! ✨",
+      "link": "https://erlich.fun/deepclaude-pricing",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/25130303?v=4&s=64",
+      "about": "Unleash Next-Level AI! 🚀  💻 Code Generation: DeepSeek r1 + Claude 3.7 Sonnet - Unparalleled Performance! 📝 Content Creation: DeepSeek r1 + Gemini 2.5 Pro - Superior Quality! 🔌 OpenAI-Compatible. 🌊 Streaming & Non-Streaming Support.  ✨ Experience the Future of AI – Today! Click to Try Now! ✨",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 2,743 stars for query \"streaming ai\""
+    },
+    {
+      "domain": "Sales & CRM",
+      "name": "Dominate-AI",
+      "description": "Dominate A.I - The world's best open source CRM for Tech Founders",
+      "link": "https://dominateai.github.io/dominate-landing-page-website/",
+      "tags": [
+        "Open Source"
+      ],
+      "iconUrl": "https://avatars.githubusercontent.com/u/110375177?v=4&s=64",
+      "about": "Dominate A.I - The world's best open source CRM for Tech Founders",
+      "pros": [],
+      "cons": [],
+      "reason": "High GitHub traction: 100 stars for query \"crm ai\""
     }
   ]
 }
