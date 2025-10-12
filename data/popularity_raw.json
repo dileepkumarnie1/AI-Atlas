@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2025-10-11T08:21:16.207Z",
+  "generatedAt": "2025-10-12T02:45:55.239Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 90658,
-          "forks": 10134,
-          "openIssues": 3024
+          "stars": 90713,
+          "forks": 10147,
+          "openIssues": 3028
         },
         "npm": null
       },
-      "signalsRaw": 4.2714,
-      "signalsNorm": 99.92,
+      "signalsRaw": 4.2716,
+      "signalsNorm": 99.93,
       "mpScore": 0,
-      "freqScore": 0,
+      "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 34.97
+      "popularityScore": 35.48
     },
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41836,
+          "stars": 41841,
           "forks": 5335,
           "openIssues": 299
         },
         "npm": null
       },
-      "signalsRaw": 3.9805,
+      "signalsRaw": 3.9806,
       "signalsNorm": 93.12,
       "mpScore": 0,
       "freqScore": 0,
@@ -59,11 +59,11 @@
         "npm": null
       },
       "signalsRaw": 2.878,
-      "signalsNorm": 67.33,
+      "signalsNorm": 67.32,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 23.57
+      "popularityScore": 23.56
     },
     "Midjourney": {
       "signals": {
@@ -128,18 +128,13 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11789,
-          "forks": 1015,
+          "stars": 11790,
+          "forks": 1016,
           "openIssues": 310
         },
         "npm": null
       },
-      "signalsRaw": 3.4514,
-      "signalsNorm": 80.74,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 28.26
+      "signalsRaw": 3.4515
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -155,13 +150,13 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32224,
-          "forks": 1610,
-          "openIssues": 268
+          "stars": 32229,
+          "forks": 1611,
+          "openIssues": 269
         },
         "npm": null
       },
-      "signalsRaw": 3.7972,
+      "signalsRaw": 3.7973,
       "signalsNorm": 88.83,
       "mpScore": 0,
       "freqScore": 0,
@@ -187,45 +182,35 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 89224,
-          "forks": 11135,
+          "stars": 89259,
+          "forks": 11140,
           "openIssues": 98
         },
         "npm": null
       },
-      "signalsRaw": 4.2747,
-      "signalsNorm": 100,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 35
+      "signalsRaw": 4.2748
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13369,
-          "forks": 1585,
+          "stars": 13375,
+          "forks": 1586,
           "openIssues": 575
         },
         "npm": null
       },
-      "signalsRaw": 3.5284
+      "signalsRaw": 3.5285
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42943,
-          "forks": 5678,
-          "openIssues": 14
+          "stars": 42953,
+          "forks": 5680,
+          "openIssues": 13
         },
         "npm": null
       },
-      "signalsRaw": 3.9939,
-      "signalsNorm": 93.43,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 32.7
+      "signalsRaw": 3.994
     },
     "airbyte": {
       "signals": {
@@ -246,10 +231,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 97.14285714285714,
+      "mpScore": 97.05882352941177,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 58.29
+      "popularityScore": 58.24
     },
     "ChatGPT (OpenAI)": {
       "signals": {
@@ -258,10 +243,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 94.28571428571428,
+      "mpScore": 94.11764705882352,
       "freqScore": 10,
       "usersScore": 100,
-      "popularityScore": 88.79
+      "popularityScore": 88.74
     },
     "Claude (Anthropic)": {
       "signals": {
@@ -270,10 +255,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 91.42857142857143,
+      "mpScore": 91.17647058823529,
       "freqScore": 10,
       "usersScore": 100,
-      "popularityScore": 87.93
+      "popularityScore": 87.85
     },
     "CopilotKit": {
       "signals": {
@@ -282,10 +267,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 88.57142857142857,
+      "mpScore": 88.23529411764706,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 53.14
+      "popularityScore": 52.94
     },
     "DeepSeek": {
       "signals": {
@@ -294,10 +279,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 85.71428571428571,
+      "mpScore": 85.29411764705883,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 51.43
+      "popularityScore": 51.18
     },
     "dify": {
       "signals": {
@@ -306,10 +291,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 82.85714285714286,
+      "mpScore": 82.35294117647058,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 49.71
+      "popularityScore": 49.41
     },
     "DocsGPT": {
       "signals": {
@@ -318,10 +303,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 80,
+      "mpScore": 79.41176470588235,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 48
+      "popularityScore": 47.65
     },
     "Gemini (Google)": {
       "signals": {
@@ -330,10 +315,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 77.14285714285715,
+      "mpScore": 76.47058823529412,
       "freqScore": 10,
       "usersScore": 100,
-      "popularityScore": 83.64
+      "popularityScore": 83.44
     },
     "Gemini AI": {
       "signals": {
@@ -342,10 +327,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 74.28571428571429,
+      "mpScore": 73.52941176470588,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 44.57
+      "popularityScore": 44.12
     },
     "GitHub Copilot": {
       "signals": {
@@ -354,10 +339,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 71.42857142857143,
+      "mpScore": 70.58823529411765,
       "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 43.36
+      "popularityScore": 42.85
     },
     "Grok (xAI)": {
       "signals": {
@@ -366,10 +351,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 68.57142857142857,
+      "mpScore": 67.64705882352942,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 41.14
+      "popularityScore": 40.59
     },
     "haystack": {
       "signals": {
@@ -378,10 +363,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 65.71428571428571,
+      "mpScore": 64.70588235294117,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 39.43
+      "popularityScore": 38.82
     },
     "khoj": {
       "signals": {
@@ -390,10 +375,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 62.857142857142854,
+      "mpScore": 61.76470588235294,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 37.71
+      "popularityScore": 37.06
     },
     "latitude-llm": {
       "signals": {
@@ -402,10 +387,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 60,
+      "mpScore": 58.82352941176471,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 36
+      "popularityScore": 35.29
     },
     "leon": {
       "signals": {
@@ -414,10 +399,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 57.14285714285714,
+      "mpScore": 55.88235294117647,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 34.29
+      "popularityScore": 33.53
     },
     "Llama (Meta)": {
       "signals": {
@@ -426,10 +411,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 54.285714285714285,
+      "mpScore": 52.94117647058824,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 32.57
+      "popularityScore": 31.76
     },
     "mastra": {
       "signals": {
@@ -438,10 +423,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 51.42857142857142,
+      "mpScore": 50,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 30.86
+      "popularityScore": 30
     },
     "Meta AI": {
       "signals": {
@@ -450,10 +435,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 48.57142857142857,
+      "mpScore": 47.05882352941176,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 29.14
+      "popularityScore": 28.24
     },
     "MetaGPT": {
       "signals": {
@@ -462,10 +447,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 45.714285714285715,
+      "mpScore": 44.11764705882353,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 27.43
+      "popularityScore": 26.47
     },
     "Microsoft Copilot": {
       "signals": {
@@ -474,10 +459,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 42.857142857142854,
+      "mpScore": 41.17647058823529,
       "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 26.21
+      "popularityScore": 25.21
     },
     "Mistral Le Chat": {
       "signals": {
@@ -486,10 +471,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 40,
+      "mpScore": 38.23529411764706,
       "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 24.5
+      "popularityScore": 23.44
     },
     "mlflow": {
       "signals": {
@@ -498,10 +483,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 37.142857142857146,
+      "mpScore": 35.294117647058826,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 22.29
+      "popularityScore": 21.18
     },
     "Notebook LLM": {
       "signals": {
@@ -510,10 +495,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 34.285714285714285,
+      "mpScore": 32.35294117647059,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 20.57
+      "popularityScore": 19.41
     },
     "Open-Assistant": {
       "signals": {
@@ -522,10 +507,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 31.428571428571427,
+      "mpScore": 29.411764705882355,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 18.86
+      "popularityScore": 17.65
     },
     "OpenBB": {
       "signals": {
@@ -534,10 +519,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 28.57142857142857,
+      "mpScore": 26.47058823529412,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 17.14
+      "popularityScore": 15.88
     },
     "Perplexity AI": {
       "signals": {
@@ -546,10 +531,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 25.71428571428571,
+      "mpScore": 23.52941176470588,
       "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 15.93
+      "popularityScore": 14.62
     },
     "potpie": {
       "signals": {
@@ -558,22 +543,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 22.857142857142858,
+      "mpScore": 20.588235294117645,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 13.71
-    },
-    "qlib": {
-      "signals": {
-        "github": null,
-        "npm": null
-      },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
-      "mpScore": 20,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 12
+      "popularityScore": 12.35
     },
     "sim": {
       "signals": {
@@ -582,10 +555,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 17.142857142857142,
+      "mpScore": 17.647058823529413,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 10.29
+      "popularityScore": 10.59
     },
     "supabase": {
       "signals": {
@@ -594,10 +567,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 14.285714285714285,
+      "mpScore": 14.705882352941178,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 8.57
+      "popularityScore": 8.82
     },
     "tabby": {
       "signals": {
@@ -606,10 +579,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 11.428571428571429,
+      "mpScore": 11.76470588235294,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 6.86
+      "popularityScore": 7.06
     },
     "ToolJet": {
       "signals": {
@@ -618,10 +591,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 8.571428571428571,
+      "mpScore": 8.823529411764707,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 5.14
+      "popularityScore": 5.29
     },
     "agent-zero": {
       "signals": {
@@ -630,10 +603,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 5.714285714285714,
+      "mpScore": 5.88235294117647,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 3.43
+      "popularityScore": 3.53
     },
     "RA.Aid": {
       "signals": {
@@ -642,10 +615,10 @@
       },
       "signalsRaw": 0,
       "signalsNorm": 0,
-      "mpScore": 2.857142857142857,
+      "mpScore": 2.941176470588235,
       "freqScore": 0,
       "usersScore": 0,
-      "popularityScore": 1.71
+      "popularityScore": 1.76
     },
     "AutoGPT": {
       "signals": {
@@ -672,18 +645,6 @@
       "popularityScore": 0
     },
     "Character.AI": {
-      "signals": {
-        "github": null,
-        "npm": null
-      },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 0
-    },
-    "ChatGLM-6B": {
       "signals": {
         "github": null,
         "npm": null
@@ -743,18 +704,6 @@
       "usersScore": 0,
       "popularityScore": 0
     },
-    "FastChat": {
-      "signals": {
-        "github": null,
-        "npm": null
-      },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 0
-    },
     "Flowise": {
       "signals": {
         "github": null,
@@ -768,18 +717,6 @@
       "popularityScore": 0
     },
     "Google Bard": {
-      "signals": {
-        "github": null,
-        "npm": null
-      },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 0
-    },
-    "gpt_academic": {
       "signals": {
         "github": null,
         "npm": null
@@ -859,9 +796,9 @@
       "signalsRaw": 0,
       "signalsNorm": 0,
       "mpScore": 0,
-      "freqScore": 0,
+      "freqScore": 10,
       "usersScore": 0,
-      "popularityScore": 0
+      "popularityScore": 0.5
     },
     "mem0": {
       "signals": {
@@ -1128,18 +1065,6 @@
       "popularityScore": 0
     },
     "Leonardo Ai": {
-      "signals": {
-        "github": null,
-        "npm": null
-      },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
-      "mpScore": 0,
-      "freqScore": 0,
-      "usersScore": 0,
-      "popularityScore": 0
-    },
-    "ml-stable-diffusion": {
       "signals": {
         "github": null,
         "npm": null
@@ -4151,7 +4076,115 @@
       "usersScore": 0,
       "popularityScore": 0
     },
-    "GitHub AI Projects": {
+    "PyTorch": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "TensorFlow": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "Transformers (HF)": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "llama.cpp": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "vLLM": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "Stable Diffusion WebUI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "OpenAI Whisper": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "LangChain": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 10,
+      "usersScore": 0,
+      "popularityScore": 0.5
+    },
+    "Text Generation WebUI": {
+      "signals": {
+        "github": null,
+        "npm": null
+      },
+      "signalsRaw": 0,
+      "signalsNorm": 0,
+      "mpScore": 0,
+      "freqScore": 0,
+      "usersScore": 0,
+      "popularityScore": 0
+    },
+    "Open WebUI": {
       "signals": {
         "github": null,
         "npm": null
@@ -4167,17 +4200,17 @@
   "ranked": [
     {
       "name": "ChatGPT (OpenAI)",
-      "score": 88.79,
+      "score": 88.74,
       "rank": 1
     },
     {
       "name": "Claude (Anthropic)",
-      "score": 87.93,
+      "score": 87.85,
       "rank": 2
     },
     {
       "name": "Gemini (Google)",
-      "score": 83.64,
+      "score": 83.44,
       "rank": 3
     },
     {
@@ -4187,271 +4220,271 @@
     },
     {
       "name": "chatbox",
-      "score": 58.29,
+      "score": 58.24,
       "rank": 5
     },
     {
       "name": "CopilotKit",
-      "score": 53.14,
+      "score": 52.94,
       "rank": 6
     },
     {
       "name": "DeepSeek",
-      "score": 51.43,
+      "score": 51.18,
       "rank": 7
     },
     {
       "name": "dify",
-      "score": 49.71,
+      "score": 49.41,
       "rank": 8
     },
     {
       "name": "DocsGPT",
-      "score": 48,
+      "score": 47.65,
       "rank": 9
     },
     {
       "name": "Gemini AI",
-      "score": 44.57,
+      "score": 44.12,
       "rank": 10
     },
     {
       "name": "GitHub Copilot",
-      "score": 43.36,
+      "score": 42.85,
       "rank": 11
     },
     {
       "name": "Grok (xAI)",
-      "score": 41.14,
+      "score": 40.59,
       "rank": 12
     },
     {
       "name": "haystack",
-      "score": 39.43,
+      "score": 38.82,
       "rank": 13
     },
     {
       "name": "khoj",
-      "score": 37.71,
+      "score": 37.06,
       "rank": 14
     },
     {
-      "name": "latitude-llm",
-      "score": 36,
+      "name": "ComfyUI",
+      "score": 35.48,
       "rank": 15
     },
     {
-      "name": "Whisper (OpenAI)",
-      "score": 35,
+      "name": "latitude-llm",
+      "score": 35.29,
       "rank": 16
     },
     {
-      "name": "ComfyUI",
-      "score": 34.97,
-      "rank": 17
-    },
-    {
       "name": "leon",
-      "score": 34.29,
-      "rank": 18
-    },
-    {
-      "name": "Coqui TTS",
-      "score": 32.7,
-      "rank": 19
+      "score": 33.53,
+      "rank": 17
     },
     {
       "name": "Stable Diffusion",
       "score": 32.59,
-      "rank": 20
+      "rank": 18
     },
     {
       "name": "Llama (Meta)",
-      "score": 32.57,
-      "rank": 21
+      "score": 31.76,
+      "rank": 19
     },
     {
       "name": "TabbyML",
       "score": 31.09,
-      "rank": 22
+      "rank": 20
     },
     {
       "name": "mastra",
-      "score": 30.86,
-      "rank": 23
+      "score": 30,
+      "rank": 21
     },
     {
       "name": "Meta AI",
-      "score": 29.14,
-      "rank": 24
-    },
-    {
-      "name": "AnimateDiff",
-      "score": 28.26,
-      "rank": 25
+      "score": 28.24,
+      "rank": 22
     },
     {
       "name": "MetaGPT",
-      "score": 27.43,
-      "rank": 26
+      "score": 26.47,
+      "rank": 23
     },
     {
       "name": "Microsoft Copilot",
-      "score": 26.21,
-      "rank": 27
+      "score": 25.21,
+      "rank": 24
     },
     {
       "name": "Riffusion",
       "score": 24.88,
-      "rank": 28
-    },
-    {
-      "name": "Mistral Le Chat",
-      "score": 24.5,
-      "rank": 29
+      "rank": 25
     },
     {
       "name": "DreamStudio",
-      "score": 23.57,
-      "rank": 30
+      "score": 23.56,
+      "rank": 26
+    },
+    {
+      "name": "Mistral Le Chat",
+      "score": 23.44,
+      "rank": 27
     },
     {
       "name": "mlflow",
-      "score": 22.29,
-      "rank": 31
+      "score": 21.18,
+      "rank": 28
     },
     {
       "name": "Notebook LLM",
-      "score": 20.57,
-      "rank": 32
+      "score": 19.41,
+      "rank": 29
     },
     {
       "name": "Open-Assistant",
-      "score": 18.86,
-      "rank": 33
+      "score": 17.65,
+      "rank": 30
     },
     {
       "name": "OpenBB",
-      "score": 17.14,
-      "rank": 34
+      "score": 15.88,
+      "rank": 31
     },
     {
       "name": "Perplexity AI",
-      "score": 15.93,
-      "rank": 35
+      "score": 14.62,
+      "rank": 32
     },
     {
       "name": "potpie",
-      "score": 13.71,
-      "rank": 36
-    },
-    {
-      "name": "qlib",
-      "score": 12,
-      "rank": 37
+      "score": 12.35,
+      "rank": 33
     },
     {
       "name": "sim",
-      "score": 10.29,
-      "rank": 38
+      "score": 10.59,
+      "rank": 34
     },
     {
       "name": "supabase",
-      "score": 8.57,
-      "rank": 39
+      "score": 8.82,
+      "rank": 35
     },
     {
       "name": "tabby",
-      "score": 6.86,
-      "rank": 40
+      "score": 7.06,
+      "rank": 36
     },
     {
       "name": "ToolJet",
-      "score": 5.14,
-      "rank": 41
+      "score": 5.29,
+      "rank": 37
     },
     {
       "name": "agent-zero",
-      "score": 3.43,
-      "rank": 42
+      "score": 3.53,
+      "rank": 38
     },
     {
       "name": "RA.Aid",
-      "score": 1.71,
-      "rank": 43
+      "score": 1.76,
+      "rank": 39
     },
     {
       "name": "DeepL",
       "score": 0.5,
-      "rank": 44
+      "rank": 40
+    },
+    {
+      "name": "langchain",
+      "score": 0.5,
+      "rank": 41
     },
     {
       "name": "Poe by Quora",
       "score": 0.5,
-      "rank": 45
+      "rank": 42
     },
     {
       "name": "You.com",
       "score": 0.5,
-      "rank": 46
+      "rank": 43
     },
     {
       "name": "Suno AI",
       "score": 0.5,
-      "rank": 47
+      "rank": 44
     },
     {
       "name": "Elicit",
       "score": 0.5,
-      "rank": 48
+      "rank": 45
     },
     {
       "name": "Fairlearn",
       "score": 0.5,
-      "rank": 49
+      "rank": 46
     },
     {
       "name": "IBM AI Fairness 360",
       "score": 0.5,
-      "rank": 50
+      "rank": 47
     },
     {
       "name": "Microsoft Responsible AI Toolbox",
       "score": 0.5,
-      "rank": 51
+      "rank": 48
+    },
+    {
+      "name": "LangChain",
+      "score": 0.5,
+      "rank": 49
     },
     {
       "name": "Clipdrop",
       "score": 0,
-      "rank": 52
+      "rank": 50
     },
     {
       "name": "Midjourney",
       "score": 0,
-      "rank": 53
+      "rank": 51
     },
     {
       "name": "DALL-E 3 (OpenAI)",
       "score": 0,
-      "rank": 54
+      "rank": 52
     },
     {
       "name": "Canva AI",
       "score": 0,
-      "rank": 55
+      "rank": 53
     },
     {
       "name": "Adobe Firefly",
       "score": 0,
-      "rank": 56
+      "rank": 54
     },
     {
       "name": "Magnific AI",
       "score": 0,
-      "rank": 57
+      "rank": 55
+    },
+    {
+      "name": "AnimateDiff",
+      "score": 0,
+      "rank": 56
     },
     {
       "name": "Stable Video Diffusion",
+      "score": 0,
+      "rank": 57
+    },
+    {
+      "name": "Whisper (OpenAI)",
       "score": 0,
       "rank": 58
     },
@@ -4461,22 +4494,22 @@
       "rank": 59
     },
     {
-      "name": "AutoGPT",
+      "name": "Coqui TTS",
       "score": 0,
       "rank": 60
     },
     {
-      "name": "browser-use",
+      "name": "AutoGPT",
       "score": 0,
       "rank": 61
     },
     {
-      "name": "Character.AI",
+      "name": "browser-use",
       "score": 0,
       "rank": 62
     },
     {
-      "name": "ChatGLM-6B",
+      "name": "Character.AI",
       "score": 0,
       "rank": 63
     },
@@ -4496,1394 +4529,1414 @@
       "rank": 66
     },
     {
-      "name": "FastChat",
+      "name": "Flowise",
       "score": 0,
       "rank": 67
     },
     {
-      "name": "Flowise",
+      "name": "Google Bard",
       "score": 0,
       "rank": 68
     },
     {
-      "name": "Google Bard",
+      "name": "gpt-oss",
       "score": 0,
       "rank": 69
     },
     {
-      "name": "gpt_academic",
+      "name": "gpt4all",
       "score": 0,
       "rank": 70
     },
     {
-      "name": "gpt-oss",
+      "name": "gpt4free",
       "score": 0,
       "rank": 71
     },
     {
-      "name": "gpt4all",
+      "name": "Grammarly",
       "score": 0,
       "rank": 72
     },
     {
-      "name": "gpt4free",
+      "name": "Jasper AI",
       "score": 0,
       "rank": 73
     },
     {
-      "name": "Grammarly",
+      "name": "mem0",
       "score": 0,
       "rank": 74
     },
     {
-      "name": "Jasper AI",
+      "name": "midday",
       "score": 0,
       "rank": 75
     },
     {
-      "name": "langchain",
+      "name": "ollama",
       "score": 0,
       "rank": 76
     },
     {
-      "name": "mem0",
+      "name": "open-webui",
       "score": 0,
       "rank": 77
     },
     {
-      "name": "midday",
+      "name": "Orchids AI",
       "score": 0,
       "rank": 78
     },
     {
-      "name": "ollama",
+      "name": "pathway",
       "score": 0,
       "rank": 79
     },
     {
-      "name": "open-webui",
+      "name": "QuillBot",
       "score": 0,
       "rank": 80
     },
     {
-      "name": "Orchids AI",
+      "name": "quivr",
       "score": 0,
       "rank": 81
     },
     {
-      "name": "pathway",
+      "name": "Replika",
       "score": 0,
       "rank": 82
     },
     {
-      "name": "QuillBot",
+      "name": "repomix",
       "score": 0,
       "rank": 83
     },
     {
-      "name": "quivr",
+      "name": "Seed Dream",
       "score": 0,
       "rank": 84
     },
     {
-      "name": "Replika",
+      "name": "Writer",
       "score": 0,
       "rank": 85
     },
     {
-      "name": "repomix",
+      "name": "coai",
       "score": 0,
       "rank": 86
     },
     {
-      "name": "Seed Dream",
+      "name": "deeplake",
       "score": 0,
       "rank": 87
     },
     {
-      "name": "Writer",
+      "name": "easydiffusion",
       "score": 0,
       "rank": 88
     },
     {
-      "name": "coai",
+      "name": "Fotor AI",
       "score": 0,
       "rank": 89
     },
     {
-      "name": "deeplake",
+      "name": "Ideogram",
       "score": 0,
       "rank": 90
     },
     {
-      "name": "easydiffusion",
+      "name": "InvokeAI",
       "score": 0,
       "rank": 91
     },
     {
-      "name": "Fotor AI",
+      "name": "IOPaint",
       "score": 0,
       "rank": 92
     },
     {
-      "name": "Ideogram",
+      "name": "Krea AI",
       "score": 0,
       "rank": 93
     },
     {
-      "name": "InvokeAI",
+      "name": "Leonardo Ai",
       "score": 0,
       "rank": 94
     },
     {
-      "name": "IOPaint",
+      "name": "Nano Banana",
       "score": 0,
       "rank": 95
     },
     {
-      "name": "Krea AI",
+      "name": "NightCafe",
       "score": 0,
       "rank": 96
     },
     {
-      "name": "Leonardo Ai",
+      "name": "Playground v2 (Playground AI)",
       "score": 0,
       "rank": 97
     },
     {
-      "name": "ml-stable-diffusion",
+      "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
       "score": 0,
       "rank": 98
     },
     {
-      "name": "Nano Banana",
+      "name": "stable-diffusion",
       "score": 0,
       "rank": 99
     },
     {
-      "name": "NightCafe",
+      "name": "D-ID",
       "score": 0,
       "rank": 100
     },
     {
-      "name": "Playground v2 (Playground AI)",
+      "name": "DeepBrain AI",
       "score": 0,
       "rank": 101
     },
     {
-      "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
+      "name": "Descript",
       "score": 0,
       "rank": 102
     },
     {
-      "name": "stable-diffusion",
+      "name": "Google Veo",
       "score": 0,
       "rank": 103
     },
     {
-      "name": "D-ID",
+      "name": "HeyGen",
       "score": 0,
       "rank": 104
     },
     {
-      "name": "DeepBrain AI",
+      "name": "HunyuanVideo",
       "score": 0,
       "rank": 105
     },
     {
-      "name": "Descript",
+      "name": "InVideo",
       "score": 0,
       "rank": 106
     },
     {
-      "name": "Google Veo",
+      "name": "Kaiber",
       "score": 0,
       "rank": 107
     },
     {
-      "name": "HeyGen",
+      "name": "Kling (Kuaishou)",
       "score": 0,
       "rank": 108
     },
     {
-      "name": "HunyuanVideo",
+      "name": "LocalAI",
       "score": 0,
       "rank": 109
     },
     {
-      "name": "InVideo",
+      "name": "Luma Dream Machine",
       "score": 0,
       "rank": 110
     },
     {
-      "name": "Kaiber",
+      "name": "MAGI-1",
       "score": 0,
       "rank": 111
     },
     {
-      "name": "Kling (Kuaishou)",
+      "name": "Opus Clip",
       "score": 0,
       "rank": 112
     },
     {
-      "name": "LocalAI",
+      "name": "Pictory",
       "score": 0,
       "rank": 113
     },
     {
-      "name": "Luma Dream Machine",
+      "name": "Pika",
       "score": 0,
       "rank": 114
     },
     {
-      "name": "MAGI-1",
+      "name": "Runway",
       "score": 0,
       "rank": 115
     },
     {
-      "name": "Opus Clip",
+      "name": "Sora (OpenAI)",
       "score": 0,
       "rank": 116
     },
     {
-      "name": "Pictory",
+      "name": "Synthesia",
       "score": 0,
       "rank": 117
     },
     {
-      "name": "Pika",
+      "name": "Veed.io",
       "score": 0,
       "rank": 118
     },
     {
-      "name": "Runway",
+      "name": "Amazon CodeWhisperer",
       "score": 0,
       "rank": 119
     },
     {
-      "name": "Sora (OpenAI)",
+      "name": "Blackbox AI",
       "score": 0,
       "rank": 120
     },
     {
-      "name": "Synthesia",
+      "name": "Codeium",
       "score": 0,
       "rank": 121
     },
     {
-      "name": "Veed.io",
+      "name": "cody-public-snapshot",
       "score": 0,
       "rank": 122
     },
     {
-      "name": "Amazon CodeWhisperer",
+      "name": "Cursor",
       "score": 0,
       "rank": 123
     },
     {
-      "name": "Blackbox AI",
+      "name": "daytona",
       "score": 0,
       "rank": 124
     },
     {
-      "name": "Codeium",
+      "name": "JetBrains AI Assistant",
       "score": 0,
       "rank": 125
     },
     {
-      "name": "cody-public-snapshot",
+      "name": "kestra",
       "score": 0,
       "rank": 126
     },
     {
-      "name": "Cursor",
+      "name": "kilocode",
       "score": 0,
       "rank": 127
     },
     {
-      "name": "daytona",
+      "name": "LibreChat",
       "score": 0,
       "rank": 128
     },
     {
-      "name": "JetBrains AI Assistant",
+      "name": "Phind",
       "score": 0,
       "rank": 129
     },
     {
-      "name": "kestra",
+      "name": "plandex",
       "score": 0,
       "rank": 130
     },
     {
-      "name": "kilocode",
+      "name": "qodo-cover",
       "score": 0,
       "rank": 131
     },
     {
-      "name": "LibreChat",
+      "name": "Replit Ghostwriter",
       "score": 0,
       "rank": 132
     },
     {
-      "name": "Phind",
+      "name": "Sourcegraph Cody",
       "score": 0,
       "rank": 133
     },
     {
-      "name": "plandex",
+      "name": "sweep",
       "score": 0,
       "rank": 134
     },
     {
-      "name": "qodo-cover",
+      "name": "Tabnine",
       "score": 0,
       "rank": 135
     },
     {
-      "name": "Replit Ghostwriter",
+      "name": "Warp",
       "score": 0,
       "rank": 136
     },
     {
-      "name": "Sourcegraph Cody",
+      "name": "Adobe Podcast",
       "score": 0,
       "rank": 137
     },
     {
-      "name": "sweep",
+      "name": "AIVA",
       "score": 0,
       "rank": 138
     },
     {
-      "name": "Tabnine",
+      "name": "Auphonic",
       "score": 0,
       "rank": 139
     },
     {
-      "name": "Warp",
+      "name": "Cleanvoice AI",
       "score": 0,
       "rank": 140
     },
     {
-      "name": "Adobe Podcast",
+      "name": "ComfyUI-DeepFuze",
       "score": 0,
       "rank": 141
     },
     {
-      "name": "AIVA",
+      "name": "Descript Overdub",
       "score": 0,
       "rank": 142
     },
     {
-      "name": "Auphonic",
+      "name": "ElevenLabs",
       "score": 0,
       "rank": 143
     },
     {
-      "name": "Cleanvoice AI",
+      "name": "Google's advanced music generation model and two new AI experiments",
       "score": 0,
       "rank": 144
     },
     {
-      "name": "ComfyUI-DeepFuze",
+      "name": "Kits AI",
       "score": 0,
       "rank": 145
     },
     {
-      "name": "Descript Overdub",
+      "name": "LALAL.AI",
       "score": 0,
       "rank": 146
     },
     {
-      "name": "ElevenLabs",
+      "name": "Play.ht",
       "score": 0,
       "rank": 147
     },
     {
-      "name": "Google's advanced music generation model and two new AI experiments",
+      "name": "Stable Audio (Stability AI)",
       "score": 0,
       "rank": 148
     },
     {
-      "name": "Kits AI",
+      "name": "Udio",
       "score": 0,
       "rank": 149
     },
     {
-      "name": "LALAL.AI",
+      "name": "Voicemod AI",
       "score": 0,
       "rank": 150
     },
     {
-      "name": "Play.ht",
+      "name": "Clockwise",
       "score": 0,
       "rank": 151
     },
     {
-      "name": "Stable Audio (Stability AI)",
+      "name": "Ellie AI",
       "score": 0,
       "rank": 152
     },
     {
-      "name": "Udio",
+      "name": "Fireflies.ai",
       "score": 0,
       "rank": 153
     },
     {
-      "name": "Voicemod AI",
+      "name": "Gemini for Workspace",
       "score": 0,
       "rank": 154
     },
     {
-      "name": "Clockwise",
+      "name": "inbox-zero",
       "score": 0,
       "rank": 155
     },
     {
-      "name": "Ellie AI",
+      "name": "joinly",
       "score": 0,
       "rank": 156
     },
     {
-      "name": "Fireflies.ai",
+      "name": "meeting-minutes",
       "score": 0,
       "rank": 157
     },
     {
-      "name": "Gemini for Workspace",
+      "name": "Mem",
       "score": 0,
       "rank": 158
     },
     {
-      "name": "inbox-zero",
+      "name": "Microsoft Copilot for M365",
       "score": 0,
       "rank": 159
     },
     {
-      "name": "joinly",
+      "name": "Motion",
       "score": 0,
       "rank": 160
     },
     {
-      "name": "meeting-minutes",
+      "name": "MyBrain",
       "score": 0,
       "rank": 161
     },
     {
-      "name": "Mem",
+      "name": "Notion AI",
       "score": 0,
       "rank": 162
     },
     {
-      "name": "Microsoft Copilot for M365",
+      "name": "Otter.ai",
       "score": 0,
       "rank": 163
     },
     {
-      "name": "Motion",
+      "name": "Reclaim.ai",
       "score": 0,
       "rank": 164
     },
     {
-      "name": "MyBrain",
+      "name": "Reflect Notes",
       "score": 0,
       "rank": 165
     },
     {
-      "name": "Notion AI",
+      "name": "SaneBox",
       "score": 0,
       "rank": 166
     },
     {
-      "name": "Otter.ai",
+      "name": "Sembly AI",
       "score": 0,
       "rank": 167
     },
     {
-      "name": "Reclaim.ai",
+      "name": "Supernormal",
       "score": 0,
       "rank": 168
     },
     {
-      "name": "Reflect Notes",
+      "name": "Todoist",
       "score": 0,
       "rank": 169
     },
     {
-      "name": "SaneBox",
+      "name": "Beautiful.ai",
       "score": 0,
       "rank": 170
     },
     {
-      "name": "Sembly AI",
+      "name": "browser",
       "score": 0,
       "rank": 171
     },
     {
-      "name": "Supernormal",
+      "name": "Canva Magic Design",
       "score": 0,
       "rank": 172
     },
     {
-      "name": "Todoist",
+      "name": "ComfyUI-IF_AI_tools",
       "score": 0,
       "rank": 173
     },
     {
-      "name": "Beautiful.ai",
+      "name": "Figma AI",
       "score": 0,
       "rank": 174
     },
     {
-      "name": "browser",
+      "name": "Figma AI (Diagram)",
       "score": 0,
       "rank": 175
     },
     {
-      "name": "Canva Magic Design",
+      "name": "Framer AI",
       "score": 0,
       "rank": 176
     },
     {
-      "name": "ComfyUI-IF_AI_tools",
+      "name": "Galileo AI",
       "score": 0,
       "rank": 177
     },
     {
-      "name": "Figma AI",
+      "name": "Gamma",
       "score": 0,
       "rank": 178
     },
     {
-      "name": "Figma AI (Diagram)",
+      "name": "Khroma",
       "score": 0,
       "rank": 179
     },
     {
-      "name": "Framer AI",
+      "name": "onlook",
       "score": 0,
       "rank": 180
     },
     {
-      "name": "Galileo AI",
+      "name": "Spline AI",
       "score": 0,
       "rank": 181
     },
     {
-      "name": "Gamma",
+      "name": "Tome",
       "score": 0,
       "rank": 182
     },
     {
-      "name": "Khroma",
+      "name": "Uizard",
       "score": 0,
       "rank": 183
     },
     {
-      "name": "onlook",
+      "name": "upscayl",
       "score": 0,
       "rank": 184
     },
     {
-      "name": "Spline AI",
+      "name": "Vev",
       "score": 0,
       "rank": 185
     },
     {
-      "name": "Tome",
+      "name": "Consensus",
       "score": 0,
       "rank": 186
     },
     {
-      "name": "Uizard",
+      "name": "Litmaps",
       "score": 0,
       "rank": 187
     },
     {
-      "name": "upscayl",
+      "name": "Scholarcy",
       "score": 0,
       "rank": 188
     },
     {
-      "name": "Vev",
+      "name": "Scite",
       "score": 0,
       "rank": 189
     },
     {
-      "name": "Consensus",
+      "name": "ALwrity",
       "score": 0,
       "rank": 190
     },
     {
-      "name": "Litmaps",
+      "name": "Anyword",
       "score": 0,
       "rank": 191
     },
     {
-      "name": "Scholarcy",
+      "name": "Copy.ai",
       "score": 0,
       "rank": 192
     },
     {
-      "name": "Scite",
+      "name": "Frase",
       "score": 0,
       "rank": 193
     },
     {
-      "name": "ALwrity",
+      "name": "Jasper (formerly Jarvis)",
       "score": 0,
       "rank": 194
     },
     {
-      "name": "Anyword",
+      "name": "MarketMuse",
       "score": 0,
       "rank": 195
     },
     {
-      "name": "Copy.ai",
+      "name": "Surfer SEO",
       "score": 0,
       "rank": 196
     },
     {
-      "name": "Frase",
+      "name": "dataline",
       "score": 0,
       "rank": 197
     },
     {
-      "name": "Jasper (formerly Jarvis)",
+      "name": "DeepBI",
       "score": 0,
       "rank": 198
     },
     {
-      "name": "MarketMuse",
+      "name": "Hex Magic",
       "score": 0,
       "rank": 199
     },
     {
-      "name": "Surfer SEO",
+      "name": "Julius AI",
       "score": 0,
       "rank": 200
     },
     {
-      "name": "dataline",
+      "name": "pandas-ai",
       "score": 0,
       "rank": 201
     },
     {
-      "name": "DeepBI",
+      "name": "Power BI Copilot",
       "score": 0,
       "rank": 202
     },
     {
-      "name": "Hex Magic",
+      "name": "Tableau AI",
       "score": 0,
       "rank": 203
     },
     {
-      "name": "Julius AI",
+      "name": "yn",
       "score": 0,
       "rank": 204
     },
     {
-      "name": "pandas-ai",
+      "name": "Blockade Labs Skybox",
       "score": 0,
       "rank": 205
     },
     {
-      "name": "Power BI Copilot",
+      "name": "Kaedim",
       "score": 0,
       "rank": 206
     },
     {
-      "name": "Tableau AI",
+      "name": "Luma AI",
       "score": 0,
       "rank": 207
     },
     {
-      "name": "yn",
+      "name": "Masterpiece Studio",
       "score": 0,
       "rank": 208
     },
     {
-      "name": "Blockade Labs Skybox",
+      "name": "Meshy",
       "score": 0,
       "rank": 209
     },
     {
-      "name": "Kaedim",
+      "name": "Sloyd",
       "score": 0,
       "rank": 210
     },
     {
-      "name": "Luma AI",
+      "name": "Fiddler AI",
       "score": 0,
       "rank": 211
     },
     {
-      "name": "Masterpiece Studio",
+      "name": "Hugging Face Ethics & Society",
       "score": 0,
       "rank": 212
     },
     {
-      "name": "Meshy",
+      "name": "Duolingo Max",
       "score": 0,
       "rank": 213
     },
     {
-      "name": "Sloyd",
+      "name": "Khanmigo (Khan Academy)",
       "score": 0,
       "rank": 214
     },
     {
-      "name": "Fiddler AI",
+      "name": "MagicSchool AI",
       "score": 0,
       "rank": 215
     },
     {
-      "name": "Hugging Face Ethics & Society",
+      "name": "memobase",
       "score": 0,
       "rank": 216
     },
     {
-      "name": "Duolingo Max",
+      "name": "Photomath",
       "score": 0,
       "rank": 217
     },
     {
-      "name": "Khanmigo (Khan Academy)",
+      "name": "Quizlet Q-Chat",
       "score": 0,
       "rank": 218
     },
     {
-      "name": "MagicSchool AI",
+      "name": "uxie",
       "score": 0,
       "rank": 219
     },
     {
-      "name": "memobase",
+      "name": "3Commas",
       "score": 0,
       "rank": 220
     },
     {
-      "name": "Photomath",
+      "name": "Arkham Intelligence",
       "score": 0,
       "rank": 221
     },
     {
-      "name": "Quizlet Q-Chat",
+      "name": "IntoTheBlock",
       "score": 0,
       "rank": 222
     },
     {
-      "name": "uxie",
+      "name": "Messari",
       "score": 0,
       "rank": 223
     },
     {
-      "name": "3Commas",
+      "name": "Nansen",
       "score": 0,
       "rank": 224
     },
     {
-      "name": "Arkham Intelligence",
+      "name": "Santiment",
       "score": 0,
       "rank": 225
     },
     {
-      "name": "IntoTheBlock",
+      "name": "TokenMetrics",
       "score": 0,
       "rank": 226
     },
     {
-      "name": "Messari",
+      "name": "AIPRM",
       "score": 0,
       "rank": 227
     },
     {
-      "name": "Nansen",
+      "name": "FlowGPT",
       "score": 0,
       "rank": 228
     },
     {
-      "name": "Santiment",
+      "name": "Langfuse",
       "score": 0,
       "rank": 229
     },
     {
-      "name": "TokenMetrics",
+      "name": "langwatch",
       "score": 0,
       "rank": 230
     },
     {
-      "name": "AIPRM",
+      "name": "LearnPrompt",
       "score": 0,
       "rank": 231
     },
     {
-      "name": "FlowGPT",
+      "name": "Prompt Perfect",
       "score": 0,
       "rank": 232
     },
     {
-      "name": "Langfuse",
+      "name": "prompt-layer-library",
       "score": 0,
       "rank": 233
     },
     {
-      "name": "langwatch",
+      "name": "promptfoo",
       "score": 0,
       "rank": 234
     },
     {
-      "name": "LearnPrompt",
+      "name": "PromptHero",
       "score": 0,
       "rank": 235
     },
     {
-      "name": "Prompt Perfect",
+      "name": "PromptLayer",
       "score": 0,
       "rank": 236
     },
     {
-      "name": "prompt-layer-library",
+      "name": "Adept",
       "score": 0,
       "rank": 237
     },
     {
-      "name": "promptfoo",
+      "name": "AgentGPT",
       "score": 0,
       "rank": 238
     },
     {
-      "name": "PromptHero",
+      "name": "Camel-AI",
       "score": 0,
       "rank": 239
     },
     {
-      "name": "PromptLayer",
+      "name": "CrewAI",
       "score": 0,
       "rank": 240
     },
     {
-      "name": "Adept",
+      "name": "Devin (Cognition Labs)",
       "score": 0,
       "rank": 241
     },
     {
-      "name": "AgentGPT",
+      "name": "E2B",
       "score": 0,
       "rank": 242
     },
     {
-      "name": "Camel-AI",
+      "name": "eliza",
       "score": 0,
       "rank": 243
     },
     {
-      "name": "CrewAI",
+      "name": "Glowby",
       "score": 0,
       "rank": 244
     },
     {
-      "name": "Devin (Cognition Labs)",
+      "name": "Grammarly AI Agents",
       "score": 0,
       "rank": 245
     },
     {
-      "name": "E2B",
+      "name": "Hugging Face Transformers Agents",
       "score": 0,
       "rank": 246
     },
     {
-      "name": "eliza",
+      "name": "HuggingGPT",
       "score": 0,
       "rank": 247
     },
     {
-      "name": "Glowby",
+      "name": "LangChain Agents",
       "score": 0,
       "rank": 248
     },
     {
-      "name": "Grammarly AI Agents",
+      "name": "Lindy",
       "score": 0,
       "rank": 249
     },
     {
-      "name": "Hugging Face Transformers Agents",
+      "name": "LlamaIndex Agents",
       "score": 0,
       "rank": 250
     },
     {
-      "name": "HuggingGPT",
+      "name": "Manus",
       "score": 0,
       "rank": 251
     },
     {
-      "name": "LangChain Agents",
+      "name": "MultiOn",
       "score": 0,
       "rank": 252
     },
     {
-      "name": "Lindy",
+      "name": "OpenAI Assistants API",
       "score": 0,
       "rank": 253
     },
     {
-      "name": "LlamaIndex Agents",
+      "name": "OpenAI Custom GPTs (Agents)",
       "score": 0,
       "rank": 254
     },
     {
-      "name": "Manus",
+      "name": "Superagent.sh",
       "score": 0,
       "rank": 255
     },
     {
-      "name": "MultiOn",
+      "name": "SuperAGI",
       "score": 0,
       "rank": 256
     },
     {
-      "name": "OpenAI Assistants API",
+      "name": "Voyager (Minecraft AI)",
       "score": 0,
       "rank": 257
     },
     {
-      "name": "OpenAI Custom GPTs (Agents)",
+      "name": "Zapier AI Agents",
       "score": 0,
       "rank": 258
     },
     {
-      "name": "Superagent.sh",
+      "name": "activepieces",
       "score": 0,
       "rank": 259
     },
     {
-      "name": "SuperAGI",
+      "name": "Bardeen",
       "score": 0,
       "rank": 260
     },
     {
-      "name": "Voyager (Minecraft AI)",
+      "name": "FastGPT",
       "score": 0,
       "rank": 261
     },
     {
-      "name": "Zapier AI Agents",
+      "name": "Levity",
       "score": 0,
       "rank": 262
     },
     {
-      "name": "activepieces",
+      "name": "Make (formerly Integromat)",
       "score": 0,
       "rank": 263
     },
     {
-      "name": "Bardeen",
+      "name": "Microsoft Power Automate",
       "score": 0,
       "rank": 264
     },
     {
-      "name": "FastGPT",
+      "name": "n8n",
       "score": 0,
       "rank": 265
     },
     {
-      "name": "Levity",
+      "name": "nanobrowser",
       "score": 0,
       "rank": 266
     },
     {
-      "name": "Make (formerly Integromat)",
+      "name": "Relevance AI",
       "score": 0,
       "rank": 267
     },
     {
-      "name": "Microsoft Power Automate",
+      "name": "Tray.io",
       "score": 0,
       "rank": 268
     },
     {
-      "name": "n8n",
+      "name": "Workato",
       "score": 0,
       "rank": 269
     },
     {
-      "name": "nanobrowser",
+      "name": "Zapier",
       "score": 0,
       "rank": 270
     },
     {
-      "name": "Relevance AI",
+      "name": "ai-knowledge-graph",
       "score": 0,
       "rank": 271
     },
     {
-      "name": "Tray.io",
+      "name": "anything-llm",
       "score": 0,
       "rank": 272
     },
     {
-      "name": "Workato",
+      "name": "cosdata",
       "score": 0,
       "rank": 273
     },
     {
-      "name": "Zapier",
+      "name": "Glean",
       "score": 0,
       "rank": 274
     },
     {
-      "name": "ai-knowledge-graph",
+      "name": "memvid",
       "score": 0,
       "rank": 275
     },
     {
-      "name": "anything-llm",
+      "name": "mindsdb",
       "score": 0,
       "rank": 276
     },
     {
-      "name": "cosdata",
+      "name": "Neeva AI (legacy)",
       "score": 0,
       "rank": 277
     },
     {
-      "name": "Glean",
+      "name": "Nucleoid",
       "score": 0,
       "rank": 278
     },
     {
-      "name": "memvid",
+      "name": "octocode-mcp",
       "score": 0,
       "rank": 279
     },
     {
-      "name": "mindsdb",
+      "name": "probe",
       "score": 0,
       "rank": 280
     },
     {
-      "name": "Neeva AI (legacy)",
+      "name": "ragflow",
       "score": 0,
       "rank": 281
     },
     {
-      "name": "Nucleoid",
+      "name": "Aequitas",
       "score": 0,
       "rank": 282
     },
     {
-      "name": "octocode-mcp",
+      "name": "agentic_security",
       "score": 0,
       "rank": 283
     },
     {
-      "name": "probe",
+      "name": "Anthropic Constitutional AI",
       "score": 0,
       "rank": 284
     },
     {
-      "name": "ragflow",
+      "name": "archestra",
       "score": 0,
       "rank": 285
     },
     {
-      "name": "Aequitas",
+      "name": "Decepticon",
       "score": 0,
       "rank": 286
     },
     {
-      "name": "agentic_security",
+      "name": "fast-llm-security-guardrails",
       "score": 0,
       "rank": 287
     },
     {
-      "name": "Anthropic Constitutional AI",
+      "name": "gateway",
       "score": 0,
       "rank": 288
     },
     {
-      "name": "archestra",
+      "name": "Google PAIR",
       "score": 0,
       "rank": 289
     },
     {
-      "name": "Decepticon",
+      "name": "Google What-If Tool",
       "score": 0,
       "rank": 290
     },
     {
-      "name": "fast-llm-security-guardrails",
+      "name": "Hugging Face Evaluate (Bias & Fairness Metrics)",
       "score": 0,
       "rank": 291
     },
     {
-      "name": "gateway",
+      "name": "invariant",
       "score": 0,
       "rank": 292
     },
     {
-      "name": "Google PAIR",
+      "name": "modelbench",
       "score": 0,
       "rank": 293
     },
     {
-      "name": "Google What-If Tool",
+      "name": "OpenAI Red Teaming",
       "score": 0,
       "rank": 294
     },
     {
-      "name": "Hugging Face Evaluate (Bias & Fairness Metrics)",
+      "name": "woodpecker",
       "score": 0,
       "rank": 295
     },
     {
-      "name": "invariant",
+      "name": "Ada",
       "score": 0,
       "rank": 296
     },
     {
-      "name": "modelbench",
+      "name": "ClaraVerse",
       "score": 0,
       "rank": 297
     },
     {
-      "name": "OpenAI Red Teaming",
+      "name": "CLI",
       "score": 0,
       "rank": 298
     },
     {
-      "name": "woodpecker",
+      "name": "cursor-free-vip",
       "score": 0,
       "rank": 299
     },
     {
-      "name": "Ada",
+      "name": "Intercom Fin",
       "score": 0,
       "rank": 300
     },
     {
-      "name": "ClaraVerse",
+      "name": "Zendesk AI",
       "score": 0,
       "rank": 301
     },
     {
-      "name": "CLI",
+      "name": "comp",
       "score": 0,
       "rank": 302
     },
     {
-      "name": "cursor-free-vip",
+      "name": "Harvey",
       "score": 0,
       "rank": 303
     },
     {
-      "name": "Intercom Fin",
+      "name": "lawglance",
       "score": 0,
       "rank": 304
     },
     {
-      "name": "Zendesk AI",
+      "name": "Luminance",
       "score": 0,
       "rank": 305
     },
     {
-      "name": "comp",
+      "name": "Spellbook",
       "score": 0,
       "rank": 306
     },
     {
-      "name": "Harvey",
+      "name": "Spellbook (by Rally)",
       "score": 0,
       "rank": 307
     },
     {
-      "name": "lawglance",
+      "name": "verifywise",
       "score": 0,
       "rank": 308
     },
     {
-      "name": "Luminance",
+      "name": "DeepScribe",
       "score": 0,
       "rank": 309
     },
     {
-      "name": "Spellbook",
+      "name": "MONAI",
       "score": 0,
       "rank": 310
     },
     {
-      "name": "Spellbook (by Rally)",
+      "name": "Nuance Dragon Medical One",
       "score": 0,
       "rank": 311
     },
     {
-      "name": "verifywise",
+      "name": "PathAI",
       "score": 0,
       "rank": 312
     },
     {
-      "name": "DeepScribe",
+      "name": "QuickBooks + AI",
       "score": 0,
       "rank": 313
     },
     {
-      "name": "MONAI",
+      "name": "Stripe Radar",
       "score": 0,
       "rank": 314
     },
     {
-      "name": "Nuance Dragon Medical One",
+      "name": "Vic.ai",
       "score": 0,
       "rank": 315
     },
     {
-      "name": "PathAI",
+      "name": "Eightfold AI",
       "score": 0,
       "rank": 316
     },
     {
-      "name": "QuickBooks + AI",
+      "name": "hireEZ",
       "score": 0,
       "rank": 317
     },
     {
-      "name": "Stripe Radar",
+      "name": "Paradox (Olivia)",
       "score": 0,
       "rank": 318
     },
     {
-      "name": "Vic.ai",
+      "name": "Inworld AI",
       "score": 0,
       "rank": 319
     },
     {
-      "name": "Eightfold AI",
+      "name": "modl.ai",
       "score": 0,
       "rank": 320
     },
     {
-      "name": "hireEZ",
+      "name": "Replica Studios",
       "score": 0,
       "rank": 321
     },
     {
-      "name": "Paradox (Olivia)",
+      "name": "CrowdStrike Charlotte AI",
       "score": 0,
       "rank": 322
     },
     {
-      "name": "Inworld AI",
+      "name": "Darktrace",
       "score": 0,
       "rank": 323
     },
     {
-      "name": "modl.ai",
+      "name": "Microsoft Security Copilot",
       "score": 0,
       "rank": 324
     },
     {
-      "name": "Replica Studios",
+      "name": "Apollo AI",
       "score": 0,
       "rank": 325
     },
     {
-      "name": "CrowdStrike Charlotte AI",
+      "name": "HubSpot AI",
       "score": 0,
       "rank": 326
     },
     {
-      "name": "Darktrace",
+      "name": "Salesforce Einstein Copilot",
       "score": 0,
       "rank": 327
     },
     {
-      "name": "Microsoft Security Copilot",
+      "name": "Buffer AI Assistant",
       "score": 0,
       "rank": 328
     },
     {
-      "name": "Apollo AI",
+      "name": "Hootsuite OwlyWriter AI",
       "score": 0,
       "rank": 329
     },
     {
-      "name": "HubSpot AI",
+      "name": "Later AI",
       "score": 0,
       "rank": 330
     },
     {
-      "name": "Salesforce Einstein Copilot",
+      "name": "postiz-app",
       "score": 0,
       "rank": 331
     },
     {
-      "name": "Buffer AI Assistant",
+      "name": "Amazon Personalize",
       "score": 0,
       "rank": 332
     },
     {
-      "name": "Hootsuite OwlyWriter AI",
+      "name": "Bloomreach Discovery",
       "score": 0,
       "rank": 333
     },
     {
-      "name": "Later AI",
+      "name": "Shopify Magic",
       "score": 0,
       "rank": 334
     },
     {
-      "name": "postiz-app",
+      "name": "storecraft",
       "score": 0,
       "rank": 335
     },
     {
-      "name": "Amazon Personalize",
+      "name": "HouseCanary",
       "score": 0,
       "rank": 336
     },
     {
-      "name": "Bloomreach Discovery",
+      "name": "Matterport",
       "score": 0,
       "rank": 337
     },
     {
-      "name": "Shopify Magic",
+      "name": "real-estate-ai-agent",
       "score": 0,
       "rank": 338
     },
     {
-      "name": "storecraft",
+      "name": "Reonomy",
       "score": 0,
       "rank": 339
     },
     {
-      "name": "HouseCanary",
+      "name": "PyTorch",
       "score": 0,
       "rank": 340
     },
     {
-      "name": "Matterport",
+      "name": "TensorFlow",
       "score": 0,
       "rank": 341
     },
     {
-      "name": "real-estate-ai-agent",
+      "name": "Transformers (HF)",
       "score": 0,
       "rank": 342
     },
     {
-      "name": "Reonomy",
+      "name": "llama.cpp",
       "score": 0,
       "rank": 343
     },
     {
-      "name": "GitHub AI Projects",
+      "name": "vLLM",
       "score": 0,
       "rank": 344
+    },
+    {
+      "name": "Stable Diffusion WebUI",
+      "score": 0,
+      "rank": 345
+    },
+    {
+      "name": "OpenAI Whisper",
+      "score": 0,
+      "rank": 346
+    },
+    {
+      "name": "Text Generation WebUI",
+      "score": 0,
+      "rank": 347
+    },
+    {
+      "name": "Open WebUI",
+      "score": 0,
+      "rank": 348
     }
   ]
 }
