@@ -937,13 +937,33 @@
                 return `https://placehold.co/${size}x${size}/f3f4f6/7c3aed?text=${ch}`;
             }
             function buildIconSources(tool, size=40) {
-                const host = getHostnameFromLink(tool?.link || '');
-                const s2 = host ? `https://www.google.com/s2/favicons?domain=${host}&sz=${size}` : '';
-                const duck = host ? `https://icons.duckduckgo.com/ip3/${host}.ico` : '';
+                const linkHost = getHostnameFromLink(tool?.link || '');
+                const icon = tool?.iconUrl || '';
+                const iconHost = getHostnameFromLink(icon);
+                const baseHost = linkHost || iconHost || '';
+                const s2 = baseHost ? `https://www.google.com/s2/favicons?domain=${baseHost}&sz=${size}` : '';
+                const duck = baseHost ? `https://icons.duckduckgo.com/ip3/${baseHost}.ico` : '';
                 const placeholder = getLightPlaceholder(tool?.name, size);
-                const primary = tool?.iconUrl || s2 || duck || placeholder;
-                const secondary = (primary === duck ? s2 : duck) || placeholder;
-                return { primary, secondary, placeholder };
+
+                // Prefer reliable favicon services by default; use iconUrl first only if it's same-origin
+                // with the tool link or from a trusted CDN.
+                const TRUSTED_ICON_HOSTS = new Set([
+                    'avatars.githubusercontent.com',
+                    'raw.githubusercontent.com',
+                    'upload.wikimedia.org'
+                ]);
+                const sameOrigin = !!(icon && iconHost && linkHost && iconHost === linkHost);
+                const trustedIcon = !!(icon && (sameOrigin || TRUSTED_ICON_HOSTS.has(iconHost)));
+
+                if (trustedIcon) {
+                    const primary = icon;
+                    const secondary = s2 || duck || placeholder;
+                    return { primary, secondary, placeholder };
+                } else {
+                    const primary = s2 || duck || icon || placeholder;
+                    const secondary = (primary === icon ? (s2 || duck) : (icon || duck)) || placeholder;
+                    return { primary, secondary, placeholder };
+                }
             }
             function iconImgHtml(tool, size=40, extraClass='') {
                 const { primary, secondary, placeholder } = buildIconSources(tool, size);
