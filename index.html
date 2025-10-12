@@ -1263,9 +1263,7 @@
 
                                         historyEl.innerHTML = approved.length ? `
                                                 <div class="overflow-x-auto">
-                                                    <table class="min-w-full text-sm">
-                                                        <thead>
-                                                            <tr class="text-left text-secondary">
+                            // Serverless notifications disabled (no Netlify)
                                                                 <th class="py-2 pr-4">Title</th>
                                                                 <th class="py-2 pr-4">Approved</th>
                                                                 <th class="py-2 pr-4">Approved By</th>
@@ -1315,15 +1313,8 @@
                         try {
                             const domainSlug = domainNameToSlug(domain);
 
-                            // Enrichment: fetch official metadata for standardized fields
+                            // Enrichment: skip serverless calls (Netlify removed). Default to local fields only.
                             let enriched = { name: '', description: '', iconUrl: '' };
-                            try {
-                                const resp = await fetch('/.netlify/functions/enrich-tool', {
-                                    method: 'POST', headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ url: link })
-                                });
-                                if (resp.ok) enriched = await resp.json();
-                            } catch {}
 
                             const toolDoc = {
                                 name: (enriched.name || title).trim(),
@@ -1349,13 +1340,7 @@
                                 });
                             } catch {}
 
-                            // Send approval acknowledgement
-                            const email = (submitterEmail && submitterEmail.includes('@')) ? submitterEmail : '';
-                            if (email) {
-                                const ackUrl = '/.netlify/functions/notify-user';
-                                const ackHtml = `<p>Your submission <strong>${escapeHtml(toolDoc.name)}</strong> has been approved and added to our catalog under <strong>${escapeHtml(domain)}</strong>.</p><p>Thanks for contributing to AI ToolVerse!</p>`;
-                                try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: email, subject: 'Your tool was approved', html: ackHtml }) }); } catch {}
-                            }
+                            // Notification emails skipped (no serverless backend configured)
 
                             alert('Approved and added. The exporter will append to public/tools.json via PR.');
                             loadSubs();
@@ -2095,19 +2080,7 @@
                                 // Create a submission document; server timestamps preferred but acceptable here.
                                 const subRef = doc(collection(firestore, 'submissions'));
                                 await setDoc(subRef, payload);
-                                // Notify admin via serverless function if configured (Netlify dev/prod)
-                                const adminEmail = (window.ADMIN_EMAIL || (window.process && window.process.env && window.process.env.TO_EMAIL)) || '';
-                                const notifyUrl = '/.netlify/functions/notify-admin';
-                                const ackUrl = '/.netlify/functions/notify-user';
-                                const toolHtml = `<p>New tool submitted:</p><ul><li><strong>Name:</strong> ${name}</li><li><strong>Link:</strong> ${link}</li><li><strong>Domain:</strong> ${domainName}</li><li><strong>Description:</strong> ${desc}</li><li><strong>Submitted By:</strong> ${payload.createdBy}</li></ul>`;
-                                if (adminEmail) {
-                                    try { await fetch(notifyUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: adminEmail, subject: 'New Tool Submission', html: toolHtml }) }); } catch {}
-                                }
-                                // Send acknowledgement to submitter if email available
-                                if (state.user?.email) {
-                                    const ackHtml = `<p>Thank you for submitting <strong>${name}</strong> to AI ToolVerse.</p><p>We appreciate your help in improving the catalog. We’ll review your suggestion and, if it fits our criteria, we’ll add it soon.</p><p>Thanks again!</p>`;
-                                    try { await fetch(ackUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: state.user.email, subject: 'Thanks for your tool submission', html: ackHtml }) }); } catch {}
-                                }
+                                // Email notifications disabled (Netlify removed). Admin can review in Firestore.
                                 statusEl.textContent = 'Thanks! Your submission was received.';
                                 form.reset();
                             } catch (err) {
@@ -2594,19 +2567,8 @@
                     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setStatus('Please enter a valid email address.', false); return; }
                     try {
                         btn.disabled = true; setStatus('Subscribing...');
-                        // Attempt serverless function if available
-                        let ok = false;
-                        try {
-                            const r = await fetch('/.netlify/functions/notify-admin', {
-                                method: 'POST', headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ subject: 'New newsletter subscriber', html: `<p>${email} subscribed to the newsletter.</p>` })
-                            });
-                            ok = r.ok;
-                        } catch {}
-                        if (!ok) {
-                            // Fallback: mailto link open
-                            window.location.href = `mailto:hello@aitoolverse.example?subject=Subscribe&body=${encodeURIComponent(email)}%20wants%20to%20subscribe.`;
-                        }
+                        // Serverless disabled; use mailto fallback
+                        window.location.href = `mailto:hello@aitoolverse.ai?subject=Subscribe&body=${encodeURIComponent(email)}%20wants%20to%20subscribe.`;
                         setStatus('Thanks! You are on the list.', true);
                         form.reset();
                     } catch (err) {

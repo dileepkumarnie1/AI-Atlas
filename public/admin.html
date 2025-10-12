@@ -142,7 +142,8 @@
       const at = await getAdminToken();
       if(!at || !at.isAdmin){ authMsg.textContent = 'Admin role required. Ask an admin to grant access.'; authPanels(false); return; }
       const headers = { 'Authorization': 'Bearer ' + at.token };
-      const res = await fetch('/.netlify/functions/admin-list-pending?limit=100&status=pending',{ headers });
+  // Netlify functions disabled; admin.html endpoints are not available in this deployment.
+  return [];
       if(!res.ok){ throw new Error('Failed to load pending: ' + res.status); }
       return res.json();
     }
@@ -151,7 +152,8 @@
       const at = await getAdminToken();
       const headers = { 'Authorization': 'Bearer ' + at.token, 'Content-Type':'application/json' };
       const body = JSON.stringify({ id, action, reason });
-      const res = await fetch('/.netlify/functions/admin-review', { method:'POST', headers, body });
+  // Netlify functions disabled; admin review endpoint not available.
+  return { ok:false };
       if(!res.ok){ const t = await res.text(); throw new Error('Failed: ' + res.status + ' ' + t); }
       return res.json();
     }
@@ -210,7 +212,7 @@
       const at = await getAdminToken();
       if(!at || !at.isAdmin){ alert('Admin role required'); return; }
       const headers = { 'Authorization': 'Bearer ' + at.token };
-      const res = await fetch('/.netlify/functions/admin-health', { headers });
+  return { ok:false };
       const el = document.getElementById('health-status');
       if(!res.ok){ el.textContent = 'Health error: ' + res.status; return; }
       const j = await res.json();
@@ -222,7 +224,7 @@
       const at = await getAdminToken();
       if(!at || !at.isAdmin){ alert('Admin role required'); return; }
       const headers = { 'Authorization': 'Bearer ' + at.token, 'Content-Type':'application/json' };
-      const res = await fetch('/.netlify/functions/admin-dispatch', { method:'POST', headers, body: JSON.stringify({ workflow, ref:'main' }) });
+  return { ok:false };
       if(!res.ok){ const t = await res.text(); alert('Dispatch failed: ' + t); return; }
       alert('Dispatch queued for ' + workflow);
     }

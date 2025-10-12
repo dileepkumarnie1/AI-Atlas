@@ -439,7 +439,7 @@ Steps:
 
 Troubleshooting:
 - After setting claims, sign out and sign back in to refresh the ID token.
-- Ensure your site’s domain is in Firebase Auth → Settings → Authorized domains (for GitHub Pages/Netlify).
+- Ensure your site’s domain is in Firebase Auth → Settings → Authorized domains (for GitHub Pages/Cloudflare Pages/etc.).
 
 ---
 
@@ -451,7 +451,7 @@ Participation in this project is governed by our [Code of Conduct](./CODE_OF_CON
 
 ## Attribution
 
-This site is powered by [Netlify](https://www.netlify.com/).
+This site can be hosted on any static host (Cloudflare Pages, GitHub Pages, etc.).
 
 ---
 
@@ -464,19 +464,13 @@ Admin curation options:
    - Workflow `.github/workflows/approval-from-issue.yml` listens for such issues and writes the decision to Firestore using `FIREBASE_SERVICE_ACCOUNT_JSON` and `ADMIN_APPROVAL_SIGNING_KEY`.
    - Close the issue after success; comments record the action.
 
-2) Netlify Functions (if you deploy them):
-   - `/.netlify/functions/admin-list-pending` (GET) — list pending tools
-   - `/.netlify/functions/admin-review` (POST) — approve/reject a pending tool
-   - `/.netlify/functions/admin-dispatch` (POST) — trigger GitHub workflows (discover/export)
-   - `/.netlify/functions/admin-health` (GET) — health and connectivity checks
+2) Serverless functions: Not required for static hosting. If you later add functions, adapt endpoints to your platform (Cloudflare Workers, Vercel, etc.).
 
-Required Netlify environment variables:
+Optional environment variables:
 
 - FIREBASE_SERVICE_ACCOUNT_JSON — Raw JSON for a Firebase service account (Firestore access)
-- ADMIN_ALLOWED_ORIGIN — Exact origin allowed for CORS (e.g., https://your-site.netlify.app)
-- APPROVAL_BASE_URL — Public site URL (used to derive origin if ADMIN_ALLOWED_ORIGIN not set)
- - GITHUB_REPO — owner/repo; when set, discovery emails will generate GitHub Issue links instead of Netlify approval URLs
-- GITHUB_REPO — GitHub repo in owner/name format, e.g., user/ai-prompt-recommender
+- APPROVAL_BASE_URL — Public site URL (used to build Admin UI links in discovery emails)
+- GITHUB_REPO — owner/repo; when set, discovery emails will generate GitHub Issue links for approvals
 - GITHUB_TOKEN — Token with workflow scope to call the dispatch API
 
 Access control:

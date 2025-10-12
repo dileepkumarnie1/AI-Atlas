@@ -10,10 +10,10 @@ Prereqs:
   python -m playwright install
 
 Usage examples (PowerShell):
-  # Against Netlify or any deployed URL
-  $Env:TEST_BASE_URL = "https://your-site.netlify.app"; python tests/run_ui_tests.py
+    # Against your deployed URL
+    $Env:TEST_BASE_URL = "https://www.aitoolverse.ai"; python tests/run_ui_tests.py
 
-  # Against local dev server (e.g., netlify dev or any static server)
+    # Against local dev server (any static server)
   $Env:TEST_BASE_URL = "http://localhost:8888"; python tests/run_ui_tests.py
 
 Outputs:
@@ -126,8 +126,8 @@ def build_test_plan() -> List[TestCase]:
         id="AD-001",
         feature="Admin Health Endpoint",
         title="Unauthenticated GET returns 401 or endpoint exists",
-        precondition="Endpoint deployed on Netlify",
-        steps="GET /.netlify/functions/admin-health without auth",
+    precondition="Serverless functions not configured",
+    steps="Skip Netlify-specific admin health checks",
         expected="401 Unauthorized or JSON error; not 404",
         type="negative", priority="P0", device="desktop(1366x768)"
     ))
@@ -135,8 +135,8 @@ def build_test_plan() -> List[TestCase]:
         id="AD-002",
         feature="Admin Dispatch Endpoint",
         title="Unauthenticated POST returns 401 or endpoint exists",
-        precondition="Endpoint deployed on Netlify",
-        steps="POST /.netlify/functions/admin-dispatch without auth",
+    precondition="Serverless functions not configured",
+    steps="Skip Netlify-specific admin dispatch checks",
         expected="401 Unauthorized or JSON error; not 404",
         type="negative", priority="P1", device="desktop(1366x768)"
     ))
@@ -780,7 +780,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
 
             def do_AD_001():
                 try:
-                    url = base_url.rstrip('/') + '/.netlify/functions/admin-health'
+                    url = base_url.rstrip('/') + '/admin-health-not-configured'
                     dpage.goto(url, wait_until='load', timeout=15000)
                     code = dpage.evaluate("fetch(window.location.href, {method:'GET'}).then(r=>r.status).catch(()=>0)")
                     if code == 404:
@@ -793,7 +793,7 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
 
             def do_AD_002():
                 try:
-                    url = base_url.rstrip('/') + '/.netlify/functions/admin-dispatch'
+                    url = base_url.rstrip('/') + '/admin-dispatch-not-configured'
                     code = dpage.evaluate("fetch(arguments[0], {method:'POST'}).then(r=>r.status).catch(()=>0)", url)
                     if code == 404:
                         results.append(TestResult('AD-002', 'Admin Dispatch Endpoint', 'Unauthenticated POST returns 401 or endpoint exists', 'blocked', 'Endpoint 404 (likely not deployed or Netlify plan)', shot('AD-002_blocked', dpage)))

@@ -20,7 +20,7 @@
         "tools:clean": "node ./scripts/clean-tools-json.mjs",
         "ci:dispatch": "node ./scripts/dispatch-and-monitor.mjs --workflows=discover,export --ref=main",
         "import:tools": "node ./scripts/import-tools-from-json.mjs",
-        "serve:functions": "npx netlify dev --dir=.",
+    "serve:static": "npx http-server ./ -p 8080 -c-1",
         "test:ui": "python ./tests/run_ui_tests.py",
         "context:log": "node ./scripts/update-context-log.mjs",
         "ml:train": "python ./ml/train_moderation_model.py",

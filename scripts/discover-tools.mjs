@@ -1969,8 +1969,8 @@ async function main(){
       .map(([dom, items]) => `<tr><td style="padding:4px 8px;">${esc(dom)}</td><td style="padding:4px 8px; text-align:right;">${items.length}</td></tr>`)
       .join('');
 
-    // If approval flow configured, create pending docs and generate links.
-    // Prefer GitHub Issues links when GITHUB_REPO is set; else fallback to Netlify function URL derived from APPROVAL_BASE_URL
+  // If approval flow configured, create pending docs and generate links.
+  // Prefer GitHub Issues links when GITHUB_REPO is set; else provide Admin UI link if APPROVAL_BASE_URL is set
     const approvalBase = (() => {
       const raw = String(process.env.APPROVAL_BASE_URL || '').trim();
       if(!raw) return '';
@@ -2017,9 +2017,8 @@ async function main(){
           const reject = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleReject}&body=${bodyReject}`;
           return { approve, reject, id };
         } else {
-          const approve = `${approvalBase}/.netlify/functions/approve-tool?action=approve&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
-          const reject = `${approvalBase}/.netlify/functions/approve-tool?action=reject&id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
-          return { approve, reject, id };
+          const adminUrl = approvalBase ? `${approvalBase}/admin.html` : '#';
+          return { approve: adminUrl, reject: adminUrl, id };
         }
       }
       // Fallback: Firestore not available at discovery time.
@@ -2040,27 +2039,10 @@ async function main(){
         const reject = `https://github.com/${repoSlug}/issues/new?labels=approval&title=${titleReject}&body=${bodyReject}`;
         return { approve, reject, id: provId };
       }
-      // If Netlify base is configured, provide approval function links with provisional payload
+      // If site base is configured, provide Admin UI link for manual approval
       if (approvalBase) {
-        const qs = new URLSearchParams({
-          action: 'approve',
-          id: provId,
-          token,
-          name: a.name,
-          link: a.link,
-          domain: domainName
-        }).toString();
-        const approve = `${approvalBase}/.netlify/functions/approve-tool?${qs}`;
-        const qsR = new URLSearchParams({
-          action: 'reject',
-          id: provId,
-          token,
-          name: a.name,
-          link: a.link,
-          domain: domainName
-        }).toString();
-        const reject = `${approvalBase}/.netlify/functions/approve-tool?${qsR}`;
-        return { approve, reject, id: provId };
+        const adminUrl = `${approvalBase}/admin.html`;
+        return { approve: adminUrl, reject: adminUrl, id: provId };
       }
       // Final fallback: provide Admin UI link if base URL known; else empty
       const adminUrl = approvalBase ? `${approvalBase}/admin.html` : '#';
@@ -2095,18 +2077,16 @@ async function main(){
       </section>`;
     }));
 
-    // Optional: Build a one-click Export Tools button
-    // If APPROVAL_BASE_URL and ADMIN_APPROVAL_SIGNING_KEY are configured, generate a signed Netlify link
-    // Otherwise, fall back to the GitHub Actions workflow page
+    // Optional: Build an Export Tools button
+    // Prefer GitHub Actions workflow link; otherwise provide Admin UI link if available
     let exportButtonHtml = '';
     try{
-      if (approvalBase && process.env.ADMIN_APPROVAL_SIGNING_KEY) {
-        const token = signId('export');
-        const href = `${approvalBase}/.netlify/functions/trigger-export?token=${encodeURIComponent(token)}`;
-        exportButtonHtml = `<div style="margin-top:12px;"><a href="${href}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Run Export</a><div style=\"font-size:12px;color:#57606a;margin-top:4px;\">Triggers the Export Tools workflow to append approved items to tools.json</div></div>`;
-      } else if (repoSlug) {
+      if (repoSlug) {
         const actionsUi = `https://github.com/${repoSlug}/actions/workflows/export-tools.yml`;
         exportButtonHtml = `<div style="margin-top:12px;"><a href="${actionsUi}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Open Export Workflow</a><div style=\"font-size:12px;color:#57606a;margin-top:4px;\">Dispatch the Export Tools workflow from GitHub Actions</div></div>`;
+      } else if (approvalBase) {
+        const adminUrl = `${approvalBase}/admin.html`;
+        exportButtonHtml = `<div style="margin-top:12px;"><a href="${adminUrl}" style="background:#0969da;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;">Open Admin</a><div style=\"font-size:12px;color:#57606a;margin-top:4px;\">Use the Admin UI to manage approvals and exports</div></div>`;
       }
     }catch{/* ignore */}
 
