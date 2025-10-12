@@ -1,3 +1,7 @@
+# Admin Page Enhancement Requirements (Legacy)
+
+Note: This document describes a prior Netlify-based architecture and endpoints. The current deployment no longer uses Netlify functions. Keep this file for historical reference only.
+
 # Admin Page Enhancements — Requirements
 
 This document outlines a secure, extensible Admin Dashboard for AI Atlas. It complements the existing discovery/export pipeline and the email-based approval links.
