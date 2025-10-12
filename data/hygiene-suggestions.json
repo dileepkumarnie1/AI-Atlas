@@ -1,0 +1,1334 @@
+{
+  "generatedAt": "2025-10-12T18:32:41.598Z",
+  "githubDomainSlug": "github-ai-projects",
+  "duplicates": [
+    {
+      "name": "ChatGPT (OpenAI)",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://chat.openai.com/"
+      },
+      "remove": []
+    },
+    {
+      "name": "Claude (Anthropic)",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://claude.ai/"
+      },
+      "remove": []
+    },
+    {
+      "name": "DeepL",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://www.deepl.com/translator"
+      },
+      "remove": [
+        {
+          "section": "productivity",
+          "link": "https://www.deepl.com/translator",
+          "iconUrl": "https://static.deepl.com/img/logo/deepl-logo-blue.svg"
+        }
+      ]
+    },
+    {
+      "name": "Elicit",
+      "keep": {
+        "section": "research",
+        "link": "https://elicit.org/"
+      },
+      "remove": [
+        {
+          "section": "search-knowledge-discovery",
+          "link": "https://elicit.org/",
+          "iconUrl": "https://pbs.twimg.com/profile_images/1533929299458850816/Yyn20k3g_400x400.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Fairlearn",
+      "keep": {
+        "section": "ethical-ai",
+        "link": "https://fairlearn.org"
+      },
+      "remove": [
+        {
+          "section": "ai-safety-ethics",
+          "link": "https://fairlearn.org/",
+          "iconUrl": "https://fairlearn.org/_static/fairlearn-logo.svg"
+        }
+      ]
+    },
+    {
+      "name": "Gemini (Google)",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://gemini.google.com/"
+      },
+      "remove": []
+    },
+    {
+      "name": "GitHub Copilot",
+      "keep": {
+        "section": "code-assistance",
+        "link": "https://github.com/features/copilot"
+      },
+      "remove": []
+    },
+    {
+      "name": "IBM AI Fairness 360",
+      "keep": {
+        "section": "ethical-ai",
+        "link": "https://aif360.mybluemix.net"
+      },
+      "remove": [
+        {
+          "section": "ai-safety-ethics",
+          "link": "https://aif360.mybluemix.net/",
+          "iconUrl": "https://aif360.mybluemix.net/static/images/logo.png"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft Copilot",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://copilot.microsoft.com/"
+      },
+      "remove": []
+    },
+    {
+      "name": "Microsoft Responsible AI Toolbox",
+      "keep": {
+        "section": "ethical-ai",
+        "link": "https://responsibleaitoolbox.ai"
+      },
+      "remove": [
+        {
+          "section": "ai-safety-ethics",
+          "link": "https://responsibleaitoolbox.ai/",
+          "iconUrl": "https://responsibleaitoolbox.ai/assets/logo.svg"
+        }
+      ]
+    },
+    {
+      "name": "Mistral Le Chat",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://chat.mistral.ai/"
+      },
+      "remove": []
+    },
+    {
+      "name": "Perplexity AI",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://www.perplexity.ai/"
+      },
+      "remove": []
+    },
+    {
+      "name": "Poe by Quora",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://poe.com/"
+      },
+      "remove": [
+        {
+          "section": "productivity",
+          "link": "https://poe.com/",
+          "iconUrl": "https://poe.com/favicon.ico"
+        }
+      ]
+    },
+    {
+      "name": "Suno AI",
+      "keep": {
+        "section": "audio-music",
+        "link": "https://www.suno.ai/"
+      },
+      "remove": [
+        {
+          "section": "productivity",
+          "link": "https://www.suno.ai/",
+          "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg"
+        }
+      ]
+    },
+    {
+      "name": "You.com",
+      "keep": {
+        "section": "language-chat",
+        "link": "https://you.com/"
+      },
+      "remove": [
+        {
+          "section": "search-knowledge-discovery",
+          "link": "https://you.com/",
+          "iconUrl": "https://you.com/favicon.ico"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "GitHub Copilot",
+      "from": "most-popular",
+      "to": "github-ai-projects",
+      "link": "https://github.com/features/copilot"
+    },
+    {
+      "name": "GitHub Copilot",
+      "from": "code-assistance",
+      "to": "github-ai-projects",
+      "link": "https://github.com/features/copilot"
+    }
+  ],
+  "icons": {
+    "missing": [],
+    "lowQuality": [
+      {
+        "name": "airbyte",
+        "section": "most-popular",
+        "current": "https://airbyte.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Gemini AI",
+        "section": "most-popular",
+        "current": "https://deepmind.google/static/icons/google_deepmind_32dp.c67bb05568f4.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "leon",
+        "section": "most-popular",
+        "current": "https://getleon.ai/img/favicon.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Meta AI",
+        "section": "most-popular",
+        "current": "https://about.meta.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Microsoft Copilot",
+        "section": "most-popular",
+        "current": "https://www.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Mistral Le Chat",
+        "section": "most-popular",
+        "current": "https://mistral.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "mlflow",
+        "section": "most-popular",
+        "current": "https://mlflow.org/img/mlflow-favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Notebook LLM",
+        "section": "most-popular",
+        "current": "https://notebooklm.google.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "sim",
+        "section": "most-popular",
+        "current": "https://www.sim.ai/favicon/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "supabase",
+        "section": "most-popular",
+        "current": "https://supabase.com/favicon/favicon-16x16.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "agent-zero",
+        "section": "most-popular",
+        "current": "https://agent-zero.ai/res/favicon_round.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Character.AI",
+        "section": "language-chat",
+        "current": "https://beta.character.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "DeepSeek Chat",
+        "section": "language-chat",
+        "current": "https://chat.deepseek.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Google Bard",
+        "section": "language-chat",
+        "current": "https://bard.google.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Jasper AI",
+        "section": "language-chat",
+        "current": "https://www.jasper.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Microsoft Copilot",
+        "section": "language-chat",
+        "current": "https://www.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Mistral Le Chat",
+        "section": "language-chat",
+        "current": "https://mistral.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Orchids AI",
+        "section": "language-chat",
+        "current": "https://orchids.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "pathway",
+        "section": "language-chat",
+        "current": "https://pathway.com/favicon-96x96.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "QuillBot",
+        "section": "language-chat",
+        "current": "https://quillbot.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Replika",
+        "section": "language-chat",
+        "current": "https://replika.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Seed Dream",
+        "section": "language-chat",
+        "current": "https://seeddream.app/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Writer",
+        "section": "language-chat",
+        "current": "https://writer.com/wp-content/themes/writer/favicon/favicon-32x32.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "You.com",
+        "section": "language-chat",
+        "current": "https://you.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Canva AI",
+        "section": "image-generation",
+        "current": "https://www.canva.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Clipdrop",
+        "section": "image-generation",
+        "current": "https://clipdrop.co/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "deeplake",
+        "section": "image-generation",
+        "current": "https://activeloop.ai/favicon-32x32.png?v=f10fa296f4fa621b5b31a72bb489f553",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "DreamStudio",
+        "section": "image-generation",
+        "current": "https://dreamstudio.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "easydiffusion",
+        "section": "image-generation",
+        "current": "https://easydiffusion.github.io/favicon.ico?1",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Fotor AI",
+        "section": "image-generation",
+        "current": "https://www.fotor.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Krea AI",
+        "section": "image-generation",
+        "current": "https://www.krea.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "NightCafe",
+        "section": "image-generation",
+        "current": "https://nightcafe.studio/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Playground v2 (Playground AI)",
+        "section": "image-generation",
+        "current": "https://playground.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "section": "image-generation",
+        "current": "https://www.riffusion.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "D-ID",
+        "section": "video-tools",
+        "current": "https://www.d-id.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "DeepBrain AI",
+        "section": "video-tools",
+        "current": "https://www.deepbrain.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Google Veo",
+        "section": "video-tools",
+        "current": "https://www.google.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Kaiber",
+        "section": "video-tools",
+        "current": "https://www.kaiber.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Luma Dream Machine",
+        "section": "video-tools",
+        "current": "https://lumalabs.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Opus Clip",
+        "section": "video-tools",
+        "current": "https://www.opus.pro/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Pictory",
+        "section": "video-tools",
+        "current": "https://pictory.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Veed.io",
+        "section": "video-tools",
+        "current": "https://www.veed.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Blackbox AI",
+        "section": "code-assistance",
+        "current": "https://www.useblackbox.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Codeium",
+        "section": "code-assistance",
+        "current": "https://codeium.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "daytona",
+        "section": "code-assistance",
+        "current": "https://daytona.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Sourcegraph Cody",
+        "section": "code-assistance",
+        "current": "https://sourcegraph.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "sweep",
+        "section": "code-assistance",
+        "current": "https://sweep.dev/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "TabbyML",
+        "section": "code-assistance",
+        "current": "https://tabbyml.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Auphonic",
+        "section": "audio-music",
+        "current": "https://auphonic.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Cleanvoice AI",
+        "section": "audio-music",
+        "current": "https://cleanvoice.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "ComfyUI-DeepFuze",
+        "section": "audio-music",
+        "current": "https://cogidigm.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Descript Overdub",
+        "section": "audio-music",
+        "current": "https://www.descript.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Google's advanced music generation model and two new AI experiments",
+        "section": "audio-music",
+        "current": "https://deepmind.google/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Kits AI",
+        "section": "audio-music",
+        "current": "https://www.kits.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Play.ht",
+        "section": "audio-music",
+        "current": "https://play.ht/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Riffusion",
+        "section": "audio-music",
+        "current": "https://www.riffusion.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Voicemod AI",
+        "section": "audio-music",
+        "current": "https://www.voicemod.net/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Clockwise",
+        "section": "productivity",
+        "current": "https://www.getclockwise.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Ellie AI",
+        "section": "productivity",
+        "current": "https://tryellie.com/assets/favicon32.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Gemini for Workspace",
+        "section": "productivity",
+        "current": "https://www.google.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "joinly",
+        "section": "productivity",
+        "current": "https://joinly.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Mem",
+        "section": "productivity",
+        "current": "https://mem.ai/favicons/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Microsoft Copilot for M365",
+        "section": "productivity",
+        "current": "https://www.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Otter.ai",
+        "section": "productivity",
+        "current": "https://otter.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Poe by Quora",
+        "section": "productivity",
+        "current": "https://poe.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Supernormal",
+        "section": "productivity",
+        "current": "https://supernormal.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Beautiful.ai",
+        "section": "design-tools",
+        "current": "https://www.beautiful.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "browser",
+        "section": "design-tools",
+        "current": "https://cdn.lightpanda.io/website/assets/images/favicon/apple-icon-57x57.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Figma AI",
+        "section": "design-tools",
+        "current": "https://static.figma.com/app/icon/1/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "onlook",
+        "section": "design-tools",
+        "current": "https://onlook.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Spline AI",
+        "section": "design-tools",
+        "current": "https://spline.design/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Litmaps",
+        "section": "research",
+        "current": "https://www.litmaps.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Scholarcy",
+        "section": "research",
+        "current": "https://www.scholarcy.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Scite",
+        "section": "research",
+        "current": "https://scite.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Anyword",
+        "section": "marketing-seo",
+        "current": "https://anyword.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Frase",
+        "section": "marketing-seo",
+        "current": "https://www.frase.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "MarketMuse",
+        "section": "marketing-seo",
+        "current": "https://www.marketmuse.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "dataline",
+        "section": "data-analysis",
+        "current": "https://dataline.app/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Hex Magic",
+        "section": "data-analysis",
+        "current": "https://hex.tech/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Power BI Copilot",
+        "section": "data-analysis",
+        "current": "https://learn.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Blockade Labs Skybox",
+        "section": "3d-modeling",
+        "current": "https://blockadelabs.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Kaedim",
+        "section": "3d-modeling",
+        "current": "https://www.kaedim3d.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Meshy",
+        "section": "3d-modeling",
+        "current": "https://www.meshy.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Sloyd",
+        "section": "3d-modeling",
+        "current": "https://sloyd.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Fairlearn",
+        "section": "ethical-ai",
+        "current": "https://fairlearn.org/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "IBM AI Fairness 360",
+        "section": "ethical-ai",
+        "current": "https://www.ibm.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Microsoft Responsible AI Toolbox",
+        "section": "ethical-ai",
+        "current": "https://www.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Duolingo Max",
+        "section": "education",
+        "current": "https://www.duolingo.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "MagicSchool AI",
+        "section": "education",
+        "current": "https://www.magicschool.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Photomath",
+        "section": "education",
+        "current": "https://photomath.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "uxie",
+        "section": "education",
+        "current": "https://uxie.vercel.app/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "IntoTheBlock",
+        "section": "crypto",
+        "current": "https://intotheblock.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Messari",
+        "section": "crypto",
+        "current": "https://messari.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Nansen",
+        "section": "crypto",
+        "current": "https://www.nansen.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "FlowGPT",
+        "section": "prompt-enhancers",
+        "current": "https://flowgpt.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Langfuse",
+        "section": "prompt-enhancers",
+        "current": "https://langfuse.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "LearnPrompt",
+        "section": "prompt-enhancers",
+        "current": "https://www.learnprompt.pro/img/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Prompt Perfect",
+        "section": "prompt-enhancers",
+        "current": "https://promptperfect.jina.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "prompt-layer-library",
+        "section": "prompt-enhancers",
+        "current": "https://www.promptlayer.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "promptfoo",
+        "section": "prompt-enhancers",
+        "current": "https://www.promptfoo.dev/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "PromptHero",
+        "section": "prompt-enhancers",
+        "current": "https://prompthero.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "PromptLayer",
+        "section": "prompt-enhancers",
+        "current": "https://promptlayer.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Zapier AI Agents",
+        "section": "most-famous-agentic-ais",
+        "current": "https://zapier.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "activepieces",
+        "section": "workflow-automation",
+        "current": "https://www.activepieces.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "nanobrowser",
+        "section": "workflow-automation",
+        "current": "https://nanobrowser.ai/favicon.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Relevance AI",
+        "section": "workflow-automation",
+        "current": "https://relevance.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "cosdata",
+        "section": "search-knowledge-discovery",
+        "current": "https://www.cosdata.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Glean",
+        "section": "search-knowledge-discovery",
+        "current": "https://www.glean.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Neeva AI (legacy)",
+        "section": "search-knowledge-discovery",
+        "current": "https://neeva.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "octocode-mcp",
+        "section": "search-knowledge-discovery",
+        "current": "https://octocode.ai/favicon-16x16.png?v=2",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "probe",
+        "section": "search-knowledge-discovery",
+        "current": "https://probeai.dev/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "You.com",
+        "section": "search-knowledge-discovery",
+        "current": "https://you.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "agentic_security",
+        "section": "ai-safety-ethics",
+        "current": "https://res.cloudinary.com/dq0w2rtm9/image/upload/v1741195421/favicon_kuz6xr.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Anthropic Constitutional AI",
+        "section": "ai-safety-ethics",
+        "current": "https://www.anthropic.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "archestra",
+        "section": "ai-safety-ethics",
+        "current": "https://www.archestra.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Decepticon",
+        "section": "ai-safety-ethics",
+        "current": "https://purplelab.framer.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "fast-llm-security-guardrails",
+        "section": "ai-safety-ethics",
+        "current": "https://zenguard.ai/favicon.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "gateway",
+        "section": "ai-safety-ethics",
+        "current": "https://portkey.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Google PAIR",
+        "section": "ai-safety-ethics",
+        "current": "https://pair.withgoogle.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "modelbench",
+        "section": "ai-safety-ethics",
+        "current": "https://mlcommons.org/wp-content/themes/mlcommons/build/img/favicon/apple-touch-icon.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "OpenAI Red Teaming",
+        "section": "ai-safety-ethics",
+        "current": "https://openai.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "woodpecker",
+        "section": "ai-safety-ethics",
+        "current": "https://operant.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Ada",
+        "section": "customer-support-chatbots",
+        "current": "https://www.ada.cx/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "ClaraVerse",
+        "section": "customer-support-chatbots",
+        "current": "https://raw.githubusercontent.com/badboysm890/ClaraVerse/d54cfd0f39794f5a5e1727fc8c059074209ec8eb/public/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Intercom Fin",
+        "section": "customer-support-chatbots",
+        "current": "https://www.intercom.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Zendesk AI",
+        "section": "customer-support-chatbots",
+        "current": "https://www.zendesk.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "comp",
+        "section": "legal-compliance",
+        "current": "https://trycomp.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Harvey",
+        "section": "legal-compliance",
+        "current": "https://www.harvey.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "lawglance",
+        "section": "legal-compliance",
+        "current": "https://lawglance.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Luminance",
+        "section": "legal-compliance",
+        "current": "https://www.luminance.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Spellbook",
+        "section": "legal-compliance",
+        "current": "https://www.spellbook.legal/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Spellbook (by Rally)",
+        "section": "legal-compliance",
+        "current": "https://www.spellbook.legal/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "verifywise",
+        "section": "legal-compliance",
+        "current": "https://verifywise.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "DeepScribe",
+        "section": "healthcare-medical-ai",
+        "current": "https://www.deepscribe.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Nuance Dragon Medical One",
+        "section": "healthcare-medical-ai",
+        "current": "https://www.nuance.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "PathAI",
+        "section": "healthcare-medical-ai",
+        "current": "https://pathai.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "QuickBooks + AI",
+        "section": "finance-accounting",
+        "current": "https://quickbooks.intuit.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Stripe Radar",
+        "section": "finance-accounting",
+        "current": "https://stripe.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Vic.ai",
+        "section": "finance-accounting",
+        "current": "https://www.vic.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Eightfold AI",
+        "section": "hr-recruitment",
+        "current": "https://eightfold.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "hireEZ",
+        "section": "hr-recruitment",
+        "current": "https://hireez.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Paradox (Olivia)",
+        "section": "hr-recruitment",
+        "current": "https://www.paradox.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Inworld AI",
+        "section": "gaming-entertainment",
+        "current": "https://inworld.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "modl.ai",
+        "section": "gaming-entertainment",
+        "current": "https://modl.ai/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Replica Studios",
+        "section": "gaming-entertainment",
+        "current": "https://www.replicastudios.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "CrowdStrike Charlotte AI",
+        "section": "cybersecurity",
+        "current": "https://www.crowdstrike.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Darktrace",
+        "section": "cybersecurity",
+        "current": "https://darktrace.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Microsoft Security Copilot",
+        "section": "cybersecurity",
+        "current": "https://www.microsoft.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Apollo AI",
+        "section": "sales-crm",
+        "current": "https://www.apollo.io/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "HubSpot AI",
+        "section": "sales-crm",
+        "current": "https://www.hubspot.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Salesforce Einstein Copilot",
+        "section": "sales-crm",
+        "current": "https://www.salesforce.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Buffer AI Assistant",
+        "section": "social-media-content",
+        "current": "https://buffer.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Hootsuite OwlyWriter AI",
+        "section": "social-media-content",
+        "current": "https://www.hootsuite.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Later AI",
+        "section": "social-media-content",
+        "current": "https://later.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "postiz-app",
+        "section": "social-media-content",
+        "current": "https://postiz.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Amazon Personalize",
+        "section": "ecommerce-retail",
+        "current": "https://aws.amazon.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Bloomreach Discovery",
+        "section": "ecommerce-retail",
+        "current": "https://www.bloomreach.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Shopify Magic",
+        "section": "ecommerce-retail",
+        "current": "https://www.shopify.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "storecraft",
+        "section": "ecommerce-retail",
+        "current": "https://storecraft.app/favicon.svg",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "HouseCanary",
+        "section": "real-estate-proptech",
+        "current": "https://www.housecanary.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Matterport",
+        "section": "real-estate-proptech",
+        "current": "https://matterport.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "real-estate-ai-agent",
+        "section": "real-estate-proptech",
+        "current": "https://brightdata.com/wp-content/themes/brightdata/assets/images/favicon.png",
+        "candidates": [],
+        "recommended": ""
+      },
+      {
+        "name": "Reonomy",
+        "section": "real-estate-proptech",
+        "current": "https://www.reonomy.com/favicon.ico",
+        "candidates": [],
+        "recommended": ""
+      }
+    ]
+  }
+}
