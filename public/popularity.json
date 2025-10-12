@@ -9,7 +9,6 @@
   "DocsGPT": 0,
   "Gemini (Google)": 50000000,
   "Gemini AI": 0,
-  "GitHub Copilot": 0,
   "Grok (xAI)": 0,
   "haystack": 0,
   "khoj": 0,
@@ -332,14 +331,5 @@
   "Matterport": 0,
   "real-estate-ai-agent": 0,
   "Reonomy": 0,
-  "PyTorch": 0,
-  "TensorFlow": 0,
-  "Transformers (HF)": 0,
-  "llama.cpp": 0,
-  "vLLM": 0,
-  "Stable Diffusion WebUI": 0,
-  "OpenAI Whisper": 0,
-  "LangChain": 0,
-  "Text Generation WebUI": 0,
-  "Open WebUI": 0
+  "GitHub Copilot": 0
 }
