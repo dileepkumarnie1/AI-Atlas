@@ -4,5 +4,5 @@
     "language-chat::chatgpt (openai)": "icons/language-chat/chatgpt-openai.svg",
     "image-generation::stable diffusion": "https://example.com/custom/stable-diffusion.png"
   },
-  "most-popular::notebook llm": "icons/most-popular/notebook-lm.svg"
+  "most-popular::notebook llm": "public/icons/most-popular/notebook-lm.svg"
 }

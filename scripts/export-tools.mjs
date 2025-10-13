@@ -86,33 +86,33 @@ function mapToolDocToJson(doc){
   if (host === GITHUB_HOST && !ALLOWLIST_GITHUB_NAMES.has(nameNorm)) return null;
 
   // Canonicalize pricing tags for robust UI grouping
-  function canonicalizeTags(tags){
-    const inArr = Array.isArray(tags) ? tags : [];
-    const outSet = new Set();
-    const extras = new Set();
-    for (const t of inArr){
-      if (!t) continue;
-      const raw = String(t).trim();
-      const v = raw.toLowerCase();
-      // Preserve original tag
-      outSet.add(raw);
-      // Pricing/category canonicalization
-      if (/^oss$|open[\s-]?source/.test(v)) extras.add('Open Source');
-      else if (/^freemium$/.test(v)) extras.add('Freemium');
-      else if (/^free$/.test(v)) extras.add('Free');
-      else if (/paid|subscription|subscribe|premium|enterprise/.test(v)) extras.add('Subscription');
-    }
-    // Ensure at least one pricing tag exists so the tool shows in a group
-    const hasPricing = ['Open Source','Free','Freemium','Subscription'].some(x => outSet.has(x) || extras.has(x));
-    if (!hasPricing) {
-      // Heuristic: if the tool name or description hints at being open-source, mark it; else default to Freemium
-      const txt = `${data.name||''} ${data.description||data.about||''}`.toLowerCase();
-      if (/open[\s-]?source|^oss$/.test(txt)) extras.add('Open Source');
-      else extras.add('Freemium');
-    }
-    // Merge extras
-    for (const x of extras) outSet.add(x);
-    return Array.from(outSet);
+        function canonicalizeTags(tags) {
+          const inArr = Array.isArray(tags) ? tags : [];
+          const outSet = new Set();
+          const extras = new Set();
+          for (const t of inArr) {
+            if (!t) continue;
+            const raw = String(t).trim();
+            const v = raw.toLowerCase();
+            // Preserve original tag
+            outSet.add(raw);
+            // Pricing/category canonicalization
+            if (/^oss$|open[\s-]?source/.test(v)) extras.add('Open Source');
+            else if (/^freemium$/.test(v)) extras.add('Freemium');
+            else if (/^free$/.test(v)) extras.add('Free');
+            else if (/paid|subscription|subscribe|premium|enterprise/.test(v)) extras.add('Subscription');
+          }
+          // Ensure at least one pricing tag exists so the tool shows in a group
+          const hasPricing = ['Open Source','Free','Freemium','Subscription'].some(x => outSet.has(x) || extras.has(x));
+          if (!hasPricing) {
+            // Heuristic: if the tool name or description hints at being open-source, mark it; else default to Freemium
+            const txt = `${data.name||''} ${data.description||data.about||''}`.toLowerCase();
+            if (/open[\s-]?source|^oss$/.test(txt)) extras.add('Open Source');
+            else extras.add('Freemium');
+          }
+          // Merge extras
+          for (const x of extras) outSet.add(x);
+          return Array.from(outSet);
   }
 
   const out = {
@@ -279,11 +279,11 @@ async function main(){
             if (localPath) t.iconUrl = localPath.replace(/^public\//, '');
           }
           // Apply pricing overrides if present
-          if (pricingOverrides && (pricingOverrides[`${key}::${k}`] != null)){
+          if (pricingOverrides && (pricingOverrides[`${key}::${k}`] != null)) {
             const ov = pricingOverrides[`${key}::${k}`];
             const labels = Array.isArray(ov) ? ov : [ov];
-            const CANON = new Set(['Open Source','Free','Freemium','Subscription']);
-            const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !CANON.has(String(x)));
+            const pricingPattern = /(^oss$)|open[\s-]?source|freemium|free|paid|subscription|subscribe|premium|enterprise/i;
+            const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !pricingPattern.test(String(x)));
             const merged = Array.from(new Set([...nonPricing, ...labels]));
             t.tags = merged;
           }

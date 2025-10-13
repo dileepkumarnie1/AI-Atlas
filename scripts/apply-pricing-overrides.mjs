@@ -17,7 +17,7 @@ async function main(){
   let overrides = {};
   try{ overrides = JSON.parse(await fs.readFile(OVERRIDES, 'utf8')); } catch {}
   if (!overrides || typeof overrides !== 'object') { console.log('No overrides found'); process.exit(0); }
-  const CANON = new Set(['Open Source','Free','Freemium','Subscription']);
+  const pricingPattern = /(^oss$)|open[\s-]?source|freemium|free|paid|subscription|subscribe|premium|enterprise/i;
   let touched = 0;
   for (const sec of sections){
     const secKey = normalizeKey(sec.slug || sec.name);
@@ -26,8 +26,8 @@ async function main(){
       const toolKey = `${secKey}::${normalizeKey(t?.name)}`;
       if (overrides[toolKey] != null){
         const ov = overrides[toolKey];
-        const labels = Array.isArray(ov) ? ov : [ov];
-        const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !CANON.has(String(x)));
+  const labels = Array.isArray(ov) ? ov : [ov];
+  const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !pricingPattern.test(String(x)));
         const merged = Array.from(new Set([...nonPricing, ...labels]));
         if (JSON.stringify(merged) !== JSON.stringify(t.tags||[])){
           t.tags = merged;
