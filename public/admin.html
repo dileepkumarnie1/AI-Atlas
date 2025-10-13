@@ -87,6 +87,16 @@
               <a class="btn" href="https://github.com/dileepkumarnie1/AI-Atlas/blob/main/data/pricing-overrides.json" target="_blank">Edit Pricing Overrides</a>
               <a class="btn" href="https://github.com/dileepkumarnie1/AI-Atlas/blob/main/data/pricing-audit.md" target="_blank">View Latest Report</a>
             </div>
+            <div class="stack" style="margin-top:8px">
+              <label class="note">Suggest a pricing override (section slug + tool name + labels)</label>
+              <div class="flex">
+                <input id="ov-sec" placeholder="section-slug (e.g., productivity)" style="flex:1" />
+                <input id="ov-name" placeholder="tool name (lowercase)" style="flex:1" />
+                <input id="ov-labels" placeholder="labels (e.g., Freemium | Open Source,Free)" style="flex:1" />
+                <button id="btn-suggest-override" class="btn">Open PR</button>
+              </div>
+              <p class="note">Opens a prefilled GitHub PR to edit <code>data/pricing-overrides.json</code>. You can adjust before creating.</p>
+            </div>
             <p class="note">Runs the corresponding GitHub workflow_dispatch on the <code>main</code> branch.</p>
           </div>
         </div>
@@ -237,6 +247,21 @@
     document.getElementById('btn-health').addEventListener('click', callHealth);
     document.getElementById('btn-discover').addEventListener('click', ()=>dispatch('discover'));
     document.getElementById('btn-export').addEventListener('click', ()=>dispatch('export'));
+
+    // Suggest override PR helper
+    document.getElementById('btn-suggest-override').addEventListener('click', ()=>{
+      const sec = (document.getElementById('ov-sec').value||'').trim().toLowerCase();
+      const name = (document.getElementById('ov-name').value||'').trim().toLowerCase();
+      const labelsRaw = (document.getElementById('ov-labels').value||'').trim();
+      if (!sec || !name || !labelsRaw){ alert('Please fill section, name, and labels.'); return; }
+      // Normalize labels string: allow comma or pipe separators; trim
+      const parts = labelsRaw.split(/[|,]/).map(s=>s.trim()).filter(Boolean);
+      const key = `${sec}::${name}`;
+      const body = encodeURIComponent(`Proposed pricing override for ${key}:\n\nLabels: ${parts.join(', ')}\n\nReason:\n- \n\nContext: Generated from Admin UI helper.`);
+      const title = encodeURIComponent(`pricing: override ${key} -> ${parts.join(', ')}`);
+      const url = `https://github.com/dileepkumarnie1/AI-Atlas/issues/new?title=${title}&body=${body}`;
+      window.open(url, '_blank');
+    });
 
     signInBtn.addEventListener('click', async ()=>{
       try { await signInWithPopup(auth, provider); } catch(e){ alert(e.message||e); }

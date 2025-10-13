@@ -36,6 +36,10 @@ jobs:
             data/pricing-audit.json
             data/pricing-audit.md
 
+      - name: Enforce zero anomalies
+        run: |
+          node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); if (j.anomalies && j.anomalies.length){ console.error('Pricing anomalies found:', j.anomalies.length); process.exit(1); } else { console.log('No pricing anomalies.'); }"
+
       - name: Commit audit summary (optional)
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
