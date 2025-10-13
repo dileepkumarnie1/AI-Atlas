@@ -41,6 +41,7 @@ const DEFAULT_OUT = path.join(PUBLIC_DIR, 'tools.json');
 const OUT_PATH = getArg('out') ? path.resolve(getArg('out')) : DEFAULT_OUT;
 const ICONS_DIR = path.join(PUBLIC_DIR, 'icons');
 const ICON_MANIFEST = path.join(ICONS_DIR, 'manifest.json');
+const PRICING_OVERRIDES_PATH = path.join(root, 'data', 'pricing-overrides.json');
 
 function normalizeKey(s) { return String(s || '').trim().toLowerCase(); }
 function titleCaseFromSlug(slug){ return String(slug||'').split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' '); }
@@ -197,6 +198,12 @@ async function main(){
     const raw = await fs.readFile(ICON_MANIFEST, 'utf8');
     iconManifest = JSON.parse(raw);
   } catch {}
+  // Load pricing overrides if present
+  let pricingOverrides = null;
+  try {
+    const raw = await fs.readFile(PRICING_OVERRIDES_PATH, 'utf8');
+    pricingOverrides = JSON.parse(raw);
+  } catch {}
   // Read existing tools.json to preserve domain metadata, order, and current tools
   const existing = await readJsonSafe(DEFAULT_OUT);
   const existingSections = Array.isArray(existing) ? existing : [];
@@ -271,6 +278,15 @@ async function main(){
             const localPath = iconManifest[manKey];
             if (localPath) t.iconUrl = localPath.replace(/^public\//, '');
           }
+          // Apply pricing overrides if present
+          if (pricingOverrides && (pricingOverrides[`${key}::${k}`] != null)){
+            const ov = pricingOverrides[`${key}::${k}`];
+            const labels = Array.isArray(ov) ? ov : [ov];
+            const CANON = new Set(['Open Source','Free','Freemium','Subscription']);
+            const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !CANON.has(String(x)));
+            const merged = Array.from(new Set([...nonPricing, ...labels]));
+            t.tags = merged;
+          }
           mergedTools.push(t);
           existingNames.add(k);
           additions++;
@@ -297,6 +313,14 @@ async function main(){
         const manKey = `${key}::${k}`;
         const localPath = iconManifest[manKey];
         if (localPath) t.iconUrl = localPath.replace(/^public\//, '');
+      }
+      if (pricingOverrides && (pricingOverrides[`${key}::${k}`] != null)){
+        const ov = pricingOverrides[`${key}::${k}`];
+        const labels = Array.isArray(ov) ? ov : [ov];
+        const CANON = new Set(['Open Source','Free','Freemium','Subscription']);
+        const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !CANON.has(String(x)));
+        const merged = Array.from(new Set([...nonPricing, ...labels]));
+        t.tags = merged;
       }
       return t;
     }) : grp.tools;
