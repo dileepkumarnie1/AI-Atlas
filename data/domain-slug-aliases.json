@@ -1,0 +1,7 @@
+{
+  "_readme": "Map incoming Firestore domain slugs to canonical site slugs. Keys and values must be slugs (lowercase, hyphenated).",
+  "aliases": {
+    "most-famous-agentic-ai-s": "most-famous-agentic-ais",
+    "e-commerce-retail": "ecommerce-retail"
+  }
+}

@@ -42,6 +42,7 @@ const OUT_PATH = getArg('out') ? path.resolve(getArg('out')) : DEFAULT_OUT;
 const ICONS_DIR = path.join(PUBLIC_DIR, 'icons');
 const ICON_MANIFEST = path.join(ICONS_DIR, 'manifest.json');
 const PRICING_OVERRIDES_PATH = path.join(root, 'data', 'pricing-overrides.json');
+const SLUG_ALIASES_PATH = path.join(root, 'data', 'domain-slug-aliases.json');
 
 function normalizeKey(s) { return String(s || '').trim().toLowerCase(); }
 function titleCaseFromSlug(slug){ return String(slug||'').split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' '); }
@@ -204,6 +205,13 @@ async function main(){
     const raw = await fs.readFile(PRICING_OVERRIDES_PATH, 'utf8');
     pricingOverrides = JSON.parse(raw);
   } catch {}
+  // Load slug alias map if present
+  let slugAliases = null;
+  try {
+    const raw = await fs.readFile(SLUG_ALIASES_PATH, 'utf8');
+    const obj = JSON.parse(raw);
+    slugAliases = obj && (obj.aliases || obj);
+  } catch {}
   // Read existing tools.json to preserve domain metadata, order, and current tools
   const existing = await readJsonSafe(DEFAULT_OUT);
   const existingSections = Array.isArray(existing) ? existing : [];
@@ -235,8 +243,11 @@ async function main(){
   const candidatesToEnrich = new Set(); // key: `${slug}::${nameLower}`
   for (const doc of snap.docs){
     const d = doc.data();
-    const rawSlug = d.domainSlug || d.domainName || 'uncategorized';
-    const slug = toSlug(rawSlug);
+  const rawSlug = d.domainSlug || d.domainName || 'uncategorized';
+  let slug = toSlug(rawSlug);
+  // Apply alias mapping to normalize to canonical site slugs
+  const aliased = slugAliases && slugAliases[slug];
+  if (aliased && typeof aliased === 'string') slug = toSlug(aliased);
     const tool = mapToolDocToJson(d);
     if (!tool) continue; // filtered/invalid
     if (!groups.has(slug)) groups.set(slug, { tools: [], name: d.domainName });

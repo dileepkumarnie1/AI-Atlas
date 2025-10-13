@@ -5281,6 +5281,46 @@
           "Dependent on Zapier platform.",
           "Limited reasoning depth."
         ]
+      },
+      {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "icons/most-famous-agentic-ai-s/agent-zero.png"
+      },
+      {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
       }
     ]
   },
@@ -7253,79 +7293,6 @@
           "Suggestions may need review."
         ],
         "iconUrl": "icons/github-ai-projects/ray.png"
-      }
-    ]
-  },
-  {
-    "name": "Most Famous Agentic Ai S",
-    "slug": "most-famous-agentic-ai-s",
-    "description": "Generated from Firestore export",
-    "icon": "",
-    "tools": [
-      {
-        "name": "agent-zero",
-        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "link": "https://agent-zero.ai",
-        "tags": [
-          "chatbot",
-          "agents",
-          "design",
-          "Freemium"
-        ],
-        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "pros": [
-          "Good for drafting and Q&A."
-        ],
-        "cons": [
-          "May require fact‑checking."
-        ],
-        "iconUrl": "icons/most-famous-agentic-ai-s/agent-zero.png"
-      },
-      {
-        "name": "RA.Aid",
-        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "link": "https://ra-aid.ai/",
-        "tags": [
-          "chatbot",
-          "search",
-          "agents",
-          "Open Source"
-        ],
-        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
-      }
-    ]
-  },
-  {
-    "name": "E Commerce Retail",
-    "slug": "e-commerce-retail",
-    "description": "Generated from Firestore export",
-    "icon": "",
-    "tools": [
-      {
-        "name": "storecraft",
-        "description": "Storecraft - Next Gen Commerce-As-Code",
-        "link": "https://storecraft.app",
-        "tags": [
-          "developer-tools",
-          "Freemium"
-        ],
-        "about": "Storecraft - Next Gen Commerce-As-Code",
-        "pros": [
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Suggestions may need review."
-        ],
-        "iconUrl": "icons/e-commerce-retail/storecraft.svg"
       }
     ]
   }
