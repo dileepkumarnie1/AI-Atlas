@@ -62,7 +62,7 @@
         }
         /* ...existing code... */
         /* Pricing group animations */
-        .pricing-group { transition: height 0.3s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease, margin 0.25s ease, border-color 0.25s ease; }
+    .pricing-group { transition: height 0.3s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease, margin 0.25s ease, border-color 0.25s ease; align-self: start; }
         .pricing-group.group-empty { height: 0 !important; opacity: 0 !important; transform: scale(.97); }
         .pricing-group.group-filled { opacity: 1; }
         @media (prefers-reduced-motion: reduce) {
@@ -1882,7 +1882,7 @@
                     function renderGroupCard(title, tools, color, totalCount) {
                         const countBadge = ` <span class=\"text-sm font-semibold text-secondary\">(${totalCount})</span>`;
                         return `
-                            <div class="pricing-group bg-card border border-color rounded-xl p-4 flex flex-col min-h-[120px]">
+                            <div class="pricing-group bg-card border border-color rounded-xl p-4 flex flex-col">
                                 <h3 class="text-xl font-bold mb-3 flex items-center gap-2" style="color:${color}">${title}${countBadge}</h3>
                                 <ul class="flex flex-col gap-3">
                                     ${tools.map(tool => {
@@ -1989,7 +1989,7 @@
                                 <div><h1 class="text-4xl font-bold text-primary">${domain.name}</h1><p class="text-secondary mt-1">${domain.description}</p></div>
                             </div>
                         </div>
-                        <div class="grid ${gridColsClass} gap-6">
+                        <div class="grid ${gridColsClass} gap-6 items-start">
                             ${groupCards || '<div class="text-muted text-sm">No tools found in this domain.</div>'}
                         </div>
                     `;
