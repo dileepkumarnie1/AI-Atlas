@@ -126,5 +126,6 @@
   "github-ai-projects::photoprism": "public/icons/github-ai-projects/photoprism.png",
   "github-ai-projects::ray": "public/icons/github-ai-projects/ray.png",
   "most-famous-agentic-ai-s::agent-zero": "public/icons/most-famous-agentic-ai-s/agent-zero.png",
-  "e-commerce-retail::storecraft": "public/icons/e-commerce-retail/storecraft.svg"
+  "e-commerce-retail::storecraft": "public/icons/e-commerce-retail/storecraft.svg",
+  "image-generation::stable diffusion": "public/icons/image-generation/stable-diffusion.png"
 }
