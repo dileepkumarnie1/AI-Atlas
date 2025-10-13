@@ -6,6 +6,25 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "iconUrl": "https://agent-zero.ai/favicon.svg",
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ]
+      },
+      {
         "name": "airbyte",
         "description": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
         "link": "https://airbyte.com",
@@ -89,6 +108,24 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/131273140?v=4&s=64"
+      },
+      {
+        "name": "cube",
+        "description": "Cube: Agentic Analytics Platform",
+        "link": "https://cube.dev",
+        "tags": [
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "Cube: Agentic Analytics Platform",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://cube.dev/favicon.ico"
       },
       {
         "name": "DeepSeek",
@@ -410,6 +447,29 @@
         "iconUrl": "https://notebooklm.google.com/favicon.svg"
       },
       {
+        "name": "onyx",
+        "description": "The open-source AI enterprise search platform that helps teams find information across all company data.",
+        "link": "https://onyx.app",
+        "tags": [
+          "chatbot",
+          "search",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "The open-source AI enterprise search platform that helps teams find information across all company data.",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://onyx.app/favicon.ico"
+      },
+      {
         "name": "Open-Assistant",
         "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
         "link": "https://open-assistant.io",
@@ -465,6 +525,27 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/148619568?v=4&s=64"
+      },
+      {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg",
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ]
       },
       {
         "name": "sim",
@@ -538,46 +619,6 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/82193554?v=4&s=64"
-      },
-      {
-        "name": "agent-zero",
-        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "link": "https://agent-zero.ai",
-        "tags": [
-          "chatbot",
-          "agents",
-          "design",
-          "Freemium"
-        ],
-        "iconUrl": "https://agent-zero.ai/favicon.svg",
-        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "pros": [
-          "Good for drafting and Q&A."
-        ],
-        "cons": [
-          "May require fact‑checking."
-        ]
-      },
-      {
-        "name": "RA.Aid",
-        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "link": "https://ra-aid.ai/",
-        "tags": [
-          "chatbot",
-          "search",
-          "agents",
-          "Open Source"
-        ],
-        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg",
-        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
-        ]
       }
     ]
   },
@@ -730,6 +771,53 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://avatars.githubusercontent.com/u/3046006?v=4&s=64"
+      },
+      {
+        "name": "FinGPT",
+        "description": "A Nonprofit Organization Dedicated to Advancing AI in the Finance Industry by Providing Open Source Code Libraries",
+        "link": "https://ai4finance.org",
+        "tags": [
+          "developer-tools",
+          "agents",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "A Nonprofit Organization Dedicated to Advancing AI in the Finance Industry by Providing Open Source Code Libraries",
+        "pros": [
+          "Open source and extensible.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://img1.wsimg.com/isteam/ip/dba17e09-e50d-4509-a55f-2f9d9bc19fcd/WechatIMG3500.png/:/rs=w:57,h:57,m"
+      },
+      {
+        "name": "firecrawl",
+        "description": "The web crawling, scraping, and search API for AI. Built for scale. Firecrawl delivers the entire internet to AI agents and builders. Clean, structured, and ready to reason with.",
+        "link": "https://firecrawl.dev",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "The web crawling, scraping, and search API for AI. Built for scale. Firecrawl delivers the entire internet to AI agents and builders. Clean, structured, and ready to reason with.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://firecrawl.dev/favicon.png"
       },
       {
         "name": "Flowise",
@@ -1122,6 +1210,23 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://seeddream.app/favicon.svg"
+      },
+      {
+        "name": "wechaty",
+        "description": "RPA SDK for Chatbot Makers.",
+        "link": "https://wechaty.js.org",
+        "tags": [
+          "chatbot",
+          "Freemium"
+        ],
+        "about": "RPA SDK for Chatbot Makers.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://wechaty.js.org/img/favicon.ico"
       },
       {
         "name": "Writer",
@@ -1610,6 +1715,29 @@
     "description": "Generate and edit video content using AI-powered features.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 001.553.832l3-2a1 1 0 000-1.664l-3-2z\" /></svg>",
     "tools": [
+      {
+        "name": "brainrot.js",
+        "description": "Create viral brainrot videos instantly with AI. Generate funny celebrity dialogues, memes, and more. The ultimate brainrot maker for content creators.",
+        "link": "https://brainrotjs.com",
+        "tags": [
+          "developer-tools",
+          "video",
+          "audio",
+          "Freemium"
+        ],
+        "about": "Create viral brainrot videos instantly with AI. Generate funny celebrity dialogues, memes, and more. The ultimate brainrot maker for content creators.",
+        "pros": [
+          "Accelerates video creation.",
+          "Useful for voice and audio workflows.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Render times or credit limits may apply.",
+          "May need cleanup for artifacts.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://brainrotjs.com/favicon.ico"
+      },
       {
         "name": "D-ID",
         "description": "Create talking head videos from photos using AI.",
@@ -2176,6 +2304,26 @@
         "iconUrl": "https://librechat.ai/apple-touch-icon.png"
       },
       {
+        "name": "OpenSpec",
+        "description": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "link": "https://openspec.dev/",
+        "tags": [
+          "agents",
+          "design",
+          "api",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "pros": [
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://openspec.dev/_astro/openspec_icon_light.BXKVBxjB.svg"
+      },
+      {
         "name": "Phind",
         "description": "An AI search engine and pair programmer for developers.",
         "link": "https://www.phind.com/",
@@ -2563,6 +2711,33 @@
           "License constraints per plan.",
           "Cloning needs clean data."
         ]
+      },
+      {
+        "name": "pyht",
+        "description": "The Best AI Voice Generator with 200+ realistic AI voices. PlayAI is the voice platform for creators &amp; enterprises. See our low latency Text to Speech API.",
+        "link": "https://play.ht/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "video",
+          "audio",
+          "speech",
+          "education",
+          "api",
+          "Freemium"
+        ],
+        "about": "The Best AI Voice Generator with 200+ realistic AI voices. PlayAI is the voice platform for creators &amp; enterprises. See our low latency Text to Speech API.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Accelerates video creation.",
+          "Useful for voice and audio workflows."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Render times or credit limits may apply.",
+          "May need cleanup for artifacts."
+        ],
+        "iconUrl": "https://play.ht/favicon.ico"
       },
       {
         "name": "Riffusion",
@@ -3769,6 +3944,24 @@
           "May struggle with very complex or poorly structured data.",
           "Requires a paid plan for advanced data sources."
         ]
+      },
+      {
+        "name": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+        "description": "The document processing platform built for the next generation.",
+        "link": "https://www.extend.ai/",
+        "tags": [
+          "design",
+          "documents",
+          "Freemium"
+        ],
+        "about": "The document processing platform built for the next generation.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/9KPaQFUCjiIzr7MGbTjIzCGKJ4g.png"
       },
       {
         "name": "pandas-ai",
@@ -5439,6 +5632,24 @@
         "iconUrl": "https://www.cosdata.io/favicon.svg"
       },
       {
+        "name": "crawlee",
+        "description": "Crawlee · Build reliable crawlers. Fast.",
+        "link": "https://crawlee.dev",
+        "tags": [
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Crawlee · Build reliable crawlers. Fast.",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://crawlee.dev/favicon.ico"
+      },
+      {
         "name": "Glean",
         "description": "Enterprise AI search and knowledge discovery platform.",
         "link": "https://www.glean.com/",
@@ -5937,6 +6148,24 @@
         ]
       },
       {
+        "name": "ai-chatbot",
+        "description": "A free, open-source chatbot template that helps you build powerful AI applications.",
+        "link": "https://chat-sdk.dev",
+        "tags": [
+          "chatbot",
+          "design",
+          "Open Source"
+        ],
+        "about": "A free, open-source chatbot template that helps you build powerful AI applications.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://chat-sdk.dev/favicon.ico"
+      },
+      {
         "name": "ClaraVerse",
         "description": "Complete AI development suite with LumaUI web dev, ComfyUI image generation, N8N automation, and local LLMs. 100% private and offline.",
         "link": "https://claraverse.space",
@@ -6024,6 +6253,26 @@
           "Requires curated help content for accuracy.",
           "Enterprise pricing for advanced features."
         ]
+      },
+      {
+        "name": "WeClone",
+        "description": "One-stop solution for creating your digital avatar from chat history",
+        "link": "https://weclone.love",
+        "tags": [
+          "chatbot",
+          "image",
+          "Freemium"
+        ],
+        "about": "One-stop solution for creating your digital avatar from chat history",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://weclone.love/img/logo.svg"
       },
       {
         "name": "Zendesk AI",
@@ -6997,6 +7246,121 @@
           "Suggestions can sometimes be non-optimal or contain subtle bugs.",
           "Raises questions about code originality and licensing."
         ]
+      },
+      {
+        "name": "photoprism",
+        "description": "AI-Powered Photos App for the Decentralized Web",
+        "link": "https://www.photoprism.app",
+        "tags": [
+          "image",
+          "Freemium"
+        ],
+        "about": "AI-Powered Photos App for the Decentralized Web",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://www.photoprism.app/static/icons/logo/512.png"
+      },
+      {
+        "name": "ray",
+        "description": "Ray is an open source framework for managing, executing, and optimizing compute needs. Unify AI workloads with Ray by Anyscale. Try it for free today.",
+        "link": "https://ray.io",
+        "tags": [
+          "developer-tools",
+          "image",
+          "education",
+          "documents",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Ray is an open source framework for managing, executing, and optimizing compute needs. Unify AI workloads with Ray by Anyscale. Try it for free today.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://ray.io/favicon-96x96.png"
+      }
+    ]
+  },
+  {
+    "name": "Most Famous Agentic Ai S",
+    "slug": "most-famous-agentic-ai-s",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
+      {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "https://agent-zero.ai/res/favicon_round.png"
+      },
+      {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
+      }
+    ]
+  },
+  {
+    "name": "E Commerce Retail",
+    "slug": "e-commerce-retail",
+    "description": "Generated from Firestore export",
+    "icon": "",
+    "tools": [
+      {
+        "name": "storecraft",
+        "description": "Storecraft - Next Gen Commerce-As-Code",
+        "link": "https://storecraft.app",
+        "tags": [
+          "developer-tools",
+          "Freemium"
+        ],
+        "about": "Storecraft - Next Gen Commerce-As-Code",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://storecraft.app/favicon.svg"
       }
     ]
   }
