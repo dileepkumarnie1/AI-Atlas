@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-7WYE53DLDK"></script><script>window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7WYE53DLDK', {
+        cookie_domain: 'lawglance.com',
+        cookie_flags: 'SameSite=None;Secure'
+      });</script><meta charset="utf-8"/><link rel="icon" href="/logo.svg" type="image/svg+xml"/><link rel="icon" href="/favicon.ico" sizes="any"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#3b82f6"/><meta name="color-scheme" content="light dark"/><meta name="description" content="Law Glance - Your Agentic AI-Powered Legal Intelligence Platform. Free, open-source initiative democratizing legal knowledge through RAG, LLMs, and context-aware reasoning. Access Indian laws, constitutional guidance, and legal insights 24/7."/><meta name="keywords" content="AI legal assistant, artificial intelligence law, legal AI chatbot, constitutional law AI, criminal defense AI, legal research AI, AI lawyer, legal technology, law AI, legal advice AI, machine learning law, legal automation, AI legal research, legal AI platform, smart legal assistant, AI legal guidance, legal AI tools, artificial intelligence legal, AI constitutional analysis, legal AI solutions"/><meta name="author" content="LawGlance Team"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/><link rel="canonical" href="https://lawglance.com"/><meta property="og:title" content="Law Glance - Agentic AI-Powered Legal Intelligence Platform"/><meta property="og:description" content="Free, open-source initiative democratizing legal knowledge through Agentic AI workflows, RAG, and LLMs. Access Indian laws, constitutional guidance, and legal insights 24/7 with context-aware reasoning."/><meta property="og:type" content="website"/><meta property="og:url" content="https://lawglance.com"/><meta property="og:image" content="/logo.svg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="LawGlance AI - Legal Scale Logo"/><meta property="og:site_name" content="Law Glance"/><meta property="og:locale" content="en_US"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Law Glance - Agentic AI-Powered Legal Intelligence Platform"/><meta name="twitter:description" content="Free, open-source initiative democratizing legal knowledge through Agentic AI workflows, RAG, and LLMs. Access Indian laws and legal insights 24/7."/><meta name="twitter:image" content="/logo.svg"/><meta name="twitter:image:alt" content="LawGlance AI - Legal Scale Logo"/><meta name="twitter:site" content="@lawglance"/><meta name="twitter:creator" content="@lawglance"/><link rel="apple-touch-icon" href="/logo.svg"/><link rel="manifest" href="/manifest.json"/><link rel="icon" type="image/svg+xml" sizes="any" href="/logo.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><title>LawGlance AI - Intelligent Legal Assistant</title><script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LawGlance AI",
+      "description": "Advanced AI-powered legal assistant providing instant access to constitutional law, criminal defense, civil law, and comprehensive legal research. Free AI legal guidance and case law analysis.",
+      "url": "https://lawglance.com",
+      "applicationCategory": "LegalTech",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "LawGlance Team",
+        "url": "https://lawglance.com"
+      },
+      "keywords": "AI legal assistant, artificial intelligence law, legal AI chatbot, constitutional law AI, criminal defense AI, legal research AI, AI lawyer, legal technology",
+      "featureList": [
+        "AI-powered legal research",
+        "Constitutional law analysis",
+        "Criminal defense guidance",
+        "Civil law assistance",
+        "Case law database",
+        "Legal document analysis",
+        "Machine learning legal insights",
+        "Free legal AI consultation"
+      ],
+      "screenshot": "https://lawglance.com/logo.svg",
+      "softwareVersion": "1.0",
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-12-28"
+    }</script><link rel="icon" href="/favicon.ico"><script defer="defer" src="/static/js/runtime.d9d88426ce3a1e498ed2.js"></script><script defer="defer" src="/static/js/547.2d7b3798708bba36af6b.js"></script><script defer="defer" src="/static/js/main.e8d8b67938bf6c08f243.js"></script><link href="/static/css/main.5b398cac12efb5181069.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>

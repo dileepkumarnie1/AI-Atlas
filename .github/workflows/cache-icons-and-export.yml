@@ -1,0 +1,62 @@
+name: Cache Icons and Export Tools
+
+on:
+  schedule:
+    - cron: '0 5 * * 2' # Weekly on Tue 05:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  refresh:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Prepare Firebase credentials
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          KEY_FILE="$RUNNER_TEMP/serviceAccount.json"
+          printf "%s" "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$KEY_FILE"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$KEY_FILE" >> "$GITHUB_ENV"
+
+      - name: Export tools from Firestore
+        run: npm run export:tools
+
+      - name: Cache tool icons
+        run: npm run tools:icons
+
+      - name: Re-export to apply cached icons
+        run: npm run export:tools
+
+      - name: Validate tools.json
+        env:
+          STRICT: '1'
+        run: npm run tools:validate || true
+
+      - name: Commit and push changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: refresh icons and export tools (CI)"
+            git push
+          else
+            echo "No changes to commit."
+          fi

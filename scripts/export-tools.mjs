@@ -39,6 +39,8 @@ const root = path.resolve(process.cwd());
 const PUBLIC_DIR = path.join(root, 'public');
 const DEFAULT_OUT = path.join(PUBLIC_DIR, 'tools.json');
 const OUT_PATH = getArg('out') ? path.resolve(getArg('out')) : DEFAULT_OUT;
+const ICONS_DIR = path.join(PUBLIC_DIR, 'icons');
+const ICON_MANIFEST = path.join(ICONS_DIR, 'manifest.json');
 
 function normalizeKey(s) { return String(s || '').trim().toLowerCase(); }
 function titleCaseFromSlug(slug){ return String(slug||'').split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' '); }
@@ -189,6 +191,12 @@ async function enrichFromLink(link){
 }
 
 async function main(){
+  // Load icon manifest if present
+  let iconManifest = null;
+  try {
+    const raw = await fs.readFile(ICON_MANIFEST, 'utf8');
+    iconManifest = JSON.parse(raw);
+  } catch {}
   // Read existing tools.json to preserve domain metadata, order, and current tools
   const existing = await readJsonSafe(DEFAULT_OUT);
   const existingSections = Array.isArray(existing) ? existing : [];
@@ -257,6 +265,12 @@ async function main(){
           if (!('about' in t)) t.about = t.description || '';
           if (!Array.isArray(t.pros)) t.pros = [];
           if (!Array.isArray(t.cons)) t.cons = [];
+          // Prefer cached icon when available
+          if (iconManifest) {
+            const manKey = `${key}::${k}`;
+            const localPath = iconManifest[manKey];
+            if (localPath) t.iconUrl = localPath.replace(/^public\//, '');
+          }
           mergedTools.push(t);
           existingNames.add(k);
           additions++;
@@ -276,12 +290,22 @@ async function main(){
   for (const [slug, grp] of groups.entries()){
     const key = normalizeKey(slug);
     if (skeletonBySlug.has(key)) continue;
+    // Apply icon manifest to new sections' tools too
+    const toolsWithIcons = Array.isArray(grp.tools) ? grp.tools.map(t => {
+      const k = normalizeKey(t.name);
+      if (iconManifest) {
+        const manKey = `${key}::${k}`;
+        const localPath = iconManifest[manKey];
+        if (localPath) t.iconUrl = localPath.replace(/^public\//, '');
+      }
+      return t;
+    }) : grp.tools;
     outSections.push({
       name: titleCaseFromSlug(slug),
       slug,
       description: 'Generated from Firestore export',
       icon: '',
-      tools: grp.tools,
+      tools: toolsWithIcons,
     });
     additions += Array.isArray(grp.tools) ? grp.tools.length : 0;
   }

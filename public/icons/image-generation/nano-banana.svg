@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bananaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD23F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FCBF49;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F77F00;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#D62828;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main banana shape -->
+  <path d="M 150 200 Q 100 256, 120 320 T 200 420 Q 280 440, 360 400 T 420 280 Q 400 180, 320 140 T 150 200" 
+        fill="url(#bananaGradient)" 
+        stroke="#FCBF49" 
+        stroke-width="8"/>
+  
+  <!-- Inner highlight -->
+  <path d="M 180 220 Q 140 256, 150 300 T 210 360 Q 260 370, 320 350 T 370 280 Q 360 210, 300 180 T 180 220" 
+        fill="#FFF3B8" 
+        opacity="0.6"/>
+  
+  <!-- Shadow accent -->
+  <path d="M 200 380 Q 260 400, 340 380 T 400 320 Q 380 340, 340 360 T 200 380" 
+        fill="url(#shadowGradient)"/>
+  
+  <!-- Nano tech dots -->
+  <circle cx="240" cy="280" r="12" fill="#FCBF49" opacity="0.8"/>
+  <circle cx="280" cy="300" r="12" fill="#FCBF49" opacity="0.8"/>
+  <circle cx="320" cy="280" r="12" fill="#FCBF49" opacity="0.8"/>
+  
+  <!-- Tech circuit lines -->
+  <path d="M 240 280 L 280 300 L 320 280" 
+        stroke="#F77F00" 
+        stroke-width="2" 
+        fill="none" 
+        opacity="0.5"/>
+</svg>

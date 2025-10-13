@@ -14,6 +14,8 @@
         "discover:direct": "set DIRECT_PUBLISH=true && node ./scripts/discover-tools.mjs",
         "drafts:check": "node ./scripts/check-duplicates.mjs",
         "export:tools": "node ./scripts/export-tools.mjs",
+    "tools:icons": "node ./scripts/cache-tool-icons.mjs",
+    "tools:icons:rewrite": "node ./scripts/rewrite-icons-from-manifest.mjs",
         "tools:validate": "node ./scripts/validate-tools-json.mjs",
         "tools:enrich": "node ./scripts/enrich-tools-json.mjs",
         "tools:enrich:firestore": "node ./scripts/enrich-firestore-tools.mjs",
