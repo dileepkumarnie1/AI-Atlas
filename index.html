@@ -2449,9 +2449,44 @@
             async function initialize() {
                 try {
                     try { window.__TOOLS_READY = false; } catch(e) {}
-                    const response = await fetch('public/tools.json');
+                    const response = await fetch('public/tools.json', { cache: 'no-store' });
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     db = await response.json();
+                    // Optional: fetch slug alias map to normalize incoming sections
+                    let slugAliases = {};
+                    try {
+                        const aliasRes = await fetch('data/domain-slug-aliases.json', { cache: 'no-store' });
+                        if (aliasRes.ok) {
+                            const obj = await aliasRes.json();
+                            slugAliases = (obj && (obj.aliases || obj)) || {};
+                        }
+                    } catch {}
+                    // Deduplicate sections by canonical slug to avoid duplicate tiles if a stale cached file or mixed sources appear
+                    const toSlug = (s) => String(s||'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+                    if (Array.isArray(db)){
+                        const bySlug = new Map();
+                        for (const sec of db){
+                            let slug = toSlug(sec?.slug || sec?.name || '');
+                            if (slugAliases && typeof slugAliases[slug] === 'string') slug = toSlug(slugAliases[slug]);
+                            const existing = bySlug.get(slug);
+                            if (!existing){
+                                // Ensure tools is an array
+                                if (!Array.isArray(sec.tools)) sec.tools = [];
+                                bySlug.set(slug, { ...sec, slug });
+                            } else {
+                                const tools = Array.isArray(sec.tools) ? sec.tools : [];
+                                const existingTools = Array.isArray(existing.tools) ? existing.tools : [];
+                                const names = new Set(existingTools.map(t => String(t?.name||'').toLowerCase()));
+                                for (const t of tools){
+                                    const k = String(t?.name||'').toLowerCase();
+                                    if (k && !names.has(k)) { existingTools.push(t); names.add(k); }
+                                }
+                                existing.tools = existingTools;
+                                bySlug.set(slug, existing);
+                            }
+                        }
+                        db = Array.from(bySlug.values());
+                    }
                     // Build quick lookup for tool -> domain
                     toolDomainMap = new Map();
                     if (Array.isArray(db)) {
