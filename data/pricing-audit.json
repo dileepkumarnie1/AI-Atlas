@@ -1,0 +1,3216 @@
+{
+  "counts": {
+    "Open Source": 100,
+    "Free": 12,
+    "Freemium": 180,
+    "Subscription": 64
+  },
+  "anomalies": [],
+  "items": [
+    {
+      "section": "most-popular",
+      "tool": "agent-zero",
+      "link": "https://agent-zero.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "airbyte",
+      "link": "https://airbyte.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "chatbox",
+      "link": "https://chatboxai.app?utm_medium=github",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "ChatGPT (OpenAI)",
+      "link": "https://chat.openai.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Claude (Anthropic)",
+      "link": "https://claude.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "CopilotKit",
+      "link": "https://docs.copilotkit.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "cube",
+      "link": "https://cube.dev",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "DeepSeek",
+      "link": "https://www.deepseek.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "dify",
+      "link": "https://dify.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "DocsGPT",
+      "link": "https://app.docsgpt.cloud/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Gemini (Google)",
+      "link": "https://gemini.google.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Gemini AI",
+      "link": "https://deepmind.google/technologies/gemini/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Grok (xAI)",
+      "link": "https://grok.x.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "most-popular",
+      "tool": "haystack",
+      "link": "https://haystack.deepset.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "khoj",
+      "link": "https://khoj.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "latitude-llm",
+      "link": "https://latitude.so",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "leon",
+      "link": "https://getleon.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Llama (Meta)",
+      "link": "https://llama.meta.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "mastra",
+      "link": "https://mastra.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Meta AI",
+      "link": "https://www.meta.ai/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "most-popular",
+      "tool": "MetaGPT",
+      "link": "https://mgx.dev/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Microsoft Copilot",
+      "link": "https://copilot.microsoft.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Mistral Le Chat",
+      "link": "https://chat.mistral.ai/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "most-popular",
+      "tool": "mlflow",
+      "link": "https://mlflow.org",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Notebook LLM",
+      "link": "https://notebooklm.google.com/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "most-popular",
+      "tool": "onyx",
+      "link": "https://onyx.app",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Open-Assistant",
+      "link": "https://open-assistant.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "OpenBB",
+      "link": "https://openbb.co",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "Perplexity AI",
+      "link": "https://www.perplexity.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "potpie",
+      "link": "https://potpie.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "RA.Aid",
+      "link": "https://ra-aid.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "sim",
+      "link": "https://www.sim.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "supabase",
+      "link": "https://supabase.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
+      "tool": "tabby",
+      "link": "https://tabbyml.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "ToolJet",
+      "link": "https://tooljet.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "AutoGPT",
+      "link": "https://agpt.co",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "browser-use",
+      "link": "https://browser-use.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Character.AI",
+      "link": "https://beta.character.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "ChatGPT (OpenAI)",
+      "link": "https://chat.openai.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "cherry-studio",
+      "link": "https://cherry-ai.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Claude (Anthropic)",
+      "link": "https://claude.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "DeepL",
+      "link": "https://www.deepl.com/translator",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "DeepSeek Chat",
+      "link": "https://chat.deepseek.com",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "language-chat",
+      "tool": "dspy",
+      "link": "https://dspy.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "FinGPT",
+      "link": "https://ai4finance.org",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "firecrawl",
+      "link": "https://firecrawl.dev",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Flowise",
+      "link": "https://flowiseai.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Gemini (Google)",
+      "link": "https://gemini.google.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Google Bard",
+      "link": "https://bard.google.com/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "language-chat",
+      "tool": "gpt-oss",
+      "link": "https://openai.com/open-models",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "gpt4all",
+      "link": "https://nomic.ai/gpt4all",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "gpt4free",
+      "link": "https://t.me/g4f_channel",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Grammarly",
+      "link": "https://www.grammarly.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Jasper AI",
+      "link": "https://www.jasper.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "language-chat",
+      "tool": "langchain",
+      "link": "https://python.langchain.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "mem0",
+      "link": "https://mem0.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Microsoft Copilot",
+      "link": "https://copilot.microsoft.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "midday",
+      "link": "https://midday.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Mistral Le Chat",
+      "link": "https://chat.mistral.ai/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "language-chat",
+      "tool": "ollama",
+      "link": "https://ollama.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "open-webui",
+      "link": "https://openwebui.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Orchids AI",
+      "link": "https://orchids.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "pathway",
+      "link": "https://pathway.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Perplexity AI",
+      "link": "https://www.perplexity.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Poe by Quora",
+      "link": "https://poe.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "QuillBot",
+      "link": "https://quillbot.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "quivr",
+      "link": "https://core.quivr.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Replika",
+      "link": "https://replika.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "repomix",
+      "link": "https://repomix.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Seed Dream",
+      "link": "https://seeddream.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "wechaty",
+      "link": "https://wechaty.js.org",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "Writer",
+      "link": "https://writer.com",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "language-chat",
+      "tool": "You.com",
+      "link": "https://you.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Adobe Firefly",
+      "link": "https://www.adobe.com/sensei/generative-ai/firefly.html",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Canva AI",
+      "link": "https://www.canva.com/ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Clipdrop",
+      "link": "https://clipdrop.co/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "coai",
+      "link": "https://coai.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "image-generation",
+      "tool": "ComfyUI",
+      "link": "https://www.comfy.org/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "image-generation",
+      "tool": "DALL-E 3 (OpenAI)",
+      "link": "https://openai.com/dall-e-3",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "image-generation",
+      "tool": "deeplake",
+      "link": "https://activeloop.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "DreamStudio",
+      "link": "https://dreamstudio.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "easydiffusion",
+      "link": "https://easydiffusion.github.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Fotor AI",
+      "link": "https://www.fotor.com/ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Ideogram",
+      "link": "https://ideogram.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "InvokeAI",
+      "link": "https://invoke-ai.github.io/InvokeAI/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "image-generation",
+      "tool": "IOPaint",
+      "link": "https://www.iopaint.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Krea AI",
+      "link": "https://www.krea.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Leonardo Ai",
+      "link": "https://leonardo.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Magnific AI",
+      "link": "https://magnific.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Midjourney",
+      "link": "https://www.midjourney.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Nano Banana",
+      "link": "https://nanobanana.ai",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "image-generation",
+      "tool": "NightCafe",
+      "link": "https://nightcafe.studio/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Playground v2 (Playground AI)",
+      "link": "https://playground.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Riffusion – Stable Diffusion fine-tuned to generate music",
+      "link": "https://www.riffusion.com/about",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "Stable Diffusion",
+      "link": "https://stability.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "image-generation",
+      "tool": "stable-diffusion",
+      "link": "https://ommer-lab.com/research/latent-diffusion-models/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "video-tools",
+      "tool": "brainrot.js",
+      "link": "https://brainrotjs.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "D-ID",
+      "link": "https://www.d-id.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "DeepBrain AI",
+      "link": "https://www.deepbrain.io/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Descript",
+      "link": "https://www.descript.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Google Veo",
+      "link": "https://deepmind.google/technologies/veo/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "HeyGen",
+      "link": "https://www.heygen.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "HunyuanVideo",
+      "link": "https://aivideo.hunyuan.tencent.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "video-tools",
+      "tool": "InVideo",
+      "link": "https://invideo.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Kaiber",
+      "link": "https://www.kaiber.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Kling (Kuaishou)",
+      "link": "https://kling.kuaishou.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "LocalAI",
+      "link": "https://localai.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Luma Dream Machine",
+      "link": "https://lumalabs.ai/dream-machine",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "MAGI-1",
+      "link": "https://sand.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Opus Clip",
+      "link": "https://www.opus.pro",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Pictory",
+      "link": "https://pictory.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Pika",
+      "link": "https://pika.art/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Runway",
+      "link": "https://runwayml.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Sora (OpenAI)",
+      "link": "https://openai.com/sora",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Synthesia",
+      "link": "https://www.synthesia.io/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "video-tools",
+      "tool": "Veed.io",
+      "link": "https://www.veed.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Amazon CodeWhisperer",
+      "link": "https://aws.amazon.com/codewhisperer/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Blackbox AI",
+      "link": "https://www.useblackbox.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Codeium",
+      "link": "https://codeium.com/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "cody-public-snapshot",
+      "link": "https://cody.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Cursor",
+      "link": "https://cursor.sh/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "daytona",
+      "link": "https://daytona.io",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "JetBrains AI Assistant",
+      "link": "https://www.jetbrains.com/ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "kestra",
+      "link": "https://kestra.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "kilocode",
+      "link": "https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "LibreChat",
+      "link": "https://librechat.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "OpenSpec",
+      "link": "https://openspec.dev/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Phind",
+      "link": "https://www.phind.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "plandex",
+      "link": "https://plandex.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "qodo-cover",
+      "link": "https://qodo.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Replit Ghostwriter",
+      "link": "https://replit.com/ghostwriter",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Sourcegraph Cody",
+      "link": "https://sourcegraph.com/cody",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "sweep",
+      "link": "https://sweep.dev",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "TabbyML",
+      "link": "https://tabbyml.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Tabnine",
+      "link": "https://www.tabnine.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
+      "tool": "Warp",
+      "link": "https://warp.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Adobe Podcast",
+      "link": "https://podcast.adobe.com/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "audio-music",
+      "tool": "AIVA",
+      "link": "https://www.aiva.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Auphonic",
+      "link": "https://auphonic.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Cleanvoice AI",
+      "link": "https://cleanvoice.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "ComfyUI-DeepFuze",
+      "link": "https://cogidigm.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Descript Overdub",
+      "link": "https://www.descript.com/overdub",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "ElevenLabs",
+      "link": "https://elevenlabs.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Google's advanced music generation model and two new AI experiments",
+      "link": "https://deepmind.google/discover/blog/transforming-the-future-of-music-creation/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Kits AI",
+      "link": "https://www.kits.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "LALAL.AI",
+      "link": "https://www.lalal.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Play.ht",
+      "link": "https://play.ht/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "pyht",
+      "link": "https://play.ht/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Riffusion",
+      "link": "https://www.riffusion.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Stable Audio (Stability AI)",
+      "link": "https://www.stableaudio.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Suno AI",
+      "link": "https://www.suno.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Udio",
+      "link": "https://www.udio.com/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "audio-music",
+      "tool": "Voicemod AI",
+      "link": "https://www.voicemod.net/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Clockwise",
+      "link": "https://www.getclockwise.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Ellie AI",
+      "link": "https://ellieai.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Fireflies.ai",
+      "link": "https://fireflies.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Gemini for Workspace",
+      "link": "https://workspace.google.com/products/gemini/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "productivity",
+      "tool": "inbox-zero",
+      "link": "https://getinboxzero.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "productivity",
+      "tool": "joinly",
+      "link": "https://joinly.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "meeting-minutes",
+      "link": "https://meetily.zackriya.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "productivity",
+      "tool": "Mem",
+      "link": "https://mem.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Microsoft Copilot for M365",
+      "link": "https://www.microsoft.com/microsoft-365/copilot",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "productivity",
+      "tool": "Motion",
+      "link": "https://www.usemotion.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "productivity",
+      "tool": "MyBrain",
+      "link": "https://f-droid.org/packages/com.mhss.app.mybrain/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "productivity",
+      "tool": "Notion AI",
+      "link": "https://www.notion.so/product/ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Otter.ai",
+      "link": "https://otter.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Reclaim.ai",
+      "link": "https://reclaim.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Reflect Notes",
+      "link": "https://reflect.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "SaneBox",
+      "link": "https://www.sanebox.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "productivity",
+      "tool": "Sembly AI",
+      "link": "https://www.sembly.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Supernormal",
+      "link": "https://supernormal.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "productivity",
+      "tool": "Todoist",
+      "link": "https://todoist.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Beautiful.ai",
+      "link": "https://www.beautiful.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "design-tools",
+      "tool": "browser",
+      "link": "https://lightpanda.io",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Canva Magic Design",
+      "link": "https://www.canva.com/magic-design/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "ComfyUI-IF_AI_tools",
+      "link": "https://ko-fi.com/impactframes",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Figma AI",
+      "link": "https://www.figma.com/blog/introducing-figma-ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Figma AI (Diagram)",
+      "link": "https://www.figma.com/community/plugin/1199865595779899484/diagram",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Framer AI",
+      "link": "https://www.framer.com/ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Galileo AI",
+      "link": "https://www.usegalileo.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Gamma",
+      "link": "https://gamma.app/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Khroma",
+      "link": "https://www.khroma.co/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "design-tools",
+      "tool": "onlook",
+      "link": "https://onlook.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Spline AI",
+      "link": "https://spline.design/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Tome",
+      "link": "https://tome.app/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Uizard",
+      "link": "https://uizard.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "upscayl",
+      "link": "https://upscayl.org",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Vev",
+      "link": "https://www.vev.design/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "research",
+      "tool": "Consensus",
+      "link": "https://consensus.app/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "research",
+      "tool": "Elicit",
+      "link": "https://elicit.org/",
+      "labels": [
+        "Free"
+      ],
+      "primary": "Free"
+    },
+    {
+      "section": "research",
+      "tool": "Litmaps",
+      "link": "https://www.litmaps.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "research",
+      "tool": "Scholarcy",
+      "link": "https://www.scholarcy.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "research",
+      "tool": "Scite",
+      "link": "https://scite.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "ALwrity",
+      "link": "https://alwrity.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "Anyword",
+      "link": "https://anyword.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "Copy.ai",
+      "link": "https://www.copy.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "Frase",
+      "link": "https://www.frase.io/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "Jasper (formerly Jarvis)",
+      "link": "https://www.jasper.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "MarketMuse",
+      "link": "https://www.marketmuse.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "marketing-seo",
+      "tool": "Surfer SEO",
+      "link": "https://surferseo.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "dataline",
+      "link": "https://dataline.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "DeepBI",
+      "link": "https://www.deepbi.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "Hex Magic",
+      "link": "https://hex.tech/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "Julius AI",
+      "link": "https://julius.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+      "link": "https://www.extend.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "pandas-ai",
+      "link": "https://pandas-ai.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "Power BI Copilot",
+      "link": "https://learn.microsoft.com/power-bi/create-reports/copilot",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "Tableau AI",
+      "link": "https://www.tableau.com/products/tableau-ai",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "data-analysis",
+      "tool": "yn",
+      "link": "https://yank-note.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Blockade Labs Skybox",
+      "link": "https://skybox.blockadelabs.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Kaedim",
+      "link": "https://www.kaedim3d.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Luma AI",
+      "link": "https://lumalabs.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Masterpiece Studio",
+      "link": "https://masterpiecestudio.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Meshy",
+      "link": "https://www.meshy.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "3d-modeling",
+      "tool": "Sloyd",
+      "link": "https://sloyd.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ethical-ai",
+      "tool": "Fairlearn",
+      "link": "https://fairlearn.org",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ethical-ai",
+      "tool": "Fiddler AI",
+      "link": "https://www.fiddler.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "ethical-ai",
+      "tool": "Hugging Face Ethics & Society",
+      "link": "https://huggingface.co/ethics",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ethical-ai",
+      "tool": "IBM AI Fairness 360",
+      "link": "https://aif360.mybluemix.net",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ethical-ai",
+      "tool": "Microsoft Responsible AI Toolbox",
+      "link": "https://responsibleaitoolbox.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "education",
+      "tool": "Duolingo Max",
+      "link": "https://www.duolingo.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "education",
+      "tool": "Khanmigo (Khan Academy)",
+      "link": "https://www.khanacademy.org/khan-labs",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "education",
+      "tool": "MagicSchool AI",
+      "link": "https://www.magicschool.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "education",
+      "tool": "memobase",
+      "link": "https://memobase.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "education",
+      "tool": "Photomath",
+      "link": "https://photomath.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "education",
+      "tool": "Quizlet Q-Chat",
+      "link": "https://quizlet.com/q-chat",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "education",
+      "tool": "uxie",
+      "link": "https://uxie.vercel.app",
+      "labels": [
+        "Freemium",
+        "Subscription"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "crypto",
+      "tool": "3Commas",
+      "link": "https://3commas.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "crypto",
+      "tool": "Arkham Intelligence",
+      "link": "https://www.arkhamintelligence.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "crypto",
+      "tool": "IntoTheBlock",
+      "link": "https://app.intotheblock.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "crypto",
+      "tool": "Messari",
+      "link": "https://messari.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "crypto",
+      "tool": "Nansen",
+      "link": "https://www.nansen.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "crypto",
+      "tool": "Santiment",
+      "link": "https://santiment.net/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "crypto",
+      "tool": "TokenMetrics",
+      "link": "https://www.tokenmetrics.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "AIPRM",
+      "link": "https://www.aiprm.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "FlowGPT",
+      "link": "https://flowgpt.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "Langfuse",
+      "link": "https://langfuse.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "langwatch",
+      "link": "https://langwatch.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "LearnPrompt",
+      "link": "https://www.learnprompt.pro/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "Prompt Perfect",
+      "link": "https://promptperfect.jina.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "prompt-layer-library",
+      "link": "https://www.promptlayer.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "promptfoo",
+      "link": "https://www.promptfoo.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "PromptHero",
+      "link": "https://prompthero.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "prompt-enhancers",
+      "tool": "PromptLayer",
+      "link": "https://promptlayer.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Adept",
+      "link": "https://www.adept.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "AgentGPT",
+      "link": "https://agentgpt.reworkd.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Camel-AI",
+      "link": "https://www.camel-ai.org/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "CrewAI",
+      "link": "https://www.crewai.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Devin (Cognition Labs)",
+      "link": "https://www.cognition-labs.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "E2B",
+      "link": "https://e2b.dev/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "eliza",
+      "link": "https://eliza.how/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Glowby",
+      "link": "https://www.glowby.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Grammarly AI Agents",
+      "link": "https://www.grammarly.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Hugging Face Transformers Agents",
+      "link": "https://huggingface.co/docs/transformers/main/en/agents",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "HuggingGPT",
+      "link": "https://huggingface.co/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "LangChain Agents",
+      "link": "https://python.langchain.com/docs/modules/agents/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Lindy",
+      "link": "https://www.lindy.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "LlamaIndex Agents",
+      "link": "https://www.llamaindex.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Manus",
+      "link": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "MultiOn",
+      "link": "https://www.multion.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "OpenAI Assistants API",
+      "link": "https://platform.openai.com/docs/assistants/overview",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "OpenAI Custom GPTs (Agents)",
+      "link": "https://chat.openai.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Superagent.sh",
+      "link": "https://superagent.sh/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "SuperAGI",
+      "link": "https://superagi.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Voyager (Minecraft AI)",
+      "link": "https://voyager.minedojo.org/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "Zapier AI Agents",
+      "link": "https://zapier.com/blog/ai-agents/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "activepieces",
+      "link": "https://www.activepieces.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Bardeen",
+      "link": "https://www.bardeen.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "FastGPT",
+      "link": "https://fastgpt.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Levity",
+      "link": "https://www.levity.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Make (formerly Integromat)",
+      "link": "https://www.make.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Microsoft Power Automate",
+      "link": "https://powerautomate.microsoft.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "n8n",
+      "link": "https://n8n.io/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "nanobrowser",
+      "link": "https://nanobrowser.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Relevance AI",
+      "link": "https://relevance.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Tray.io",
+      "link": "https://tray.io/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Workato",
+      "link": "https://www.workato.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "workflow-automation",
+      "tool": "Zapier",
+      "link": "https://zapier.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "ai-knowledge-graph",
+      "link": "https://robert-mcdermott.medium.com/from-unstructured-text-to-interactive-knowledge-graphs-using-llms-dd02a1f71cd6",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "anything-llm",
+      "link": "https://anythingllm.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "cosdata",
+      "link": "https://www.cosdata.io",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "crawlee",
+      "link": "https://crawlee.dev",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "Glean",
+      "link": "https://www.glean.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "memvid",
+      "link": "https://www.memvid.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "mindsdb",
+      "link": "https://mindsdb.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "Neeva AI (legacy)",
+      "link": "https://neeva.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "Nucleoid",
+      "link": "https://nucleoid.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "octocode-mcp",
+      "link": "https://octocode.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "probe",
+      "link": "https://probeai.dev/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "search-knowledge-discovery",
+      "tool": "ragflow",
+      "link": "https://ragflow.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Aequitas",
+      "link": "http://aequitas.dssg.io/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "agentic_security",
+      "link": "https://agentic-security.vercel.app",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Anthropic Constitutional AI",
+      "link": "https://www.anthropic.com/constitution",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "archestra",
+      "link": "https://www.archestra.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Decepticon",
+      "link": "https://purplelab.framer.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "fast-llm-security-guardrails",
+      "link": "https://zenguard.ai/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "gateway",
+      "link": "https://portkey.ai/features/ai-gateway",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Google PAIR",
+      "link": "https://pair.withgoogle.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Google What-If Tool",
+      "link": "https://pair-code.github.io/what-if-tool/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "Hugging Face Evaluate (Bias & Fairness Metrics)",
+      "link": "https://huggingface.co/docs/evaluate/index",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "invariant",
+      "link": "https://invariantlabs.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "modelbench",
+      "link": "https://mlcommons.org/ailuminate",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "OpenAI Red Teaming",
+      "link": "https://openai.com/research/red-teaming",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ai-safety-ethics",
+      "tool": "woodpecker",
+      "link": "https://operant.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "Ada",
+      "link": "https://www.ada.cx/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "ai-chatbot",
+      "link": "https://chat-sdk.dev",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "ClaraVerse",
+      "link": "https://claraverse.space",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "CLI",
+      "link": "https://bito.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "cursor-free-vip",
+      "link": "https://www.cursor.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "Intercom Fin",
+      "link": "https://www.intercom.com/ai-agent",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "WeClone",
+      "link": "https://weclone.love",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "customer-support-chatbots",
+      "tool": "Zendesk AI",
+      "link": "https://www.zendesk.com/ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "comp",
+      "link": "https://trycomp.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "Harvey",
+      "link": "https://www.harvey.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "lawglance",
+      "link": "https://lawglance.com/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "Luminance",
+      "link": "https://www.luminance.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "Spellbook",
+      "link": "https://www.spellbook.legal/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "Spellbook (by Rally)",
+      "link": "https://www.spellbook.legal/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "legal-compliance",
+      "tool": "verifywise",
+      "link": "https://verifywise.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "healthcare-medical-ai",
+      "tool": "DeepScribe",
+      "link": "https://www.deepscribe.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "healthcare-medical-ai",
+      "tool": "MONAI",
+      "link": "https://monai.io/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "healthcare-medical-ai",
+      "tool": "Nuance Dragon Medical One",
+      "link": "https://www.nuance.com/healthcare/dragon-medical-one.html",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "healthcare-medical-ai",
+      "tool": "PathAI",
+      "link": "https://pathai.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "finance-accounting",
+      "tool": "QuickBooks + AI",
+      "link": "https://quickbooks.intuit.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "finance-accounting",
+      "tool": "Stripe Radar",
+      "link": "https://stripe.com/radar",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "finance-accounting",
+      "tool": "Vic.ai",
+      "link": "https://www.vic.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "hr-recruitment",
+      "tool": "Eightfold AI",
+      "link": "https://eightfold.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "hr-recruitment",
+      "tool": "hireEZ",
+      "link": "https://hireez.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "hr-recruitment",
+      "tool": "Paradox (Olivia)",
+      "link": "https://www.paradox.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "gaming-entertainment",
+      "tool": "Inworld AI",
+      "link": "https://inworld.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "gaming-entertainment",
+      "tool": "modl.ai",
+      "link": "https://modl.ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "gaming-entertainment",
+      "tool": "Replica Studios",
+      "link": "https://www.replicastudios.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "cybersecurity",
+      "tool": "CrowdStrike Charlotte AI",
+      "link": "https://www.crowdstrike.com/charlotte-ai/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "cybersecurity",
+      "tool": "Darktrace",
+      "link": "https://darktrace.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "cybersecurity",
+      "tool": "Microsoft Security Copilot",
+      "link": "https://www.microsoft.com/security/business/ai/security-copilot",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "sales-crm",
+      "tool": "Apollo AI",
+      "link": "https://www.apollo.io/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "sales-crm",
+      "tool": "HubSpot AI",
+      "link": "https://www.hubspot.com/ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "sales-crm",
+      "tool": "Salesforce Einstein Copilot",
+      "link": "https://www.salesforce.com/products/einstein/copilot/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "social-media-content",
+      "tool": "Buffer AI Assistant",
+      "link": "https://buffer.com/ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "social-media-content",
+      "tool": "Hootsuite OwlyWriter AI",
+      "link": "https://www.hootsuite.com/products/owlywriter-ai",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "social-media-content",
+      "tool": "Later AI",
+      "link": "https://later.com/ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "social-media-content",
+      "tool": "postiz-app",
+      "link": "https://postiz.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ecommerce-retail",
+      "tool": "Amazon Personalize",
+      "link": "https://aws.amazon.com/personalize/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "ecommerce-retail",
+      "tool": "Bloomreach Discovery",
+      "link": "https://www.bloomreach.com/en/products/discovery",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "ecommerce-retail",
+      "tool": "Shopify Magic",
+      "link": "https://www.shopify.com/magic",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "ecommerce-retail",
+      "tool": "storecraft",
+      "link": "https://storecraft.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "real-estate-proptech",
+      "tool": "HouseCanary",
+      "link": "https://www.housecanary.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "real-estate-proptech",
+      "tool": "Matterport",
+      "link": "https://matterport.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "real-estate-proptech",
+      "tool": "real-estate-ai-agent",
+      "link": "https://brightdata.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "real-estate-proptech",
+      "tool": "Reonomy",
+      "link": "https://www.reonomy.com/",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "github-ai-projects",
+      "tool": "GitHub Copilot",
+      "link": "https://github.com/features/copilot",
+      "labels": [
+        "Subscription"
+      ],
+      "primary": "Subscription"
+    },
+    {
+      "section": "github-ai-projects",
+      "tool": "photoprism",
+      "link": "https://www.photoprism.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "github-ai-projects",
+      "tool": "ray",
+      "link": "https://ray.io",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ai-s",
+      "tool": "agent-zero",
+      "link": "https://agent-zero.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ai-s",
+      "tool": "RA.Aid",
+      "link": "https://ra-aid.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "e-commerce-retail",
+      "tool": "storecraft",
+      "link": "https://storecraft.app",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    }
+  ]
+}
