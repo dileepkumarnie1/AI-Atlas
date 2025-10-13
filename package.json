@@ -16,6 +16,7 @@
         "export:tools": "node ./scripts/export-tools.mjs",
     "tools:icons": "node ./scripts/cache-tool-icons.mjs",
     "tools:icons:rewrite": "node ./scripts/rewrite-icons-from-manifest.mjs",
+    "tools:icons:backfill": "node ./scripts/backfill-firestore-icons.mjs",
         "tools:validate": "node ./scripts/validate-tools-json.mjs",
         "tools:enrich": "node ./scripts/enrich-tools-json.mjs",
         "tools:enrich:firestore": "node ./scripts/enrich-firestore-tools.mjs",

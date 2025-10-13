@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
+import { setTimeout as delay } from 'node:timers/promises';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 
@@ -34,6 +35,19 @@ async function main(){
 
   const issuesNew = [];
   const issuesLegacy = [];
+  const ICON_CHECK = process.env.ICON_CHECK === '1';
+  const HEAD_TIMEOUT_MS = Number(process.env.ICON_HEAD_TIMEOUT_MS || 3000);
+  const concurrency = 12;
+  const headQueue = [];
+  async function headOk(url){
+    try{
+      const controller = new AbortController();
+      const to = setTimeout(()=>controller.abort(), HEAD_TIMEOUT_MS);
+      const res = await fetch(url, { method: 'HEAD', signal: controller.signal });
+      clearTimeout(to);
+      return res.ok;
+    }catch{ return false; }
+  }
   for (const sec of sections){
     const secName = sec.slug || sec.name || 'unknown-section';
     for (const t of arr(sec.tools)){
@@ -47,11 +61,41 @@ async function main(){
       if (!('pros' in t) || !Array.isArray(t.pros)) miss.push('pros');
       if (!('cons' in t) || !Array.isArray(t.cons)) miss.push('cons');
       if (!('iconUrl' in t) || !isNonEmptyStr(t.iconUrl)) miss.push('iconUrl');
+      let brokenIcon = false;
+      if (ICON_CHECK && isNonEmptyStr(t.iconUrl)){
+        const url = t.iconUrl.match(/^https?:/i) ? t.iconUrl : `https://raw.githubusercontent.com/${process.env.GITHUB_REPOSITORY || ''}/main/public/${t.iconUrl.replace(/^\/*/, '')}`;
+        headQueue.push({ sec: secName, tool: tName, url, isNew: baselineKeys.size === 0 ? false : !baselineKeys.has(toolKey(sec, t)) });
+      }
+      const isNew = baselineKeys.size === 0 ? false : !baselineKeys.has(toolKey(sec, t));
       if (miss.length){
-        const isNew = baselineKeys.size === 0 ? false : !baselineKeys.has(toolKey(sec, t));
         const item = { section: secName, tool: tName, missing: miss };
         (isNew ? issuesNew : issuesLegacy).push(item);
       }
+    }
+  }
+  // Process icon HEAD checks with simple concurrency cap
+  if (ICON_CHECK && headQueue.length){
+    let idx = 0; const brokenNew = []; const brokenLegacy = [];
+    async function worker(){
+      for(;;){
+        const i = idx++; if (i >= headQueue.length) break;
+        const item = headQueue[i];
+        const ok = await headOk(item.url);
+        if (!ok){ (item.isNew ? brokenNew : brokenLegacy).push({ section: item.sec, tool: item.tool, iconUrl: item.url }); }
+        await delay(5);
+      }
+    }
+    const workers = Array.from({ length: Math.min(concurrency, headQueue.length) }, () => worker());
+    await Promise.all(workers);
+    if (brokenNew.length || brokenLegacy.length){
+      const lines = [];
+      lines.push(`Icon HEAD failures — NEW: ${brokenNew.length}, LEGACY: ${brokenLegacy.length}`);
+      for (const it of brokenNew.slice(0, 50)) lines.push(`- NEW [${it.section}] ${it.tool} icon not reachable`);
+      for (const it of brokenLegacy.slice(0, 50)) lines.push(`- LEGACY [${it.section}] ${it.tool} icon not reachable`);
+      const out = process.env.GITHUB_STEP_SUMMARY;
+      if (out) await fs.appendFile(out, lines.join('\n')+'\n'); else console.log(lines.join('\n'));
+      // Enforce only for NEW tools
+      if (brokenNew.length) process.exit(1);
     }
   }
   const summaryLines = [];

@@ -2,7 +2,7 @@ name: Cache Icons and Export Tools
 
 on:
   schedule:
-    - cron: '0 5 * * 2' # Weekly on Tue 05:00 UTC
+    - cron: '0 3 * * *' # Nightly at 03:00 UTC
   workflow_dispatch: {}
 
 jobs:
@@ -47,6 +47,7 @@ jobs:
       - name: Validate tools.json
         env:
           STRICT: '1'
+          ICON_CHECK: '1'
         run: npm run tools:validate || true
 
       - name: Commit and push changes

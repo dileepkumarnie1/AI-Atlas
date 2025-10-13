@@ -18,6 +18,7 @@ const root = process.cwd();
 const PUBLIC_DIR = path.join(root, 'public');
 const TOOLS_JSON = path.join(PUBLIC_DIR, 'tools.json');
 const ICONS_DIR = path.join(PUBLIC_DIR, 'icons');
+const OVERRIDES_PATH = path.join(root, 'data', 'icon-overrides.json');
 const MANIFEST_PATH = path.join(ICONS_DIR, 'manifest.json');
 
 const args = process.argv.slice(2);
@@ -74,6 +75,9 @@ async function fetchWithTimeout(u, ms = 7000){
 async function ensureDir(p){ await fs.mkdir(p, { recursive: true }); }
 
 async function main(){
+  // Load overrides if present
+  let overrides = {};
+  try { overrides = JSON.parse(await fs.readFile(OVERRIDES_PATH, 'utf8')); } catch {}
   let sections;
   try{
     const raw = await fs.readFile(TOOLS_JSON, 'utf8');
@@ -100,8 +104,29 @@ async function main(){
       const toolSlug = toSlug(t?.name || '');
       if (!toolSlug) { skipped++; continue; }
       const key = `${secSlug}::${normalizeKey(t.name)}`;
-      const remote = (t && t.iconUrl) ? String(t.iconUrl) : '';
-      let candidate = remote;
+      // Resolve override first
+      let candidate = '';
+      const ov = overrides[key] || overrides.examples?.[key];
+      if (ov) {
+        // Treat repo-relative path as already cached
+        if (!/^https?:\/\//i.test(ov)){
+          const rel = ov.replace(/^\/*public\//, 'public/');
+          const abs = path.join(root, rel);
+          if (fileExists(abs)){
+            manifest[key] = rel.replace(/^public\//, 'public/');
+            skipped++;
+            continue;
+          }
+          // If override path doesn't exist, construct remote from site as fallback below
+          candidate = '';
+        } else {
+          candidate = ov;
+        }
+      }
+      if (!candidate){
+        const remote = (t && t.iconUrl) ? String(t.iconUrl) : '';
+        candidate = remote;
+      }
       if (!candidate){
         // Fallback to site favicon
         try{ candidate = new URL(String(t.link)).origin + '/favicon.ico'; }
