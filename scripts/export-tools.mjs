@@ -293,6 +293,28 @@ async function main(){
         }
       }
     }
+    // Apply icon manifest and pricing overrides to ALL tools in the section (existing + newly added)
+    if (Array.isArray(mergedTools) && mergedTools.length) {
+      const CANON = new Set(['Open Source','Free','Freemium','Subscription']);
+      for (const t of mergedTools){
+        try {
+          const toolKey = `${key}::${normalizeKey(t?.name)}`;
+          // Prefer cached icon when available
+          if (iconManifest && iconManifest[toolKey]) {
+            const localPath = iconManifest[toolKey];
+            if (localPath) t.iconUrl = String(localPath).replace(/^public\//, '');
+          }
+          // Apply pricing overrides
+          if (pricingOverrides && (pricingOverrides[toolKey] != null)){
+            const ov = pricingOverrides[toolKey];
+            const labels = Array.isArray(ov) ? ov : [ov];
+            const nonPricing = (Array.isArray(t.tags) ? t.tags : []).filter(x => !CANON.has(String(x)));
+            t.tags = Array.from(new Set([...nonPricing, ...labels]));
+          }
+        } catch {}
+      }
+    }
+
     outSections.push({
       name: secOrig.name,
       slug: secOrig.slug,

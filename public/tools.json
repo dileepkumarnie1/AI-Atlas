@@ -437,9 +437,7 @@
           "llm",
           "code",
           "subscription",
-          "Open Source",
-          "Freemium",
-          "Subscription"
+          "Free"
         ],
         "about": "Sign in - Google Accounts",
         "pros": [],
@@ -1682,7 +1680,7 @@
           "Open Source",
           "Text-to-Image"
         ],
-        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Stable_Diffusion_logo.svg/1200px-Stable_Diffusion_logo.svg.png",
+        "iconUrl": "icons/image-generation/stable-diffusion.png",
         "about": "Stable Diffusion is a deep learning, text-to-image model released by Stability AI. Its main distinction is that it is open source and can be run on consumer-grade hardware, allowing for immense flexibility, privacy, and customization.",
         "pros": [
           "Free and open source.",
@@ -2887,9 +2885,7 @@
           "open source",
           "suite",
           "library",
-          "Freemium",
-          "Subscription",
-          "Open Source"
+          "Freemium"
         ],
         "about": "Ellie learns from your writing style and crafts replies as if they were written by you",
         "pros": [
@@ -2970,9 +2966,7 @@
           "open source",
           "suite",
           "library",
-          "Freemium",
-          "Subscription",
-          "Open Source"
+          "Freemium"
         ],
         "about": "Make your meetings accessible to AI Agents with joinly.ai",
         "pros": [
@@ -3009,9 +3003,7 @@
           "open source",
           "suite",
           "library",
-          "Freemium",
-          "Subscription",
-          "Open Source"
+          "Freemium"
         ],
         "about": "Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
         "pros": [
@@ -3157,9 +3149,7 @@
           "open source",
           "suite",
           "library",
-          "Freemium",
-          "Subscription",
-          "Open Source"
+          "Freemium"
         ],
         "about": "A beautifully minimalist note-taking app designed to mirror the way you think. Now with a native AI integration.",
         "pros": [
@@ -3234,9 +3224,7 @@
           "open source",
           "suite",
           "library",
-          "Freemium",
-          "Subscription",
-          "Open Source"
+          "Freemium"
         ],
         "about": "AI-Powered meetings · Supernormal",
         "pros": [
@@ -4365,9 +4353,7 @@
           "language",
           "tutoring",
           "teacher tools",
-          "Open Source",
-          "Freemium",
-          "Subscription"
+          "Open Source"
         ],
         "about": "Memobase enables AI apps with long term memory through structured user profiles, powering personalized interactions across sessions. Open source and cloud-ready.",
         "pros": [
