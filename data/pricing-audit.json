@@ -2,7 +2,7 @@
   "counts": {
     "Open Source": 100,
     "Free": 12,
-    "Freemium": 180,
+    "Freemium": 179,
     "Subscription": 64
   },
   "anomalies": [],
@@ -2403,6 +2403,24 @@
       "primary": "Freemium"
     },
     {
+      "section": "most-famous-agentic-ais",
+      "tool": "agent-zero",
+      "link": "https://agent-zero.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
+      "tool": "RA.Aid",
+      "link": "https://ra-aid.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
       "section": "workflow-automation",
       "tool": "activepieces",
       "link": "https://www.activepieces.com",
@@ -3184,33 +3202,6 @@
         "Open Source"
       ],
       "primary": "Open Source"
-    },
-    {
-      "section": "most-famous-agentic-ai-s",
-      "tool": "agent-zero",
-      "link": "https://agent-zero.ai",
-      "labels": [
-        "Freemium"
-      ],
-      "primary": "Freemium"
-    },
-    {
-      "section": "most-famous-agentic-ai-s",
-      "tool": "RA.Aid",
-      "link": "https://ra-aid.ai/",
-      "labels": [
-        "Open Source"
-      ],
-      "primary": "Open Source"
-    },
-    {
-      "section": "e-commerce-retail",
-      "tool": "storecraft",
-      "link": "https://storecraft.app",
-      "labels": [
-        "Freemium"
-      ],
-      "primary": "Freemium"
     }
   ]
 }

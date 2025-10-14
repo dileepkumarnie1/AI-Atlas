@@ -3,7 +3,7 @@
 ## Distribution
 - Open Source: 100
 - Free: 12
-- Freemium: 180
+- Freemium: 179
 - Subscription: 64
 
 ## Anomalies
