@@ -62,12 +62,12 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.55); /* increased opacity */
+            background: rgba(255,255,255,0.60); /* increased opacity */
             z-index: 0;
             pointer-events: none;
         }
         html.dark #background-overlay {
-            background: rgba(30,41,59,0.55);
+            background: rgba(30,41,59,0.60);
         }
         /* Mobile: avoid iOS background-attachment jank */
         @media (max-width: 768px) {
@@ -1505,15 +1505,15 @@
                                 <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
                             </div>
 
-                            <!-- Search + Category split row -->
-                            <div class="max-w-4xl mx-auto mb-4 grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
-                                <div>
-                                    <div class="search-wrapper mb-0">
-                                        <input id="search-bar-new" class="search-input w-full" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
-                                    </div>
-                                </div>
-                                <div>
-                                    <select id="category-select" class="search-input w-full text-center"></select>
+                            <!-- Unified Search + Filter dropdown -->
+                            <div class="max-w-4xl mx-auto mb-4">
+                                <div id="search-filter-unit" class="relative flex items-center">
+                                    <input id="search-bar-new" class="search-input flex-1 h-[46px] md:h-[52px] rounded-l-full border-r-0" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                    <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
+                                        <span>Filter</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                                    </button>
+                                    <div id="filter-menu" class="hidden absolute right-0 top-[calc(100%+0.5rem)] w-72 bg-card border border-color rounded-xl shadow-lg z-20"></div>
                                 </div>
                             </div>
 
@@ -1761,59 +1761,103 @@
                         return counts;
                     }
 
-                    function renderCategorySelect(matches) {
-                        const sel = document.getElementById('category-select');
-                        if (!sel) return;
+                    function renderFilterMenu(matches) {
+                        const menu = document.getElementById('filter-menu');
+                        const btn = document.getElementById('filter-button');
+                        if (!menu || !btn) return;
                         const counts = computeCategoryCounts(matches);
                         const current = state.selectedCategory || 'all';
-                        const opts = [];
-                        // Placeholder option (empty value) and explicit All option with counts
-                        opts.push(`<option value="" data-placeholder="1">-- Select a category --</option>`);
-                        opts.push(`<option value="all">All (${counts.all || 0})</option>`);
+                        const itemHtml = [];
+                        itemHtml.push(`<div class="px-3 py-2 text-xs font-semibold text-secondary">Categories</div>`);
+                        // All option
+                        itemHtml.push(`<button class="w-full text-left px-4 py-2 hover:bg-purple-50 dark:hover:bg-purple-900/20 ${current==='all'?'bg-purple-50 dark:bg-purple-900/10':''}" data-value="all">All (${counts.all || 0})</button>`);
+                        // Category options
                         for (const d of getOrderedDomains()) {
                             const c = counts[d.slug] || 0;
-                            const selected = current === d.slug ? 'selected' : '';
-                            opts.push(`<option value="${d.slug}" ${selected}>${escapeHtml(d.name)} (${c})</option>`);
+                            const active = current === d.slug ? 'bg-purple-50 dark:bg-purple-900/10' : '';
+                            itemHtml.push(`<button class="w-full text-left px-4 py-2 hover:bg-purple-50 dark:hover:bg-purple-900/20 ${active}" data-value="${d.slug}">${escapeHtml(d.name)} (${c})</button>`);
                         }
-                        sel.innerHTML = opts.join('');
-                        // Determine which value should show in closed control
-                        const valueToSet = (!state.categoryExplicit && current === 'all') ? '' : current;
-                        sel.value = valueToSet;
-                        // Toggle muted style when placeholder is selected
-                        const setPlaceholderStyle = () => {
-                            if (sel.value === '') {
-                                sel.classList.add('text-secondary');
+                        // Clear/close actions
+                        itemHtml.push(`<div class="flex items-center justify-between px-3 py-2 border-t border-color">
+                            <button class="text-sm text-secondary hover:text-primary" data-action="clear">Clear</button>
+                            <button class="text-sm bg-purple-600 text-white px-3 py-1 rounded" data-action="close">Done</button>
+                        </div>`);
+                        menu.innerHTML = itemHtml.join('');
+
+                        // Wire item clicks
+                        menu.querySelectorAll('button[data-value]').forEach(el => {
+                            el.onclick = (e) => {
+                                const val = e.currentTarget.getAttribute('data-value') || 'all';
+                                if (val === 'all') {
+                                    state.categoryExplicit = false;
+                                    state.selectedCategory = 'all';
+                                    searchPage = 1;
+                                    renderSearchResults();
+                                    renderFilterMenu(currentMatchesCache);
+                                } else {
+                                    state.categoryExplicit = true;
+                                    const slug = val;
+                                    state.selectedCategory = slug;
+                                    if (!state.searchQuery.trim() && slug !== 'all') {
+                                        state.selectedDomain = slug;
+                                        state.currentView = 'tools';
+                                        render();
+                                        return; // render() will rebuild menu
+                                    } else {
+                                        searchPage = 1;
+                                        renderSearchResults();
+                                        renderFilterMenu(currentMatchesCache);
+                                    }
+                                }
+                            };
+                        });
+                        const clearBtn = menu.querySelector('button[data-action="clear"]');
+                        if (clearBtn) clearBtn.onclick = () => {
+                            state.categoryExplicit = false;
+                            state.selectedCategory = 'all';
+                            searchPage = 1;
+                            renderSearchResults();
+                            renderFilterMenu(currentMatchesCache);
+                        };
+                        const closeBtn = menu.querySelector('button[data-action="close"]');
+                        if (closeBtn) closeBtn.onclick = () => toggleFilterMenu(false);
+
+                        // Button toggle
+                        const toggleFilterMenu = (force) => {
+                            const shouldShow = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
+                            if (shouldShow) {
+                                menu.classList.remove('hidden');
                             } else {
-                                sel.classList.remove('text-secondary');
+                                menu.classList.add('hidden');
                             }
                         };
-                        setPlaceholderStyle();
-                        sel.onchange = () => {
-                            const val = sel.value;
-                            if (val === '') {
-                                // Back to placeholder state
-                                state.categoryExplicit = false;
-                                state.selectedCategory = 'all';
-                                searchPage = 1;
-                                renderSearchResults();
-                                renderCategorySelect(currentMatchesCache);
-                                setPlaceholderStyle();
-                                return;
+                        // Attach button handler once per render
+                        btn.onclick = () => toggleFilterMenu();
+
+                        // Outside click/escape to close
+                        if (window.filterOutsideClick) {
+                            document.removeEventListener('click', window.filterOutsideClick);
+                            window.filterOutsideClick = null;
+                        }
+                        window.filterOutsideClick = (ev) => {
+                            if (!document.getElementById('filter-menu')) return;
+                            const unit = document.getElementById('search-filter-unit');
+                            if (!unit) return;
+                            if (!unit.contains(ev.target)) {
+                                menu.classList.add('hidden');
                             }
-                            state.categoryExplicit = true;
-                            const slug = val || 'all';
-                            state.selectedCategory = slug;
-                            if (!state.searchQuery.trim() && slug !== 'all') {
-                                state.selectedDomain = slug;
-                                state.currentView = 'tools';
-                                render();
-                            } else {
-                                searchPage = 1;
-                                renderSearchResults();
-                                renderCategorySelect(currentMatchesCache);
-                            }
-                            setPlaceholderStyle();
                         };
+                        document.addEventListener('click', window.filterOutsideClick);
+                        if (window.filterEscapeHandler) {
+                            document.removeEventListener('keydown', window.filterEscapeHandler);
+                            window.filterEscapeHandler = null;
+                        }
+                        window.filterEscapeHandler = (ev) => {
+                            if (ev.key === 'Escape') {
+                                menu.classList.add('hidden');
+                            }
+                        };
+                        document.addEventListener('keydown', window.filterEscapeHandler);
                     }
 
                     let currentMatchesCache = [];
@@ -1863,16 +1907,16 @@
                         const next = resultsContainer.querySelector('#next-page');
                         if (prev) prev.onclick = () => { if (searchPage > 1) { searchPage--; renderSearchResults(); } };
                         if (next) next.onclick = () => { if (searchPage < totalPages) { searchPage++; renderSearchResults(); } };
-                        // Refresh dropdown with match-based counts
-                        renderCategorySelect(matches);
+                        // Refresh filter menu with match-based counts
+                        renderFilterMenu(matches);
                     }
                     if (sb) {
                         sb.addEventListener('input', (e) => {
                             state.searchQuery = e.target.value;
                             searchPage = 1;
                             renderSearchResults();
-                            // When typing, refresh dropdown with counts for the current matches
-                            renderCategorySelect(currentMatchesCache);
+                            // When typing, refresh filter menu with counts for the current matches
+                            renderFilterMenu(currentMatchesCache);
                         });
                         sb.addEventListener('keydown', (e) => {
                             if (e.key === 'Enter') e.preventDefault();
@@ -1880,8 +1924,8 @@
                     }
                     // Clear button removed; reset handled on navigation only
 
-                    // Initial dropdown render (no query -> total counts)
-                    renderCategorySelect([]);
+                    // Initial filter menu render (no query -> total counts)
+                    renderFilterMenu([]);
                     attachDomainCardListeners();
                 },
                 renderTools: () => {
