@@ -428,6 +428,27 @@
         "iconUrl": "https://mlflow.org/favicon.svg"
       },
       {
+        "name": "nocobase",
+        "description": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
+        "link": "https://www.nocobase.com",
+        "tags": [
+          "developer-tools",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
+        "pros": [
+          "Open source and extensible.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.nocobase.com/images/favicon/apple-touch-icon.png"
+      },
+      {
         "name": "Notebook LLM",
         "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
         "link": "https://notebooklm.google.com/",
@@ -756,6 +777,32 @@
         "iconUrl": "https://chat.deepseek.com/favicon.svg"
       },
       {
+        "name": "deer-flow",
+        "description": "Deep Exploration and Efficient Research, an AI tool that combines language models with specialized tools for research tasks.",
+        "link": "https://deerflow.tech",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Deep Exploration and Efficient Research, an AI tool that combines language models with specialized tools for research tasks.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://deerflow.tech/favicon.ico"
+      },
+      {
         "name": "dspy",
         "description": "DSPy: The framework for programming—not prompting—language models",
         "link": "https://dspy.ai",
@@ -924,6 +971,30 @@
           "Can sometimes make suggestions that alter the intended meaning.",
           "Generative AI features are newer and less developed than dedicated chatbots."
         ]
+      },
+      {
+        "name": "jan",
+        "description": "Jan is building Open Superintelligence. It’s the open-source ChatGPT alternative that leverages the best of open-source AI.",
+        "link": "https://jan.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Jan is building Open Superintelligence. It’s the open-source ChatGPT alternative that leverages the best of open-source AI.",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://jan.ai/favicon.ico"
       },
       {
         "name": "Jasper AI",
@@ -1668,6 +1739,24 @@
         "pros": [],
         "cons": [],
         "iconUrl": "icons/image-generation/riffusion-stable-diffusion-fine-tuned-to-generate-music.ico"
+      },
+      {
+        "name": "StabilityMatrix",
+        "description": "Multi-Platform Package Manager and Inference UI for AI Image Generation. Works with Flux and Stable Diffusion.",
+        "link": "https://lykos.ai",
+        "tags": [
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Multi-Platform Package Manager and Inference UI for AI Image Generation. Works with Flux and Stable Diffusion.",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://lykos.ai/favicon.ico"
       },
       {
         "name": "Stable Diffusion",
@@ -2550,6 +2639,33 @@
           "Not a full DAW.",
           "Less control than manual chains."
         ]
+      },
+      {
+        "name": "chatterbox-tts-api",
+        "description": "Local, OpenAI-compatible text-to-speech (TTS) API using Chatterbox, enabling users to generate voice cloned speech anywhere the OpenAI API is used (e.g. Open WebUI, AnythingLLM, etc.) with multilingual support.",
+        "link": "https://chatterboxtts.com",
+        "tags": [
+          "chatbot",
+          "image",
+          "audio",
+          "speech",
+          "translation",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Local, OpenAI-compatible text-to-speech (TTS) API using Chatterbox, enabling users to generate voice cloned speech anywhere the OpenAI API is used (e.g. Open WebUI, AnythingLLM, etc.) with multilingual support.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Useful for voice and audio workflows."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "May need cleanup for artifacts."
+        ],
+        "iconUrl": "https://chatterboxtts.com/favicon.ico"
       },
       {
         "name": "Cleanvoice AI",
@@ -4822,6 +4938,25 @@
         ]
       },
       {
+        "name": "agent-zero",
+        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "link": "https://agent-zero.ai",
+        "tags": [
+          "chatbot",
+          "agents",
+          "design",
+          "Freemium"
+        ],
+        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
+        "pros": [
+          "Good for drafting and Q&A."
+        ],
+        "cons": [
+          "May require fact‑checking."
+        ],
+        "iconUrl": "icons/most-famous-agentic-ai-s/agent-zero.png"
+      },
+      {
         "name": "AgentGPT",
         "description": "A no-code platform for building and deploying autonomous web-based AI agents.",
         "link": "https://agentgpt.reworkd.ai/",
@@ -5193,6 +5328,27 @@
         ]
       },
       {
+        "name": "RA.Aid",
+        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "link": "https://ra-aid.ai/",
+        "tags": [
+          "chatbot",
+          "search",
+          "agents",
+          "Open Source"
+        ],
+        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
+      },
+      {
         "name": "Superagent.sh",
         "description": "An open-source framework for building, managing, and deploying AI agents.",
         "link": "https://superagent.sh/",
@@ -5281,46 +5437,6 @@
           "Dependent on Zapier platform.",
           "Limited reasoning depth."
         ]
-      },
-      {
-        "name": "agent-zero",
-        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "link": "https://agent-zero.ai",
-        "tags": [
-          "chatbot",
-          "agents",
-          "design",
-          "Freemium"
-        ],
-        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "pros": [
-          "Good for drafting and Q&A."
-        ],
-        "cons": [
-          "May require fact‑checking."
-        ],
-        "iconUrl": "icons/most-famous-agentic-ai-s/agent-zero.png"
-      },
-      {
-        "name": "RA.Aid",
-        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "link": "https://ra-aid.ai/",
-        "tags": [
-          "chatbot",
-          "search",
-          "agents",
-          "Open Source"
-        ],
-        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
       }
     ]
   },
