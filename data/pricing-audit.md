@@ -1,9 +1,9 @@
 # Pricing Audit
 
 ## Distribution
-- Open Source: 100
+- Open Source: 103
 - Free: 12
-- Freemium: 179
+- Freemium: 181
 - Subscription: 64
 
 ## Anomalies

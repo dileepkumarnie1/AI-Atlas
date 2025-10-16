@@ -1,8 +1,8 @@
 {
   "counts": {
-    "Open Source": 100,
+    "Open Source": 103,
     "Free": 12,
-    "Freemium": 179,
+    "Freemium": 181,
     "Subscription": 64
   },
   "anomalies": [],
@@ -225,6 +225,15 @@
     },
     {
       "section": "most-popular",
+      "tool": "nocobase",
+      "link": "https://www.nocobase.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
       "tool": "Notebook LLM",
       "link": "https://notebooklm.google.com/",
       "labels": [
@@ -396,6 +405,15 @@
     },
     {
       "section": "language-chat",
+      "tool": "deer-flow",
+      "link": "https://deerflow.tech",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "language-chat",
       "tool": "dspy",
       "link": "https://dspy.ai",
       "labels": [
@@ -483,6 +501,15 @@
         "Freemium"
       ],
       "primary": "Freemium"
+    },
+    {
+      "section": "language-chat",
+      "tool": "jan",
+      "link": "https://jan.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
     },
     {
       "section": "language-chat",
@@ -848,6 +875,15 @@
       "section": "image-generation",
       "tool": "Riffusion – Stable Diffusion fine-tuned to generate music",
       "link": "https://www.riffusion.com/about",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "image-generation",
+      "tool": "StabilityMatrix",
+      "link": "https://lykos.ai",
       "labels": [
         "Freemium"
       ],
@@ -1253,6 +1289,15 @@
       "section": "audio-music",
       "tool": "Auphonic",
       "link": "https://auphonic.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "audio-music",
+      "tool": "chatterbox-tts-api",
+      "link": "https://chatterboxtts.com",
       "labels": [
         "Freemium"
       ],
@@ -2215,6 +2260,15 @@
     },
     {
       "section": "most-famous-agentic-ais",
+      "tool": "agent-zero",
+      "link": "https://agent-zero.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-famous-agentic-ais",
       "tool": "AgentGPT",
       "link": "https://agentgpt.reworkd.ai/",
       "labels": [
@@ -2368,6 +2422,15 @@
     },
     {
       "section": "most-famous-agentic-ais",
+      "tool": "RA.Aid",
+      "link": "https://ra-aid.ai/",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
+    },
+    {
+      "section": "most-famous-agentic-ais",
       "tool": "Superagent.sh",
       "link": "https://superagent.sh/",
       "labels": [
@@ -2401,24 +2464,6 @@
         "Freemium"
       ],
       "primary": "Freemium"
-    },
-    {
-      "section": "most-famous-agentic-ais",
-      "tool": "agent-zero",
-      "link": "https://agent-zero.ai",
-      "labels": [
-        "Freemium"
-      ],
-      "primary": "Freemium"
-    },
-    {
-      "section": "most-famous-agentic-ais",
-      "tool": "RA.Aid",
-      "link": "https://ra-aid.ai/",
-      "labels": [
-        "Open Source"
-      ],
-      "primary": "Open Source"
     },
     {
       "section": "workflow-automation",
