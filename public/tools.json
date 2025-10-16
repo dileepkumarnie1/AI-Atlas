@@ -183,6 +183,24 @@
         "iconUrl": "icons/most-popular/docsgpt.png"
       },
       {
+        "name": "Duix-Avatar",
+        "description": "Talk face-to-face with Duix, your personal visual AI companion. Get instant support, share your thoughts freely, and build a real connection. Your privacy is 100% secure. Try it now.",
+        "link": "https://www.duix.com/",
+        "tags": [
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Talk face-to-face with Duix, your personal visual AI companion. Get instant support, share your thoughts freely, and build a real connection. Your privacy is 100% secure. Try it now.",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://www.duix.com/favicon.ico?favicon.3edf242e.ico"
+      },
+      {
         "name": "Gemini (Google)",
         "description": "Google's powerful, multimodal AI model integrated across its ecosystem.",
         "link": "https://gemini.google.com/",
@@ -297,6 +315,24 @@
           "Quality varies by prompt."
         ],
         "iconUrl": "https://getleon.ai/favicon.svg"
+      },
+      {
+        "name": "liveblocks",
+        "description": "Liveblocks gives you ready-made features like AI Copilots, Comments, and Multiplayer Editing to make your product more engaging and grow your business.",
+        "link": "https://liveblocks.io",
+        "tags": [
+          "developer-tools",
+          "design",
+          "Freemium"
+        ],
+        "about": "Liveblocks gives you ready-made features like AI Copilots, Comments, and Multiplayer Editing to make your product more engaging and grow your business.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://liveblocks.io/favicon.svg"
       },
       {
         "name": "Llama (Meta)",
@@ -446,7 +482,7 @@
           "Requires setup and maintenance.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://www.nocobase.com/images/favicon/apple-touch-icon.png"
+        "iconUrl": "icons/most-popular/nocobase.png"
       },
       {
         "name": "Notebook LLM",
@@ -994,7 +1030,7 @@
           "May require fact‑checking.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://jan.ai/favicon.ico"
+        "iconUrl": "icons/language-chat/jan.ico"
       },
       {
         "name": "Jasper AI",
@@ -1756,7 +1792,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://lykos.ai/favicon.ico"
+        "iconUrl": "icons/image-generation/stabilitymatrix.ico"
       },
       {
         "name": "Stable Diffusion",
@@ -2248,6 +2284,23 @@
         ]
       },
       {
+        "name": "code2prompt",
+        "description": "Transform your codebase into AI-optimized prompts effortlessly.",
+        "link": "https://code2prompt.dev",
+        "tags": [
+          "developer-tools",
+          "Freemium"
+        ],
+        "about": "Transform your codebase into AI-optimized prompts effortlessly.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://code2prompt.dev/favicon.svg"
+      },
+      {
         "name": "Codeium",
         "description": "Free AI code completion and chat for individuals across many IDEs.",
         "link": "https://codeium.com/",
@@ -2665,7 +2718,7 @@
           "Quality varies by prompt.",
           "May need cleanup for artifacts."
         ],
-        "iconUrl": "https://chatterboxtts.com/favicon.ico"
+        "iconUrl": "icons/audio-music/chatterbox-tts-api.ico"
       },
       {
         "name": "Cleanvoice AI",
@@ -3475,6 +3528,24 @@
           "Can be a collection of single-task tools rather than one cohesive AI.",
           "Quality and reliability of plugins can vary."
         ]
+      },
+      {
+        "name": "Figma-Context-MCP",
+        "description": "Framelink connects your Figma designs to your code editor with MCP.",
+        "link": "https://www.framelink.ai/",
+        "tags": [
+          "developer-tools",
+          "design",
+          "Freemium"
+        ],
+        "about": "Framelink connects your Figma designs to your code editor with MCP.",
+        "pros": [
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.framelink.ai/favicon-dark.svg"
       },
       {
         "name": "Framer AI",
@@ -6689,6 +6760,46 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M4 3a1 1 0 000 2h12a1 1 0 100-2H4zm0 4a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h7a1 1 0 110 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H5a1 1 0 01-1-1z\"/></svg>",
     "tools": [
       {
+        "name": "chronulus-mcp",
+        "description": "Chronulus is the first agentic platform purpose-built for forecasting and prediction. What would you like to predict today?",
+        "link": "https://www.chronulus.com",
+        "tags": [
+          "image",
+          "agents",
+          "design",
+          "api",
+          "Freemium"
+        ],
+        "about": "Chronulus is the first agentic platform purpose-built for forecasting and prediction. What would you like to predict today?",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://www.chronulus.com/favicon/chronulus-logo-blue-on-alpha-square-128x128.ico"
+      },
+      {
+        "name": "finance",
+        "description": "AI-powered financial analysis by Valyu. Real-time data, secure Python execution in Daytona sandboxes, and interactive visualizations for research and reporting.",
+        "link": "https://finance.valyu.ai",
+        "tags": [
+          "image",
+          "search",
+          "Freemium"
+        ],
+        "about": "AI-powered financial analysis by Valyu. Real-time data, secure Python execution in Daytona sandboxes, and interactive visualizations for research and reporting.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://finance.valyu.ai/favicon.ico"
+      },
+      {
         "name": "QuickBooks + AI",
         "description": "Bookkeeping and invoicing with AI‑assisted categorization and insights.",
         "link": "https://quickbooks.intuit.com/",
@@ -6709,6 +6820,29 @@
           "Bank sync quirks occasionally.",
           "Accountant collaboration varies by plan."
         ]
+      },
+      {
+        "name": "rever",
+        "description": "Open-source finance automation tool with AI-driven accounting, real-time analytics, AP automation, reconciliation &amp; three-way matching.",
+        "link": "https://reverfin.ai",
+        "tags": [
+          "image",
+          "automation",
+          "design",
+          "documents",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Open-source finance automation tool with AI-driven accounting, real-time analytics, AP automation, reconciliation &amp; three-way matching.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://reverfin.ai/assets/icons/favicon.ico.svg"
       },
       {
         "name": "Stripe Radar",
@@ -6835,7 +6969,33 @@
     "slug": "voice-speech-ai",
     "description": "ASR, TTS, voice cloning, and speech enhancement technologies.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M10 2a3 3 0 00-3 3v5a3 3 0 106 0V5a3 3 0 00-3-3z\"/><path d=\"M5 10a5 5 0 0010 0h2a7 7 0 11-14 0h2z\"/></svg>",
-    "tools": []
+    "tools": [
+      {
+        "name": "LLPlayer",
+        "description": "The media player for language learning, with dual subtitles, AI-generated subtitles, real-time translation, and more!",
+        "link": "https://llplayer.com",
+        "tags": [
+          "developer-tools",
+          "video",
+          "translation",
+          "education",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "The media player for language learning, with dual subtitles, AI-generated subtitles, real-time translation, and more!",
+        "pros": [
+          "Open source and extensible.",
+          "Accelerates video creation.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Render times or credit limits may apply.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://llplayer.com/images/favicon.ico"
+      }
+    ]
   },
   {
     "name": "Gaming & Entertainment",
