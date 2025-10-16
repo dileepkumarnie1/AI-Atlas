@@ -127,5 +127,9 @@
   "github-ai-projects::ray": "public/icons/github-ai-projects/ray.png",
   "most-famous-agentic-ai-s::agent-zero": "public/icons/most-famous-agentic-ai-s/agent-zero.png",
   "e-commerce-retail::storecraft": "public/icons/e-commerce-retail/storecraft.svg",
-  "image-generation::stable diffusion": "public/icons/image-generation/stable-diffusion.png"
+  "image-generation::stable diffusion": "public/icons/image-generation/stable-diffusion.png",
+  "most-popular::nocobase": "public/icons/most-popular/nocobase.png",
+  "language-chat::jan": "public/icons/language-chat/jan.ico",
+  "image-generation::stabilitymatrix": "public/icons/image-generation/stabilitymatrix.ico",
+  "audio-music::chatterbox-tts-api": "public/icons/audio-music/chatterbox-tts-api.ico"
 }
