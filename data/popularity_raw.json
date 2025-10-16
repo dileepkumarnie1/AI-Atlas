@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2025-10-16T03:35:06.663Z",
+  "generatedAt": "2025-10-16T04:14:08.190Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 91086,
-          "forks": 10204,
+          "stars": 91088,
+          "forks": 10205,
           "openIssues": 3053,
           "commitCount90": 100,
           "daysSinceRelease": 2
@@ -23,7 +23,7 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41863,
+          "stars": 41864,
           "forks": 5331,
           "openIssues": 300,
           "commitCount90": 0,
@@ -145,7 +145,7 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11802,
+          "stars": 11803,
           "forks": 1017,
           "openIssues": 310,
           "commitCount90": 0,
@@ -225,7 +225,7 @@
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13414,
+          "stars": 13415,
           "forks": 1588,
           "openIssues": 576,
           "commitCount90": 4,
@@ -234,12 +234,12 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.2091
+      "signalsRaw": 3.2092
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 42993,
+          "stars": 42994,
           "forks": 5692,
           "openIssues": 13,
           "commitCount90": 0,
