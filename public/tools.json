@@ -198,7 +198,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://www.duix.com/favicon.ico?favicon.3edf242e.ico"
+        "iconUrl": "icons/most-popular/duix-avatar.ico"
       },
       {
         "name": "Gemini (Google)",
@@ -332,7 +332,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://liveblocks.io/favicon.svg"
+        "iconUrl": "icons/most-popular/liveblocks.svg"
       },
       {
         "name": "Llama (Meta)",
@@ -908,6 +908,28 @@
         "pros": [],
         "cons": [],
         "iconUrl": "icons/language-chat/flowise.png"
+      },
+      {
+        "name": "flutter_chat_ui",
+        "description": "Open-source chat SDK for Flutter and React Native. Build fast, real-time apps and AI agents with a high-performance, customizable, cross-platform UI.",
+        "link": "https://flyer.chat",
+        "tags": [
+          "chatbot",
+          "image",
+          "agents",
+          "design",
+          "Open Source"
+        ],
+        "about": "Open-source chat SDK for Flutter and React Native. Build fast, real-time apps and AI agents with a high-performance, customizable, cross-platform UI.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://flyer.chat/favicon-32x32.png"
       },
       {
         "name": "Gemini (Google)",
@@ -1826,6 +1848,31 @@
         "about": "A latent text-to-image diffusion model",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "ZenCtrl",
+        "description": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training—ideal for reimagining existing subjects.",
+        "link": "https://fotographer.ai/zenctrl",
+        "tags": [
+          "developer-tools",
+          "image",
+          "design",
+          "api",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training—ideal for reimagining existing subjects.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/xEYsXUhaaO4N78y9PDqjIXusMQ.png"
       }
     ]
   },
@@ -2298,7 +2345,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://code2prompt.dev/favicon.svg"
+        "iconUrl": "icons/code-assistance/code2prompt.svg"
       },
       {
         "name": "Codeium",
@@ -3545,7 +3592,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://www.framelink.ai/favicon-dark.svg"
+        "iconUrl": "icons/design-tools/figma-context-mcp.svg"
       },
       {
         "name": "Framer AI",
@@ -6777,7 +6824,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://www.chronulus.com/favicon/chronulus-logo-blue-on-alpha-square-128x128.ico"
+        "iconUrl": "icons/finance-accounting/chronulus-mcp.ico"
       },
       {
         "name": "finance",
@@ -6797,7 +6844,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://finance.valyu.ai/favicon.ico"
+        "iconUrl": "icons/finance-accounting/finance.ico"
       },
       {
         "name": "QuickBooks + AI",
@@ -6842,7 +6889,7 @@
           "Requires setup and maintenance.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://reverfin.ai/assets/icons/favicon.ico.svg"
+        "iconUrl": "icons/finance-accounting/rever.svg"
       },
       {
         "name": "Stripe Radar",
@@ -6993,7 +7040,29 @@
           "Render times or credit limits may apply.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://llplayer.com/images/favicon.ico"
+        "iconUrl": "icons/voice-speech-ai/llplayer.ico"
+      },
+      {
+        "name": "openai-edge-tts",
+        "description": "Listen to high-quality text-to-speech samples and use Edge TTS, a free, OpenAI-compatible API leveraging Microsoft Edge voices.",
+        "link": "https://tts.travisvn.com",
+        "tags": [
+          "audio",
+          "speech",
+          "search",
+          "api",
+          "Freemium"
+        ],
+        "about": "Listen to high-quality text-to-speech samples and use Edge TTS, a free, OpenAI-compatible API leveraging Microsoft Edge voices.",
+        "pros": [
+          "Useful for voice and audio workflows.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May need cleanup for artifacts.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://tts.travisvn.com/favicon.ico"
       }
     ]
   },
@@ -7003,6 +7072,22 @@
     "description": "AI for game dev, NPCs, VTubing, content tools, and live streaming.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M6 7a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 110 4 2 2 0 010-4z\"/><path fill-rule=\"evenodd\" d=\"M4 5a4 4 0 00-4 4v2a5 5 0 005 5h10a5 5 0 005-5V9a4 4 0 00-4-4H4z\" clip-rule=\"evenodd\"/></svg>",
     "tools": [
+      {
+        "name": "bevy_generative",
+        "description": "Procedural Generation on the web in real time! Generate dynamic content on-the-fly, from intricate landscapes to immersive 3D planets. Unleash your imagination and create captivating worlds with ease.",
+        "link": "https://procedra.netlify.app",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "Procedural Generation on the web in real time! Generate dynamic content on-the-fly, from intricate landscapes to immersive 3D planets. Unleash your imagination and create captivating worlds with ease.",
+        "pros": [
+          "Easy to get started."
+        ],
+        "cons": [
+          "May require an account or credits."
+        ],
+        "iconUrl": "https://procedra.netlify.app/favicon.png"
+      },
       {
         "name": "Inworld AI",
         "description": "Intelligent NPCs with personalities, memory, and real‑time dialogue.",
@@ -7046,6 +7131,28 @@
           "Best for studios.",
           "Project‑specific setup."
         ]
+      },
+      {
+        "name": "notebook",
+        "description": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes — and everything within them.",
+        "link": "http://www.notebook.ai",
+        "tags": [
+          "image",
+          "search",
+          "notebooks",
+          "design",
+          "Freemium"
+        ],
+        "about": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes — and everything within them.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "http://www.notebook.ai/apple-touch-icon-57x57.png"
       },
       {
         "name": "Replica Studios",
@@ -7122,6 +7229,32 @@
         ]
       },
       {
+        "name": "hexstrike-ai",
+        "description": "Advanced AI-driven penetration testing and security assessment tools. Automated vulnerability discovery and intelligent threat analysis.",
+        "link": "https://www.hexstrike.com/",
+        "tags": [
+          "agents",
+          "automation",
+          "api",
+          "open-source",
+          "subscription",
+          "assistant",
+          "edr",
+          "ndr",
+          "Open Source",
+          "Subscription"
+        ],
+        "about": "Advanced AI-driven penetration testing and security assessment tools. Automated vulnerability discovery and intelligent threat analysis.",
+        "pros": [
+          "Open source and extensible."
+        ],
+        "cons": [
+          "Subscription required for full access.",
+          "Requires setup and maintenance."
+        ],
+        "iconUrl": "https://www.hexstrike.com/favicon-16x16.png"
+      },
+      {
         "name": "Microsoft Security Copilot",
         "description": "An AI assistant for security analysts across Microsoft’s security stack.",
         "link": "https://www.microsoft.com/security/business/ai/security-copilot",
@@ -7142,6 +7275,35 @@
           "Access and licensing requirements.",
           "Data residency considerations."
         ]
+      },
+      {
+        "name": "superagent",
+        "description": "Y Combinator-backed Superagent gives your agents runtime protection that stops data leaks and threats. Hosted trust center proves compliance to buyers.",
+        "link": "https://superagent.sh",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "api",
+          "open-source",
+          "subscription",
+          "Open Source",
+          "Subscription"
+        ],
+        "about": "Y Combinator-backed Superagent gives your agents runtime protection that stops data leaks and threats. Hosted trust center proves compliance to buyers.",
+        "pros": [
+          "Open source and extensible.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Subscription required for full access.",
+          "Requires setup and maintenance.",
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://superagent.sh/favicon.png?v=2"
       }
     ]
   },
