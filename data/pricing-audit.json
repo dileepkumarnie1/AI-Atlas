@@ -1,8 +1,8 @@
 {
   "counts": {
-    "Open Source": 103,
+    "Open Source": 105,
     "Free": 12,
-    "Freemium": 181,
+    "Freemium": 187,
     "Subscription": 64
   },
   "anomalies": [],
@@ -99,6 +99,15 @@
     },
     {
       "section": "most-popular",
+      "tool": "Duix-Avatar",
+      "link": "https://www.duix.com/",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "most-popular",
       "tool": "Gemini (Google)",
       "link": "https://gemini.google.com/",
       "labels": [
@@ -159,6 +168,15 @@
         "Open Source"
       ],
       "primary": "Open Source"
+    },
+    {
+      "section": "most-popular",
+      "tool": "liveblocks",
+      "link": "https://liveblocks.io",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
     },
     {
       "section": "most-popular",
@@ -1107,6 +1125,15 @@
     },
     {
       "section": "code-assistance",
+      "tool": "code2prompt",
+      "link": "https://code2prompt.dev",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "code-assistance",
       "tool": "Codeium",
       "link": "https://codeium.com/",
       "labels": [
@@ -1649,6 +1676,15 @@
       "section": "design-tools",
       "tool": "Figma AI (Diagram)",
       "link": "https://www.figma.com/community/plugin/1199865595779899484/diagram",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "design-tools",
+      "tool": "Figma-Context-MCP",
+      "link": "https://www.framelink.ai/",
       "labels": [
         "Freemium"
       ],
@@ -2980,12 +3016,39 @@
     },
     {
       "section": "finance-accounting",
+      "tool": "chronulus-mcp",
+      "link": "https://www.chronulus.com",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "finance-accounting",
+      "tool": "finance",
+      "link": "https://finance.valyu.ai",
+      "labels": [
+        "Freemium"
+      ],
+      "primary": "Freemium"
+    },
+    {
+      "section": "finance-accounting",
       "tool": "QuickBooks + AI",
       "link": "https://quickbooks.intuit.com/",
       "labels": [
         "Subscription"
       ],
       "primary": "Subscription"
+    },
+    {
+      "section": "finance-accounting",
+      "tool": "rever",
+      "link": "https://reverfin.ai",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
     },
     {
       "section": "finance-accounting",
@@ -3031,6 +3094,15 @@
         "Subscription"
       ],
       "primary": "Subscription"
+    },
+    {
+      "section": "voice-speech-ai",
+      "tool": "LLPlayer",
+      "link": "https://llplayer.com",
+      "labels": [
+        "Open Source"
+      ],
+      "primary": "Open Source"
     },
     {
       "section": "gaming-entertainment",
