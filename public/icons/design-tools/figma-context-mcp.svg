@@ -1,0 +1,17 @@
+<svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 9L0.999999 26" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M6 9L2 9" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M18 9L14 9" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M18 26L18 9" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M1 26L18 26" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M10 1L10 18" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M27 1L10 0.999999" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M27 18L27 1" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M10 18H14" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<path d="M22 18H26" style="stroke-opacity:1;" stroke-width="2" stroke-linecap="square"/>
+<style>
+path {
+  stroke: white;
+}
+</style>
+</svg>
