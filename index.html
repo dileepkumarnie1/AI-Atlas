@@ -377,7 +377,7 @@
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:2;">
         <!-- Header -->
     <a href="#content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white dark:bg-gray-800 text-sm px-3 py-2 rounded z-[100]">Skip to content</a>
-    <header id="site-header" class="backdrop-blur-lg border-b bg-gradient-to-r from-[#eef2ff] via-[#f4f7ff] to-[#eef2ff] dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90 shadow-sm">
+    <header id="site-header" class="backdrop-blur-lg border-b bg-gradient-to-r from-white/70 via-white/40 to-white/70 dark:from-slate-900/70 dark:via-slate-900/50 dark:to-slate-900/70 shadow-sm">
             <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-[68px] md:h-[84px]">
                     <div class="flex items-center">
@@ -1505,30 +1505,31 @@
                     // No favorites overlay on homepage
                     contentArea.innerHTML = `
                         <div class="relative">
-                            <div class="text-center mb-4 md:mb-5">
-                                <h1 class="text-[2.025rem] md:text-[3.375rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
-                                <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
-                            </div>
-
-                            <!-- Unified Search + Filter dropdown -->
-                            <div class="max-w-4xl mx-auto mb-4">
-                                <div id="search-filter-unit" class="relative flex items-center">
-                                    <input id="search-bar-new" class="search-input flex-1 h-[46px] md:h-[52px] rounded-l-full border-r-0" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
-                                    <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
-                                        <span>Filter</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                                    </button>
-                                    <div id="filter-menu" class="hidden absolute right-0 top-[calc(100%+0.5rem)] w-72 bg-card border border-color rounded-xl shadow-lg z-20"></div>
+                            <!-- Hero: centered title + search -->
+                            <section class="min-h-[46vh] md:min-h-[52vh] flex flex-col justify-center items-center text-center">
+                                <div class="mb-4 md:mb-6">
+                                    <h1 class="text-[2.25rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
+                                    <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
                                 </div>
-                            </div>
-
-                            <div id="search-results-container"></div>
+                                <!-- Unified Search + Filter dropdown -->
+                                <div class="w-full max-w-4xl mx-auto">
+                                    <div id="search-filter-unit" class="relative flex items-center">
+                                        <input id="search-bar-new" class="search-input flex-1 h-[46px] md:h-[52px] rounded-l-full border-r-0" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                        <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
+                                            <span>Filter</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                                        </button>
+                                        <div id="filter-menu" class="hidden absolute right-0 top-[calc(100%+0.5rem)] w-72 bg-card border border-color rounded-xl shadow-lg z-20"></div>
+                                    </div>
+                                </div>
+                                <div id="search-results-container" class="w-full max-w-4xl mx-auto mt-4"></div>
+                            </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
-                            <div id="top-tools-strip" class="mb-6"></div>
+                            <div id="top-tools-strip" class="mb-10 md:mb-12"></div>
 
-                            <h2 class="text-3xl font-bold text-primary mb-8">Explore AI tools by domain</h2>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <h2 class="text-3xl font-bold text-primary mb-6 md:mb-8 mt-6 md:mt-4">Explore AI tools by domain</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-7 lg:gap-8">
                                 ${ getOrderedDomains().map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
                             </div>
                         </div>
