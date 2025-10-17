@@ -1600,13 +1600,14 @@
                         if (!topStripEl) return;
                         if (!topTools || topTools.length === 0) { topStripEl.innerHTML = ''; return; }
                         const visible = Math.min(getTopVisible(), topTools.length);
+                        const iconSize = ((window.innerWidth || 0) < 640) ? 40 : 48;
                         // duplicate first `visible` items to end for seamless looping
                         const trackTools = topTools.concat(topTools.slice(0, visible));
                         const gaps = Math.max(0, visible - 1);
                         const itemWidthCalc = `calc((100% - (${gaps} * ${GAP_REM}rem)) / ${visible})`;
                         const items = trackTools.map((t, idx) => `
                             <div class="top-item flex flex-col items-center justify-center px-1 py-2 card-hover-effect min-w-0" data-real-idx="${idx % topTools.length}" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
-                                ${stripIconImgHtml(t, 48)}
+                                ${stripIconImgHtml(t, iconSize)}
                                 <span class="mt-2 text-sm font-medium text-center truncate w-full" title="${escapeHtml(t?.name)}">${escapeHtml(t?.name)}</span>
                             </div>
                         `);
@@ -1619,6 +1620,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="sm:hidden text-center mt-1 text-secondary select-none" aria-hidden="true">• • •</div>
                             </div>
                         `;
 
@@ -1659,7 +1661,7 @@
                             }
                         }
                         function applyTransform(withTransition = true) {
-                            trackEl.style.transition = withTransition ? `transform ${TRANSITION_MS}ms ease` : 'none';
+                            trackEl.style.transition = withTransition ? `transform ${TRANSITION_MS}ms cubic-bezier(0.22, 1, 0.36, 1)` : 'none';
                             trackEl.style.transform = `translateX(${-step * deltaX}px)`;
                         }
 
