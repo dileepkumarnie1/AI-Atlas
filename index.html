@@ -66,12 +66,12 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.60); /* increased opacity */
+            background: rgba(255,255,255,0.50); /* increased opacity */
             z-index: 1; /* above background image, below app */
             pointer-events: none;
         }
         html.dark #background-overlay {
-            background: rgba(30,41,59,0.60);
+            background: rgba(30,41,59,0.50);
         }
         /* Mobile: avoid iOS background-attachment jank */
         @media (max-width: 768px) {
@@ -1582,7 +1582,10 @@
                             .map(x => x.tool);
                     }
 
-                    const TOP_VISIBLE = 5;
+                    // Responsive visible count for carousel: 3 on mobile (<640px), 5 otherwise
+                    function getTopVisible() {
+                        try { return (window.innerWidth || 0) < 640 ? 3 : 5; } catch { return 5; }
+                    }
                     const STEP_MS = 2000; // time per slide step
                     const TRANSITION_MS = 500; // slide animation duration
                     const GAP_REM = 0.45; // reduced by ~25% from 0.6rem (visible spacing)
@@ -1596,10 +1599,11 @@
                     function renderTopStrip() {
                         if (!topStripEl) return;
                         if (!topTools || topTools.length === 0) { topStripEl.innerHTML = ''; return; }
-                        const visible = Math.min(TOP_VISIBLE, topTools.length);
+                        const visible = Math.min(getTopVisible(), topTools.length);
                         // duplicate first `visible` items to end for seamless looping
                         const trackTools = topTools.concat(topTools.slice(0, visible));
-                        const itemWidthCalc = `calc((100% - (4 * ${GAP_REM}rem)) / 5)`; // 4 gaps for 5 items
+                        const gaps = Math.max(0, visible - 1);
+                        const itemWidthCalc = `calc((100% - (${gaps} * ${GAP_REM}rem)) / ${visible})`;
                         const items = trackTools.map((t, idx) => `
                             <div class="top-item flex flex-col items-center justify-center px-1 py-2 card-hover-effect min-w-0" data-real-idx="${idx % topTools.length}" style="flex:0 0 ${itemWidthCalc};max-width:${itemWidthCalc};">
                                 ${stripIconImgHtml(t, 48)}
@@ -1609,7 +1613,7 @@
                         topStripEl.innerHTML = `
                             <div class="max-w-4xl mx-auto">
                                 <div id="top-strip-container" class="relative bg-secondary/40 border border-color rounded-2xl p-3 overflow-hidden">
-                                    <div id="top-strip-viewport" class="overflow-hidden rounded-full" style="cursor:grab; -webkit-mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%);">
+                                    <div id="top-strip-viewport" class="overflow-hidden rounded-full" style="cursor:grab; touch-action: pan-y; -webkit-mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black ${EDGE_FADE_PX}px, black calc(100% - ${EDGE_FADE_PX}px), transparent 100%);">
                                         <div id="top-strip-track" class="flex items-start will-change-transform" style="gap:${GAP_REM}rem; transform: translateX(0); transition: transform ${TRANSITION_MS}ms ease;">
                                             ${items.join('')}
                                         </div>
@@ -1623,17 +1627,17 @@
                         const viewportEl = document.getElementById('top-strip-viewport');
                         if (!trackEl || !containerEl) return;
 
-                        // Direct item handlers (click + pointerup) using data-real-idx
+                        // Direct item handlers (click) using data-real-idx; suppress accidental navigation after drag
                         trackEl.querySelectorAll('.top-item').forEach((el) => {
-                            const handler = (e) => {
-                                if (didDrag) return; // ignore after drag
+                            el.addEventListener('click', (e) => {
+                                if (didDrag) return;
+                                e.preventDefault();
+                                e.stopPropagation();
                                 const ri = Number(el.getAttribute('data-real-idx'));
                                 if (!Number.isFinite(ri)) return;
                                 const t = topTools[ri];
-                                if (t && t.name) openToolByName(t.name);
-                            };
-                            el.addEventListener('click', handler);
-                            el.addEventListener('pointerup', handler);
+                                if (t && t.name && typeof openToolByName === 'function') openToolByName(t.name);
+                            });
                         });
 
                         let step = 0; // number of items shifted
@@ -1662,9 +1666,18 @@
                         measureDelta();
                         applyTransform(false);
 
-                        // Handle resize: recompute delta and re-apply transform for current step
-                        window.topStripResizeHandler = () => { measureDelta(); applyTransform(false); };
+                        // Handle resize: re-render if visible count changes, else recompute
+                        window.topStripResizeHandler = () => {
+                            const newVisible = Math.min(getTopVisible(), topTools.length);
+                            if (typeof window.topStripLastVisible === 'number' && window.topStripLastVisible !== newVisible) {
+                                renderTopStrip();
+                                return;
+                            }
+                            measureDelta();
+                            applyTransform(false);
+                        };
                         window.addEventListener('resize', window.topStripResizeHandler);
+                        window.topStripLastVisible = visible;
 
                         function forwardOne() {
                             step += 1;
@@ -1701,7 +1714,7 @@
                         containerEl.addEventListener('mouseenter', () => { if (window.topStripInterval) { clearInterval(window.topStripInterval); window.topStripInterval = null; } });
                         containerEl.addEventListener('mouseleave', () => { if (!window.topStripInterval && !isDragging) startRotation(); });
 
-                        // Drag-to-scroll with snap
+                        // Drag-to-scroll with snap (pointer events only; touch supported)
                         if (viewportEl) {
                             const onPointerDown = (e) => {
                                 isDragging = true; didDrag = false; dragDx = 0; stepAtDown = step;
@@ -1738,10 +1751,8 @@
                             viewportEl.addEventListener('pointermove', onPointerMove);
                             viewportEl.addEventListener('pointerup', onPointerUp);
                             viewportEl.addEventListener('pointercancel', onPointerUp);
-                            // Fallback for touch-only
-                            viewportEl.addEventListener('touchstart', onPointerDown, { passive: true });
-                            viewportEl.addEventListener('touchmove', onPointerMove, { passive: true });
-                            viewportEl.addEventListener('touchend', onPointerUp);
+                            // Ensure vertical scroll still works while allowing horizontal drag
+                            try { viewportEl.style.touchAction = 'pan-y'; } catch {}
                         }
 
                         // Start
