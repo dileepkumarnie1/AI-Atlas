@@ -83,7 +83,7 @@
         }
         /* Filter backdrop to prevent underlying content from showing/clicking */
         #filter-backdrop {
-            position: fixed; inset: 0; z-index: 40; background: transparent; backdrop-filter: none; /* capture clicks only and stay below header/menu */
+            position: fixed; inset: 0; z-index: 40; background: transparent; backdrop-filter: none; pointer-events: none; /* disabled by default to avoid stray tap blocks */
         }
         /* Make filter menu more opaque and above contents */
     #filter-menu { z-index: 1000; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; overscroll-behavior: contain; pointer-events: auto; touch-action: pan-y; -webkit-overflow-scrolling: touch; color: var(--text-primary); }
@@ -1849,6 +1849,20 @@
                     // initial render
                     renderTopStrip();
 
+                    // Ensure any stale filter UI is hidden on render
+                    try {
+                        const staleMenu = document.getElementById('filter-menu');
+                        const staleBackdrop = document.getElementById('filter-backdrop');
+                        if (staleMenu) staleMenu.classList.add('hidden');
+                        if (staleBackdrop) { staleBackdrop.style.display = 'none'; staleBackdrop.style.pointerEvents = 'none'; }
+                        window.addEventListener('orientationchange', () => {
+                            const bd = document.getElementById('filter-backdrop');
+                            const mm = document.getElementById('filter-menu');
+                            if (bd) { bd.style.display = 'none'; bd.style.pointerEvents = 'none'; }
+                            if (mm) mm.classList.add('hidden');
+                        });
+                    } catch {}
+
                     // Reattach listeners for domain grid cards
                     attachDomainCardListeners();
 
@@ -1942,8 +1956,8 @@
                             }
                             return bd;
                         };
-                        const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; };
-                        const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) bd.style.display = 'none'; };
+                        const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; bd.style.pointerEvents = 'auto'; };
+                        const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) { bd.style.display = 'none'; bd.style.pointerEvents = 'none'; } };
                         const hideMenu = () => {
                             menu.classList.add('hidden'); hideBackdrop();
                             if (window.filterMenuResizeHandler) { window.removeEventListener('resize', window.filterMenuResizeHandler); window.filterMenuResizeHandler = null; }
@@ -2038,6 +2052,13 @@
                         };
                         btn.onclick = openHandler;
                         try { btn.addEventListener('pointerdown', openHandler); } catch {}
+                        // On some Android builds, using touchstart+preventDefault then delayed open is the most reliable
+                        try {
+                            btn.addEventListener('touchstart', (te) => {
+                                try { te.preventDefault(); te.stopPropagation(); } catch {}
+                                setTimeout(() => openHandler(te), 0);
+                            }, { passive: false });
+                        } catch {}
                         try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
                         try { btn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openHandler(ev); } }); } catch {}
                         // Prevent interactions inside the menu from bubbling to the document handler
