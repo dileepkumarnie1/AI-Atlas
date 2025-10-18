@@ -81,6 +81,14 @@
             z-index: 1; /* above background image, below app */
             pointer-events: none;
         }
+        /* Filter backdrop to prevent underlying content from showing/clicking */
+        #filter-backdrop {
+            position: fixed; inset: 0; z-index: 60; background: rgba(2,6,23,0.45); backdrop-filter: blur(2px);
+        }
+        /* Make filter menu more opaque and above contents */
+        #filter-menu { z-index: 70; background: rgba(255,255,255,0.97) !important; }
+        html.dark #filter-menu { background: rgba(24,24,27,0.97) !important; }
+        @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 16px !important; left: 16px !important; } }
         html.dark #background-overlay {
             background: rgba(30,41,59,0.50);
         }
@@ -1911,12 +1919,27 @@
                         if (closeBtn) closeBtn.onclick = () => toggleFilterMenu(false);
 
                         // Button toggle
+                        const ensureBackdrop = () => {
+                            let bd = document.getElementById('filter-backdrop');
+                            if (!bd) {
+                                bd = document.createElement('div');
+                                bd.id = 'filter-backdrop';
+                                bd.style.display = 'none';
+                                document.body.appendChild(bd);
+                                bd.addEventListener('click', () => { hideMenu(); });
+                            }
+                            return bd;
+                        };
+                        const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; };
+                        const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) bd.style.display = 'none'; };
+                        const hideMenu = () => { menu.classList.add('hidden'); hideBackdrop(); };
                         const toggleFilterMenu = (force) => {
                             const shouldShow = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
                             if (shouldShow) {
                                 menu.classList.remove('hidden');
+                                showBackdrop();
                             } else {
-                                menu.classList.add('hidden');
+                                hideMenu();
                             }
                         };
                         // Attach button handler once per render
@@ -1932,7 +1955,7 @@
                             const unit = document.getElementById('search-filter-unit');
                             if (!unit) return;
                             if (!unit.contains(ev.target)) {
-                                menu.classList.add('hidden');
+                                hideMenu();
                             }
                         };
                         document.addEventListener('click', window.filterOutsideClick);
@@ -1942,7 +1965,7 @@
                         }
                         window.filterEscapeHandler = (ev) => {
                             if (ev.key === 'Escape') {
-                                menu.classList.add('hidden');
+                                hideMenu();
                             }
                         };
                         document.addEventListener('keydown', window.filterEscapeHandler);
