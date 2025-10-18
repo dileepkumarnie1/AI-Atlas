@@ -79,17 +79,26 @@ landscape = browser.new_context(
 
 **Improve backdrop visibility and z-index:**
 ```css
+/* BEFORE: Low z-index and invisible */
 #filter-backdrop {
-    position: fixed; 
-    inset: 0; 
-    z-index: 999;  /* ✓ Changed from 40 to 999 */
-    background: rgba(0, 0, 0, 0.3);  /* ✓ Changed from transparent */
-    backdrop-filter: blur(2px);  /* ✓ Added blur effect */
+    position: fixed; inset: 0; 
+    z-index: 40;  /* ❌ Too low, below button */
+    background: transparent;  /* ❌ Invisible */
+    backdrop-filter: none;
+    pointer-events: none;
+}
+
+/* AFTER: Proper z-index and visible */
+#filter-backdrop {
+    position: fixed; inset: 0; 
+    z-index: 999;  /* ✓ Above button (101) but below menu (1000) */
+    background: rgba(0, 0, 0, 0.3);  /* ✓ Visible semi-transparent */
+    backdrop-filter: blur(2px);  /* ✓ Blur effect */
     pointer-events: none;
 }
 
 html.dark #filter-backdrop {
-    background: rgba(0, 0, 0, 0.5);  /* ✓ Added dark mode variant */
+    background: rgba(0, 0, 0, 0.5);  /* ✓ Darker in dark mode */
 }
 ```
 
@@ -190,24 +199,18 @@ FD-001 was excluded from this fix per the instructions: "ignore FD-001 issue and
 
 ## Verification
 
-To verify the fixes are in place, run:
-```bash
-cd /home/runner/work/AI-Atlas/AI-Atlas
-python3 /tmp/verify_fixes.py
-```
+A verification script was created during development to confirm all fixes. The key changes to verify are:
 
-All checks should pass with the message:
-```
-✓ ALL CHECKS PASSED!
+1. ✓ CSS media query with `top: 100% !important` removed from filter-menu
+2. ✓ Backdrop z-index is 999 (not 40)
+3. ✓ Backdrop has visible background `rgba(0, 0, 0, 0.3)`
+4. ✓ Touch handlers added to filter button, category buttons, backdrop
+5. ✓ `has_touch=True` in test mobile contexts
 
-All fixes have been successfully applied:
-  • Touch support enabled in tests
-  • Filter button touch handlers added
-  • Category buttons touch handlers added
-  • Backdrop touch handlers added
-  • Conflicting CSS media query removed
-  • Backdrop z-index and visibility improved
-```
+You can manually verify by:
+- Checking `index.html` line ~85-95 for backdrop CSS
+- Checking `index.html` line ~2090-2110 for touch handlers
+- Checking `tests/run_ui_tests.py` line ~702-705 for `has_touch=True`
 
 ## Files Changed
 
