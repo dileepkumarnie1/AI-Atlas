@@ -1,11 +1,11 @@
 # Filter Dropdown Test Suite
 
 ## Overview
-Added 10 comprehensive test cases (FD-001 to FD-010) for the Filter Dropdown feature in `run_ui_tests.py`.
+Comprehensive test suite with **22 test cases** (FD-001 to FD-010, FD-M01 to FD-M12) covering desktop and mobile functionality for the Filter Dropdown feature.
 
 ## Test Coverage
 
-### Desktop Tests
+### Desktop Tests (10 tests)
 - **FD-001**: Filter button visible and clickable on desktop
 - **FD-003**: Dropdown shows category list with counts
 - **FD-004**: Selecting category filters results and closes dropdown
@@ -16,8 +16,20 @@ Added 10 comprehensive test cases (FD-001 to FD-010) for the Filter Dropdown fea
 - **FD-009**: Clear button resets category selection
 - **FD-010**: Done button closes dropdown without changing selection
 
-### Mobile Tests
+### Mobile Tests (12 tests)
 - **FD-002**: Filter button responsive on mobile portrait (375x667)
+- **FD-M01**: Filter button tap registers immediately (no 300ms delay)
+- **FD-M02**: Filter button z-index prevents tap blocking
+- **FD-M03**: Dropdown positions below button on small screens
+- **FD-M04**: Dropdown width fits viewport (no horizontal overflow)
+- **FD-M05**: Touch scroll works inside dropdown (no page scroll)
+- **FD-M06**: Category button tap registers (touch event handling)
+- **FD-M07**: Backdrop tap closes dropdown
+- **FD-M08**: Filter button and dropdown remain accessible in landscape
+- **FD-M09**: Dropdown max-height respects viewport (no cut-off)
+- **FD-M10**: Multi-touch doesn't cause multiple opens
+- **FD-M11**: Pointer events don't leak through dropdown
+- **FD-M12**: Filter persists after device orientation change
 
 ## Running the Tests
 
@@ -44,8 +56,17 @@ python tests/run_ui_tests.py --features "Filter Dropdown"
 # Run only FD-001 and FD-002
 python tests/run_ui_tests.py --ids "FD-001,FD-002"
 
-# Run mobile-specific test
-python tests/run_ui_tests.py --ids "FD-002"
+# Run all mobile-specific tests (FD-002 + FD-M01 to FD-M12)
+python tests/run_ui_tests.py --ids "FD-002,FD-M01,FD-M02,FD-M03,FD-M04,FD-M05,FD-M06,FD-M07,FD-M08,FD-M09,FD-M10,FD-M11,FD-M12"
+
+# Run critical mobile tests only (P0 priority)
+python tests/run_ui_tests.py --ids "FD-M01,FD-M02,FD-M05,FD-M06"
+
+# Run Android Chrome tap responsiveness tests
+python tests/run_ui_tests.py --ids "FD-M01,FD-M02,FD-M06,FD-M07"
+
+# Run mobile viewport/layout tests
+python tests/run_ui_tests.py --ids "FD-M03,FD-M04,FD-M08,FD-M09"
 ```
 
 ### List All Available Features
@@ -62,9 +83,9 @@ Results are saved to:
 - `tests/output/screenshots/` - Screenshots for each test
 
 ## Priority Levels
-- **P0** (Critical): FD-001, FD-002, FD-004
-- **P1** (High): FD-003, FD-005, FD-007, FD-009
-- **P2** (Medium): FD-006, FD-008, FD-010
+- **P0** (Critical): FD-001, FD-002, FD-004, FD-M01, FD-M02, FD-M05, FD-M06
+- **P1** (High): FD-003, FD-005, FD-007, FD-009, FD-M03, FD-M04, FD-M07, FD-M09, FD-M11
+- **P2** (Medium): FD-006, FD-008, FD-010, FD-M08, FD-M10, FD-M12
 
 ## Test Scenarios Covered
 
@@ -73,25 +94,38 @@ Results are saved to:
 - Click responsiveness
 - Dropdown positioning below button
 
-### 2. Content Display (FD-003)
+### 2. Mobile Responsiveness & Touch (FD-M01 to FD-M12)
+- **Tap Responsiveness**: Immediate tap registration without 300ms delay (FD-M01)
+- **Z-index Hierarchy**: Prevents backdrop/overlay tap blocking (FD-M02)
+- **Positioning**: Dropdown below button on portrait (FD-M03), landscape support (FD-M08)
+- **Viewport Constraints**: Width fits screen (FD-M04), max-height <= 60vh (FD-M09)
+- **Touch Scrolling**: Internal scroll with overscroll containment (FD-M05)
+- **Touch Events**: Category button tap handling, backdrop tap-to-close (FD-M06, FD-M07)
+- **Edge Cases**: Multi-touch debouncing (FD-M10), pointer-events isolation (FD-M11)
+- **State Persistence**: Filter survives orientation changes (FD-M12)
+
+### 3. Content Display (FD-003)
 - Category list with counts format: "Name (count)"
 - All categories option present
 
-### 3. Interaction Flow (FD-004, FD-009, FD-010)
+### 4. Interaction Flow (FD-004, FD-009, FD-010)
 - Category selection closes dropdown
 - Clear button resets to "All"
 - Done button closes without changes
 
-### 4. User Experience (FD-005, FD-006, FD-007, FD-008)
+### 5. User Experience (FD-005, FD-006, FD-007, FD-008)
 - Internal scrolling without page scroll
 - Dark mode text contrast
 - Outside click to close
 - ESC key to close
 
 ## Known Issues to Watch For
-- **Android Chrome Portrait**: Higher z-index required (100/101)
-- **Mobile Touch Events**: Uses touchstart/pointerdown/touchend for reliability
-- **Backdrop Interference**: pointer-events controlled to avoid blocking taps
+- **Android Chrome Portrait**: Higher z-index required (100/101) - validated by FD-M02
+- **Mobile Touch Events**: Uses touchstart/pointerdown/touchend for reliability - validated by FD-M01, FD-M06
+- **Backdrop Interference**: pointer-events controlled to avoid blocking taps - validated by FD-M07, FD-M11
+- **300ms Tap Delay**: Debouncing and preventDefault() used to eliminate ghost clicks - validated by FD-M01
+- **Touch Scroll Leaking**: overscroll-behavior: contain prevents page scroll - validated by FD-M05
+- **Viewport Overflow**: max-width: 90vw and max-height: 60vh constraints - validated by FD-M04, FD-M09
 
 ## Integration with CI/CD
 ```bash
