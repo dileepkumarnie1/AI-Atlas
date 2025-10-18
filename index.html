@@ -327,21 +327,21 @@
         .search-wrapper { max-width: 900px; margin: 0 auto 1.5rem; display:flex; gap:8px; align-items:center; }
         .search-input { flex:1; padding:0.75rem 1rem; border-radius:0.75rem; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); }
         .search-clear { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.75rem; border-radius:0.5rem; color:var(--text-secondary); }
-    /* Fluid, auto-fitting search grid */
-    .search-results { margin-top:1rem; display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    @media(min-width:640px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
-    @media(min-width:1024px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+    /* Fluid, auto-fitting search grid (smaller tiles, more spacing) */
+    .search-results { margin-top:1rem; display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    @media(min-width:640px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); } }
+    @media(min-width:1024px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
         .tile-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 0.75rem;
-            padding: 0.75rem;
+            padding: 0.6rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             gap: 0.5rem;
-            aspect-ratio: 5 / 6; /* slightly shorter */
+            /* Let height be content-driven for compact tiles */
             text-align: center;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
@@ -349,7 +349,7 @@
         html.dark .tile-card:hover { box-shadow: 0 8px 18px rgba(0,0,0,.25), 0 0 12px rgba(76, 29, 149, 0.25); }
     .tile-title { font-weight: 700; color: var(--text-primary); font-size: 0.9rem; line-height: 1.2; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; }
     .tile-desc { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
-    .tile-blurb { color: var(--text-secondary); font-size: 0.78rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
+    .tile-blurb { color: var(--text-primary); font-weight: 700; font-size: 0.8rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; background: rgba(124, 58, 237, 0.10); border: 1px solid rgba(124, 58, 237, 0.25); padding: 4px 8px; border-radius: 9999px; }
         .tile-tags { display:flex; gap:6px; flex-wrap: wrap; justify-content: center; }
         .tile-actions { display:flex; gap:8px; align-items:center; justify-content:center; }
         .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
@@ -961,8 +961,12 @@
                 const icon = tool?.iconUrl || '';
                 const iconHost = getHostnameFromLink(icon);
                 const baseHost = linkHost || iconHost || '';
-                // Ask for a larger source so downscaling looks crisp
-                const s2 = baseHost ? `https://www.google.com/s2/favicons?domain=${baseHost}&sz=${Math.max(64, size*2)}` : '';
+                // Request multiple sizes so the browser can pick the sharpest for DPR
+                const s2base = baseHost ? `https://www.google.com/s2/favicons?domain=${baseHost}` : '';
+                const s2 = s2base ? `${s2base}&sz=${Math.max(64, size*2)}` : '';
+                const s2_64 = s2base ? `${s2base}&sz=64` : '';
+                const s2_128 = s2base ? `${s2base}&sz=128` : '';
+                const s2_256 = s2base ? `${s2base}&sz=256` : '';
                 const duck = baseHost ? `https://icons.duckduckgo.com/ip3/${baseHost}.ico` : '';
                 const placeholder = getLightPlaceholder(tool?.name, size);
 
@@ -976,20 +980,23 @@
                 const sameOrigin = !!(icon && iconHost && linkHost && iconHost === linkHost);
                 const trustedIcon = !!(icon && (sameOrigin || TRUSTED_ICON_HOSTS.has(iconHost)));
 
+                let primary, secondary, srcset = '';
                 if (trustedIcon) {
-                    const primary = icon;
-                    const secondary = s2 || duck || placeholder;
-                    return { primary, secondary, placeholder };
+                    primary = icon;
+                    secondary = s2 || duck || placeholder;
+                    srcset = s2base ? `${s2_64} 1x, ${s2_128} 2x, ${s2_256} 3x` : '';
                 } else {
-                    const primary = s2 || duck || icon || placeholder;
-                    const secondary = (primary === icon ? (s2 || duck) : (icon || duck)) || placeholder;
-                    return { primary, secondary, placeholder };
+                    primary = s2 || duck || icon || placeholder;
+                    secondary = (primary === icon ? (s2 || duck) : (icon || duck)) || placeholder;
+                    srcset = s2base ? `${s2_64} 1x, ${s2_128} 2x, ${s2_256} 3x` : '';
                 }
+                return { primary, secondary, placeholder, srcset };
             }
             function iconImgHtml(tool, size=40, extraClass='') {
-                const { primary, secondary, placeholder } = buildIconSources(tool, size);
+                const { primary, secondary, placeholder, srcset } = buildIconSources(tool, size);
                 const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
-                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;object-fit:contain;image-rendering:crisp-edges" class="rounded-md bg-white/70 backdrop-blur-[1px] ${extraClass}" onerror="${onerr}" loading="lazy" decoding="async">`;
+                const srcsetAttr = srcset ? ` srcset="${srcset}" sizes="${size}px"` : '';
+                return `<img src="${primary}"${srcsetAttr} alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;object-fit:contain;image-rendering:auto" class="rounded-md bg-white/80 ${extraClass}" onerror="${onerr}" loading="lazy" decoding="async">`;
             }
             function formatCountShort(n) {
                 if (typeof n !== 'number' || !isFinite(n) || n <= 0) return '';
@@ -1099,7 +1106,7 @@
             }
 
             function renderSearchTile(tool) {
-                const iconHtml = iconImgHtml(tool, 56, 'mb-2 cursor-pointer open-tool-logo');
+                const iconHtml = iconImgHtml(tool, 52, 'mb-2 cursor-pointer open-tool-logo');
                 const blurb = (() => {
                     const q = String(state.searchQuery||'').toLowerCase();
                     const tags = (tool.tags||[]).map(t=>String(t).toLowerCase());
