@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -25,8 +27,43 @@ jobs:
             npm install
           fi
 
+      # Optionally fetch the latest tools from Firestore so the audit uses
+      # the current catalog at run time. Provide one of these repository secrets:
+      # - FIREBASE_SA_JSON: the full JSON content of the service account (as a single secret)
+      # - FIREBASE_SA_BASE64: the base64-encoded JSON (useful for multiline secrets)
+      - name: Prepare Firebase credentials (optional)
+        id: fbcreds
+        shell: bash
+        env:
+          FIREBASE_SA_JSON: ${{ secrets.FIREBASE_SA_JSON }}
+          FIREBASE_SA_BASE64: ${{ secrets.FIREBASE_SA_BASE64 }}
+        run: |
+          set -e
+          FILE="$RUNNER_TEMP/firebase-sa.json"
+          if [ -n "${FIREBASE_SA_JSON:-}" ]; then
+            echo "$FIREBASE_SA_JSON" > "$FILE"
+            echo "GOOGLE_APPLICATION_CREDENTIALS=$FILE" >> "$GITHUB_ENV"
+            echo "wrote=json" >> "$GITHUB_OUTPUT"
+          elif [ -n "${FIREBASE_SA_BASE64:-}" ]; then
+            echo "$FIREBASE_SA_BASE64" | base64 -d > "$FILE"
+            echo "GOOGLE_APPLICATION_CREDENTIALS=$FILE" >> "$GITHUB_ENV"
+            echo "wrote=base64" >> "$GITHUB_OUTPUT"
+          else
+            echo "No Firebase service account provided; skipping export."
+            echo "wrote=none" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Export latest tools from Firestore (optional)
+        if: env.GOOGLE_APPLICATION_CREDENTIALS != ''
+        run: |
+          node ./scripts/export-tools.mjs --key "$GOOGLE_APPLICATION_CREDENTIALS"
+
       - name: Run pricing audit
         run: npm run audit:pricing
+
+      - name: Print audit summary
+        run: |
+          node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); console.log('Counts:', j.counts); if (j.anomalies && j.anomalies.length){ console.log('First anomalies (max 20):'); j.anomalies.slice(0,20).forEach((a,i)=>console.log(i+1, a)); } else { console.log('No pricing anomalies.'); }"
 
       - name: Upload audit artifacts
         uses: actions/upload-artifact@v4
