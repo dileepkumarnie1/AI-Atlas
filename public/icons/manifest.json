@@ -139,5 +139,11 @@
   "finance-accounting::chronulus-mcp": "public/icons/finance-accounting/chronulus-mcp.ico",
   "finance-accounting::finance": "public/icons/finance-accounting/finance.ico",
   "finance-accounting::rever": "public/icons/finance-accounting/rever.svg",
-  "voice-speech-ai::llplayer": "public/icons/voice-speech-ai/llplayer.ico"
+  "voice-speech-ai::llplayer": "public/icons/voice-speech-ai/llplayer.ico",
+  "image-generation::zenctrl": "public/icons/image-generation/zenctrl.png",
+  "voice-speech-ai::openai-edge-tts": "public/icons/voice-speech-ai/openai-edge-tts.ico",
+  "gaming-entertainment::bevy_generative": "public/icons/gaming-entertainment/bevy-generative.png",
+  "gaming-entertainment::notebook": "public/icons/gaming-entertainment/notebook.png",
+  "cybersecurity::hexstrike-ai": "public/icons/cybersecurity/hexstrike-ai.png",
+  "cybersecurity::superagent": "public/icons/cybersecurity/superagent.png"
 }
