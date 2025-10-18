@@ -1592,12 +1592,8 @@
                         <div class="relative">
                             <!-- Hero: centered title + search -->
                             <section class="min-h-[46vh] md:min-h-[52vh] flex flex-col justify-center items-center text-center">
-                                <div class="mb-4 md:mb-6">
-                                    <h1 class="text-[2.25rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
-                                    <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
-                                </div>
                                 <!-- Tool Count Banner -->
-                                <div class="mb-4 md:mb-6">
+                                <div class="mb-3 md:mb-4">
                                     <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50/40 to-pink-50/40 dark:from-purple-900/20 dark:to-pink-900/20 px-6 py-2.5 rounded-full border border-purple-200/50 dark:border-purple-700/50 shadow-sm backdrop-blur-sm">
                                         <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
@@ -1606,6 +1602,10 @@
                                             ${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); const rounded = Math.round(total / 100) * 100; return rounded; })()}+ AI Tools Curated
                                         </span>
                                     </div>
+                                </div>
+                                <div class="mb-4 md:mb-6">
+                                    <h1 class="text-[2.25rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
+                                    <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
                                 </div>
                                 <!-- Unified Search + Filter dropdown -->
                                 <div class="w-full max-w-4xl mx-auto">
@@ -1626,7 +1626,7 @@
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
-                            <div id="top-tools-strip" class="mb-10 md:mb-12"></div>
+                            <div id="top-tools-strip" class="mb-10 md:mb-12 mt-6 md:mt-8"></div>
 
                             <div id="domain-tiles-anchor" class="h-0"></div>
                             <h2 class="text-3xl font-bold text-primary mb-6 md:mb-8 mt-6 md:mt-4">Explore AI tools by domain</h2>
@@ -1720,7 +1720,7 @@
                                     <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                     </svg>
-                                    <h2 class="text-2xl md:text-3xl font-bold text-primary">Most Popular AI Tools</h2>
+                                    <h2 class="text-xl md:text-[1.6rem] font-bold text-primary">Most Popular AI Tools</h2>
                                     <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                     </svg>
@@ -3016,8 +3016,8 @@
             const url = new URL(window.location.href);
             const override = url.searchParams.get('bgmp4');
             if(override){ source.src = override; vid.load(); }
-            // Slow down video by 20% (playback rate = 0.8)
-            vid.playbackRate = 0.8;
+            // Slow down video by 40% total (playback rate = 0.6)
+            vid.playbackRate = 0.6;
             const show = ()=>{ vid.style.opacity = '1'; };
             vid.addEventListener('loadeddata', show, { once: true });
             // Fallback reveal after a second in case readyState already good
