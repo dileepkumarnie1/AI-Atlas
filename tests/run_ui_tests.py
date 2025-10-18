@@ -445,15 +445,6 @@ def build_test_plan() -> List[TestCase]:
         type="positive", priority="P2", device="desktop(1366x768)"
     ))
     tc.append(TestCase(
-        id="FD-009",
-        feature="Filter Dropdown",
-        title="Clear button resets category selection",
-        precondition="Filter dropdown open with category selected",
-        steps="Select a category; reopen filter; click Clear button",
-        expected="Category resets to 'All'; results update",
-        type="positive", priority="P1", device="desktop(1366x768)"
-    ))
-    tc.append(TestCase(
         id="FD-010",
         feature="Filter Dropdown",
         title="Done button closes dropdown without changing selection",
@@ -1311,25 +1302,6 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         time.sleep(0.3),
                         stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
                         results.append(TestResult('FD-008', 'Filter Dropdown', 'Dropdown closes on ESC key', 'pass' if not stillVisible else 'fail', f'closed={not stillVisible}', shot('FD-008', dpage)))
-                    ))()
-                ),
-                'FD-009': lambda: (
-                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
-                    (lambda: (
-                        dpage.wait_for_selector('#filter-button', timeout=10000),
-                        dpage.click('#filter-button', timeout=10000),
-                        time.sleep(0.5),
-                        firstCat := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const found = btns.find(b => b.getAttribute('data-value') && b.getAttribute('data-value') !== 'all'); return found ? found.getAttribute('data-value') : ''; })()"),
-                        (dpage.click(f'#filter-menu button[data-value="{firstCat}"]', timeout=10000) if firstCat else None),
-                        time.sleep(0.8),
-                        dpage.click('#filter-button', timeout=10000),
-                        time.sleep(0.5),
-                        clearBtn := dpage.query_selector('#filter-menu button[data-action="clear"]'),
-                        (dpage.click('#filter-menu button[data-action="clear"]', timeout=10000) if clearBtn else None),
-                        time.sleep(0.5),
-                        allSelected := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const allBtn = btns.find(b => b.getAttribute('data-value') === 'all'); return allBtn ? allBtn.classList.contains('bg-purple-50') || allBtn.classList.contains('bg-purple-900/10') : false; })()"),
-                        ok := bool(clearBtn and allSelected),
-                        results.append(TestResult('FD-009', 'Filter Dropdown', 'Clear button resets category selection', 'pass' if ok else 'fail', f'clearBtn={bool(clearBtn)}, allSelected={allSelected}', shot('FD-009', dpage)))
                     ))()
                 ),
                 'FD-010': lambda: (

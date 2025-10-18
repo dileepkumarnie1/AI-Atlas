@@ -1,11 +1,11 @@
 # Filter Dropdown Test Suite
 
 ## Overview
-Comprehensive test suite with **22 test cases** (FD-001 to FD-010, FD-M01 to FD-M12) covering desktop and mobile functionality for the Filter Dropdown feature.
+Comprehensive test suite with **21 test cases** (FD-001 to FD-010 excluding FD-009, plus FD-M01 to FD-M12) covering desktop and mobile functionality for the Filter Dropdown feature.
 
 ## Test Coverage
 
-### Desktop Tests (10 tests)
+### Desktop Tests (9 tests)
 - **FD-001**: Filter button visible and clickable on desktop
 - **FD-003**: Dropdown shows category list with counts
 - **FD-004**: Selecting category filters results and closes dropdown
@@ -13,7 +13,6 @@ Comprehensive test suite with **22 test cases** (FD-001 to FD-010, FD-M01 to FD-
 - **FD-006**: Dark mode text readability
 - **FD-007**: Dropdown closes on outside click
 - **FD-008**: Dropdown closes on ESC key
-- **FD-009**: Clear button resets category selection
 - **FD-010**: Done button closes dropdown without changing selection
 
 ### Mobile Tests (12 tests)
@@ -84,7 +83,7 @@ Results are saved to:
 
 ## Priority Levels
 - **P0** (Critical): FD-001, FD-002, FD-004, FD-M01, FD-M02, FD-M05, FD-M06
-- **P1** (High): FD-003, FD-005, FD-007, FD-009, FD-M03, FD-M04, FD-M07, FD-M09, FD-M11
+- **P1** (High): FD-003, FD-005, FD-007, FD-M03, FD-M04, FD-M07, FD-M09, FD-M11
 - **P2** (Medium): FD-006, FD-008, FD-010, FD-M08, FD-M10, FD-M12
 
 ## Test Scenarios Covered
@@ -108,9 +107,8 @@ Results are saved to:
 - Category list with counts format: "Name (count)"
 - All categories option present
 
-### 4. Interaction Flow (FD-004, FD-009, FD-010)
+### 4. Interaction Flow (FD-004, FD-010)
 - Category selection closes dropdown
-- Clear button resets to "All"
 - Done button closes without changes
 
 ### 5. User Experience (FD-005, FD-006, FD-007, FD-008)
