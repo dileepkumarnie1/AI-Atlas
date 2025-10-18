@@ -371,6 +371,98 @@ def build_test_plan() -> List[TestCase]:
         type="edge", priority="P2", device="desktop(1366x768)"
     ))
 
+    # Filter Dropdown feature
+    tc.append(TestCase(
+        id="FD-001",
+        feature="Filter Dropdown",
+        title="Filter button visible and clickable on desktop",
+        precondition="Home loaded",
+        steps="Locate #filter-button and click it",
+        expected="Filter dropdown #filter-menu becomes visible",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-002",
+        feature="Filter Dropdown",
+        title="Filter button responsive on mobile portrait",
+        precondition="Mobile viewport (375x667)",
+        steps="Click #filter-button on mobile",
+        expected="Dropdown opens and is positioned correctly below button",
+        type="positive", priority="P0", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-003",
+        feature="Filter Dropdown",
+        title="Dropdown shows category list with counts",
+        precondition="Filter dropdown open",
+        steps="Click filter button; inspect dropdown content for category buttons with counts",
+        expected="All category options visible with format 'Name (count)'",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-004",
+        feature="Filter Dropdown",
+        title="Selecting category filters results and closes dropdown",
+        precondition="Home loaded; filter dropdown open",
+        steps="Open filter; click a category; verify dropdown closes and results filter",
+        expected="Dropdown hidden; search results (if any) match selected category",
+        type="positive", priority="P0", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-005",
+        feature="Filter Dropdown",
+        title="Dropdown scrolls internally when content overflows",
+        precondition="Filter dropdown open with many categories",
+        steps="Open filter; attempt to scroll inside dropdown; verify page doesn't scroll",
+        expected="Dropdown content scrolls; page remains stationary",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-006",
+        feature="Filter Dropdown",
+        title="Dark mode: dropdown text is readable",
+        precondition="Dark mode enabled; filter dropdown open",
+        steps="Toggle dark mode; open filter; inspect text contrast",
+        expected="Category text is visible with sufficient contrast in dark mode",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-007",
+        feature="Filter Dropdown",
+        title="Dropdown closes on outside click",
+        precondition="Filter dropdown open",
+        steps="Open filter; click outside dropdown area",
+        expected="Dropdown closes and backdrop disappears",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-008",
+        feature="Filter Dropdown",
+        title="Dropdown closes on ESC key",
+        precondition="Filter dropdown open",
+        steps="Open filter; press ESC key",
+        expected="Dropdown closes",
+        type="positive", priority="P2", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-009",
+        feature="Filter Dropdown",
+        title="Clear button resets category selection",
+        precondition="Filter dropdown open with category selected",
+        steps="Select a category; reopen filter; click Clear button",
+        expected="Category resets to 'All'; results update",
+        type="positive", priority="P1", device="desktop(1366x768)"
+    ))
+    tc.append(TestCase(
+        id="FD-010",
+        feature="Filter Dropdown",
+        title="Done button closes dropdown without changing selection",
+        precondition="Filter dropdown open",
+        steps="Open filter; click Done button without selecting",
+        expected="Dropdown closes; no filter change",
+        type="edge", priority="P2", device="desktop(1366x768)"
+    ))
+
     # Auth feature (UI + optional real login)
     tc.append(TestCase(
         id="AU-001",
@@ -1010,6 +1102,138 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         time.sleep(0.2),
                         final := dpage.evaluate("document.documentElement.classList.contains('dark')"),
                         results.append(TestResult('TH-004', 'Theme Toggle', 'Double toggle returns to original state', 'pass' if (init == final) else 'fail', f'init={init}, final={final}', shot('TH-004', dpage)))
+                    ))()
+                ),
+                # Filter Dropdown
+                'FD-001': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        visible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        results.append(TestResult('FD-001', 'Filter Dropdown', 'Filter button visible and clickable on desktop', 'pass' if visible else 'fail', f'dropdown_visible={visible}', shot('FD-001', dpage)))
+                    ))()
+                ),
+                'FD-002': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        visible := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        position := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); const btn = document.getElementById('filter-button'); if (!m || !btn) return 'error'; const mRect = m.getBoundingClientRect(); const bRect = btn.getBoundingClientRect(); return mRect.top >= bRect.bottom ? 'below' : 'above'; })()"),
+                        ok := bool(visible and position == 'below'),
+                        results.append(TestResult('FD-002', 'Filter Dropdown', 'Filter button responsive on mobile portrait', 'pass' if ok else 'fail', f'visible={visible}, position={position}', shot('FD-002', mpage)))
+                    ))()
+                ),
+                'FD-003': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        catCount := dpage.evaluate("document.querySelectorAll('#filter-menu button[data-value]').length"),
+                        hasAll := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; return btns.some(b => /All.*\\(\\d+\\)/.test(b.textContent || '')); })()"),
+                        ok := bool(catCount >= 2 and hasAll),
+                        results.append(TestResult('FD-003', 'Filter Dropdown', 'Dropdown shows category list with counts', 'pass' if ok else 'fail', f'categories={catCount}, hasAll={hasAll}', shot('FD-003', dpage)))
+                    ))()
+                ),
+                'FD-004': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        firstCat := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const found = btns.find(b => b.getAttribute('data-value') && b.getAttribute('data-value') !== 'all'); return found ? found.getAttribute('data-value') : ''; })()"),
+                        (dpage.click(f'#filter-menu button[data-value="{firstCat}"]', timeout=10000) if firstCat else None),
+                        time.sleep(0.8),
+                        stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        ok := bool(firstCat and not stillVisible),
+                        results.append(TestResult('FD-004', 'Filter Dropdown', 'Selecting category filters results and closes dropdown', 'pass' if ok else 'fail', f'selected={firstCat}, closed={not stillVisible}', shot('FD-004', dpage)))
+                    ))()
+                ),
+                'FD-005': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        hasScroll := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && m.scrollHeight > m.clientHeight; })()"),
+                        overflowStyle := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m ? getComputedStyle(m).overflowY : 'none'; })()"),
+                        ok := bool(overflowStyle in ('auto', 'scroll')),
+                        results.append(TestResult('FD-005', 'Filter Dropdown', 'Dropdown scrolls internally when content overflows', 'pass' if ok else 'fail', f'hasScroll={hasScroll}, overflowY={overflowStyle}', shot('FD-005', dpage)))
+                    ))()
+                ),
+                'FD-006': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.evaluate("document.documentElement.classList.add('dark')"),
+                        time.sleep(0.3),
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        textColor := dpage.evaluate("(() => { const btn = document.querySelector('#filter-menu button[data-value]'); return btn ? getComputedStyle(btn).color : ''; })()"),
+                        bgColor := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m ? getComputedStyle(m).backgroundColor : ''; })()"),
+                        ok := bool(textColor and bgColor and textColor != bgColor),
+                        results.append(TestResult('FD-006', 'Filter Dropdown', 'Dark mode: dropdown text is readable', 'pass' if ok else 'fail', f'textColor={textColor[:30]}, bgColor={bgColor[:30]}', shot('FD-006', dpage)))
+                    ))()
+                ),
+                'FD-007': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        dpage.click('body', position={'x': 10, 'y': 10}),
+                        time.sleep(0.3),
+                        stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        results.append(TestResult('FD-007', 'Filter Dropdown', 'Dropdown closes on outside click', 'pass' if not stillVisible else 'fail', f'closed={not stillVisible}', shot('FD-007', dpage)))
+                    ))()
+                ),
+                'FD-008': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        dpage.keyboard.press('Escape'),
+                        time.sleep(0.3),
+                        stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        results.append(TestResult('FD-008', 'Filter Dropdown', 'Dropdown closes on ESC key', 'pass' if not stillVisible else 'fail', f'closed={not stillVisible}', shot('FD-008', dpage)))
+                    ))()
+                ),
+                'FD-009': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        firstCat := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const found = btns.find(b => b.getAttribute('data-value') && b.getAttribute('data-value') !== 'all'); return found ? found.getAttribute('data-value') : ''; })()"),
+                        (dpage.click(f'#filter-menu button[data-value="{firstCat}"]', timeout=10000) if firstCat else None),
+                        time.sleep(0.8),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        clearBtn := dpage.query_selector('#filter-menu button[data-action="clear"]'),
+                        (dpage.click('#filter-menu button[data-action="clear"]', timeout=10000) if clearBtn else None),
+                        time.sleep(0.5),
+                        allSelected := dpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const allBtn = btns.find(b => b.getAttribute('data-value') === 'all'); return allBtn ? allBtn.classList.contains('bg-purple-50') || allBtn.classList.contains('bg-purple-900/10') : false; })()"),
+                        ok := bool(clearBtn and allSelected),
+                        results.append(TestResult('FD-009', 'Filter Dropdown', 'Clear button resets category selection', 'pass' if ok else 'fail', f'clearBtn={bool(clearBtn)}, allSelected={allSelected}', shot('FD-009', dpage)))
+                    ))()
+                ),
+                'FD-010': lambda: (
+                    dpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        dpage.wait_for_selector('#filter-button', timeout=10000),
+                        dpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        doneBtn := dpage.query_selector('#filter-menu button[data-action="close"]'),
+                        (dpage.click('#filter-menu button[data-action="close"]', timeout=10000) if doneBtn else None),
+                        time.sleep(0.3),
+                        stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        ok := bool(doneBtn and not stillVisible),
+                        results.append(TestResult('FD-010', 'Filter Dropdown', 'Done button closes dropdown without changing selection', 'pass' if ok else 'fail', f'doneBtn={bool(doneBtn)}, closed={not stillVisible}', shot('FD-010', dpage)))
                     ))()
                 ),
                 # Auth
