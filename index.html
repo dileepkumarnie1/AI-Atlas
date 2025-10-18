@@ -327,27 +327,29 @@
         .search-wrapper { max-width: 900px; margin: 0 auto 1.5rem; display:flex; gap:8px; align-items:center; }
         .search-input { flex:1; padding:0.75rem 1rem; border-radius:0.75rem; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); }
         .search-clear { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.75rem; border-radius:0.5rem; color:var(--text-secondary); }
-        .search-results { margin-top:1rem; display:grid; gap:12px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .search-results { margin-top:1rem; display:grid; gap:10px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
         @media(min-width:768px) { .search-results { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         @media(min-width:1024px) { .search-results { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+        @media(min-width:1280px) { .search-results { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+        @media(min-width:1536px) { .search-results { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
         .tile-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 0.75rem;
-            padding: 1rem;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             gap: 0.5rem;
-            aspect-ratio: 1 / 1; /* square */
+            aspect-ratio: 5 / 6; /* slightly shorter */
             text-align: center;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .tile-card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
         html.dark .tile-card:hover { box-shadow: 0 8px 18px rgba(0,0,0,.25), 0 0 12px rgba(76, 29, 149, 0.25); }
-    .tile-title { font-weight: 700; color: var(--text-primary); font-size: 0.95rem; line-height: 1.2; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; }
-    .tile-desc { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
+    .tile-title { font-weight: 700; color: var(--text-primary); font-size: 0.9rem; line-height: 1.2; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; }
+    .tile-desc { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
         .tile-tags { display:flex; gap:6px; flex-wrap: wrap; justify-content: center; }
         .tile-actions { display:flex; gap:8px; align-items:center; justify-content:center; }
         .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
@@ -986,7 +988,7 @@
             function iconImgHtml(tool, size=40, extraClass='') {
                 const { primary, secondary, placeholder } = buildIconSources(tool, size);
                 const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
-                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px" class="rounded-md ${extraClass}" onerror="${onerr}">`;
+                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;object-fit:contain;image-rendering:auto" class="rounded-md bg-white/60 ${extraClass}" onerror="${onerr}">`;
             }
             function formatCountShort(n) {
                 if (typeof n !== 'number' || !isFinite(n) || n <= 0) return '';
@@ -1096,7 +1098,7 @@
             }
 
             function renderSearchTile(tool) {
-                const iconHtml = iconImgHtml(tool, 56, 'mb-2');
+                const iconHtml = iconImgHtml(tool, 48, 'mb-2');
                 return `
                     <div class="tile-card card-hover-effect" role="listitem">
                         <div class="flex flex-col items-center">
