@@ -1107,6 +1107,15 @@
 
             function renderSearchTile(tool) {
                 const iconHtml = iconImgHtml(tool, 52, 'mb-2 cursor-pointer open-tool-logo');
+                const pricing = (() => {
+                    const tags = (tool.tags||[]).map(t=>String(t).toLowerCase());
+                    const priceField = String(tool.price||'').toLowerCase();
+                    if (tags.some(t=>/open[\s-]?source|^oss$/.test(t))) return 'Open Source';
+                    if (tags.some(t=>/freemium/.test(t))) return 'Freemium';
+                    if (tags.some(t=>/(paid|subscription|subscribe|premium|enterprise)/.test(t)) || /(paid|subscription|premium|enterprise)/.test(priceField)) return 'Paid/Subscription';
+                    if (tags.some(t=>/free/.test(t)) || priceField === 'free') return 'Free';
+                    return '';
+                })();
                 const blurb = (() => {
                     const q = String(state.searchQuery||'').toLowerCase();
                     const tags = (tool.tags||[]).map(t=>String(t).toLowerCase());
@@ -1137,9 +1146,10 @@
                     return '';
                 })();
                 return `
-                    <div class="tile-card card-hover-effect" role="listitem" data-name="${escapeHtml(tool.name)}">
+                    <div class="tile-card card-hover-effect relative" role="listitem" data-name="${escapeHtml(tool.name)}">
+                        ${pricing ? `<div class=\"absolute top-2 right-2 text-[0.72rem] px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-900/30 dark:text-purple-200 dark:border-purple-800\">${escapeHtml(pricing)}</div>` : ''}
                         <div class="flex flex-col items-center">
-                            <div class="rounded-full p-1 bg-white/70 shadow-sm" role="button" aria-label="Open ${escapeHtml(tool.name)}" data-name="${escapeHtml(tool.name)}">${iconHtml}</div>
+                            <div class="rounded-full p-1 bg-white/80 shadow-sm" role="button" aria-label="Open ${escapeHtml(tool.name)}" data-name="${escapeHtml(tool.name)}">${iconHtml}</div>
                             <div class="tile-title mt-1">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
                             ${blurb ? `<div class="tile-blurb mt-1">${escapeHtml(blurb)}</div>` : ''}
                         </div>
