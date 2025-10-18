@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Approval Links</title>
+  <meta name="github-repo" content="dileepkumarnie1/AI-Atlas">
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --brand:#60a5fa; --accent:#22c55e; --warn:#f59e0b; --danger:#ef4444; --border:#1f2937;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 600px at 20% -10%, #1e293b 0%, transparent 60%), radial-gradient(1000px 500px at 120% 0%, #0ea5e9 0%, transparent 60%), var(--bg); }
+    header{ padding:24px 20px; text-align:center; backdrop-filter:saturate(140%) blur(6px); background:rgba(2,6,23,0.4); position:sticky; top:0; border-bottom:1px solid rgba(148,163,184,0.1); }
+    h1{ margin:0; font-size:20px; letter-spacing:0.2px; }
+    .wrap{ max-width:860px; margin:24px auto 40px; padding:0 16px; }
+    .panel{ background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(148,163,184,0.18); border-radius:14px; padding:18px; box-shadow: 0 10px 30px rgba(0,0,0,0.25), inset 0 1px rgba(255,255,255,0.05); }
+    .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px 16px; }
+    .grid .full{ grid-column:1/-1; }
+    label{ display:block; font-size:12px; color:var(--muted); margin-bottom:6px; }
+    input, select{ width:100%; background:#0b1020; color:var(--text); border:1px solid rgba(148,163,184,0.22); border-radius:10px; padding:10px 12px; outline:none; }
+    input:focus, select:focus{ border-color:#60a5fa; box-shadow:0 0 0 3px rgba(96,165,250,0.25); }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:14px; }
+    .btn{ appearance:none; border:1px solid rgba(148,163,184,0.22); color:var(--text); background:#0b1020; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600; }
+    .btn.primary{ background:linear-gradient(180deg, #2563eb, #1d4ed8); border-color:#1e40af; }
+    .btn.accent{ background:linear-gradient(180deg, #16a34a, #15803d); border-color:#166534; }
+    .btn.warn{ background:linear-gradient(180deg, #f59e0b, #d97706); border-color:#b45309; }
+    .btn:disabled{ opacity:0.5; cursor:not-allowed; }
+    .muted{ color:var(--muted); font-size:12px; }
+    .links{ margin-top:12px; word-break:break-all; }
+    .pill{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid rgba(148,163,184,0.28); background:#0b1020; color:#cbd5e1; }
+    footer{ text-align:center; color:var(--muted); font-size:12px; padding:20px; }
+  </style>
+  <script>
+    function $(id){ return document.getElementById(id); }
+    function qp(name){ return new URLSearchParams(location.search).get(name) || ''; }
+    function sanitize(s){ return (s||'').toString().trim(); }
+    function defaultRepo(){
+      const meta = document.querySelector('meta[name="github-repo"]');
+      const v = meta && meta.getAttribute('content');
+      return v || 'dileepkumarnie1/AI-Atlas';
+    }
+    function buildIssueUrl(ownerRepo, section, tool, pricing){
+      if(!ownerRepo) return '#';
+      const [owner, repo] = ownerRepo.split('/')
+      const title = `Pricing approval: ${tool} -> ${pricing}`;
+      const body = `Section: ${section}\nTool: ${tool}\nPricing: ${pricing}\n`;
+      const u = new URL(`https://github.com/${owner}/${repo}/issues/new`);
+      u.searchParams.set('title', title);
+      u.searchParams.set('labels', 'pricing-approve');
+      u.searchParams.set('body', body);
+      return u.toString();
+    }
+    function buildDispatchUrl(ownerRepo){
+      if(!ownerRepo) return '#';
+      const [owner, repo] = ownerRepo.split('/')
+      return `https://github.com/${owner}/${repo}/actions/workflows/pricing-approval.yml/dispatches`;
+    }
+    function setStatus(msg, type){
+      const el = $('status'); el.textContent = msg||''; el.className = 'muted';
+    }
+    function updateLinks(){
+      const ownerRepo = sanitize($('ownerRepo').value);
+      const section = sanitize($('section').value);
+      const tool = sanitize($('tool').value);
+      const pricing = sanitize($('pricing').value);
+      const ok = ownerRepo && section && tool && pricing;
+      $('openIssue').disabled = !ok;
+      $('copyIssue').disabled = !ok;
+      const issueUrl = ok ? buildIssueUrl(ownerRepo, section, tool, pricing) : '#';
+      $('issueUrl').textContent = issueUrl;
+      $('issueUrl').setAttribute('href', issueUrl);
+      const dispatchUrl = ownerRepo ? buildDispatchUrl(ownerRepo) : '#';
+      $('dispatchUrl').textContent = dispatchUrl;
+      $('dispatchUrl').setAttribute('href', dispatchUrl);
+      return { issueUrl, dispatchUrl };
+    }
+    async function copy(text){
+      try{ await navigator.clipboard.writeText(text); setStatus('Link copied to clipboard.', 'ok'); }
+      catch{ setStatus('Copy failed. Select and copy manually.', 'err'); }
+    }
+    function init(){
+      $('ownerRepo').value = qp('repo') || defaultRepo();
+      $('section').value = qp('section');
+      $('tool').value = qp('tool');
+      $('pricing').value = qp('pricing') || 'Freemium';
+      ['ownerRepo','section','tool','pricing'].forEach(id=>{
+        $(id).addEventListener('input', updateLinks);
+        $(id).addEventListener('change', updateLinks);
+      });
+      const { issueUrl, dispatchUrl } = updateLinks();
+      $('openIssue').addEventListener('click', ()=>{ if(!$('openIssue').disabled) window.open(issueUrl, '_blank'); });
+      $('openDispatch').addEventListener('click', ()=>{ window.open(dispatchUrl, '_blank'); });
+      $('copyIssue').addEventListener('click', ()=>{ if(!$('copyIssue').disabled) copy(issueUrl); });
+      const auto = qp('open');
+      if(auto==='issue' && issueUrl && issueUrl!=='#'){ setTimeout(()=>window.open(issueUrl, '_blank'), 600); }
+      if(auto==='dispatch' && dispatchUrl && dispatchUrl!=='#'){ setTimeout(()=>window.open(dispatchUrl, '_blank'), 600); }
+    }
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Pricing Approval Deep Links</h1>
+  </header>
+  <main class="wrap">
+    <section class="panel">
+      <div class="grid">
+        <div>
+          <label for="ownerRepo">GitHub Repo (owner/repo)</label>
+          <input id="ownerRepo" placeholder="owner/repo" />
+        </div>
+        <div>
+          <label for="section">Section</label>
+          <input id="section" placeholder="e.g., prompt-enhancers" />
+        </div>
+        <div>
+          <label for="tool">Tool</label>
+          <input id="tool" placeholder="Tool name" />
+        </div>
+        <div>
+          <label for="pricing">Pricing</label>
+          <select id="pricing">
+            <option>Open Source</option>
+            <option>Free</option>
+            <option selected>Freemium</option>
+            <option>Subscription</option>
+          </select>
+        </div>
+        <div class="full">
+          <span class="pill">Label applied: pricing-approve</span>
+        </div>
+      </div>
+      <div class="row">
+        <button id="openIssue" class="btn primary" disabled>Open Approve Issue</button>
+        <button id="copyIssue" class="btn">Copy Issue Link</button>
+        <button id="openDispatch" class="btn accent">Open Dispatch UI</button>
+        <span id="status" class="muted"></span>
+      </div>
+      <div class="links">
+        <div class="muted">Issue link:</div>
+        <a id="issueUrl" href="#" rel="noreferrer noopener" target="_blank"></a>
+      </div>
+      <div class="links">
+        <div class="muted">Dispatch UI:</div>
+        <a id="dispatchUrl" href="#" rel="noreferrer noopener" target="_blank"></a>
+      </div>
+    </section>
+
+    <p class="muted" style="margin-top:14px;">Tip: Add query params to prefill, e.g. <code>?section=design-tools&tool=ComfyUI&pricing=Open%20Source</code>. Use <code>&open=issue</code> to auto-open the issue link.</p>
+  </main>
+  <footer>
+    Built for AI Atlas — streamlining pricing approvals.
+  </footer>
+</body>
+</html>

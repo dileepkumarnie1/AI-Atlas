@@ -10,7 +10,9 @@
  * Behavior:
  *  - Reads data/pricing-audit.json, filters anomalies with reason containing 'conflict'
  *  - Builds an HTML email table: tool, section, anomalies, suggested model
- *  - Each row includes an "Approve" link hitting the repository's workflow_dispatch URL with inputs
+ *  - Each row includes multiple "Approve (Issue)" links to open prefilled GitHub Issues (labeled pricing-approve),
+ *    an "Approval Page" deep link (prefilled web page), and a "Dispatch UI" link to the manual Actions workflow
+ *    (Pricing Approval)
  */
 import 'dotenv/config';
 import fs from 'node:fs/promises';
@@ -54,9 +56,31 @@ async function main(){
   if (majors.length===0){ console.log('No major anomalies (conflicts) to email.'); return; }
   const rows = majors.map(a=>{
     const repo = sanitize(process.env.GITHUB_REPO);
-    const baseUrl = repo ? `https://github.com/${repo}/actions/workflows/pricing-approval.yml/dispatches` : '#';
+    const dispatchUrl = repo ? `https://github.com/${repo}/actions/workflows/pricing-approval.yml/dispatches` : '#';
     const candidates = Array.from(new Set([...(a.labels||[]), chooseSuggestion(a.labels)])).filter(Boolean);
-    const links = candidates.map(c=>`<a href="${baseUrl}" target="_blank" style="margin-right:8px;">Approve ${c}</a>`).join('');
+    const [owner, rname] = repo ? repo.split('/') : [];
+    const suggested = chooseSuggestion(a.labels);
+    // Build Approval Page link (prefer GitHub Pages if available, otherwise raw)
+    const approveParams = new URLSearchParams({
+      section: String(a.section||''),
+      tool: String(a.tool||''),
+      pricing: String(suggested||'Freemium'),
+      repo: String(repo||'')
+    }).toString();
+    const pagesUrl = (owner && rname) ? `https://${owner}.github.io/${rname}/public/approve.html?${approveParams}` : '#';
+    const rawUrl = repo ? `https://raw.githubusercontent.com/${repo}/main/public/approve.html?${approveParams}` : '#';
+    const approvalPageUrl = pagesUrl !== '#' ? pagesUrl : rawUrl;
+    const links = candidates.map(c=>{
+      const issueUrl = repo ? (
+        `https://github.com/${repo}/issues/new`+
+        `?title=${encodeURIComponent(`Pricing approval: ${a.tool} -> ${c}`)}`+
+        `&labels=${encodeURIComponent('pricing-approve')}`+
+        `&body=${encodeURIComponent(`Section: ${a.section}\nTool: ${a.tool}\nPricing: ${c}\n`)}`
+      ) : '#';
+      return `<a href="${issueUrl}" target="_blank" style="margin-right:8px;">Approve ${c} (Issue)</a>`;
+    }).join('')
+    + (approvalPageUrl && approvalPageUrl !== '#' ? ` <a href="${approvalPageUrl}" target="_blank" style="color:#0366d6;">Approval Page</a>` : '')
+    + ` <a href="${dispatchUrl}" target="_blank" style="color:#57606a;">Dispatch UI</a>`;
     return `<tr>
       <td style="padding:8px 6px; border-bottom:1px solid #eee;">${a.tool}</td>
       <td style="padding:8px 6px; border-bottom:1px solid #eee; color:#57606a;">${a.section}</td>
@@ -66,8 +90,8 @@ async function main(){
   }).join('');
     const html = `<div style="font-family:Segoe UI,Arial,sans-serif; color:#24292f;">
       <h2 style="margin:0 0 8px;">Pricing conflicts require approval</h2>
-      <p style="margin:0 0 12px; color:#57606a;">Use the Approve links to open the GitHub workflow dispatch page (Actions ➝ Pricing Approval).
-      Select or paste Section, Tool, and Pricing, then run the workflow. It will create an Issue and a PR to apply the override.</p>
+      <p style="margin:0 0 12px; color:#57606a;">Use <strong>Approve (Issue)</strong> to open a pre‑filled GitHub Issue (labelled <code>pricing-approve</code>). The <em>Pricing Approval (Issue)</em> workflow will apply the override and open a PR automatically.
+      You can also use the <strong>Approval Page</strong> (prefilled web page) to review and generate links, or click <strong>Dispatch UI</strong> to run the manual <em>Pricing Approval</em> workflow from Actions.</p>
       <table style="border-collapse:collapse; width:100%; max-width:900px;">
         <thead>
           <tr style="text-align:left;">
