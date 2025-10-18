@@ -1936,18 +1936,12 @@
                                     state.categoryExplicit = true;
                                     const slug = val;
                                     state.selectedCategory = slug;
-                                    if (!state.searchQuery.trim() && slug !== 'all') {
-                                        state.selectedDomain = slug;
-                                        state.currentView = 'tools';
-                                        hideMenu();
-                                        render();
-                                        return; // render() will rebuild menu
-                                    } else {
-                                        searchPage = 1;
-                                        renderSearchResults();
-                                        hideMenu();
-                                        renderFilterMenu(currentMatchesCache);
-                                    }
+                                    // Always stay on home view when filtering from dropdown
+                                    // Domain card clicks will navigate to tools view
+                                    searchPage = 1;
+                                    renderSearchResults();
+                                    hideMenu();
+                                    renderFilterMenu(currentMatchesCache);
                                 }
                             };
                         });
@@ -2062,6 +2056,21 @@
                             }
                         };
                         // Attach button handlers once per render (mobile friendly)
+                        // Store handlers globally to allow cleanup on re-render
+                        if (!window.filterButtonHandlers) window.filterButtonHandlers = {};
+                        const handlerKey = 'openHandler';
+                        // Remove old handlers if they exist
+                        if (window.filterButtonHandlers[handlerKey]) {
+                            try { btn.removeEventListener('pointerdown', window.filterButtonHandlers[handlerKey]); } catch {}
+                            try { btn.removeEventListener('touchend', window.filterButtonHandlers[handlerKey]); } catch {}
+                        }
+                        if (window.filterButtonHandlers['touchstartHandler']) {
+                            try { btn.removeEventListener('touchstart', window.filterButtonHandlers['touchstartHandler']); } catch {}
+                        }
+                        if (window.filterButtonHandlers['keydownHandler']) {
+                            try { btn.removeEventListener('keydown', window.filterButtonHandlers['keydownHandler']); } catch {}
+                        }
+                        
                         let lastOpenIntent = 0;
                         const openHandler = (e) => {
                             try { e.stopPropagation(); } catch {}
@@ -2072,17 +2081,27 @@
                             log(`btn: ${e.type}`);
                             toggleFilterMenu(true); // force open; avoid toggle-close on duplicate events
                         };
+                        const touchstartHandler = (te) => {
+                            try { te.preventDefault(); te.stopPropagation(); } catch {}
+                            setTimeout(() => openHandler(te), 0);
+                        };
+                        const keydownHandler = (ev) => {
+                            if (ev.key === 'Enter' || ev.key === ' ') {
+                                ev.preventDefault();
+                                openHandler(ev);
+                            }
+                        };
+                        
+                        // Store handlers for cleanup
+                        window.filterButtonHandlers[handlerKey] = openHandler;
+                        window.filterButtonHandlers['touchstartHandler'] = touchstartHandler;
+                        window.filterButtonHandlers['keydownHandler'] = keydownHandler;
+                        
                         btn.onclick = openHandler;
                         try { btn.addEventListener('pointerdown', openHandler); } catch {}
-                        // On some Android builds, using touchstart+preventDefault then delayed open is the most reliable
-                        try {
-                            btn.addEventListener('touchstart', (te) => {
-                                try { te.preventDefault(); te.stopPropagation(); } catch {}
-                                setTimeout(() => openHandler(te), 0);
-                            }, { passive: false });
-                        } catch {}
+                        try { btn.addEventListener('touchstart', touchstartHandler, { passive: false }); } catch {}
                         try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
-                        try { btn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openHandler(ev); } }); } catch {}
+                        try { btn.addEventListener('keydown', keydownHandler); } catch {}
                         // Prevent interactions inside the menu from bubbling to the document handler
                         try {
                             menu.addEventListener('click', (ev)=>ev.stopPropagation());
