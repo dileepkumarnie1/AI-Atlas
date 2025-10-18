@@ -3,11 +3,18 @@ name: Audit Pricing
 on:
   schedule:
     - cron: '30 3 * * *' # Nightly at 03:30 UTC
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: 'Fail the audit on any anomaly (true) or only on critical conflicts (false)'
+        required: false
+        default: 'true'
 
 jobs:
   audit:
     runs-on: ubuntu-latest
+    env:
+      PRICING_AUDIT_STRICT: ${{ github.event.inputs.strict || 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -75,7 +82,7 @@ jobs:
 
       - name: Enforce zero anomalies
         run: |
-          node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); if (j.anomalies && j.anomalies.length){ console.error('Pricing anomalies found:', j.anomalies.length); process.exit(1); } else { console.log('No pricing anomalies.'); }"
+          node -e "const fs=require('fs'); const strict=(process.env.PRICING_AUDIT_STRICT||'true').toLowerCase()==='true'; const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); const anomalies=Array.isArray(j.anomalies)?j.anomalies:[]; const critical=anomalies.filter(a=>/conflict/i.test(a.reason)); console.log('Anomalies total:', anomalies.length, 'critical:', critical.length, 'strict:', strict); if ((strict && anomalies.length>0) || (!strict && critical.length>0)) { console.error('Pricing anomalies found:', anomalies.length, 'critical:', critical.length); process.exit(1); } else { console.log('Audit passed with', anomalies.length, 'anomalies (critical:', critical.length, '), strict:', strict); }"
 
   auto-fix:
     needs: audit
