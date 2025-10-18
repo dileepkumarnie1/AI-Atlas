@@ -1353,7 +1353,18 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
             for tc in plan:
                 fn = dispatch.get(tc.id)
                 if fn:
-                    fn()
+                    try:
+                        fn()
+                    except Exception as e:
+                        # Capture test execution failures
+                        error_msg = f"{type(e).__name__}: {str(e)}"
+                        # Try to take a screenshot on error
+                        screenshot_path = ''
+                        try:
+                            screenshot_path = shot(f'{tc.id}_ERROR', dpage)
+                        except:
+                            pass
+                        results.append(TestResult(tc.id, tc.feature, tc.title, 'fail', error_msg[:200], screenshot_path))
                 else:
                     # Unknown test id in plan
                     results.append(TestResult(tc.id, tc.feature, tc.title, 'skipped', 'No handler for test id', ''))
