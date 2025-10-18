@@ -1936,12 +1936,18 @@
                                     state.categoryExplicit = true;
                                     const slug = val;
                                     state.selectedCategory = slug;
-                                    // Always stay on home view when filtering from dropdown
-                                    // Domain card clicks will navigate to tools view
-                                    searchPage = 1;
-                                    renderSearchResults();
-                                    hideMenu();
-                                    renderFilterMenu(currentMatchesCache);
+                                    if (!state.searchQuery.trim() && slug !== 'all') {
+                                        state.selectedDomain = slug;
+                                        state.currentView = 'tools';
+                                        hideMenu();
+                                        render();
+                                        return; // render() will rebuild menu
+                                    } else {
+                                        searchPage = 1;
+                                        renderSearchResults();
+                                        hideMenu();
+                                        renderFilterMenu(currentMatchesCache);
+                                    }
                                 }
                             };
                         });
@@ -2056,22 +2062,6 @@
                             }
                         };
                         // Attach button handlers once per render (mobile friendly)
-                        // Store handlers globally to allow cleanup on re-render
-                        // Note: Using window object because renderFilterMenu creates new closures each call
-                        // This allows us to remove the old listeners before adding new ones
-                        if (!window.filterButtonHandlers) window.filterButtonHandlers = {};
-                        // Remove old handlers if they exist
-                        if (btn && window.filterButtonHandlers.openHandler) {
-                            try { btn.removeEventListener('pointerdown', window.filterButtonHandlers.openHandler); } catch (e) { dbg('Failed to remove pointerdown listener:', e); }
-                            try { btn.removeEventListener('touchend', window.filterButtonHandlers.openHandler); } catch (e) { dbg('Failed to remove touchend listener:', e); }
-                        }
-                        if (btn && window.filterButtonHandlers.touchstartHandler) {
-                            try { btn.removeEventListener('touchstart', window.filterButtonHandlers.touchstartHandler); } catch (e) { dbg('Failed to remove touchstart listener:', e); }
-                        }
-                        if (btn && window.filterButtonHandlers.keydownHandler) {
-                            try { btn.removeEventListener('keydown', window.filterButtonHandlers.keydownHandler); } catch (e) { dbg('Failed to remove keydown listener:', e); }
-                        }
-                        
                         let lastOpenIntent = 0;
                         const openHandler = (e) => {
                             try { e.stopPropagation(); } catch {}
@@ -2082,27 +2072,17 @@
                             log(`btn: ${e.type}`);
                             toggleFilterMenu(true); // force open; avoid toggle-close on duplicate events
                         };
-                        const touchstartHandler = (te) => {
-                            try { te.preventDefault(); te.stopPropagation(); } catch {}
-                            setTimeout(() => openHandler(te), 0);
-                        };
-                        const keydownHandler = (ev) => {
-                            if (ev.key === 'Enter' || ev.key === ' ') {
-                                ev.preventDefault();
-                                openHandler(ev);
-                            }
-                        };
-                        
-                        // Store handlers for cleanup
-                        window.filterButtonHandlers.openHandler = openHandler;
-                        window.filterButtonHandlers.touchstartHandler = touchstartHandler;
-                        window.filterButtonHandlers.keydownHandler = keydownHandler;
-                        
                         btn.onclick = openHandler;
                         try { btn.addEventListener('pointerdown', openHandler); } catch {}
-                        try { btn.addEventListener('touchstart', touchstartHandler, { passive: false }); } catch {}
+                        // On some Android builds, using touchstart+preventDefault then delayed open is the most reliable
+                        try {
+                            btn.addEventListener('touchstart', (te) => {
+                                try { te.preventDefault(); te.stopPropagation(); } catch {}
+                                setTimeout(() => openHandler(te), 0);
+                            }, { passive: false });
+                        } catch {}
                         try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
-                        try { btn.addEventListener('keydown', keydownHandler); } catch {}
+                        try { btn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openHandler(ev); } }); } catch {}
                         // Prevent interactions inside the menu from bubbling to the document handler
                         try {
                             menu.addEventListener('click', (ev)=>ev.stopPropagation());
