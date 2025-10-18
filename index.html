@@ -51,6 +51,17 @@
             background-color: rgba(24,24,27,0.75) !important;
         }
         /* Dedicated background layer ensures full coverage across mobile browsers */
+        #background-video {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw; height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0; /* fade in when ready */
+            transition: opacity 600ms ease;
+            background: transparent;
+        }
         #background-image {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -59,7 +70,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: 0;
+            z-index: -1; /* keep behind the video; used as a fallback */
             pointer-events: none;
         }
         #background-overlay {
@@ -374,6 +385,11 @@
     
 </head>
 <body class="antialiased">
+    <!-- Background video layer (will fade in when ready). To override source via URL, add ?bgmp4=encodedURL -->
+    <video id="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <!-- Default source path; update public/videos/background_anim.mp4 when adding the actual file -->
+        <source id="bg-video-source" src="./images/background_anim.mp4" type="video/mp4">
+    </video>
     <div id="background-image"></div>
     <div id="background-overlay"></div>
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:2;">
@@ -2803,5 +2819,21 @@
 
 <!-- prompt enhancer script (now referenced from public/) -->
 <script src="./public/prompt-enhancer.js" defer></script>
+<script>
+    (function initBackgroundVideo(){
+        try{
+            const vid = document.getElementById('background-video');
+            const source = document.getElementById('bg-video-source');
+            if(!vid || !source) return;
+            const url = new URL(window.location.href);
+            const override = url.searchParams.get('bgmp4');
+            if(override){ source.src = override; vid.load(); }
+            const show = ()=>{ vid.style.opacity = '1'; };
+            vid.addEventListener('loadeddata', show, { once: true });
+            // Fallback reveal after a second in case readyState already good
+            setTimeout(()=>{ if(vid.readyState >= 2) show(); }, 800);
+        }catch(e){ /* ignore */ }
+    })();
+</script>
 </body>
 </html>
