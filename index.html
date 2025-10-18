@@ -1592,6 +1592,17 @@
                         <div class="relative">
                             <!-- Hero: centered title + search -->
                             <section class="min-h-[46vh] md:min-h-[52vh] flex flex-col justify-center items-center text-center">
+                                <!-- Tool Count Banner -->
+                                <div class="mb-6 md:mb-8">
+                                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 px-6 py-3 rounded-full border border-purple-200 dark:border-purple-700 shadow-sm">
+                                        <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                        </svg>
+                                        <span class="text-lg md:text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+                                            ${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); return total; })()}+ AI Tools Curated
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="mb-4 md:mb-6">
                                     <h1 class="text-[2.25rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
                                     <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
@@ -1599,7 +1610,10 @@
                                 <!-- Unified Search + Filter dropdown -->
                                 <div class="w-full max-w-4xl mx-auto">
                                     <div id="search-filter-unit" class="relative flex items-center">
-                                        <input id="search-bar-new" class="search-input flex-1 h-[46px] md:h-[52px] rounded-l-full border-r-0" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                        <div class="relative flex-1">
+                                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 dark:text-gray-500 pointer-events-none">🔍</span>
+                                            <input id="search-bar-new" class="search-input w-full h-[46px] md:h-[52px] rounded-l-full border-r-0 pl-12" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                        </div>
                                         <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
                                             <span>Filter</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
@@ -1914,9 +1928,8 @@
                             const active = current === d.slug ? 'bg-purple-50 dark:bg-purple-900/10' : '';
                             itemHtml.push(`<button class="w-full text-left px-4 py-2 hover:bg-purple-50 dark:hover:bg-purple-900/20 ${active}" data-value="${d.slug}">${escapeHtml(d.name)} (${c})</button>`);
                         }
-                        // Clear/close actions
-                        itemHtml.push(`<div class="flex items-center justify-between px-3 py-2 border-t border-color">
-                            <button class="text-sm text-secondary hover:text-primary" data-action="clear">Clear</button>
+                        // Close action
+                        itemHtml.push(`<div class="flex items-center justify-end px-3 py-2 border-t border-color">
                             <button class="text-sm bg-purple-600 text-white px-3 py-1 rounded" data-action="close">Done</button>
                         </div>`);
                         menu.innerHTML = itemHtml.join('');
@@ -1951,14 +1964,6 @@
                                 }
                             };
                         });
-                        const clearBtn = menu.querySelector('button[data-action="clear"]');
-                        if (clearBtn) clearBtn.onclick = () => {
-                            state.categoryExplicit = false;
-                            state.selectedCategory = 'all';
-                            searchPage = 1;
-                            renderSearchResults();
-                            renderFilterMenu(currentMatchesCache);
-                        };
                         const closeBtn = menu.querySelector('button[data-action="close"]');
                         if (closeBtn) closeBtn.onclick = () => toggleFilterMenu(false);
 
@@ -3001,6 +3006,8 @@
             const url = new URL(window.location.href);
             const override = url.searchParams.get('bgmp4');
             if(override){ source.src = override; vid.load(); }
+            // Slow down video by 20% (playback rate = 0.8)
+            vid.playbackRate = 0.8;
             const show = ()=>{ vid.style.opacity = '1'; };
             vid.addEventListener('loadeddata', show, { once: true });
             // Fallback reveal after a second in case readyState already good
