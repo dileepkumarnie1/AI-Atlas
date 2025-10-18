@@ -1116,6 +1116,15 @@
                     if (tags.some(t=>/free/.test(t)) || priceField === 'free') return 'Free';
                     return '';
                 })();
+                const pricingClass = (() => {
+                    switch (pricing) {
+                        case 'Free': return 'text-teal-600 dark:text-teal-300';
+                        case 'Freemium': return 'text-indigo-600 dark:text-indigo-300';
+                        case 'Paid/Subscription': return 'text-orange-600 dark:text-orange-300';
+                        case 'Open Source': return 'text-green-600 dark:text-green-300';
+                        default: return 'text-purple-700 dark:text-purple-300';
+                    }
+                })();
                 const blurb = (() => {
                     const q = String(state.searchQuery||'').toLowerCase();
                     const tags = (tool.tags||[]).map(t=>String(t).toLowerCase());
@@ -1147,7 +1156,7 @@
                 })();
                 return `
                     <div class="tile-card card-hover-effect relative" role="listitem" data-name="${escapeHtml(tool.name)}">
-                        ${pricing ? `<div class=\"absolute top-2 right-2 text-[0.72rem] font-semibold text-purple-700 dark:text-purple-300\">${escapeHtml(pricing)}</div>` : ''}
+                        ${pricing ? `<div class=\"absolute top-2 right-2 text-[0.72rem] font-semibold ${pricingClass}\">${escapeHtml(pricing)}</div>` : ''}
                         <div class="flex flex-col items-center">
                             <div class="rounded-full p-1 bg-white/80 shadow-sm" role="button" aria-label="Open ${escapeHtml(tool.name)}" data-name="${escapeHtml(tool.name)}">${iconHtml}</div>
                             <div class="tile-title mt-1">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
