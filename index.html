@@ -2027,7 +2027,15 @@
                             }
                         };
                         // Attach button handlers once per render (mobile friendly)
-                        const openHandler = (e) => { e.stopPropagation(); if (e.type === 'pointerdown') e.preventDefault(); toggleFilterMenu(); };
+                        let lastOpenIntent = 0;
+                        const openHandler = (e) => {
+                            try { e.stopPropagation(); } catch {}
+                            if (e.type === 'pointerdown') { try { e.preventDefault(); } catch {} }
+                            const now = Date.now();
+                            if (now - lastOpenIntent < 300) return; // debounce duplicate pointer/touch/click
+                            lastOpenIntent = now;
+                            toggleFilterMenu(true); // force open; avoid toggle-close on duplicate events
+                        };
                         btn.onclick = openHandler;
                         try { btn.addEventListener('pointerdown', openHandler); } catch {}
                         try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
@@ -2051,9 +2059,9 @@
                             const target = ev.target;
                             const insideMenu = mm.contains(target);
                             const insideUnit = unit.contains(target);
-                            // Ignore the very first click right after opening (mobile safety)
+                            // Ignore the very first click right after opening (mobile safety / portrait tap)
                             if (!insideMenu && !insideUnit) {
-                                if (typeof menuOpenedAt === 'number' && Date.now() - menuOpenedAt < 250) return;
+                                if (typeof menuOpenedAt === 'number' && Date.now() - menuOpenedAt < 350) return;
                                 hideMenu();
                             }
                         };
