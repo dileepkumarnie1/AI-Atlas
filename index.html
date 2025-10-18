@@ -1098,18 +1098,12 @@
             }
 
             function renderSearchTile(tool) {
-                const iconHtml = iconImgHtml(tool, 48, 'mb-2');
+                const iconHtml = iconImgHtml(tool, 56, 'mb-2 cursor-pointer open-tool-logo');
                 return `
-                    <div class="tile-card card-hover-effect" role="listitem">
+                    <div class="tile-card card-hover-effect" role="listitem" data-name="${escapeHtml(tool.name)}">
                         <div class="flex flex-col items-center">
-                            ${iconHtml}
-                            <div class="tile-title">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
-                            <div class="tile-desc mt-1">${escapeHtml(tool.description || '')}</div>
-                        </div>
-                        <div class="tile-tags mt-1">${(tool.tags||[]).slice(0, 3).map(tag => `<span class="text-xs tag px-2 py-1 rounded-full whitespace-nowrap">${escapeHtml(tag)}</span>`).join('')}</div>
-                        <div class="tile-actions mt-2">
-                            <button class="px-3 py-1 rounded border text-sm open-tool-btn" data-name="${escapeHtml(tool.name)}">Open</button>
-                            <a href="${tool.link || '#'}" target="_blank" class="bg-purple-600 text-white px-3 py-1 rounded text-sm">Visit</a>
+                            <div class="rounded-full p-1 bg-white/70 shadow-sm" role="button" aria-label="Open ${escapeHtml(tool.name)}" data-name="${escapeHtml(tool.name)}">${iconHtml}</div>
+                            <div class="tile-title mt-1">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
                         </div>
                     </div>
                 `;
@@ -1524,7 +1518,7 @@
                                         <div id="filter-menu" class="hidden absolute right-0 top-[calc(100%+0.5rem)] w-72 bg-card border border-color rounded-xl shadow-lg z-20"></div>
                                     </div>
                                 </div>
-                                <div id="search-results-container" class="w-full max-w-4xl mx-auto mt-4"></div>
+                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-4 px-2 md:px-0"></div>
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
@@ -1906,21 +1900,22 @@
                         const pageItems = filteredByCat.slice(start, end);
 
                         resultsContainer.innerHTML = `
-                            <div class="mb-2 flex items-center justify-between">
+                            <div class="mb-3 md:mb-4 flex items-center justify-between px-1">
                                 <h3 class="text-xl font-semibold">Matching Tools</h3>
                                 <div class="text-sm text-secondary">${start + 1}-${Math.min(end, total)} of ${total}</div>
                             </div>
                             <div class="search-results" role="list">${pageItems.map(renderSearchTile).join('')}</div>
-                            <div class="flex items-center justify-end gap-2 mt-3">
+                            <div class="flex items-center justify-end gap-2 mt-3 pr-1">
                                 <button class="pager-btn" id="prev-page" ${searchPage<=1?'disabled':''} aria-label="Previous">◀</button>
                                 <span class="text-sm text-secondary">Page ${searchPage} / ${totalPages}</span>
                                 <button class="pager-btn" id="next-page" ${searchPage>=totalPages?'disabled':''} aria-label="Next">▶</button>
                             </div>`;
-                        // attach handlers for Open buttons
-                        resultsContainer.querySelectorAll('.open-tool-btn').forEach(btn => {
-                            btn.addEventListener('click', (e) => {
+                        // attach handlers for clickable logos to open modal
+                        resultsContainer.querySelectorAll('.open-tool-logo').forEach(img => {
+                            img.addEventListener('click', (e) => {
                                 e.preventDefault();
-                                const name = e.currentTarget.getAttribute('data-name');
+                                const parent = e.currentTarget.closest('[data-name]');
+                                const name = parent ? parent.getAttribute('data-name') : e.currentTarget.getAttribute('data-name');
                                 if (name) openToolByName(name);
                             });
                         });
