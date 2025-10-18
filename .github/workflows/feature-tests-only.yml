@@ -22,6 +22,7 @@ on:
           - Legacy Cleanup
           - Search
           - Category Filter
+          - Filter Dropdown
           - Domain Navigation
           - Tool Details
           - Theme Toggle
