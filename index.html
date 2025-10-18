@@ -188,6 +188,9 @@
         #search-bar { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); }
         #search-bar::placeholder { color: var(--text-muted); }
     main { padding-top: var(--header-offset); }
+        /* Ensure search+filter control always sits above nearby content (e.g., carousels) on mobile */
+        #search-filter-unit { position: relative; z-index: 60; }
+        #filter-button { position: relative; z-index: 61; }
 
         .domain-card, .feature-card {
             border: 1px solid var(--border-color);
@@ -1882,6 +1885,21 @@
                         const menu = document.getElementById('filter-menu');
                         const btn = document.getElementById('filter-button');
                         if (!menu || !btn) return;
+                        const debugOn = (() => {
+                            try { const url = new URL(window.location.href); if (url.searchParams.get('debugFilter') === '1') return true; } catch {}
+                            try { if (localStorage.getItem('debugFilter') === '1') return true; } catch {}
+                            return false;
+                        })();
+                        const dbg = (...args) => { if (!debugOn) return; try { console.debug('[filter]', ...args); } catch {} };
+                        if (debugOn && !document.getElementById('debug-filter-log')) {
+                            const box = document.createElement('div');
+                            box.id = 'debug-filter-log';
+                            box.style.cssText = 'position:fixed;left:6px;bottom:6px;right:6px;max-height:30vh;overflow:auto;background:rgba(0,0,0,0.6);color:#fff;font:12px/1.4 monospace;z-index:2000;padding:6px;border-radius:8px;';
+                            box.textContent = 'Filter debug on. Add ?debugFilter=0 to disable.';
+                            document.body.appendChild(box);
+                        }
+                        const logBox = () => document.getElementById('debug-filter-log');
+                        const log = (msg) => { if (!debugOn) return; dbg(msg); const el = logBox(); if (el) { const p = document.createElement('div'); p.textContent = msg; el.appendChild(p); el.scrollTop = el.scrollHeight; } };
                         // Ensure menu is scrollable by default
                         try { menu.style.overflowY = 'auto'; menu.style.pointerEvents = 'auto'; menu.style.touchAction = 'pan-y'; } catch {}
                         const counts = computeCategoryCounts(matches);
@@ -1956,8 +1974,8 @@
                             }
                             return bd;
                         };
-                        const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; bd.style.pointerEvents = 'auto'; };
-                        const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) { bd.style.display = 'none'; bd.style.pointerEvents = 'none'; } };
+                        const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; bd.style.pointerEvents = 'auto'; log('backdrop: show'); };
+                        const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) { bd.style.display = 'none'; bd.style.pointerEvents = 'none'; log('backdrop: hide'); } };
                         const hideMenu = () => {
                             menu.classList.add('hidden'); hideBackdrop();
                             if (window.filterMenuResizeHandler) { window.removeEventListener('resize', window.filterMenuResizeHandler); window.filterMenuResizeHandler = null; }
@@ -1972,6 +1990,7 @@
                                 menu.style.zIndex = '1000';
                                 menu.style.pointerEvents = 'auto';
                                 menu.style.touchAction = 'pan-y';
+                                log('menu: portaled to body');
                             } catch {}
                         };
                         const positionMenuNearButton = () => {
@@ -1984,6 +2003,7 @@
                                 menu.style.top = `${top}px`;
                                 menu.style.right = `${right}px`;
                                 menu.style.left = 'auto';
+                                log(`menu: position top=${top} right=${right}`);
                             } catch {}
                         };
                         const sizeMenuToAvailableSpace = () => {
@@ -2005,6 +2025,7 @@
                                 const minPx = 140; // allow at least a few items
                                 const finalPx = Math.max(minPx, limitPx);
                                 menu.style.maxHeight = `${finalPx}px`;
+                                log(`menu: size maxHeight=${finalPx}`);
                                 if (prev) menu.classList.add('hidden');
                             } catch {}
                         };
@@ -2014,7 +2035,7 @@
                             if (shouldShow) {
                                 portalMenuToBody();
                                 positionMenuNearButton();
-                                menu.classList.remove('hidden');
+                                menu.classList.remove('hidden'); log('menu: show');
                                 showBackdrop();
                                 // Mobile-friendly width cap
                                 try { menu.style.maxWidth = 'min(90vw, 20rem)'; } catch {}
@@ -2035,9 +2056,9 @@
                                     window.filterMenuTouchHandler = (evt) => { /* allow native scrolling but keep events inside */ };
                                     menu.addEventListener('touchmove', window.filterMenuTouchHandler, { passive: true });
                                 } catch {}
-                                menuOpenedAt = Date.now();
+                                menuOpenedAt = Date.now(); log('menu: opened');
                             } else {
-                                hideMenu();
+                                log('menu: hide request'); hideMenu();
                             }
                         };
                         // Attach button handlers once per render (mobile friendly)
@@ -2048,6 +2069,7 @@
                             const now = Date.now();
                             if (now - lastOpenIntent < 300) return; // debounce duplicate pointer/touch/click
                             lastOpenIntent = now;
+                            log(`btn: ${e.type}`);
                             toggleFilterMenu(true); // force open; avoid toggle-close on duplicate events
                         };
                         btn.onclick = openHandler;
