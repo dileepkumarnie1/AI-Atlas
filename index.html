@@ -1646,11 +1646,13 @@
 
                     // --- Top Tools rotating strip (logo + name only) ---
                     function stripIconImgHtml(tool, size=48) {
-                        const { primary, secondary, placeholder } = buildIconSources(tool, size);
+                        const { primary, secondary, placeholder, srcset } = buildIconSources(tool, size);
                         const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
+                        const srcsetAttr = srcset ? ` srcset="${srcset}"` : '';
                         // Inline border-radius + subtle ring to guarantee circular shape and match screenshot style
-                        // Use image-rendering: -webkit-optimize-contrast for sharper rendering on mobile
-                        return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px;border:1px solid rgba(0,0,0,0.08);background:#fff;object-fit:cover;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges" class="flex-shrink-0" onerror="${onerr}">`;
+                        // Use high-res srcset for sharp rendering on high-DPI mobile screens
+                        // Add image-rendering and will-change for optimal mobile performance
+                        return `<img src="${primary}"${srcsetAttr} alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px;border:1px solid rgba(0,0,0,0.08);background:#fff;object-fit:cover;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;will-change:transform" class="flex-shrink-0" onerror="${onerr}" loading="eager" decoding="sync">`;
                     }
                     function scoreToolForTop(tool) {
                         try {
