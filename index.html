@@ -1628,7 +1628,7 @@
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
-                            <div id="top-tools-strip" class="mb-10 md:mb-12 mt-[0.675rem] md:mt-[0.9rem]"></div>
+                            <div id="top-tools-strip" class="mb-10 md:mb-12 mt-[0.675rem] md:mt-[0.54rem]"></div>
 
                             <div id="domain-tiles-anchor" class="h-0"></div>
                             <h2 class="text-3xl font-bold text-primary mb-6 md:mb-8 mt-6 md:mt-4">Explore AI tools by domain</h2>
@@ -1649,7 +1649,8 @@
                         const { primary, secondary, placeholder } = buildIconSources(tool, size);
                         const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
                         // Inline border-radius + subtle ring to guarantee circular shape and match screenshot style
-                        return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px;border:1px solid rgba(0,0,0,0.08);background:#fff;object-fit:cover" class="flex-shrink-0" onerror="${onerr}">`;
+                        // Use image-rendering: -webkit-optimize-contrast for sharper rendering on mobile
+                        return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;border-radius:9999px;border:1px solid rgba(0,0,0,0.08);background:#fff;object-fit:cover;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges" class="flex-shrink-0" onerror="${onerr}">`;
                     }
                     function scoreToolForTop(tool) {
                         try {
@@ -1946,9 +1947,31 @@
                         </div>`);
                         menu.innerHTML = itemHtml.join('');
 
-                        // Wire item clicks
+                        // Wire item clicks - prevent selection during scroll/drag
                         menu.querySelectorAll('button[data-value]').forEach(el => {
+                            let touchStartY = 0;
+                            let isDragging = false;
+                            
+                            // Detect drag vs tap on touch devices
+                            el.addEventListener('touchstart', (e) => {
+                                touchStartY = e.touches[0].clientY;
+                                isDragging = false;
+                            }, { passive: true });
+                            
+                            el.addEventListener('touchmove', (e) => {
+                                const touchMoveY = e.touches[0].clientY;
+                                if (Math.abs(touchMoveY - touchStartY) > 10) {
+                                    isDragging = true;
+                                }
+                            }, { passive: true });
+                            
                             const handler = (e) => {
+                                // Ignore click if user was dragging/scrolling
+                                if (isDragging) {
+                                    isDragging = false;
+                                    return;
+                                }
+                                
                                 const val = e.currentTarget.getAttribute('data-value') || 'all';
                                 if (val === 'all') {
                                     state.categoryExplicit = false;
