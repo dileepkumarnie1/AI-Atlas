@@ -182,6 +182,7 @@
         nav a:hover { background-color: var(--bg-secondary); color: var(--text-primary); }
         #theme-toggle { color: var(--text-secondary); }
         #theme-toggle:hover { background-color: var(--bg-secondary); }
+    #filter-button { cursor: pointer; }
         footer { background-color: var(--bg-secondary); border-top-color: var(--border-color); }
         footer p { color: var(--text-muted); }
         #search-bar { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); }
@@ -2025,8 +2026,12 @@
                                 hideMenu();
                             }
                         };
-                        // Attach button handler once per render
-                        btn.onclick = (e) => { e.stopPropagation(); toggleFilterMenu(); };
+                        // Attach button handlers once per render (mobile friendly)
+                        const openHandler = (e) => { e.stopPropagation(); if (e.type === 'pointerdown') e.preventDefault(); toggleFilterMenu(); };
+                        btn.onclick = openHandler;
+                        try { btn.addEventListener('pointerdown', openHandler); } catch {}
+                        try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
+                        try { btn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openHandler(ev); } }); } catch {}
                         // Prevent interactions inside the menu from bubbling to the document handler
                         try {
                             menu.addEventListener('click', (ev)=>ev.stopPropagation());
