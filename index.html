@@ -327,11 +327,10 @@
         .search-wrapper { max-width: 900px; margin: 0 auto 1.5rem; display:flex; gap:8px; align-items:center; }
         .search-input { flex:1; padding:0.75rem 1rem; border-radius:0.75rem; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); }
         .search-clear { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.75rem; border-radius:0.5rem; color:var(--text-secondary); }
-        .search-results { margin-top:1rem; display:grid; gap:10px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        @media(min-width:768px) { .search-results { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        @media(min-width:1024px) { .search-results { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-        @media(min-width:1280px) { .search-results { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
-        @media(min-width:1536px) { .search-results { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+    /* Fluid, auto-fitting search grid */
+    .search-results { margin-top:1rem; display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    @media(min-width:640px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
+    @media(min-width:1024px) { .search-results { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
         .tile-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -350,6 +349,7 @@
         html.dark .tile-card:hover { box-shadow: 0 8px 18px rgba(0,0,0,.25), 0 0 12px rgba(76, 29, 149, 0.25); }
     .tile-title { font-weight: 700; color: var(--text-primary); font-size: 0.9rem; line-height: 1.2; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; }
     .tile-desc { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
+    .tile-blurb { color: var(--text-secondary); font-size: 0.78rem; line-height: 1.25; display:-webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow:hidden; min-height: 2.2em; }
         .tile-tags { display:flex; gap:6px; flex-wrap: wrap; justify-content: center; }
         .tile-actions { display:flex; gap:8px; align-items:center; justify-content:center; }
         .pager-btn { border:1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); padding: .35rem .6rem; border-radius:.5rem; }
@@ -961,7 +961,8 @@
                 const icon = tool?.iconUrl || '';
                 const iconHost = getHostnameFromLink(icon);
                 const baseHost = linkHost || iconHost || '';
-                const s2 = baseHost ? `https://www.google.com/s2/favicons?domain=${baseHost}&sz=${size}` : '';
+                // Ask for a larger source so downscaling looks crisp
+                const s2 = baseHost ? `https://www.google.com/s2/favicons?domain=${baseHost}&sz=${Math.max(64, size*2)}` : '';
                 const duck = baseHost ? `https://icons.duckduckgo.com/ip3/${baseHost}.ico` : '';
                 const placeholder = getLightPlaceholder(tool?.name, size);
 
@@ -988,7 +989,7 @@
             function iconImgHtml(tool, size=40, extraClass='') {
                 const { primary, secondary, placeholder } = buildIconSources(tool, size);
                 const onerr = `this.onerror=function(){this.onerror=null; this.src='${placeholder}';}; this.src='${secondary}';`;
-                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;object-fit:contain;image-rendering:auto" class="rounded-md bg-white/60 ${extraClass}" onerror="${onerr}">`;
+                return `<img src="${primary}" alt="${escapeHtml(tool?.name)} Logo" style="width:${size}px;height:${size}px;object-fit:contain;image-rendering:crisp-edges" class="rounded-md bg-white/70 backdrop-blur-[1px] ${extraClass}" onerror="${onerr}" loading="lazy" decoding="async">`;
             }
             function formatCountShort(n) {
                 if (typeof n !== 'number' || !isFinite(n) || n <= 0) return '';
@@ -1099,11 +1100,41 @@
 
             function renderSearchTile(tool) {
                 const iconHtml = iconImgHtml(tool, 56, 'mb-2 cursor-pointer open-tool-logo');
+                const blurb = (() => {
+                    const q = String(state.searchQuery||'').toLowerCase();
+                    const tags = (tool.tags||[]).map(t=>String(t).toLowerCase());
+                    const name = String(tool.name||'');
+                    const has = (w) => q.includes(w) || tags.some(t=>t.includes(w));
+                    if (has('video')) {
+                        if (has('edit') || has('editor') || has('cut')) return 'Great for video editing';
+                        if (has('text-to-video') || has('t2v') || has('generate')) return 'Good for new video generation';
+                        if (has('transcription') || has('subtitle') || has('caption')) return 'Helpful for captions/subtitles';
+                        if (has('effects') || has('fx') || has('filter')) return 'Video effects and styling';
+                        if (has('translation')) return 'Video translation/localization';
+                        return 'Video tooling';
+                    }
+                    if (has('image') || has('img') || has('photo')) {
+                        if (has('edit') || has('inpaint') || has('retouch')) return 'Great for image editing';
+                        if (has('generate') || has('gen') || has('text-to-image')) return 'Good for new image generation';
+                        if (has('upscale') || has('enhance')) return 'Image upscaling/enhancement';
+                        return 'Image tooling';
+                    }
+                    if (has('audio') || has('music') || has('speech')) {
+                        if (has('tts') || has('voice') || has('synthesis')) return 'Text-to-speech/voice';
+                        if (has('stt') || has('transcribe')) return 'Speech-to-text/transcription';
+                        return 'Audio tooling';
+                    }
+                    if (has('code') || has('developer')) return 'Developer tools';
+                    if (has('agent')) return 'Agents & orchestration';
+                    if (has('search') || has('knowledge')) return 'Search & discovery';
+                    return '';
+                })();
                 return `
                     <div class="tile-card card-hover-effect" role="listitem" data-name="${escapeHtml(tool.name)}">
                         <div class="flex flex-col items-center">
                             <div class="rounded-full p-1 bg-white/70 shadow-sm" role="button" aria-label="Open ${escapeHtml(tool.name)}" data-name="${escapeHtml(tool.name)}">${iconHtml}</div>
                             <div class="tile-title mt-1">${escapeHtml(tool.name)} ${usersBadgeHtml(tool)}</div>
+                            ${blurb ? `<div class="tile-blurb mt-1">${escapeHtml(blurb)}</div>` : ''}
                         </div>
                     </div>
                 `;
