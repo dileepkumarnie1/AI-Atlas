@@ -86,9 +86,10 @@
             position: fixed; inset: 0; z-index: 40; background: transparent; backdrop-filter: none; /* capture clicks only and stay below header/menu */
         }
         /* Make filter menu more opaque and above contents */
-    #filter-menu { z-index: 70; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; }
+    #filter-menu { z-index: 1000; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; overscroll-behavior: contain; pointer-events: auto; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
     html.dark #filter-menu { background: rgba(24,24,27,0.97) !important; }
-    @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 16px !important; left: auto !important; top: 96px !important; } }
+    /* On small screens keep the menu anchored below the filter button */
+    @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 0 !important; left: auto !important; top: 100% !important; margin-top: 8px !important; } }
         html.dark #background-overlay {
             background: rgba(30,41,59,0.50);
         }
@@ -1596,7 +1597,8 @@
                                             <span>Filter</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                                         </button>
-                                        <div id="filter-menu" class="hidden fixed right-6 top-[120px] w-80 bg-card border border-color rounded-xl shadow-lg z-20"></div>
+                                        <!-- Dropdown is absolutely positioned within the search/filter container so its top aligns below the Filter button -->
+                                        <div id="filter-menu" class="hidden absolute right-0 top-full mt-2 w-80 max-h-[60vh] overflow-y-auto bg-card border border-color rounded-xl shadow-lg"></div>
                                     </div>
                                 </div>
                                 <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-4 px-2 md:px-0"></div>
@@ -1605,6 +1607,7 @@
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
                             <div id="top-tools-strip" class="mb-10 md:mb-12"></div>
 
+                            <div id="domain-tiles-anchor" class="h-0"></div>
                             <h2 class="text-3xl font-bold text-primary mb-6 md:mb-8 mt-6 md:mt-4">Explore AI tools by domain</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-7 lg:gap-8">
                                 ${ getOrderedDomains().map(domain => `<div class="domain-card card-hover-effect p-6" data-slug="${domain.slug}"><div class="text-purple-500 mb-4">${domain.icon || ''}</div><h3 class="text-xl font-semibold text-primary mb-2">${domain.name}</h3><p class="text-secondary text-sm flex-grow">${domain.description || ''}</p></div>`).join('')}
@@ -1861,6 +1864,8 @@
                         const menu = document.getElementById('filter-menu');
                         const btn = document.getElementById('filter-button');
                         if (!menu || !btn) return;
+                        // Ensure menu is scrollable by default
+                        try { menu.style.overflowY = 'auto'; menu.style.pointerEvents = 'auto'; menu.style.touchAction = 'pan-y'; } catch {}
                         const counts = computeCategoryCounts(matches);
                         const current = state.selectedCategory || 'all';
                         const itemHtml = [];
@@ -1932,18 +1937,92 @@
                         };
                         const showBackdrop = () => { const bd = ensureBackdrop(); bd.style.display = 'block'; };
                         const hideBackdrop = () => { const bd = document.getElementById('filter-backdrop'); if (bd) bd.style.display = 'none'; };
-                        const hideMenu = () => { menu.classList.add('hidden'); hideBackdrop(); };
+                        const hideMenu = () => {
+                            menu.classList.add('hidden'); hideBackdrop();
+                            if (window.filterMenuResizeHandler) { window.removeEventListener('resize', window.filterMenuResizeHandler); window.filterMenuResizeHandler = null; }
+                            if (window.filterMenuScrollHandler) { window.removeEventListener('scroll', window.filterMenuScrollHandler, true); window.filterMenuScrollHandler = null; }
+                        };
+                        const portalMenuToBody = () => {
+                            try {
+                                if (menu.parentElement !== document.body) {
+                                    document.body.appendChild(menu);
+                                }
+                                menu.style.position = 'fixed';
+                                menu.style.zIndex = '1000';
+                                menu.style.pointerEvents = 'auto';
+                                menu.style.touchAction = 'pan-y';
+                            } catch {}
+                        };
+                        const positionMenuNearButton = () => {
+                            try {
+                                const r = btn.getBoundingClientRect();
+                                const margin = 8;
+                                const vw = window.innerWidth || document.documentElement.clientWidth || 0;
+                                const right = Math.max(8, vw - r.right - 8);
+                                const top = Math.max(8, r.bottom + margin);
+                                menu.style.top = `${top}px`;
+                                menu.style.right = `${right}px`;
+                                menu.style.left = 'auto';
+                            } catch {}
+                        };
+                        const sizeMenuToAvailableSpace = () => {
+                            try {
+                                const anchor = document.getElementById('domain-tiles-anchor');
+                                // Temporarily ensure visible for accurate measurement
+                                const prev = menu.classList.contains('hidden');
+                                if (prev) menu.classList.remove('hidden');
+                                const menuRect = menu.getBoundingClientRect();
+                                const viewportBottom = window.innerHeight || document.documentElement.clientHeight || 0;
+                                let limitPx = Math.min(viewportBottom - menuRect.top - 16, (viewportBottom * 0.6));
+                                if (anchor) {
+                                    const anchorRect = anchor.getBoundingClientRect();
+                                    const spaceToAnchor = anchorRect.top - menuRect.top - 12; // keep a small gap
+                                    if (Number.isFinite(spaceToAnchor)) {
+                                        limitPx = Math.min(limitPx, spaceToAnchor);
+                                    }
+                                }
+                                const minPx = 140; // allow at least a few items
+                                const finalPx = Math.max(minPx, limitPx);
+                                menu.style.maxHeight = `${finalPx}px`;
+                                if (prev) menu.classList.add('hidden');
+                            } catch {}
+                        };
                         const toggleFilterMenu = (force) => {
                             const shouldShow = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
                             if (shouldShow) {
+                                portalMenuToBody();
+                                positionMenuNearButton();
                                 menu.classList.remove('hidden');
                                 showBackdrop();
+                                sizeMenuToAvailableSpace();
+                                // Recompute on viewport changes
+                                if (window.filterMenuResizeHandler) { window.removeEventListener('resize', window.filterMenuResizeHandler); }
+                                window.filterMenuResizeHandler = () => { positionMenuNearButton(); sizeMenuToAvailableSpace(); };
+                                window.addEventListener('resize', window.filterMenuResizeHandler);
+                                if (window.filterMenuScrollHandler) { window.removeEventListener('scroll', window.filterMenuScrollHandler, true); }
+                                window.filterMenuScrollHandler = () => { positionMenuNearButton(); sizeMenuToAvailableSpace(); };
+                                window.addEventListener('scroll', window.filterMenuScrollHandler, true);
+                                // Ensure wheel/touch scrolling works within the dropdown
+                                try {
+                                    if (window.filterMenuWheelHandler) { menu.removeEventListener('wheel', window.filterMenuWheelHandler); }
+                                    window.filterMenuWheelHandler = (evt) => { evt.stopPropagation(); };
+                                    menu.addEventListener('wheel', window.filterMenuWheelHandler, { passive: true });
+                                    if (window.filterMenuTouchHandler) { menu.removeEventListener('touchmove', window.filterMenuTouchHandler); }
+                                    window.filterMenuTouchHandler = (evt) => { /* allow native scrolling but keep events inside */ };
+                                    menu.addEventListener('touchmove', window.filterMenuTouchHandler, { passive: true });
+                                } catch {}
                             } else {
                                 hideMenu();
                             }
                         };
                         // Attach button handler once per render
                         btn.onclick = (e) => { e.stopPropagation(); toggleFilterMenu(); };
+                        // Prevent interactions inside the menu from bubbling to the document handler
+                        try {
+                            menu.addEventListener('click', (ev)=>ev.stopPropagation());
+                            menu.addEventListener('mousedown', (ev)=>ev.stopPropagation());
+                            menu.addEventListener('touchstart', (ev)=>ev.stopPropagation(), { passive: true });
+                        } catch {}
 
                         // Outside click/escape to close
                         if (window.filterOutsideClick) {
@@ -1951,12 +2030,13 @@
                             window.filterOutsideClick = null;
                         }
                         window.filterOutsideClick = (ev) => {
-                            if (!document.getElementById('filter-menu')) return;
+                            const mm = document.getElementById('filter-menu');
                             const unit = document.getElementById('search-filter-unit');
-                            if (!unit) return;
-                            if (!unit.contains(ev.target)) {
-                                hideMenu();
-                            }
+                            if (!mm || !unit) return;
+                            const target = ev.target;
+                            const insideMenu = mm.contains(target);
+                            const insideUnit = unit.contains(target);
+                            if (!insideMenu && !insideUnit) hideMenu();
                         };
                         document.addEventListener('click', window.filterOutsideClick);
                         if (window.filterEscapeHandler) {
