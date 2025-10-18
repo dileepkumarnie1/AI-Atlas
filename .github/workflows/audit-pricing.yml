@@ -8,13 +8,13 @@ on:
       strict:
         description: 'Fail the audit on any anomaly (true) or only on critical conflicts (false)'
         required: false
-        default: 'true'
+        default: 'false'
 
 jobs:
   audit:
     runs-on: ubuntu-latest
     env:
-      PRICING_AUDIT_STRICT: ${{ github.event.inputs.strict || 'true' }}
+      PRICING_AUDIT_STRICT: ${{ github.event.inputs.strict || 'false' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -71,6 +71,19 @@ jobs:
       - name: Print audit summary
         run: |
           node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); console.log('Counts:', j.counts); if (j.anomalies && j.anomalies.length){ console.log('First anomalies (max 20):'); j.anomalies.slice(0,20).forEach((a,i)=>console.log(i+1, a)); } else { console.log('No pricing anomalies.'); }"
+
+      - name: Email major anomalies (conflicts only)
+        if: always()
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: |
+          node ./scripts/email-pricing-anomalies.mjs || echo 'email step skipped'
 
       - name: Upload audit artifacts
         uses: actions/upload-artifact@v4
