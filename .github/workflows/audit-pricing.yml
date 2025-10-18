@@ -77,6 +77,39 @@ jobs:
         run: |
           node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); if (j.anomalies && j.anomalies.length){ console.error('Pricing anomalies found:', j.anomalies.length); process.exit(1); } else { console.log('No pricing anomalies.'); }"
 
+  auto-fix:
+    needs: audit
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      - name: Generate pricing overrides from anomalies
+        run: node ./scripts/generate-pricing-overrides.mjs
+      - name: Create PR with overrides
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(pricing): add overrides generated from audit"
+          title: "chore(pricing): add overrides generated from audit"
+          body: |
+            This PR was created automatically because the Audit Pricing workflow detected anomalies.
+            The script generated/updated `data/pricing-overrides.json` with suggested canonical pricing labels.
+            Review and merge to resolve the audit failure.
+          branch: ci/pricing-overrides
+          delete-branch: true
+
       - name: Commit audit summary (optional)
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
