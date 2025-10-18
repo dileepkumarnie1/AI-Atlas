@@ -83,7 +83,10 @@
         }
         /* Filter backdrop to prevent underlying content from showing/clicking */
         #filter-backdrop {
-            position: fixed; inset: 0; z-index: 40; background: transparent; backdrop-filter: none; pointer-events: none; /* disabled by default to avoid stray tap blocks */
+            position: fixed; inset: 0; z-index: 999; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); pointer-events: none; /* disabled by default to avoid stray tap blocks */
+        }
+        html.dark #filter-backdrop {
+            background: rgba(0, 0, 0, 0.5);
         }
         /* Make filter menu more opaque and above contents */
     #filter-menu { z-index: 1000; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; overscroll-behavior: contain; pointer-events: auto; touch-action: pan-y; -webkit-overflow-scrolling: touch; color: var(--text-primary); }
@@ -91,8 +94,7 @@
     /* Improve readability in dark mode */
     html.dark #filter-menu, html.dark #filter-menu button { color: var(--text-primary) !important; }
     #filter-menu button { color: inherit; }
-    /* On small screens keep the menu anchored below the filter button */
-    @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 0 !important; left: auto !important; top: 100% !important; margin-top: 8px !important; } }
+    /* Note: positioning is handled by JavaScript for mobile/desktop compatibility */
         html.dark #background-overlay {
             background: rgba(30,41,59,0.50);
         }
@@ -1946,7 +1948,7 @@
 
                         // Wire item clicks
                         menu.querySelectorAll('button[data-value]').forEach(el => {
-                            el.onclick = (e) => {
+                            const handler = (e) => {
                                 const val = e.currentTarget.getAttribute('data-value') || 'all';
                                 if (val === 'all') {
                                     state.categoryExplicit = false;
@@ -1973,9 +1975,23 @@
                                     }
                                 }
                             };
+                            el.onclick = handler;
+                            // Add touch support for mobile
+                            el.addEventListener('touchend', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                handler(e);
+                            }, { passive: false });
                         });
                         const closeBtn = menu.querySelector('button[data-action="close"]');
-                        if (closeBtn) closeBtn.onclick = () => toggleFilterMenu(false);
+                        if (closeBtn) {
+                            closeBtn.onclick = () => toggleFilterMenu(false);
+                            closeBtn.addEventListener('touchend', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                toggleFilterMenu(false);
+                            }, { passive: false });
+                        }
 
                         // Button toggle
                         const ensureBackdrop = () => {
@@ -1985,7 +2001,13 @@
                                 bd.id = 'filter-backdrop';
                                 bd.style.display = 'none';
                                 document.body.appendChild(bd);
+                                // Handle both click and touch events for closing
                                 bd.addEventListener('click', () => { hideMenu(); });
+                                bd.addEventListener('touchend', (e) => { 
+                                    e.preventDefault(); 
+                                    e.stopPropagation(); 
+                                    hideMenu(); 
+                                }, { passive: false });
                             }
                             return bd;
                         };
@@ -2087,22 +2109,29 @@
                             log(`btn: ${e.type}`);
                             toggleFilterMenu(true); // force open; avoid toggle-close on duplicate events
                         };
+                        // Simple click handler works for most cases
                         btn.onclick = openHandler;
-                        try { btn.addEventListener('pointerdown', openHandler); } catch {}
-                        // On some Android builds, using touchstart+preventDefault then delayed open is the most reliable
+                        
+                        // For touch devices, use touchend for better reliability
                         try {
-                            btn.addEventListener('touchstart', (te) => {
-                                try { te.preventDefault(); te.stopPropagation(); } catch {}
-                                setTimeout(() => openHandler(te), 0);
+                            btn.addEventListener('touchend', (te) => {
+                                try { 
+                                    te.preventDefault(); 
+                                    te.stopPropagation(); 
+                                } catch {}
+                                openHandler(te);
                             }, { passive: false });
                         } catch {}
-                        try { btn.addEventListener('touchend', openHandler, { passive: true }); } catch {}
+                        
+                        // Keyboard accessibility
                         try { btn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openHandler(ev); } }); } catch {}
+                        
                         // Prevent interactions inside the menu from bubbling to the document handler
                         try {
                             menu.addEventListener('click', (ev)=>ev.stopPropagation());
                             menu.addEventListener('mousedown', (ev)=>ev.stopPropagation());
                             menu.addEventListener('touchstart', (ev)=>ev.stopPropagation(), { passive: true });
+                            menu.addEventListener('touchend', (ev)=>ev.stopPropagation(), { passive: true });
                         } catch {}
 
                         // Outside click/escape to close

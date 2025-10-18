@@ -699,7 +699,11 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
         browser = p.chromium.launch(headless=True)
         try:
             # Contexts
-            mobile = browser.new_context(viewport={'width': 375, 'height': 667}, device_scale_factor=2)
+            mobile = browser.new_context(
+                viewport={'width': 375, 'height': 667}, 
+                device_scale_factor=2,
+                has_touch=True  # Enable touch support for mobile tests
+            )
             mpage = mobile.new_page()
             desk = browser.new_context(viewport={'width': 1366, 'height': 768})
             dpage = desk.new_page()
@@ -1408,7 +1412,11 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                 ),
                 'FD-M08': lambda: (
                     (lambda: (
-                        landscape := browser.new_context(viewport={'width': 667, 'height': 375}, device_scale_factor=2),
+                        landscape := browser.new_context(
+                            viewport={'width': 667, 'height': 375}, 
+                            device_scale_factor=2,
+                            has_touch=True  # Enable touch support for landscape tests
+                        ),
                         lpage := landscape.new_page(),
                         lpage.goto(home, wait_until='domcontentloaded', timeout=30000),
                         lpage.wait_for_selector('#filter-button', timeout=10000),
