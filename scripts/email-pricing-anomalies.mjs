@@ -64,22 +64,24 @@ async function main(){
       <td style=\"padding:8px 6px; border-bottom:1px solid #eee;\">${links}</td>
     </tr>`;
   }).join('');
-  const html = `<div style="font-family:Segoe UI,Arial,sans-serif; color:#24292f;">
-    <h2 style="margin:0 0 8px;">Pricing conflicts require approval</h2>
-    <p style="margin:0 0 12px; color:#57606a;">Click Approve to open the GitHub workflow dispatch page. The workflow will create an Issue and a PR to apply the selected pricing model.</p>
-    <table style="border-collapse:collapse; width:100%; max-width:900px;">
-      <thead>
-        <tr style="text-align:left;">
-          <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Tool</th>
-          <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Section</th>
-          <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Anomalies</th>
-          <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Suggested</th>
-          <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Action</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
-  </div>`;
+    const html = `<div style="font-family:Segoe UI,Arial,sans-serif; color:#24292f;">
+      <h2 style="margin:0 0 8px;">Pricing conflicts require approval</h2>
+      <p style="margin:0 0 12px; color:#57606a;">Use the Approve links to open the GitHub workflow dispatch page (Actions ➝ Pricing Approval).
+      Select or paste Section, Tool, and Pricing, then run the workflow. It will create an Issue and a PR to apply the override.</p>
+      <table style="border-collapse:collapse; width:100%; max-width:900px;">
+        <thead>
+          <tr style="text-align:left;">
+            <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Tool</th>
+            <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Section</th>
+            <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Anomalies</th>
+            <th style="padding:8px 6px; border-bottom:2px solid #ddd;">Approve</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <p style="margin:12px 0 0; color:#57606a; font-size:12px;">Tip: If you prefer, open an issue labeled <code>pricing-approve</code> with fields
+      <strong>Section</strong>, <strong>Tool</strong>, <strong>Pricing</strong>, and the <em>Pricing Approval (Issue)</em> workflow will create a PR automatically.</p>
+    </div>`;
   await sendEmail(html);
 }
 
