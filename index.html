@@ -83,12 +83,12 @@
         }
         /* Filter backdrop to prevent underlying content from showing/clicking */
         #filter-backdrop {
-            position: fixed; inset: 0; z-index: 60; background: transparent; backdrop-filter: none; /* capture clicks only */
+            position: fixed; inset: 0; z-index: 40; background: transparent; backdrop-filter: none; /* capture clicks only and stay below header/menu */
         }
         /* Make filter menu more opaque and above contents */
-        #filter-menu { z-index: 70; background: rgba(255,255,255,0.97) !important; }
-        html.dark #filter-menu { background: rgba(24,24,27,0.97) !important; }
-        @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 16px !important; left: 16px !important; } }
+    #filter-menu { z-index: 70; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; }
+    html.dark #filter-menu { background: rgba(24,24,27,0.97) !important; }
+    @media (max-width: 640px) { #filter-menu { width: calc(100vw - 32px) !important; right: 16px !important; left: auto !important; top: 96px !important; } }
         html.dark #background-overlay {
             background: rgba(30,41,59,0.50);
         }
@@ -1596,7 +1596,7 @@
                                             <span>Filter</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                                         </button>
-                                        <div id="filter-menu" class="hidden absolute right-0 top-[calc(100%+0.5rem)] w-72 bg-card border border-color rounded-xl shadow-lg z-20"></div>
+                                        <div id="filter-menu" class="hidden fixed right-6 top-[120px] w-80 bg-card border border-color rounded-xl shadow-lg z-20"></div>
                                     </div>
                                 </div>
                                 <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-4 px-2 md:px-0"></div>
@@ -1943,7 +1943,7 @@
                             }
                         };
                         // Attach button handler once per render
-                        btn.onclick = () => toggleFilterMenu();
+                        btn.onclick = (e) => { e.stopPropagation(); toggleFilterMenu(); };
 
                         // Outside click/escape to close
                         if (window.filterOutsideClick) {
