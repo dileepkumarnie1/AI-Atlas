@@ -1595,17 +1595,17 @@
                                 <!-- Tool Count Banner -->
                                 <div class="mb-1 md:mb-2">
                                     <div class="inline-flex items-center gap-2">
-                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="w-4 h-4 md:w-5 md:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                                         </svg>
-                                        <span class="text-lg md:text-xl font-semibold text-primary">
+                                        <span class="text-base md:text-xl font-semibold text-primary">
                                             ${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); const rounded = Math.round(total / 100) * 100; return rounded; })()}+ AI Tools Curated
                                         </span>
                                     </div>
                                 </div>
                                 <div class="mb-2.5 md:mb-4">
-                                    <h1 class="text-[2.25rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
-                                    <p class="max-w-2xl mx-auto text-[1.26rem] md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
+                                    <h1 class="text-[1.875rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-1.5 md:mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
+                                    <p class="max-w-2xl mx-auto text-base md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
                                 </div>
                                 <!-- Unified Search + Filter dropdown -->
                                 <div class="w-full max-w-4xl mx-auto">
@@ -1702,7 +1702,7 @@
                         if (!topStripEl) return;
                         if (!topTools || topTools.length === 0) { topStripEl.innerHTML = ''; return; }
                         const visible = Math.min(getTopVisible(), topTools.length);
-                        const iconSize = ((window.innerWidth || 0) < 640) ? 40 : 48;
+                        const iconSize = ((window.innerWidth || 0) < 640) ? 56 : 64;
                         // duplicate first `visible` items to end for seamless looping
                         const trackTools = topTools.concat(topTools.slice(0, visible));
                         const gaps = Math.max(0, visible - 1);
