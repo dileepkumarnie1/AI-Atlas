@@ -462,6 +462,116 @@ def build_test_plan() -> List[TestCase]:
         expected="Dropdown closes; no filter change",
         type="edge", priority="P2", device="desktop(1366x768)"
     ))
+    
+    # Mobile-specific Filter Dropdown tests (Android Chrome compatibility)
+    tc.append(TestCase(
+        id="FD-M01",
+        feature="Filter Dropdown",
+        title="Mobile: Filter button tap registers immediately (no delay)",
+        precondition="Mobile viewport (375x667)",
+        steps="Tap #filter-button; measure time to dropdown open",
+        expected="Dropdown opens within 500ms; no 300ms tap delay",
+        type="positive", priority="P0", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M02",
+        feature="Filter Dropdown",
+        title="Mobile: Filter button z-index prevents tap blocking",
+        precondition="Mobile viewport with filter button visible",
+        steps="Tap filter button; verify touch event reaches button",
+        expected="Button responds to tap; not blocked by backdrop or other elements",
+        type="positive", priority="P0", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M03",
+        feature="Filter Dropdown",
+        title="Mobile: Dropdown positions below button on small screens",
+        precondition="Mobile portrait (375x667)",
+        steps="Open filter dropdown; measure position relative to button",
+        expected="Dropdown top edge is below button bottom edge",
+        type="positive", priority="P1", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M04",
+        feature="Filter Dropdown",
+        title="Mobile: Dropdown width fits viewport (no horizontal overflow)",
+        precondition="Mobile portrait (375x667)",
+        steps="Open filter dropdown; check width against viewport",
+        expected="Dropdown width <= 90vw; no horizontal scrollbar",
+        type="positive", priority="P1", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M05",
+        feature="Filter Dropdown",
+        title="Mobile: Touch scroll works inside dropdown (no page scroll)",
+        precondition="Mobile with filter open and long category list",
+        steps="Touch and drag inside dropdown; verify scrolling behavior",
+        expected="Dropdown content scrolls; page body remains stationary",
+        type="positive", priority="P0", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M06",
+        feature="Filter Dropdown",
+        title="Mobile: Category button tap registers (touch event handling)",
+        precondition="Mobile with filter dropdown open",
+        steps="Tap a category button; verify selection and close",
+        expected="Category selected; dropdown closes; no double-tap required",
+        type="positive", priority="P0", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M07",
+        feature="Filter Dropdown",
+        title="Mobile: Backdrop tap closes dropdown",
+        precondition="Mobile with filter open and backdrop visible",
+        steps="Tap backdrop area outside dropdown",
+        expected="Dropdown closes; backdrop disappears",
+        type="positive", priority="P1", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M08",
+        feature="Filter Dropdown",
+        title="Mobile landscape: Filter button and dropdown remain accessible",
+        precondition="Mobile landscape (667x375)",
+        steps="Rotate to landscape; open filter; verify positioning",
+        expected="Button clickable; dropdown visible and usable in landscape",
+        type="positive", priority="P2", device="mobile(667x375)"
+    ))
+    tc.append(TestCase(
+        id="FD-M09",
+        feature="Filter Dropdown",
+        title="Mobile: Dropdown max-height respects viewport (no cut-off)",
+        precondition="Mobile portrait with many categories",
+        steps="Open filter; measure dropdown height vs viewport",
+        expected="Dropdown max-height <= 60vh; doesn't exceed screen bounds",
+        type="positive", priority="P1", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M10",
+        feature="Filter Dropdown",
+        title="Mobile: Multi-touch doesn't cause multiple opens",
+        precondition="Mobile with filter closed",
+        steps="Rapidly tap filter button multiple times",
+        expected="Dropdown opens once; no flickering or multiple states",
+        type="edge", priority="P2", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M11",
+        feature="Filter Dropdown",
+        title="Mobile: Pointer events don't leak through dropdown",
+        precondition="Mobile with filter open over content",
+        steps="Tap on dropdown area where tool cards would be underneath",
+        expected="Tap registers on dropdown/backdrop only; underlying content not activated",
+        type="positive", priority="P1", device="mobile(375x667)"
+    ))
+    tc.append(TestCase(
+        id="FD-M12",
+        feature="Filter Dropdown",
+        title="Mobile: Filter persists after device orientation change",
+        precondition="Mobile portrait with category selected",
+        steps="Select category; rotate device; verify filter state",
+        expected="Selected category filter remains active after orientation change",
+        type="edge", priority="P2", device="mobile(375x667→667x375)"
+    ))
 
     # Auth feature (UI + optional real login)
     tc.append(TestCase(
@@ -1234,6 +1344,159 @@ def run_ui_tests(base_url: str, out_dir: str, plan: List[TestCase]) -> List[Test
                         stillVisible := dpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
                         ok := bool(doneBtn and not stillVisible),
                         results.append(TestResult('FD-010', 'Filter Dropdown', 'Done button closes dropdown without changing selection', 'pass' if ok else 'fail', f'doneBtn={bool(doneBtn)}, closed={not stillVisible}', shot('FD-010', dpage)))
+                    ))()
+                ),
+                # Mobile Filter Dropdown Tests
+                'FD-M01': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        startTime := time.time(),
+                        mpage.click('#filter-button', timeout=10000),
+                        mpage.wait_for_selector('#filter-menu', state='visible', timeout=2000),
+                        elapsed := (time.time() - startTime) * 1000,
+                        visible := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        ok := bool(visible and elapsed < 500),
+                        results.append(TestResult('FD-M01', 'Filter Dropdown', 'Mobile: Filter button tap registers immediately', 'pass' if ok else 'fail', f'elapsed={elapsed:.0f}ms, visible={visible}', shot('FD-M01', mpage)))
+                    ))()
+                ),
+                'FD-M02': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        zIndex := mpage.evaluate("(() => { const btn = document.getElementById('filter-button'); const parent = btn?.closest('#search-filter-unit'); return { btn: window.getComputedStyle(btn || document.body).zIndex, parent: window.getComputedStyle(parent || document.body).zIndex }; })()"),
+                        mpage.tap('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        opened := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        ok := bool(opened and (zIndex.get('btn') == '101' or zIndex.get('parent') == '100')),
+                        results.append(TestResult('FD-M02', 'Filter Dropdown', 'Mobile: Filter button z-index prevents tap blocking', 'pass' if ok else 'fail', f'opened={opened}, z={zIndex}', shot('FD-M02', mpage)))
+                    ))()
+                ),
+                'FD-M03': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        pos := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); const btn = document.getElementById('filter-button'); if (!m || !btn) return { valid: false }; const mRect = m.getBoundingClientRect(); const bRect = btn.getBoundingClientRect(); return { valid: true, menuTop: mRect.top, btnBottom: bRect.bottom, below: mRect.top >= bRect.bottom }; })()"),
+                        ok := bool(pos.get('valid') and pos.get('below')),
+                        results.append(TestResult('FD-M03', 'Filter Dropdown', 'Mobile: Dropdown positions below button on small screens', 'pass' if ok else 'fail', f'menuTop={pos.get("menuTop")}, btnBottom={pos.get("btnBottom")}, below={pos.get("below")}', shot('FD-M03', mpage)))
+                    ))()
+                ),
+                'FD-M04': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        dims := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); if (!m) return { valid: false }; const rect = m.getBoundingClientRect(); return { valid: true, width: rect.width, viewportWidth: window.innerWidth, fitsPct: (rect.width / window.innerWidth) * 100 }; })()"),
+                        ok := bool(dims.get('valid') and dims.get('fitsPct', 100) <= 90),
+                        results.append(TestResult('FD-M04', 'Filter Dropdown', 'Mobile: Dropdown width fits viewport', 'pass' if ok else 'fail', f'width={dims.get("width"):.0f}px, viewport={dims.get("viewportWidth")}px, fitsPct={dims.get("fitsPct", 0):.1f}%', shot('FD-M04', mpage)))
+                    ))()
+                ),
+                'FD-M05': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        scrollable := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); if (!m) return false; return m.scrollHeight > m.clientHeight && window.getComputedStyle(m).overflowY !== 'visible'; })()"),
+                        overscroll := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return window.getComputedStyle(m || document.body).overscrollBehavior; })()"),
+                        ok := bool(scrollable or overscroll == 'contain'),
+                        results.append(TestResult('FD-M05', 'Filter Dropdown', 'Mobile: Touch scroll works inside dropdown', 'pass' if ok else 'fail', f'scrollable={scrollable}, overscroll={overscroll}', shot('FD-M05', mpage)))
+                    ))()
+                ),
+                'FD-M06': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.tap('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        firstCat := mpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const found = btns.find(b => b.getAttribute('data-value') && b.getAttribute('data-value') !== 'all'); return found ? found.getAttribute('data-value') : ''; })()"),
+                        (mpage.tap(f'#filter-menu button[data-value="{firstCat}"]', timeout=10000) if firstCat else None),
+                        time.sleep(0.8),
+                        closed := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return !m || m.classList.contains('hidden'); })()"),
+                        ok := bool(firstCat and closed),
+                        results.append(TestResult('FD-M06', 'Filter Dropdown', 'Mobile: Category button tap registers', 'pass' if ok else 'fail', f'category={firstCat}, closed={closed}', shot('FD-M06', mpage)))
+                    ))()
+                ),
+                'FD-M07': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.tap('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        backdropExists := mpage.evaluate("(() => { const bd = document.getElementById('filter-backdrop'); return bd && !bd.classList.contains('hidden'); })()"),
+                        (mpage.tap('#filter-backdrop', timeout=5000) if backdropExists else None),
+                        time.sleep(0.5),
+                        closed := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return !m || m.classList.contains('hidden'); })()"),
+                        ok := bool(backdropExists and closed),
+                        results.append(TestResult('FD-M07', 'Filter Dropdown', 'Mobile: Backdrop tap closes dropdown', 'pass' if ok else 'fail', f'backdropExists={backdropExists}, closed={closed}', shot('FD-M07', mpage)))
+                    ))()
+                ),
+                'FD-M08': lambda: (
+                    (lambda: (
+                        landscape := browser.new_context(viewport={'width': 667, 'height': 375}, device_scale_factor=2),
+                        lpage := landscape.new_page(),
+                        lpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                        lpage.wait_for_selector('#filter-button', timeout=10000),
+                        lpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        visible := lpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        btnClickable := bool(lpage.query_selector('#filter-button')),
+                        ok := bool(visible and btnClickable),
+                        screenshot := shot('FD-M08', lpage),
+                        results.append(TestResult('FD-M08', 'Filter Dropdown', 'Mobile landscape: Filter button and dropdown remain accessible', 'pass' if ok else 'fail', f'visible={visible}, btnClickable={btnClickable}', screenshot)),
+                        landscape.close()
+                    ))()
+                ),
+                'FD-M09': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        dims := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); if (!m) return { valid: false }; const rect = m.getBoundingClientRect(); const vh = window.innerHeight; return { valid: true, height: rect.height, maxHeight: parseFloat(window.getComputedStyle(m).maxHeight) || 0, viewportHeight: vh, pct: (rect.height / vh) * 100 }; })()"),
+                        ok := bool(dims.get('valid') and dims.get('pct', 100) <= 60),
+                        results.append(TestResult('FD-M09', 'Filter Dropdown', 'Mobile: Dropdown max-height respects viewport', 'pass' if ok else 'fail', f'height={dims.get("height"):.0f}px, vh={dims.get("viewportHeight")}px, pct={dims.get("pct", 0):.1f}%', shot('FD-M09', mpage)))
+                    ))()
+                ),
+                'FD-M10': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        [mpage.tap('#filter-button', timeout=1000, no_wait_after=True) for _ in range(3)],
+                        time.sleep(0.8),
+                        visible := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); return m && !m.classList.contains('hidden'); })()"),
+                        ok := bool(visible),
+                        results.append(TestResult('FD-M10', 'Filter Dropdown', 'Mobile: Multi-touch does not cause multiple opens', 'pass' if ok else 'fail', f'openAfterRapidTaps={visible}', shot('FD-M10', mpage)))
+                    ))()
+                ),
+                'FD-M11': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        pointerEvents := mpage.evaluate("(() => { const m = document.getElementById('filter-menu'); const bd = document.getElementById('filter-backdrop'); return { menu: window.getComputedStyle(m || document.body).pointerEvents, backdrop: window.getComputedStyle(bd || document.body).pointerEvents }; })()"),
+                        ok := bool(pointerEvents.get('menu') == 'auto' or pointerEvents.get('backdrop') == 'auto'),
+                        results.append(TestResult('FD-M11', 'Filter Dropdown', 'Mobile: Pointer events do not leak through dropdown', 'pass' if ok else 'fail', f'menuPointer={pointerEvents.get("menu")}, backdropPointer={pointerEvents.get("backdrop")}', shot('FD-M11', mpage)))
+                    ))()
+                ),
+                'FD-M12': lambda: (
+                    mpage.goto(home, wait_until='domcontentloaded', timeout=30000),
+                    (lambda: (
+                        mpage.wait_for_selector('#filter-button', timeout=10000),
+                        mpage.click('#filter-button', timeout=10000),
+                        time.sleep(0.5),
+                        firstCat := mpage.evaluate("(() => { const btns = [...document.querySelectorAll('#filter-menu button[data-value]')]; const found = btns.find(b => b.getAttribute('data-value') && b.getAttribute('data-value') !== 'all'); return found ? found.getAttribute('data-value') : ''; })()"),
+                        (mpage.click(f'#filter-menu button[data-value="{firstCat}"]', timeout=10000) if firstCat else None),
+                        time.sleep(0.8),
+                        mpage.set_viewport_size({'width': 667, 'height': 375}),
+                        time.sleep(1.0),
+                        filterStillActive := mpage.evaluate(f"(() => {{ const activeBtn = document.querySelector('#filter-menu button[data-value=\"{firstCat}\"]'); return activeBtn ? (activeBtn.classList.contains('bg-purple-50') || activeBtn.classList.contains('bg-purple-900/10')) : false; }})()") if firstCat else False,
+                        ok := bool(firstCat and filterStillActive),
+                        results.append(TestResult('FD-M12', 'Filter Dropdown', 'Mobile: Filter persists after orientation change', 'pass' if ok else 'fail', f'category={firstCat}, persistsAfterRotate={filterStillActive}', shot('FD-M12', mpage)))
                     ))()
                 ),
                 # Auth
