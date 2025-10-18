@@ -2,7 +2,10 @@
   "_readme": "Override pricing group(s) per tool. Key format: '<section-slug>::<tool-name-lower>'. Value can be one of 'Open Source', 'Free', 'Freemium', 'Subscription' or an array of these for multi-label (e.g., ['Open Source','Free']).",
   "examples": {
     "language-chat::chatgpt (openai)": "Subscription",
-    "image-generation::stable diffusion": ["Open Source", "Free"]
+    "image-generation::stable diffusion": [
+      "Open Source",
+      "Free"
+    ]
   },
   "most-popular::notebook llm": "Free",
   "productivity::ellie ai": "Freemium",
@@ -10,5 +13,6 @@
   "productivity::mem": "Freemium",
   "productivity::reflect notes": "Freemium",
   "productivity::supernormal": "Freemium",
-  "education::memobase": "Open Source"
+  "education::memobase": "Open Source",
+  "cybersecurity::hexstrike-ai": "Open Source"
 }
