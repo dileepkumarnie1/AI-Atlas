@@ -2057,18 +2057,19 @@
                         };
                         // Attach button handlers once per render (mobile friendly)
                         // Store handlers globally to allow cleanup on re-render
+                        // Note: Using window object because renderFilterMenu creates new closures each call
+                        // This allows us to remove the old listeners before adding new ones
                         if (!window.filterButtonHandlers) window.filterButtonHandlers = {};
-                        const handlerKey = 'openHandler';
                         // Remove old handlers if they exist
-                        if (window.filterButtonHandlers[handlerKey]) {
-                            try { btn.removeEventListener('pointerdown', window.filterButtonHandlers[handlerKey]); } catch {}
-                            try { btn.removeEventListener('touchend', window.filterButtonHandlers[handlerKey]); } catch {}
+                        if (btn && window.filterButtonHandlers.openHandler) {
+                            try { btn.removeEventListener('pointerdown', window.filterButtonHandlers.openHandler); } catch (e) { dbg('Failed to remove pointerdown listener:', e); }
+                            try { btn.removeEventListener('touchend', window.filterButtonHandlers.openHandler); } catch (e) { dbg('Failed to remove touchend listener:', e); }
                         }
-                        if (window.filterButtonHandlers['touchstartHandler']) {
-                            try { btn.removeEventListener('touchstart', window.filterButtonHandlers['touchstartHandler']); } catch {}
+                        if (btn && window.filterButtonHandlers.touchstartHandler) {
+                            try { btn.removeEventListener('touchstart', window.filterButtonHandlers.touchstartHandler); } catch (e) { dbg('Failed to remove touchstart listener:', e); }
                         }
-                        if (window.filterButtonHandlers['keydownHandler']) {
-                            try { btn.removeEventListener('keydown', window.filterButtonHandlers['keydownHandler']); } catch {}
+                        if (btn && window.filterButtonHandlers.keydownHandler) {
+                            try { btn.removeEventListener('keydown', window.filterButtonHandlers.keydownHandler); } catch (e) { dbg('Failed to remove keydown listener:', e); }
                         }
                         
                         let lastOpenIntent = 0;
@@ -2093,9 +2094,9 @@
                         };
                         
                         // Store handlers for cleanup
-                        window.filterButtonHandlers[handlerKey] = openHandler;
-                        window.filterButtonHandlers['touchstartHandler'] = touchstartHandler;
-                        window.filterButtonHandlers['keydownHandler'] = keydownHandler;
+                        window.filterButtonHandlers.openHandler = openHandler;
+                        window.filterButtonHandlers.touchstartHandler = touchstartHandler;
+                        window.filterButtonHandlers.keydownHandler = keydownHandler;
                         
                         btn.onclick = openHandler;
                         try { btn.addEventListener('pointerdown', openHandler); } catch {}
