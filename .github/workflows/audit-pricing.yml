@@ -9,12 +9,17 @@ on:
         description: 'Fail the audit on any anomaly (true) or only on critical conflicts (false)'
         required: false
         default: 'false'
+      maxNonCritical:
+        description: 'Allowed non-critical anomalies before failing when strict=false'
+        required: false
+        default: '10'
 
 jobs:
   audit:
     runs-on: ubuntu-latest
     env:
       PRICING_AUDIT_STRICT: ${{ github.event.inputs.strict || 'false' }}
+      PRICING_AUDIT_MAX_NONCRITICAL: ${{ github.event.inputs.maxNonCritical || '10' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,9 +98,9 @@ jobs:
             data/pricing-audit.json
             data/pricing-audit.md
 
-      - name: Enforce zero anomalies
+      - name: Enforce anomalies policy
         run: |
-          node -e "const fs=require('fs'); const strict=(process.env.PRICING_AUDIT_STRICT||'true').toLowerCase()==='true'; const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); const anomalies=Array.isArray(j.anomalies)?j.anomalies:[]; const critical=anomalies.filter(a=>/conflict/i.test(a.reason)); console.log('Anomalies total:', anomalies.length, 'critical:', critical.length, 'strict:', strict); if ((strict && anomalies.length>0) || (!strict && critical.length>0)) { console.error('Pricing anomalies found:', anomalies.length, 'critical:', critical.length); process.exit(1); } else { console.log('Audit passed with', anomalies.length, 'anomalies (critical:', critical.length, '), strict:', strict); }"
+          node -e "const fs=require('fs'); const strict=(process.env.PRICING_AUDIT_STRICT||'false').toLowerCase()==='true'; const maxNC=parseInt(process.env.PRICING_AUDIT_MAX_NONCRITICAL||'10',10); const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8')); const anomalies=Array.isArray(j.anomalies)?j.anomalies:[]; const isCrit=(a)=>{const r=String(a&&a.reason||''); return /(conflict|contradic|both.+(free|paid)|open[\s-]?source.*subscription)/i.test(r);}; const critical=anomalies.filter(isCrit); const nonCrit=anomalies.filter(a=>!isCrit(a)); console.log('Anomalies total:', anomalies.length, 'critical:', critical.length, 'nonCritical:', nonCrit.length, 'strict:', strict, 'maxNC:', maxNC); if ((strict && anomalies.length>0) || (!strict && (critical.length>0 || nonCrit.length>maxNC))) { console.error('Pricing anomalies found:', anomalies.length, 'critical:', critical.length, 'nonCritical:', nonCrit.length); process.exit(1); } else { console.log('Audit passed.'); }"
 
   auto-fix:
     needs: audit

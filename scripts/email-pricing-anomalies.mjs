@@ -53,16 +53,15 @@ async function main(){
   const majors = anomalies.filter(a=>/conflict/i.test(a.reason));
   if (majors.length===0){ console.log('No major anomalies (conflicts) to email.'); return; }
   const rows = majors.map(a=>{
-    const suggest = chooseSuggestion(a.labels);
     const repo = sanitize(process.env.GITHUB_REPO);
-    const approveUrl = repo ? `https://github.com/${repo}/actions/workflows/pricing-approval.yml/dispatches` : '#';
-    // The approve link points to a workflow_dispatch UI; docs links in email to guide approvers
+    const baseUrl = repo ? `https://github.com/${repo}/actions/workflows/pricing-approval.yml/dispatches` : '#';
+    const candidates = Array.from(new Set([...(a.labels||[]), chooseSuggestion(a.labels)])).filter(Boolean);
+    const links = candidates.map(c=>`<a href="${baseUrl}" target="_blank" style="margin-right:8px;">Approve ${c}</a>`).join('');
     return `<tr>
       <td style="padding:8px 6px; border-bottom:1px solid #eee;">${a.tool}</td>
       <td style="padding:8px 6px; border-bottom:1px solid #eee; color:#57606a;">${a.section}</td>
       <td style="padding:8px 6px; border-bottom:1px solid #eee;">${(a.labels||[]).join(', ')}</td>
-      <td style="padding:8px 6px; border-bottom:1px solid #eee; font-weight:600;">${suggest}</td>
-      <td style="padding:8px 6px; border-bottom:1px solid #eee;"><a href="${approveUrl}" target="_blank">Approve</a></td>
+      <td style=\"padding:8px 6px; border-bottom:1px solid #eee;\">${links}</td>
     </tr>`;
   }).join('');
   const html = `<div style="font-family:Segoe UI,Arial,sans-serif; color:#24292f;">
