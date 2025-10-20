@@ -7236,20 +7236,16 @@
           "agents",
           "automation",
           "api",
-          "open-source",
-          "subscription",
           "assistant",
           "edr",
           "ndr",
-          "Open Source",
-          "Subscription"
+          "Open Source"
         ],
         "about": "Advanced AI-driven penetration testing and security assessment tools. Automated vulnerability discovery and intelligent threat analysis.",
         "pros": [
           "Open source and extensible."
         ],
         "cons": [
-          "Subscription required for full access.",
           "Requires setup and maintenance."
         ],
         "iconUrl": "https://www.hexstrike.com/favicon-16x16.png"
@@ -7287,10 +7283,7 @@
           "agents",
           "automation",
           "api",
-          "open-source",
-          "subscription",
-          "Open Source",
-          "Subscription"
+          "Open Source"
         ],
         "about": "Y Combinator-backed Superagent gives your agents runtime protection that stops data leaks and threats. Hosted trust center proves compliance to buyers.",
         "pros": [
