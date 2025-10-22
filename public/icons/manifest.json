@@ -145,5 +145,6 @@
   "gaming-entertainment::bevy_generative": "public/icons/gaming-entertainment/bevy-generative.png",
   "gaming-entertainment::notebook": "public/icons/gaming-entertainment/notebook.png",
   "cybersecurity::hexstrike-ai": "public/icons/cybersecurity/hexstrike-ai.png",
-  "cybersecurity::superagent": "public/icons/cybersecurity/superagent.png"
+  "cybersecurity::superagent": "public/icons/cybersecurity/superagent.png",
+  "ai-safety-ethics::openai red teaming": "public/icons/ai-safety-ethics/openai-red-teaming.svg"
 }
