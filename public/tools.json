@@ -356,6 +356,33 @@
         ]
       },
       {
+        "name": "llama_index",
+        "description": "LlamaIndex is a simple, flexible framework for building knowledge assistants using LLMs connected to your enterprise data.",
+        "link": "https://developers.llamaindex.ai",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "image",
+          "agents",
+          "automation",
+          "design",
+          "documents",
+          "Freemium"
+        ],
+        "about": "LlamaIndex is a simple, flexible framework for building knowledge assistants using LLMs connected to your enterprise data.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://developers.llamaindex.ai/favicon.svg"
+      },
+      {
         "name": "mastra",
         "description": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
         "link": "https://mastra.ai",
@@ -376,7 +403,7 @@
           "Assistant",
           "Consumer"
         ],
-        "iconUrl": "https://www.meta.ai/favicon.svg",
+        "iconUrl": "icons/most-popular/meta-ai.ico",
         "about": "Meta AI offers chat, image generation, and search‑enhanced answers across Meta properties, focusing on mainstream, mobile‑first usage.",
         "pros": [
           "Broad reach across Meta apps.",
@@ -2310,6 +2337,27 @@
         ]
       },
       {
+        "name": "autodev-vscode",
+        "description": "🧙‍AutoDev - The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful bug-slaying assistant 🐞! Customizable prompts 🎨 and a magic Auto Dev/Testing feature 🧪 included! 🚀",
+        "link": "http://vscode.unitmesh.cc/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "translation",
+          "Freemium"
+        ],
+        "about": "🧙‍AutoDev - The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful bug-slaying assistant 🐞! Customizable prompts 🎨 and a magic Auto Dev/Testing feature 🧪 included! 🚀",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "http://vscode.unitmesh.cc/favicon.ico"
+      },
+      {
         "name": "Blackbox AI",
         "description": "AI code search and autocomplete for developers.",
         "link": "https://www.useblackbox.io/",
@@ -2423,6 +2471,29 @@
           "Suggestions may need review."
         ],
         "iconUrl": "icons/code-assistance/daytona.svg"
+      },
+      {
+        "name": "git-mcp",
+        "description": "Instantly create an MCP server for any GitHub project",
+        "link": "https://gitmcp.io",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "Instantly create an MCP server for any GitHub project",
+        "pros": [
+          "Open source and extensible.",
+          "Good for drafting and Q&A.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "May require fact‑checking.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://gitmcp.io/img/icon_black_cropped.png"
       },
       {
         "name": "JetBrains AI Assistant",
@@ -2593,6 +2664,24 @@
           "Paid for enterprise scale.",
           "Learning curve for config."
         ]
+      },
+      {
+        "name": "super-agent-party",
+        "description": "Super Agent Party - AI Agent Platform",
+        "link": "https://super-agent-party.github.io/",
+        "tags": [
+          "image",
+          "agents",
+          "Freemium"
+        ],
+        "about": "Super Agent Party - AI Agent Platform",
+        "pros": [
+          "Generates visuals quickly."
+        ],
+        "cons": [
+          "Quality varies by prompt."
+        ],
+        "iconUrl": "https://super-agent-party.github.io/img/icon.ico"
       },
       {
         "name": "sweep",
@@ -4953,7 +5042,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://buildprompts.ai/favicon.ico"
+        "iconUrl": "icons/prompt-enhancers/prompt-builder.ico"
       },
       {
         "name": "prompt-layer-library",
@@ -5663,7 +5752,7 @@
         "cons": [
           "Suggestions may need review."
         ],
-        "iconUrl": "https://panaversity.org/icon.ico?8417f17dd6ab4d4d"
+        "iconUrl": "icons/workflow-automation/learn-low-code-agentic-ai.ico"
       },
       {
         "name": "Levity",
@@ -7579,6 +7668,34 @@
           "Best for mid/enterprise.",
           "License costs."
         ]
+      },
+      {
+        "name": "enthusiast",
+        "description": "Open-source, enterprise-ready agentic AI toolkit for e-commerce. Build and deploy custom AI agents with data, workflows, and native integrations.",
+        "link": "https://upsidelab.io/tools/enthusiast",
+        "tags": [
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "automation",
+          "education",
+          "design",
+          "documents",
+          "Open Source"
+        ],
+        "about": "Open-source, enterprise-ready agentic AI toolkit for e-commerce. Build and deploy custom AI agents with data, workflows, and native integrations.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://upsidelab.io/favicon.ico"
       },
       {
         "name": "Shopify Magic",
