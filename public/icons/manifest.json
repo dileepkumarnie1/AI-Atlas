@@ -149,5 +149,10 @@
   "ai-safety-ethics::openai red teaming": "public/icons/ai-safety-ethics/openai-red-teaming.svg",
   "most-popular::meta ai": "public/icons/most-popular/meta-ai.ico",
   "prompt-enhancers::prompt-builder": "public/icons/prompt-enhancers/prompt-builder.ico",
-  "workflow-automation::learn-low-code-agentic-ai": "public/icons/workflow-automation/learn-low-code-agentic-ai.ico"
+  "workflow-automation::learn-low-code-agentic-ai": "public/icons/workflow-automation/learn-low-code-agentic-ai.ico",
+  "most-popular::llama_index": "public/icons/most-popular/llama-index.svg",
+  "code-assistance::autodev-vscode": "public/icons/code-assistance/autodev-vscode.ico",
+  "code-assistance::git-mcp": "public/icons/code-assistance/git-mcp.png",
+  "code-assistance::super-agent-party": "public/icons/code-assistance/super-agent-party.ico",
+  "ecommerce-retail::enthusiast": "public/icons/ecommerce-retail/enthusiast.ico"
 }
