@@ -154,5 +154,6 @@
   "code-assistance::autodev-vscode": "public/icons/code-assistance/autodev-vscode.ico",
   "code-assistance::git-mcp": "public/icons/code-assistance/git-mcp.png",
   "code-assistance::super-agent-party": "public/icons/code-assistance/super-agent-party.ico",
-  "ecommerce-retail::enthusiast": "public/icons/ecommerce-retail/enthusiast.ico"
+  "ecommerce-retail::enthusiast": "public/icons/ecommerce-retail/enthusiast.ico",
+  "prompt-enhancers::flowgpt": "public/icons/prompt-enhancers/flowgpt.ico"
 }
