@@ -380,7 +380,7 @@
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://developers.llamaindex.ai/favicon.svg"
+        "iconUrl": "icons/most-popular/llama-index.svg"
       },
       {
         "name": "mastra",
@@ -2355,7 +2355,7 @@
           "May require fact‑checking.",
           "Suggestions may need review."
         ],
-        "iconUrl": "http://vscode.unitmesh.cc/favicon.ico"
+        "iconUrl": "icons/code-assistance/autodev-vscode.ico"
       },
       {
         "name": "Blackbox AI",
@@ -2493,7 +2493,7 @@
           "May require fact‑checking.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://gitmcp.io/img/icon_black_cropped.png"
+        "iconUrl": "icons/code-assistance/git-mcp.png"
       },
       {
         "name": "JetBrains AI Assistant",
@@ -2681,7 +2681,7 @@
         "cons": [
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://super-agent-party.github.io/img/icon.ico"
+        "iconUrl": "icons/code-assistance/super-agent-party.ico"
       },
       {
         "name": "sweep",
@@ -2745,6 +2745,17 @@
           "Local models require significant computational resources.",
           "User interface for configuration can be complex."
         ]
+      },
+      {
+        "name": "unstract",
+        "description": "",
+        "link": "https://unstract.com",
+        "tags": [
+          "Freemium"
+        ],
+        "about": "",
+        "pros": [],
+        "cons": []
       },
       {
         "name": "Warp",
@@ -4935,7 +4946,7 @@
           "Discovery",
           "Freemium"
         ],
-        "iconUrl": "https://flowgpt.com/favicon.svg",
+        "iconUrl": "icons/prompt-enhancers/flowgpt.ico",
         "about": "Browse, share, and rate prompts for a wide range of models and tasks, from productivity to creative writing.",
         "pros": [
           "Crowdsourced variety.",
@@ -7695,7 +7706,7 @@
           "Coverage and speed can vary.",
           "Suggestions may need review."
         ],
-        "iconUrl": "https://upsidelab.io/favicon.ico"
+        "iconUrl": "icons/ecommerce-retail/enthusiast.ico"
       },
       {
         "name": "Shopify Magic",
