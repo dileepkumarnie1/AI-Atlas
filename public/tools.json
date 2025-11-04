@@ -1363,6 +1363,34 @@
         "iconUrl": "https://seeddream.app/favicon.svg"
       },
       {
+        "name": "Syllabi – Open-source agentic AI with tools, RAG, and multi-channel deploy",
+        "description": "Build intelligent AI chatbots with RAG, native Python/R code execution, and seamless integrations. Connect to Slack, Discord, Google Drive, and more. Free and open source.",
+        "link": "https://www.syllabi-ai.com/",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "image",
+          "search",
+          "agents",
+          "design",
+          "documents",
+          "api",
+          "Open Source"
+        ],
+        "about": "Build intelligent AI chatbots with RAG, native Python/R code execution, and seamless integrations. Connect to Slack, Discord, Google Drive, and more. Free and open source.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.syllabi-ai.com/favicon.ico"
+      },
+      {
         "name": "wechaty",
         "description": "RPA SDK for Chatbot Makers.",
         "link": "https://wechaty.js.org",
@@ -2755,7 +2783,8 @@
         ],
         "about": "",
         "pros": [],
-        "cons": []
+        "cons": [],
+        "iconUrl": "icons/code-assistance/unstract.ico"
       },
       {
         "name": "Warp",
@@ -4333,6 +4362,34 @@
           "Requires well-structured data to be effective.",
           "Can have a steep learning curve for advanced features."
         ]
+      },
+      {
+        "name": "WrenAI",
+        "description": "Transform how your team explores data. Wren AI’s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights—all with natural language.",
+        "link": "https://getwren.ai/oss",
+        "tags": [
+          "chatbot",
+          "developer-tools",
+          "image",
+          "agents",
+          "automation",
+          "design",
+          "documents",
+          "api",
+          "Open Source"
+        ],
+        "about": "Transform how your team explores data. Wren AI’s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights—all with natural language.",
+        "pros": [
+          "Good for drafting and Q&A.",
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "May require fact‑checking.",
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://getwren.ai/favicon_io/favicon.ico"
       },
       {
         "name": "yn",
@@ -6223,6 +6280,28 @@
         "about": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
         "pros": [],
         "cons": []
+      },
+      {
+        "name": "trustgraph",
+        "description": "TrustGraph is a production-ready platform for building post-training agentic systems. Combine your domain data with LLMs through unified infrastructure: real-time data pipelines, knowledge graph construction, vector retrieval, and agent orchestration.",
+        "link": "https://trustgraph.ai",
+        "tags": [
+          "search",
+          "agents",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "TrustGraph is a production-ready platform for building post-training agentic systems. Combine your domain data with LLMs through unified infrastructure: real-time data pipelines, knowledge graph construction, vector retrieval, and agent orchestration.",
+        "pros": [
+          "Open source and extensible.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://framerusercontent.com/images/3nLelcF4KtrPBiKVSBzrCDYin0.png"
       }
     ]
   },
@@ -6726,6 +6805,27 @@
         "iconUrl": "icons/legal-compliance/comp.svg"
       },
       {
+        "name": "FIBO",
+        "description": "Build responsibly with Bria",
+        "link": "https://bria.ai",
+        "tags": [
+          "developer-tools",
+          "image",
+          "design",
+          "Freemium"
+        ],
+        "about": "Build responsibly with Bria",
+        "pros": [
+          "Generates visuals quickly.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://bria.ai/hubfs/BRIA-favicon.svg"
+      },
+      {
         "name": "Harvey",
         "description": "Legal AI for research, drafting, and contract workflows.",
         "link": "https://www.harvey.ai/",
@@ -6958,6 +7058,28 @@
           "Regulatory constraints.",
           "Integration with lab systems needed."
         ]
+      },
+      {
+        "name": "TissueLab",
+        "description": "An agentic AI platform for medical image analysis developed by Zhi Huang Lab. Analyze medical images with cutting-edge artificial intelligence technology.",
+        "link": "https://www.tissuelab.org",
+        "tags": [
+          "image",
+          "search",
+          "agents",
+          "education",
+          "Freemium"
+        ],
+        "about": "An agentic AI platform for medical image analysis developed by Zhi Huang Lab. Analyze medical images with cutting-edge artificial intelligence technology.",
+        "pros": [
+          "Generates visuals quickly.",
+          "Great for research and discovery."
+        ],
+        "cons": [
+          "Quality varies by prompt.",
+          "Coverage and speed can vary."
+        ],
+        "iconUrl": "https://www.tissuelab.org/assets/logo.svg"
       }
     ]
   },
