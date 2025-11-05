@@ -156,5 +156,10 @@
   "code-assistance::super-agent-party": "public/icons/code-assistance/super-agent-party.ico",
   "ecommerce-retail::enthusiast": "public/icons/ecommerce-retail/enthusiast.ico",
   "prompt-enhancers::flowgpt": "public/icons/prompt-enhancers/flowgpt.ico",
-  "code-assistance::unstract": "public/icons/code-assistance/unstract.ico"
+  "code-assistance::unstract": "public/icons/code-assistance/unstract.ico",
+  "language-chat::syllabi – open-source agentic ai with tools, rag, and multi-channel deploy": "public/icons/language-chat/syllabi-open-source-agentic-ai-with-tools-rag-and-multi-channel-deploy.ico",
+  "data-analysis::wrenai": "public/icons/data-analysis/wrenai.ico",
+  "search-knowledge-discovery::trustgraph": "public/icons/search-knowledge-discovery/trustgraph.png",
+  "legal-compliance::fibo": "public/icons/legal-compliance/fibo.svg",
+  "healthcare-medical-ai::tissuelab": "public/icons/healthcare-medical-ai/tissuelab.svg"
 }
