@@ -38,18 +38,18 @@ jobs:
           lines.push('### Pricing Audit Summary');
           lines.push('');
           lines.push('Counts:');
-          Object.keys(counts).forEach(k=>lines.push(`- ${k}: ${counts[k]}`));
+          Object.keys(counts).forEach(k=>lines.push('- ' + k + ': ' + counts[k]));
           lines.push('');
           if (anomalies.length){
-            lines.push(`Anomalies: ${anomalies.length}`);
-            const sample=anomalies.slice(0,10).map(a=>`- [${a.section}] ${a.tool} — ${a.reason} (${(a.labels||[]).join(', ')})`);
+            lines.push('Anomalies: ' + anomalies.length);
+            const sample=anomalies.slice(0,10).map(a=>'- [' + a.section + '] ' + a.tool + ' — ' + a.reason + ' (' + (a.labels||[]).join(', ') + ')');
             lines.push(...sample);
             lines.push('');
             lines.push('Approve conflicts here: actions -> Pricing Approval');
           } else {
             lines.push('No anomalies detected.');
           }
-          fs.writeFileSync(process.env.GITHUB_OUTPUT, `body<<EOF\n${lines.join('\n')}\nEOF\n`);
+          fs.writeFileSync(process.env.GITHUB_OUTPUT, 'body<<EOF\\n' + lines.join('\\n') + '\\nEOF\\n');
           "
       - name: Comment on PR
         uses: marocchino/sticky-pull-request-comment@v2
