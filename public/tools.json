@@ -10361,5 +10361,866 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Translation & Localization",
+    "slug": "translation-localization",
+    "description": "AI translation and localization platforms for multilingual content creation and global market adaptation.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129\" /></svg>",
+    "tools": [
+      {
+        "name": "Lokalise AI",
+        "description": "Professional localization platform with AI translation, glossary integration, and project management for 30+ languages.",
+        "link": "https://lokalise.com/",
+        "tags": [
+          "Professional",
+          "30+ Languages",
+          "Project Management"
+        ],
+        "iconUrl": "https://lokalise.com/favicon.ico",
+        "about": "Lokalise AI provides excellent accuracy for professional localization projects. It supports 30+ languages with robust translation memory, glossary integration, and deep context management including style guides and brand voice. It integrates with GitHub, Figma, and Adobe for seamless workflows.",
+        "pros": [
+          "High accuracy with context awareness",
+          "Translation memory and glossary support",
+          "Integrates with development tools",
+          "Good for high-volume projects"
+        ],
+        "cons": [
+          "Requires TMS subscription for full features",
+          "Learning curve for complex projects",
+          "Can be expensive for small teams"
+        ]
+      },
+      {
+        "name": "Crowdin",
+        "description": "Developer-centric translation platform with AI pre-translation, real-time collaboration, and 600+ integrations.",
+        "link": "https://crowdin.com/",
+        "tags": [
+          "Developer-Focused",
+          "Collaboration",
+          "Integrations"
+        ],
+        "iconUrl": "https://crowdin.com/favicon.ico",
+        "about": "Crowdin is ideal for software, app, and game developers needing continuous localization. It offers strong API support, real-time collaboration, and over 600 integrations with development tools and platforms.",
+        "pros": [
+          "Excellent for software localization",
+          "600+ integrations",
+          "In-context editing for translators",
+          "Strong API and automation"
+        ],
+        "cons": [
+          "Technical setup required",
+          "Can be complex for non-developers",
+          "Pricing scales with usage"
+        ]
+      },
+      {
+        "name": "Smartling",
+        "description": "Enterprise AI translation with human post-editing, risk assessment, and workflow automation for large-scale projects.",
+        "link": "https://www.smartling.com/",
+        "tags": [
+          "Enterprise",
+          "Human+AI",
+          "Quality Control"
+        ],
+        "iconUrl": "https://www.smartling.com/favicon.ico",
+        "about": "Smartling is an enterprise-level solution combining AI translation with human post-editing. It includes built-in translation risk assessment, workflow automation, and is designed for organizations needing granular control over quality and compliance.",
+        "pros": [
+          "Hybrid AI + human approach",
+          "Advanced quality control",
+          "Workflow automation",
+          "Enterprise-grade features"
+        ],
+        "cons": [
+          "Higher learning curve",
+          "Premium enterprise pricing",
+          "Complex for simple projects"
+        ]
+      },
+      {
+        "name": "Transifex",
+        "description": "Comprehensive localization management supporting 450+ languages with SEO optimization and continuous workflows.",
+        "link": "https://www.transifex.com/",
+        "tags": [
+          "450+ Languages",
+          "SEO",
+          "Continuous Delivery"
+        ],
+        "iconUrl": "https://www.transifex.com/favicon.ico",
+        "about": "Transifex offers comprehensive localization management for global websites and apps. It supports 450+ languages, includes SEO optimization features, and enables continuous workflow support for rapid go-to-market.",
+        "pros": [
+          "Massive language support (450+)",
+          "SEO optimization built-in",
+          "Continuous localization workflows",
+          "Real-time collaboration"
+        ],
+        "cons": [
+          "Enterprise-focused pricing",
+          "Less suitable for casual users",
+          "Can be overwhelming for small projects"
+        ]
+      },
+      {
+        "name": "Phrase",
+        "description": "Centralized translation management with workflow automation, pre-translation, and QA using AI.",
+        "link": "https://phrase.com/",
+        "tags": [
+          "TMS",
+          "Automation",
+          "QA"
+        ],
+        "iconUrl": "https://phrase.com/favicon.ico",
+        "about": "Phrase is a centralized translation management system (TMS) with easy workflow automation. It supports both AI pre-translation and human review with built-in QA tools for maintaining quality.",
+        "pros": [
+          "Highly customizable workflows",
+          "Efficient automation",
+          "Good QA features",
+          "Team collaboration tools"
+        ],
+        "cons": [
+          "Complex feature set",
+          "Can be overwhelming for beginners",
+          "Pricing for advanced features"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Knowledge Management",
+    "slug": "knowledge-management",
+    "description": "AI-powered personal knowledge management, note-taking, and second brain tools for organizing and retrieving information.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2\" /></svg>",
+    "tools": [
+      {
+        "name": "Mem",
+        "description": "AI-powered second brain that auto-organizes notes, mirrors workflows, and enables contextual information recall.",
+        "link": "https://mem.ai/",
+        "tags": [
+          "Auto-Organization",
+          "Second Brain",
+          "Contextual"
+        ],
+        "iconUrl": "https://mem.ai/favicon.ico",
+        "about": "Mem acts like a true second brain, using AI to automatically sort, tag, and recall information contextually. Its auto-organizing system eliminates manual categorization while allowing fast search and retrieval based on natural language queries.",
+        "pros": [
+          "Automatic organization without folders",
+          "Contextual recall and search",
+          "Fast and intuitive",
+          "Good for knowledge workers"
+        ],
+        "cons": [
+          "Requires trusting AI organization",
+          "Less control than manual systems",
+          "Premium pricing for advanced features"
+        ]
+      },
+      {
+        "name": "MyMemo AI",
+        "description": "Transforms personal data into actionable wisdom with AI-powered insights from notes, links, images, and audio.",
+        "link": "https://mymemo.ai/",
+        "tags": [
+          "Multi-Input",
+          "Insights",
+          "Wisdom"
+        ],
+        "iconUrl": "https://mymemo.ai/favicon.ico",
+        "about": "MyMemo transforms various inputs (notes, links, images, audio) into a unified platform, extracting key insights and allowing users to query their knowledge base for advice or information with targeted search and creative prompts.",
+        "pros": [
+          "Multi-format input support",
+          "AI-powered insight extraction",
+          "Query your knowledge base",
+          "Good for creative work"
+        ],
+        "cons": [
+          "Learning curve for optimal use",
+          "Requires consistent input",
+          "AI insights quality varies with data"
+        ]
+      },
+      {
+        "name": "Reflect",
+        "description": "Networked note-taking with ChatGPT-4 built-in for idea connection, journaling, and knowledge building.",
+        "link": "https://reflect.app/",
+        "tags": [
+          "Networked Notes",
+          "ChatGPT-4",
+          "Journaling"
+        ],
+        "iconUrl": "https://reflect.app/favicon.ico",
+        "about": "Reflect ties your notes across time, connecting ideas and enabling seamless flow of thoughts. Its strong AI integration with ChatGPT-4 supports summaries, context-aware suggestions, and knowledge building from daily notes and journal entries.",
+        "pros": [
+          "Networked thought connections",
+          "Built-in ChatGPT-4",
+          "Great for journaling",
+          "Daily note workflow"
+        ],
+        "cons": [
+          "Subscription required",
+          "Network effect takes time to build",
+          "Can be overwhelming initially"
+        ]
+      },
+      {
+        "name": "MyMind",
+        "description": "Visual memory tool with AI organization for notes, images, quotes, and highlights perfect for creative work.",
+        "link": "https://mymind.com/",
+        "tags": [
+          "Visual",
+          "Creative",
+          "Privacy"
+        ],
+        "iconUrl": "https://mymind.com/favicon.ico",
+        "about": "MyMind offers a visually-oriented, privately organized digital space enhanced by AI. It's designed for designers, writers, and researchers who favor a visual approach to knowledge management with automatic tagging and organization.",
+        "pros": [
+          "Beautiful visual interface",
+          "Privacy-focused design",
+          "Automatic visual organization",
+          "Great for creative professionals"
+        ],
+        "cons": [
+          "Less suited for text-heavy knowledge",
+          "Limited collaboration features",
+          "Subscription-based pricing"
+        ]
+      },
+      {
+        "name": "Capacities",
+        "description": "Object-based note-taking system with AI for structured knowledge management and networked thinking.",
+        "link": "https://capacities.io/",
+        "tags": [
+          "Object-Based",
+          "Structured",
+          "Networked"
+        ],
+        "iconUrl": "https://capacities.io/favicon.ico",
+        "about": "Capacities uses an object-based approach to note-taking, where everything is a structured object (person, book, idea) that can be interconnected. AI helps organize and surface connections between your knowledge objects.",
+        "pros": [
+          "Unique object-based approach",
+          "Strong for structured knowledge",
+          "Networked thinking support",
+          "Beautiful interface"
+        ],
+        "cons": [
+          "Learning curve for object model",
+          "Different from traditional notes",
+          "Still evolving platform"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scheduling & Calendar",
+    "slug": "scheduling-calendar",
+    "description": "AI scheduling assistants and calendar tools that automate meeting coordination and optimize time management.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" /></svg>",
+    "tools": [
+      {
+        "name": "Motion",
+        "description": "AI scheduling assistant that automates tasks and meetings, minimizes decision fatigue with advanced project management.",
+        "link": "https://www.usemotion.com/",
+        "tags": [
+          "Automation",
+          "Project Management",
+          "ROI"
+        ],
+        "iconUrl": "https://www.usemotion.com/favicon.ico",
+        "about": "Motion is frequently rated as one of the best AI scheduling assistants. It automates both task and meeting scheduling using intelligent algorithms, offers advanced project management features, and includes ROI analysis and focus time blocking.",
+        "pros": [
+          "Intelligent task and meeting scheduling",
+          "Reduces decision fatigue",
+          "Project management features",
+          "ROI tracking"
+        ],
+        "cons": [
+          "Higher price point ($19/month)",
+          "Learning curve for full features",
+          "Can be overwhelming initially"
+        ]
+      },
+      {
+        "name": "Clockwise",
+        "description": "Team-focused AI scheduler that optimizes group calendars and protects deep work time automatically.",
+        "link": "https://www.getclockwise.com/",
+        "tags": [
+          "Team",
+          "Deep Work",
+          "Optimization"
+        ],
+        "iconUrl": "https://www.getclockwise.com/favicon.ico",
+        "about": "Clockwise is designed for teams, helping optimize group schedules and protect deep work blocks. It automatically reschedules meetings based on priorities, learns team habits, and integrates with Google Calendar and Slack.",
+        "pros": [
+          "Excellent for team coordination",
+          "Protects focus time",
+          "Learns team preferences",
+          "Good integrations"
+        ],
+        "cons": [
+          "Requires team adoption",
+          "Google Calendar focused",
+          "Complex for individual use"
+        ]
+      },
+      {
+        "name": "Reclaim AI",
+        "description": "Smart calendar that schedules meetings, focus time, and habits while adapting to work-life balance preferences.",
+        "link": "https://reclaim.ai/",
+        "tags": [
+          "Work-Life Balance",
+          "Habits",
+          "Adaptive"
+        ],
+        "iconUrl": "https://reclaim.ai/favicon.ico",
+        "about": "Reclaim uses machine learning to schedule meetings, focus time, and habits. It dynamically protects time for personal tasks and deep work while adapting to your preferences, making it ideal for work-life balance.",
+        "pros": [
+          "Great for work-life balance",
+          "Habit scheduling",
+          "Dynamic protection of focus time",
+          "Easy calendar integration"
+        ],
+        "cons": [
+          "Best with consistent routines",
+          "Learning period for AI",
+          "Limited manual override options"
+        ]
+      },
+      {
+        "name": "Clara",
+        "description": "Virtual assistant for meeting coordination handling scheduling via email in natural language like a human assistant.",
+        "link": "https://claralabs.com/",
+        "tags": [
+          "Virtual Assistant",
+          "Natural Language",
+          "Email"
+        ],
+        "iconUrl": "https://claralabs.com/favicon.ico",
+        "about": "Clara offers near-human virtual assistant capabilities for meeting coordination. It handles scheduling via email in natural language, automates replies and reminders, and manages multi-participant coordination while learning your communication style.",
+        "pros": [
+          "Near-human email interaction",
+          "Multi-participant coordination",
+          "Learns communication style",
+          "Professional appearance"
+        ],
+        "cons": [
+          "Higher cost",
+          "Email-only interface",
+          "May need training period"
+        ]
+      },
+      {
+        "name": "Calendly",
+        "description": "Leading automated scheduling tool with AI Pro features for context-aware intelligent booking and integrations.",
+        "link": "https://calendly.com/",
+        "tags": [
+          "Popular",
+          "Integrations",
+          "Easy Setup"
+        ],
+        "iconUrl": "https://calendly.com/favicon.ico",
+        "about": "Calendly remains a leader in automated scheduling. Its AI Pro features add context-aware intelligent booking, support for multiple event types, time buffers, and robust integrations with Zoom, Google Calendar, and more.",
+        "pros": [
+          "Very easy to use",
+          "Excellent integrations",
+          "Multiple event type support",
+          "Widely recognized and trusted"
+        ],
+        "cons": [
+          "AI features require Pro tier",
+          "Can seem impersonal",
+          "Limited customization on lower tiers"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Podcast Tools",
+    "slug": "podcast-tools",
+    "description": "AI-powered podcast editing, transcription, and production tools for content creators.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z\" /></svg>",
+    "tools": [
+      {
+        "name": "Descript",
+        "description": "Revolutionary text-based audio editing with transcription, filler word removal, noise reduction, and voice cloning.",
+        "link": "https://www.descript.com/",
+        "tags": [
+          "Text-Based Editing",
+          "Overdub",
+          "Transcription"
+        ],
+        "iconUrl": "https://www.descript.com/favicon.ico",
+        "about": "Descript is the leading podcast editing tool with innovative text-based editing - edit audio by editing text. It offers automatic transcription, filler word removal, background noise reduction, multi-track editing, and voice cloning (Overdub) for corrections.",
+        "pros": [
+          "Revolutionary text-based editing",
+          "Voice cloning for corrections",
+          "Automatic transcription",
+          "Collaborative workflows"
+        ],
+        "cons": [
+          "Learning curve for new paradigm",
+          "Advanced features require paid plan",
+          "Can be resource-intensive"
+        ]
+      },
+      {
+        "name": "Podcastle",
+        "description": "Web-based AI platform for podcast recording and editing with voice clarity enhancement and smart editing.",
+        "link": "https://podcastle.ai/",
+        "tags": [
+          "Web-Based",
+          "Recording",
+          "Remote Guests"
+        ],
+        "iconUrl": "https://podcastle.ai/favicon.ico",
+        "about": "Podcastle is a comprehensive web-based platform for both recording (including remote guests) and editing podcasts. It provides quality transcription, voice clarity enhancement, background noise removal, and smart editing that automatically trims filler sounds.",
+        "pros": [
+          "All-in-one recording and editing",
+          "Web-based, no installation",
+          "Remote guest recording",
+          "Smart audio cleanup"
+        ],
+        "cons": [
+          "Requires internet connection",
+          "Limited offline capabilities",
+          "Paid plans for advanced features"
+        ]
+      },
+      {
+        "name": "Cleanvoice AI",
+        "description": "Specialized audio cleanup removing background noise, stutters, mouth clicks, and filler words automatically.",
+        "link": "https://cleanvoice.ai/",
+        "tags": [
+          "Audio Cleanup",
+          "Noise Removal",
+          "Fast Processing"
+        ],
+        "iconUrl": "https://cleanvoice.ai/favicon.ico",
+        "about": "Cleanvoice specializes in automated audio cleanup, removing background noise, stutters, mouth clicks, silences, and filler words. It ensures podcasts sound professional even when recorded in suboptimal environments with fast processing.",
+        "pros": [
+          "Excellent automated cleanup",
+          "Fast processing",
+          "Volume leveling included",
+          "Easy to use"
+        ],
+        "cons": [
+          "Limited manual editing",
+          "Focused only on cleanup",
+          "Subscription required for regular use"
+        ]
+      },
+      {
+        "name": "Adobe Podcast",
+        "description": "Professional-grade AI audio enhancement and transcription integrated with Adobe Premiere for studio-quality results.",
+        "link": "https://podcast.adobe.com/",
+        "tags": [
+          "Adobe",
+          "Professional",
+          "Enhancement"
+        ],
+        "iconUrl": "https://www.adobe.com/favicon.ico",
+        "about": "Adobe Podcast (Project Shasta) integrates advanced AI features like speech enhancement and noise reduction with high-quality transcription. It works seamlessly with Adobe Premiere and delivers studio-grade results even from raw recordings.",
+        "pros": [
+          "Studio-quality enhancement",
+          "Adobe ecosystem integration",
+          "Professional results",
+          "Continually improving"
+        ],
+        "cons": [
+          "Still in beta",
+          "File upload limits",
+          "Best for Adobe Creative Cloud users"
+        ]
+      },
+      {
+        "name": "Auphonic",
+        "description": "AI audio post-production with normalization, noise reduction, level adjustments, and direct platform publishing.",
+        "link": "https://auphonic.com/",
+        "tags": [
+          "Post-Production",
+          "Normalization",
+          "Publishing"
+        ],
+        "iconUrl": "https://auphonic.com/favicon.ico",
+        "about": "Auphonic is an AI-powered audio post-production platform offering normalization, noise reduction, automatic level adjustments, and transcription. It ensures broadcast-quality sound and can publish directly to multiple podcast platforms.",
+        "pros": [
+          "Broadcast-quality output",
+          "Automatic level normalization",
+          "Direct publishing to platforms",
+          "Minimal manual intervention"
+        ],
+        "cons": [
+          "Limited transcription hours on free tier",
+          "Less editing features than full DAWs",
+          "Focused on post-production only"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Social Media Creation",
+    "slug": "ai-social-media-creation",
+    "description": "AI-powered social media post generators and content creation tools for automated content and scheduling.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z\" /></svg>",
+    "tools": [
+      {
+        "name": "Predis.ai",
+        "description": "All-in-one AI social media tool generating captions, visuals, hashtags with scheduling and performance analysis.",
+        "link": "https://predis.ai/",
+        "tags": [
+          "All-in-One",
+          "Scheduling",
+          "Analytics"
+        ],
+        "iconUrl": "https://predis.ai/favicon.ico",
+        "about": "Predis.ai is an all-in-one content creation and scheduling platform that generates captions, visuals, and hashtags while providing scheduling and performance analysis. It's ideal for small teams or businesses wanting consistent content.",
+        "pros": [
+          "Complete solution for social media",
+          "Auto-generates visuals and captions",
+          "Built-in scheduling",
+          "Cost-effective"
+        ],
+        "cons": [
+          "Quality can vary",
+          "Limited customization on lower tiers",
+          "May need manual refinement"
+        ]
+      },
+      {
+        "name": "SocialBee",
+        "description": "Fast publishing with AI-powered scheduling, customizable voice/tone, and deep analytics for brand consistency.",
+        "link": "https://socialbee.com/",
+        "tags": [
+          "Scheduling",
+          "Brand Voice",
+          "Analytics"
+        ],
+        "iconUrl": "https://socialbee.com/favicon.ico",
+        "about": "SocialBee generates posts with image/caption bundles, allows customization of voice and tone, schedules across channels, and provides deep analytics. It organizes posts for consistent brand presentation with high-quality content generation.",
+        "pros": [
+          "Excellent scheduling features",
+          "Brand voice customization",
+          "Good analytics",
+          "Post categorization"
+        ],
+        "cons": [
+          "Learning curve for features",
+          "Higher price for small users",
+          "May be complex for simple needs"
+        ]
+      },
+      {
+        "name": "Simplified AI",
+        "description": "Integrated design, writing, and collaboration platform with AI-generated text, graphics, and direct scheduling.",
+        "link": "https://simplified.com/",
+        "tags": [
+          "Design+Writing",
+          "Collaboration",
+          "Templates"
+        ],
+        "iconUrl": "https://simplified.com/favicon.ico",
+        "about": "Simplified integrates design, writing, and collaboration features with AI-generated text and graphics, extensive templates, team editing capabilities, and direct scheduling to social platforms.",
+        "pros": [
+          "Design and writing in one tool",
+          "Team collaboration",
+          "Good template library",
+          "Direct scheduling"
+        ],
+        "cons": [
+          "Can be overwhelming with features",
+          "Quality varies by template",
+          "Learning curve for full capabilities"
+        ]
+      },
+      {
+        "name": "Lately AI",
+        "description": "AI that learns brand voice to generate authentic social posts from long-form content automatically.",
+        "link": "https://www.lately.ai/",
+        "tags": [
+          "Brand Voice",
+          "Content Repurposing",
+          "Authentic"
+        ],
+        "iconUrl": "https://www.lately.ai/favicon.ico",
+        "about": "Lately AI learns your brand voice to generate authentic social media posts. It excels at repurposing long-form content (blogs, videos, podcasts) into multiple social posts that sound genuinely like your brand.",
+        "pros": [
+          "Learns authentic brand voice",
+          "Great content repurposing",
+          "Generates multiple posts from one source",
+          "High-quality outputs"
+        ],
+        "cons": [
+          "Requires content to repurpose",
+          "Learning period for brand voice",
+          "Premium pricing"
+        ]
+      },
+      {
+        "name": "Hootsuite Insights",
+        "description": "Enterprise social media management with AI analytics, content suggestions, and multi-account scheduling.",
+        "link": "https://www.hootsuite.com/",
+        "tags": [
+          "Enterprise",
+          "Analytics",
+          "Multi-Account"
+        ],
+        "iconUrl": "https://hootsuite.com/favicon.ico",
+        "about": "Hootsuite is a leading enterprise social media management platform with AI-powered analytics, content suggestions, and robust multi-account scheduling. It's ideal for agencies and large teams managing multiple brands.",
+        "pros": [
+          "Comprehensive enterprise features",
+          "Multi-account management",
+          "Deep analytics",
+          "Team collaboration"
+        ],
+        "cons": [
+          "Expensive for small teams",
+          "Complex interface",
+          "AI features limited compared to specialists"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Logo & Branding",
+    "slug": "logo-branding",
+    "description": "AI-powered logo design and branding tools for creating professional brand identities quickly.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01\" /></svg>",
+    "tools": [
+      {
+        "name": "Looka",
+        "description": "Comprehensive branding platform with AI logo generation, brand kits, color palettes, and asset previews.",
+        "link": "https://looka.com/",
+        "tags": [
+          "Branding Kit",
+          "Professional",
+          "Previews"
+        ],
+        "iconUrl": "https://looka.com/favicon.ico",
+        "about": "Looka provides comprehensive branding kits with AI logo generation based on industry and vision. You can preview logos on various assets before purchase, and it helps create color palettes and font pairings for complete brand identity.",
+        "pros": [
+          "Complete branding kit",
+          "Preview on various assets",
+          "Color palette generation",
+          "High-quality outputs"
+        ],
+        "cons": [
+          "One-time cost can be high",
+          "Limited revisions after purchase",
+          "Best for standard logos"
+        ]
+      },
+      {
+        "name": "Turbologo",
+        "description": "User-friendly logo generator with business cards, social media kits, brand guidelines, and full ownership.",
+        "link": "https://turbologo.com/",
+        "tags": [
+          "Fast",
+          "Customizable",
+          "Full Package"
+        ],
+        "iconUrl": "https://turbologo.com/favicon.ico",
+        "about": "Turbologo is ideal for quick, customized logo designs with additional business materials. It allows unlimited changes during creation and provides full ownership with high-res downloads in multiple formats.",
+        "pros": [
+          "Fast logo creation",
+          "Unlimited changes",
+          "Full ownership rights",
+          "Multiple file formats"
+        ],
+        "cons": [
+          "Less sophisticated than premium tools",
+          "Template-based approach",
+          "Limited unique designs"
+        ]
+      },
+      {
+        "name": "Brandmark",
+        "description": "AI branding tool delivering unique logos, color schemes, fonts, and mockups for startups and small businesses.",
+        "link": "https://brandmark.io/",
+        "tags": [
+          "Unique Designs",
+          "Mockups",
+          "Startups"
+        ],
+        "iconUrl": "https://brandmark.io/favicon.ico",
+        "about": "Brandmark focuses on full branding with AI-generated unique logo designs, color schemes, font suggestions, and mockups. It's designed for speed and ease, supporting small businesses and startups with professional results.",
+        "pros": [
+          "Unique AI-generated designs",
+          "Complete branding package",
+          "Mockup generation",
+          "Fast and easy"
+        ],
+        "cons": [
+          "Limited customization post-generation",
+          "Can be expensive for individual users",
+          "Designs may need refinement"
+        ]
+      },
+      {
+        "name": "Tailor Brands",
+        "description": "Robust AI branding platform generating style guides, social posts, and landing pages for long-term consistency.",
+        "link": "https://www.tailorbrands.com/",
+        "tags": [
+          "Style Guides",
+          "Social Media",
+          "Scalable"
+        ],
+        "iconUrl": "https://www.tailorbrands.com/favicon.ico",
+        "about": "Tailor Brands is a comprehensive AI branding platform that goes beyond logos to generate brand style guides, social media posts, and landing pages. Its focus is on long-term brand consistency and scalability for growing businesses.",
+        "pros": [
+          "Complete branding ecosystem",
+          "Style guide generation",
+          "Social media integration",
+          "Scalable for growth"
+        ],
+        "cons": [
+          "Subscription-based pricing",
+          "Can be complex for simple needs",
+          "Ongoing costs"
+        ]
+      },
+      {
+        "name": "Hatchful by Shopify",
+        "description": "Free AI logo maker tailored for e-commerce and entrepreneurs with flexible options and downloadable assets.",
+        "link": "https://hatchful.shopify.com/",
+        "tags": [
+          "Free",
+          "E-commerce",
+          "Shopify"
+        ],
+        "iconUrl": "https://www.shopify.com/favicon.ico",
+        "about": "Hatchful is Shopify's free logo maker designed for entrepreneurs and e-commerce brands. It walks you through style and business-type questions to create flexible logo options with downloadable branding assets.",
+        "pros": [
+          "Completely free",
+          "E-commerce focused",
+          "Easy to use",
+          "Shopify integration"
+        ],
+        "cons": [
+          "Limited compared to paid tools",
+          "Basic customization",
+          "Best for simple logos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Avatar & Virtual Influencer",
+    "slug": "avatar-virtual-influencer",
+    "description": "AI avatar generators and virtual influencer platforms for creating digital personas and characters.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\" /></svg>",
+    "tools": [
+      {
+        "name": "Synthesia",
+        "description": "Industry-leading AI video avatars with 230+ styles, 140+ languages, and natural gestures for professional content.",
+        "link": "https://www.synthesia.io/",
+        "tags": [
+          "Video Avatars",
+          "230+ Styles",
+          "Professional"
+        ],
+        "iconUrl": "https://www.synthesia.io/favicon.ico",
+        "about": "Synthesia is the industry leader for lifelike AI video avatars, offering over 230 avatar styles and support for 140+ languages. Avatars demonstrate natural gestures, expressions, and accurate lip sync, making it ideal for professional social media and marketing videos.",
+        "pros": [
+          "Most realistic video avatars",
+          "230+ avatar styles",
+          "140+ language support",
+          "Professional quality"
+        ],
+        "cons": [
+          "Premium pricing",
+          "Business-focused, not artistic",
+          "Video-centric, not static images"
+        ]
+      },
+      {
+        "name": "HeyGen",
+        "description": "Powerful video avatar platform with personalized digital clones, custom scenes, and scalable influencer campaigns.",
+        "link": "https://www.heygen.com/",
+        "tags": [
+          "Digital Clones",
+          "Scalable",
+          "Business"
+        ],
+        "iconUrl": "https://www.heygen.com/favicon.ico",
+        "about": "HeyGen offers powerful video avatar features with the ability to create personalized digital clones and custom scenes. It's used for scalable influencer campaigns and virtual spokespeople with professional quality output.",
+        "pros": [
+          "Personalized digital clones",
+          "Custom scene creation",
+          "Scalable for campaigns",
+          "Good voice options"
+        ],
+        "cons": [
+          "Business-oriented pricing",
+          "Limited stylized avatars",
+          "Requires learning for best results"
+        ]
+      },
+      {
+        "name": "D-ID Creative Reality",
+        "description": "Top-rated digital human avatars with superior lip-sync, expression control, and multilingual capabilities.",
+        "link": "https://www.d-id.com/",
+        "tags": [
+          "Digital Humans",
+          "Lip-Sync",
+          "Interactive"
+        ],
+        "iconUrl": "https://www.d-id.com/favicon.ico",
+        "about": "D-ID Creative Reality Studio is top-rated for digital human avatars with superior lip-sync and expression control. It excels at multilingual capabilities and is excellent for branding, ads, and interactive education content.",
+        "pros": [
+          "Superior lip-sync technology",
+          "Excellent expression control",
+          "Multilingual support",
+          "Interactive capabilities"
+        ],
+        "cons": [
+          "Tiered pricing structure",
+          "Advanced features locked behind higher tiers",
+          "Learning curve for full features"
+        ]
+      },
+      {
+        "name": "BasedLabs AI Influencer",
+        "description": "Tailored for influencer marketing with custom AI model training for consistent photorealistic content across scenarios.",
+        "link": "https://www.basedlabs.ai/",
+        "tags": [
+          "Influencer Marketing",
+          "Photorealistic",
+          "Consistent"
+        ],
+        "iconUrl": "https://www.basedlabs.ai/favicon.ico",
+        "about": "BasedLabs AI Influencer Generator is tailored for influencer marketing, allowing you to train a custom AI model on a specific face for consistent content across scenarios. Ideal for brands managing AI Instagram influencers.",
+        "pros": [
+          "Consistent face across content",
+          "Photorealistic results",
+          "Custom model training",
+          "Social media optimized"
+        ],
+        "cons": [
+          "Social media focus only",
+          "Higher learning curve",
+          "Requires quality training data"
+        ]
+      },
+      {
+        "name": "Ready Player Me",
+        "description": "Cross-platform avatar system for creating customizable 3D avatars for games, VR, and metaverse applications.",
+        "link": "https://readyplayer.me/",
+        "tags": [
+          "3D Avatars",
+          "Gaming",
+          "Metaverse"
+        ],
+        "iconUrl": "https://readyplayer.me/favicon.ico",
+        "about": "Ready Player Me provides a cross-platform avatar system for creating customizable 3D avatars that work across games, VR experiences, and metaverse applications. It's designed for interoperability and ease of integration.",
+        "pros": [
+          "Cross-platform compatibility",
+          "3D customizable avatars",
+          "Developer-friendly",
+          "Free for basic use"
+        ],
+        "cons": [
+          "Focused on gaming/VR",
+          "Not for 2D or marketing",
+          "Requires technical integration"
+        ]
+      }
+    ]
   }
 ]
