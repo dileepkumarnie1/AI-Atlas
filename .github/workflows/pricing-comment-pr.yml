@@ -51,8 +51,7 @@ jobs:
               lines.push('No anomalies detected.');
             }
             const body = lines.join('\n');
-            const fs2 = require('fs');
-            fs2.appendFileSync(process.env.GITHUB_OUTPUT, `body<<EOF\n${body}\nEOF\n`, 'utf8');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `body<<EOF\n${body}\nEOF\n`, 'utf8');
       - name: Comment on PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
