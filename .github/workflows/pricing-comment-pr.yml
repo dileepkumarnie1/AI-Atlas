@@ -28,29 +28,30 @@ jobs:
         run: npm run audit:pricing
       - name: Build PR comment
         id: build
-        run: |
-          node -e "
-          const fs=require('fs');
-          const j=JSON.parse(fs.readFileSync('data/pricing-audit.json','utf8'));
-          const anomalies=j.anomalies||[];
-          const counts=j.counts||{};
-          const lines=[];
-          lines.push('### Pricing Audit Summary');
-          lines.push('');
-          lines.push('Counts:');
-          Object.keys(counts).forEach(k=>lines.push('- ' + k + ': ' + counts[k]));
-          lines.push('');
-          if (anomalies.length){
-            lines.push('Anomalies: ' + anomalies.length);
-            const sample=anomalies.slice(0,10).map(a=>'- [' + a.section + '] ' + a.tool + ' — ' + a.reason + ' (' + (a.labels||[]).join(', ') + ')');
-            lines.push(...sample);
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const j = JSON.parse(fs.readFileSync('data/pricing-audit.json', 'utf8'));
+            const anomalies = j.anomalies || [];
+            const counts = j.counts || {};
+            const lines = [];
+            lines.push('### Pricing Audit Summary');
             lines.push('');
-            lines.push('Approve conflicts here: actions -> Pricing Approval');
-          } else {
-            lines.push('No anomalies detected.');
-          }
-          fs.writeFileSync(process.env.GITHUB_OUTPUT, 'body<<EOF\\n' + lines.join('\\n') + '\\nEOF\\n');
-          "
+            lines.push('Counts:');
+            Object.keys(counts).forEach(k => lines.push(`- ${k}: ${counts[k]}`));
+            lines.push('');
+            if (anomalies.length) {
+              lines.push(`Anomalies: ${anomalies.length}`);
+              const sample = anomalies.slice(0, 10).map(a => `- [${a.section}] ${a.tool} — ${a.reason} (${(a.labels || []).join(', ')})`);
+              lines.push(...sample);
+              lines.push('');
+              lines.push('Approve conflicts here: actions -> Pricing Approval');
+            } else {
+              lines.push('No anomalies detected.');
+            }
+            const body = lines.join('\n');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `body<<EOF\n${body}\nEOF\n`, 'utf8');
       - name: Comment on PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
