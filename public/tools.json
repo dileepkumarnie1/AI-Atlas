@@ -9885,5 +9885,481 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Meeting Assistants",
+    "slug": "meeting-assistants",
+    "description": "AI meeting note-takers, transcription tools, and assistants that capture, summarize, and organize meeting content automatically.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\" /></svg>",
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "description": "Real-time transcription and automated meeting summaries with action item tracking for Zoom, Google Meet, and Teams.",
+        "link": "https://otter.ai/",
+        "tags": [
+          "Transcription",
+          "Real-time",
+          "Freemium"
+        ],
+        "iconUrl": "https://otter.ai/favicon.ico",
+        "about": "Otter.ai (OtterPilot) is one of the most popular AI meeting assistants, offering real-time transcription, automated summaries, and action item tracking. It integrates seamlessly with major video conferencing platforms and provides easy sharing and collaboration features.",
+        "pros": [
+          "Highly accurate real-time transcription",
+          "Automated meeting summaries and action items",
+          "Seamless integration with Zoom, Google Meet, Teams",
+          "Intuitive interface and easy sharing"
+        ],
+        "cons": [
+          "Advanced features require paid subscription",
+          "Real-time transcription can occasionally lag",
+          "Storage limits on free tier"
+        ]
+      },
+      {
+        "name": "Fireflies.ai",
+        "description": "Advanced AI notetaker with conversation analysis, speaker insights, and deep search capabilities.",
+        "link": "https://fireflies.ai/",
+        "tags": [
+          "Analytics",
+          "Insights",
+          "Integration"
+        ],
+        "iconUrl": "https://fireflies.ai/favicon.ico",
+        "about": "Fireflies.ai goes beyond basic transcription to provide conversation analysis, speaker sentiment tracking, talk time metrics, and powerful search capabilities. It's ideal for power users and teams needing actionable insights from their meetings.",
+        "pros": [
+          "Deep conversation analytics and insights",
+          "Speaker sentiment and talk time tracking",
+          "Powerful search across all meetings",
+          "Strong CRM and workflow integrations"
+        ],
+        "cons": [
+          "Can be complex for simple use cases",
+          "Some features require configuration",
+          "Higher learning curve than simpler tools"
+        ]
+      },
+      {
+        "name": "Fathom",
+        "description": "Free high-quality transcription with instant summaries and action items for budget-conscious teams.",
+        "link": "https://fathom.video/",
+        "tags": [
+          "Free",
+          "Summaries",
+          "Action Items"
+        ],
+        "iconUrl": "https://fathom.video/favicon.ico",
+        "about": "Fathom offers surprisingly robust features on its free tier, including high-quality transcription, instant meeting summaries, and action item extraction. It's perfect for individuals and small teams on a budget.",
+        "pros": [
+          "Generous free tier with robust features",
+          "Quick and accurate summary generation",
+          "Action item extraction",
+          "Easy to use"
+        ],
+        "cons": [
+          "Advanced integrations limited on free plan",
+          "Less analytics than premium tools",
+          "Some features require paid upgrade"
+        ]
+      },
+      {
+        "name": "Avoma",
+        "description": "Conversation intelligence platform focused on insights, analysis, and CRM workflow integration.",
+        "link": "https://www.avoma.com/",
+        "tags": [
+          "Conversation Intelligence",
+          "CRM",
+          "Analytics"
+        ],
+        "iconUrl": "https://www.avoma.com/favicon.ico",
+        "about": "Avoma is a comprehensive conversation intelligence platform that focuses on extracting insights from meetings and automating follow-ups. It offers deep business tool integrations and is designed for teams seeking continuous improvement through data-driven insights.",
+        "pros": [
+          "Excellent conversation analysis and insights",
+          "Strong CRM and workflow integration",
+          "Accurate speaker recognition",
+          "Automated follow-up workflows"
+        ],
+        "cons": [
+          "Higher learning curve",
+          "Premium pricing",
+          "May be overkill for basic needs"
+        ]
+      },
+      {
+        "name": "Notta AI",
+        "description": "Multilingual transcription supporting 58+ languages with note management and easy sharing.",
+        "link": "https://www.notta.ai/",
+        "tags": [
+          "Multilingual",
+          "58+ Languages",
+          "Global"
+        ],
+        "iconUrl": "https://www.notta.ai/favicon.ico",
+        "about": "Notta AI excels at multilingual transcription, supporting over 58 languages with high accuracy. It's perfect for international teams and includes robust note management and sharing capabilities.",
+        "pros": [
+          "Supports 58+ languages",
+          "Fast and accurate transcription",
+          "Customizable output formats",
+          "Good app integrations"
+        ],
+        "cons": [
+          "Paid plans required for long meetings",
+          "Free tier has volume limitations",
+          "Some languages more accurate than others"
+        ]
+      },
+      {
+        "name": "tl;dv",
+        "description": "Meeting recorder with powerful search, time-stamped highlights, and UX/product team features.",
+        "link": "https://tldv.io/",
+        "tags": [
+          "Search",
+          "Highlights",
+          "UX Research"
+        ],
+        "iconUrl": "https://tldv.io/favicon.ico",
+        "about": "tl;dv is designed for teams who need searchable video transcripts and time-stamped highlights. It's particularly popular with UX researchers and product teams who need to extract insights from user interviews and meetings.",
+        "pros": [
+          "Powerful search within transcripts",
+          "Time-stamped highlight reels",
+          "Excellent for UX/product research",
+          "Easy snippet sharing"
+        ],
+        "cons": [
+          "May be over-featured for basic note-taking",
+          "Focus on video features vs pure transcription",
+          "Learning curve for advanced features"
+        ]
+      },
+      {
+        "name": "Krisp",
+        "description": "AI-powered noise cancellation combined with transcription and note-taking for clean audio meetings.",
+        "link": "https://krisp.ai/",
+        "tags": [
+          "Noise Cancellation",
+          "Audio Quality",
+          "Transcription"
+        ],
+        "iconUrl": "https://krisp.ai/favicon.ico",
+        "about": "Krisp is unique in combining industry-leading noise cancellation with meeting transcription and note-taking. It's ideal for users in noisy environments who need both clean audio and automated notes.",
+        "pros": [
+          "Excellent noise cancellation",
+          "Improves audio quality significantly",
+          "Easy to deploy and use",
+          "Works with all meeting platforms"
+        ],
+        "cons": [
+          "Transcription features less advanced than specialists",
+          "Primarily focused on audio quality",
+          "Summarization more limited"
+        ]
+      },
+      {
+        "name": "Circleback",
+        "description": "Premium AI meeting assistant with exceptional summarization and integration with Slack, Notion, and CRMs.",
+        "link": "https://www.circleback.ai/",
+        "tags": [
+          "Premium",
+          "Integration",
+          "Summarization"
+        ],
+        "iconUrl": "https://www.circleback.ai/favicon.ico",
+        "about": "Circleback offers premium AI meeting assistance with highly accurate summaries, speaker recognition, and deep integrations with popular tools like Slack, Notion, HubSpot, and Salesforce. It's designed for teams wanting automated meeting memory.",
+        "pros": [
+          "Highly accurate summaries and action items",
+          "Excellent speaker recognition",
+          "Deep workflow integrations",
+          "Automated note sharing"
+        ],
+        "cons": [
+          "Premium pricing",
+          "May be expensive for small teams",
+          "Requires integration setup"
+        ]
+      },
+      {
+        "name": "Gong",
+        "description": "Revenue intelligence platform with meeting analysis for sales teams to improve deal outcomes.",
+        "link": "https://www.gong.io/",
+        "tags": [
+          "Sales",
+          "Revenue Intelligence",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.gong.io/favicon.ico",
+        "about": "Gong is a comprehensive revenue intelligence platform that records and analyzes sales calls to provide insights for improving deal outcomes. It's designed for sales teams and includes advanced analytics, coaching features, and CRM integration.",
+        "pros": [
+          "Specialized for sales conversations",
+          "Deep revenue intelligence insights",
+          "Coaching and training features",
+          "Strong CRM integration"
+        ],
+        "cons": [
+          "Expensive enterprise pricing",
+          "Focused on sales use case",
+          "Complex setup and configuration"
+        ]
+      },
+      {
+        "name": "Read.ai",
+        "description": "AI meeting assistant with video summaries, playback, and engagement metrics for remote teams.",
+        "link": "https://www.read.ai/",
+        "tags": [
+          "Video",
+          "Engagement",
+          "Remote Teams"
+        ],
+        "iconUrl": "https://www.read.ai/favicon.ico",
+        "about": "Read.ai provides comprehensive meeting intelligence including video summaries, playback features, and engagement metrics. It's particularly useful for remote teams wanting to understand meeting dynamics and participation.",
+        "pros": [
+          "Video summaries and playback",
+          "Engagement and participation metrics",
+          "Good for remote team dynamics",
+          "Action item tracking"
+        ],
+        "cons": [
+          "Requires camera-on meetings for full features",
+          "Privacy concerns with engagement tracking",
+          "Learning curve for analytics"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Email Assistants",
+    "slug": "email-assistants",
+    "description": "AI-powered email writing, management, and automation tools that streamline communications and boost productivity.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" /></svg>",
+    "tools": [
+      {
+        "name": "Superhuman",
+        "description": "Premium AI email client with blazing speed, smart templates, and inbox zero features for high-volume users.",
+        "link": "https://superhuman.com/",
+        "tags": [
+          "Premium",
+          "Speed",
+          "Productivity"
+        ],
+        "iconUrl": "https://superhuman.com/favicon.ico",
+        "about": "Superhuman combines AI-powered email composition with a blazing-fast interface designed for professionals who handle high email volumes. It learns your writing style, offers smart templates, and includes features to help achieve inbox zero.",
+        "pros": [
+          "Incredibly fast and efficient interface",
+          "AI learns your writing style",
+          "Smart email prioritization",
+          "Keyboard-driven productivity"
+        ],
+        "cons": [
+          "Expensive premium pricing ($30/month)",
+          "Gmail/Outlook only",
+          "Requires investment in learning shortcuts"
+        ]
+      },
+      {
+        "name": "Flowrite",
+        "description": "Real-time AI email generation that adapts to your tone for quick, contextual replies.",
+        "link": "https://www.flowrite.com/",
+        "tags": [
+          "Real-time",
+          "Context-Aware",
+          "Freemium"
+        ],
+        "iconUrl": "https://www.flowrite.com/favicon.ico",
+        "about": "Flowrite provides real-time AI-powered email generation that adapts to your tone and can automate repetitive responses. It's ideal for busy professionals needing quick, contextual replies without starting from scratch.",
+        "pros": [
+          "Real-time generation as you type",
+          "Adapts to your tone and style",
+          "Good for repetitive responses",
+          "Quick contextual replies"
+        ],
+        "cons": [
+          "Customization options can be limited",
+          "Less suitable for complex emails",
+          "Requires learning to use effectively"
+        ]
+      },
+      {
+        "name": "Rytr",
+        "description": "Affordable AI writing assistant with various tones and email templates for light to moderate users.",
+        "link": "https://rytr.me/",
+        "tags": [
+          "Affordable",
+          "Templates",
+          "Multiple Tones"
+        ],
+        "iconUrl": "https://rytr.me/favicon.ico",
+        "about": "Rytr is a user-friendly and affordable AI writing assistant that provides various tones and email templates. It's suitable for users with low to moderate emailing needs who want AI assistance without premium pricing.",
+        "pros": [
+          "Very affordable pricing",
+          "Multiple tone options",
+          "Easy to use",
+          "Good template library"
+        ],
+        "cons": [
+          "Can produce generic outputs",
+          "Less ideal for complex personalization",
+          "Limited advanced features"
+        ]
+      },
+      {
+        "name": "Writesonic",
+        "description": "SEO-friendly, conversion-focused email templates especially suited for marketing campaigns.",
+        "link": "https://writesonic.com/",
+        "tags": [
+          "Marketing",
+          "SEO",
+          "Conversion"
+        ],
+        "iconUrl": "https://writesonic.com/favicon.ico",
+        "about": "Writesonic offers SEO-friendly, conversion-focused email templates designed specifically for marketers. It excels at campaign-driven emails with persuasive copy and call-to-action optimization.",
+        "pros": [
+          "Excellent for marketing emails",
+          "SEO and conversion optimized",
+          "Good template variety",
+          "Multiple language support"
+        ],
+        "cons": [
+          "Better for campaigns than ongoing communications",
+          "Can be marketing-heavy in tone",
+          "Learning curve for advanced features"
+        ]
+      },
+      {
+        "name": "SaneBox",
+        "description": "AI email management tool that filters non-essential emails and suggests smart responses for inbox organization.",
+        "link": "https://www.sanebox.com/",
+        "tags": [
+          "Organization",
+          "Filtering",
+          "Productivity"
+        ],
+        "iconUrl": "https://www.sanebox.com/favicon.ico",
+        "about": "SaneBox uses AI to manage inbox overload by filtering non-essential emails into separate folders and suggesting smart responses. It's excellent for organization and prioritization rather than composing emails.",
+        "pros": [
+          "Excellent inbox organization",
+          "Effective email filtering",
+          "Reduces email overload",
+          "Works with any email provider"
+        ],
+        "cons": [
+          "Focuses on organization over composition",
+          "Requires email access permissions",
+          "Learning period for AI to understand preferences"
+        ]
+      },
+      {
+        "name": "Lavender",
+        "description": "Sales-focused email assistant that boosts reply rates with AI coaching and personalization for outreach.",
+        "link": "https://www.lavender.ai/",
+        "tags": [
+          "Sales",
+          "Outreach",
+          "Reply Rates"
+        ],
+        "iconUrl": "https://www.lavender.ai/favicon.ico",
+        "about": "Lavender is popular among sales teams for improving cold email reply rates. It provides AI coaching, personalization suggestions, and analytics to help sales professionals craft more effective outreach emails.",
+        "pros": [
+          "Specialized for sales outreach",
+          "Improves reply rates significantly",
+          "Personalization recommendations",
+          "Email scoring and analytics"
+        ],
+        "cons": [
+          "Sales-focused features may not suit general use",
+          "Pricing can add up for teams",
+          "Learning curve for optimization"
+        ]
+      },
+      {
+        "name": "SmartWriter.ai",
+        "description": "AI tool for personalizing cold outreach at scale with automated research and custom icebreakers.",
+        "link": "https://www.smartwriter.ai/",
+        "tags": [
+          "Cold Outreach",
+          "Personalization",
+          "Scale"
+        ],
+        "iconUrl": "https://www.smartwriter.ai/favicon.ico",
+        "about": "SmartWriter.ai focuses on personalizing cold outreach emails at scale. It automatically researches prospects and generates custom icebreakers, making it ideal for sales teams managing large outreach campaigns.",
+        "pros": [
+          "Automated prospect research",
+          "Personalized icebreakers at scale",
+          "Good for cold outreach",
+          "Time-saving for sales teams"
+        ],
+        "cons": [
+          "Expensive for individual users",
+          "Requires good prospect data",
+          "Can feel automated if not customized"
+        ]
+      },
+      {
+        "name": "MailMaestro",
+        "description": "AI email assistant that learns from your writing history to mimic your personal style and tone.",
+        "link": "https://mailmaestro.com/",
+        "tags": [
+          "Personal Style",
+          "Learning",
+          "Outlook"
+        ],
+        "iconUrl": "https://mailmaestro.com/favicon.ico",
+        "about": "MailMaestro analyzes your email history to learn and mimic your personal writing style. It's particularly strong for users who want AI assistance that sounds authentically like them, with native Outlook integration.",
+        "pros": [
+          "Learns your personal writing style",
+          "Maintains authentic tone",
+          "Good Outlook integration",
+          "Privacy-focused approach"
+        ],
+        "cons": [
+          "Requires email history to train",
+          "Limited to Outlook/Gmail initially",
+          "Learning period required for best results"
+        ]
+      },
+      {
+        "name": "Google Gemini for Gmail",
+        "description": "Native AI integration in Gmail for smart compose, replies, summarization, and workspace features.",
+        "link": "https://workspace.google.com/solutions/ai/",
+        "tags": [
+          "Gmail",
+          "Native",
+          "Google Workspace"
+        ],
+        "iconUrl": "https://www.google.com/favicon.ico",
+        "about": "Google's Gemini AI provides native integration within Gmail, offering smart compose, intelligent replies, email summarization, and thread organization. It's ideal for Google Workspace users wanting seamless AI assistance.",
+        "pros": [
+          "Native Gmail integration",
+          "No additional apps needed",
+          "Thread summarization",
+          "Google Workspace integration"
+        ],
+        "cons": [
+          "Best features require Workspace subscription",
+          "Limited compared to specialized tools",
+          "Privacy concerns with Google's data use"
+        ]
+      },
+      {
+        "name": "Microsoft Copilot for Outlook",
+        "description": "AI-powered email assistance built into Outlook with meeting scheduling and Office integration.",
+        "link": "https://www.microsoft.com/microsoft-365/microsoft-copilot",
+        "tags": [
+          "Outlook",
+          "Microsoft 365",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "about": "Microsoft Copilot brings AI assistance directly into Outlook with features for email drafting, meeting scheduling, and deep Office integration. It's particularly powerful for Microsoft 365 enterprise users.",
+        "pros": [
+          "Native Outlook integration",
+          "Deep Office/Teams integration",
+          "Enterprise security and compliance",
+          "Meeting scheduling assistance"
+        ],
+        "cons": [
+          "Requires Microsoft 365 subscription",
+          "Best for enterprise users",
+          "Can be expensive for small teams"
+        ]
+      }
+    ]
   }
 ]
