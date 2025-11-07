@@ -6,56 +6,6 @@
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z\" clip-rule=\"evenodd\" /></svg>",
     "tools": [
       {
-        "name": "agent-zero",
-        "description": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "link": "https://agent-zero.ai",
-        "tags": [
-          "chatbot",
-          "agents",
-          "design",
-          "Freemium"
-        ],
-        "iconUrl": "https://agent-zero.ai/favicon.svg",
-        "about": "Agent Zero is a next-generation AI assistant - limitless, transparent, and entirely yours. Run your own autonomous AI agents free from restrictions, centralized control, or corporate oversight.",
-        "pros": [
-          "Good for drafting and Q&A."
-        ],
-        "cons": [
-          "May require fact‑checking."
-        ]
-      },
-      {
-        "name": "airbyte",
-        "description": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
-        "link": "https://airbyte.com",
-        "tags": [
-          "developer-tools",
-          "education",
-          "design",
-          "Open Source"
-        ],
-        "about": "Airbyte | Open-Source Data Integration Platform | ELT Tool",
-        "pros": [
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Suggestions may need review."
-        ],
-        "iconUrl": "https://airbyte.com/favicon.svg"
-      },
-      {
-        "name": "chatbox",
-        "description": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
-        "link": "https://chatboxai.app?utm_medium=github",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/chatbox.png"
-      },
-      {
         "name": "ChatGPT (OpenAI)",
         "description": "The quintessential AI chatbot for drafting, ideation, and summarization.",
         "link": "https://chat.openai.com/",
@@ -63,7 +13,7 @@
           "Freemium",
           "LLM"
         ],
-        "iconUrl": "icons/most-popular/chatgpt-openai.svg",
+        "iconUrl": "icons/language-chat/chatgpt-openai.svg",
         "about": "ChatGPT is a large language model-based chatbot developed by OpenAI. It is capable of understanding and generating human-like text, making it a versatile tool for a wide range of tasks, from writing emails to debugging code.",
         "pros": [
           "Highly versatile and conversational.",
@@ -74,6 +24,48 @@
           "Knowledge cutoff (doesn't know about very recent events).",
           "Can sometimes provide plausible but incorrect information.",
           "Heavy usage may require a paid subscription."
+        ]
+      },
+      {
+        "name": "Microsoft Copilot",
+        "description": "Web chat assistant with Bing context and plugins.",
+        "link": "https://copilot.microsoft.com/",
+        "tags": [
+          "Freemium",
+          "Search"
+        ],
+        "iconUrl": "icons/language-chat/microsoft-copilot.ico",
+        "about": "Brings web‑aware chat, image creation, and graph‑based answers in one place.",
+        "pros": [
+          "Good web grounding.",
+          "Image generation built‑in.",
+          "Free access level."
+        ],
+        "cons": [
+          "Occasional guardrail friction.",
+          "Regional variation.",
+          "Less controllable than APIs."
+        ]
+      },
+      {
+        "name": "Gemini (Google)",
+        "description": "Google's powerful, multimodal AI model integrated across its ecosystem.",
+        "link": "https://gemini.google.com/",
+        "tags": [
+          "Freemium",
+          "Multimodal"
+        ],
+        "iconUrl": "icons/language-chat/gemini-google.svg",
+        "about": "Gemini is a family of multimodal large language models developed by Google AI. It is designed to understand and process text, images, audio, and video, making it a powerful engine for search, creativity, and productivity.",
+        "pros": [
+          "Natively multimodal from the ground up.",
+          "Deep integration with Google's products (Search, Workspace).",
+          "Access to real-time information from the internet."
+        ],
+        "cons": [
+          "Newer to the market than some competitors.",
+          "Feature availability can vary by region.",
+          "Some advanced features require a subscription."
         ]
       },
       {
@@ -98,301 +90,67 @@
         ]
       },
       {
-        "name": "CopilotKit",
-        "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
-        "link": "https://docs.copilotkit.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/copilotkit.png"
-      },
-      {
-        "name": "cube",
-        "description": "Cube: Agentic Analytics Platform",
-        "link": "https://cube.dev",
-        "tags": [
-          "image",
-          "agents",
-          "Freemium"
-        ],
-        "about": "Cube: Agentic Analytics Platform",
-        "pros": [
-          "Generates visuals quickly."
-        ],
-        "cons": [
-          "Quality varies by prompt."
-        ],
-        "iconUrl": "icons/most-popular/cube.ico"
-      },
-      {
-        "name": "DeepSeek",
-        "description": "An open-source language and code model known for its strong coding capabilities.",
-        "link": "https://www.deepseek.com/",
-        "tags": [
-          "Open Source",
-          "Code"
-        ],
-        "iconUrl": "https://pbs.twimg.com/profile_images/1721795777323569152/wFDEiW-F_400x400.jpg",
-        "about": "DeepSeek is a family of AI models with a particular focus on code generation and understanding. The open-source DeepSeek Coder models are highly regarded in the developer community for their performance on programming benchmarks.",
-        "pros": [
-          "Excellent performance on coding tasks.",
-          "Open-source and commercially friendly license.",
-          "Provides a powerful alternative to proprietary coding assistants."
-        ],
-        "cons": [
-          "Less focused on general conversational ability.",
-          "Requires technical knowledge to implement and use effectively.",
-          "Smaller community compared to more general-purpose models."
-        ]
-      },
-      {
-        "name": "dify",
-        "description": "Production-ready platform for agentic workflow development.",
-        "link": "https://dify.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "iconUrl": "icons/most-popular/dify.png",
-        "about": "Production-ready platform for agentic workflow development.",
-        "pros": [],
-        "cons": []
-      },
-      {
-        "name": "DocsGPT",
-        "description": "DocsGPT Cloud by Arc53: An open-source assistant designed to provide instant answers about documents.DocsGPT seamlessly integrates with various data sources, chatbots, and internal tools, enhancing team productivity and customer engagement.",
-        "link": "https://app.docsgpt.cloud/",
-        "tags": [
-          "chatbot",
-          "developer-tools",
-          "design",
-          "documents",
-          "Open Source"
-        ],
-        "about": "DocsGPT Cloud by Arc53: An open-source assistant designed to provide instant answers about documents.DocsGPT seamlessly integrates with various data sources, chatbots, and internal tools, enhancing team productivity and customer engagement.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Suggestions may need review."
-        ],
-        "iconUrl": "icons/most-popular/docsgpt.png"
-      },
-      {
-        "name": "Duix-Avatar",
-        "description": "Talk face-to-face with Duix, your personal visual AI companion. Get instant support, share your thoughts freely, and build a real connection. Your privacy is 100% secure. Try it now.",
-        "link": "https://www.duix.com/",
-        "tags": [
-          "image",
-          "design",
-          "Freemium"
-        ],
-        "about": "Talk face-to-face with Duix, your personal visual AI companion. Get instant support, share your thoughts freely, and build a real connection. Your privacy is 100% secure. Try it now.",
-        "pros": [
-          "Generates visuals quickly."
-        ],
-        "cons": [
-          "Quality varies by prompt."
-        ],
-        "iconUrl": "icons/most-popular/duix-avatar.ico"
-      },
-      {
-        "name": "Gemini (Google)",
-        "description": "Google's powerful, multimodal AI model integrated across its ecosystem.",
-        "link": "https://gemini.google.com/",
+        "name": "Grammarly",
+        "description": "An AI-powered writing assistant that checks grammar, spelling, style, and tone.",
+        "link": "https://www.grammarly.com/",
         "tags": [
           "Freemium",
-          "Multimodal"
+          "Writing Assistant"
         ],
-        "iconUrl": "icons/most-popular/gemini-google.svg",
-        "about": "Gemini is a family of multimodal large language models developed by Google AI. It is designed to understand and process text, images, audio, and video, making it a powerful engine for search, creativity, and productivity.",
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Grammarly_logo.svg/1200px-Grammarly_logo.svg.png",
+        "about": "Grammarly is a cloud-based typing assistant that reviews spelling, grammar, punctuation, clarity, engagement, and delivery mistakes. It uses AI to go beyond basic checks, offering suggestions on tone, word choice, and sentence structure.",
         "pros": [
-          "Natively multimodal from the ground up.",
-          "Deep integration with Google's products (Search, Workspace).",
-          "Access to real-time information from the internet."
+          "Excellent for catching grammatical errors and typos.",
+          "Provides suggestions for improving writing style and clarity.",
+          "Integrates with browsers, email clients, and word processors."
         ],
         "cons": [
-          "Newer to the market than some competitors.",
-          "Feature availability can vary by region.",
-          "Some advanced features require a subscription."
+          "The best features are locked behind a premium subscription.",
+          "Can sometimes make suggestions that alter the intended meaning.",
+          "Generative AI features are newer and less developed than dedicated chatbots."
         ]
       },
       {
-        "name": "Gemini AI",
-        "description": "Gemini 2.5 is our most intelligent AI model, capable of reasoning through its thoughts before responding, resulting in enhanced performance and improved accuracy.",
-        "link": "https://deepmind.google/technologies/gemini/",
+        "name": "QuillBot",
+        "description": "AI paraphrasing and summarization tool.",
+        "link": "https://quillbot.com/",
         "tags": [
-          "Trending",
-          "Freemium"
+          "Freemium",
+          "Paraphrasing"
         ],
-        "about": "Gemini AI",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "https://deepmind.google/favicon.svg"
-      },
-      {
-        "name": "Grok (xAI)",
-        "description": "An AI chatbot by xAI with real-time access to the X (formerly Twitter) platform.",
-        "link": "https://grok.x.ai/",
-        "tags": [
-          "Subscription",
-          "Real-time"
-        ],
-        "iconUrl": "https://pbs.twimg.com/profile_images/1721295434682236928/h_s3vP2x_400x400.jpg",
-        "about": "Grok is a conversational AI developed by xAI, designed to have a bit of wit and a rebellious streak. Its unique feature is its real-time knowledge of the world via the X platform, allowing it to answer questions about very recent events.",
+        "iconUrl": "https://quillbot.com/favicon.svg",
+        "about": "QuillBot helps rewrite, summarize, and improve clarity of text for students, writers, and professionals.",
         "pros": [
-          "Real-time access to information from X.",
-          "Designed to have a more engaging and humorous personality.",
-          "Can handle spicy questions that other AIs might reject."
+          "Easy paraphrasing.",
+          "Summarizer included.",
+          "Free tier available."
         ],
         "cons": [
-          "Requires a premium X subscription.",
-          "Prone to sarcasm and may not be suitable for all professional tasks.",
-          "Still a very new model with ongoing development."
+          "Premium for advanced modes.",
+          "Occasional awkward phrasing.",
+          "Limited creative writing."
         ]
       },
       {
-        "name": "haystack",
-        "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
-        "link": "https://haystack.deepset.ai",
+        "name": "Canva AI",
+        "description": "Design platform with generative AI features for images and layouts.",
+        "link": "https://www.canva.com/ai/",
         "tags": [
-          "Open Source"
+          "Freemium",
+          "Design"
         ],
-        "about": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/haystack.png"
-      },
-      {
-        "name": "khoj",
-        "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
-        "link": "https://khoj.dev",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/khoj.png"
-      },
-      {
-        "name": "latitude-llm",
-        "description": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
-        "link": "https://latitude.so",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Latitude is the open-source prompt engineering platform to build, evaluate, and refine your prompts with AI",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/latitude-llm.png"
-      },
-      {
-        "name": "leon",
-        "description": "Leon is an open-source personal assistant who can live on your server. He is built on the top of Node.js, Python and artificial intelligence concepts.",
-        "link": "https://getleon.ai",
-        "tags": [
-          "chatbot",
-          "image",
-          "speech",
-          "design",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "Leon is an open-source personal assistant who can live on your server. He is built on the top of Node.js, Python and artificial intelligence concepts.",
+        "iconUrl": "https://www.canva.com/favicon.svg",
+        "about": "Canva AI offers text-to-image, Magic Design, and other generative features for easy content creation.",
         "pros": [
-          "Open source and extensible.",
-          "Good for drafting and Q&A.",
-          "Generates visuals quickly."
+          "Beginner-friendly.",
+          "Integrated with design tools.",
+          "Many templates."
         ],
         "cons": [
-          "Requires setup and maintenance.",
-          "May require fact‑checking.",
-          "Quality varies by prompt."
-        ],
-        "iconUrl": "https://getleon.ai/favicon.svg"
-      },
-      {
-        "name": "liveblocks",
-        "description": "Liveblocks gives you ready-made features like AI Copilots, Comments, and Multiplayer Editing to make your product more engaging and grow your business.",
-        "link": "https://liveblocks.io",
-        "tags": [
-          "developer-tools",
-          "design",
-          "Freemium"
-        ],
-        "about": "Liveblocks gives you ready-made features like AI Copilots, Comments, and Multiplayer Editing to make your product more engaging and grow your business.",
-        "pros": [
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Suggestions may need review."
-        ],
-        "iconUrl": "icons/most-popular/liveblocks.svg"
-      },
-      {
-        "name": "Llama (Meta)",
-        "description": "Meta's family of powerful, open-source large language models for research and commercial use.",
-        "link": "https://llama.meta.com/",
-        "tags": [
-          "Open Source",
-          "LLM"
-        ],
-        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meta_Llama_3_logo.svg/1200px-Meta_Llama_3_logo.svg.png",
-        "about": "Llama is a family of large language models released by Meta. A key distinction is its open-source nature, which allows developers and researchers to run, modify, and build upon the models freely, fostering a collaborative and transparent AI ecosystem.",
-        "pros": [
-          "Open source and free for research and commercial use.",
-          "State-of-the-art performance among open models.",
-          "Can be fine-tuned and run locally for privacy and customization."
-        ],
-        "cons": [
-          "Requires significant technical expertise and hardware to run.",
-          "Base models lack the safety guardrails of commercial products.",
-          "The ecosystem of tools is less mature than for proprietary models."
+          "Pro features paid.",
+          "Generic outputs.",
+          "Limited for advanced users."
         ]
-      },
-      {
-        "name": "llama_index",
-        "description": "LlamaIndex is a simple, flexible framework for building knowledge assistants using LLMs connected to your enterprise data.",
-        "link": "https://developers.llamaindex.ai",
-        "tags": [
-          "chatbot",
-          "developer-tools",
-          "image",
-          "agents",
-          "automation",
-          "design",
-          "documents",
-          "Freemium"
-        ],
-        "about": "LlamaIndex is a simple, flexible framework for building knowledge assistants using LLMs connected to your enterprise data.",
-        "pros": [
-          "Good for drafting and Q&A.",
-          "Generates visuals quickly.",
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "May require fact‑checking.",
-          "Quality varies by prompt.",
-          "Suggestions may need review."
-        ],
-        "iconUrl": "icons/most-popular/llama-index.svg"
-      },
-      {
-        "name": "mastra",
-        "description": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
-        "link": "https://mastra.ai",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/mastra.png"
       },
       {
         "name": "Meta AI",
@@ -417,162 +175,6 @@
         ]
       },
       {
-        "name": "MetaGPT",
-        "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-        "link": "https://mgx.dev/",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/metagpt.png"
-      },
-      {
-        "name": "Microsoft Copilot",
-        "description": "A cross‑product AI assistant integrated into Bing, Edge, Windows, and Microsoft 365.",
-        "link": "https://copilot.microsoft.com/",
-        "tags": [
-          "Freemium",
-          "Assistant",
-          "Ecosystem"
-        ],
-        "iconUrl": "icons/most-popular/microsoft-copilot.ico",
-        "about": "Microsoft Copilot brings generative AI to everyday workflows across web, desktop, and productivity apps, offering chat, image generation, and contextual help.",
-        "pros": [
-          "Deep OS and M365 integration.",
-          "Good for everyday tasks.",
-          "Strong enterprise posture."
-        ],
-        "cons": [
-          "Features vary by tenant/region.",
-          "May require paid M365 plans for full power.",
-          "Quality varies across surfaces."
-        ]
-      },
-      {
-        "name": "Mistral Le Chat",
-        "description": "Fast, concise chat built on Mistral’s open and efficient models.",
-        "link": "https://chat.mistral.ai/",
-        "tags": [
-          "Free",
-          "LLM",
-          "Lightweight"
-        ],
-        "iconUrl": "https://chat.mistral.ai/favicon.svg",
-        "about": "Mistral’s chat app provides snappy responses and strong coding/writing with lean models that run efficiently.",
-        "pros": [
-          "Responsive.",
-          "Great for code & drafting.",
-          "Open model ecosystem."
-        ],
-        "cons": [
-          "Smaller ecosystem vs OpenAI/Google.",
-          "Occasional gaps in multimodal features.",
-          "Rapid API changes."
-        ]
-      },
-      {
-        "name": "mlflow",
-        "description": "MLflow",
-        "link": "https://mlflow.org",
-        "tags": [
-          "design",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "MLflow",
-        "pros": [
-          "Open source and extensible."
-        ],
-        "cons": [
-          "Requires setup and maintenance."
-        ],
-        "iconUrl": "https://mlflow.org/favicon.svg"
-      },
-      {
-        "name": "nocobase",
-        "description": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
-        "link": "https://www.nocobase.com",
-        "tags": [
-          "developer-tools",
-          "design",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
-        "pros": [
-          "Open source and extensible.",
-          "Boosts developer productivity."
-        ],
-        "cons": [
-          "Requires setup and maintenance.",
-          "Suggestions may need review."
-        ],
-        "iconUrl": "icons/most-popular/nocobase.png"
-      },
-      {
-        "name": "Notebook LLM",
-        "description": "This tool helps users to add online resources, pdfs, video links to generate a educational podcast or document which simplifies learning experience",
-        "link": "https://notebooklm.google.com/",
-        "tags": [
-          "llm",
-          "code",
-          "Free"
-        ],
-        "about": "Sign in - Google Accounts",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/notebook-lm.svg"
-      },
-      {
-        "name": "onyx",
-        "description": "The open-source AI enterprise search platform that helps teams find information across all company data.",
-        "link": "https://onyx.app",
-        "tags": [
-          "chatbot",
-          "search",
-          "open-source",
-          "Open Source"
-        ],
-        "about": "The open-source AI enterprise search platform that helps teams find information across all company data.",
-        "pros": [
-          "Open source and extensible.",
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
-        ],
-        "cons": [
-          "Requires setup and maintenance.",
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "icons/most-popular/onyx.ico"
-      },
-      {
-        "name": "Open-Assistant",
-        "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
-        "link": "https://open-assistant.io",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/open-assistant.jpg"
-      },
-      {
-        "name": "OpenBB",
-        "description": "Financial data platform for analysts, quants and AI agents.",
-        "link": "https://openbb.co",
-        "tags": [
-          "Open Source"
-        ],
-        "about": "Financial data platform for analysts, quants and AI agents.",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/openbb.png"
-      },
-      {
         "name": "Perplexity AI",
         "description": "A conversational search engine that provides direct answers with cited sources.",
         "link": "https://www.perplexity.ai/",
@@ -594,110 +196,661 @@
         ]
       },
       {
-        "name": "potpie",
-        "description": "Prompt-To-Agent : Create custom engineering agents for your codebase",
-        "link": "https://potpie.ai",
+        "name": "Midjourney",
+        "description": "A premier text-to-image AI that creates stunning, artistic visuals from prompts.",
+        "link": "https://www.midjourney.com/",
         "tags": [
-          "Open Source"
+          "Paid",
+          "Text-to-Image",
+          "Subscription"
         ],
-        "about": "Prompt-To-Agent : Create custom engineering agents for your codebase",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/potpie.png"
-      },
-      {
-        "name": "RA.Aid",
-        "description": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
-        "link": "https://ra-aid.ai/",
-        "tags": [
-          "chatbot",
-          "search",
-          "agents",
-          "Open Source"
-        ],
-        "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg",
-        "about": "Open-source AI assistant that helps you develop software autonomously through research, planning, and implementation.",
+        "iconUrl": "https://media.dev.to/cdn-cgi/image/width=1000,height=1000,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz1a8m29el33hpwscvl24.png",
+        "about": "Midjourney is an independent research lab that produces an artificial intelligence program that creates images from textual descriptions. It is known for its highly artistic and coherent image outputs, making it a favorite among artists and designers.",
         "pros": [
-          "Good for drafting and Q&A.",
-          "Great for research and discovery."
+          "Produces exceptionally high-quality, artistic images.",
+          "Very active community and rapid development.",
+          "Powerful control over image styles and composition."
         ],
         "cons": [
-          "May require fact‑checking.",
-          "Coverage and speed can vary."
+          "Requires using Discord to interact with the bot.",
+          "No free trial available.",
+          "Can be complex for beginners to master advanced prompting."
         ]
       },
       {
-        "name": "sim",
-        "description": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
-        "link": "https://www.sim.ai",
+        "name": "Character.AI",
+        "description": "Persona‑driven conversational agents for creative and social chats.",
+        "link": "https://beta.character.ai/",
         "tags": [
-          "developer-tools",
-          "image",
-          "search",
-          "agents",
-          "automation",
-          "design",
-          "open-source",
-          "Open Source"
+          "Freemium",
+          "Personas"
         ],
-        "about": "Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 &amp; HIPAA compliant. Connect 100+ apps.",
+        "iconUrl": "icons/language-chat/character-ai.ico",
+        "about": "Create and chat with custom personalities for entertainment, brainstorming, and roleplay.",
         "pros": [
-          "Open source and extensible.",
-          "Generates visuals quickly.",
-          "Great for research and discovery."
+          "Huge community of personas.",
+          "Fun and creative.",
+          "Easy to customize."
         ],
         "cons": [
-          "Requires setup and maintenance.",
-          "Quality varies by prompt.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "https://www.sim.ai/favicon.svg"
+          "Less suited for professional tasks.",
+          "Quality varies by persona.",
+          "Moderation limits some use cases."
+        ]
       },
       {
-        "name": "supabase",
-        "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
-        "link": "https://supabase.com",
+        "name": "Replika",
+        "description": "AI companion for conversation and emotional support.",
+        "link": "https://replika.com/",
         "tags": [
-          "image",
-          "search",
-          "design",
-          "api",
+          "Freemium",
+          "Companion"
+        ],
+        "iconUrl": "https://replika.com/favicon.svg",
+        "about": "Replika is an AI chatbot designed for personal conversation, support, and companionship.",
+        "pros": [
+          "Emotional support.",
+          "Customizable persona.",
+          "Mobile app available."
+        ],
+        "cons": [
+          "Premium features gated.",
+          "Not for professional advice.",
+          "Occasional odd responses."
+        ]
+      },
+      {
+        "name": "Adobe Firefly",
+        "description": "Adobe's family of creative generative AI models, integrated into Photoshop and other apps.",
+        "link": "https://www.adobe.com/sensei/generative-ai/firefly.html",
+        "tags": [
+          "Freemium",
+          "Ethical AI"
+        ],
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Adobe_Firefly_logo.svg/1200px-Adobe_Firefly_logo.svg.png",
+        "about": "Adobe Firefly is a generative AI model designed to be commercially safe. It's trained exclusively on Adobe Stock's licensed content and public domain images, and is deeply integrated into Adobe's Creative Cloud apps like Photoshop and Illustrator.",
+        "pros": [
+          "Designed to be safe for commercial use.",
+          "Seamless integration with Adobe's professional creative tools.",
+          "Powerful features like Generative Fill in Photoshop."
+        ],
+        "cons": [
+          "Requires an Adobe Creative Cloud subscription for full integration.",
+          "Less suited for highly artistic or abstract styles.",
+          "Generative credits are required for heavy usage."
+        ]
+      },
+      {
+        "name": "DALL-E 3 (OpenAI)",
+        "description": "OpenAI's advanced image generation model, integrated into ChatGPT Plus.",
+        "link": "https://openai.com/dall-e-3",
+        "tags": [
+          "Subscription",
+          "Text-to-Image"
+        ],
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/DALL-E_logo.svg/1200px-DALL-E_logo.svg.png",
+        "about": "DALL-E 3 is the latest version of OpenAI's text-to-image model. It is known for its ability to follow complex prompts with a high degree of accuracy and nuance, and it's directly integrated into the ChatGPT interface for paid users.",
+        "pros": [
+          "Excellent at interpreting complex, detailed prompts.",
+          "Natively integrated with ChatGPT for easy use.",
+          "Generally better at rendering text and hands than previous models."
+        ],
+        "cons": [
+          "Requires a ChatGPT Plus subscription.",
+          "Less artistic control compared to Midjourney's parameters.",
+          "Subject to OpenAI's content restrictions."
+        ]
+      },
+      {
+        "name": "Notion AI",
+        "description": "An AI assistant integrated directly into the Notion productivity workspace.",
+        "link": "https://www.notion.so/product/ai",
+        "tags": [
+          "Add-on",
+          "Writing",
           "Freemium"
         ],
-        "about": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
+        "iconUrl": "icons/productivity/notion-ai.png",
+        "about": "Notion AI is a suite of features built into the Notion platform. It can summarize existing notes, draft content, brainstorm ideas, translate text, and organize data, all within your existing Notion pages.",
         "pros": [
-          "Generates visuals quickly.",
-          "Great for research and discovery."
+          "Seamlessly integrated into the Notion workflow.",
+          "Can work with your existing documents and databases.",
+          "Versatile for a wide range of productivity tasks."
         ],
         "cons": [
-          "Quality varies by prompt.",
-          "Coverage and speed can vary."
-        ],
-        "iconUrl": "https://supabase.com/favicon.svg"
+          "Requires a Notion account and is a paid add-on.",
+          "Less powerful than standalone, dedicated AI models.",
+          "Effectiveness depends on how well-structured your Notion workspace is."
+        ]
       },
       {
-        "name": "tabby",
-        "description": "Self-hosted AI coding assistant",
-        "link": "https://tabbyml.com",
+        "name": "GitHub Copilot",
+        "description": "An AI pair programmer that offers autocomplete-style suggestions as you code.",
+        "link": "https://github.com/features/copilot",
         "tags": [
-          "Open Source"
+          "Subscription",
+          "Code"
         ],
-        "about": "Self-hosted AI coding assistant",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/tabby.png"
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/GitHub_Copilot_logo.svg/1200px-GitHub_Copilot_logo.svg.png",
+        "about": "GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of various code editors by autocompleting code. It understands context from comments and code to suggest individual lines and whole functions instantly.",
+        "pros": [
+          "Dramatically speeds up coding and reduces boilerplate.",
+          "Integrates seamlessly into popular code editors.",
+          "Learns from your coding style."
+        ],
+        "cons": [
+          "Requires a subscription after the trial period.",
+          "Suggestions can sometimes be non-optimal or contain subtle bugs.",
+          "Raises questions about code originality and licensing."
+        ]
       },
       {
-        "name": "ToolJet",
-        "description": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
-        "link": "https://tooljet.ai",
+        "name": "Leonardo Ai",
+        "description": "A platform for generating game assets, concept art, and other artistic images.",
+        "link": "https://leonardo.ai/",
         "tags": [
-          "Open Source"
+          "Freemium",
+          "Game Assets"
         ],
-        "about": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
-        "pros": [],
-        "cons": [],
-        "iconUrl": "icons/most-popular/tooljet.png"
+        "iconUrl": "https://pbs.twimg.com/profile_images/1618313799960780800/W4Tf06vA_400x400.jpg",
+        "about": "Leonardo Ai is a generative AI platform focused on creative assets. It offers a suite of tools, including image generation, AI canvas for editing, and the ability to train your own custom models on your art style.",
+        "pros": [
+          "Generous free tier with daily credits.",
+          "Ability to train custom models.",
+          "Strong focus on gaming and creative asset generation."
+        ],
+        "cons": [
+          "Interface can be complex for new users.",
+          "Image quality can be less consistent than Midjourney.",
+          "Popularity can lead to slow generation times."
+        ]
+      },
+      {
+        "name": "Jasper AI",
+        "description": "AI content generation for marketing, blogs, and more.",
+        "link": "https://www.jasper.ai/",
+        "tags": [
+          "Subscription",
+          "Content"
+        ],
+        "iconUrl": "https://www.jasper.ai/favicon.svg",
+        "about": "Jasper is a leading AI writing assistant for marketers, bloggers, and businesses, offering templates and tone control.",
+        "pros": [
+          "Great for marketing copy.",
+          "Many templates.",
+          "Brand voice support."
+        ],
+        "cons": [
+          "Subscription required.",
+          "Not for technical writing.",
+          "Fact-checking needed."
+        ]
+      },
+      {
+        "name": "DeepL",
+        "description": "A highly accurate AI-powered translation service known for its natural-sounding output.",
+        "link": "https://www.deepl.com/translator",
+        "tags": [
+          "Freemium",
+          "Translation"
+        ],
+        "iconUrl": "icons/language-chat/deepl.svg",
+        "about": "DeepL is a deep learning-based translation service that is widely considered to be one of the most accurate in the world. It excels at capturing nuance and producing translations that sound natural and fluent.",
+        "pros": [
+          "Exceptionally high translation accuracy.",
+          "Preserves the nuance and tone of the source text.",
+          "Offers a powerful API for developers."
+        ],
+        "cons": [
+          "Free version has limits on text length and usage.",
+          "Fewer languages supported than some competitors like Google Translate.",
+          "Pro features like document translation require a subscription."
+        ]
+      },
+      {
+        "name": "ElevenLabs",
+        "description": "Best-in-class AI for generating realistic text-to-speech and voice clones.",
+        "link": "https://elevenlabs.io/",
+        "tags": [
+          "Freemium",
+          "Text-to-Speech"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1731688753233924096/iEV8sRTG_400x400.jpg",
+        "about": "ElevenLabs is a voice technology research company, widely regarded as the market leader in text-to-speech (TTS) and voice cloning. Its models can produce incredibly lifelike and emotive speech in a multitude of languages and accents.",
+        "pros": [
+          "Extremely realistic and natural-sounding voices.",
+          "Ability to clone your own voice from a short sample.",
+          "Generous free tier for getting started."
+        ],
+        "cons": [
+          "Can be expensive for high-volume usage.",
+          "Voice cloning technology raises ethical concerns about misuse.",
+          "Fine-tuning emotional delivery requires specific syntax."
+        ]
+      },
+      {
+        "name": "Suno AI",
+        "description": "Create full songs (lyrics, instruments, and vocals) from a simple text prompt.",
+        "link": "https://www.suno.ai/",
+        "tags": [
+          "Freemium",
+          "Music Generation"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1737575318939504640/Y3-g1c-F_400x400.jpg",
+        "about": "Suno is a remarkable AI music generator that can create complete, two-minute songs in various genres based on a short text description. It generates lyrics, instrumental tracks, and AI-generated vocals, which can then be extended into longer pieces.",
+        "pros": [
+          "Incredibly easy to create full songs from a prompt.",
+          "Supports a wide variety of musical genres.",
+          "Free tier allows for daily song creation."
+        ],
+        "cons": [
+          "Limited control over specific musical elements (e.g., chord progressions).",
+          "Vocal quality can be hit-or-miss.",
+          "Commercial use of generated music requires a paid plan."
+        ]
+      },
+      {
+        "name": "Otter.ai",
+        "description": "Live meeting transcription with summaries and action items.",
+        "link": "https://otter.ai/",
+        "tags": [
+          "Freemium",
+          "Meetings"
+        ],
+        "iconUrl": "https://otter.ai/favicon.svg",
+        "about": "Real‑time capture and searchable transcripts for Zoom, Meet, and Teams.",
+        "pros": [
+          "Accurate live transcripts.",
+          "Auto summaries.",
+          "Team features."
+        ],
+        "cons": [
+          "Quality depends on audio.",
+          "Limits on free tier.",
+          "Data governance for enterprises."
+        ]
+      },
+      {
+        "name": "Poe by Quora",
+        "description": "An app that provides access to a variety of different AI chatbots in one place.",
+        "link": "https://poe.com/",
+        "tags": [
+          "Freemium",
+          "Aggregator"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1620823549298188288/IO-pI20c_400x400.jpg",
+        "about": "Poe is a platform that allows users to interact with a range of different AI models, including those from OpenAI, Anthropic, and Google. It also allows users to create their own custom bots with specific instructions.",
+        "pros": [
+          "Access to multiple leading AI models in one interface.",
+          "Ability to create and share custom bots.",
+          "Fast and responsive mobile and web apps."
+        ],
+        "cons": [
+          "Free access to the best models is limited.",
+          "Requires a subscription for heavy usage.",
+          "The quality of user-created bots can vary wildly."
+        ]
+      },
+      {
+        "name": "NightCafe",
+        "description": "Beginner‑friendly image generator with presets and social challenges.",
+        "link": "https://nightcafe.studio/",
+        "tags": [
+          "Freemium",
+          "Text-to-Image"
+        ],
+        "iconUrl": "https://nightcafe.studio/favicon.svg",
+        "about": "Create art quickly using style presets; join community challenges to explore prompts.",
+        "pros": [
+          "Easy to start.",
+          "Community features.",
+          "Style presets."
+        ],
+        "cons": [
+          "Less granular control.",
+          "Credit system.",
+          "Output quality varies."
+        ]
+      },
+      {
+        "name": "Fireflies.ai",
+        "description": "An AI meeting assistant that transcribes, summarizes, and analyzes voice conversations.",
+        "link": "https://fireflies.ai/",
+        "tags": [
+          "Freemium",
+          "Transcription"
+        ],
+        "iconUrl": "https://media.licdn.com/dms/image/D4D0BAQG9n_GvY_2LVA/company-logo_200_200/0/1691399329813/fireflies_ai_logo?e=2147483647&v=beta&t=c5o3f4g6h7i8j9k0l1m2n3o4p5q6r7s8",
+        "about": "Fireflies.ai joins your online meetings as a participant to record, transcribe, and summarize the conversation. It identifies action items, key topics, and allows you to search the transcript later.",
+        "pros": [
+          "Automates the process of taking meeting notes.",
+          "Integrates with most popular calendar and conferencing tools.",
+          "Provides powerful analytics on conversations."
+        ],
+        "cons": [
+          "Transcription accuracy can vary with audio quality and accents.",
+          "Free tier has limits on storage and features.",
+          "Some users may have privacy concerns about a bot joining their calls."
+        ]
+      },
+      {
+        "name": "Tabnine",
+        "description": "An AI code completion assistant that can be run locally for privacy.",
+        "link": "https://www.tabnine.com/",
+        "tags": [
+          "Freemium",
+          "Privacy"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "Tabnine is one of the original AI code assistants. It provides powerful code completions and, for enterprise teams, can be trained on specific codebases and run entirely locally, ensuring code privacy and security.",
+        "pros": [
+          "Can be run locally for maximum privacy.",
+          "Can be personalized by training on your own repositories.",
+          "Supports a wide range of languages and editors."
+        ],
+        "cons": [
+          "The free version is less powerful than competitors.",
+          "Local models require significant computational resources.",
+          "User interface for configuration can be complex."
+        ]
+      },
+      {
+        "name": "DreamStudio",
+        "description": "Official web app for Stable Diffusion image generation.",
+        "link": "https://dreamstudio.ai/",
+        "tags": [
+          "Freemium",
+          "Text-to-Image"
+        ],
+        "iconUrl": "icons/image-generation/dreamstudio.ico",
+        "about": "DreamStudio is the official web interface for Stable Diffusion, offering easy prompt-based image creation.",
+        "pros": [
+          "Official SD interface.",
+          "Easy to use.",
+          "Free credits to start."
+        ],
+        "cons": [
+          "Credits required for heavy use.",
+          "Limited advanced controls.",
+          "Web-based only."
+        ]
+      },
+      {
+        "name": "Runway",
+        "description": "An all-in-one suite for AI-powered video creation and editing.",
+        "link": "https://runwayml.com/",
+        "tags": [
+          "Freemium",
+          "Video Generation"
+        ],
+        "iconUrl": "https://media.licdn.com/dms/image/C4D0BAQG0C5b0g-f_vA/company-logo_200_200/0/1677520033123/runwayml_logo?e=2147483647&v=beta&t=H_L_D-qj5s9c-Q2a7b1c3d4e5f6g7h8i",
+        "about": "Runway is a comprehensive platform offering a wide array of AI magic tools for video, including text-to-video generation, video-to-video style transfer, automatic background removal (rotoscoping), and much more.",
+        "pros": [
+          "Massive suite of powerful AI video tools.",
+          "Web-based and relatively easy to use.",
+          "Offers a free tier to experiment with features."
+        ],
+        "cons": [
+          "Video generation can be slow and is credit-intensive.",
+          "Free tier has significant limitations (e.g., watermarks, lower resolution).",
+          "Can be expensive for heavy users."
+        ]
+      },
+      {
+        "name": "Cursor",
+        "description": "An AI-first code editor designed for pair-programming with a powerful AI.",
+        "link": "https://cursor.sh/",
+        "tags": [
+          "Freemium",
+          "Editor"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "Cursor is a standalone code editor built from the ground up for AI-assisted development. It's a fork of VS Code that deeply integrates features like code generation, debugging with AI, and project-wide understanding of your codebase.",
+        "pros": [
+          "Deeply integrated AI features feel native.",
+          "Can understand and work with your entire codebase.",
+          "Offers a generous free tier."
+        ],
+        "cons": [
+          "Is a separate application, not a plugin for your existing editor.",
+          "Can be resource-intensive.",
+          "Still a newer product, so some features may be less polished than established editors."
+        ]
+      },
+      {
+        "name": "You.com",
+        "description": "AI-powered search and chat engine with privacy focus.",
+        "link": "https://you.com/",
+        "tags": [
+          "Search",
+          "Chat",
+          "Privacy",
+          "Freemium"
+        ],
+        "iconUrl": "https://you.com/favicon.svg",
+        "about": "You.com combines search, chat, and generative AI for a customizable, privacy-respecting experience.",
+        "pros": [
+          "Customizable search.",
+          "Integrated chat.",
+          "No tracking."
+        ],
+        "cons": [
+          "Results can vary.",
+          "Newer ecosystem.",
+          "Some features paid."
+        ]
+      },
+      {
+        "name": "Copy.ai",
+        "description": "An AI writing tool with a large suite of templates for marketing and sales copy.",
+        "link": "https://www.copy.ai/",
+        "tags": [
+          "Freemium",
+          "Copywriting"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1679549344487714816/yV70p_n2_400x400.jpg",
+        "about": "Copy.ai is an AI-powered writing tool that helps generate a wide range of marketing copy and other content. It provides over 90 templates and tools for tasks like writing blog posts, social media updates, ad copy, and sales emails. It is known for its user-friendly interface and features that can automate marketing workflows and maintain a consistent brand voice.",
+        "pros": [
+          "Extensive library of templates for specific marketing tasks.",
+          "Real-time web search capability allows for more current content generation.",
+          "Generous free plan and cost-effective for teams."
+        ],
+        "cons": [
+          "Long-form content editor is less robust than some competitors.",
+          "Generated content always requires fact-checking for accuracy.",
+          "Lacks built-in SEO optimization tools and a plagiarism checker."
+        ]
+      },
+      {
+        "name": "Ideogram",
+        "description": "An AI image generator that excels at rendering text and typography within images.",
+        "link": "https://ideogram.ai/",
+        "tags": [
+          "Freemium",
+          "Typography"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1694033342337167360/K-oA59p6_400x400.jpg",
+        "about": "Ideogram launched with a primary focus on solving one of the biggest challenges for AI image generators: reliably rendering text. It allows users to create images that include specific words or phrases, making it great for logos, posters, and memes.",
+        "pros": [
+          "Best-in-class for generating images with accurate text.",
+          "Simple and easy-to-use web interface.",
+          "Offers a free tier for generation."
+        ],
+        "cons": [
+          "Overall image quality can be slightly lower than top competitors.",
+          "Fewer advanced features and parameters to control.",
+          "Can be slow during peak usage times."
+        ]
+      },
+      {
+        "name": "HeyGen",
+        "description": "A platform for creating AI spokesperson videos and translating video content.",
+        "link": "https://www.heygen.com/",
+        "tags": [
+          "Freemium",
+          "Translation"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "HeyGen is an AI video platform that specializes in generating spokesperson videos with realistic avatars. Its standout feature is AI-powered video translation, which can change the spoken language of a person in a video while syncing their lip movements.",
+        "pros": [
+          "Impressive video translation and lip-sync feature.",
+          "Good selection of high-quality AI avatars.",
+          "Free trial allows for the creation of a short video."
+        ],
+        "cons": [
+          "Credit-based system can become expensive.",
+          "Avatar customization is limited on lower-tier plans.",
+          "Processing times for videos can be long."
+        ]
+      },
+      {
+        "name": "Grok (xAI)",
+        "description": "An AI chatbot by xAI with real-time access to the X (formerly Twitter) platform.",
+        "link": "https://grok.x.ai/",
+        "tags": [
+          "Subscription",
+          "Real-time"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1721295434682236928/h_s3vP2x_400x400.jpg",
+        "about": "Grok is a conversational AI developed by xAI, designed to have a bit of wit and a rebellious streak. Its unique feature is its real-time knowledge of the world via the X platform, allowing it to answer questions about very recent events.",
+        "pros": [
+          "Real-time access to information from X.",
+          "Designed to have a more engaging and humorous personality.",
+          "Can handle spicy questions that other AIs might reject."
+        ],
+        "cons": [
+          "Requires a premium X subscription.",
+          "Prone to sarcasm and may not be suitable for all professional tasks.",
+          "Still a very new model with ongoing development."
+        ]
+      },
+      {
+        "name": "Writer",
+        "description": "Enterprise generative AI platform for accurate, on-brand content.",
+        "link": "https://writer.com",
+        "tags": [
+          "Subscription",
+          "Enterprise",
+          "Copywriting",
+          "Brand Voice"
+        ],
+        "iconUrl": "https://writer.com/favicon.svg",
+        "about": "Writer is an enterprise-grade generative AI platform that lets organizations ground models in their own data, brand, and style guidelines so every output is consistent, accurate, and compliant across teams.",
+        "pros": [
+          "Supports brand and style governance.",
+          "Private data grounding improves factual accuracy.",
+          "Enterprise security and compliance features."
+        ],
+        "cons": [
+          "Higher cost for smaller teams.",
+          "Setup and data integration required.",
+          "Less oriented to open-ended creative exploration."
+        ]
+      },
+      {
+        "name": "Mistral Le Chat",
+        "description": "Fast, lightweight chat using Mistral models.",
+        "link": "https://chat.mistral.ai/",
+        "tags": [
+          "Free",
+          "LLM"
+        ],
+        "iconUrl": "https://chat.mistral.ai/favicon.svg",
+        "about": "Concise, code‑friendly responses with efficient open models.",
+        "pros": [
+          "Quick replies.",
+          "Great for code.",
+          "Open ecosystem."
+        ],
+        "cons": [
+          "Fewer integrations.",
+          "Limited multimodal.",
+          "Evolving feature set."
+        ]
+      },
+      {
+        "name": "Phind",
+        "description": "An AI search engine and pair programmer for developers.",
+        "link": "https://www.phind.com/",
+        "tags": [
+          "Freemium",
+          "Search"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "Phind is an AI-powered search engine designed specifically for developers. Instead of just links, it provides direct answers, code examples, and summaries based on information from across the web, acting like an expert that is always up-to-date.",
+        "pros": [
+          "Excellent for getting quick, synthesized answers to technical questions.",
+          "Provides code examples and links to sources.",
+          "Free version is very powerful."
+        ],
+        "cons": [
+          "Not an IDE plugin, so it requires switching context.",
+          "Can sometimes hallucinate answers or combine information incorrectly.",
+          "The paid tier is required for the most advanced models."
+        ]
+      },
+      {
+        "name": "Codeium",
+        "description": "Free AI code completion and chat for individuals across many IDEs.",
+        "link": "https://codeium.com/",
+        "tags": [
+          "Free",
+          "Autocomplete"
+        ],
+        "iconUrl": "icons/code-assistance/codeium.svg",
+        "about": "Fast, privacy‑friendly completions and inline chat with broad language support.",
+        "pros": [
+          "Free for individuals.",
+          "Wide IDE coverage.",
+          "Good latency."
+        ],
+        "cons": [
+          "Team features paid.",
+          "Occasional suggestion drift.",
+          "Less deep repo context than Cody."
+        ]
+      },
+      {
+        "name": "Synthesia",
+        "description": "Create professional videos with AI avatars and voiceovers in minutes.",
+        "link": "https://www.synthesia.io/",
+        "tags": [
+          "Subscription",
+          "Avatars"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "Synthesia is a leading platform for creating AI-generated videos, primarily for corporate training and communication. Users can choose from a library of stock avatars or create their own, and then generate a video from a script in multiple languages.",
+        "pros": [
+          "Creates professional-looking videos without cameras or microphones.",
+          "Wide selection of realistic AI avatars and voices.",
+          "Excellent for creating training and instructional content at scale."
+        ],
+        "cons": [
+          "Can be expensive, with plans aimed at businesses.",
+          "The 'uncanny valley' effect can be noticeable with some avatars.",
+          "Less suited for creative or narrative video content."
+        ]
+      },
+      {
+        "name": "InVideo",
+        "description": "An online video editor with AI-powered features for quick video creation.",
+        "link": "https://invideo.io/",
+        "tags": [
+          "Freemium",
+          "Social Media"
+        ],
+        "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
+        "about": "InVideo is a web-based video creation platform that uses AI to help users turn text content, such as blog posts, into videos. It offers a large library of templates, stock footage, and music, making it ideal for social media and marketing content.",
+        "pros": [
+          "AI text-to-video feature is great for content repurposing.",
+          "Massive library of templates and stock assets.",
+          "User-friendly interface for beginners."
+        ],
+        "cons": [
+          "AI-generated videos can feel generic and require customization.",
+          "Exporting in high resolution is a premium feature.",
+          "The editor can sometimes be slow and buggy."
+        ]
       }
     ]
   },

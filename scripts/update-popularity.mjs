@@ -130,6 +130,14 @@ function buildFrequencyMap(db){
   return freq;
 }
 
+function isOpenSourceTool(toolName, allTools){
+  // Find the tool in the database and check if it has 'Open Source' tag
+  const tool = allTools.find(t => normalizeKey(t.name) === normalizeKey(toolName));
+  if(!tool) return false;
+  const tags = tool.tags || [];
+  return tags.includes('Open Source');
+}
+
 async function main(){
   const sources = await readJsonSafe(SOURCES_PATH);
   const overrides = await readJsonSafe(OVERRIDES_PATH);
@@ -168,6 +176,10 @@ async function main(){
   for(const name of allNames){
     const k = normalizeKey(name);
     const existing = raw[name];
+    
+    // Check if tool is open source - if so, skip ranking calculation
+    const isOpenSource = isOpenSourceTool(name, allTools);
+    
     const signalsScore = (signalsNormMap[name] || 0); // 0..100 normalized
     const mpScore = mpOrderMap[k] || 0;
     const freqScore = Math.max(0, (freqMap[k] || 0) - 1) * 10; // +10 per extra occurrence beyond first
@@ -175,11 +187,19 @@ async function main(){
     // Boost for real user overrides (if provided); logarithmic, mapped to 0..100
     const actual = (overrides[name] && typeof overrides[name].actualUsers === 'number') ? overrides[name].actualUsers : null;
     const usersScore = actual ? Math.min(100, Math.log10(actual + 1) * 20) : 0; // ~100 at 1e5+
+    
     // Weighted combination (emphasize curated Most Popular list; then signals; small repeat bonus)
     // If usersScore present, prioritize it by blending as primary signal
-    const combined = (usersScore > 0)
-      ? Number((0.6*usersScore + 0.3*mpScore + 0.1*signalsScore + 0.05*freqCapped).toFixed(2))
-      : Number((0.6*mpScore + 0.35*signalsScore + 0.05*freqCapped).toFixed(2));
+    // For open source tools, set combined score to 0 to exclude from rankings
+    let combined;
+    if(isOpenSource){
+      combined = 0; // Exclude open source tools from rankings
+    } else if(usersScore > 0){
+      combined = Number((0.6*usersScore + 0.3*mpScore + 0.1*signalsScore + 0.05*freqCapped).toFixed(2));
+    } else {
+      combined = Number((0.6*mpScore + 0.35*signalsScore + 0.05*freqCapped).toFixed(2));
+    }
+    
     raw[name] = {
       ...(existing || { signals: { github: null, npm: null } }),
       signalsRaw: existing?.signalsRaw || 0,
@@ -187,7 +207,8 @@ async function main(){
       mpScore,
       freqScore,
       usersScore,
-      popularityScore: combined
+      popularityScore: combined,
+      isOpenSource
     };
   }
 
