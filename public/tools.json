@@ -9455,5 +9455,435 @@
         "iconUrl": "icons/github-ai-projects/ray.png"
       }
     ]
+  },
+  {
+    "name": "AI Browsers",
+    "slug": "ai-browsers",
+    "description": "Next-generation browsers with built-in AI assistants, agentic automation, and intelligent web interaction capabilities.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9\" /></svg>",
+    "tools": [
+      {
+        "name": "ChatGPT Atlas",
+        "description": "OpenAI's AI-native browser with deep ChatGPT integration, agent-mode automation, and persistent memory for research workflows.",
+        "link": "https://openai.com/chatgpt/atlas",
+        "tags": [
+          "AI-Native",
+          "Research",
+          "Automation"
+        ],
+        "iconUrl": "https://openai.com/favicon.ico",
+        "about": "ChatGPT Atlas is OpenAI's groundbreaking AI-native browser that integrates ChatGPT directly into the browsing experience. It offers persistent memory across sessions, contextual understanding of web pages, and agentic automation that can complete multi-step tasks autonomously.",
+        "pros": [
+          "Deep integration with ChatGPT for contextual assistance",
+          "Persistent memory remembers your research across sessions",
+          "Agent-mode can automate complex multi-step tasks",
+          "Understanding of page context without manual copy-paste"
+        ],
+        "cons": [
+          "Still in early access with limited availability",
+          "Requires ChatGPT Plus subscription for full features",
+          "May have privacy concerns with cloud-based AI processing"
+        ]
+      },
+      {
+        "name": "Perplexity Comet",
+        "description": "AI browser built on Perplexity's search engine with autonomous browsing, research workflows, and reliable citations.",
+        "link": "https://www.perplexity.ai/comet",
+        "tags": [
+          "Research",
+          "Citations",
+          "Autonomous"
+        ],
+        "iconUrl": "https://www.perplexity.ai/favicon.ico",
+        "about": "Perplexity Comet is an advanced AI browser that leverages Perplexity's powerful AI search engine to provide autonomous browsing capabilities. It excels at research tasks with automatic citation gathering, cross-tab context maintenance, and multi-step action completion.",
+        "pros": [
+          "Excellent for professional research with reliable citations",
+          "Autonomous multi-step actions (booking, comparing, summarizing)",
+          "Maintains cross-tab context for complex workflows",
+          "Strong at fact-checking and source verification"
+        ],
+        "cons": [
+          "Focused more on research than general browsing",
+          "Premium features require subscription",
+          "Learning curve for advanced autonomous features"
+        ]
+      },
+      {
+        "name": "Dia Browser",
+        "description": "Revolutionary AI-native browser built from scratch with contextual automation, replacing traditional tabs and bookmarks.",
+        "link": "https://dia.app/",
+        "tags": [
+          "AI-Native",
+          "Innovation",
+          "Automation"
+        ],
+        "iconUrl": "https://dia.app/favicon.ico",
+        "about": "Dia Browser reimagines web browsing with an AI-first approach. Instead of traditional tabs and bookmarks, it uses contextual automation and 'skills' to organize and execute routine workflows. It's designed for early adopters who want the cutting edge of AI browsing.",
+        "pros": [
+          "Most innovative AI-native browsing experience",
+          "Contextual automation replaces manual workflows",
+          "Video summarization and multi-step actions built-in",
+          "Skills system for routine task automation"
+        ],
+        "cons": [
+          "Very new and still evolving",
+          "Requires adaptation to new browsing paradigm",
+          "Limited extensions and traditional browser features"
+        ]
+      },
+      {
+        "name": "Brave Leo",
+        "description": "Privacy-focused browser with built-in AI assistant that works locally or with user-provided models.",
+        "link": "https://brave.com/leo/",
+        "tags": [
+          "Privacy",
+          "Local AI",
+          "Ad-Blocking"
+        ],
+        "iconUrl": "https://brave.com/static-assets/images/brave-favicon.png",
+        "about": "Brave Leo is the AI assistant built into the Brave browser, designed with privacy as the top priority. It can run locally or use user-provided models, ensuring your data never leaves your device if you choose. Combined with Brave's existing ad-blocking and privacy features, it's ideal for security-conscious users.",
+        "pros": [
+          "Strong privacy with local AI options",
+          "No data sent to cloud by default",
+          "Built into existing Brave browser with ad-blocking",
+          "Free to use with no tracking"
+        ],
+        "cons": [
+          "Local models may be less powerful than cloud options",
+          "Limited compared to full AI-native browsers",
+          "Requires technical knowledge for custom models"
+        ]
+      },
+      {
+        "name": "Microsoft Edge Copilot",
+        "description": "Microsoft's AI-powered browser with deep integration into Windows 11, Office, and productivity tools.",
+        "link": "https://www.microsoft.com/edge",
+        "tags": [
+          "Productivity",
+          "Enterprise",
+          "Integration"
+        ],
+        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "about": "Microsoft Edge with Copilot brings AI assistance directly into the browser, deeply integrated with Windows 11, Office 365, and Microsoft's ecosystem. It's particularly strong for business users who need seamless integration with enterprise tools and workflows.",
+        "pros": [
+          "Deep integration with Microsoft ecosystem",
+          "Enterprise-grade security and compliance",
+          "Excellent for productivity and teamwork",
+          "Copilot assists with emails, documents, and research"
+        ],
+        "cons": [
+          "Best experience requires Microsoft 365 subscription",
+          "Privacy concerns with Microsoft's data collection",
+          "Less innovative than dedicated AI-native browsers"
+        ]
+      },
+      {
+        "name": "Opera One with Aria",
+        "description": "Fast, customizable browser with Aria AI assistant for page summarization and content generation.",
+        "link": "https://www.opera.com/one",
+        "tags": [
+          "Customization",
+          "VPN",
+          "AI Assistant"
+        ],
+        "iconUrl": "https://www.opera.com/favicon.ico",
+        "about": "Opera One features Aria, an AI assistant that helps with page summarization, task assistance, and content generation. Combined with Opera's built-in VPN, ad-blocking, and modular features, it offers a compelling package for users who value customization.",
+        "pros": [
+          "Built-in VPN and ad-blocking",
+          "Highly customizable with extensions",
+          "Aria AI for quick summaries and help",
+          "Good balance of features and performance"
+        ],
+        "cons": [
+          "Aria is less advanced than ChatGPT or Perplexity integration",
+          "Chinese ownership raises privacy questions for some",
+          "Not as AI-native as dedicated solutions"
+        ]
+      },
+      {
+        "name": "Sigma AI Browser",
+        "description": "Content creator-focused browser with built-in tools for text, image, and video generation plus SEO optimization.",
+        "link": "https://sigma.ai/",
+        "tags": [
+          "Content Creation",
+          "SEO",
+          "Multimedia"
+        ],
+        "iconUrl": "https://sigma.ai/favicon.ico",
+        "about": "Sigma AI Browser is tailored for content creators and marketers. It includes built-in AI tools for generating text, images, and video content, along with SEO optimization features to help creators produce and optimize content without leaving the browser.",
+        "pros": [
+          "All-in-one solution for content creators",
+          "Built-in content generation tools",
+          "SEO optimization features integrated",
+          "Multimedia content support"
+        ],
+        "cons": [
+          "Niche focus may not suit general users",
+          "Less established than major browsers",
+          "Advanced features require paid subscriptions"
+        ]
+      },
+      {
+        "name": "Arc Browser",
+        "description": "Modern browser with AI-powered organization, instant previews, and innovative space-based browsing.",
+        "link": "https://arc.net/",
+        "tags": [
+          "Organization",
+          "Modern UI",
+          "Innovation"
+        ],
+        "iconUrl": "https://arc.net/favicon.ico",
+        "about": "Arc Browser reimagines browser organization with AI-powered features, spaces for different contexts, and a fresh take on tab management. While not exclusively AI-focused, its intelligent organization and preview features make browsing more efficient.",
+        "pros": [
+          "Beautiful, modern interface",
+          "Innovative space-based organization",
+          "AI-powered search and previews",
+          "Excellent for managing multiple projects"
+        ],
+        "cons": [
+          "Mac-first with limited Windows support initially",
+          "Requires learning new browsing paradigm",
+          "May be overwhelming for simple use cases"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Presentation Tools",
+    "slug": "ai-presentation-tools",
+    "description": "AI-powered slide generators and presentation creators that transform ideas into professional decks in minutes.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z\" /></svg>",
+    "tools": [
+      {
+        "name": "Gamma",
+        "description": "AI presentation tool that generates impactful slides from simple prompts with flexible card-based layouts.",
+        "link": "https://gamma.app/",
+        "tags": [
+          "Freemium",
+          "Fast Generation",
+          "Multimedia"
+        ],
+        "iconUrl": "https://gamma.app/favicon.ico",
+        "about": "Gamma is consistently ranked as the top AI presentation tool. It generates complete presentations from brief text prompts, using a flexible card-based system that goes beyond traditional slides. It integrates multimedia seamlessly and offers extensive customization for branding.",
+        "pros": [
+          "Fastest content generation from simple prompts",
+          "Flexible card system for modern presentations",
+          "Excellent multimedia integration",
+          "Strong branding customization options"
+        ],
+        "cons": [
+          "Learning curve for card-based approach",
+          "Advanced features require paid plan",
+          "Export options more limited than PowerPoint"
+        ]
+      },
+      {
+        "name": "Tome",
+        "description": "AI presentation generator for business and academic use with rich media and platform integration support.",
+        "link": "https://tome.app/",
+        "tags": [
+          "Business",
+          "Academic",
+          "Rich Media"
+        ],
+        "iconUrl": "https://tome.app/favicon.ico",
+        "about": "Tome generates complete presentations from very short text prompts and excels at creating visually rich content. It's popular among both business professionals and academics for its speed, design flexibility, and ability to integrate charts and rich media.",
+        "pros": [
+          "Creates complete presentations from minimal input",
+          "Excellent for both business and academic contexts",
+          "Rich media and chart integration",
+          "Beautiful default designs"
+        ],
+        "cons": [
+          "Can generate overly generic content if prompts are vague",
+          "Limited advanced customization vs traditional tools",
+          "Requires good prompts for best results"
+        ]
+      },
+      {
+        "name": "Beautiful.ai",
+        "description": "Smart design automation platform that keeps presentations visually consistent with intelligent layout adjustments.",
+        "link": "https://www.beautiful.ai/",
+        "tags": [
+          "Design Automation",
+          "Professional",
+          "Collaboration"
+        ],
+        "iconUrl": "https://www.beautiful.ai/favicon.ico",
+        "about": "Beautiful.ai uses smart design automation to maintain visual consistency throughout presentations. It intelligently adjusts slide elements as you add content, ensuring everything stays aligned and professional-looking without manual effort.",
+        "pros": [
+          "Automatic layout optimization",
+          "Maintains visual consistency automatically",
+          "Professional designs out of the box",
+          "Easy sharing and export options"
+        ],
+        "cons": [
+          "Less flexibility for custom designs",
+          "Automation can be limiting for creative control",
+          "Higher price point for teams"
+        ]
+      },
+      {
+        "name": "Slidesgo AI",
+        "description": "AI presentation generator with extensive templates and easy export to Google Slides or PowerPoint.",
+        "link": "https://slidesgo.com/ai-presentations",
+        "tags": [
+          "Templates",
+          "Google Slides",
+          "PowerPoint"
+        ],
+        "iconUrl": "https://slidesgo.com/favicon.ico",
+        "about": "Slidesgo's AI generator provides access to a vast template library with AI-powered customization. Integration with Freepik brings extensive design assets, and easy export to Google Slides and PowerPoint ensures compatibility with existing workflows.",
+        "pros": [
+          "Huge template library",
+          "Easy export to Google Slides and PowerPoint",
+          "Integration with Freepik for design assets",
+          "Good team collaboration features"
+        ],
+        "cons": [
+          "AI features less advanced than dedicated tools",
+          "Template-heavy approach may limit originality",
+          "Free version has watermarks"
+        ]
+      },
+      {
+        "name": "Presentations.ai",
+        "description": "Enterprise-focused AI presentation tool with advanced customization and business collaboration features.",
+        "link": "https://www.presentations.ai/",
+        "tags": [
+          "Enterprise",
+          "Collaboration",
+          "Advanced"
+        ],
+        "iconUrl": "https://www.presentations.ai/favicon.ico",
+        "about": "Presentations.ai offers advanced customization and business collaboration features designed for enterprise use. It includes AI-powered layout optimization, premium exporting options, and strong support for team workflows.",
+        "pros": [
+          "Advanced customization options",
+          "Strong team collaboration features",
+          "AI-powered layout assistants",
+          "Premium export quality"
+        ],
+        "cons": [
+          "Higher price point",
+          "More complex than simpler alternatives",
+          "May be overkill for individual users"
+        ]
+      },
+      {
+        "name": "Venngage DesignAI",
+        "description": "Infographic-rich presentation tool specializing in data visualization and storytelling.",
+        "link": "https://venngage.com/features/ai-presentation-maker",
+        "tags": [
+          "Infographics",
+          "Data Viz",
+          "Marketing"
+        ],
+        "iconUrl": "https://venngage.com/favicon.ico",
+        "about": "Venngage's DesignAI specializes in creating infographic-rich presentations. It automates both writing and layout with a focus on data visualizations and storytelling, making it ideal for marketers, educators, and data professionals.",
+        "pros": [
+          "Excellent for data visualization",
+          "Strong infographic capabilities",
+          "Good for marketing and education",
+          "Automated writing and layout"
+        ],
+        "cons": [
+          "Infographic focus may not suit all needs",
+          "Less suitable for text-heavy presentations",
+          "Learning curve for advanced features"
+        ]
+      },
+      {
+        "name": "PlusAI",
+        "description": "Direct integration with Google Slides and PowerPoint for instant AI slide creation and refinement.",
+        "link": "https://www.plusdocs.com/plus-ai",
+        "tags": [
+          "Google Slides",
+          "PowerPoint",
+          "Integration"
+        ],
+        "iconUrl": "https://www.plusdocs.com/favicon.ico",
+        "about": "PlusAI integrates directly with Google Slides and PowerPoint, offering instant slide creation and design refinements using the latest generative AI. It's praised for ease of use and minimal editing required after generation.",
+        "pros": [
+          "Works directly in Google Slides and PowerPoint",
+          "Minimal post-generation editing needed",
+          "Easy to use with familiar interfaces",
+          "Quick slide refinement and improvements"
+        ],
+        "cons": [
+          "Requires existing Google/Microsoft accounts",
+          "Limited standalone features",
+          "Dependent on base platform capabilities"
+        ]
+      },
+      {
+        "name": "MagicSlides",
+        "description": "Seamless Google Slides add-on for quick content generation with stock images and multilingual support.",
+        "link": "https://www.magicslides.app/",
+        "tags": [
+          "Google Slides",
+          "Multilingual",
+          "Stock Images"
+        ],
+        "iconUrl": "https://www.magicslides.app/favicon.ico",
+        "about": "MagicSlides is a popular add-on for Google Slides that enables quick AI-powered slide generation. It integrates stock images automatically and supports multiple languages, making it perfect for international presentations.",
+        "pros": [
+          "Easy integration with Google Slides",
+          "Stock image integration",
+          "Multiple language support",
+          "Simple and fast to use"
+        ],
+        "cons": [
+          "Google Slides only",
+          "Limited advanced features",
+          "Requires Google account"
+        ]
+      },
+      {
+        "name": "Decktopus",
+        "description": "AI presentation tool that personalizes slides for different audiences with unique audio and form features.",
+        "link": "https://www.decktopus.com/",
+        "tags": [
+          "Personalization",
+          "Audio",
+          "Forms"
+        ],
+        "iconUrl": "https://www.decktopus.com/favicon.ico",
+        "about": "Decktopus personalizes presentations for different audiences using AI recommendations based on presentation goals. Its unique features include audio narration and embedded forms for audience interaction.",
+        "pros": [
+          "Audience-specific personalization",
+          "Unique audio narration features",
+          "Interactive forms for engagement",
+          "Goal-based recommendations"
+        ],
+        "cons": [
+          "Limited customization options",
+          "Smaller template library",
+          "Some features feel experimental"
+        ]
+      },
+      {
+        "name": "Canva Presentations",
+        "description": "All-in-one design platform with AI-powered presentation features and extensive template library.",
+        "link": "https://www.canva.com/presentations/",
+        "tags": [
+          "Design",
+          "Templates",
+          "Brand Kit"
+        ],
+        "iconUrl": "https://www.canva.com/favicon.ico",
+        "about": "Canva's presentation tool leverages its massive template library and AI features like Doc-to-Deck to create beautiful presentations quickly. It's excellent for teams needing to match brand identity across all visual content.",
+        "pros": [
+          "Huge template and asset library",
+          "Doc-to-Deck AI conversion",
+          "Brand kit for consistency",
+          "Familiar Canva interface"
+        ],
+        "cons": [
+          "Can be overwhelming with too many options",
+          "Some AI features require paid plan",
+          "Export quality varies"
+        ]
+      }
+    ]
   }
 ]
