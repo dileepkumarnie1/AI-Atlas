@@ -4956,6 +4956,121 @@
           "Subscription required for full access."
         ],
         "iconUrl": "https://uxie.vercel.app/favicon.svg"
+      },
+      {
+        "name": "Coursebox",
+        "description": "AI-powered course creation and curriculum design",
+        "link": "https://www.coursebox.ai/",
+        "tags": [
+          "Paid",
+          "Course Creation",
+          "LMS"
+        ],
+        "iconUrl": "https://www.coursebox.ai/favicon.ico",
+        "about": "Coursebox automates curriculum design from simple outlines or existing materials to full courses, including quiz generation and assessment alignment. It integrates AI tutoring throughout course delivery for personalized learning experiences.",
+        "pros": [
+          "Rapid course creation",
+          "Automated quiz generation",
+          "AI tutoring integration",
+          "Supports multiple formats"
+        ],
+        "cons": [
+          "Subscription-based pricing",
+          "May require refinement of AI output",
+          "Best for structured courses"
+        ]
+      },
+      {
+        "name": "Quillbot",
+        "description": "AI writing assistant for students with paraphrasing and grammar",
+        "link": "https://quillbot.com/",
+        "tags": [
+          "Freemium",
+          "Writing",
+          "Paraphrasing"
+        ],
+        "iconUrl": "https://quillbot.com/favicon.ico",
+        "about": "Quillbot is an AI writing assistant providing real-time feedback, grammar checks, paraphrasing, and suggestions. It's invaluable for student assignments and improving writing quality across academic contexts.",
+        "pros": [
+          "Excellent paraphrasing tool",
+          "Free tier available",
+          "Multiple writing modes",
+          "Integrates with browsers"
+        ],
+        "cons": [
+          "Premium features require subscription",
+          "Can sometimes change meaning",
+          "Limited plagiarism checker in free tier"
+        ]
+      },
+      {
+        "name": "Socratic by Google",
+        "description": "AI homework helper with visual explanations",
+        "link": "https://socratic.org/",
+        "tags": [
+          "Free",
+          "Homework Help",
+          "K-12"
+        ],
+        "iconUrl": "https://socratic.org/favicon.ico",
+        "about": "Socratic uses AI to guide students to answers for science, math, and more with visual explanations and step-by-step walkthroughs. It helps students understand concepts rather than just providing answers.",
+        "pros": [
+          "Completely free",
+          "Visual learning approach",
+          "Covers multiple subjects",
+          "Mobile app available"
+        ],
+        "cons": [
+          "Limited to certain subjects",
+          "May not cover advanced topics",
+          "Explanation depth varies"
+        ]
+      },
+      {
+        "name": "Century Tech",
+        "description": "AI-powered adaptive learning and assessment platform",
+        "link": "https://www.century.tech/",
+        "tags": [
+          "Paid",
+          "Adaptive Learning",
+          "K-12"
+        ],
+        "iconUrl": "https://www.century.tech/favicon.ico",
+        "about": "Century Tech focuses on rapid and automated formative assessments, mastery analytics, and adaptive learning paths with ongoing feedback for students and actionable insights for teachers.",
+        "pros": [
+          "Personalized learning paths",
+          "Real-time analytics",
+          "Reduces teacher workload",
+          "Evidence-based pedagogy"
+        ],
+        "cons": [
+          "School/district pricing",
+          "Requires consistent student engagement",
+          "Limited content in some subjects"
+        ]
+      },
+      {
+        "name": "Otter.ai",
+        "description": "AI meeting notes and transcription for lectures",
+        "link": "https://otter.ai/",
+        "tags": [
+          "Freemium",
+          "Transcription",
+          "Note-taking"
+        ],
+        "iconUrl": "https://otter.ai/favicon.ico",
+        "about": "Otter.ai automates transcription and note-taking for classroom recordings and meetings. It provides searchable transcripts, making it easy for students to review lectures and find specific information quickly.",
+        "pros": [
+          "Accurate transcription",
+          "Real-time collaboration",
+          "Searchable transcripts",
+          "Free tier available"
+        ],
+        "cons": [
+          "Accuracy varies with audio quality",
+          "Limited features in free tier",
+          "Requires internet connection"
+        ]
       }
     ]
   },
@@ -7233,6 +7348,121 @@
           "Coverage and speed can vary."
         ],
         "iconUrl": "https://www.tissuelab.org/assets/logo.svg"
+      },
+      {
+        "name": "IBM Watson Health",
+        "description": "AI-powered clinical decision support and analytics platform",
+        "link": "https://www.ibm.com/watson-health",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "Clinical Support"
+        ],
+        "iconUrl": "https://www.ibm.com/favicon.ico",
+        "about": "IBM Watson Health (now Merative) uses natural language processing to analyze medical records and structured/unstructured data for clinical decision support, analytics, oncology treatment planning, and population health management. Widely adopted for enterprise-scale decision support in large hospitals.",
+        "pros": [
+          "Advanced NLP for medical records",
+          "Proven in oncology and chronic illness",
+          "Enterprise-scale reliability",
+          "Extensive medical knowledge base"
+        ],
+        "cons": [
+          "Enterprise pricing model",
+          "Complex implementation",
+          "Requires significant training"
+        ]
+      },
+      {
+        "name": "Aidoc",
+        "description": "AI-powered radiology for medical imaging analysis",
+        "link": "https://www.aidoc.com/",
+        "tags": [
+          "Paid",
+          "Medical Imaging",
+          "Radiology"
+        ],
+        "iconUrl": "https://www.aidoc.com/favicon.ico",
+        "about": "Aidoc provides FDA-cleared AI-powered radiology solutions for medical imaging that flags urgent findings in CT scans, MRI, and X-rays. It integrates directly with PACS and helps radiologists detect anomalies quickly, cutting image interpretation time and reducing missed diagnoses.",
+        "pros": [
+          "FDA-cleared for medical use",
+          "Reduces diagnostic errors",
+          "Speeds up radiology workflows",
+          "Supports multiple imaging modalities"
+        ],
+        "cons": [
+          "Requires PACS integration",
+          "Premium pricing",
+          "Focused on radiology only"
+        ]
+      },
+      {
+        "name": "Google DeepMind Health",
+        "description": "AI for early disease detection and medical imaging",
+        "link": "https://deepmind.google/health/",
+        "tags": [
+          "Paid",
+          "Research",
+          "Diagnostics"
+        ],
+        "iconUrl": "https://deepmind.google/favicon.ico",
+        "about": "Google DeepMind Health uses deep learning for early detection and prediction of diseases, medical imaging analysis, including predicting acute kidney injury, identifying eye disease in retinal scans, and analyzing radiology images with specialist-level performance.",
+        "pros": [
+          "Cutting-edge AI research",
+          "Proven diagnostic accuracy",
+          "Partnership with major health systems",
+          "Multiple disease domains"
+        ],
+        "cons": [
+          "Limited commercial availability",
+          "Privacy and data concerns",
+          "Integration challenges"
+        ]
+      },
+      {
+        "name": "Augmedix",
+        "description": "AI medical transcription and documentation assistant",
+        "link": "https://www.augmedix.com/",
+        "tags": [
+          "Paid",
+          "Documentation",
+          "Transcription"
+        ],
+        "iconUrl": "https://www.augmedix.com/favicon.ico",
+        "about": "Augmedix provides AI-powered medical transcription and patient documentation via voice recognition and ambient listening. It automates clinical documentation, allowing healthcare providers to spend more time with patients and less time on paperwork.",
+        "pros": [
+          "Reduces documentation time",
+          "Ambient listening technology",
+          "Improves clinician productivity",
+          "HIPAA compliant"
+        ],
+        "cons": [
+          "Requires stable internet connection",
+          "May need editing for accuracy",
+          "Subscription-based pricing"
+        ]
+      },
+      {
+        "name": "Siemens Healthineers AI",
+        "description": "AI-enhanced medical imaging and diagnostics platform",
+        "link": "https://www.siemens-healthineers.com/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "Imaging"
+        ],
+        "iconUrl": "https://www.siemens-healthineers.com/favicon.ico",
+        "about": "Siemens Healthineers provides AI-powered MRI, CT, and X-ray analysis that integrates imaging data with electronic health records for enhanced accuracy. It boosts diagnostic precision in radiology and speeds up workflow with evidence-based insights.",
+        "pros": [
+          "Comprehensive imaging solutions",
+          "EHR integration",
+          "High diagnostic accuracy",
+          "Global support network"
+        ],
+        "cons": [
+          "Enterprise-level investment",
+          "Complex deployment",
+          "Requires specialized training"
+        ]
       }
     ]
   },
@@ -7369,6 +7599,121 @@
           "Implementation and change management.",
           "Works best with volume.",
           "Enterprise‑class pricing."
+        ]
+      },
+      {
+        "name": "Xero",
+        "description": "Cloud-based accounting with AI automation",
+        "link": "https://www.xero.com/",
+        "tags": [
+          "Paid",
+          "Cloud Accounting",
+          "Automation"
+        ],
+        "iconUrl": "https://www.xero.com/favicon.ico",
+        "about": "Xero is highly rated for its cloud-based automation of data entry, invoice matching, and reconciliation. Its design makes collaboration and integration with 700+ apps straightforward, appealing to tech-savvy accountants and small businesses.",
+        "pros": [
+          "Excellent bank reconciliation",
+          "700+ integrations",
+          "User-friendly interface",
+          "Strong mobile app"
+        ],
+        "cons": [
+          "Limited inventory management",
+          "Payroll is an add-on",
+          "Can be expensive for sole traders"
+        ]
+      },
+      {
+        "name": "Expensify",
+        "description": "AI-powered expense tracking and reimbursement",
+        "link": "https://www.expensify.com/",
+        "tags": [
+          "Freemium",
+          "Expense Management",
+          "Receipts"
+        ],
+        "iconUrl": "https://www.expensify.com/favicon.ico",
+        "about": "Expensify is known for receipt scanning, automated expense tracking, and reimbursement reminders. It integrates with major accounting platforms, making expense submission and approval much easier for teams of all sizes.",
+        "pros": [
+          "Excellent receipt scanning",
+          "Automated expense reports",
+          "Strong integrations",
+          "Mobile-first design"
+        ],
+        "cons": [
+          "Can be complex for simple needs",
+          "Premium features require subscription",
+          "Learning curve for advanced features"
+        ]
+      },
+      {
+        "name": "Sage Intacct",
+        "description": "Enterprise AI-driven financial management and ERP",
+        "link": "https://www.sage.com/en-us/sage-business-cloud/intacct/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "ERP"
+        ],
+        "iconUrl": "https://www.sage.com/favicon.ico",
+        "about": "Sage Intacct is popular among mid-sized and larger enterprises. Its AI assistant automates procurement, audit-readiness, and reporting workflows, and integrates robustly with existing ERP systems for comprehensive financial management.",
+        "pros": [
+          "Powerful for mid-size businesses",
+          "Excellent reporting capabilities",
+          "Strong multi-entity support",
+          "Audit-ready compliance"
+        ],
+        "cons": [
+          "Expensive for small businesses",
+          "Complex implementation",
+          "Steep learning curve"
+        ]
+      },
+      {
+        "name": "FreshBooks",
+        "description": "Simple AI accounting for freelancers and small businesses",
+        "link": "https://www.freshbooks.com/",
+        "tags": [
+          "Freemium",
+          "Invoicing",
+          "Small Business"
+        ],
+        "iconUrl": "https://www.freshbooks.com/favicon.ico",
+        "about": "FreshBooks is easy for freelancers and service businesses, providing AI-driven payment tracking and expense categorization, wrapped in a user-friendly interface. Perfect for solo entrepreneurs and small service-based businesses.",
+        "pros": [
+          "Very user-friendly",
+          "Excellent invoicing features",
+          "Good mobile app",
+          "Time tracking built-in"
+        ],
+        "cons": [
+          "Limited advanced accounting features",
+          "Per-client pricing can add up",
+          "Not ideal for product-based businesses"
+        ]
+      },
+      {
+        "name": "Zoho Books",
+        "description": "Smart automation for invoicing and financial analytics",
+        "link": "https://www.zoho.com/books/",
+        "tags": [
+          "Freemium",
+          "Cloud Accounting",
+          "Analytics"
+        ],
+        "iconUrl": "https://www.zoho.com/favicon.ico",
+        "about": "Zoho Books offers smart automation for invoice handling, predictive analytics, and global team support. Seamless integration with other Zoho products is an advantage for teams using a broader Zoho ecosystem.",
+        "pros": [
+          "Affordable pricing",
+          "Good Zoho ecosystem integration",
+          "Multi-currency support",
+          "Automation features"
+        ],
+        "cons": [
+          "Interface can feel dated",
+          "Customer support could be better",
+          "Some features require higher tiers"
         ]
       }
     ]
@@ -7840,6 +8185,121 @@
           "Rights and consent diligence needed.",
           "Quality varies by voice.",
           "Costs scale with usage."
+        ]
+      },
+      {
+        "name": "Unity ML-Agents",
+        "description": "Machine learning toolkit for training intelligent game agents",
+        "link": "https://unity.com/products/machine-learning-agents",
+        "tags": [
+          "Free",
+          "Game Development",
+          "Machine Learning"
+        ],
+        "iconUrl": "https://unity.com/favicon.ico",
+        "about": "Unity ML-Agents Toolkit integrates with the Unity engine to train intelligent agents and NPCs using reinforcement learning and imitation learning. Developers use this for adaptive NPC behaviors, procedural content, and scalable difficulty, making it popular among indie and AAA studios.",
+        "pros": [
+          "Open source and free",
+          "Integrates with Unity engine",
+          "Flexible reinforcement learning",
+          "Active community support"
+        ],
+        "cons": [
+          "Requires machine learning knowledge",
+          "Can be resource-intensive",
+          "Steep learning curve"
+        ]
+      },
+      {
+        "name": "Scenario.gg",
+        "description": "AI game asset generation for consistent art styles",
+        "link": "https://www.scenario.gg/",
+        "tags": [
+          "Freemium",
+          "Asset Generation",
+          "Art"
+        ],
+        "iconUrl": "https://www.scenario.gg/favicon.ico",
+        "about": "Scenario.gg lets developers train custom models to generate style-consistent game assets including character art, backgrounds, and icons. It's ideal for small teams who need cohesive visuals quickly without large art departments.",
+        "pros": [
+          "Style-consistent asset generation",
+          "Fast iteration on art",
+          "Good for indie developers",
+          "Customizable AI models"
+        ],
+        "cons": [
+          "Requires training time for custom models",
+          "Quality varies with training data",
+          "Limited to 2D assets primarily"
+        ]
+      },
+      {
+        "name": "Promethean AI",
+        "description": "AI world-building tool for 3D environments",
+        "link": "https://www.prometheanai.com/",
+        "tags": [
+          "Paid",
+          "3D Modeling",
+          "Level Design"
+        ],
+        "iconUrl": "https://www.prometheanai.com/favicon.ico",
+        "about": "Promethean AI generates 3D worlds and environments by interpreting natural language prompts, allowing rapid iteration during level and asset design. It helps game developers create expansive game worlds more efficiently.",
+        "pros": [
+          "Natural language world generation",
+          "Speeds up level design",
+          "Integrates with game engines",
+          "AI-assisted asset placement"
+        ],
+        "cons": [
+          "Requires powerful hardware",
+          "Learning curve for optimization",
+          "Best for larger projects"
+        ]
+      },
+      {
+        "name": "Ludo.ai",
+        "description": "AI game design and playtesting automation",
+        "link": "https://ludo.ai/",
+        "tags": [
+          "Freemium",
+          "Game Design",
+          "Testing"
+        ],
+        "iconUrl": "https://ludo.ai/favicon.ico",
+        "about": "Ludo.ai automates game concept development, level design, and playtesting, identifying bugs and balancing issues quickly. It provides AI-powered assistance throughout the game development process from ideation to testing.",
+        "pros": [
+          "Automated playtesting",
+          "Game concept generation",
+          "Balance and bug detection",
+          "Data-driven insights"
+        ],
+        "cons": [
+          "Cannot replace human playtesting entirely",
+          "Limited to certain game types",
+          "Subscription required for full features"
+        ]
+      },
+      {
+        "name": "Charisma.ai",
+        "description": "Interactive storytelling and dynamic NPC dialogue",
+        "link": "https://charisma.ai/",
+        "tags": [
+          "Paid",
+          "Narrative",
+          "NPC AI"
+        ],
+        "iconUrl": "https://charisma.ai/favicon.ico",
+        "about": "Charisma.ai powers branching narratives and dynamic NPC dialogue for games with rich storytelling. Characters can remember and respond to player decisions over time, creating more immersive and personalized gaming experiences.",
+        "pros": [
+          "Dynamic branching narratives",
+          "Memory-based character interactions",
+          "No coding required for basic use",
+          "Cross-platform support"
+        ],
+        "cons": [
+          "Complex stories require planning",
+          "Pricing based on interactions",
+          "Learning curve for advanced features"
         ]
       }
     ]
@@ -8362,6 +8822,121 @@
           "Suggestions may need review."
         ],
         "iconUrl": "https://postiz.com/favicon.svg"
+      },
+      {
+        "name": "Canva AI",
+        "description": "AI-powered design platform for creating social media graphics and videos",
+        "link": "https://www.canva.com/",
+        "tags": [
+          "Freemium",
+          "Design",
+          "Content Creation"
+        ],
+        "iconUrl": "https://www.canva.com/favicon.ico",
+        "about": "Canva AI offers Magic Design (auto-generates graphics based on prompts) and Magic Write (AI-powered caption generation) for visual-first content creation. It provides image/video creation, social templates, and brand kits, making it perfect for teams and solo creators designing posts for Instagram, LinkedIn, and more.",
+        "pros": [
+          "Extensive template library",
+          "AI-powered design suggestions",
+          "Collaborative features for teams",
+          "Easy to use for non-designers"
+        ],
+        "cons": [
+          "Some premium features require subscription",
+          "Can be overwhelming with too many options",
+          "Limited video editing compared to dedicated tools"
+        ]
+      },
+      {
+        "name": "Jasper",
+        "description": "AI writing assistant for social media copywriting and content",
+        "link": "https://www.jasper.ai/",
+        "tags": [
+          "Paid",
+          "Writing",
+          "Marketing"
+        ],
+        "iconUrl": "https://www.jasper.ai/favicon.ico",
+        "about": "Jasper excels at generating copy for social media posts, including short captions, product descriptions, and long-form marketing content. It stands out for its brand voice customization and workflow tools, ideal for maintaining consistency across large campaigns.",
+        "pros": [
+          "Brand voice customization",
+          "Multiple content templates",
+          "Team collaboration features",
+          "Integration with other tools"
+        ],
+        "cons": [
+          "Premium pricing",
+          "Requires editing for best results",
+          "Learning curve for advanced features"
+        ]
+      },
+      {
+        "name": "Predis.ai",
+        "description": "All-in-one AI tool for social media content, scheduling, and analytics",
+        "link": "https://predis.ai/",
+        "tags": [
+          "Freemium",
+          "Content Creation",
+          "Scheduling"
+        ],
+        "iconUrl": "https://predis.ai/favicon.ico",
+        "about": "Predis.ai is highly rated for all-in-one capabilities including caption suggestions, post design, hashtags, and scheduling with strong automation and competitive pricing. It helps create engaging social media content quickly.",
+        "pros": [
+          "All-in-one platform",
+          "Competitive pricing",
+          "AI-generated captions and hashtags",
+          "Multi-platform scheduling"
+        ],
+        "cons": [
+          "Interface could be more polished",
+          "Limited advanced analytics",
+          "Learning curve for all features"
+        ]
+      },
+      {
+        "name": "Sprout Social",
+        "description": "Comprehensive social media management with AI analytics",
+        "link": "https://sproutsocial.com/",
+        "tags": [
+          "Paid",
+          "Analytics",
+          "Management"
+        ],
+        "iconUrl": "https://sproutsocial.com/favicon.ico",
+        "about": "Sprout Social is renowned for comprehensive analytics, tracking audience engagement, competitor performance, hashtag trends, and delivering actionable recommendations using AI. It's designed for brands that want to optimize their strategy and report results.",
+        "pros": [
+          "Powerful analytics and reporting",
+          "Competitor analysis features",
+          "Team collaboration tools",
+          "Excellent customer support"
+        ],
+        "cons": [
+          "Premium pricing for small businesses",
+          "Steep learning curve",
+          "Some features require higher tier plans"
+        ]
+      },
+      {
+        "name": "Copy.ai",
+        "description": "AI-powered copywriting for social media posts and captions",
+        "link": "https://www.copy.ai/",
+        "tags": [
+          "Freemium",
+          "Writing",
+          "Automation"
+        ],
+        "iconUrl": "https://www.copy.ai/favicon.ico",
+        "about": "Copy.ai specializes in generating compelling copy for social media posts, including short captions, product descriptions, and marketing content. It uses advanced AI to create engaging text that resonates with audiences.",
+        "pros": [
+          "Fast content generation",
+          "Multiple writing tones and styles",
+          "Free tier available",
+          "Easy to use interface"
+        ],
+        "cons": [
+          "May require editing for accuracy",
+          "Limited customization in free tier",
+          "Can sound generic without proper prompting"
+        ]
       }
     ]
   },
