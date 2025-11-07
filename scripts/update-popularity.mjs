@@ -178,6 +178,7 @@ async function main(){
     const existing = raw[name];
     
     // Check if tool is open source - if so, skip ranking calculation
+    // Open source tools are excluded from rankings per business requirements
     const isOpenSource = isOpenSourceTool(name, allTools);
     
     const signalsScore = (signalsNormMap[name] || 0); // 0..100 normalized
@@ -190,7 +191,7 @@ async function main(){
     
     // Weighted combination (emphasize curated Most Popular list; then signals; small repeat bonus)
     // If usersScore present, prioritize it by blending as primary signal
-    // For open source tools, set combined score to 0 to exclude from rankings
+    // For open source tools, set combined score to 0 to exclude from rankings per business requirements
     let combined;
     if(isOpenSource){
       combined = 0; // Exclude open source tools from rankings
@@ -208,7 +209,7 @@ async function main(){
       freqScore,
       usersScore,
       popularityScore: combined,
-      isOpenSource
+      isOpenSource  // Track if tool is open source (tagged with 'Open Source') for debugging and transparency
     };
   }
 
