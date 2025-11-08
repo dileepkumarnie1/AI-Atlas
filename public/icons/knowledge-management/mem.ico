@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Mem</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
+  <meta name="description"
+    content="Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable." />
+  <link rel="canonical" href="https://get.mem.ai" />
+  <meta content="Mem" property="og:title">
+  <meta
+    content="Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable."
+    property="og:description">
+  <meta content="https://storage.googleapis.com/mem-public-assets/sq-f.jpg" property="og:image">
+  <meta content="website" property="og:type">
+  <meta content="Mem" property="twitter:title">
+  <meta
+    content="Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable."
+    property="twitter:description">
+  <meta content="https://storage.googleapis.com/mem-public-assets/sq-f.jpg" property="twitter:image">
+  <meta content="summary" name="twitter:card">
+
+  <meta name="apple-itunes-app" content="app-id=1578757028">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#fff">
+  <meta name="application-name" content="mem">
+
+  <link rel="icon" href="/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="/favicons/android-chrome-36x36.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicons/android-chrome-48x48.png">
+  <link rel="icon" type="image/png" sizes="72x72" href="/favicons/android-chrome-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/android-chrome-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="/favicons/android-chrome-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="mem">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <!-- End Meta -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.crossOrigin = "anonymous";
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5HVFSFB');
+  </script>
+  <!-- End Google Tag Manager -->
+  <script async type="module" crossorigin src="/index.CsTKMv8V.js"></script>
+  <link rel="modulepreload" crossorigin href="/vendor.B5jOnMFC.js">
+  <link rel="stylesheet" crossorigin href="/assets/vendor-1en9jNij.css">
+</head>
+
+<body>
+  <!-- Display a message if JS has been disabled on the browser. -->
+  <noscript> If you're seeing this message, that means JavaScript has been disabled on your browser. Please enable JS to
+    make this app work. </noscript>
+
+  <!-- App Setup -->
+  <div id="root"></div>
+
+  <!-- End App Setup -->
+
+  <!-- Twitter Setup Script -->
+  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.crossOrigin = "anonymous";
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+  <!-- End Twitter Setup Script -->
+
+  <!-- Google API Setup Script -->
+  <script src="https://apis.google.com/js/api.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    if (typeof require !== "undefined") {
+      const webFrame = require("electron").webFrame;
+      webFrame.setZoomFactor(1);
+      webFrame.setVisualZoomLevelLimits(1, 2);
+    }
+  </script>
+  <!-- End Google API Setup Script -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HVFSFB" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+    <title>Google Lens - Search What You See</title>
+    <meta name="description" content="Discover how Lens in the Google app can help you explore the world around you. Use your phone&#39;s camera to search what you see in an entirely new way.">
+    <meta name="keywords" content="google lens, reverse image search, camera search, visual search, camera translate">
+    <meta name="referrer" content="no-referrer">
+
+    <meta property="og:url" content="https://lens.google/">
+    <meta property="og:title" content="Google Lens - Search What You See">
+    <meta property="og:description" content="Discover how Lens in the Google app can help you explore the world around you. Use your phone&#39;s camera to search what you see in an entirely new way.">
+    <meta property="og:site_name" content="Google Lens">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/OU0eVSuMf7hzLaeIkAWX23ytBaTpvhmn0nHU4fVFfCPBLYoYMyCdLjvdIImjpuDS0ajuaB32jzlc7tTyOwAdFxp4NycAckMJYBivxpyJTBTuTcaeZLzZ">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Discover how Lens in the Google app can help you explore the world around you. Use your phone&#39;s camera to search what you see in an entirely new way.">
+    <meta name="twitter:title" content="Google Lens - Search What You See">
+    <meta name="twitter:site" content="@Google">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/OU0eVSuMf7hzLaeIkAWX23ytBaTpvhmn0nHU4fVFfCPBLYoYMyCdLjvdIImjpuDS0ajuaB32jzlc7tTyOwAdFxp4NycAckMJYBivxpyJTBTuTcaeZLzZ">
+    <meta name="twitter:creator" content="@Google">
+
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://lh3.googleusercontent.com/H65Hxq0ooUCcwhoRGU-fwoXqrGS58mwa2vtr2ZfhGgJzMU0uYybOrZVBs8jydtR22TRC1k9XwDMD2xHB5BBU4IyXW7oH8PyCsq46uX6A42CmXP5GDZ2d">
+    <link rel="icon" type="image/png" sizes="64x64" href="https://lh3.googleusercontent.com/4cxzY4exnciQSHmuucLiwyPI5Qiv1MWj0VaGT5u9M70ydVOp63i4CMOHkGrQFTDx7hANY5DZU76ecuyp1yw0bG_AqDX60N5SVYyHB1g_LY45-xkv0e8">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://lh3.googleusercontent.com/EYKW_lhEHrqivBPIze6hEu_3nlm6WdGq2_ef3GMqw4FrE6qIpUGcUBU_YD8xkzi0a-81Yn9DUBs6UYVmGo-KRCAjKIoVnlIkRsne8nmG4x3WEYUzqYh-">
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/H65Hxq0ooUCcwhoRGU-fwoXqrGS58mwa2vtr2ZfhGgJzMU0uYybOrZVBs8jydtR22TRC1k9XwDMD2xHB5BBU4IyXW7oH8PyCsq46uX6A42CmXP5GDZ2d">
+    <link href="https://lens.google/" rel="canonical">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400,500,700,400i,500i,700i|Google+Sans:400,500,700&amp;display=swap&amp;lang=en" nonce="MVC5yQ4fGI32vO8ICQZKUQ">
+    <link href="/static/compiled/index.min.css?cache=a07cfba" rel="stylesheet" nonce="MVC5yQ4fGI32vO8ICQZKUQ">
+    <link href="https://www.gstatic.com/glue/v24_0/ccb.min.css" rel="stylesheet" nonce="MVC5yQ4fGI32vO8ICQZKUQ">
+    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet" nonce="MVC5yQ4fGI32vO8ICQZKUQ">
+
+    <script type="application/ld+json" nonce="MVC5yQ4fGI32vO8ICQZKUQ">
+      {"@context": "https://schema.org","@type": "SoftwareApplication","name": "Google Lens","description": "Discover how Lens in the Google app can help you explore the world around you. Use your phone&#39;s camera to search what you see in an entirely new way.","operatingSystem": "ANDROID","applicationCategory": "https://schema.org/BrowserApplication","installURL": "https://play.google.com/store/apps/details?id=com.google.ar.lens","offers": {"@type": "Offer","price": "0"}}
+    </script>
+    <script nonce="MVC5yQ4fGI32vO8ICQZKUQ">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-THFGQBF');</script>
+  </head>
+
+  <body class="glue-body" data-page="HomePage">
+    <noscript>
+      <iframe class="gtm-iframe" src="https://www.googletagmanager.com/ns.html?id=GTM-THFGQBF"></iframe>
+    </noscript>
+<header class="glue-header glue-header--single">
+  <a href="#page-content" class="glue-header__link glue-header__skip-content">
+    Jump to Content
+  </a>
+  <div class="glue-header__bar glue-header__bar--mobile">
+    <div class="glue-header__tier">
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link logo-track" href="./" title="Google Lens"
+                data-link-url="./"
+                data-link-text="Google Lens"
+                data-link-type="internal"
+                data-section-header="CTA Navigation"
+                data-module-name="Home logo">
+              <div class="glue-header__logo-container">
+                <img class="glue-tile__icon" src="https://lh3.googleusercontent.com/H65Hxq0ooUCcwhoRGU-fwoXqrGS58mwa2vtr2ZfhGgJzMU0uYybOrZVBs8jydtR22TRC1k9XwDMD2xHB5BBU4IyXW7oH8PyCsq46uX6A42CmXP5GDZ2d"
+                    alt="Google Lens">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="/static/img/glue-icons.svg#google-solid-logo"></use>
+                </svg>
+                <span class="glue-header__logo--product">Lens</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="glue-header__container glue-header__container--cta">
+        <div class="glue-header__cta hide-link">
+            <a class="glue-button glue-button--high-emphasis section-link mobile-cta header-cta-track"
+                href="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+                data-link-text="Try Lens"
+                data-link-url="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+                data-link-type="external"
+                data-section-header="CTA Navigation"
+                data-module-name="Home logo">
+              Try Lens
+            </a>
+          <a class="glue-button glue-button--high-emphasis header-cta-track section-link desktop-cta"
+              href="#cta-section"
+              data-link-text="Go to Google Lens"
+              data-link-url="#cta-section"
+              data-link-type="external"
+              data-section-header="CTA Navigation"
+              data-module-name="Home logo">
+            Go to Google Lens
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="glue-header__bar glue-header__bar--desktop">
+    <div class="glue-header__tier">
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link logo-track" href="./" title="Google Lens"
+                data-link-url="./"
+                data-link-text="Google Lens"
+                data-link-type="internal"
+                data-section-header="CTA Navigation"
+                data-module-name="Home logo">
+              <div class="glue-header__logo-container">
+                <img class="glue-tile__icon" src="https://lh3.googleusercontent.com/H65Hxq0ooUCcwhoRGU-fwoXqrGS58mwa2vtr2ZfhGgJzMU0uYybOrZVBs8jydtR22TRC1k9XwDMD2xHB5BBU4IyXW7oH8PyCsq46uX6A42CmXP5GDZ2d"
+                    alt="Google Lens">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="/static/img/glue-icons.svg#google-solid-logo"></use>
+                </svg>
+                <span class="glue-header__logo--product">Lens</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="glue-header__container glue-header__container--cta">
+        <div class="glue-header__cta hide-link">
+          <a class="glue-button glue-button--high-emphasis section-link header-cta-track"
+              href="#cta-section"
+              data-link-text="Go to Google Lens"
+              data-link-url="#cta-section"
+              data-link-type="external"
+              data-section-header="CTA Navigation"
+              data-module-name="Home logo">
+            Go to Google Lens
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>  <div class="scrollbar-wrapper">
+    <div class="scrollbar"></div>
+  </div>
+  <div class="page-content" id="page-content" role="main">
+    <div class="page-frame"></div>
+
+<section id="banner" class="banner-section js-section-wrapper module"
+    data-module-name="Banner"
+    data-section-header="what you see"
+    data-section-id="banner">
+  <div class="glue-grid banner-top-images">
+      <div class="glue-grid__col glue-grid__col--span-6 glue-grid__col--span-2-sm glue-text-left">
+          <img class="head-top-left"      src="https://lh3.googleusercontent.com/Kq4HgOSk5j2Ch16KIsyY_YfBzaHU0-ichsNwMW_d-oIYhIZ9TiuLdUauTqsJiJQOSz_Bwv9-0tybd74juZChkKY-cCFSZDtBGCkIryBvUTpZVB_YLQQ=s0-rj-c0xffffff" alt="An image of a Lens shopping use case featuring a dog with clothes and an overlaying QSB with the camera icon highlighted.">
+
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-6 glue-grid__col--span-2-sm glue-text-left">
+          <img class="head-top-center"      src="https://lh3.googleusercontent.com/7H6OqjtaBCW0g0Y4lCRwDGzu8owwpGW1tt9t1lbSe-Nlh24oviOU5Rv7ahttAToYnT_reN-05EJOp79cOSCO_YOMkxFn4mFvXQIQqLX-fwW2ZHueA30O=s0-rj-c0xffffff" alt="An image of a Lens homework use case showing math written on a piece of paper with overlaying green shapes and a Lens logo.">
+
+      </div>
+  </div>
+  <div class="banner-details">
+    <div class="banner-heading">
+      <ul class="banner-heading-keywords">
+          <li class="heading-keyword text-blue">Search</li>
+          <li class="heading-keyword text-orange">Shop</li>
+          <li class="heading-keyword text-green">Translate</li>
+          <li class="heading-keyword text-red">Identify</li>
+      </ul>
+      <span class="banner-heading-text">what you see</span>
+    </div>
+      <p class="banner-description">
+        Not sure how to describe it in words?
+      </p>
+      <p class="banner-description">
+        Use your camera or an image to search.
+      </p>
+    <a class="glue-button glue-button--high-emphasis banner-cta section-link banner-text-desktop"
+        href="#cta-section"
+        data-link-text="Go to Google Lens"
+        data-link-url="#cta-section"
+        data-link-type="external"
+        data-section-header="what you see"
+        data-module-name="Banner">
+      Go to Google Lens
+    </a>
+    <a class="glue-button glue-button--high-emphasis banner-cta section-link banner-text-mobile"
+        href="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+        aria-label="Get The App Button"
+        data-link-text="Get the app"
+        data-link-url="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+        data-link-type="external"
+        data-section-header="what you see"
+        data-module-name="Banner">
+      Get the app
+    </a>
+  </div>
+  <div class="glue-grid banner-bottom-images">
+      <div class="glue-grid__col glue-grid__col--span-4 glue-grid__col--span-2-sm glue-text-left">
+          <div class="section-animation-module hide-image">
+              <div class="image-sizer" data-image-ratio="0.7905138339920948"></div>
+  <div class="image-group">
+      <img class="image-frame main-thumbnail"
+          src="https://lh3.googleusercontent.com/M5EHqT1h7r6_AqBSbDemysE0E6C2-5LVSqaSDlB2M9QOCAivkJ6KS30nkUpjk6pOTr3uyryqALBfpuJ2-XfSmi8HsbY35pGTdWx5aa9VMZSY6EjMRmU=s0-rw-lo" alt="An image of a Lens shopping use case featuring a woman with a blue blazer with an overlapping blue shape.">
+            <img class="image-frame top-thumbnail primary-frame desktop-image"
+          src="https://lh3.googleusercontent.com/5wFWCBjN0rFshmHV6NuEBgdRKOTpXoNSw_DtTWo-ALOdG22H397oWRkTrqGz2UBF8PjE0O6Xcg6SCX16MlV8BoPoXTtJ71SE-ii0JecHZAX8VW7iGOM=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail primary-frame large-desktop-image"
+          src="https://lh3.googleusercontent.com/v2WWZUCP3PphxQe6UbTKv4Bo3wKzSVqET1t55c3JgE9oVS6-xjyg5lRS3dm5n_hQKn_xdP_3RgrkvuFsHguE70oP7lPmIi7j3NXXhOmS8_dkBw9n04Pj=s0-rw-lo" role="presentation">
+        </div>
+          </div>
+        <div class="section-images">
+              <img class="head-bottom-left head-bottom-left-mobile"      src="https://lh3.googleusercontent.com/pJBc2TtQqc2OFY5p67h93wa80lRN0RbS49gE4pA6YcGqW-7DgNNIU-3wB5WWG-ab3TnCqBgZnYjIy3DRwLZ0vE8HQE3fy-DXl9O7uQ2KW8JHgRVu8Kg2=s0-rw-lo" alt="An image of a Lens shopping use case featuring a woman with a blue blazer with an overlapping blue shape.">
+
+              <img class="head-bottom-left head-bottom-left-desktop"      src="https://lh3.googleusercontent.com/Ts7ivxpw8S1SQEOVob7nNYEVlGS-MBoKOyi6wVGpDj1jh5UvwrgSkj3wFtek1oPuEetfMA4fNZvOiHRtvf68KBWMdEC945zUW5bKr3OvyLer0vPbWEkt=s0-rw-lo" alt="An image of a Lens shopping use case featuring a woman with a blue blazer with an overlapping blue shape.">
+
+              <img class="head-bottom-left head-bottom-left-large"      src="https://lh3.googleusercontent.com/SEliQf5nHdK3Bk9a_M4X5LuaGvE854e3L6TX3_s4sgozVJfIrGsZKgy3FdcpeLJ4ey2PEUDON0A23jn6Yi_nb2eDwu2Wj3yGl9b4NPVvTYJjOQei0Pw=s0-rw-lo" alt="An image of a Lens shopping use case featuring a woman with a blue blazer with an overlapping blue shape.">
+
+        </div>
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-4 glue-grid__col--span-1-sm glue-text-left">
+        <div class="section-images">
+              <img class="head-bottom-center"      src="https://lh3.googleusercontent.com/WgdwvkQI2UxKHO9RXhk0Jt_zFZc_FTN6HFE_TWzPfZgVNLXUxultNw51fOug5aA-vaPX-sA7vVE0-l7FWtXfPH792onZuf7FtPJ-raEmQdFdcLuxhG8=s0-rw-lo" alt="An image of a Lens shopping use case featuring a hand holding a Korean poem on a piece of paper against a blue sky.">
+
+        </div>
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-4 glue-grid__col--span-1-sm glue-text-left">
+        <div class="section-images">
+              <img class="head-bottom-right head-bottom-right-mobile"      src="https://lh3.googleusercontent.com/QguE-u7fHSZIKl2aO5rm02FFkVXzxUV2R3Qcw7kXZklMYmaP0Iqvspjeg-J9RRTsc_nIMFSTz_8zCnYlkKEaV5G2ax4_wNFLEKaDi6JCN_8a9af-e9k=s0-rw-lo" alt="An image of a Lens identify use case showing Birds of Paradise plants with overlaying pink shapes and a product card.">
+
+              <img class="head-bottom-right head-bottom-right-desktop"      src="https://lh3.googleusercontent.com/PXPT_2rVVT13mcBwnjsqTtckSiG3eI6_xSjWhyGJqmaXhvioDbyJ3iNR3rQYtfYdI8q0cHtTfViGA-kYpeWSEIZcGz2abbFWflG1ZMc7baGp3jMfgYo=s0-rw-lo" alt="An image of a Lens identify use case showing Birds of Paradise plants with overlaying pink shapes and a product card.">
+
+              <img class="head-bottom-right head-bottom-right-large"      src="https://lh3.googleusercontent.com/2e-JvK0d3mU85shPh33Q7doLS6SSHnZkXzcUhcvaTlElWZTHu3luRbXalMhamTYAsNHwlHN8s32RWpVzukrSFpV1W0yUsNAg3SPRGkJ7vag8J8kWayEL=s0-rw-lo" alt="An image of a Lens identify use case showing Birds of Paradise plants with overlaying pink shapes and a product card.">
+
+        </div>
+      </div>
+  </div>
+  <div class="arrow-down-link">
+    <a href="#shopping" class="banner-arrow-cta section-link jump-to"
+        data-link-text="Jump to shopping section"
+        data-link-type="internal"
+        data-link-url="#shopping"
+        data-section-header="Find that thing"
+        data-module-name="Banner"        aria-label="Jump to shopping section">
+      <svg role="presentation" aria-hidden="true" class="arrow">
+        <use xlink:href="/static/img/icons.svg#arrow-down"></use>
+      </svg>
+    </a>
+  </div>
+</section>
+<div class="banner-section-frame js-section-frame" data-frame-id="banner"></div>    <div class="glue-page page-section-container">
+        <div class="page-section-wrapper shopping-section-wrapper js-section-wrapper"
+            data-section-id="shopping">
+          <section id="shopping" class="glue-grid page-section shopping-section js-section js-animate module"
+      data-module-name="shopping"
+      data-section-header="Find a look you like">
+    <div class="glue-grid__col glue-grid__col--span-7 glue-grid__col--span-6-md glue-grid__col--span-12-sm glue-grid__col--align-middle section-animation-module">
+          <div class="image-sizer" data-image-ratio="0.8869179600886918"></div>
+  <div class="image-group">
+      <img class="image-frame middle-thumbnail"
+          src="https://lh3.googleusercontent.com/w8rw6RSuDUMA4qdFbiOVEy9l5ZB5sNzXrA5eJXs4PsbLn3D725eNjVEWD5Jvevso-AUofkT2LrkQvbCKt83q0Sq5GceQbD3JWkSJ9ZtEo6C8YCUDQlQ=s0-rw-lo" alt="A shopping use case featuring an LVF view of a woman in a blue blazer with overlaying shapes, icons, and product cards.">
+            <img class="image-frame shadow-thumbnail"
+          src="https://lh3.googleusercontent.com/FNx-QBvrQLm7Z9LDNld0ZrbJwt0-XOtJqeS8bo9E6n4Ix6KFLncd8ot71kLgj8naPhaNJvjGpAepri7pyOKLFsyCZBKkffuWflpSvAgtH6fjKY-XjCwf=s0-rw-lo" role="presentation">
+            <img class="image-frame back-thumbnail slide-in-frame"
+          src="https://lh3.googleusercontent.com/jsQzwE6Tuy72v35Q0ndVQrDqM6iYsf0LQjyaQvy-sJO7ZjOwREqnt2lkY146MUCgGI9XC_5yUgwlQgZeh7XCKzn6SPzuZ92jyJa_s0pltr9Gm4KZ7A=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail bezier-zoom-in-frame"
+          src="https://lh3.googleusercontent.com/Ak_98JTsaBpuV0jYsprGeWUbMEKkuVEXD6IzcTEd3RNFSdKB4I8nsLeLj0WmaXFh0AKcRPbkuopf0MLVa_Y-eLYb9cGoC_gTB04xLqHE_Qxk92uapSY=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail fade-in-frame"
+          src="https://lh3.googleusercontent.com/DaFv-mfADFvGp1mG-_JJB-ub5Bc8YAkmkXgDPUpax9YP9bp_I-3YKXmLjSb1xZ_25MEL-XDjcDsYOpUsxqGSt0UKbSC8Sq-2srvQGHohUi37Hu9I8-UM=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail zoom-in-fade-in-frame"
+          src="https://lh3.googleusercontent.com/ZuPVINH-UlNcmeossN5E9HrubnVzg5UHr6Lo3_hAyfaGPDebZB3FcEK2Uham8ZEgMbjvvybfGCSdikgq-tzvtnN7EI1qHFIjZuraf_DRo0AVNdpCOw=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail zoom-in-frame"
+          src="https://lh3.googleusercontent.com/ju78xrIox3XK0MaMphyj60xb8lltf2Ran97Wn0IpuqahEBCLcs0be7BX_DnQ4Tlih4g0pwxW_3b8UTD1THHwfBLIZpV30tcAS0igjYGeEDY01mveOA=s0-rw-lo" role="presentation">
+        </div>
+    </div>
+    <div class="glue-grid__col glue-grid__col--span-5 glue-grid__col--span-6-md glue-grid__col--span-12-sm
+        right-section-large glue-grid__col--align-middle section-details-wrapper fade-out-bottom-text">
+      <div class="section-details">
+        <h2 class="section-title">Find a look you like</h2>
+        <p class="section-description">
+          See an outfit that’s caught your eye? Or a chair that's perfect for your living room? Get inspired by similar clothes, furniture, and home decor—without having to type what you're looking for.
+        </p>
+      </div>
+    </div>
+  </section>
+        </div>
+        <div class="page-section-frame js-section-frame"
+            data-frame-id="shopping">
+        </div>
+        <div class="page-section-wrapper translate-section-wrapper js-section-wrapper"
+            data-section-id="translate">
+          <section id="translate" class="glue-grid page-section translate-section js-section js-animate module"
+      data-module-name="translate"
+      data-section-header="Copy and translate text">
+    <div class="glue-grid__col glue-grid__col--span-7 glue-grid__col--span-6-md glue-grid__col--span-12-sm glue-grid__col--align-middle section-animation-module">
+          <div class="image-sizer" data-image-ratio="1.0709570957095709"></div>
+  <div class="image-group">
+      <img class="image-frame middle-thumbnail"
+          src="https://lh3.googleusercontent.com/eKjWa4OgFpYtrZP5ng7RJjzZbl5jevQ_FhuDVWKZnp_YAuOYBYUvBPIwSEvU8XO9Vb0GbFA7zGJcHV3aLhjCCg4Zz2NKI7vr9tUmtY05SJbQBiKCWRAx=s0-rw-lo" alt="A translate use case featuring an LVF view of a swan boat rental shop with overlaying shapes, icons, and product label.">
+            <img class="image-frame top-thumbnail translated-text-frame"
+          src="https://lh3.googleusercontent.com/4jOlbccewmdTFnf_qY4djQs-5TgmPrPHvxhKu1zrhWMswLNWxf1Qyptito-Zgrxf_3HSfCZyEFMke9ZGHPbH6kWJkvlrStSf8Ji-iCd1mASGipDEdYA=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/4Iu66r7nmysTCkqdNTK5aeuGfBbEFwq6c7_60WQoADoZ31nbyhSQ_R5f1qzfJ0g78cI48cnwG5rhzFmbRwOzzxRriBeYyM9wOdr_7yUQch2voY2mHbHo=s0-rw-lo" role="presentation">
+            <img class="image-frame back-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/GPnkAwWdl5CmhdEKQLsy0EeN_zQnS62XIez9NL9WohV2qWoCX_jXrIve_mORfMOLCufKgnE7hewjCWgEkEQ8C1xtKIU0bDh4crozA3nbUuRCB5UHhKo=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/nCgNGV4TUb_Em1ltCOWL70Zg8nGrx8_KE8V2bfTVexpNUKdfL5c4Dk_xLQd1SBap6pWo9EojBQIx9IwuQD6Ac7iSJBujTMYopHvXHYpGQs9G6ZJI9LA=s0-rw-lo" role="presentation">
+            <img class="image-frame back-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/tqr4Y0OfHmsgTdd0G-iXow0dey2KCVXaH_4o6y3qeajS7oUzoXvR4vAy9CUXCtZ8mj_Ls35qAuCb2e88WgX_u6k2fydJn3oJP6yWaxbph2qMqGBMgvk=s0-rw-lo" role="presentation">
+        </div>
+    </div>
+    <div class="glue-grid__col glue-grid__col--span-5 glue-grid__col--span-6-md glue-grid__col--span-12-sm
+        right-section-large glue-grid__col--align-middle section-details-wrapper fade-out-bottom-text">
+      <div class="section-details">
+        <h2 class="section-title">Copy and translate text</h2>
+        <p class="section-description">
+          Translate text in real-time from over 100 languages. Or copy paragraphs, serial numbers, and more from an image, then paste it on your phone or your computer with Chrome.
+        </p>
+      </div>
+    </div>
+  </section>
+        </div>
+        <div class="page-section-frame js-section-frame"
+            data-frame-id="translate">
+        </div>
+        <div class="page-section-wrapper homework-section-wrapper js-section-wrapper"
+            data-section-id="homework">
+          <section id="homework" class="glue-grid page-section homework-section js-section js-animate module"
+      data-module-name="homework"
+      data-section-header="Step by step homework help">
+    <div class="glue-grid__col glue-grid__col--span-7 glue-grid__col--span-6-md glue-grid__col--span-12-sm glue-grid__col--align-middle section-animation-module">
+          <div class="image-sizer" data-image-ratio="0.974817221770918"></div>
+  <div class="image-group">
+      <img class="image-frame middle-thumbnail"
+          src="https://lh3.googleusercontent.com/lD1k9lIRF09MQkzz8E1__6Oy2ZTF6M_76clNlabN33BbG8oS2eE-Hm32bRCa3iu52DaNz808vorptqkfr8QPjYQHDhFvb4MSBuoU6kiOqf2CClrOixk=s0-rw-lo" alt="A homework use case featuring an LVF view of a page in a math textbook with overlaying shapes, icons, result panel, and equation highlighted in a recticle.">
+            <img class="image-frame back-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/XS9OPhXr-Q7Qy10M_aCUULPnaMvYtr0ZRZNkuGbfnlYT-17kvgFhi8KUE9ikRwQxUumI5SSDo5C45eF7DmXnLictaHdbmDuzM9HzDEADjLl9labYFg=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/axUkPuPrCWY3lO8YzgZZLiP4dnVu8VGzcwBpXuAgpxtYMooakmqs2O0qqznJfV-DJPgMDi7NeRc5lpzzCpCW46aLcLTsB8AIDdQFi2OTwvm1NhoBkEBQ=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/59ur8aBYu5wHq02VaR-5P6pQDUlkxdY-vjh6KKpff55ia3BEAWiV0iCTcnf8IuAw-GZWGnt11CvDripmACXj6352XvjuJQdXf471xQlpYeu_1xkL2-0=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/7tJwEaEYrYPVB5YkUIhMGO67saSf14HOUHQ_ScphK8zqw82J5714bQPFbqWdcjf21NyKPeUTsTXQi_f9ARzyjXNXWINr8pit6agio5F6HWCZvGoLRb4=s0-rw-lo" role="presentation">
+        </div>
+    </div>
+    <div class="glue-grid__col glue-grid__col--span-5 glue-grid__col--span-6-md glue-grid__col--span-12-sm
+        right-section-large glue-grid__col--align-middle section-details-wrapper fade-out-bottom-text">
+      <div class="section-details">
+        <h2 class="section-title">Step by step homework help</h2>
+        <p class="section-description">
+          Stuck on a problem? Quickly find explainers, videos, and results from the web for math, history, chemistry, biology, physics, and more.
+        </p>
+      </div>
+    </div>
+  </section>
+        </div>
+        <div class="page-section-frame js-section-frame"
+            data-frame-id="homework">
+        </div>
+        <div class="page-section-wrapper identify-section-wrapper js-section-wrapper"
+            data-section-id="identify">
+          <section id="identify" class="glue-grid page-section identify-section js-section js-animate module"
+      data-module-name="identify"
+      data-section-header="Identify plants and animals">
+    <div class="glue-grid__col glue-grid__col--span-7 glue-grid__col--span-6-md glue-grid__col--span-12-sm glue-grid__col--align-middle section-animation-module">
+          <div class="image-sizer" data-image-ratio="0.9448818897637795"></div>
+  <div class="image-group">
+      <img class="image-frame middle-thumbnail"
+          src="https://lh3.googleusercontent.com/UjFYExVMPwaR072a0a8HUISTeFPW39xFFz6flCRMRvFsGljQeq6hmHYMYOYAi9VJZGUiD-mNzPeJbBI3VW7SiE_7_dHx3NbUI-_zlVNVAWR3hfoMLxQ=s0-rw-lo" alt="An identify use case featuring an LVF view of a red ginger plant with overlaying shapes and result panel.">
+            <img class="image-frame back-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/FtO42cwgB057QjMk3qI2VzShlZcsDnBueGVASJLmuzDJbtEetn9n5lqCsfvf1n3KlM1_W95UJgqm9nAM6QexanTfO7tpWw5cceGVeS5Zegyy9Nb_O4I=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/hIDEsUhKEqTI-h_eCLmIsTAQ89z6HKk5tIGGVj0QZm9BEOo5fIDP3-eSPwzDBZlZDsOj3eKAoNRFSqLtK1ksw88EL1khGKYlQljcIBqrB_HRLGHh9cw=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/b1yF7_ikuVG9lDrVUf6nXTLHRjJUPZNLotxyKA-PVy0rLt9f48KSeNe7rt6FnaPPKfyvXsPrA8gzJe9Yh1FDSNk037MLJaCzPKHaqTY_R820kNH97Bs=s0-rw-lo" role="presentation">
+            <img class="image-frame top-thumbnail slide-up-animation"
+          src="https://lh3.googleusercontent.com/_wtJsAqG4KZFdVRwodbzBejXWelThK1ui-39vDEa63YqNbtDSFWkem6dA65_VJWn3mZatFisObRbkhJssDRaDr2tTZyDByX_vpvIdj7m1evntdiCrw=s0-rw-lo" role="presentation">
+        </div>
+    </div>
+    <div class="glue-grid__col glue-grid__col--span-5 glue-grid__col--span-6-md glue-grid__col--span-12-sm
+        right-section-large glue-grid__col--align-middle section-details-wrapper fade-out-bottom-text">
+      <div class="section-details">
+        <h2 class="section-title">Identify plants and animals</h2>
+        <p class="section-description">
+          Find out what plant is in your friend's apartment, or what kind of dog you saw in the park.
+        </p>
+      </div>
+    </div>
+  </section>
+        </div>
+        <div class="page-section-frame js-section-frame"
+            data-frame-id="identify">
+        </div>
+    </div>
+    <div class="device-cta-section js-section-wrapper"
+        data-section-id="device-cta-section">
+      <div class="pin-trigger"></div>
+      <div class="device-cta-section-container js-animate">
+
+<div class="device-section-wrapper">
+  <section id="device" class="glue-grid page-section device-section js-section module"
+      data-module-name="Device Section"
+      data-section-header="Get answers where you need them">
+    <div class="glue-grid__col glue-grid__col--span-7 glue-grid__col--span-6-md glue-grid__col--span-12-sm
+        glue-grid__col--align-middle section-animation-module animation-moduleII">
+        <div class="image-sizer" data-image-ratio="0.6469002695417789"></div>
+  <div class="image-group">
+      <div class="image-frame-wrapper">
+      <img class="image-frame middle-thumbnail left-image-frame"
+          src="https://lh3.googleusercontent.com/fDDJOOKDRWFiSWDhv1bbg8MIsww-D9hED9cB52wygo-sDX_4BiuJHak-UZia4BEDtqiDvFb5FeJvngcqj-7FQXA9Slzmd7EIjr3Hqa0S4cM2MauZ1g=s0-rw-lo" alt="Three devices side by side, one desktop and two mobile, showing where Lens is acessible through mutliple entry points.">
+      </div>
+            <div class="image-frame-wrapper">
+      <img class="image-frame overlapping-thumbnail right-image-frame"
+          src="https://lh3.googleusercontent.com/MSKeh2hyaz-J2Znln9r80yXOcZTILPnR-24Vbp-2zrwzb1PEToc9iEX2-BWS2gt8AewVww5SnmcIB3LjNBCMRoY5c-HLNsTE54TIdwBFA-d-Q4iT8w=s0-rw-lo" role="presentation">
+      </div>
+        </div>
+      <p class="image-caption">*Lens is available in Google Images</p>
+    </div>
+    <div class="glue-grid__col glue-grid__col--span-4 glue-grid__col--span-5-md glue-grid__col--span-12-sm
+        glue-grid__col--align-middle section-details-wrapper">
+      <div class="section-details">
+        <h2 class="section-title">Get answers where you need them</h2>
+        <p class="section-description">
+          Lens is available on all your devices and in your favorite apps.
+        </p>
+          <div class="google-apps-group">
+              <div class="app-details">
+                  <img class="google-app-icon hide-image"      data-src="https://lh3.googleusercontent.com/8UTSpSo1dA6LEniKuqV3pVhhIaUM14unuvimVuZgUUzyIO-YjLGg_yFO-2n3G1P8uHTxnuhRNJwv7X928zxrGClV_wbQK31xAm7LVn78Q_mUMmNT8YE=s0-rj-c0xffffff" alt="Google Logo">
+
+                <p class="app-description">Google app</p>
+              </div>
+              <div class="app-details">
+                  <img class="camera-app-icon hide-image"      data-src="https://lh3.googleusercontent.com/iyOuSSxW6I2lHiXv0HwFSklyMtESpWQxObSZns4dc6BluwucocMRwupVYjNHfyk2Lz63n1plExdtcYbGdvbfh342XWxwm-7bCcUgTBcsJAECBq4WYVU=s0-rj-c0xffffff" alt="Camera Logo">
+
+                <p class="app-description">Google Camera</p>
+              </div>
+              <div class="app-details">
+                  <img class="photos-app-icon hide-image"      data-src="https://lh3.googleusercontent.com/WDMjEN5gD__FBrlxB1SV6IPkVQJkBvLWtwZUzuRCFI9eDDnSfxZR3aeaYgMqzdGt6UQQMJK3X9tJ21Qif2NJ3cPSgA4XqqHO_L_aQ3AJwI2Ii8z1ouk=s0-rj-c0xffffff" alt="Photos Logo">
+
+                <p class="app-description">Google Photos</p>
+              </div>
+              <div class="app-details">
+                  <img class="photos-app-icon hide-image"      data-src="https://lh3.googleusercontent.com/9itDBn2L8YkqaGuvx-MxguTfYGMg2sa8AKY9p-iJJnynZ1rbPiMx5xvYSIFtgz1Rw4BnYoTJ1cLov6rXzpLDsVHR_rrZIpg4S4IDhiEgEU9VGS6mOg=s0-rj-c0xffffff" alt="Chrome Logo">
+
+                <p class="app-description">Chrome</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="cta-section-wrapper">
+  <section id="cta-section" class="cta-section js-section"
+      data-module-name="CTA Section"
+      data-section-header="Try Google Lens">
+    <div class="cta-shapes hide-shapes">
+          <img class="bg-shapes bg-shape-1 hide-image"      data-src="https://lh3.googleusercontent.com/P6xfugEZOav2CnYBupE-miUevdoyqoF5fJNKmEPlWxe-HBlM_s3_h8yXaa-8-QQFHZ3geTdaa15P1fdC7jj_pxE_v9_6Z3PyoMKMhnEmz4LC7-Uw8dQ=s0-rw-lo" data-reference="cta-image-section" role="presentation">
+
+          <img class="bg-shapes bg-shape-2 hide-image"      data-src="https://lh3.googleusercontent.com/SCpuFBZBZjJ7KQqJ1DcMk7QGsFbVwoRG-ApRksKJ-IZ6zeZ3SUZGfine6mvadQgI2iR5P0qi_QCQBTyzh8I-jEM9Cc-25wrh3vVwv5aVEMgashBzyk0=s0-rw-lo" data-reference="cta-image-section" role="presentation">
+
+          <img class="bg-shapes bg-shape-3 hide-image"      data-src="https://lh3.googleusercontent.com/WTFb3CUDTarOlk6FAbZw427w_2DWcnyAwHh8WukqdYsOHte2IZr80xps-hvcMMWLyL14VOcBdloAhdmFiwVq0QeX34QsEcLucERECkexuKJGesLkViA=s0-rw-lo" data-reference="cta-details-section" role="presentation">
+
+          <img class="bg-shapes bg-shape-4 hide-image"      data-src="https://lh3.googleusercontent.com/vIorlGAIc-r6tX8yNZnad9AghECAUVkADmfLoHFC5TKUmXzY8mZbOc2jhl8ubwQUNmg3JtdL9-aSpYfqjWeidhBu1U3xAK1W2QpQI0yd0eJg4dW9SLh0=s0-rw-lo" data-reference="cta-details-section" role="presentation">
+
+          <img class="bg-shapes bg-shape-5 hide-image"      data-src="https://lh3.googleusercontent.com/FoZbjk6MYByPqxvIkJ4v80REnL9L17qVOnwbZCCIJk41jj53p8C328AWtL-f_0sh_Daenx5g6nV55pfXSJoH8wEFy8G7QM5PMqVjJrVGe-9ajaOXGxY=s0-rw-lo" data-reference="cta-details-section" role="presentation">
+
+          <img class="bg-shapes bg-shape-6 hide-image"      data-src="https://lh3.googleusercontent.com/uLmcyeI7fzSmyS8NGtKUu0fCV-pSpSdsGCCgqdhNKTx1rWHyQEI3qpSUtHYMyWxnpuIuSZJ9jqVpAsPX4avwvyo_lnW9lHlsjCMbuAuH34ICxzPnT5U=s0-rw-lo" data-reference="cta-details-section" role="presentation">
+
+    </div>
+    <div class="glue-grid">
+      <div class="glue-grid__col glue-grid__col--span-6
+          glue-grid__col--align-middle cta-image-desktop hide-image">
+          <div class="image-sizer" data-image-ratio="0.819672131147541"></div>
+  <div class="image-group">
+      <img class="image-frame middle-thumbnail cta-left-image"
+          src="https://lh3.googleusercontent.com/mfMtziCuuThQPBnelyifC0OSqR1n2l0LXg_-I8-8wOVwHZX3kH0gTfOI4m_9g-vv46IMasKkg3aJ81-f36XmxgZxFMsX3helFdRwJz_dyF-Qjs0VZvo=s0-rw-lo" role="presentation">
+        </div>
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-6
+          glue-grid__col--align-middle cta-whole-image-desktop">
+            <div class="image-wrapper">
+      <div class="image-sizer" data-image-ratio="0.819672131147541"></div>
+  <img class="cta-left-image hide-image"      data-src="https://lh3.googleusercontent.com/vqb18dt_0ZmghmxcN_tt3Sdbqoibxipmy_3Vpkt8RGZr2-O8POrfQI0xaVNLZwzZzEOUrFm_wMJROkLbR6aqbozwOxDHEPNDrd_Ye2HqDWUrEHcBZILQ=s0-rw-lo" alt="Two mobile devices, one faded and the other showing the Google App home screen with a highlighted QSB with another highlight of the camera icon.">
+    </div>
+
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-5
+          glue-grid__col--align-middle section-cta-details">
+        <div class="cta-details">
+            <img class="google-logo-cta hide-image"      data-src="https://lh3.googleusercontent.com/z_0aKIZEdTXWWMgU8EPXtX-Ouv1Tp21SZg0T9UGwKnOqLAuYklw-2V6UHZk2Yk6cDPYenr2i0L4EGTWOT-X5RRkczacjPOXwfg0W48o1PIxnEun8sU4=s0-rj-c0xffffff" alt="Google Logo">
+
+          <h2 class="cta-title">Try Google Lens</h2>
+          <p class="cta-description">Look for Lens in the search bar of the Google app</p>
+          <a class="glue-button glue-button--high-emphasis cta-section-link app-store-cta-track"
+              href="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+              aria-label="Get The App Button"
+              data-link-text="Get the app"
+              data-link-url="https://search.app.goo.gl/?link=https://www.google.com/search/about?source%3Dsmp.2022lenssite.14%26utm_medium%3Dsmp%26utm_source%3Dsmp.2022lenssite.14%26sop%3Dtrue&amp;afl=market://details?id%3Dcom.google.android.googlequicksearchbox%26url%3Dhttps://www.google.com/search/about?source%253Dsmp.2022lenssite.14%2526utm_medium%253Dsmp%2526utm_source%253Dsmp.2022lenssite.14%2526sop%253Dtrue&amp;apn=com.google.android.googlequicksearchbox&amp;amv=301184624&amp;isi=284815942&amp;ius=googleapp&amp;ibi=com.google.GoogleMobile&amp;pt=9008&amp;mt=8&amp;ct=p-pmm-web-Lensmktg-Lens&amp;efr=1&amp;source=smp.2022lenssite.14"
+              data-link-type="external"
+              data-section-header="Try Google Lens"
+              data-module-name="CTA section">
+            Get the app
+          </a>
+        </div>
+          <div class="app-store">
+                <div class="app-store-details">
+                  <p class="app-store-title">Scan to get the app</p>
+                  <div class="qr-code">
+                        <div class="image-wrapper">
+      <div class="image-sizer" data-image-ratio="1.0"></div>
+  <img class="qr-code-img hide-image"      data-src="https://lh3.googleusercontent.com/1eN25EN_TGHBCbwsHalL2ArXbnY6SNxpt-UCsS3g7fE6dntZJT0gejb0zlcDw5EeeGJ1DDJfdeBSl7yrNDrmVmubnqEepzdSJ_ap4eaY-xh6MalYJTA=s0-rj-c0xffffff" alt="QR code for iOS and Android">
+    </div>
+
+                  </div>
+                </div>
+          </div>
+          <div class="app-store">
+              <div class="app-store-details app-store-badges">
+                <a class="app-store-link app-store-cta-track" href="https://apps.apple.com/app/id284815942?ct=p-pmm-web-Lensmktg-Lens&amp;mt=8&amp;pt=9008"
+                    aria-label="Available on App Store"
+                    data-link-text="Available on App Store"
+                    data-link-url="https://apps.apple.com/app/id284815942?ct=p-pmm-web-Lensmktg-Lens&amp;mt=8&amp;pt=9008"
+                    data-link-type="external"
+                    data-section-header="Try Google Lens"
+                    data-module-name="CTA section" target="_blank" rel="noopener noreferrer">
+                      <div class="image-wrapper">
+      <div class="image-sizer" data-image-ratio="0.2909090909090909"></div>
+  <img class="app-store-badge hide-image"      data-src="https://lh3.googleusercontent.com/Zd6ZlxjPls13RgVqu21BAXTMgimb0UH2C5EZluAVv-vvAgY0or7xH-h7hLES4pf62YIZgIn81vXKBUuTNo8xEtnFz4ctF3Nl-P7eRPEDRQexRApl0gJc=s0-rj-c0xffffff" alt="Available on App Store">
+    </div>
+
+                </a>
+              </div>
+              <div class="app-store-details app-store-badges">
+                <a class="app-store-link app-store-cta-track" href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox&amp;gl=US"
+                    aria-label="Get it on Google Play"
+                    data-link-text="Get it on Google Play"
+                    data-link-url="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox&amp;gl=US"
+                    data-link-type="external"
+                    data-section-header="Try Google Lens"
+                    data-module-name="CTA section" target="_blank" rel="noopener noreferrer">
+                      <div class="image-wrapper">
+      <div class="image-sizer" data-image-ratio="0.2909090909090909"></div>
+  <img class="app-store-badge hide-image"      data-src="https://lh3.googleusercontent.com/gl2lQ_L5E3pCYynaS1c3W7hxQ-OQW97sIBSV7jadeYa5iHydqEh0DGDptSpCicQwanPhJ5V_xCYgbL_-cTL-BWsiITTMsCn1uwX_jXpl_3uJa6yewnY=s0-rj-c0xffffff" alt="Get it on Google Play">
+    </div>
+
+                </a>
+              </div>
+          </div>
+      </div>
+      <div class="glue-grid__col glue-grid__col--span-12
+          glue-grid__col--align-middle cta-image-mobile">
+            <div class="image-wrapper">
+      <div class="image-sizer" data-image-ratio="0.6234413965087282"></div>
+  <img class="cta-img-mobile hide-image"      data-src="https://lh3.googleusercontent.com/Xkrefn84jLbpYHjTYi6nMmPzeuANEvYZgc2qK-r59Q8WS7BMBZStuqleh60xfccJVZ9twXgQXPpL1dIGbo46QdhQVCXrLQ_yqBltBW5SMvKDVkDaLRpd=s0-rw-lo" alt="Camera icon in the Google search bar">
+    </div>
+
+      </div>
+    </div>
+  </section>
+</div>      </div>
+    </div>
+    <div class="device-cta-frame">
+      <div class="device-section-frame js-section-frame"
+          data-frame-id="device">
+      </div>
+      <div class="cta-section-frame js-section-frame"
+          data-frame-id="cta-section">
+      </div>
+    </div>
+  </div>
+<footer class="glue-footer-wrapper">
+  <div class="glue-footer">
+    <h2 class="glue-visually-hidden">Footer links</h2>
+    <section class="glue-footer__global">
+      <div class="glue-footer__logo">
+        <a href="https://www.google.com" title="Google"
+            class="logo-track"
+            data-link-url="https://www.google.com"
+            data-link-text="Google"
+            data-link-type="external"
+            data-module-name="Footer logo"
+            data-section-header="Footer links" target="_blank" rel="noopener noreferrer">
+          <svg role="presentation" aria-hidden="true" class="glue-footer__logo-img">
+            <use xlink:href="/static/img/glue-icons.svg#google-solid-logo"></use>
+          </svg>
+        </a>
+      </div>
+
+      <ul class="glue-footer__global-links glue-no-bullet" role="list">
+          <li class="glue-footer__global-links-list-item">
+            <a class="glue-footer__link footer-link-track" href="/howlensworks/" aria-label="How Lens Works"
+                data-link-text="How Lens Works"
+                data-category="footer"
+                data-module-name="Footer"
+                data-link-url="/howlensworks/"
+                data-section-header="Footer links" data-link-type="internal">
+              How Lens Works
+            </a>
+          </li>
+          <li class="glue-footer__global-links-list-item">
+            <a class="glue-footer__link footer-link-track" href="https://policies.google.com/privacy" aria-label="Privacy"
+                data-link-text="Privacy"
+                data-category="footer"
+                data-module-name="Footer"
+                data-link-url="https://policies.google.com/privacy"
+                data-section-header="Footer links" target="_blank" rel="noopener noreferrer" data-link-type="external">
+              Privacy
+            </a>
+          </li>
+          <li class="glue-footer__global-links-list-item">
+            <a class="glue-footer__link footer-link-track" href="https://policies.google.com/terms" aria-label="Terms"
+                data-link-text="Terms"
+                data-category="footer"
+                data-module-name="Footer"
+                data-link-url="https://policies.google.com/terms"
+                data-section-header="Footer links" target="_blank" rel="noopener noreferrer" data-link-type="external">
+              Terms
+            </a>
+          </li>
+          <li class="glue-footer__global-links-list-item">
+            <a class="glue-footer__link footer-link-track" href="https://about.google/" aria-label="About Google"
+                data-link-text="About Google"
+                data-category="footer"
+                data-module-name="Footer"
+                data-link-url="https://about.google/"
+                data-section-header="Footer links" target="_blank" rel="noopener noreferrer" data-link-type="external">
+              About Google
+            </a>
+          </li>
+          <li class="glue-footer__global-links-list-item">
+            <a class="glue-footer__link footer-link-track" href="https://about.google/products/" aria-label="Google Products"
+                data-link-text="Google Products"
+                data-category="footer"
+                data-module-name="Footer"
+                data-link-url="https://about.google/products/"
+                data-section-header="Footer links" target="_blank" rel="noopener noreferrer" data-link-type="external">
+              Google Products
+            </a>
+          </li>
+      </ul>
+
+      <ul class="glue-footer__global-links glue-footer__global-links--extra glue-no-bullet"
+          role="list">
+        <li class="glue-footer__global-links-list-item
+            glue-footer__global-links-list-item--extra">
+          <a class="glue-footer__link footer-link-track" href="https://support.google.com/"
+              data-link-text="Help"
+              data-category="footer"
+              data-module-name="Footer"
+              data-link-url="https://support.google.com/"
+              data-section-header="Footer links"
+              aria-label="Help" target="_blank" rel="noopener noreferrer" data-link-type="external">
+            <svg role="presentation" aria-hidden="true" class="glue-icon
+                glue-icon--24px glue-icon--footer-help">
+              <use xlink:href="/static/img/glue-icons.svg#help"></use>
+            </svg>
+            Help
+          </a>
+        </li>
+        <li class="glue-footer__global-links-list-item glue-footer__global-links-list-item--extra">
+          <select name="lang-selector"
+              class="glue-footer__lang-dropdown lang-selector"
+              data-module-name="lang-dropdown">
+<option value="/"
+                  data-link-text="English"
+                  data-link-url="/"
+                  data-section-header="Footer links" selected>
+                English
+              </option>
+<option value="/intl/ar/"
+                  data-link-text="العربية"
+                  data-link-url="/intl/ar/"
+                  data-section-header="Footer links">
+                العربية
+              </option>
+<option value="/intl/bg/"
+                  data-link-text="Български"
+                  data-link-url="/intl/bg/"
+                  data-section-header="Footer links">
+                Български
+              </option>
+<option value="/intl/bn/"
+                  data-link-text="বাংলা"
+                  data-link-url="/intl/bn/"
+                  data-section-header="Footer links">
+                বাংলা
+              </option>
+<option value="/intl/ca/"
+                  data-link-text="Català"
+                  data-link-url="/intl/ca/"
+                  data-section-header="Footer links">
+                Català
+              </option>
+<option value="/intl/cs/"
+                  data-link-text="Čeština"
+                  data-link-url="/intl/cs/"
+                  data-section-header="Footer links">
+                Čeština
+              </option>
+<option value="/intl/da/"
+                  data-link-text="Dansk"
+                  data-link-url="/intl/da/"
+                  data-section-header="Footer links">
+                Dansk
+              </option>
+<option value="/intl/de/"
+                  data-link-text="Deutsch"
+                  data-link-url="/intl/de/"
+                  data-section-header="Footer links">
+                Deutsch
+              </option>
+<option value="/intl/el/"
+                  data-link-text="Ελληνικά"
+                  data-link-url="/intl/el/"
+                  data-section-header="Footer links">
+                Ελληνικά
+              </option>
+<option value="/intl/en-GB/"
+                  data-link-text="English (United Kingdom)"
+                  data-link-url="/intl/en-GB/"
+                  data-section-header="Footer links">
+                English (United Kingdom)
+              </option>
+<option value="/intl/es-419/"
+                  data-link-text="Español (Latinoamérica)"
+                  data-link-url="/intl/es-419/"
+                  data-section-header="Footer links">
+                Español (Latinoamérica)
+              </option>
+<option value="/intl/es/"
+                  data-link-text="Español"
+                  data-link-url="/intl/es/"
+                  data-section-header="Footer links">
+                Español
+              </option>
+<option value="/intl/fa/"
+                  data-link-text="فارسی"
+                  data-link-url="/intl/fa/"
+                  data-section-header="Footer links">
+                فارسی
+              </option>
+<option value="/intl/fi/"
+                  data-link-text="Suomi"
+                  data-link-url="/intl/fi/"
+                  data-section-header="Footer links">
+                Suomi
+              </option>
+<option value="/intl/fil/"
+                  data-link-text="Filipino"
+                  data-link-url="/intl/fil/"
+                  data-section-header="Footer links">
+                Filipino
+              </option>
+<option value="/intl/fr/"
+                  data-link-text="Français"
+                  data-link-url="/intl/fr/"
+                  data-section-header="Footer links">
+                Français
+              </option>
+<option value="/intl/hi/"
+                  data-link-text="हिन्दी"
+                  data-link-url="/intl/hi/"
+                  data-section-header="Footer links">
+                हिन्दी
+              </option>
+<option value="/intl/hr/"
+                  data-link-text="Hrvatski"
+                  data-link-url="/intl/hr/"
+                  data-section-header="Footer links">
+                Hrvatski
+              </option>
+<option value="/intl/hu/"
+                  data-link-text="Magyar"
+                  data-link-url="/intl/hu/"
+                  data-section-header="Footer links">
+                Magyar
+              </option>
+<option value="/intl/id/"
+                  data-link-text="Indonesia"
+                  data-link-url="/intl/id/"
+                  data-section-header="Footer links">
+                Indonesia
+              </option>
+<option value="/intl/it/"
+                  data-link-text="Italiano"
+                  data-link-url="/intl/it/"
+                  data-section-header="Footer links">
+                Italiano
+              </option>
+<option value="/intl/iw/"
+                  data-link-text="עברית (ישראל)"
+                  data-link-url="/intl/iw/"
+                  data-section-header="Footer links">
+                עברית (ישראל)
+              </option>
+<option value="/intl/ja/"
+                  data-link-text="日本語"
+                  data-link-url="/intl/ja/"
+                  data-section-header="Footer links">
+                日本語
+              </option>
+<option value="/intl/ko/"
+                  data-link-text="한국어"
+                  data-link-url="/intl/ko/"
+                  data-section-header="Footer links">
+                한국어
+              </option>
+<option value="/intl/lt/"
+                  data-link-text="Lietuvių"
+                  data-link-url="/intl/lt/"
+                  data-section-header="Footer links">
+                Lietuvių
+              </option>
+<option value="/intl/lv/"
+                  data-link-text="Latviešu"
+                  data-link-url="/intl/lv/"
+                  data-section-header="Footer links">
+                Latviešu
+              </option>
+<option value="/intl/mr/"
+                  data-link-text="मराठी"
+                  data-link-url="/intl/mr/"
+                  data-section-header="Footer links">
+                मराठी
+              </option>
+<option value="/intl/nl/"
+                  data-link-text="Nederlands"
+                  data-link-url="/intl/nl/"
+                  data-section-header="Footer links">
+                Nederlands
+              </option>
+<option value="/intl/no/"
+                  data-link-text="Norsk Bokmål (Norge)"
+                  data-link-url="/intl/no/"
+                  data-section-header="Footer links">
+                Norsk Bokmål (Norge)
+              </option>
+<option value="/intl/pl/"
+                  data-link-text="Polski"
+                  data-link-url="/intl/pl/"
+                  data-section-header="Footer links">
+                Polski
+              </option>
+<option value="/intl/pt-BR/"
+                  data-link-text="Português (Brasil)"
+                  data-link-url="/intl/pt-BR/"
+                  data-section-header="Footer links">
+                Português (Brasil)
+              </option>
+<option value="/intl/pt-PT/"
+                  data-link-text="Português (Portugal)"
+                  data-link-url="/intl/pt-PT/"
+                  data-section-header="Footer links">
+                Português (Portugal)
+              </option>
+<option value="/intl/ro/"
+                  data-link-text="Română"
+                  data-link-url="/intl/ro/"
+                  data-section-header="Footer links">
+                Română
+              </option>
+<option value="/intl/ru/"
+                  data-link-text="Русский"
+                  data-link-url="/intl/ru/"
+                  data-section-header="Footer links">
+                Русский
+              </option>
+<option value="/intl/sk/"
+                  data-link-text="Slovenčina"
+                  data-link-url="/intl/sk/"
+                  data-section-header="Footer links">
+                Slovenčina
+              </option>
+<option value="/intl/sl/"
+                  data-link-text="Slovenščina"
+                  data-link-url="/intl/sl/"
+                  data-section-header="Footer links">
+                Slovenščina
+              </option>
+<option value="/intl/sr/"
+                  data-link-text="Српски"
+                  data-link-url="/intl/sr/"
+                  data-section-header="Footer links">
+                Српски
+              </option>
+<option value="/intl/sv/"
+                  data-link-text="Svenska"
+                  data-link-url="/intl/sv/"
+                  data-section-header="Footer links">
+                Svenska
+              </option>
+<option value="/intl/ta/"
+                  data-link-text="தமிழ்"
+                  data-link-url="/intl/ta/"
+                  data-section-header="Footer links">
+                தமிழ்
+              </option>
+<option value="/intl/te/"
+                  data-link-text="తెలుగు"
+                  data-link-url="/intl/te/"
+                  data-section-header="Footer links">
+                తెలుగు
+              </option>
+<option value="/intl/th/"
+                  data-link-text="ไทย"
+                  data-link-url="/intl/th/"
+                  data-section-header="Footer links">
+                ไทย
+              </option>
+<option value="/intl/tr/"
+                  data-link-text="Türkçe"
+                  data-link-url="/intl/tr/"
+                  data-section-header="Footer links">
+                Türkçe
+              </option>
+<option value="/intl/uk/"
+                  data-link-text="Українська"
+                  data-link-url="/intl/uk/"
+                  data-section-header="Footer links">
+                Українська
+              </option>
+<option value="/intl/vi/"
+                  data-link-text="Tiếng Việt"
+                  data-link-url="/intl/vi/"
+                  data-section-header="Footer links">
+                Tiếng Việt
+              </option>
+<option value="/intl/zh-CN/"
+                  data-link-text="中文 (简体)"
+                  data-link-url="/intl/zh-CN/"
+                  data-section-header="Footer links">
+                中文 (简体)
+              </option>
+<option value="/intl/zh-TW/"
+                  data-link-text="中文 (繁體)"
+                  data-link-url="/intl/zh-TW/"
+                  data-section-header="Footer links">
+                中文 (繁體)
+              </option>
+          </select>
+        </li>
+      </ul>
+    </section>
+      <section class="glue-footer__global footer-copyrights">
+          <p class="footer-copyrights-text">Lens is also available in the Camera app of select Android devices.</p>
+      </section>
+  </div>
+</footer>
+      <script src="https://www.gstatic.com/external_hosted/greensock3/dist/gsap.min.js" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+      <script src="https://www.gstatic.com/external_hosted/greensock3/dist/CustomEase.min.js" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+      <script src="https://www.gstatic.com/external_hosted/greensock3/dist/Observer.min.js" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+      <script src="https://www.gstatic.com/external_hosted/greensock3/dist/ScrollToPlugin.min.js" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+      <script src="https://www.gstatic.com/external_hosted/greensock3/dist/ScrollTrigger.min.js" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+    <script src="/static/compiled/index.min.js?cache=e05643f" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+    <script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js"
+          data-glue-cookie-notification-bar-category="2B"
+          data-glue-cookie-notification-bar-site-id="lens.google" nonce="MVC5yQ4fGI32vO8ICQZKUQ"></script>
+  </body>
+</html>
