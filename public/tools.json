@@ -5489,6 +5489,27 @@
         "pros": [],
         "cons": [],
         "iconUrl": "https://sloyd.ai/favicon.svg"
+      },
+      {
+        "name": "3DFY",
+        "description": "AI-generated 3D models at scale for e-commerce.",
+        "link": "https://3dfy.ai/",
+        "tags": [
+          "Paid",
+          "E-commerce"
+        ],
+        "iconUrl": "https://3dfy.ai/favicon.ico",
+        "about": "3DFY generates 3D models from images for e-commerce product visualization, AR experiences, and virtual showrooms.",
+        "pros": [
+          "Designed for e-commerce",
+          "Scalable",
+          "AR-ready outputs"
+        ],
+        "cons": [
+          "Enterprise focus",
+          "Pricing unclear",
+          "Requires good input images"
+        ]
       }
     ]
   },
@@ -5602,6 +5623,48 @@
           "Multiple components to learn.",
           "Azure‑biased samples.",
           "Dev‑centric setup."
+        ]
+      },
+      {
+        "name": "Anthropic Claude",
+        "description": "Constitutional AI focused on safety and alignment.",
+        "link": "https://www.anthropic.com/",
+        "tags": [
+          "Paid",
+          "Safety-Focused"
+        ],
+        "iconUrl": "https://www.anthropic.com/favicon.ico",
+        "about": "Anthropic's Claude is built with Constitutional AI principles, prioritizing safety, honesty, and reduced harmful outputs in LLM responses.",
+        "pros": [
+          "Safety-focused design",
+          "Reduced hallucinations",
+          "Transparent development"
+        ],
+        "cons": [
+          "More conservative outputs",
+          "API access only",
+          "Newer platform"
+        ]
+      },
+      {
+        "name": "AI Fairness 360",
+        "description": "IBM's open-source toolkit for detecting and mitigating bias.",
+        "link": "https://aif360.mybluemix.net/",
+        "tags": [
+          "Open Source",
+          "IBM"
+        ],
+        "iconUrl": "https://aif360.mybluemix.net/favicon.ico",
+        "about": "AI Fairness 360 by IBM provides metrics and algorithms to check for and mitigate bias in ML models across the development lifecycle.",
+        "pros": [
+          "Comprehensive toolkit",
+          "IBM-backed",
+          "Well-documented"
+        ],
+        "cons": [
+          "Requires technical expertise",
+          "Python-focused",
+          "Learning curve"
         ]
       }
     ]
@@ -6038,6 +6101,70 @@
           "Requires a paid subscription for most valuable features.",
           "AI predictions are not financial advice and carry inherent risk.",
           "The amount of information can be overwhelming for new investors."
+        ]
+      },
+      {
+        "name": "ChainGPT",
+        "description": "AI infrastructure for crypto and blockchain applications.",
+        "link": "https://chaingpt.org/",
+        "tags": [
+          "Paid",
+          "Blockchain"
+        ],
+        "iconUrl": "https://chaingpt.org/favicon.ico",
+        "about": "ChainGPT provides AI tools for crypto analysis, smart contract development, NFT generation, and blockchain security audits.",
+        "pros": [
+          "Crypto-native AI",
+          "Multiple tools",
+          "Smart contract assistance"
+        ],
+        "cons": [
+          "Requires crypto knowledge",
+          "Token-based access",
+          "Niche use case"
+        ]
+      },
+      {
+        "name": "Numerai",
+        "description": "Crowdsourced hedge fund powered by ML and crypto.",
+        "link": "https://numer.ai/",
+        "tags": [
+          "Free",
+          "Trading",
+          "Data Science"
+        ],
+        "iconUrl": "https://numer.ai/favicon.ico",
+        "about": "Numerai is a hedge fund where data scientists build ML models to predict stock market, earning cryptocurrency for good predictions.",
+        "pros": [
+          "Earn crypto for predictions",
+          "Data science competition",
+          "Unique model"
+        ],
+        "cons": [
+          "Complex concept",
+          "Requires ML skills",
+          "Earnings vary greatly"
+        ]
+      },
+      {
+        "name": "Crypto.com AI",
+        "description": "AI-powered cryptocurrency trading insights.",
+        "link": "https://crypto.com/",
+        "tags": [
+          "Freemium",
+          "Trading"
+        ],
+        "iconUrl": "https://crypto.com/favicon.ico",
+        "about": "Crypto.com integrates AI for market analysis, trading signals, and portfolio insights within their cryptocurrency exchange platform.",
+        "pros": [
+          "Integrated with exchange",
+          "Market insights",
+          "Multiple crypto assets"
+        ],
+        "cons": [
+          "Requires Crypto.com account",
+          "AI features limited",
+          "Trading risks"
         ]
       }
     ]
@@ -8110,6 +8237,91 @@
           "Suggestions may need review."
         ],
         "iconUrl": "https://verifywise.ai/favicon.svg"
+      },
+      {
+        "name": "Casetext CoCounsel",
+        "description": "AI legal assistant for research and document drafting.",
+        "link": "https://casetext.com/cocounsel",
+        "tags": [
+          "Paid",
+          "Legal Research"
+        ],
+        "iconUrl": "https://casetext.com/favicon.ico",
+        "about": "CoCounsel uses GPT-4 to assist lawyers with legal research, document review, and drafting. Provides case law analysis and contract review.",
+        "pros": [
+          "Powered by GPT-4",
+          "Legal-specific training",
+          "Good for research"
+        ],
+        "cons": [
+          "Expensive subscription",
+          "US law focus",
+          "Requires legal expertise to verify"
+        ]
+      },
+      {
+        "name": "DoNotPay",
+        "description": "AI-powered consumer legal assistance and automation.",
+        "link": "https://donotpay.com/",
+        "tags": [
+          "Freemium",
+          "Consumer"
+        ],
+        "iconUrl": "https://donotpay.com/favicon.ico",
+        "about": "DoNotPay automates consumer legal tasks like ticket appeals, refunds, and small claims with AI-powered form generation and negotiation.",
+        "pros": [
+          "Affordable",
+          "Many use cases",
+          "Easy to use"
+        ],
+        "cons": [
+          "Limited to certain jurisdictions",
+          "Not for complex legal issues",
+          "Effectiveness varies"
+        ]
+      },
+      {
+        "name": "Legal Robot",
+        "description": "AI contract analysis and simplification tool.",
+        "link": "https://www.legalrobot.com/",
+        "tags": [
+          "Freemium",
+          "Contracts"
+        ],
+        "iconUrl": "https://www.legalrobot.com/favicon.ico",
+        "about": "Legal Robot uses AI to analyze legal documents, identify issues, and provide plain language explanations of contracts and terms.",
+        "pros": [
+          "Makes legal language accessible",
+          "Contract analysis",
+          "Educational value"
+        ],
+        "cons": [
+          "Not a lawyer replacement",
+          "Limited to certain document types",
+          "Accuracy varies"
+        ]
+      },
+      {
+        "name": "Relativity",
+        "description": "AI-powered e-discovery and legal document review.",
+        "link": "https://www.relativity.com/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "E-Discovery"
+        ],
+        "iconUrl": "https://www.relativity.com/favicon.ico",
+        "about": "Relativity provides AI-powered e-discovery, document review, and legal hold management for law firms and corporations.",
+        "pros": [
+          "Industry standard",
+          "Comprehensive features",
+          "Good for large cases"
+        ],
+        "cons": [
+          "Very expensive",
+          "Complex to use",
+          "Requires training"
+        ]
       }
     ]
   },
@@ -9104,6 +9316,71 @@
           "Limited voice customization in free tier",
           "Can be expensive for individual users"
         ]
+      },
+      {
+        "name": "Deepgram",
+        "description": "Advanced speech-to-text API with real-time transcription.",
+        "link": "https://deepgram.com/",
+        "tags": [
+          "Paid",
+          "API",
+          "Enterprise"
+        ],
+        "iconUrl": "https://deepgram.com/favicon.ico",
+        "about": "Deepgram provides highly accurate speech recognition APIs built on deep learning. Offers real-time and batch transcription with speaker diarization and custom model training.",
+        "pros": [
+          "High accuracy",
+          "Real-time processing",
+          "Custom model training"
+        ],
+        "cons": [
+          "Requires API integration",
+          "Usage-based pricing",
+          "Technical setup needed"
+        ]
+      },
+      {
+        "name": "WellSaid Labs",
+        "description": "Professional AI voice-over studio.",
+        "link": "https://wellsaidlabs.com/",
+        "tags": [
+          "Paid",
+          "Voiceover"
+        ],
+        "iconUrl": "https://wellsaidlabs.com/favicon.ico",
+        "about": "WellSaid Labs provides studio-quality AI voice-overs for videos, e-learning, and presentations with real-sounding voices.",
+        "pros": [
+          "Professional quality",
+          "Multiple voice options",
+          "Commercial license included"
+        ],
+        "cons": [
+          "Subscription required",
+          "Limited customization",
+          "Expensive for individuals"
+        ]
+      },
+      {
+        "name": "Replica Studios",
+        "description": "AI voice actors for games, film, and VR.",
+        "link": "https://replicastudios.com/",
+        "tags": [
+          "Paid",
+          "Gaming",
+          "Entertainment"
+        ],
+        "iconUrl": "https://replicastudios.com/favicon.ico",
+        "about": "Replica provides AI voice acting for games, virtual reality, and animation with a library of voice actors and emotion control.",
+        "pros": [
+          "High-quality voice acting",
+          "Emotion and style control",
+          "Good for game development"
+        ],
+        "cons": [
+          "Subscription model",
+          "Limited to certain use cases",
+          "Ethical considerations"
+        ]
       }
     ]
   },
@@ -9799,6 +10076,71 @@
           "Can be overwhelming for small teams",
           "Requires training to maximize value"
         ]
+      },
+      {
+        "name": "Clari",
+        "description": "AI-powered revenue operations and forecasting platform.",
+        "link": "https://www.clari.com/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "Forecasting"
+        ],
+        "iconUrl": "https://www.clari.com/favicon.ico",
+        "about": "Clari uses AI to provide revenue forecasting, pipeline management, and sales execution insights for B2B sales teams.",
+        "pros": [
+          "Accurate forecasting",
+          "Pipeline visibility",
+          "Executive dashboards"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Complex setup",
+          "Requires CRM data"
+        ]
+      },
+      {
+        "name": "Chorus.ai",
+        "description": "Conversation intelligence for sales teams.",
+        "link": "https://www.chorus.ai/",
+        "tags": [
+          "Paid",
+          "Conversation Analytics"
+        ],
+        "iconUrl": "https://www.chorus.ai/favicon.ico",
+        "about": "Chorus.ai (now ZoomInfo) captures and analyzes sales conversations to provide coaching, deal intelligence, and market insights.",
+        "pros": [
+          "Deep conversation analysis",
+          "Deal insights",
+          "Team performance tracking"
+        ],
+        "cons": [
+          "Expensive",
+          "Requires adoption across team",
+          "Part of ZoomInfo now"
+        ]
+      },
+      {
+        "name": "People.ai",
+        "description": "AI revenue operations and intelligence platform.",
+        "link": "https://people.ai/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "RevOps"
+        ],
+        "iconUrl": "https://people.ai/favicon.ico",
+        "about": "People.ai automatically captures and analyzes revenue activities to provide insights on pipeline, forecasting, and team performance.",
+        "pros": [
+          "Automatic activity capture",
+          "Revenue insights",
+          "Good integrations"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Complex platform",
+          "Requires buy-in"
+        ]
       }
     ]
   },
@@ -10243,6 +10585,48 @@
           "Limited customization in free tier",
           "AI can struggle with complex queries"
         ]
+      },
+      {
+        "name": "Bloomreach",
+        "description": "AI-powered commerce experience cloud.",
+        "link": "https://www.bloomreach.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.bloomreach.com/favicon.ico",
+        "about": "Bloomreach combines AI-powered search, merchandising, content, and customer data for personalized e-commerce experiences.",
+        "pros": [
+          "Comprehensive platform",
+          "Strong personalization",
+          "Scalable"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Complex implementation",
+          "Overkill for small stores"
+        ]
+      },
+      {
+        "name": "Vue.ai",
+        "description": "AI-powered visual merchandising and product recommendations.",
+        "link": "https://vue.ai/",
+        "tags": [
+          "Paid",
+          "Visual AI"
+        ],
+        "iconUrl": "https://vue.ai/favicon.ico",
+        "about": "Vue.ai uses computer vision and AI to automate product tagging, visual merchandising, and personalized recommendations for fashion retail.",
+        "pros": [
+          "Automated product tagging",
+          "Visual search",
+          "Fashion-focused"
+        ],
+        "cons": [
+          "Fashion/apparel focus",
+          "Enterprise pricing",
+          "Requires good product images"
+        ]
       }
     ]
   },
@@ -10525,6 +10909,69 @@
           "Suggestions may need review."
         ],
         "iconUrl": "icons/github-ai-projects/ray.png"
+      },
+      {
+        "name": "AutoGPT",
+        "description": "Autonomous AI agent framework for task completion.",
+        "link": "https://github.com/Significant-Gravitas/AutoGPT",
+        "tags": [
+          "Open Source",
+          "Autonomous"
+        ],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "AutoGPT is an experimental open-source application showcasing GPT-4's capabilities in autonomous task completion with minimal human intervention.",
+        "pros": [
+          "Fully open source",
+          "Autonomous capabilities",
+          "Active development"
+        ],
+        "cons": [
+          "Experimental",
+          "Requires technical setup",
+          "Can be expensive to run"
+        ]
+      },
+      {
+        "name": "LangChain",
+        "description": "Framework for building LLM-powered applications.",
+        "link": "https://github.com/langchain-ai/langchain",
+        "tags": [
+          "Open Source",
+          "Framework"
+        ],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "LangChain is a framework for developing applications powered by language models, with tools for chains, agents, and memory.",
+        "pros": [
+          "Comprehensive framework",
+          "Active community",
+          "Well-documented"
+        ],
+        "cons": [
+          "Requires programming knowledge",
+          "Complexity can grow",
+          "Breaking changes"
+        ]
+      },
+      {
+        "name": "Llama.cpp",
+        "description": "Run LLaMA models locally in C/C++ with high efficiency.",
+        "link": "https://github.com/ggerganov/llama.cpp",
+        "tags": [
+          "Open Source",
+          "Local"
+        ],
+        "iconUrl": "https://github.com/favicon.ico",
+        "about": "Llama.cpp enables efficient local inference of LLaMA models on consumer hardware without requiring GPU or extensive resources.",
+        "pros": [
+          "Runs locally",
+          "No API costs",
+          "Efficient implementation"
+        ],
+        "cons": [
+          "Requires technical knowledge",
+          "Setup complexity",
+          "Limited by hardware"
+        ]
       }
     ]
   },
@@ -11554,6 +12001,49 @@
           "Less suitable for casual users",
           "Can be overwhelming for small projects"
         ]
+      },
+      {
+        "name": "RWS Language Weaver",
+        "description": "Enterprise neural machine translation platform.",
+        "link": "https://www.rws.com/language-weaver/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "Privacy"
+        ],
+        "iconUrl": "https://www.rws.com/favicon.ico",
+        "about": "Language Weaver offers secure, on-premise neural machine translation for enterprises with customizable industry-specific models.",
+        "pros": [
+          "On-premise option",
+          "Customizable models",
+          "High security"
+        ],
+        "cons": [
+          "Enterprise only",
+          "Complex deployment",
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Phrase Localization",
+        "description": "Cloud-based translation and localization platform.",
+        "link": "https://phrase.com/",
+        "tags": [
+          "Freemium",
+          "Cloud"
+        ],
+        "iconUrl": "https://phrase.com/favicon.ico",
+        "about": "Phrase (formerly Memsource) provides cloud-based translation management with AI assistance, CAT tools, and collaboration features.",
+        "pros": [
+          "Good collaboration features",
+          "Cloud-based",
+          "Affordable tiers"
+        ],
+        "cons": [
+          "Can be complex",
+          "Learning curve for translators",
+          "Some features require higher tiers"
+        ]
       }
     ]
   },
@@ -11676,6 +12166,48 @@
           "Subscription required",
           "Network effect takes time to build",
           "Can be overwhelming initially"
+        ]
+      },
+      {
+        "name": "Obsidian with AI plugins",
+        "description": "Extensible markdown knowledge base with AI capabilities.",
+        "link": "https://obsidian.md/",
+        "tags": [
+          "Freemium",
+          "Markdown"
+        ],
+        "iconUrl": "https://obsidian.md/favicon.ico",
+        "about": "Obsidian is a powerful markdown-based knowledge base that becomes AI-enhanced through plugins for GPT integration, smart search, and content generation.",
+        "pros": [
+          "Highly customizable",
+          "Local-first",
+          "Strong community"
+        ],
+        "cons": [
+          "Learning curve",
+          "AI requires plugins",
+          "Sync costs extra"
+        ]
+      },
+      {
+        "name": "Glasp",
+        "description": "Social web highlighter and AI-powered note-taking.",
+        "link": "https://glasp.co/",
+        "tags": [
+          "Free",
+          "Social"
+        ],
+        "iconUrl": "https://glasp.co/favicon.ico",
+        "about": "Glasp allows highlighting web content, creating notes, and using AI to summarize articles with a social learning community aspect.",
+        "pros": [
+          "Free to use",
+          "Social features",
+          "AI summaries"
+        ],
+        "cons": [
+          "Limited to web content",
+          "Social aspect may not appeal to all",
+          "Basic features"
         ]
       }
     ]
@@ -11800,6 +12332,27 @@
           "Learning period for AI",
           "Limited manual override options"
         ]
+      },
+      {
+        "name": "Vimcal",
+        "description": "Fast, AI-enhanced calendar for busy professionals.",
+        "link": "https://www.vimcal.com/",
+        "tags": [
+          "Freemium",
+          "Speed"
+        ],
+        "iconUrl": "https://www.vimcal.com/favicon.ico",
+        "about": "Vimcal is a lightning-fast calendar with AI features for scheduling, time zone handling, and meeting analytics designed for busy professionals.",
+        "pros": [
+          "Very fast",
+          "Keyboard shortcuts",
+          "Time zone features"
+        ],
+        "cons": [
+          "Free tier limited",
+          "Learning curve",
+          "Desktop-focused"
+        ]
       }
     ]
   },
@@ -11922,6 +12475,48 @@
           "Requires internet connection",
           "Limited offline capabilities",
           "Paid plans for advanced features"
+        ]
+      },
+      {
+        "name": "Cleanvoice",
+        "description": "AI-powered podcast editing to remove filler words and silence.",
+        "link": "https://cleanvoice.ai/",
+        "tags": [
+          "Paid",
+          "Editing"
+        ],
+        "iconUrl": "https://cleanvoice.ai/favicon.ico",
+        "about": "Cleanvoice uses AI to automatically remove filler words, mouth sounds, and dead air from podcast recordings.",
+        "pros": [
+          "Saves editing time",
+          "Removes filler words",
+          "Background noise removal"
+        ],
+        "cons": [
+          "Subscription required",
+          "Can be overly aggressive",
+          "Needs review"
+        ]
+      },
+      {
+        "name": "Headliner",
+        "description": "AI-powered podcast-to-video and audiogram creation.",
+        "link": "https://www.headliner.app/",
+        "tags": [
+          "Freemium",
+          "Video Creation"
+        ],
+        "iconUrl": "https://www.headliner.app/favicon.ico",
+        "about": "Headliner converts podcast audio into engaging videos, audiograms, and social media clips with automated transcription and waveforms.",
+        "pros": [
+          "Easy video creation",
+          "Social media optimized",
+          "Templates available"
+        ],
+        "cons": [
+          "Free tier has watermark",
+          "Limited customization",
+          "Export quality varies"
         ]
       }
     ]
@@ -12046,6 +12641,48 @@
           "Higher price for small users",
           "May be complex for simple needs"
         ]
+      },
+      {
+        "name": "Flick",
+        "description": "AI assistant for Instagram and social media marketing.",
+        "link": "https://www.flick.tech/",
+        "tags": [
+          "Paid",
+          "Instagram"
+        ],
+        "iconUrl": "https://www.flick.tech/favicon.ico",
+        "about": "Flick provides AI-powered caption writing, hashtag research, and content planning specifically for Instagram marketing.",
+        "pros": [
+          "Instagram-focused",
+          "Hashtag analytics",
+          "Content planning"
+        ],
+        "cons": [
+          "Subscription required",
+          "Mainly for Instagram",
+          "Learning curve"
+        ]
+      },
+      {
+        "name": "Lately",
+        "description": "AI social media content generator from long-form content.",
+        "link": "https://www.lately.ai/",
+        "tags": [
+          "Paid",
+          "Content Repurposing"
+        ],
+        "iconUrl": "https://www.lately.ai/favicon.ico",
+        "about": "Lately uses AI to automatically generate dozens of social media posts from blogs, podcasts, videos, and other long-form content.",
+        "pros": [
+          "Repurposes existing content",
+          "Learns brand voice",
+          "Multi-platform"
+        ],
+        "cons": [
+          "Expensive",
+          "Needs good source content",
+          "Requires editing"
+        ]
       }
     ]
   },
@@ -12169,6 +12806,27 @@
           "Template-based approach",
           "Limited unique designs"
         ]
+      },
+      {
+        "name": "Namecheap Logo Maker",
+        "description": "Free AI logo generator integrated with domain services.",
+        "link": "https://www.namecheap.com/logo-maker/",
+        "tags": [
+          "Freemium",
+          "Simple"
+        ],
+        "iconUrl": "https://www.namecheap.com/favicon.ico",
+        "about": "Namecheap's AI logo maker provides free logo design with optional paid high-resolution downloads, integrated with their domain services.",
+        "pros": [
+          "Free basic version",
+          "Easy to use",
+          "Domain integration"
+        ],
+        "cons": [
+          "Basic features",
+          "Pay for high-res",
+          "Limited customization"
+        ]
       }
     ]
   },
@@ -12291,6 +12949,48 @@
           "Premium pricing",
           "Business-focused, not artistic",
           "Video-centric, not static images"
+        ]
+      },
+      {
+        "name": "Lalaland.ai",
+        "description": "AI-generated fashion models and virtual influencers.",
+        "link": "https://lalaland.ai/",
+        "tags": [
+          "Paid",
+          "Fashion"
+        ],
+        "iconUrl": "https://lalaland.ai/favicon.ico",
+        "about": "Lalaland creates diverse, realistic AI fashion models for e-commerce product photography without traditional photoshoots.",
+        "pros": [
+          "Diverse model representation",
+          "Cost-effective for fashion",
+          "High quality"
+        ],
+        "cons": [
+          "Fashion industry focus",
+          "Subscription model",
+          "Limited to product photography"
+        ]
+      },
+      {
+        "name": "Hour One",
+        "description": "AI presenter and virtual human platform.",
+        "link": "https://hourone.ai/",
+        "tags": [
+          "Paid",
+          "Virtual Presenters"
+        ],
+        "iconUrl": "https://hourone.ai/favicon.ico",
+        "about": "Hour One creates AI-powered virtual presenters for videos, training, and corporate communications with customizable characters.",
+        "pros": [
+          "Professional virtual presenters",
+          "Multilingual",
+          "Enterprise features"
+        ],
+        "cons": [
+          "Expensive",
+          "Uncanny valley effect",
+          "Limited emotional range"
         ]
       }
     ]
