@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2025-11-08T11:46:16.759Z",
+  "generatedAt": "2025-11-09T05:51:06.863Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 93039,
-          "forks": 10484,
-          "openIssues": 3109,
+          "stars": 93080,
+          "forks": 10490,
+          "openIssues": 3111,
           "commitCount90": 100,
-          "daysSinceRelease": 3
+          "daysSinceRelease": 4
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.4759,
+      "signalsRaw": 4.473,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -24,8 +24,8 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 41952,
-          "forks": 5339,
+          "stars": 41956,
+          "forks": 5338,
           "openIssues": 300,
           "commitCount90": 0,
           "daysSinceRelease": null
@@ -34,7 +34,7 @@
         "pypi": null
       },
       "signalsRaw": 3.3328,
-      "signalsNorm": 74.46,
+      "signalsNorm": 74.51,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -68,13 +68,13 @@
           "forks": 346,
           "openIssues": 55,
           "commitCount90": 0,
-          "daysSinceRelease": 549
+          "daysSinceRelease": 550
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.4549,
-      "signalsNorm": 54.85,
+      "signalsRaw": 2.4548,
+      "signalsNorm": 54.88,
       "mpScore": 75.47169811320755,
       "freqScore": 10,
       "usersScore": 100,
@@ -154,7 +154,7 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 11849,
+          "stars": 11853,
           "forks": 1023,
           "openIssues": 311,
           "commitCount90": 0,
@@ -163,7 +163,7 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.8958
+      "signalsRaw": 2.8959
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32379,
+          "stars": 32380,
           "forks": 1632,
           "openIssues": 273,
           "commitCount90": 12,
-          "daysSinceRelease": 44
+          "daysSinceRelease": 45
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.7238,
-      "signalsNorm": 83.2,
+      "signalsRaw": 3.7223,
+      "signalsNorm": 83.22,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -206,13 +206,13 @@
           "forks": 461,
           "openIssues": 70,
           "commitCount90": 0,
-          "daysSinceRelease": 1047
+          "daysSinceRelease": 1048
         },
         "npm": null,
         "pypi": null
       },
       "signalsRaw": 2.5725,
-      "signalsNorm": 57.47,
+      "signalsNorm": 57.51,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,25 +222,25 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 90537,
-          "forks": 11345,
+          "stars": 90579,
+          "forks": 11347,
           "openIssues": 104,
           "commitCount90": 0,
-          "daysSinceRelease": 135
+          "daysSinceRelease": 136
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.7023
+      "signalsRaw": 3.7019
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 13582,
+          "stars": 13584,
           "forks": 1602,
           "openIssues": 576,
           "commitCount90": 5,
-          "daysSinceRelease": 565
+          "daysSinceRelease": 566
         },
         "npm": null,
         "pypi": null
@@ -250,11 +250,11 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 43352,
+          "stars": 43362,
           "forks": 5745,
           "openIssues": 12,
           "commitCount90": 0,
-          "daysSinceRelease": 697
+          "daysSinceRelease": 698
         },
         "npm": null,
         "pypi": null
@@ -659,7 +659,7 @@
       "signalsRaw": 0,
       "signalsNorm": 0,
       "mpScore": 33.9622641509434,
-      "freqScore": 0,
+      "freqScore": 10,
       "usersScore": 0,
       "popularityScore": 0,
       "isOpenSource": true
