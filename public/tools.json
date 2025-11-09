@@ -546,7 +546,7 @@
           "May require fact‑checking.",
           "Quality varies by prompt."
         ],
-        "iconUrl": "https://getleon.ai/img/favicon.png"
+        "iconUrl": "icons/most-popular/leon.png"
       },
       {
         "name": "Leonardo Ai",
@@ -716,7 +716,7 @@
         "cons": [
           "Requires setup and maintenance."
         ],
-        "iconUrl": "https://mlflow.org/img/mlflow-favicon.ico"
+        "iconUrl": "icons/most-popular/mlflow.ico"
       },
       {
         "name": "NightCafe",
@@ -999,7 +999,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://www.sim.ai/favicon/favicon.ico"
+        "iconUrl": "icons/most-popular/sim.ico"
       },
       {
         "name": "Suno AI",
@@ -1042,7 +1042,7 @@
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
-        "iconUrl": "https://supabase.com/favicon/favicon-16x16.png"
+        "iconUrl": "icons/most-popular/supabase.png"
       },
       {
         "name": "Synthesia",
@@ -3018,6 +3018,27 @@
         "pros": [],
         "cons": [],
         "iconUrl": "icons/code-assistance/librechat.png"
+      },
+      {
+        "name": "nocobase",
+        "description": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
+        "link": "https://www.nocobase.com",
+        "tags": [
+          "developer-tools",
+          "design",
+          "open-source",
+          "Open Source"
+        ],
+        "about": "NocoBase is an AI-driven lightweight, extremely extensible open source no-code and low-code development platform. Quickly deploy to gain a private, controllable no-code solution!",
+        "pros": [
+          "Open source and extensible.",
+          "Boosts developer productivity."
+        ],
+        "cons": [
+          "Requires setup and maintenance.",
+          "Suggestions may need review."
+        ],
+        "iconUrl": "https://www.nocobase.com/images/favicon/apple-touch-icon.png"
       },
       {
         "name": "OpenSpec",
@@ -5092,7 +5113,7 @@
           "Adaptive Learning",
           "K-12"
         ],
-        "iconUrl": "https://www.century.tech/favicon.ico",
+        "iconUrl": "icons/education/century-tech.ico",
         "about": "Century Tech focuses on rapid and automated formative assessments, mastery analytics, and adaptive learning paths with ongoing feedback for students and actionable insights for teachers.",
         "pros": [
           "Personalized learning paths",
@@ -5225,7 +5246,7 @@
           "Transcription",
           "Note-taking"
         ],
-        "iconUrl": "https://otter.ai/favicon.ico",
+        "iconUrl": "icons/education/otter-ai.ico",
         "about": "Otter.ai automates transcription and note-taking for classroom recordings and meetings. It provides searchable transcripts, making it easy for students to review lectures and find specific information quickly.",
         "pros": [
           "Accurate transcription",
@@ -5269,7 +5290,7 @@
           "Writing",
           "Paraphrasing"
         ],
-        "iconUrl": "https://quillbot.com/favicon.ico",
+        "iconUrl": "icons/education/quillbot.ico",
         "about": "Quillbot is an AI writing assistant providing real-time feedback, grammar checks, paraphrasing, and suggestions. It's invaluable for student assignments and improving writing quality across academic contexts.",
         "pros": [
           "Excellent paraphrasing tool",
@@ -5313,7 +5334,7 @@
           "Homework Help",
           "K-12"
         ],
-        "iconUrl": "https://socratic.org/favicon.ico",
+        "iconUrl": "icons/education/socratic-by-google.ico",
         "about": "Socratic uses AI to guide students to answers for science, math, and more with visual explanations and step-by-step walkthroughs. It helps students understand concepts rather than just providing answers.",
         "pros": [
           "Completely free",
@@ -7536,7 +7557,7 @@
           "Medical Imaging",
           "Radiology"
         ],
-        "iconUrl": "https://www.aidoc.com/favicon.ico",
+        "iconUrl": "icons/healthcare-medical-ai/aidoc.ico",
         "about": "Aidoc provides FDA-cleared AI-powered radiology solutions for medical imaging that flags urgent findings in CT scans, MRI, and X-rays. It integrates directly with PACS and helps radiologists detect anomalies quickly, cutting image interpretation time and reducing missed diagnoses.",
         "pros": [
           "FDA-cleared for medical use",
@@ -7627,7 +7648,7 @@
           "Enterprise",
           "Clinical Support"
         ],
-        "iconUrl": "https://www.ibm.com/favicon.ico",
+        "iconUrl": "icons/healthcare-medical-ai/ibm-watson-health.ico",
         "about": "IBM Watson Health (now Merative) uses natural language processing to analyze medical records and structured/unstructured data for clinical decision support, analytics, oncology treatment planning, and population health management. Widely adopted for enterprise-scale decision support in large hospitals.",
         "pros": [
           "Advanced NLP for medical records",
@@ -7792,7 +7813,7 @@
           "Expense Management",
           "Receipts"
         ],
-        "iconUrl": "https://www.expensify.com/favicon.ico",
+        "iconUrl": "icons/finance-accounting/expensify.ico",
         "about": "Expensify is known for receipt scanning, automated expense tracking, and reimbursement reminders. It integrates with major accounting platforms, making expense submission and approval much easier for teams of all sizes.",
         "pros": [
           "Excellent receipt scanning",
@@ -7835,7 +7856,7 @@
           "Invoicing",
           "Small Business"
         ],
-        "iconUrl": "https://www.freshbooks.com/favicon.ico",
+        "iconUrl": "icons/finance-accounting/freshbooks.ico",
         "about": "FreshBooks is easy for freelancers and service businesses, providing AI-driven payment tracking and expense categorization, wrapped in a user-friendly interface. Perfect for solo entrepreneurs and small service-based businesses.",
         "pros": [
           "Very user-friendly",
@@ -7970,7 +7991,7 @@
           "Cloud Accounting",
           "Automation"
         ],
-        "iconUrl": "https://www.xero.com/favicon.ico",
+        "iconUrl": "icons/finance-accounting/xero.ico",
         "about": "Xero is highly rated for its cloud-based automation of data entry, invoice matching, and reconciliation. Its design makes collaboration and integration with 700+ apps straightforward, appealing to tech-savvy accountants and small businesses.",
         "pros": [
           "Excellent bank reconciliation",
@@ -7993,7 +8014,7 @@
           "Cloud Accounting",
           "Analytics"
         ],
-        "iconUrl": "https://www.zoho.com/favicon.ico",
+        "iconUrl": "icons/finance-accounting/zoho-books.ico",
         "about": "Zoho Books offers smart automation for invoice handling, predictive analytics, and global team support. Seamless integration with other Zoho products is an advantage for teams using a broader Zoho ecosystem.",
         "pros": [
           "Affordable pricing",
@@ -8046,7 +8067,7 @@
           "Sourcing",
           "Automation"
         ],
-        "iconUrl": "https://fetcher.ai/favicon.ico",
+        "iconUrl": "icons/hr-recruitment/fetcher.ico",
         "about": "Fetcher is an automated sourcing platform that uses AI to find, qualify, and reach out to passive candidates. It streamlines top-of-funnel recruitment for hard-to-fill roles by automating initial sourcing and outreach with personalized messaging.",
         "pros": [
           "Excellent for expanding talent pools",
@@ -8091,7 +8112,7 @@
           "Video Interview",
           "Assessment"
         ],
-        "iconUrl": "https://www.hirevue.com/favicon.ico",
+        "iconUrl": "icons/hr-recruitment/hirevue.ico",
         "about": "HireVue is an AI-powered platform for video interviewing and candidate assessments. It analyzes candidate responses, tone, and engagement to assess fit, automatically scores interviews, and streamlines communication, helping reduce bias and save recruiter time.",
         "pros": [
           "Reduces unconscious bias in hiring",
@@ -8159,7 +8180,7 @@
           "Writing",
           "Diversity"
         ],
-        "iconUrl": "https://textio.com/favicon.ico",
+        "iconUrl": "icons/hr-recruitment/textio.png",
         "about": "Textio uses AI to augment job descriptions and communications to be more inclusive. It reduces bias in language, offers real-time suggestions for improving postings, and increases candidate diversity through data-driven writing guidance.",
         "pros": [
           "Reduces unconscious bias in job postings",
@@ -8182,7 +8203,7 @@
           "ATS",
           "Automation"
         ],
-        "iconUrl": "https://www.workable.com/favicon.ico",
+        "iconUrl": "icons/hr-recruitment/workable.ico",
         "about": "Workable is an all-in-one recruitment platform with built-in AI for resume parsing, automated candidate shortlisting and matching, plus workflow automations for sourcing and interview coordination. Strong for SMBs due to ease of use and integrations.",
         "pros": [
           "User-friendly interface",
@@ -8213,7 +8234,7 @@
           "Voice Cloning",
           "Text-to-Speech"
         ],
-        "iconUrl": "https://elevenlabs.io/favicon.ico",
+        "iconUrl": "icons/voice-speech-ai/elevenlabs.ico",
         "about": "ElevenLabs is a cutting-edge AI voice synthesis platform that creates incredibly realistic, expressive voices. It offers advanced voice cloning capabilities with minimal sample requirements and supports multiple languages, making it ideal for content creators, dubbing, gaming, and localization.",
         "pros": [
           "Exceptionally realistic and expressive voice output",
@@ -8306,7 +8327,7 @@
           "Text-to-Speech",
           "API"
         ],
-        "iconUrl": "https://play.ht/favicon.ico",
+        "iconUrl": "icons/voice-speech-ai/play-ht.ico",
         "about": "Play.ht is an AI-powered text-to-speech platform offering 900+ AI voices with high-accuracy voice cloning and strong audio editing controls. Its low-latency TTS API and multilingual support make it particularly useful for blog, podcast, and publishing workflows.",
         "pros": [
           "Massive library of 900+ voices",
@@ -8329,7 +8350,7 @@
           "Voice Cloning",
           "API"
         ],
-        "iconUrl": "https://www.resemble.ai/favicon.ico",
+        "iconUrl": "icons/voice-speech-ai/resemble-ai.ico",
         "about": "Resemble AI specializes in real-time voice conversion and voice cloning APIs, making it a favorite among developers and creative professionals who need bespoke voices for their applications. It offers neural voice synthesis with emotional control and accent adaptation.",
         "pros": [
           "Real-time voice synthesis capabilities",
@@ -8352,7 +8373,7 @@
           "Text-to-Speech",
           "Accessibility"
         ],
-        "iconUrl": "https://speechify.com/favicon.ico",
+        "iconUrl": "icons/voice-speech-ai/speechify.ico",
         "about": "Speechify is a popular text-to-speech tool known for its natural-sounding narration and accessibility features. It's widely used for audiobooks, educational content, and productivity, supporting multiple platforms including web, mobile, and browser extensions.",
         "pros": [
           "Highly natural narration quality",
@@ -8444,7 +8465,7 @@
           "Game Design",
           "Testing"
         ],
-        "iconUrl": "https://ludo.ai/favicon.ico",
+        "iconUrl": "icons/gaming-entertainment/ludo-ai.ico",
         "about": "Ludo.ai automates game concept development, level design, and playtesting, identifying bugs and balancing issues quickly. It provides AI-powered assistance throughout the game development process from ideation to testing.",
         "pros": [
           "Automated playtesting",
@@ -8511,7 +8532,7 @@
           "3D Modeling",
           "Level Design"
         ],
-        "iconUrl": "https://www.prometheanai.com/favicon.ico",
+        "iconUrl": "icons/gaming-entertainment/promethean-ai.png",
         "about": "Promethean AI generates 3D worlds and environments by interpreting natural language prompts, allowing rapid iteration during level and asset design. It helps game developers create expansive game worlds more efficiently.",
         "pros": [
           "Natural language world generation",
@@ -8556,7 +8577,7 @@
           "Asset Generation",
           "Art"
         ],
-        "iconUrl": "https://www.scenario.gg/favicon.ico",
+        "iconUrl": "icons/gaming-entertainment/scenario-gg.ico",
         "about": "Scenario.gg lets developers train custom models to generate style-consistent game assets including character art, backgrounds, and icons. It's ideal for small teams who need cohesive visuals quickly without large art departments.",
         "pros": [
           "Style-consistent asset generation",
@@ -8579,7 +8600,7 @@
           "Game Development",
           "Machine Learning"
         ],
-        "iconUrl": "https://unity.com/favicon.ico",
+        "iconUrl": "icons/gaming-entertainment/unity-ml-agents.ico",
         "about": "Unity ML-Agents Toolkit integrates with the Unity engine to train intelligent agents and NPCs using reinforcement learning and imitation learning. Developers use this for adaptive NPC behaviors, procedural content, and scalable difficulty, making it popular among indie and AAA studios.",
         "pros": [
           "Open source and free",
@@ -8610,7 +8631,7 @@
           "Enterprise",
           "Zero Trust"
         ],
-        "iconUrl": "https://www.checkpoint.com/favicon.ico",
+        "iconUrl": "icons/cybersecurity/check-point-infinity.ico",
         "about": "Check Point Infinity provides AI-driven protection for networks, endpoints, cloud, and users with unified security management. It uses behavioral analysis with real-time and automated incident response for enterprise-scale threat prevention and zero trust architecture.",
         "pros": [
           "Comprehensive security coverage",
@@ -8677,7 +8698,7 @@
           "Endpoint Security",
           "Malware Prevention"
         ],
-        "iconUrl": "https://www.deepinstinct.com/favicon.ico",
+        "iconUrl": "icons/cybersecurity/deep-instinct.ico",
         "about": "Deep Instinct uses deep neural networks to pre-emptively block threats before they can execute. It's exceptional at stopping new, never-before-seen malware and ransomware with predictive prevention capabilities.",
         "pros": [
           "Prevents zero-day threats",
@@ -8770,7 +8791,7 @@
           "Data Security",
           "Compliance"
         ],
-        "iconUrl": "https://www.varonis.com/favicon.ico",
+        "iconUrl": "icons/cybersecurity/varonis.ico",
         "about": "Varonis is a data-centric security platform that uses AI for real-time risk analysis, behavior-based threat detection, and automated remediation of suspicious activities. Excellent for organizations focused on data protection and compliance.",
         "pros": [
           "Strong data protection and classification",
@@ -8892,7 +8913,7 @@
           "Transcription",
           "Meeting Notes"
         ],
-        "iconUrl": "https://fireflies.ai/favicon.ico",
+        "iconUrl": "icons/sales-crm/fireflies-ai.ico",
         "about": "Fireflies.ai is an AI meeting assistant that automatically records, transcribes, and summarizes sales calls and meetings. It integrates with popular video conferencing tools and CRMs to capture insights, action items, and deal intelligence.",
         "pros": [
           "Automatic meeting transcription",
@@ -8915,7 +8936,7 @@
           "Analytics",
           "Coaching"
         ],
-        "iconUrl": "https://www.gong.io/favicon.ico",
+        "iconUrl": "icons/sales-crm/gong.ico",
         "about": "Gong transforms meeting intelligence by recording, transcribing, summarizing, and analyzing sales calls with deal risk scoring. Best for post-call coaching, pipeline inspection, and boosting sales rep performance using actionable insights from customer conversations.",
         "pros": [
           "Deep conversation analytics",
@@ -8960,7 +8981,7 @@
           "Engagement",
           "Automation"
         ],
-        "iconUrl": "https://www.outreach.io/favicon.ico",
+        "iconUrl": "icons/sales-crm/outreach.ico",
         "about": "Outreach automates sales engagement with AI optimizing cadence, sequence, and response rates. Its strengths include personalized email creation, workflow management, and tracking pipeline health, making sales reps more productive while automating routine tasks.",
         "pros": [
           "Comprehensive engagement automation",
@@ -9005,7 +9026,7 @@
           "Lead Generation",
           "Intelligence"
         ],
-        "iconUrl": "https://www.zoominfo.com/favicon.ico",
+        "iconUrl": "icons/sales-crm/zoominfo.ico",
         "about": "ZoomInfo is a leading B2B sales intelligence platform that provides real-time insights, contact data, and intent signals. It helps sales teams identify, qualify, and engage prospects with AI-driven tools for targeting and outreach.",
         "pros": [
           "Extensive B2B contact database",
@@ -9058,7 +9079,7 @@
           "Design",
           "Content Creation"
         ],
-        "iconUrl": "https://www.canva.com/favicon.ico",
+        "iconUrl": "icons/social-media-content/canva-ai.ico",
         "about": "Canva AI offers Magic Design (auto-generates graphics based on prompts) and Magic Write (AI-powered caption generation) for visual-first content creation. It provides image/video creation, social templates, and brand kits, making it perfect for teams and solo creators designing posts for Instagram, LinkedIn, and more.",
         "pros": [
           "Extensive template library",
@@ -9215,7 +9236,7 @@
           "Analytics",
           "Management"
         ],
-        "iconUrl": "https://sproutsocial.com/favicon.ico",
+        "iconUrl": "icons/social-media-content/sprout-social.ico",
         "about": "Sprout Social is renowned for comprehensive analytics, tracking audience engagement, competitor performance, hashtag trends, and delivering actionable recommendations using AI. It's designed for brands that want to optimize their strategy and report results.",
         "pros": [
           "Powerful analytics and reporting",
@@ -9290,7 +9311,7 @@
           "CDP",
           "Marketing Automation"
         ],
-        "iconUrl": "https://blueshift.com/favicon.ico",
+        "iconUrl": "icons/ecommerce-retail/blueshift.ico",
         "about": "Blueshift uses predictive analytics for customer segmentation, journey orchestration, and real-time product recommendations. It integrates across multiple channels for a cohesive customer experience with AI-driven personalization.",
         "pros": [
           "Powerful predictive analytics",
@@ -9387,7 +9408,7 @@
           "Personalization",
           "Recommendations"
         ],
-        "iconUrl": "https://www.nosto.com/favicon.ico",
+        "iconUrl": "icons/ecommerce-retail/nosto.ico",
         "about": "Nosto utilizes real-time shopper behavior and purchase history to suggest products both onsite and via email, boosting conversion rates and reducing cart abandonment for e-commerce stores through intelligent personalization.",
         "pros": [
           "Real-time personalization engine",
@@ -9449,7 +9470,7 @@
           "Chatbot",
           "Customer Support"
         ],
-        "iconUrl": "https://www.tidio.com/favicon.ico",
+        "iconUrl": "icons/ecommerce-retail/tidio.ico",
         "about": "Tidio combines AI-powered chatbots with live support, automating common queries and freeing up staff for complex cases. It integrates with major e-commerce platforms and provides 24/7 customer engagement.",
         "pros": [
           "Free tier available",
@@ -9480,7 +9501,7 @@
           "CRM",
           "Lead Generation"
         ],
-        "iconUrl": "https://www.cincpro.com/favicon.ico",
+        "iconUrl": "icons/real-estate-proptech/cinc.png",
         "about": "CINC (Commissions Inc) provides AI-powered lead generation, scoring, nurturing, and CRM features specifically for real estate professionals. It integrates MLS listings and personalizes property recommendations to improve conversion rates.",
         "pros": [
           "Excellent lead generation tools",
@@ -9525,7 +9546,7 @@
           "Investment",
           "Analytics"
         ],
-        "iconUrl": "https://www.mashvisor.com/favicon.ico",
+        "iconUrl": "icons/real-estate-proptech/mashvisor.ico",
         "about": "Mashvisor uses AI to compare short- and long-term rental investments, analyze cash flow, and forecast ROI on rental properties. It provides data-driven insights for real estate investors to make informed decisions.",
         "pros": [
           "Comprehensive investment analysis",
@@ -9637,7 +9658,7 @@
           "Marketing",
           "Lead Generation"
         ],
-        "iconUrl": "https://www.ylopo.com/favicon.ico",
+        "iconUrl": "icons/real-estate-proptech/ylopo.webp",
         "about": "Ylopo is an AI-rich digital marketing and property management suite known for targeted ad campaigns, lead tracking, and behavioral analytics for client retention. It helps real estate agents generate and convert leads through intelligent marketing automation.",
         "pros": [
           "Powerful digital advertising tools",
@@ -9660,7 +9681,7 @@
           "Valuation",
           "Marketplace"
         ],
-        "iconUrl": "https://www.zillow.com/favicon.ico",
+        "iconUrl": "icons/real-estate-proptech/zillow.ico",
         "about": "Zillow is one of the most recognized real estate platforms featuring the Zestimate automated valuation model. It uses machine learning and computer vision to estimate home values by analyzing public records, listing data, and property images.",
         "pros": [
           "Free access to property valuations",
@@ -9785,7 +9806,7 @@
           "Local AI",
           "Ad-Blocking"
         ],
-        "iconUrl": "https://brave.com/static-assets/images/brave-favicon.png",
+        "iconUrl": "icons/ai-browsers/brave-leo.png",
         "about": "Brave Leo is the AI assistant built into the Brave browser, designed with privacy as the top priority. It can run locally or use user-provided models, ensuring your data never leaves your device if you choose. Combined with Brave's existing ad-blocking and privacy features, it's ideal for security-conscious users.",
         "pros": [
           "Strong privacy with local AI options",
@@ -9831,7 +9852,7 @@
           "Innovation",
           "Automation"
         ],
-        "iconUrl": "https://dia.app/favicon.ico",
+        "iconUrl": "icons/ai-browsers/dia-browser.ico",
         "about": "Dia Browser reimagines web browsing with an AI-first approach. Instead of traditional tabs and bookmarks, it uses contextual automation and 'skills' to organize and execute routine workflows. It's designed for early adopters who want the cutting edge of AI browsing.",
         "pros": [
           "Most innovative AI-native browsing experience",
@@ -9854,7 +9875,7 @@
           "Enterprise",
           "Integration"
         ],
-        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "iconUrl": "icons/ai-browsers/microsoft-edge-copilot.ico",
         "about": "Microsoft Edge with Copilot brings AI assistance directly into the browser, deeply integrated with Windows 11, Office 365, and Microsoft's ecosystem. It's particularly strong for business users who need seamless integration with enterprise tools and workflows.",
         "pros": [
           "Deep integration with Microsoft ecosystem",
@@ -9877,7 +9898,7 @@
           "VPN",
           "AI Assistant"
         ],
-        "iconUrl": "https://www.opera.com/favicon.ico",
+        "iconUrl": "icons/ai-browsers/opera-one-with-aria.ico",
         "about": "Opera One features Aria, an AI assistant that helps with page summarization, task assistance, and content generation. Combined with Opera's built-in VPN, ad-blocking, and modular features, it offers a compelling package for users who value customization.",
         "pros": [
           "Built-in VPN and ad-blocking",
@@ -9900,7 +9921,7 @@
           "Citations",
           "Autonomous"
         ],
-        "iconUrl": "https://www.perplexity.ai/favicon.ico",
+        "iconUrl": "icons/ai-browsers/perplexity-comet.ico",
         "about": "Perplexity Comet is an advanced AI browser that leverages Perplexity's powerful AI search engine to provide autonomous browsing capabilities. It excels at research tasks with automatic citation gathering, cross-tab context maintenance, and multi-step action completion.",
         "pros": [
           "Excellent for professional research with reliable citations",
@@ -9923,7 +9944,7 @@
           "SEO",
           "Multimedia"
         ],
-        "iconUrl": "https://sigma.ai/favicon.ico",
+        "iconUrl": "icons/ai-browsers/sigma-ai-browser.ico",
         "about": "Sigma AI Browser is tailored for content creators and marketers. It includes built-in AI tools for generating text, images, and video content, along with SEO optimization features to help creators produce and optimize content without leaving the browser.",
         "pros": [
           "All-in-one solution for content creators",
@@ -9954,7 +9975,7 @@
           "Professional",
           "Collaboration"
         ],
-        "iconUrl": "https://www.beautiful.ai/favicon.ico",
+        "iconUrl": "icons/ai-presentation-tools/beautiful-ai.ico",
         "about": "Beautiful.ai uses smart design automation to maintain visual consistency throughout presentations. It intelligently adjusts slide elements as you add content, ensuring everything stays aligned and professional-looking without manual effort.",
         "pros": [
           "Automatic layout optimization",
@@ -9977,7 +9998,7 @@
           "Templates",
           "Brand Kit"
         ],
-        "iconUrl": "https://www.canva.com/favicon.ico",
+        "iconUrl": "icons/ai-presentation-tools/canva-presentations.ico",
         "about": "Canva's presentation tool leverages its massive template library and AI features like Doc-to-Deck to create beautiful presentations quickly. It's excellent for teams needing to match brand identity across all visual content.",
         "pros": [
           "Huge template and asset library",
@@ -10046,7 +10067,7 @@
           "Multilingual",
           "Stock Images"
         ],
-        "iconUrl": "https://www.magicslides.app/favicon.ico",
+        "iconUrl": "icons/ai-presentation-tools/magicslides.ico",
         "about": "MagicSlides is a popular add-on for Google Slides that enables quick AI-powered slide generation. It integrates stock images automatically and supports multiple languages, making it perfect for international presentations.",
         "pros": [
           "Easy integration with Google Slides",
@@ -10115,7 +10136,7 @@
           "Google Slides",
           "PowerPoint"
         ],
-        "iconUrl": "https://slidesgo.com/favicon.ico",
+        "iconUrl": "icons/ai-presentation-tools/slidesgo-ai.ico",
         "about": "Slidesgo's AI generator provides access to a vast template library with AI-powered customization. Integration with Freepik brings extensive design assets, and easy export to Google Slides and PowerPoint ensures compatibility with existing workflows.",
         "pros": [
           "Huge template library",
@@ -10238,7 +10259,7 @@
           "Summaries",
           "Action Items"
         ],
-        "iconUrl": "https://fathom.video/favicon.ico",
+        "iconUrl": "icons/meeting-assistants/fathom.ico",
         "about": "Fathom offers surprisingly robust features on its free tier, including high-quality transcription, instant meeting summaries, and action item extraction. It's perfect for individuals and small teams on a budget.",
         "pros": [
           "Generous free tier with robust features",
@@ -10261,7 +10282,7 @@
           "Insights",
           "Integration"
         ],
-        "iconUrl": "https://fireflies.ai/favicon.ico",
+        "iconUrl": "icons/meeting-assistants/fireflies-ai.ico",
         "about": "Fireflies.ai goes beyond basic transcription to provide conversation analysis, speaker sentiment tracking, talk time metrics, and powerful search capabilities. It's ideal for power users and teams needing actionable insights from their meetings.",
         "pros": [
           "Deep conversation analytics and insights",
@@ -10284,7 +10305,7 @@
           "Revenue Intelligence",
           "Enterprise"
         ],
-        "iconUrl": "https://www.gong.io/favicon.ico",
+        "iconUrl": "icons/meeting-assistants/gong.ico",
         "about": "Gong is a comprehensive revenue intelligence platform that records and analyzes sales calls to provide insights for improving deal outcomes. It's designed for sales teams and includes advanced analytics, coaching features, and CRM integration.",
         "pros": [
           "Specialized for sales conversations",
@@ -10353,7 +10374,7 @@
           "Real-time",
           "Freemium"
         ],
-        "iconUrl": "https://otter.ai/favicon.ico",
+        "iconUrl": "icons/meeting-assistants/otter-ai.ico",
         "about": "Otter.ai (OtterPilot) is one of the most popular AI meeting assistants, offering real-time transcription, automated summaries, and action item tracking. It integrates seamlessly with major video conferencing platforms and provides easy sharing and collaboration features.",
         "pros": [
           "Highly accurate real-time transcription",
@@ -10430,7 +10451,7 @@
           "Context-Aware",
           "Freemium"
         ],
-        "iconUrl": "https://www.flowrite.com/favicon.ico",
+        "iconUrl": "icons/email-assistants/flowrite.ico",
         "about": "Flowrite provides real-time AI-powered email generation that adapts to your tone and can automate repetitive responses. It's ideal for busy professionals needing quick, contextual replies without starting from scratch.",
         "pros": [
           "Real-time generation as you type",
@@ -10453,7 +10474,7 @@
           "Native",
           "Google Workspace"
         ],
-        "iconUrl": "https://www.google.com/favicon.ico",
+        "iconUrl": "icons/email-assistants/google-gemini-for-gmail.ico",
         "about": "Google's Gemini AI provides native integration within Gmail, offering smart compose, intelligent replies, email summarization, and thread organization. It's ideal for Google Workspace users wanting seamless AI assistance.",
         "pros": [
           "Native Gmail integration",
@@ -10522,7 +10543,7 @@
           "Microsoft 365",
           "Enterprise"
         ],
-        "iconUrl": "https://www.microsoft.com/favicon.ico",
+        "iconUrl": "icons/email-assistants/microsoft-copilot-for-outlook.ico",
         "about": "Microsoft Copilot brings AI assistance directly into Outlook with features for email drafting, meeting scheduling, and deep Office integration. It's particularly powerful for Microsoft 365 enterprise users.",
         "pros": [
           "Native Outlook integration",
@@ -10545,7 +10566,7 @@
           "Templates",
           "Multiple Tones"
         ],
-        "iconUrl": "https://rytr.me/favicon.ico",
+        "iconUrl": "icons/email-assistants/rytr.ico",
         "about": "Rytr is a user-friendly and affordable AI writing assistant that provides various tones and email templates. It's suitable for users with low to moderate emailing needs who want AI assistance without premium pricing.",
         "pros": [
           "Very affordable pricing",
@@ -10568,7 +10589,7 @@
           "Filtering",
           "Productivity"
         ],
-        "iconUrl": "https://www.sanebox.com/favicon.ico",
+        "iconUrl": "icons/email-assistants/sanebox.ico",
         "about": "SaneBox uses AI to manage inbox overload by filtering non-essential emails into separate folders and suggesting smart responses. It's excellent for organization and prioritization rather than composing emails.",
         "pros": [
           "Excellent inbox organization",
@@ -10668,7 +10689,7 @@
           "Collaboration",
           "Integrations"
         ],
-        "iconUrl": "https://crowdin.com/favicon.ico",
+        "iconUrl": "icons/translation-localization/crowdin.ico",
         "about": "Crowdin is ideal for software, app, and game developers needing continuous localization. It offers strong API support, real-time collaboration, and over 600 integrations with development tools and platforms.",
         "pros": [
           "Excellent for software localization",
@@ -10691,7 +10712,7 @@
           "30+ Languages",
           "Project Management"
         ],
-        "iconUrl": "https://lokalise.com/favicon.ico",
+        "iconUrl": "icons/translation-localization/lokalise-ai.ico",
         "about": "Lokalise AI provides excellent accuracy for professional localization projects. It supports 30+ languages with robust translation memory, glossary integration, and deep context management including style guides and brand voice. It integrates with GitHub, Figma, and Adobe for seamless workflows.",
         "pros": [
           "High accuracy with context awareness",
@@ -10737,7 +10758,7 @@
           "Human+AI",
           "Quality Control"
         ],
-        "iconUrl": "https://www.smartling.com/favicon.ico",
+        "iconUrl": "icons/translation-localization/smartling.png",
         "about": "Smartling is an enterprise-level solution combining AI translation with human post-editing. It includes built-in translation risk assessment, workflow automation, and is designed for organizations needing granular control over quality and compliance.",
         "pros": [
           "Hybrid AI + human approach",
@@ -10760,7 +10781,7 @@
           "SEO",
           "Continuous Delivery"
         ],
-        "iconUrl": "https://www.transifex.com/favicon.ico",
+        "iconUrl": "icons/translation-localization/transifex.svg",
         "about": "Transifex offers comprehensive localization management for global websites and apps. It supports 450+ languages, includes SEO optimization features, and enables continuous workflow support for rapid go-to-market.",
         "pros": [
           "Massive language support (450+)",
@@ -10791,7 +10812,7 @@
           "Structured",
           "Networked"
         ],
-        "iconUrl": "https://capacities.io/favicon.ico",
+        "iconUrl": "icons/knowledge-management/capacities.ico",
         "about": "Capacities uses an object-based approach to note-taking, where everything is a structured object (person, book, idea) that can be interconnected. AI helps organize and surface connections between your knowledge objects.",
         "pros": [
           "Unique object-based approach",
@@ -10814,7 +10835,7 @@
           "Second Brain",
           "Contextual"
         ],
-        "iconUrl": "https://mem.ai/favicon.ico",
+        "iconUrl": "icons/knowledge-management/mem.ico",
         "about": "Mem acts like a true second brain, using AI to automatically sort, tag, and recall information contextually. Its auto-organizing system eliminates manual categorization while allowing fast search and retrieval based on natural language queries.",
         "pros": [
           "Automatic organization without folders",
@@ -10883,7 +10904,7 @@
           "ChatGPT-4",
           "Journaling"
         ],
-        "iconUrl": "https://reflect.app/favicon.ico",
+        "iconUrl": "icons/knowledge-management/reflect.ico",
         "about": "Reflect ties your notes across time, connecting ideas and enabling seamless flow of thoughts. Its strong AI integration with ChatGPT-4 supports summaries, context-aware suggestions, and knowledge building from daily notes and journal entries.",
         "pros": [
           "Networked thought connections",
@@ -10914,7 +10935,7 @@
           "Integrations",
           "Easy Setup"
         ],
-        "iconUrl": "https://calendly.com/favicon.ico",
+        "iconUrl": "icons/scheduling-calendar/calendly.ico",
         "about": "Calendly remains a leader in automated scheduling. Its AI Pro features add context-aware intelligent booking, support for multiple event types, time buffers, and robust integrations with Zoom, Google Calendar, and more.",
         "pros": [
           "Very easy to use",
@@ -10983,7 +11004,7 @@
           "Project Management",
           "ROI"
         ],
-        "iconUrl": "https://www.usemotion.com/favicon.ico",
+        "iconUrl": "icons/scheduling-calendar/motion.ico",
         "about": "Motion is frequently rated as one of the best AI scheduling assistants. It automates both task and meeting scheduling using intelligent algorithms, offers advanced project management features, and includes ROI analysis and focus time blocking.",
         "pros": [
           "Intelligent task and meeting scheduling",
@@ -11037,7 +11058,7 @@
           "Professional",
           "Enhancement"
         ],
-        "iconUrl": "https://www.adobe.com/favicon.ico",
+        "iconUrl": "icons/podcast-tools/adobe-podcast.ico",
         "about": "Adobe Podcast (Project Shasta) integrates advanced AI features like speech enhancement and noise reduction with high-quality transcription. It works seamlessly with Adobe Premiere and delivers studio-grade results even from raw recordings.",
         "pros": [
           "Studio-quality enhancement",
@@ -11083,7 +11104,7 @@
           "Noise Removal",
           "Fast Processing"
         ],
-        "iconUrl": "https://cleanvoice.ai/favicon.ico",
+        "iconUrl": "icons/podcast-tools/cleanvoice-ai.ico",
         "about": "Cleanvoice specializes in automated audio cleanup, removing background noise, stutters, mouth clicks, silences, and filler words. It ensures podcasts sound professional even when recorded in suboptimal environments with fast processing.",
         "pros": [
           "Excellent automated cleanup",
@@ -11160,7 +11181,7 @@
           "Analytics",
           "Multi-Account"
         ],
-        "iconUrl": "https://hootsuite.com/favicon.ico",
+        "iconUrl": "icons/ai-social-media-creation/hootsuite-insights.ico",
         "about": "Hootsuite is a leading enterprise social media management platform with AI-powered analytics, content suggestions, and robust multi-account scheduling. It's ideal for agencies and large teams managing multiple brands.",
         "pros": [
           "Comprehensive enterprise features",
@@ -11229,7 +11250,7 @@
           "Collaboration",
           "Templates"
         ],
-        "iconUrl": "https://simplified.com/favicon.ico",
+        "iconUrl": "icons/ai-social-media-creation/simplified-ai.ico",
         "about": "Simplified integrates design, writing, and collaboration features with AI-generated text and graphics, extensive templates, team editing capabilities, and direct scheduling to social platforms.",
         "pros": [
           "Design and writing in one tool",
@@ -11252,7 +11273,7 @@
           "Brand Voice",
           "Analytics"
         ],
-        "iconUrl": "https://socialbee.com/favicon.ico",
+        "iconUrl": "icons/ai-social-media-creation/socialbee.ico",
         "about": "SocialBee generates posts with image/caption bundles, allows customization of voice and tone, schedules across channels, and provides deep analytics. It organizes posts for consistent brand presentation with high-quality content generation.",
         "pros": [
           "Excellent scheduling features",
@@ -11306,7 +11327,7 @@
           "E-commerce",
           "Shopify"
         ],
-        "iconUrl": "https://www.shopify.com/favicon.ico",
+        "iconUrl": "icons/logo-branding/hatchful-by-shopify.ico",
         "about": "Hatchful is Shopify's free logo maker designed for entrepreneurs and e-commerce brands. It walks you through style and business-type questions to create flexible logo options with downloadable branding assets.",
         "pros": [
           "Completely free",
@@ -11329,7 +11350,7 @@
           "Professional",
           "Previews"
         ],
-        "iconUrl": "https://looka.com/favicon.ico",
+        "iconUrl": "icons/logo-branding/looka.png",
         "about": "Looka provides comprehensive branding kits with AI logo generation based on industry and vision. You can preview logos on various assets before purchase, and it helps create color palettes and font pairings for complete brand identity.",
         "pros": [
           "Complete branding kit",
@@ -11352,7 +11373,7 @@
           "Social Media",
           "Scalable"
         ],
-        "iconUrl": "https://www.tailorbrands.com/favicon.ico",
+        "iconUrl": "icons/logo-branding/tailor-brands.ico",
         "about": "Tailor Brands is a comprehensive AI branding platform that goes beyond logos to generate brand style guides, social media posts, and landing pages. Its focus is on long-term brand consistency and scalability for growing businesses.",
         "pros": [
           "Complete branding ecosystem",
@@ -11375,7 +11396,7 @@
           "Customizable",
           "Full Package"
         ],
-        "iconUrl": "https://turbologo.com/favicon.ico",
+        "iconUrl": "icons/logo-branding/turbologo.ico",
         "about": "Turbologo is ideal for quick, customized logo designs with additional business materials. It allows unlimited changes during creation and provides full ownership with high-res downloads in multiple formats.",
         "pros": [
           "Fast logo creation",
@@ -11406,7 +11427,7 @@
           "Photorealistic",
           "Consistent"
         ],
-        "iconUrl": "https://www.basedlabs.ai/favicon.ico",
+        "iconUrl": "icons/avatar-virtual-influencer/basedlabs-ai-influencer.ico",
         "about": "BasedLabs AI Influencer Generator is tailored for influencer marketing, allowing you to train a custom AI model on a specific face for consistent content across scenarios. Ideal for brands managing AI Instagram influencers.",
         "pros": [
           "Consistent face across content",
@@ -11429,7 +11450,7 @@
           "Lip-Sync",
           "Interactive"
         ],
-        "iconUrl": "https://www.d-id.com/favicon.ico",
+        "iconUrl": "icons/avatar-virtual-influencer/d-id-creative-reality.ico",
         "about": "D-ID Creative Reality Studio is top-rated for digital human avatars with superior lip-sync and expression control. It excels at multilingual capabilities and is excellent for branding, ads, and interactive education content.",
         "pros": [
           "Superior lip-sync technology",
@@ -11452,7 +11473,7 @@
           "Scalable",
           "Business"
         ],
-        "iconUrl": "https://www.heygen.com/favicon.ico",
+        "iconUrl": "icons/avatar-virtual-influencer/heygen.ico",
         "about": "HeyGen offers powerful video avatar features with the ability to create personalized digital clones and custom scenes. It's used for scalable influencer campaigns and virtual spokespeople with professional quality output.",
         "pros": [
           "Personalized digital clones",
@@ -11475,7 +11496,7 @@
           "Gaming",
           "Metaverse"
         ],
-        "iconUrl": "https://readyplayer.me/favicon.ico",
+        "iconUrl": "icons/avatar-virtual-influencer/ready-player-me.ico",
         "about": "Ready Player Me provides a cross-platform avatar system for creating customizable 3D avatars that work across games, VR experiences, and metaverse applications. It's designed for interoperability and ease of integration.",
         "pros": [
           "Cross-platform compatibility",

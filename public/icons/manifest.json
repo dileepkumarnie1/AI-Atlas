@@ -244,5 +244,7 @@
   "avatar-virtual-influencer::basedlabs ai influencer": "public/icons/avatar-virtual-influencer/basedlabs-ai-influencer.ico",
   "avatar-virtual-influencer::d-id creative reality": "public/icons/avatar-virtual-influencer/d-id-creative-reality.ico",
   "avatar-virtual-influencer::heygen": "public/icons/avatar-virtual-influencer/heygen.ico",
-  "avatar-virtual-influencer::ready player me": "public/icons/avatar-virtual-influencer/ready-player-me.ico"
+  "avatar-virtual-influencer::ready player me": "public/icons/avatar-virtual-influencer/ready-player-me.ico",
+  "code-assistance::nocobase": "public/icons/code-assistance/nocobase.png",
+  "meeting-assistants::tl;dv": "public/icons/meeting-assistants/tl-dv.png"
 }
