@@ -1885,6 +1885,71 @@
           "Newer ecosystem.",
           "Some features paid."
         ]
+      },
+      {
+        "name": "Inflection Pi",
+        "description": "Friendly conversational AI assistant designed for personal interactions.",
+        "link": "https://inflection.ai/",
+        "tags": [
+          "Freemium",
+          "Personal Assistant"
+        ],
+        "iconUrl": "https://inflection.ai/favicon.ico",
+        "about": "Inflection Pi is a conversational AI designed to be friendly, supportive, and empathetic. It focuses on personal interactions and emotional intelligence.",
+        "pros": [
+          "Empathetic and supportive conversational style",
+          "Good for personal use and emotional support",
+          "Natural conversation flow"
+        ],
+        "cons": [
+          "Less suited for technical or professional tasks",
+          "Smaller knowledge base than competitors",
+          "Limited API availability"
+        ]
+      },
+      {
+        "name": "Cohere",
+        "description": "Enterprise-grade language AI platform with powerful APIs for NLP tasks.",
+        "link": "https://cohere.com/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "API"
+        ],
+        "iconUrl": "https://cohere.com/favicon.ico",
+        "about": "Cohere provides foundation language models, embeddings, and APIs for natural language processing. Focused on enterprise deployments with strong privacy and security features.",
+        "pros": [
+          "Enterprise-grade security and compliance",
+          "High-quality embeddings for search and classification",
+          "Flexible deployment options"
+        ],
+        "cons": [
+          "Premium pricing for enterprises",
+          "Less known in consumer market",
+          "Steeper learning curve for developers"
+        ]
+      },
+      {
+        "name": "Together AI",
+        "description": "Developer platform for serving open-source AI models reliably and cost-effectively.",
+        "link": "https://together.ai/",
+        "tags": [
+          "Freemium",
+          "Developer Tools",
+          "API"
+        ],
+        "iconUrl": "https://together.ai/favicon.ico",
+        "about": "Together AI provides a developer platform for serving open-source AI models with high reliability and low cost. Supports fine-tuning and deployment of various open models.",
+        "pros": [
+          "Cost-effective model serving",
+          "Wide selection of open-source models",
+          "Good for developers wanting control and flexibility"
+        ],
+        "cons": [
+          "Requires technical knowledge to use effectively",
+          "Less polished interface than consumer products",
+          "Support primarily for open models"
+        ]
       }
     ]
   },
@@ -2361,6 +2426,48 @@
           "Suggestions may need review."
         ],
         "iconUrl": "icons/image-generation/zenctrl.png"
+      },
+      {
+        "name": "Stable Diffusion XL",
+        "description": "Open-source image generation model with high customization capabilities.",
+        "link": "https://stability.ai/",
+        "tags": [
+          "Open Source",
+          "Self-hosted"
+        ],
+        "iconUrl": "https://stability.ai/favicon.ico",
+        "about": "Stable Diffusion XL by Stability AI is an open-source text-to-image model that can be run locally or via various platforms. Highly customizable with LoRA and fine-tuning.",
+        "pros": [
+          "Open source and self-hostable",
+          "Highly customizable with extensions",
+          "No usage limits when self-hosted"
+        ],
+        "cons": [
+          "Requires technical knowledge to set up",
+          "Needs powerful GPU for local use",
+          "Quality control needed for outputs"
+        ]
+      },
+      {
+        "name": "Leonardo.Ai",
+        "description": "AI art generator focused on game assets and consistent character generation.",
+        "link": "https://leonardo.ai/",
+        "tags": [
+          "Freemium",
+          "Game Assets"
+        ],
+        "iconUrl": "https://leonardo.ai/favicon.ico",
+        "about": "Leonardo.Ai is designed for creating game assets, concept art, and consistent character designs. Features Canvas for editing and Realtime for instant generation.",
+        "pros": [
+          "Excellent for game development",
+          "Consistent character generation",
+          "Built-in editing tools"
+        ],
+        "cons": [
+          "Credits system limits usage",
+          "Interface can be overwhelming",
+          "Less photorealistic than competitors"
+        ]
       }
     ]
   },
@@ -2766,6 +2873,48 @@
           "Watermarks on free plan.",
           "Export limits.",
           "Some features paid."
+        ]
+      },
+      {
+        "name": "Runway Gen-3",
+        "description": "Advanced AI video generation and editing platform with Gen-3 Alpha model.",
+        "link": "https://runwayml.com/",
+        "tags": [
+          "Paid",
+          "Professional"
+        ],
+        "iconUrl": "https://runwayml.com/favicon.ico",
+        "about": "Runway ML offers cutting-edge AI video tools including Gen-3 for text-to-video, video editing, motion tracking, and special effects. Used by professional creators and filmmakers.",
+        "pros": [
+          "State-of-the-art video generation quality",
+          "Professional editing features",
+          "Used in actual film production"
+        ],
+        "cons": [
+          "Expensive for regular use",
+          "Steep learning curve",
+          "Processing can be slow"
+        ]
+      },
+      {
+        "name": "Pika Labs",
+        "description": "Fast and accessible AI video generation from text and images.",
+        "link": "https://pika.art/",
+        "tags": [
+          "Freemium",
+          "Quick Generation"
+        ],
+        "iconUrl": "https://pika.art/favicon.ico",
+        "about": "Pika Labs provides quick AI video generation from text prompts and images. Known for its speed and accessibility, with a friendly Discord-based interface.",
+        "pros": [
+          "Fast video generation",
+          "Easy to use",
+          "Active community on Discord"
+        ],
+        "cons": [
+          "Lower quality than Runway",
+          "Limited control over outputs",
+          "Discord-based workflow may not suit everyone"
         ]
       }
     ]
@@ -3251,6 +3400,28 @@
         "pros": [],
         "cons": [],
         "iconUrl": "icons/code-assistance/warp.png"
+      },
+      {
+        "name": "v0 by Vercel",
+        "description": "AI-powered UI generator that creates React components from text descriptions.",
+        "link": "https://v0.dev/",
+        "tags": [
+          "Freemium",
+          "Frontend",
+          "React"
+        ],
+        "iconUrl": "https://v0.dev/favicon.ico",
+        "about": "v0 generates production-ready UI code from text prompts. Creates React components with Tailwind CSS and shadcn/ui components.",
+        "pros": [
+          "Generates high-quality React components",
+          "Modern styling with Tailwind CSS",
+          "Iterative refinement of designs"
+        ],
+        "cons": [
+          "Limited to React and specific tech stack",
+          "Requires credits for extensive use",
+          "May need manual refinement"
+        ]
       }
     ]
   },
@@ -3636,6 +3807,90 @@
           "Windows only.",
           "Premium for best voices.",
           "Not for professional audio."
+        ]
+      },
+      {
+        "name": "Loudly",
+        "description": "AI music creation and royalty-free music library.",
+        "link": "https://loudly.com/",
+        "tags": [
+          "Freemium",
+          "Music Library"
+        ],
+        "iconUrl": "https://loudly.com/favicon.ico",
+        "about": "Loudly provides AI-powered music creation tools and a library of royalty-free tracks for content creators.",
+        "pros": [
+          "Royalty-free for content creation",
+          "Quick music generation",
+          "Customizable tracks"
+        ],
+        "cons": [
+          "Limited in free tier",
+          "Generic sound quality",
+          "Not for professional production"
+        ]
+      },
+      {
+        "name": "Boomy",
+        "description": "Create and monetize AI-generated music instantly.",
+        "link": "https://boomy.com/",
+        "tags": [
+          "Freemium",
+          "Music Monetization"
+        ],
+        "iconUrl": "https://boomy.com/favicon.ico",
+        "about": "Boomy allows anyone to create original songs in seconds and submit them to streaming platforms for monetization.",
+        "pros": [
+          "Very easy to use",
+          "Monetization built-in",
+          "No musical knowledge required"
+        ],
+        "cons": [
+          "Limited creative control",
+          "Revenue share model",
+          "Quality varies"
+        ]
+      },
+      {
+        "name": "Soundraw",
+        "description": "AI music generator with full customization control.",
+        "link": "https://soundraw.io/",
+        "tags": [
+          "Paid",
+          "Customizable"
+        ],
+        "iconUrl": "https://soundraw.io/favicon.ico",
+        "about": "Soundraw generates royalty-free music with AI, allowing customization of mood, genre, length, and instruments.",
+        "pros": [
+          "Royalty-free for subscribers",
+          "High customization",
+          "Professional quality"
+        ],
+        "cons": [
+          "Subscription required",
+          "Learning curve for features",
+          "Limited genre variety"
+        ]
+      },
+      {
+        "name": "Splash",
+        "description": "AI music and singing voice generation.",
+        "link": "https://www.splash.ai/",
+        "tags": [
+          "Freemium",
+          "Vocals"
+        ],
+        "iconUrl": "https://www.splash.ai/favicon.ico",
+        "about": "Splash creates music and singing voices using AI, accessible through mobile app and web platform.",
+        "pros": [
+          "Creates both music and vocals",
+          "Mobile app available",
+          "Community features"
+        ],
+        "cons": [
+          "Limited professional features",
+          "Output quality varies",
+          "Mostly for casual use"
         ]
       }
     ]
@@ -4040,6 +4295,69 @@
           "The AI is an assistant, not a full-fledged project manager.",
           "Can be simpler than what's needed for complex team projects."
         ]
+      },
+      {
+        "name": "Superhuman",
+        "description": "AI-powered email client with smart inbox prioritization and scheduling.",
+        "link": "https://superhuman.com/",
+        "tags": [
+          "Paid",
+          "Email"
+        ],
+        "iconUrl": "https://superhuman.com/favicon.ico",
+        "about": "Superhuman is the fastest email experience ever made, with AI features for email triage, scheduling, and follow-ups. Designed for professionals who get hundreds of emails per day.",
+        "pros": [
+          "Lightning-fast email processing",
+          "Smart keyboard shortcuts",
+          "Beautiful interface"
+        ],
+        "cons": [
+          "Expensive subscription",
+          "Gmail/Outlook only",
+          "Steep learning curve"
+        ]
+      },
+      {
+        "name": "Krisp",
+        "description": "AI noise cancellation for calls and recordings.",
+        "link": "https://krisp.ai/",
+        "tags": [
+          "Freemium",
+          "Audio"
+        ],
+        "iconUrl": "https://krisp.ai/favicon.ico",
+        "about": "Krisp uses AI to remove background noise, echo, and room reverb from calls. Works with any communication app.",
+        "pros": [
+          "Works with all call apps",
+          "Removes background noise effectively",
+          "Also removes echo"
+        ],
+        "cons": [
+          "Free tier limited to 60 min/week",
+          "Can occasionally affect voice quality",
+          "Resource-intensive"
+        ]
+      },
+      {
+        "name": "Calendly",
+        "description": "AI-enhanced scheduling automation platform.",
+        "link": "https://calendly.com/",
+        "tags": [
+          "Freemium",
+          "Scheduling"
+        ],
+        "iconUrl": "https://calendly.com/favicon.ico",
+        "about": "Calendly simplifies scheduling with AI-powered features for finding optimal meeting times, routing, and automated workflows.",
+        "pros": [
+          "Easy to use",
+          "Integrates with major calendar apps",
+          "Automated reminders"
+        ],
+        "cons": [
+          "Free tier very limited",
+          "Branding on free version",
+          "Can feel impersonal"
+        ]
       }
     ]
   },
@@ -4374,6 +4692,48 @@
           "The best features are part of the paid plans.",
           "The AI is an assistant, not a replacement for design skills."
         ]
+      },
+      {
+        "name": "Looka",
+        "description": "AI-powered logo and brand identity generator.",
+        "link": "https://looka.com/",
+        "tags": [
+          "Paid",
+          "Branding"
+        ],
+        "iconUrl": "https://looka.com/favicon.ico",
+        "about": "Looka uses AI to create professional logos and complete brand identities including business cards, social media assets, and more.",
+        "pros": [
+          "Quick logo generation",
+          "Complete brand kit",
+          "Professional results"
+        ],
+        "cons": [
+          "Must pay to download",
+          "Limited editing capability",
+          "Can look generic"
+        ]
+      },
+      {
+        "name": "Relume",
+        "description": "AI-powered website builder and design system tool.",
+        "link": "https://www.relume.io/",
+        "tags": [
+          "Freemium",
+          "Website Builder"
+        ],
+        "iconUrl": "https://www.relume.io/favicon.ico",
+        "about": "Relume generates website sitemaps and wireframes using AI, then exports to Figma or Webflow for development.",
+        "pros": [
+          "Fast website planning",
+          "Figma and Webflow export",
+          "Good starting point"
+        ],
+        "cons": [
+          "Requires refinement",
+          "Subscription for full features",
+          "Limited to certain frameworks"
+        ]
       }
     ]
   },
@@ -4486,6 +4846,90 @@
           "Coverage varies by field.",
           "Paid for full features.",
           "Learning curve for filters."
+        ]
+      },
+      {
+        "name": "Semantic Scholar",
+        "description": "AI-powered academic search engine by Allen Institute.",
+        "link": "https://www.semanticscholar.org/",
+        "tags": [
+          "Free",
+          "Academic"
+        ],
+        "iconUrl": "https://www.semanticscholar.org/favicon.ico",
+        "about": "Semantic Scholar uses AI to help researchers discover scientific literature with features like citation analysis and paper summaries.",
+        "pros": [
+          "Completely free",
+          "AI-powered summaries",
+          "Citation network visualization"
+        ],
+        "cons": [
+          "Limited to academic papers",
+          "UI can be complex",
+          "Not all papers indexed"
+        ]
+      },
+      {
+        "name": "Connected Papers",
+        "description": "Visual tool to find and explore academic papers.",
+        "link": "https://www.connectedpapers.com/",
+        "tags": [
+          "Freemium",
+          "Visualization"
+        ],
+        "iconUrl": "https://www.connectedpapers.com/favicon.ico",
+        "about": "Connected Papers creates visual graphs of related academic papers to help researchers explore literature and find relevant work.",
+        "pros": [
+          "Beautiful visualizations",
+          "Helps discover related papers",
+          "Easy to use"
+        ],
+        "cons": [
+          "Limited searches in free tier",
+          "Requires registration",
+          "Not comprehensive"
+        ]
+      },
+      {
+        "name": "ResearchRabbit",
+        "description": "AI-powered research discovery and collection tool.",
+        "link": "https://www.researchrabbit.ai/",
+        "tags": [
+          "Free",
+          "Literature Review"
+        ],
+        "iconUrl": "https://www.researchrabbit.ai/favicon.ico",
+        "about": "ResearchRabbit helps researchers discover papers, visualize connections, and organize literature reviews with AI recommendations.",
+        "pros": [
+          "Completely free",
+          "Great paper recommendations",
+          "Collection management"
+        ],
+        "cons": [
+          "Requires account",
+          "Learning curve",
+          "UI can be overwhelming"
+        ]
+      },
+      {
+        "name": "SciSpace",
+        "description": "AI copilot for reading and understanding research papers.",
+        "link": "https://typeset.io/",
+        "tags": [
+          "Freemium",
+          "Paper Reading"
+        ],
+        "iconUrl": "https://typeset.io/favicon.ico",
+        "about": "SciSpace (formerly Typeset) helps researchers read and understand papers with AI-powered explanations, highlights, and Q&A.",
+        "pros": [
+          "Explains complex concepts",
+          "Math and table explanations",
+          "Large paper database"
+        ],
+        "cons": [
+          "Free tier limited",
+          "Some explanations inaccurate",
+          "Requires upload or DOI"
         ]
       }
     ]
@@ -4645,6 +5089,27 @@
           "Has a steep learning curve.",
           "Subscription can be expensive for individuals.",
           "Recommendations should be treated as guidelines, not strict rules."
+        ]
+      },
+      {
+        "name": "Phrasee",
+        "description": "AI-powered brand language optimization for marketing.",
+        "link": "https://www.phrasee.co/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.phrasee.co/favicon.ico",
+        "about": "Phrasee uses AI to generate and optimize marketing copy for email, social media, and ads while maintaining brand voice.",
+        "pros": [
+          "Maintains brand voice",
+          "A/B testing built-in",
+          "Improves engagement metrics"
+        ],
+        "cons": [
+          "Enterprise pricing only",
+          "Requires integration setup",
+          "Learning period needed"
         ]
       }
     ]
@@ -4856,6 +5321,49 @@
         "pros": [],
         "cons": [],
         "iconUrl": "icons/data-analysis/yn.png"
+      },
+      {
+        "name": "Polymer",
+        "description": "AI-powered data visualization and dashboard creation.",
+        "link": "https://www.polymersearch.com/",
+        "tags": [
+          "Freemium",
+          "No-code"
+        ],
+        "iconUrl": "https://www.polymersearch.com/favicon.ico",
+        "about": "Polymer turns data into beautiful, interactive dashboards using AI, without requiring coding or data science skills.",
+        "pros": [
+          "No coding required",
+          "Beautiful visualizations",
+          "Fast dashboard creation"
+        ],
+        "cons": [
+          "Limited customization",
+          "Free tier restrictive",
+          "Less powerful than dedicated BI tools"
+        ]
+      },
+      {
+        "name": "DataRobot",
+        "description": "Enterprise AI platform for automated machine learning.",
+        "link": "https://www.datarobot.com/",
+        "tags": [
+          "Paid",
+          "Enterprise",
+          "AutoML"
+        ],
+        "iconUrl": "https://www.datarobot.com/favicon.ico",
+        "about": "DataRobot provides an end-to-end platform for building, deploying, and maintaining AI models with automated machine learning.",
+        "pros": [
+          "Comprehensive AutoML platform",
+          "Enterprise-grade features",
+          "Model deployment included"
+        ],
+        "cons": [
+          "Very expensive",
+          "Complex setup",
+          "Requires data science knowledge"
+        ]
       }
     ]
   },
@@ -7354,6 +7862,69 @@
           "Quality depends on historical ticket data.",
           "Costs scale with usage."
         ]
+      },
+      {
+        "name": "Tidio",
+        "description": "AI chatbot and live chat platform for SMBs.",
+        "link": "https://www.tidio.com/",
+        "tags": [
+          "Freemium",
+          "Live Chat"
+        ],
+        "iconUrl": "https://www.tidio.com/favicon.ico",
+        "about": "Tidio combines AI chatbots with live chat for customer support, with easy integration for e-commerce and websites.",
+        "pros": [
+          "Easy setup",
+          "Affordable pricing",
+          "E-commerce integrations"
+        ],
+        "cons": [
+          "Free tier very limited",
+          "AI chatbot basic",
+          "Design customization limited"
+        ]
+      },
+      {
+        "name": "Drift",
+        "description": "Conversational AI platform for B2B marketing and sales.",
+        "link": "https://www.drift.com/",
+        "tags": [
+          "Paid",
+          "B2B"
+        ],
+        "iconUrl": "https://www.drift.com/favicon.ico",
+        "about": "Drift uses conversational AI for B2B lead qualification, meeting scheduling, and customer engagement.",
+        "pros": [
+          "Strong B2B focus",
+          "Integrates with CRM",
+          "Meeting scheduling built-in"
+        ],
+        "cons": [
+          "Expensive",
+          "Overkill for small businesses",
+          "Complex setup"
+        ]
+      },
+      {
+        "name": "LivePerson",
+        "description": "Enterprise conversational AI and messaging platform.",
+        "link": "https://www.liveperson.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.liveperson.com/favicon.ico",
+        "about": "LivePerson provides enterprise-grade conversational AI for customer service across messaging channels and voice.",
+        "pros": [
+          "Enterprise-scale",
+          "Omnichannel support",
+          "Voice AI included"
+        ],
+        "cons": [
+          "Very expensive",
+          "Complex implementation",
+          "Long deployment time"
+        ]
       }
     ]
   },
@@ -7775,6 +8346,69 @@
           "Coverage and speed can vary."
         ],
         "iconUrl": "icons/healthcare-medical-ai/tissuelab.svg"
+      },
+      {
+        "name": "Infermedica",
+        "description": "AI-powered preliminary diagnosis and patient triage.",
+        "link": "https://infermedica.com/",
+        "tags": [
+          "Paid",
+          "Medical Diagnosis"
+        ],
+        "iconUrl": "https://infermedica.com/favicon.ico",
+        "about": "Infermedica provides AI-powered symptom checking and preliminary diagnosis for healthcare providers and patients.",
+        "pros": [
+          "Medical-grade AI",
+          "Symptom checker",
+          "API available"
+        ],
+        "cons": [
+          "Enterprise/healthcare only",
+          "Not for self-diagnosis",
+          "Regulatory considerations"
+        ]
+      },
+      {
+        "name": "Buoy Health",
+        "description": "AI symptom checker and health assistant.",
+        "link": "https://www.buoyhealth.com/",
+        "tags": [
+          "Free",
+          "Symptom Checker"
+        ],
+        "iconUrl": "https://www.buoyhealth.com/favicon.ico",
+        "about": "Buoy Health uses AI to help people understand their symptoms and find appropriate care with a conversational interface.",
+        "pros": [
+          "Free to use",
+          "Easy conversation",
+          "Care navigation included"
+        ],
+        "cons": [
+          "Not a replacement for doctors",
+          "US-focused",
+          "Limited to common conditions"
+        ]
+      },
+      {
+        "name": "Babylon Health",
+        "description": "AI-powered virtual healthcare services.",
+        "link": "https://www.babylonhealth.com/",
+        "tags": [
+          "Freemium",
+          "Telehealth"
+        ],
+        "iconUrl": "https://www.babylonhealth.com/favicon.ico",
+        "about": "Babylon offers AI symptom checking combined with access to healthcare professionals through video consultations.",
+        "pros": [
+          "Combines AI and human doctors",
+          "Comprehensive health records",
+          "Prescription services"
+        ],
+        "cons": [
+          "Geographic limitations",
+          "Subscription for full access",
+          "Not available everywhere"
+        ]
       }
     ]
   },
@@ -8027,6 +8661,69 @@
           "Customer support could be better",
           "Some features require higher tiers"
         ]
+      },
+      {
+        "name": "AlphaSense",
+        "description": "AI-powered market intelligence and research platform.",
+        "link": "https://www.alpha-sense.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.alpha-sense.com/favicon.ico",
+        "about": "AlphaSense uses AI to search and analyze market intelligence, financial documents, and research for business decisions.",
+        "pros": [
+          "Comprehensive data sources",
+          "Powerful search",
+          "Sentiment analysis"
+        ],
+        "cons": [
+          "Very expensive",
+          "Enterprise only",
+          "Learning curve"
+        ]
+      },
+      {
+        "name": "Kensho",
+        "description": "AI-powered financial analytics and automation platform.",
+        "link": "https://www.kensho.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.kensho.com/favicon.ico",
+        "about": "Kensho (S&P Global) provides AI-driven financial modeling, analytics, and automated report generation for finance professionals.",
+        "pros": [
+          "Advanced analytics",
+          "Automated workflows",
+          "Trusted by major institutions"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Complex platform",
+          "Requires financial expertise"
+        ]
+      },
+      {
+        "name": "Ramp",
+        "description": "AI-powered expense management and corporate cards.",
+        "link": "https://ramp.com/",
+        "tags": [
+          "Freemium",
+          "Expense Management"
+        ],
+        "iconUrl": "https://ramp.com/favicon.ico",
+        "about": "Ramp uses AI to automate expense management, detect savings opportunities, and streamline corporate spending.",
+        "pros": [
+          "Saves money automatically",
+          "Good integrations",
+          "Modern interface"
+        ],
+        "cons": [
+          "US-only currently",
+          "Requires business account",
+          "Small businesses may not qualify"
+        ]
       }
     ]
   },
@@ -8215,6 +8912,27 @@
           "Can be pricey for small teams",
           "Advanced features require higher tier plans",
           "Learning curve for full feature utilization"
+        ]
+      },
+      {
+        "name": "Phenom",
+        "description": "AI-driven talent experience management platform.",
+        "link": "https://www.phenom.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.phenom.com/favicon.ico",
+        "about": "Phenom provides AI-powered talent acquisition, onboarding, and employee experience optimization for enterprises.",
+        "pros": [
+          "Complete talent platform",
+          "Personalization features",
+          "Good candidate experience"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Complex implementation",
+          "Requires large volume to justify cost"
         ]
       }
     ]
@@ -8849,6 +9567,48 @@
           "Cloud-focused only",
           "Can be expensive for small cloud deployments",
           "Requires cloud infrastructure knowledge"
+        ]
+      },
+      {
+        "name": "CrowdStrike Falcon",
+        "description": "AI-powered cloud-native endpoint protection platform.",
+        "link": "https://www.crowdstrike.com/",
+        "tags": [
+          "Paid",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.crowdstrike.com/favicon.ico",
+        "about": "CrowdStrike Falcon uses AI and machine learning for endpoint protection, threat detection, and incident response.",
+        "pros": [
+          "Industry-leading protection",
+          "Cloud-native architecture",
+          "Fast threat response"
+        ],
+        "cons": [
+          "Enterprise pricing",
+          "Can be resource-intensive",
+          "Requires security expertise"
+        ]
+      },
+      {
+        "name": "SentinelOne",
+        "description": "AI-driven autonomous endpoint security platform.",
+        "link": "https://www.sentinelone.com/",
+        "tags": [
+          "Paid",
+          "Autonomous"
+        ],
+        "iconUrl": "https://www.sentinelone.com/favicon.ico",
+        "about": "SentinelOne provides AI-powered autonomous threat detection and response across endpoints, cloud, and identity.",
+        "pros": [
+          "Autonomous response",
+          "Cross-platform support",
+          "Good threat intelligence"
+        ],
+        "cons": [
+          "Expensive",
+          "Complex configuration",
+          "False positives possible"
         ]
       }
     ]
