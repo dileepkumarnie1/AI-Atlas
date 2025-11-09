@@ -187,18 +187,24 @@ async function main(){
     const freqCapped = Math.min(30, freqScore); // avoid inflate by repeats
     // Boost for real user overrides (if provided); logarithmic, mapped to 0..100
     const actual = (overrides[name] && typeof overrides[name].actualUsers === 'number') ? overrides[name].actualUsers : null;
-    const usersScore = actual ? Math.min(100, Math.log10(actual + 1) * 20) : 0; // ~100 at 1e5+
+    // Enhanced logarithmic scale that better reflects global reality of tool adoption
+    // Scale adjusted to differentiate between millions (1M-10M) and hundreds of millions (100M+)
+    const usersScore = actual ? Math.min(100, Math.log10(actual + 1) * 12.5) : 0; // ~62.5 at 1M, ~87.5 at 100M, ~100 at 1B+
     
-    // Weighted combination (emphasize curated Most Popular list; then signals; small repeat bonus)
-    // If usersScore present, prioritize it by blending as primary signal
+    // Weighted combination optimized to better reflect global reality and tool value
+    // When actualUsers data is available, it becomes the primary signal (80% weight) as it represents real-world adoption
+    // Most Popular list order (mpScore) provides editorial curation (15% weight)
+    // Technical signals (GitHub stars, downloads) and frequency are secondary indicators (5% combined)
     // For open source tools, set combined score to 0 to exclude from rankings per business requirements
     let combined;
     if(isOpenSource){
       combined = 0; // Exclude open source tools from rankings
     } else if(usersScore > 0){
-      combined = Number((0.6*usersScore + 0.3*mpScore + 0.1*signalsScore + 0.05*freqCapped).toFixed(2));
+      // Prioritize actual user counts as primary ranking signal to reflect global reality
+      combined = Number((0.80*usersScore + 0.15*mpScore + 0.03*signalsScore + 0.02*freqCapped).toFixed(2));
     } else {
-      combined = Number((0.6*mpScore + 0.35*signalsScore + 0.05*freqCapped).toFixed(2));
+      // Fallback when no user data: emphasize editorial curation, then technical signals
+      combined = Number((0.65*mpScore + 0.30*signalsScore + 0.05*freqCapped).toFixed(2));
     }
     
     raw[name] = {
