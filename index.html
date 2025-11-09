@@ -1744,7 +1744,7 @@
 
                                 <!-- Hero Title - Prominent with Subtle Color -->
                                 <div class="mb-4 md:mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <h1 class="text-[1.9rem] md:text-[3.325rem] lg:text-[3.8rem] font-bold tracking-tight leading-tight mb-2">
+                                    <h1 class="text-[1.805rem] md:text-[3.159rem] lg:text-[3.61rem] font-bold tracking-tight leading-tight mb-2">
                                         <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
                                         <span class="text-gray-800 dark:text-gray-100">- Universe of AI Tools</span>
                                     </h1>
@@ -1770,7 +1770,7 @@
                                     
                                     <!-- Category Carousel -->
                                     <div class="mt-5 md:mt-6 relative">
-                                        <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+                                        <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 px-4" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                                             ${(() => {
                                                 const allCategories = [
                                                     { slug: 'image-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
@@ -1784,10 +1784,12 @@
                                                     { slug: 'data-tools', name: '📊 Data', color: 'rgba(14, 165, 233, 0.85)' },
                                                     { slug: 'education-tools', name: '🎓 Education', color: 'rgba(168, 85, 247, 0.85)' }
                                                 ];
-                                                return allCategories.map(cat => {
+                                                // Duplicate categories for seamless loop
+                                                const duplicatedCategories = [...allCategories, ...allCategories];
+                                                return duplicatedCategories.map((cat, idx) => {
                                                     const domain = db.find(d => d.slug === cat.slug);
                                                     const toolCount = domain?.tools?.length || 0;
-                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color};" data-category-slug="${cat.slug}">
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color}; pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
                                                         ${cat.name} <span class="opacity-90">(${toolCount})</span>
                                                     </button>`;
                                                 }).join('');
@@ -2464,11 +2466,16 @@
                     // Handle category pill clicks (both old and carousel)
                     document.querySelectorAll('.category-pill, .category-pill-carousel').forEach(pill => {
                         pill.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
                             const categorySlug = e.currentTarget.getAttribute('data-category-slug');
+                            console.log('Category clicked:', categorySlug); // Debug logging
                             if (categorySlug) {
                                 state.currentView = 'tools';
                                 state.selectedDomain = categorySlug;
-                                try { location.hash = `#domain=${encodeURIComponent(categorySlug)}`; } catch (err) {
+                                try { 
+                                    location.hash = `#domain=${encodeURIComponent(categorySlug)}`;
+                                } catch (err) {
                                     console.error('Navigation error:', err);
                                 }
                                 window.scrollTo(0, 0);
@@ -2477,23 +2484,27 @@
                         });
                     });
                     
-                    // Category carousel - smooth continuous scrolling
+                    // Category carousel - smooth continuous scrolling with seamless loop
                     const carousel = document.getElementById('category-carousel');
                     
                     if (carousel) {
                         let scrollAmount = 0;
                         let isScrolling = true;
                         let animationFrameId = null;
+                        let isDragging = false;
+                        
+                        // Calculate the width of one set of categories (half of total since we duplicated)
+                        const resetPoint = carousel.scrollWidth / 2;
                         
                         // Smooth continuous auto-scroll
                         function smoothScroll() {
-                            if (isScrolling) {
-                                scrollAmount += 0.5; // Gradual scroll speed (pixels per frame)
+                            if (isScrolling && !isDragging) {
+                                scrollAmount += 0.3; // Slightly slower for better readability
                                 
-                                // Check if we've reached the end
-                                if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-                                    // Seamlessly loop back to start
+                                // Seamlessly loop back when we reach halfway (end of first set)
+                                if (scrollAmount >= resetPoint) {
                                     scrollAmount = 0;
+                                    carousel.scrollLeft = 0;
                                 }
                                 
                                 carousel.scrollLeft = scrollAmount;
@@ -2513,6 +2524,27 @@
                         
                         carousel.addEventListener('mouseleave', () => {
                             isScrolling = true;
+                        });
+                        
+                        // Detect touch/mouse dragging to pause scrolling
+                        carousel.addEventListener('touchstart', () => {
+                            isDragging = true;
+                        });
+                        
+                        carousel.addEventListener('touchend', () => {
+                            setTimeout(() => {
+                                isDragging = false;
+                            }, 100);
+                        });
+                        
+                        carousel.addEventListener('mousedown', () => {
+                            isDragging = true;
+                        });
+                        
+                        carousel.addEventListener('mouseup', () => {
+                            setTimeout(() => {
+                                isDragging = false;
+                            }, 100);
                         });
                     }
 
