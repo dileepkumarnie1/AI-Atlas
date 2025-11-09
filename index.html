@@ -1703,7 +1703,7 @@
                     contentArea.innerHTML = `
                         <div class="relative">
                             <!-- Enhanced Hero Section with Animations -->
-                            <section class="min-h-[40vh] md:min-h-[48vh] flex flex-col justify-center items-center text-center py-6 md:py-9 relative overflow-hidden">
+                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden -mt-8 md:-mt-12">
                                 <!-- Animated Background Gradient -->
                                 <div class="absolute inset-0 -z-10 hero-gradient-bg"></div>
                                 
@@ -1717,37 +1717,38 @@
                                 </div>
 
                                 <!-- Animated Statistics Bar -->
-                                <div class="mb-5 md:mb-7 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
-                                    <div class="flex flex-wrap justify-center gap-3 md:gap-7 lg:gap-10">
+                                <div class="mb-6 md:mb-8 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-11">
                                         <!-- Tools Count -->
-                                        <div class="stat-card flex flex-col items-center p-3 md:p-5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[126px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-3xl mb-2 pulse-icon">🎯</div>
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon">🎯</div>
                                             <div class="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${roundedToolsCount}">0</div>
                                             <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">AI Tools</div>
                                         </div>
                                         
                                         <!-- Categories Count -->
-                                        <div class="stat-card flex flex-col items-center p-3 md:p-5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[126px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-3xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
                                             <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
                                             <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Categories</div>
                                         </div>
                                         
                                         <!-- Users Count -->
-                                        <div class="stat-card flex flex-col items-center p-3 md:p-5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[126px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-3xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
                                             <div class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
                                             <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Happy Users</div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Hero Title - More Professional -->
-                                <div class="mb-4 md:mb-5 animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <h1 class="text-[1.8rem] md:text-[3.2rem] lg:text-[3.6rem] font-bold tracking-tight text-gray-900 dark:text-gray-100 leading-tight mb-2">
-                                        AI ToolVerse
+                                <!-- Hero Title - Prominent with Subtle Color -->
+                                <div class="mb-4 md:mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+                                    <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-tight leading-tight mb-2">
+                                        <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
+                                        <span class="text-gray-800 dark:text-gray-100">- Universe of AI Tools</span>
                                     </h1>
-                                    <p class="max-w-3xl mx-auto text-base md:text-xl text-gray-700 dark:text-gray-200 font-medium">
+                                    <p class="max-w-3xl mx-auto text-lg md:text-2xl text-gray-700 dark:text-gray-200 font-medium">
                                         Your Gateway to <span class="text-purple-600 dark:text-purple-400 font-bold">${roundedToolsCount}+</span> Curated AI Tools Across Every Domain
                                     </p>
                                 </div>
@@ -1756,9 +1757,9 @@
                                     <div id="search-filter-unit" class="relative flex items-center search-glass-morph">
                                         <div class="relative flex-1">
                                             <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none">🔍</span>
-                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[50px] md:h-[58px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
+                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[55px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
                                         </div>
-                                        <button id="filter-button" class="h-[50px] md:h-[58px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105">
+                                        <button id="filter-button" class="h-[55px] md:h-[64px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105">
                                             <span class="hidden md:inline">Advanced Filters</span>
                                             <span class="md:hidden">Filter</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
@@ -1768,7 +1769,7 @@
                                     </div>
                                     
                                     <!-- Category Carousel -->
-                                    <div class="mt-4 md:mt-5 relative">
+                                    <div class="mt-5 md:mt-6 relative">
                                         <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2" style="scrollbar-width: none; -ms-overflow-style: none;">
                                             ${(() => {
                                                 const allCategories = [
@@ -1792,16 +1793,9 @@
                                                 }).join('');
                                             })()}
                                         </div>
-                                        <!-- Carousel navigation arrows -->
-                                        <button id="carousel-prev" class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:scale-110 transition-transform" style="z-index: 10;">
-                                            <svg class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                        </button>
-                                        <button id="carousel-next" class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:scale-110 transition-transform" style="z-index: 10;">
-                                            <svg class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                        </button>
                                     </div>
                                 </div>
-                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-5 px-2 md:px-0"></div>
+                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-6 px-2 md:px-0"></div>
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
@@ -2479,42 +2473,40 @@
                         });
                     });
                     
-                    // Category carousel navigation
+                    // Category carousel - smooth continuous scrolling
                     const carousel = document.getElementById('category-carousel');
-                    const prevBtn = document.getElementById('carousel-prev');
-                    const nextBtn = document.getElementById('carousel-next');
                     
-                    if (carousel && prevBtn && nextBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            carousel.scrollBy({ left: -200, behavior: 'smooth' });
-                        });
+                    if (carousel) {
+                        let scrollAmount = 0;
+                        let isScrolling = true;
                         
-                        nextBtn.addEventListener('click', () => {
-                            carousel.scrollBy({ left: 200, behavior: 'smooth' });
-                        });
-                        
-                        // Auto-scroll carousel
-                        let autoScrollInterval = setInterval(() => {
-                            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-                                carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                            } else {
-                                carousel.scrollBy({ left: 200, behavior: 'smooth' });
+                        // Smooth continuous auto-scroll
+                        function smoothScroll() {
+                            if (isScrolling) {
+                                scrollAmount += 0.5; // Gradual scroll speed (pixels per frame)
+                                
+                                // Check if we've reached the end
+                                if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+                                    // Seamlessly loop back to start
+                                    scrollAmount = 0;
+                                }
+                                
+                                carousel.scrollLeft = scrollAmount;
+                                requestAnimationFrame(smoothScroll);
                             }
-                        }, 3000);
+                        }
                         
-                        // Pause auto-scroll on hover
+                        // Start the smooth scroll animation
+                        smoothScroll();
+                        
+                        // Pause scrolling on hover
                         carousel.addEventListener('mouseenter', () => {
-                            clearInterval(autoScrollInterval);
+                            isScrolling = false;
                         });
                         
                         carousel.addEventListener('mouseleave', () => {
-                            autoScrollInterval = setInterval(() => {
-                                if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-                                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                                } else {
-                                    carousel.scrollBy({ left: 200, behavior: 'smooth' });
-                                }
-                            }, 3000);
+                            isScrolling = true;
+                            smoothScroll();
                         });
                     }
 
