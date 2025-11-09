@@ -1703,7 +1703,7 @@
                     contentArea.innerHTML = `
                         <div class="relative">
                             <!-- Enhanced Hero Section with Animations -->
-                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden -mt-8 md:-mt-12">
+                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden mt-4 md:mt-8">
                                 <!-- Animated Background Gradient -->
                                 <div class="absolute inset-0 -z-10 hero-gradient-bg"></div>
                                 
@@ -1773,16 +1773,18 @@
                                         <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 px-4" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                                             ${(() => {
                                                 const allCategories = [
-                                                    { slug: 'image-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
-                                                    { slug: 'code-tools', name: '💻 Code', color: 'rgba(59, 130, 246, 0.85)' },
-                                                    { slug: 'writing-tools', name: '✍️ Writing', color: 'rgba(139, 92, 246, 0.85)' },
+                                                    { slug: 'design-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
+                                                    { slug: 'code-assistance', name: '💻 Code', color: 'rgba(59, 130, 246, 0.85)' },
+                                                    { slug: 'language-chat', name: '✍️ Chat', color: 'rgba(139, 92, 246, 0.85)' },
                                                     { slug: 'video-tools', name: '🎥 Video', color: 'rgba(239, 68, 68, 0.85)' },
-                                                    { slug: 'audio-tools', name: '🎵 Audio', color: 'rgba(16, 185, 129, 0.85)' },
-                                                    { slug: 'productivity-tools', name: '⚡ Productivity', color: 'rgba(245, 158, 11, 0.85)' },
-                                                    { slug: 'research-tools', name: '🔬 Research', color: 'rgba(99, 102, 241, 0.85)' },
-                                                    { slug: 'marketing-tools', name: '📢 Marketing', color: 'rgba(220, 38, 127, 0.85)' },
-                                                    { slug: 'data-tools', name: '📊 Data', color: 'rgba(14, 165, 233, 0.85)' },
-                                                    { slug: 'education-tools', name: '🎓 Education', color: 'rgba(168, 85, 247, 0.85)' }
+                                                    { slug: 'audio-music', name: '🎵 Audio', color: 'rgba(16, 185, 129, 0.85)' },
+                                                    { slug: 'productivity', name: '⚡ Productivity', color: 'rgba(245, 158, 11, 0.85)' },
+                                                    { slug: 'research', name: '🔬 Research', color: 'rgba(99, 102, 241, 0.85)' },
+                                                    { slug: 'marketing-seo', name: '📢 Marketing', color: 'rgba(220, 38, 127, 0.85)' },
+                                                    { slug: 'data-analysis', name: '📊 Data', color: 'rgba(14, 165, 233, 0.85)' },
+                                                    { slug: 'education', name: '🎓 Education', color: 'rgba(168, 85, 247, 0.85)' },
+                                                    { slug: 'image-generation', name: '🖼️ Images', color: 'rgba(167, 139, 250, 0.85)' },
+                                                    { slug: '3d-modeling', name: '🎲 3D', color: 'rgba(59, 130, 246, 0.85)' }
                                                 ];
                                                 // Duplicate categories for seamless loop
                                                 const duplicatedCategories = [...allCategories, ...allCategories];

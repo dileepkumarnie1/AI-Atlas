@@ -1,5 +1,5 @@
 {
-  "ChatGPT (OpenAI)": { "actualUsers": 200000000 },
+  "ChatGPT (OpenAI)": { "actualUsers": 845000000 },
   "Microsoft Copilot": { "actualUsers": 100000000 },
   "Gemini (Google)": { "actualUsers": 42000000 },
   "Claude (Anthropic)": { "actualUsers": 32000000 },
@@ -8,7 +8,7 @@
   "Grammarly": { "actualUsers": 30000000 },
   "Midjourney": { "actualUsers": 25000000 },
   "DALL-E 3 (OpenAI)": { "actualUsers": 10000000 },
-  "Canva AI": { "actualUsers": 285000000 },
+  "Canva AI": { "actualUsers": 15000000 },
   "Adobe Firefly": { "actualUsers": 12000000 },
   "Jasper AI": { "actualUsers": 1000000 },
   "QuillBot": { "actualUsers": 50000000 },
