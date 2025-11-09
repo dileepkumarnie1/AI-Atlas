@@ -1,8 +1,8 @@
 name: Cache Icons and Export Tools
 
 on:
-  schedule:
-    - cron: '0 3 * * *' # Nightly at 03:00 UTC
+  # schedule:
+  #   - cron: '0 3 * * *' # Nightly at 03:00 UTC (DISABLED - run manually when needed)
   workflow_dispatch: {}
 
 jobs:
