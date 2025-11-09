@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-09T06:14:12.019Z",
+  "generatedAt": "2025-11-09T08:50:05.390Z",
   "raw": {
     "ComfyUI": {
       "signals": {
@@ -119,8 +119,8 @@
       "signalsNorm": 0,
       "mpScore": 96.22641509433963,
       "freqScore": 20,
-      "usersScore": 100,
-      "popularityScore": 94.83,
+      "usersScore": 89.70114110010807,
+      "popularityScore": 86.59,
       "isOpenSource": false
     },
     "Adobe Firefly": {
@@ -7050,33 +7050,33 @@
   },
   "ranked": [
     {
-      "name": "Canva AI",
-      "score": 94.83,
-      "rank": 1
-    },
-    {
       "name": "ChatGPT (OpenAI)",
       "score": 94.07,
-      "rank": 2
+      "rank": 1
     },
     {
       "name": "DeepL",
       "score": 92.09,
-      "rank": 3
+      "rank": 2
     },
     {
       "name": "Claude (Anthropic)",
       "score": 88.84,
-      "rank": 4
+      "rank": 3
     },
     {
       "name": "Microsoft Copilot",
       "score": 86.71,
-      "rank": 5
+      "rank": 4
     },
     {
       "name": "Gemini (Google)",
       "score": 86.62,
+      "rank": 5
+    },
+    {
+      "name": "Canva AI",
+      "score": 86.59,
       "rank": 6
     },
     {
