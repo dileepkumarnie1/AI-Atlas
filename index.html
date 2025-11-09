@@ -50,6 +50,108 @@
         html.dark .feature-card {
             background-color: rgba(24,24,27,0.75) !important;
         }
+        
+        /* Enhanced Hero Section Styles */
+        .hero-gradient-bg {
+            background: linear-gradient(135deg, 
+                rgba(139, 92, 246, 0.1) 0%, 
+                rgba(59, 130, 246, 0.1) 25%, 
+                rgba(236, 72, 153, 0.1) 50%, 
+                rgba(59, 130, 246, 0.1) 75%, 
+                rgba(139, 92, 246, 0.1) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.6), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.4;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.2); }
+        }
+        
+        .pulse-icon {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 1; }
+            25% { transform: rotate(15deg) scale(1.2); opacity: 0.8; }
+            50% { transform: rotate(-15deg) scale(1.1); opacity: 0.9; }
+            75% { transform: rotate(10deg) scale(1.15); opacity: 0.85; }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-glass-morph {
+            box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15);
+        }
+        
+        .search-input-enhanced:focus {
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .category-pill {
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .hero-gradient-bg,
+            .floating-particle,
+            .pulse-icon,
+            .sparkle,
+            .animate-fade-in-up {
+                animation: none;
+            }
+        }
+        
         /* Dedicated background layer ensures full coverage across mobile browsers */
         #background-video {
             position: fixed;
@@ -1592,39 +1694,97 @@
                     // No favorites overlay on homepage
                     contentArea.innerHTML = `
                         <div class="relative">
-                            <!-- Hero: centered title + search -->
-                            <section class="min-h-[46vh] md:min-h-[52vh] flex flex-col justify-center items-center text-center">
-                                <!-- Tool Count Banner -->
-                                <div class="mb-1 md:mb-2">
-                                    <div class="inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4 md:w-5 md:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                        </svg>
-                                        <span class="text-base md:text-xl font-semibold text-primary">
-                                            ${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); const rounded = Math.round(total / 100) * 100; return rounded; })()}+ AI Tools Curated
-                                        </span>
+                            <!-- Enhanced Hero Section with Animations -->
+                            <section class="min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center items-center text-center py-8 md:py-12 relative overflow-hidden">
+                                <!-- Animated Background Gradient -->
+                                <div class="absolute inset-0 -z-10 hero-gradient-bg"></div>
+                                
+                                <!-- Floating Particles -->
+                                <div class="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+                                    <div class="floating-particle" style="left:10%;top:20%;animation-delay:0s;"></div>
+                                    <div class="floating-particle" style="left:80%;top:30%;animation-delay:1s;"></div>
+                                    <div class="floating-particle" style="left:20%;top:70%;animation-delay:2s;"></div>
+                                    <div class="floating-particle" style="left:90%;top:60%;animation-delay:1.5s;"></div>
+                                    <div class="floating-particle" style="left:50%;top:80%;animation-delay:0.5s;"></div>
+                                </div>
+
+                                <!-- Animated Statistics Bar -->
+                                <div class="mb-6 md:mb-8 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
+                                        <!-- Tools Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon">🎯</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); return Math.round(total / 100) * 100; })()}">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">AI Tools</div>
+                                        </div>
+                                        
+                                        <!-- Categories Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Categories</div>
+                                        </div>
+                                        
+                                        <!-- Users Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Happy Users</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="mb-2.5 md:mb-4">
-                                    <h1 class="text-[1.875rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-1.5 md:mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
-                                    <p class="max-w-2xl mx-auto text-base md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
+
+                                <!-- Hero Title with Sparkle Effect -->
+                                <div class="mb-4 md:mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+                                    <div class="flex items-center justify-center gap-2 mb-2">
+                                        <span class="sparkle text-2xl md:text-3xl">✨</span>
+                                        <h1 class="text-[2.25rem] md:text-[4rem] lg:text-[4.5rem] font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                                            Discover Your Perfect AI Tool
+                                        </h1>
+                                        <span class="sparkle text-2xl md:text-3xl">✨</span>
+                                    </div>
+                                    <p class="max-w-3xl mx-auto text-lg md:text-2xl text-gray-800 dark:text-gray-100 font-medium">
+                                        Your Gateway to <span class="text-purple-600 dark:text-purple-400 font-bold">${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); return Math.round(total / 100) * 100; })()}+</span> Curated AI Tools Across Every Domain
+                                    </p>
                                 </div>
-                                <!-- Unified Search + Filter dropdown -->
-                                <div class="w-full max-w-4xl mx-auto">
-                                    <div id="search-filter-unit" class="relative flex items-center">
+                                <!-- Enhanced Search Bar with Glass Morphism -->
+                                <div class="w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph">
                                         <div class="relative flex-1">
-                                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 dark:text-gray-500 pointer-events-none">🔍</span>
-                                            <input id="search-bar-new" class="search-input w-full h-[46px] md:h-[52px] rounded-l-full border-r-0 pl-12" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none">🔍</span>
+                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[56px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
                                         </div>
-                                        <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
-                                            <span>Filter</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                                        <button id="filter-button" class="h-[56px] md:h-[64px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105">
+                                            <span class="hidden md:inline">Advanced Filters</span>
+                                            <span class="md:hidden">Filter</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                                         </button>
                                         <!-- Dropdown is absolutely positioned within the search/filter container so its top aligns below the Filter button -->
                                         <div id="filter-menu" class="hidden absolute right-0 top-full mt-2 w-80 max-h-[60vh] overflow-y-auto bg-card border border-color rounded-xl shadow-lg"></div>
                                     </div>
+                                    
+                                    <!-- Quick Category Access Pills -->
+                                    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mt-4 md:mt-6">
+                                        ${(() => {
+                                            const popularCategories = [
+                                                { slug: 'image-tools', name: '🎨 Design', color: 'from-pink-500 to-rose-500' },
+                                                { slug: 'code-tools', name: '💻 Code', color: 'from-blue-500 to-cyan-500' },
+                                                { slug: 'writing-tools', name: '✍️ Writing', color: 'from-purple-500 to-violet-500' },
+                                                { slug: 'video-tools', name: '🎥 Video', color: 'from-red-500 to-orange-500' },
+                                                { slug: 'audio-tools', name: '🎵 Audio', color: 'from-green-500 to-emerald-500' },
+                                                { slug: 'productivity-tools', name: '⚡ Productivity', color: 'from-yellow-500 to-amber-500' }
+                                            ];
+                                            return popularCategories.map(cat => {
+                                                const domain = db.find(d => d.slug === cat.slug);
+                                                const toolCount = domain?.tools?.length || 0;
+                                                return `<button class="category-pill px-4 py-2 rounded-full bg-gradient-to-r ${cat.color} text-white font-semibold text-sm hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-lg" data-category-slug="${cat.slug}">
+                                                    ${cat.name} <span class="opacity-90">(${toolCount})</span>
+                                                </button>`;
+                                            }).join('');
+                                        })()}
+                                    </div>
                                 </div>
-                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-4 px-2 md:px-0"></div>
+                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-6 px-2 md:px-0"></div>
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
@@ -2254,6 +2414,47 @@
                         });
                     }
                     // Clear button removed; reset handled on navigation only
+
+                    // ===== HERO SECTION ENHANCEMENTS =====
+                    
+                    // Animate counters on page load
+                    function animateCounters() {
+                        const counters = document.querySelectorAll('.counter');
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-target'));
+                            const duration = 2000; // 2 seconds
+                            const increment = target / (duration / 16); // 60fps
+                            let current = 0;
+                            
+                            const updateCounter = () => {
+                                current += increment;
+                                if (current < target) {
+                                    counter.textContent = Math.floor(current).toLocaleString();
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = target.toLocaleString() + (target >= 1000 ? '+' : '');
+                                }
+                            };
+                            
+                            // Start animation after a short delay
+                            setTimeout(() => updateCounter(), 300);
+                        });
+                    }
+                    
+                    // Call animation function
+                    animateCounters();
+                    
+                    // Handle category pill clicks
+                    document.querySelectorAll('.category-pill').forEach(pill => {
+                        pill.addEventListener('click', (e) => {
+                            const categorySlug = e.currentTarget.getAttribute('data-category-slug');
+                            state.currentView = 'tools';
+                            state.selectedDomain = categorySlug;
+                            try { location.hash = `#domain=${encodeURIComponent(categorySlug)}`; } catch (e) {}
+                            window.scrollTo(0, 0);
+                            render();
+                        });
+                    });
 
                     // Initial filter menu render (no query -> total counts)
                     renderFilterMenu([]);
