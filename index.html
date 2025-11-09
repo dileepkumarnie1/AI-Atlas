@@ -50,6 +50,112 @@
         html.dark .feature-card {
             background-color: rgba(24,24,27,0.75) !important;
         }
+        
+        /* Enhanced Hero Section Styles */
+        .hero-gradient-bg {
+            background: linear-gradient(135deg, 
+                rgba(139, 92, 246, 0.1) 0%, 
+                rgba(59, 130, 246, 0.1) 25%, 
+                rgba(236, 72, 153, 0.1) 50%, 
+                rgba(59, 130, 246, 0.1) 75%, 
+                rgba(139, 92, 246, 0.1) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.6), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.4;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.2); }
+        }
+        
+        .pulse-icon {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 1; }
+            25% { transform: rotate(15deg) scale(1.2); opacity: 0.8; }
+            50% { transform: rotate(-15deg) scale(1.1); opacity: 0.9; }
+            75% { transform: rotate(10deg) scale(1.15); opacity: 0.85; }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-glass-morph {
+            box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15);
+        }
+        
+        .search-input-enhanced:focus {
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .category-pill, .category-pill-carousel {
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-pill-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .hero-gradient-bg,
+            .floating-particle,
+            .pulse-icon,
+            .sparkle,
+            .animate-fade-in-up {
+                animation: none;
+            }
+        }
+        
         /* Dedicated background layer ensures full coverage across mobile browsers */
         #background-video {
             position: fixed;
@@ -1590,41 +1696,108 @@
                     state.categoryExplicit = false;
                     // Show domains and redesigned search UI
                     // No favorites overlay on homepage
+                    // Calculate total tools count once
+                    const totalToolsCount = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0);
+                    const roundedToolsCount = Math.round(totalToolsCount / 100) * 100;
+                    
                     contentArea.innerHTML = `
                         <div class="relative">
-                            <!-- Hero: centered title + search -->
-                            <section class="min-h-[46vh] md:min-h-[52vh] flex flex-col justify-center items-center text-center">
-                                <!-- Tool Count Banner -->
-                                <div class="mb-1 md:mb-2">
-                                    <div class="inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4 md:w-5 md:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                        </svg>
-                                        <span class="text-base md:text-xl font-semibold text-primary">
-                                            ${(() => { const total = db.reduce((sum, section) => sum + (section.tools?.length || 0), 0); const rounded = Math.round(total / 100) * 100; return rounded; })()}+ AI Tools Curated
-                                        </span>
+                            <!-- Enhanced Hero Section with Animations -->
+                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden -mt-8 md:-mt-12">
+                                <!-- Animated Background Gradient -->
+                                <div class="absolute inset-0 -z-10 hero-gradient-bg"></div>
+                                
+                                <!-- Floating Particles -->
+                                <div class="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+                                    <div class="floating-particle" style="left:10%;top:20%;animation-delay:0s;"></div>
+                                    <div class="floating-particle" style="left:80%;top:30%;animation-delay:1s;"></div>
+                                    <div class="floating-particle" style="left:20%;top:70%;animation-delay:2s;"></div>
+                                    <div class="floating-particle" style="left:90%;top:60%;animation-delay:1.5s;"></div>
+                                    <div class="floating-particle" style="left:50%;top:80%;animation-delay:0.5s;"></div>
+                                </div>
+
+                                <!-- Animated Statistics Bar -->
+                                <div class="mb-6 md:mb-8 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-11">
+                                        <!-- Tools Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon">🎯</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${roundedToolsCount}">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">AI Tools</div>
+                                        </div>
+                                        
+                                        <!-- Categories Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Categories</div>
+                                        </div>
+                                        
+                                        <!-- Users Count -->
+                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
+                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
+                                            <div class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
+                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Happy Users</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="mb-2.5 md:mb-4">
-                                    <h1 class="text-[1.875rem] md:text-[3.5rem] font-bold tracking-tight text-primary mb-1.5 md:mb-2">Welcome to <span class="text-primary">AI ToolVerse</span></h1>
-                                    <p class="max-w-2xl mx-auto text-base md:text-[1.38rem] text-gray-900 dark:text-gray-100">Endless AI Tools. Infinite Possibilities.</p>
+
+                                <!-- Hero Title - Prominent with Subtle Color -->
+                                <div class="mb-4 md:mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+                                    <h1 class="text-[1.805rem] md:text-[3.159rem] lg:text-[3.61rem] font-bold tracking-tight leading-tight mb-2">
+                                        <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
+                                        <span class="text-gray-800 dark:text-gray-100">- Universe of AI Tools</span>
+                                    </h1>
+                                    <p class="max-w-3xl mx-auto text-lg md:text-2xl text-gray-700 dark:text-gray-200 font-medium">
+                                        Your Gateway to <span class="text-purple-600 dark:text-purple-400 font-bold">${roundedToolsCount}+</span> Curated AI Tools Across Every Domain
+                                    </p>
                                 </div>
-                                <!-- Unified Search + Filter dropdown -->
-                                <div class="w-full max-w-4xl mx-auto">
-                                    <div id="search-filter-unit" class="relative flex items-center">
+                                <!-- Enhanced Search Bar with Glass Morphism -->
+                                <div class="w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph">
                                         <div class="relative flex-1">
-                                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 dark:text-gray-500 pointer-events-none">🔍</span>
-                                            <input id="search-bar-new" class="search-input w-full h-[46px] md:h-[52px] rounded-l-full border-r-0 pl-12" type="search" placeholder="Search tools by name, tag or description..." value="${escapeHtml(state.searchQuery || '')}">
+                                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none">🔍</span>
+                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[55px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
                                         </div>
-                                        <button id="filter-button" class="h-[46px] md:h-[52px] bg-purple-600 text-white px-4 md:px-5 rounded-r-full border border-purple-700 border-l-0 flex items-center gap-2">
-                                            <span>Filter</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                                        <button id="filter-button" class="h-[55px] md:h-[64px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105">
+                                            <span class="hidden md:inline">Advanced Filters</span>
+                                            <span class="md:hidden">Filter</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                                         </button>
                                         <!-- Dropdown is absolutely positioned within the search/filter container so its top aligns below the Filter button -->
                                         <div id="filter-menu" class="hidden absolute right-0 top-full mt-2 w-80 max-h-[60vh] overflow-y-auto bg-card border border-color rounded-xl shadow-lg"></div>
                                     </div>
+                                    
+                                    <!-- Category Carousel -->
+                                    <div class="mt-5 md:mt-6 relative">
+                                        <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 px-4" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+                                            ${(() => {
+                                                const allCategories = [
+                                                    { slug: 'image-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
+                                                    { slug: 'code-tools', name: '💻 Code', color: 'rgba(59, 130, 246, 0.85)' },
+                                                    { slug: 'writing-tools', name: '✍️ Writing', color: 'rgba(139, 92, 246, 0.85)' },
+                                                    { slug: 'video-tools', name: '🎥 Video', color: 'rgba(239, 68, 68, 0.85)' },
+                                                    { slug: 'audio-tools', name: '🎵 Audio', color: 'rgba(16, 185, 129, 0.85)' },
+                                                    { slug: 'productivity-tools', name: '⚡ Productivity', color: 'rgba(245, 158, 11, 0.85)' },
+                                                    { slug: 'research-tools', name: '🔬 Research', color: 'rgba(99, 102, 241, 0.85)' },
+                                                    { slug: 'marketing-tools', name: '📢 Marketing', color: 'rgba(220, 38, 127, 0.85)' },
+                                                    { slug: 'data-tools', name: '📊 Data', color: 'rgba(14, 165, 233, 0.85)' },
+                                                    { slug: 'education-tools', name: '🎓 Education', color: 'rgba(168, 85, 247, 0.85)' }
+                                                ];
+                                                // Duplicate categories for seamless loop
+                                                const duplicatedCategories = [...allCategories, ...allCategories];
+                                                return duplicatedCategories.map((cat, idx) => {
+                                                    const domain = db.find(d => d.slug === cat.slug);
+                                                    const toolCount = domain?.tools?.length || 0;
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color}; pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
+                                                        ${cat.name} <span class="opacity-90">(${toolCount})</span>
+                                                    </button>`;
+                                                }).join('');
+                                            })()}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-4 px-2 md:px-0"></div>
+                                <div id="search-results-container" class="w-full max-w-7xl mx-auto mt-6 px-2 md:px-0"></div>
                             </section>
 
                             <!-- Top Tools rotating strip (shows top 20, 6 visible) -->
@@ -2254,6 +2427,126 @@
                         });
                     }
                     // Clear button removed; reset handled on navigation only
+
+                    // ===== HERO SECTION ENHANCEMENTS =====
+                    
+                    // Animate counters on page load with timestamp-based animation
+                    function animateCounters() {
+                        const counters = document.querySelectorAll('.counter');
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-target'));
+                            // Validate parseInt result
+                            if (isNaN(target)) return;
+                            
+                            const duration = 2000; // 2 seconds
+                            let startTime = null;
+                            
+                            const updateCounter = (currentTime) => {
+                                if (!startTime) startTime = currentTime;
+                                const elapsed = currentTime - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                const current = target * progress;
+                                
+                                if (progress < 1) {
+                                    counter.textContent = Math.floor(current).toLocaleString();
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = target.toLocaleString() + (target >= 1000 ? '+' : '');
+                                }
+                            };
+                            
+                            // Start animation after a short delay
+                            setTimeout(() => requestAnimationFrame(updateCounter), 300);
+                        });
+                    }
+                    
+                    // Call animation function
+                    animateCounters();
+                    
+                    // Handle category pill clicks (both old and carousel)
+                    document.querySelectorAll('.category-pill, .category-pill-carousel').forEach(pill => {
+                        pill.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const categorySlug = e.currentTarget.getAttribute('data-category-slug');
+                            console.log('Category clicked:', categorySlug); // Debug logging
+                            if (categorySlug) {
+                                state.currentView = 'tools';
+                                state.selectedDomain = categorySlug;
+                                try { 
+                                    location.hash = `#domain=${encodeURIComponent(categorySlug)}`;
+                                } catch (err) {
+                                    console.error('Navigation error:', err);
+                                }
+                                window.scrollTo(0, 0);
+                                render();
+                            }
+                        });
+                    });
+                    
+                    // Category carousel - smooth continuous scrolling with seamless loop
+                    const carousel = document.getElementById('category-carousel');
+                    
+                    if (carousel) {
+                        let scrollAmount = 0;
+                        let isScrolling = true;
+                        let animationFrameId = null;
+                        let isDragging = false;
+                        
+                        // Calculate the width of one set of categories (half of total since we duplicated)
+                        const resetPoint = carousel.scrollWidth / 2;
+                        
+                        // Smooth continuous auto-scroll
+                        function smoothScroll() {
+                            if (isScrolling && !isDragging) {
+                                scrollAmount += 0.3; // Slightly slower for better readability
+                                
+                                // Seamlessly loop back when we reach halfway (end of first set)
+                                if (scrollAmount >= resetPoint) {
+                                    scrollAmount = 0;
+                                    carousel.scrollLeft = 0;
+                                }
+                                
+                                carousel.scrollLeft = scrollAmount;
+                            }
+                            
+                            // Always request next frame to keep animation loop alive
+                            animationFrameId = requestAnimationFrame(smoothScroll);
+                        }
+                        
+                        // Start the smooth scroll animation
+                        smoothScroll();
+                        
+                        // Pause scrolling on hover (but keep animation loop running)
+                        carousel.addEventListener('mouseenter', () => {
+                            isScrolling = false;
+                        });
+                        
+                        carousel.addEventListener('mouseleave', () => {
+                            isScrolling = true;
+                        });
+                        
+                        // Detect touch/mouse dragging to pause scrolling
+                        carousel.addEventListener('touchstart', () => {
+                            isDragging = true;
+                        });
+                        
+                        carousel.addEventListener('touchend', () => {
+                            setTimeout(() => {
+                                isDragging = false;
+                            }, 100);
+                        });
+                        
+                        carousel.addEventListener('mousedown', () => {
+                            isDragging = true;
+                        });
+                        
+                        carousel.addEventListener('mouseup', () => {
+                            setTimeout(() => {
+                                isDragging = false;
+                            }, 100);
+                        });
+                    }
 
                     // Initial filter menu render (no query -> total counts)
                     renderFilterMenu([]);
