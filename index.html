@@ -1744,7 +1744,7 @@
 
                                 <!-- Hero Title - Prominent with Subtle Color -->
                                 <div class="mb-4 md:mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-tight leading-tight mb-2">
+                                    <h1 class="text-[1.9rem] md:text-[3.325rem] lg:text-[3.8rem] font-bold tracking-tight leading-tight mb-2">
                                         <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
                                         <span class="text-gray-800 dark:text-gray-100">- Universe of AI Tools</span>
                                     </h1>
@@ -1770,7 +1770,7 @@
                                     
                                     <!-- Category Carousel -->
                                     <div class="mt-5 md:mt-6 relative">
-                                        <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2" style="scrollbar-width: none; -ms-overflow-style: none;">
+                                        <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                                             ${(() => {
                                                 const allCategories = [
                                                     { slug: 'image-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
@@ -1787,7 +1787,7 @@
                                                 return allCategories.map(cat => {
                                                     const domain = db.find(d => d.slug === cat.slug);
                                                     const toolCount = domain?.tools?.length || 0;
-                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg" style="background: ${cat.color};" data-category-slug="${cat.slug}">
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color};" data-category-slug="${cat.slug}">
                                                         ${cat.name} <span class="opacity-90">(${toolCount})</span>
                                                     </button>`;
                                                 }).join('');
@@ -2465,11 +2465,15 @@
                     document.querySelectorAll('.category-pill, .category-pill-carousel').forEach(pill => {
                         pill.addEventListener('click', (e) => {
                             const categorySlug = e.currentTarget.getAttribute('data-category-slug');
-                            state.currentView = 'tools';
-                            state.selectedDomain = categorySlug;
-                            try { location.hash = `#domain=${encodeURIComponent(categorySlug)}`; } catch (e) {}
-                            window.scrollTo(0, 0);
-                            render();
+                            if (categorySlug) {
+                                state.currentView = 'tools';
+                                state.selectedDomain = categorySlug;
+                                try { location.hash = `#domain=${encodeURIComponent(categorySlug)}`; } catch (err) {
+                                    console.error('Navigation error:', err);
+                                }
+                                window.scrollTo(0, 0);
+                                render();
+                            }
                         });
                     });
                     
@@ -2479,6 +2483,7 @@
                     if (carousel) {
                         let scrollAmount = 0;
                         let isScrolling = true;
+                        let animationFrameId = null;
                         
                         // Smooth continuous auto-scroll
                         function smoothScroll() {
@@ -2492,21 +2497,22 @@
                                 }
                                 
                                 carousel.scrollLeft = scrollAmount;
-                                requestAnimationFrame(smoothScroll);
                             }
+                            
+                            // Always request next frame to keep animation loop alive
+                            animationFrameId = requestAnimationFrame(smoothScroll);
                         }
                         
                         // Start the smooth scroll animation
                         smoothScroll();
                         
-                        // Pause scrolling on hover
+                        // Pause scrolling on hover (but keep animation loop running)
                         carousel.addEventListener('mouseenter', () => {
                             isScrolling = false;
                         });
                         
                         carousel.addEventListener('mouseleave', () => {
                             isScrolling = true;
-                            smoothScroll();
                         });
                     }
 
