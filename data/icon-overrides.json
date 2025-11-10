@@ -1,8 +1,0 @@
-{
-  "_readme": "Map '<section-slug>::<tool-name-lower>' to an icon URL or a repo-relative path. Example: 'language-chat::chatgpt (openai)': 'icons/language-chat/chatgpt-openai.svg'",
-  "examples": {
-    "language-chat::chatgpt (openai)": "icons/language-chat/chatgpt-openai.svg",
-    "image-generation::stable diffusion": "https://example.com/custom/stable-diffusion.png"
-  },
-  "most-popular::notebook llm": "public/icons/most-popular/notebook-lm.svg"
-}
