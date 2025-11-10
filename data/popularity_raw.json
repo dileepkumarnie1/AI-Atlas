@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2025-11-09T08:50:05.390Z",
+  "generatedAt": "2025-11-10T03:49:39.649Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
-          "commitCount90": 0,
-          "daysSinceRelease": null
+          "stars": 93158,
+          "forks": 10499,
+          "openIssues": 3116,
+          "commitCount90": 100,
+          "daysSinceRelease": 5
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
+      "signalsRaw": 4.4702,
+      "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -24,17 +24,17 @@
     "Stable Diffusion": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 41959,
+          "forks": 5340,
+          "openIssues": 300,
           "commitCount90": 0,
           "daysSinceRelease": null
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
+      "signalsRaw": 3.3328,
+      "signalsNorm": 74.56,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -64,21 +64,21 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 2431,
+          "forks": 346,
+          "openIssues": 55,
           "commitCount90": 0,
-          "daysSinceRelease": null
+          "daysSinceRelease": 551
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
+      "signalsRaw": 2.4547,
+      "signalsNorm": 54.91,
       "mpScore": 75.47169811320755,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
-      "popularityScore": 74.53,
+      "popularityScore": 76.18,
       "isOpenSource": false
     },
     "Midjourney": {
@@ -154,16 +154,16 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 11856,
+          "forks": 1023,
+          "openIssues": 311,
           "commitCount90": 0,
           "daysSinceRelease": null
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0
+      "signalsRaw": 2.8959
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
-          "commitCount90": 0,
-          "daysSinceRelease": null
+          "stars": 32380,
+          "forks": 1632,
+          "openIssues": 274,
+          "commitCount90": 13,
+          "daysSinceRelease": 45
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
+      "signalsRaw": 3.732,
+      "signalsNorm": 83.49,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -202,17 +202,17 @@
     "Riffusion": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 3817,
+          "forks": 461,
+          "openIssues": 70,
           "commitCount90": 0,
-          "daysSinceRelease": null
+          "daysSinceRelease": 1048
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0,
-      "signalsNorm": 0,
+      "signalsRaw": 2.5725,
+      "signalsNorm": 57.55,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,44 +222,44 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 90606,
+          "forks": 11354,
+          "openIssues": 104,
           "commitCount90": 0,
-          "daysSinceRelease": null
+          "daysSinceRelease": 137
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0
+      "signalsRaw": 3.7015
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
-          "commitCount90": 0,
-          "daysSinceRelease": null
+          "stars": 13589,
+          "forks": 1603,
+          "openIssues": 576,
+          "commitCount90": 5,
+          "daysSinceRelease": 567
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0
+      "signalsRaw": 3.2353
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 0,
-          "forks": 0,
-          "openIssues": 0,
+          "stars": 43371,
+          "forks": 5747,
+          "openIssues": 12,
           "commitCount90": 0,
-          "daysSinceRelease": null
+          "daysSinceRelease": 699
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 0
+      "signalsRaw": 3.3805
     },
     "airbyte": {
       "signals": {
@@ -7120,18 +7120,18 @@
       "rank": 14
     },
     {
+      "name": "DreamStudio",
+      "score": 76.18,
+      "rank": 15
+    },
+    {
       "name": "Copy.ai",
       "score": 75.18,
-      "rank": 15
+      "rank": 16
     },
     {
       "name": "Leonardo Ai",
       "score": 74.83,
-      "rank": 16
-    },
-    {
-      "name": "DreamStudio",
-      "score": 74.53,
       "rank": 17
     },
     {
