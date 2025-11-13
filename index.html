@@ -183,7 +183,7 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.65); /* increased opacity */
+            background: rgba(255,255,255,0.35); /* increased opacity */
             z-index: 1; /* above background image, below app */
             pointer-events: none;
         }
@@ -192,7 +192,7 @@
             position: fixed; inset: 0; z-index: 999; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); pointer-events: none; /* disabled by default to avoid stray tap blocks */
         }
         html.dark #filter-backdrop {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.45);
         }
         /* Make filter menu more opaque and above contents */
     #filter-menu { z-index: 1000; background: rgba(255,255,255,0.97) !important; overflow-y: auto; max-height: 60vh; overscroll-behavior: contain; pointer-events: auto; touch-action: pan-y; -webkit-overflow-scrolling: touch; color: var(--text-primary); }
