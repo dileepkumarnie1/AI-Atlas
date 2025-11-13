@@ -129,8 +129,15 @@
         }
         
         .category-pill, .category-pill-carousel {
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+        
+        .category-pill-carousel:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
         }
         
         .category-pill-carousel::-webkit-scrollbar {
@@ -142,8 +149,8 @@
         }
         
         .stat-card:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
         }
         
         @media (prefers-reduced-motion: reduce) {
@@ -1716,28 +1723,28 @@
                                     <div class="floating-particle" style="left:50%;top:80%;animation-delay:0.5s;"></div>
                                 </div>
 
-                                <!-- Animated Statistics Bar -->
-                                <div class="mb-6 md:mb-8 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
-                                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-11">
+                                <!-- Animated Statistics Bar - Compact Design -->
+                                <div class="mb-5 md:mb-6 w-full max-w-3xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="flex justify-center gap-3 md:gap-6">
                                         <!-- Tools Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon">🎯</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${roundedToolsCount}">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">AI Tools</div>
+                                        <div class="stat-card flex flex-col items-center p-3 md:p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 dark:from-purple-600/30 dark:to-pink-600/30 backdrop-blur-md rounded-2xl shadow-md border border-purple-300/50 dark:border-purple-500/50 min-w-[100px] md:min-w-[120px] transition-all duration-300">
+                                            <div class="text-2xl md:text-3xl mb-1">🎯</div>
+                                            <div class="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent counter" data-target="${roundedToolsCount}">0</div>
+                                            <div class="text-xs md:text-sm text-gray-700 dark:text-gray-200 font-medium">AI Tools</div>
                                         </div>
                                         
                                         <!-- Categories Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Categories</div>
+                                        <div class="stat-card flex flex-col items-center p-3 md:p-4 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 dark:from-yellow-600/30 dark:to-orange-600/30 backdrop-blur-md rounded-2xl shadow-md border border-yellow-300/50 dark:border-yellow-500/50 min-w-[100px] md:min-w-[120px] transition-all duration-300">
+                                            <div class="text-2xl md:text-3xl mb-1">⚡</div>
+                                            <div class="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent counter" data-target="${db.length}">0</div>
+                                            <div class="text-xs md:text-sm text-gray-700 dark:text-gray-200 font-medium">Categories</div>
                                         </div>
                                         
                                         <!-- Users Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Happy Users</div>
+                                        <div class="stat-card flex flex-col items-center p-3 md:p-4 bg-gradient-to-br from-green-500/20 to-teal-500/20 dark:from-green-600/30 dark:to-teal-600/30 backdrop-blur-md rounded-2xl shadow-md border border-green-300/50 dark:border-green-500/50 min-w-[100px] md:min-w-[120px] transition-all duration-300">
+                                            <div class="text-2xl md:text-3xl mb-1">👥</div>
+                                            <div class="text-xl md:text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent counter" data-target="100000">0</div>
+                                            <div class="text-xs md:text-sm text-gray-700 dark:text-gray-200 font-medium">Users</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1791,8 +1798,8 @@
                                                 return duplicatedCategories.map((cat, idx) => {
                                                     const domain = db.find(d => d.slug === cat.slug);
                                                     const toolCount = domain?.tools?.length || 0;
-                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color}; pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
-                                                        ${cat.name} <span class="opacity-90">(${toolCount})</span>
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-5 py-3 rounded-2xl text-white font-semibold text-sm hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap backdrop-blur-md border border-white/20" style="background: linear-gradient(135deg, ${cat.color}, ${cat.color.replace('0.85', '0.65')}); pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
+                                                        ${cat.name} <span class="opacity-90 text-xs">(${toolCount})</span>
                                                     </button>`;
                                                 }).join('');
                                             })()}
@@ -2501,7 +2508,7 @@
                         // Smooth continuous auto-scroll
                         function smoothScroll() {
                             if (isScrolling && !isDragging) {
-                                scrollAmount += 0.3; // Slightly slower for better readability
+                                scrollAmount += 0.5; // Slower speed for better readability
                                 
                                 // Seamlessly loop back when we reach halfway (end of first set)
                                 if (scrollAmount >= resetPoint) {
