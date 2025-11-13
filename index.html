@@ -129,8 +129,15 @@
         }
         
         .category-pill, .category-pill-carousel {
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-pill-carousel:hover {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
         
         .category-pill-carousel::-webkit-scrollbar {
@@ -142,8 +149,8 @@
         }
         
         .stat-card:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
         }
         
         @media (prefers-reduced-motion: reduce) {
@@ -1704,8 +1711,11 @@
                         <div class="relative">
                             <!-- Enhanced Hero Section with Animations -->
                             <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden mt-4 md:mt-8">
+                                <!-- Hero Section Background Overlay (60% opacity for better balance) -->
+                                <div class="absolute inset-0 -z-10 bg-white/60 dark:bg-slate-800/60"></div>
+                                
                                 <!-- Animated Background Gradient -->
-                                <div class="absolute inset-0 -z-10 hero-gradient-bg"></div>
+                                <div class="absolute inset-0 -z-20 hero-gradient-bg"></div>
                                 
                                 <!-- Floating Particles -->
                                 <div class="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
@@ -1716,28 +1726,34 @@
                                     <div class="floating-particle" style="left:50%;top:80%;animation-delay:0.5s;"></div>
                                 </div>
 
-                                <!-- Animated Statistics Bar -->
-                                <div class="mb-6 md:mb-8 w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
-                                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-11">
+                                <!-- Compact Statistics Bar -->
+                                <div class="mb-4 md:mb-5 w-full max-w-3xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="flex flex-wrap justify-center gap-3 md:gap-5">
                                         <!-- Tools Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon">🎯</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${roundedToolsCount}">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">AI Tools</div>
+                                        <div class="stat-card flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-purple-200/50 dark:border-purple-700/50 hover:scale-105 transition-transform duration-300">
+                                            <div class="text-2xl md:text-3xl pulse-icon">🎯</div>
+                                            <div class="flex flex-col">
+                                                <div class="text-xl md:text-2xl font-bold text-purple-600 dark:text-purple-400 counter" data-target="${roundedToolsCount}">0</div>
+                                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">AI Tools</div>
+                                            </div>
                                         </div>
                                         
                                         <!-- Categories Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.2s;">⚡</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Categories</div>
+                                        <div class="stat-card flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-blue-200/50 dark:border-blue-700/50 hover:scale-105 transition-transform duration-300">
+                                            <div class="text-2xl md:text-3xl pulse-icon" style="animation-delay: 0.2s;">⚡</div>
+                                            <div class="flex flex-col">
+                                                <div class="text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400 counter" data-target="${db.length}">0</div>
+                                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Categories</div>
+                                            </div>
                                         </div>
                                         
                                         <!-- Users Count -->
-                                        <div class="stat-card flex flex-col items-center p-4 md:p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-emerald-200 dark:border-emerald-700 min-w-[140px] hover:scale-105 transition-transform duration-300">
-                                            <div class="text-3xl md:text-4xl mb-2 pulse-icon" style="animation-delay: 0.4s;">👥</div>
-                                            <div class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
-                                            <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 font-semibold">Happy Users</div>
+                                        <div class="stat-card flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-emerald-200/50 dark:border-emerald-700/50 hover:scale-105 transition-transform duration-300">
+                                            <div class="text-2xl md:text-3xl pulse-icon" style="animation-delay: 0.4s;">👥</div>
+                                            <div class="flex flex-col">
+                                                <div class="text-xl md:text-2xl font-bold text-emerald-600 dark:text-emerald-400 counter" data-target="100000">0</div>
+                                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Happy Users</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1768,31 +1784,31 @@
                                         <div id="filter-menu" class="hidden absolute right-0 top-full mt-2 w-80 max-h-[60vh] overflow-y-auto bg-card border border-color rounded-xl shadow-lg"></div>
                                     </div>
                                     
-                                    <!-- Category Carousel -->
-                                    <div class="mt-5 md:mt-6 relative">
+                                    <!-- Category Carousel with Gray Glassmorphism -->
+                                    <div class="mt-4 md:mt-5 relative">
                                         <div id="category-carousel" class="flex gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 px-4" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                                             ${(() => {
                                                 const allCategories = [
-                                                    { slug: 'design-tools', name: '🎨 Design', color: 'rgba(236, 72, 153, 0.85)' },
-                                                    { slug: 'code-assistance', name: '💻 Code', color: 'rgba(59, 130, 246, 0.85)' },
-                                                    { slug: 'language-chat', name: '✍️ Chat', color: 'rgba(139, 92, 246, 0.85)' },
-                                                    { slug: 'video-tools', name: '🎥 Video', color: 'rgba(239, 68, 68, 0.85)' },
-                                                    { slug: 'audio-music', name: '🎵 Audio', color: 'rgba(16, 185, 129, 0.85)' },
-                                                    { slug: 'productivity', name: '⚡ Productivity', color: 'rgba(245, 158, 11, 0.85)' },
-                                                    { slug: 'research', name: '🔬 Research', color: 'rgba(99, 102, 241, 0.85)' },
-                                                    { slug: 'marketing-seo', name: '📢 Marketing', color: 'rgba(220, 38, 127, 0.85)' },
-                                                    { slug: 'data-analysis', name: '📊 Data', color: 'rgba(14, 165, 233, 0.85)' },
-                                                    { slug: 'education', name: '🎓 Education', color: 'rgba(168, 85, 247, 0.85)' },
-                                                    { slug: 'image-generation', name: '🖼️ Images', color: 'rgba(167, 139, 250, 0.85)' },
-                                                    { slug: '3d-modeling', name: '🎲 3D', color: 'rgba(59, 130, 246, 0.85)' }
+                                                    { slug: 'design-tools', name: '🎨 Design' },
+                                                    { slug: 'code-assistance', name: '💻 Code' },
+                                                    { slug: 'language-chat', name: '✍️ Chat' },
+                                                    { slug: 'video-tools', name: '🎥 Video' },
+                                                    { slug: 'audio-music', name: '🎵 Audio' },
+                                                    { slug: 'productivity', name: '⚡ Productivity' },
+                                                    { slug: 'research', name: '🔬 Research' },
+                                                    { slug: 'marketing-seo', name: '📢 Marketing' },
+                                                    { slug: 'data-analysis', name: '📊 Data' },
+                                                    { slug: 'education', name: '🎓 Education' },
+                                                    { slug: 'image-generation', name: '🖼️ Images' },
+                                                    { slug: '3d-modeling', name: '🎲 3D' }
                                                 ];
                                                 // Duplicate categories for seamless loop
                                                 const duplicatedCategories = [...allCategories, ...allCategories];
                                                 return duplicatedCategories.map((cat, idx) => {
                                                     const domain = db.find(d => d.slug === cat.slug);
                                                     const toolCount = domain?.tools?.length || 0;
-                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap" style="background: ${cat.color}; pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
-                                                        ${cat.name} <span class="opacity-90">(${toolCount})</span>
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl whitespace-nowrap backdrop-blur-md border" style="background: rgba(107, 114, 128, 0.4); border-color: rgba(107, 114, 128, 0.5); color: var(--text-primary); pointer-events: auto; cursor: pointer;" data-category-slug="${cat.slug}" data-index="${idx}">
+                                                        ${cat.name} <span class="opacity-75">(${toolCount})</span>
                                                     </button>`;
                                                 }).join('');
                                             })()}
@@ -2487,26 +2503,44 @@
                     });
                     
                     // Category carousel - smooth continuous scrolling with seamless loop
-                    const carousel = document.getElementById('category-carousel');
-                    
-                    if (carousel) {
+                    // Use setTimeout to ensure DOM is fully rendered
+                    setTimeout(() => {
+                        const carousel = document.getElementById('category-carousel');
+                        
+                        if (!carousel) {
+                            console.warn('Category carousel element not found');
+                            return;
+                        }
+                        
+                        // Remove scroll-smooth behavior for programmatic scrolling
+                        carousel.style.scrollBehavior = 'auto';
+                        
                         let scrollAmount = 0;
-                        let isScrolling = true;
                         let animationFrameId = null;
                         let isDragging = false;
+                        let lastTime = performance.now();
                         
                         // Calculate the width of one set of categories (half of total since we duplicated)
                         const resetPoint = carousel.scrollWidth / 2;
                         
-                        // Smooth continuous auto-scroll
-                        function smoothScroll() {
-                            if (isScrolling && !isDragging) {
-                                scrollAmount += 0.3; // Slightly slower for better readability
+                        console.log('Carousel initialized:', {
+                            scrollWidth: carousel.scrollWidth,
+                            resetPoint: resetPoint,
+                            clientWidth: carousel.clientWidth
+                        });
+                        
+                        // Smooth continuous auto-scroll - always scrolling
+                        function smoothScroll(currentTime) {
+                            const deltaTime = currentTime - lastTime;
+                            lastTime = currentTime;
+                            
+                            if (!isDragging) {
+                                // Scroll at consistent speed (pixels per millisecond)
+                                scrollAmount += (deltaTime / 1000) * 30; // 30 pixels per second
                                 
                                 // Seamlessly loop back when we reach halfway (end of first set)
                                 if (scrollAmount >= resetPoint) {
-                                    scrollAmount = 0;
-                                    carousel.scrollLeft = 0;
+                                    scrollAmount = scrollAmount - resetPoint;
                                 }
                                 
                                 carousel.scrollLeft = scrollAmount;
@@ -2517,18 +2551,9 @@
                         }
                         
                         // Start the smooth scroll animation
-                        smoothScroll();
+                        animationFrameId = requestAnimationFrame(smoothScroll);
                         
-                        // Pause scrolling on hover (but keep animation loop running)
-                        carousel.addEventListener('mouseenter', () => {
-                            isScrolling = false;
-                        });
-                        
-                        carousel.addEventListener('mouseleave', () => {
-                            isScrolling = true;
-                        });
-                        
-                        // Detect touch/mouse dragging to pause scrolling
+                        // Only pause on actual touch/drag interaction, not on hover
                         carousel.addEventListener('touchstart', () => {
                             isDragging = true;
                         });
@@ -2536,7 +2561,8 @@
                         carousel.addEventListener('touchend', () => {
                             setTimeout(() => {
                                 isDragging = false;
-                            }, 100);
+                                scrollAmount = carousel.scrollLeft;
+                            }, 500);
                         });
                         
                         carousel.addEventListener('mousedown', () => {
@@ -2546,9 +2572,17 @@
                         carousel.addEventListener('mouseup', () => {
                             setTimeout(() => {
                                 isDragging = false;
-                            }, 100);
+                                scrollAmount = carousel.scrollLeft;
+                            }, 500);
                         });
-                    }
+                        
+                        // Clean up on page unload
+                        window.addEventListener('beforeunload', () => {
+                            if (animationFrameId) {
+                                cancelAnimationFrame(animationFrameId);
+                            }
+                        });
+                    }, 100); // Wait 100ms for DOM to be ready
 
                     // Initial filter menu render (no query -> total counts)
                     renderFilterMenu([]);
