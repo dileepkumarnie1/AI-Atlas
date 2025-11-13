@@ -121,11 +121,22 @@
         }
         
         .search-glass-morph {
-            box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15);
+            transform: translateY(-4px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1rem;
+        }
+        
+        .search-glass-morph:hover {
+            transform: translateY(-6px) scale(1.01);
         }
         
         .search-input-enhanced:focus {
-            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2), inset 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+            transform: scale(1.005);
+        }
+        
+        .search-input-enhanced {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .category-pill, .category-pill-carousel {
@@ -1710,12 +1721,12 @@
                     contentArea.innerHTML = `
                         <div class="relative">
                             <!-- Enhanced Hero Section with Animations -->
-                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden mt-4 md:mt-8">
+                            <section class="min-h-[32vh] md:min-h-[38vh] flex flex-col justify-center items-center text-center py-5 md:py-7 relative overflow-hidden mt-4 md:mt-8 rounded-2xl shadow-lg">
                                 <!-- Hero Section Background Overlay (60% opacity for better balance) -->
-                                <div class="absolute inset-0 -z-10 bg-white/60 dark:bg-slate-800/60"></div>
+                                <div class="absolute inset-0 -z-10 bg-white/60 dark:bg-slate-800/60 rounded-2xl"></div>
                                 
                                 <!-- Animated Background Gradient -->
-                                <div class="absolute inset-0 -z-20 hero-gradient-bg"></div>
+                                <div class="absolute inset-0 -z-20 hero-gradient-bg rounded-2xl"></div>
                                 
                                 <!-- Floating Particles -->
                                 <div class="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
@@ -1768,14 +1779,14 @@
                                         Your Gateway to <span class="text-purple-600 dark:text-purple-400 font-bold">${roundedToolsCount}+</span> Curated AI Tools Across Every Domain
                                     </p>
                                 </div>
-                                <!-- Enhanced Search Bar with Glass Morphism -->
+                                <!-- Enhanced Search Bar with Glass Morphism and Strong 3D Depth -->
                                 <div class="w-full max-w-4xl mx-auto px-4 animate-fade-in-up" style="animation-delay: 0.6s;">
-                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph">
+                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph rounded-2xl overflow-hidden" style="box-shadow: 0 25px 60px rgba(139, 92, 246, 0.35), 0 15px 35px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(139, 92, 246, 0.15);">
                                         <div class="relative flex-1">
-                                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none">🔍</span>
-                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[55px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
+                                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none drop-shadow-lg z-10">🔍</span>
+                                            <input id="search-bar-new" class="search-input-enhanced w-full h-[55px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-2 border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300 shadow-inner" style="box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
                                         </div>
-                                        <button id="filter-button" class="h-[55px] md:h-[64px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105">
+                                        <button id="filter-button" class="h-[55px] md:h-[64px] bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 md:px-6 rounded-r-2xl border-2 border-purple-600 dark:border-purple-500 border-l-0 flex items-center gap-2 font-semibold transition-all duration-300 hover:scale-105" style="box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);">
                                             <span class="hidden md:inline">Advanced Filters</span>
                                             <span class="md:hidden">Filter</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
