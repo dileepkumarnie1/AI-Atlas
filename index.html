@@ -121,13 +121,14 @@
         }
         
         .search-glass-morph {
-            transform: translateY(-4px);
+            transform: translateY(-4px) translateZ(0);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 1rem;
         }
         
         .search-glass-morph:hover {
-            transform: translateY(-6px) scale(1.01);
+            transform: translateY(-8px) translateZ(20px) scale(1.02);
+            box-shadow: 0 30px 70px rgba(139, 92, 246, 0.45), 0 20px 45px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(139, 92, 246, 0.2);
         }
         
         .search-input-enhanced:focus {
@@ -1771,7 +1772,7 @@
 
                                 <!-- Hero Title - Prominent with Subtle Color -->
                                 <div class="mb-7 md:mb-10 animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <h1 class="text-[1.354rem] md:text-[2.369rem] lg:text-[2.708rem] font-bold tracking-tight leading-tight mb-2.5">
+                                    <h1 class="text-[1.693rem] md:text-[2.961rem] lg:text-[3.385rem] font-bold tracking-tight leading-tight mb-2.5">
                                         <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
                                         <span class="text-gray-800 dark:text-gray-100"></span>
                                     </h1>
@@ -1781,7 +1782,7 @@
                                 </div>
                                 <!-- Enhanced Search Bar with Glass Morphism and Strong 3D Depth -->
                                 <div class="w-full max-w-5xl mx-auto px-5 animate-fade-in-up" style="animation-delay: 0.6s;">
-                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph rounded-2xl overflow-hidden" style="box-shadow: 0 25px 60px rgba(139, 92, 246, 0.35), 0 15px 35px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(139, 92, 246, 0.15);">
+                                    <div id="search-filter-unit" class="relative flex items-center search-glass-morph rounded-2xl overflow-hidden transition-all duration-300" style="box-shadow: 0 25px 60px rgba(139, 92, 246, 0.35), 0 15px 35px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(139, 92, 246, 0.15); transform: translateZ(0);">
                                         <div class="relative flex-1">
                                             <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl pointer-events-none drop-shadow-lg z-10">🔍</span>
                                             <input id="search-bar-new" class="search-input-enhanced w-full h-[55px] md:h-[64px] rounded-l-2xl border-r-0 pl-14 pr-4 text-base md:text-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-purple-300 dark:border-purple-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-900 transition-all duration-300 shadow-inner" style="box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); border-width: 4px;" type="search" placeholder="Search by name, domain, or use case..." value="${escapeHtml(state.searchQuery || '')}">
