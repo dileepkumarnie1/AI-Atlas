@@ -1910,8 +1910,8 @@
                         if (!topTools || topTools.length === 0) { topStripEl.innerHTML = ''; return; }
                         const visible = Math.min(getTopVisible(), topTools.length);
                         const iconSize = ((window.innerWidth || 0) < 640) ? 56 : 64;
-                        // duplicate first `visible` items to end for seamless looping
-                        const trackTools = topTools.concat(topTools.slice(0, visible));
+                        // Duplicate ALL items to end for seamless infinite looping without gaps
+                        const trackTools = topTools.concat(topTools);
                         const gaps = Math.max(0, visible - 1);
                         const itemWidthCalc = `calc((100% - (${gaps} * ${GAP_REM}rem)) / ${visible})`;
                         const items = trackTools.map((t, idx) => `
