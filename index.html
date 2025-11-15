@@ -104,6 +104,68 @@
             75% { transform: rotate(10deg) scale(1.15); opacity: 0.85; }
         }
         
+        /* 3D Title Effects */
+        .hero-title-3d {
+            text-shadow: 
+                2px 2px 0px rgba(139, 92, 246, 0.3),
+                4px 4px 0px rgba(139, 92, 246, 0.2),
+                6px 6px 0px rgba(139, 92, 246, 0.1),
+                8px 8px 12px rgba(0, 0, 0, 0.25),
+                0 0 30px rgba(139, 92, 246, 0.4);
+            -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.7);
+            text-stroke: 1.5px rgba(0, 0, 0, 0.7);
+            transform: translateZ(50px);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            filter: drop-shadow(0 10px 20px rgba(139, 92, 246, 0.3));
+            transition: all 0.3s ease;
+        }
+        
+        .hero-title-3d:hover {
+            transform: translateZ(60px) scale(1.02);
+            text-shadow: 
+                3px 3px 0px rgba(139, 92, 246, 0.4),
+                6px 6px 0px rgba(139, 92, 246, 0.3),
+                9px 9px 0px rgba(139, 92, 246, 0.2),
+                12px 12px 18px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(139, 92, 246, 0.6);
+            -webkit-text-stroke: 2px rgba(0, 0, 0, 0.8);
+            text-stroke: 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        html.dark .hero-title-3d {
+            text-shadow: 
+                2px 2px 0px rgba(139, 92, 246, 0.5),
+                4px 4px 0px rgba(139, 92, 246, 0.4),
+                6px 6px 0px rgba(139, 92, 246, 0.3),
+                8px 8px 15px rgba(0, 0, 0, 0.5),
+                0 0 35px rgba(139, 92, 246, 0.6);
+            -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.9);
+            text-stroke: 1.5px rgba(0, 0, 0, 0.9);
+        }
+        
+        .hero-tagline-3d {
+            text-shadow: 
+                1px 1px 0px rgba(59, 130, 246, 0.2),
+                2px 2px 0px rgba(59, 130, 246, 0.15),
+                3px 3px 0px rgba(59, 130, 246, 0.1),
+                4px 4px 8px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(59, 130, 246, 0.3);
+            transform: translateZ(30px);
+            transform-style: preserve-3d;
+            filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.2));
+            transition: all 0.3s ease;
+        }
+        
+        html.dark .hero-tagline-3d {
+            text-shadow: 
+                1px 1px 0px rgba(59, 130, 246, 0.4),
+                2px 2px 0px rgba(59, 130, 246, 0.3),
+                3px 3px 0px rgba(59, 130, 246, 0.2),
+                4px 4px 10px rgba(0, 0, 0, 0.4),
+                0 0 25px rgba(59, 130, 246, 0.5);
+        }
+        
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
@@ -145,12 +207,14 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: scale(1.1);
         }
         
         .category-pill-carousel:hover {
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transform: scale(1.15);
         }
         
         .category-pill-carousel::-webkit-scrollbar {
@@ -192,7 +256,7 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background-image: url('./images/Gemini_Generated_Image_c098t3c098t3c098.png?v=20251014a');
+            background-image: url('./images/universe_8.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -530,10 +594,9 @@
 </head>
 <body class="antialiased">
     <!-- Background video layer (will fade in when ready). To override source via URL, add ?bgmp4=encodedURL -->
-    <video id="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <!-- Default source path; update public/videos/AI_tool_verse_uni_upd.mp4 when adding the actual file -->
-        <source id="bg-video-source" src="./images/AI_tool_verse_uni_upd.mp4" type="video/mp4">
-    </video>
+    <!-- <video id="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source id="bg-video-source" src="./images/media (3).mp4" type="video/mp4">
+    </video> -->
     <div id="background-image"></div>
     <div id="background-overlay"></div>
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:2;">
@@ -1724,8 +1787,12 @@
                         <div class="relative">
                             <!-- Enhanced Hero Section with Animations -->
                             <section class="min-h-[38.4vh] md:min-h-[45.6vh] flex flex-col justify-center items-center text-center py-6 md:py-8.5 relative overflow-hidden mt-0 md:mt-2 rounded-2xl" style="box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(139, 92, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3); transform: translateZ(0); perspective: 1000px;">
-                                <!-- Hero Section Background Overlay (60% opacity for better balance) -->
-                                <div class="absolute inset-0 -z-10 bg-white/60 dark:bg-slate-800/60 rounded-2xl"></div>
+                                <!-- Hero Video Background - Right Half Only -->
+                                <video autoplay muted loop playsinline class="absolute -z-20 h-full object-cover rounded-2xl" style="opacity: 0.45; right: 0; top: 0; width: 50%; -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);">
+                                    <source src="./images/grok-video-71219846-75a6-45de-9c86-bebb5320cbc3.mp4" type="video/mp4">
+                                </video>
+                                <!-- Hero Section Background Overlay (reduced opacity for better video visibility) -->
+                                <div class="absolute inset-0 -z-10 bg-white/30 dark:bg-slate-800/30 rounded-2xl"></div>
                                 
                                 <!-- Animated Background Gradient -->
                                 <div class="absolute inset-0 -z-20 hero-gradient-bg rounded-2xl"></div>
@@ -1773,11 +1840,11 @@
 
                                 <!-- Hero Title - Prominent with Subtle Color -->
                                 <div class="mb-7 md:mb-10 animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <h1 class="text-[1.693rem] md:text-[2.961rem] lg:text-[3.385rem] font-bold tracking-tight leading-tight mb-2.5">
+                                    <h1 class="text-[1.862rem] md:text-[3.257rem] lg:text-[3.724rem] font-bold tracking-tight leading-tight mb-2.5 hero-title-3d">
                                         <span class="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">AI ToolVerse</span> 
                                         <span class="text-gray-800 dark:text-gray-100"></span>
                                     </h1>
-                                    <p class="max-w-3xl mx-auto text-base md:text-lg text-gray-700 dark:text-gray-200 font-medium">
+                                    <p class="max-w-3xl mx-auto text-[1.1rem] md:text-[1.21rem] text-gray-700 dark:text-gray-200 font-medium hero-tagline-3d">
                                         Your Gateway to <span class="text-purple-600 dark:text-purple-400 font-bold">${roundedToolsCount}+</span> Curated AI Tools Across Every Domain
                                     </p>
                                 </div>
@@ -1820,7 +1887,7 @@
                                                 return duplicatedCategories.map((cat, idx) => {
                                                     const domain = db.find(d => d.slug === cat.slug);
                                                     const toolCount = domain?.tools?.length || 0;
-                                                    return `<button class="category-pill-carousel flex-shrink-0 px-4 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-all duration-300 whitespace-nowrap backdrop-blur-md border-2" style="background: rgba(107, 114, 128, 0.4); border-color: rgba(147, 51, 234, 0.7); color: var(--text-primary); pointer-events: auto; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 12px -2px rgba(147, 51, 234, 0.2); transform: translateY(0);" data-category-slug="${cat.slug}" data-index="${idx}">
+                                                    return `<button class="category-pill-carousel flex-shrink-0 px-5 py-2.5 rounded-full font-semibold text-base hover:scale-105 transition-all duration-300 whitespace-nowrap backdrop-blur-md border-2" style="background: rgba(120, 120, 130, 0.65); border-color: rgba(147, 51, 234, 0.7); color: var(--text-primary); pointer-events: auto; cursor: pointer; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.2), 0 7px 14px -2px rgba(147, 51, 234, 0.25); transform: translateY(0);" data-category-slug="${cat.slug}" data-index="${idx}">
                                                         ${cat.name} <span class="opacity-75">(${toolCount})</span>
                                                     </button>`;
                                                 }).join('');
