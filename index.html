@@ -691,36 +691,36 @@
                 <div class="md:col-span-2">
                     <h4 class="text-base font-semibold mb-3">Categories</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="footer-link">Productivity Tools</a></li>
-                        <li><a href="#" class="footer-link">Image Generators</a></li>
-                        <li><a href="#" class="footer-link">Text Generators</a></li>
-                        <li><a href="#" class="footer-link">Video Tools</a></li>
-                        <li><a href="#" class="footer-link">Art Generators</a></li>
-                        <li><a href="#" class="footer-link">Audio Generators</a></li>
-                        <li><a href="#" class="footer-link">All AI Tools</a></li>
+                        <li><a href="#" data-category="productivity" class="footer-link footer-category-link">Productivity Tools</a></li>
+                        <li><a href="#" data-category="image-generation" class="footer-link footer-category-link">Image Generators</a></li>
+                        <li><a href="#" data-category="language-chat" class="footer-link footer-category-link">Text Generators</a></li>
+                        <li><a href="#" data-category="video-tools" class="footer-link footer-category-link">Video Tools</a></li>
+                        <li><a href="#" data-category="design-tools" class="footer-link footer-category-link">Art Generators</a></li>
+                        <li><a href="#" data-category="audio-music" class="footer-link footer-category-link">Audio Generators</a></li>
+                        <li><a href="#" data-category="all" class="footer-link footer-category-link">All AI Tools</a></li>
                     </ul>
                 </div>
                 <!-- Resources -->
                 <div class="md:col-span-3">
                     <h4 class="text-base font-semibold mb-3">Resources</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="footer-link">Best AI Art Generators</a></li>
-                        <li><a href="#" class="footer-link">Best AI Image Generators</a></li>
-                        <li><a href="#" class="footer-link">Best AI Chatbots</a></li>
-                        <li><a href="#" class="footer-link">Best AI Text Generators</a></li>
-                        <li><a href="#" class="footer-link">Best AI 3D Generators</a></li>
-                        <li><a href="#" class="footer-link">All Resources</a></li>
+                        <li><a href="#" data-category="design-tools" class="footer-link footer-category-link">Best AI Art Generators</a></li>
+                        <li><a href="#" data-category="image-generation" class="footer-link footer-category-link">Best AI Image Generators</a></li>
+                        <li><a href="#" data-category="language-chat" class="footer-link footer-category-link">Best AI Chatbots</a></li>
+                        <li><a href="#" data-category="language-chat" class="footer-link footer-category-link">Best AI Text Generators</a></li>
+                        <li><a href="#" data-category="3d-modeling" class="footer-link footer-category-link">Best AI 3D Generators</a></li>
+                        <li><a href="#" data-category="all" class="footer-link footer-category-link">All Resources</a></li>
                     </ul>
                 </div>
                 <!-- Company -->
                 <div class="md:col-span-2">
                     <h4 class="text-base font-semibold mb-3">Company</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="footer-link">Contact Us</a></li>
-                        <li><a href="#" class="footer-link">Advertise</a></li>
-                        <li><a href="#" class="footer-link">Submit a Tool</a></li>
-                        <li><a href="#" class="footer-link">Request a Feature</a></li>
-                        <li><a href="#" class="footer-link">Update a Tool</a></li>
+                        <li><a href="mailto:hello@aitoolverse.com?subject=Contact%20Us" class="footer-link">Contact Us</a></li>
+                        <li><a href="mailto:hello@aitoolverse.com?subject=Advertising%20Inquiry" class="footer-link">Advertise</a></li>
+                        <li><a href="#" id="footer-submit-link" class="footer-link">Submit a Tool</a></li>
+                        <li><a href="https://github.com/dileepkumarnie1/AI-Atlas/issues/new?title=Feature%20Request" target="_blank" rel="noopener noreferrer" class="footer-link">Request a Feature</a></li>
+                        <li><a href="mailto:hello@aitoolverse.com?subject=Update%20Tool%20Information" class="footer-link">Update a Tool</a></li>
                     </ul>
                     <div class="flex items-center gap-4 mt-4 opacity-80">
                         <!-- Simple social icons -->
@@ -3448,7 +3448,7 @@
 
             initialize();
 
-            // Footer subscribe form handler
+            // Footer subscribe form handler with Firebase
             (function setupFooterSubscribe(){
                 const form = document.getElementById('footer-subscribe-form');
                 if (!form) return;
@@ -3458,20 +3458,77 @@
                 function setStatus(msg, ok=true){ if(statusEl){ statusEl.textContent = msg; statusEl.style.color = ok ? '#a7f3d0' : '#fecaca'; } }
                 form.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    const email = (emailInput?.value || '').trim();
+                    const email = (emailInput?.value || '').trim().toLowerCase();
                     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setStatus('Please enter a valid email address.', false); return; }
                     try {
                         btn.disabled = true; setStatus('Subscribing...');
-                        // Serverless disabled; use mailto fallback
-                        window.location.href = `mailto:hello@aitoolverse.ai?subject=Subscribe&body=${encodeURIComponent(email)}%20wants%20to%20subscribe.`;
-                        setStatus('Thanks! You are on the list.', true);
+                        
+                        // Store subscription in Firebase
+                        const subscriberRef = doc(firestore, 'subscribers', email);
+                        await setDoc(subscriberRef, {
+                            email: email,
+                            subscribedAt: serverTimestamp(),
+                            status: 'active',
+                            source: 'footer',
+                            metadata: {
+                                userAgent: navigator.userAgent,
+                                timestamp: new Date().toISOString()
+                            }
+                        }, { merge: true });
+                        
+                        setStatus('✓ Successfully subscribed! Thank you for joining us.', true);
                         form.reset();
+                        
+                        // Optional: Also send mailto for notification
+                        setTimeout(() => {
+                            setStatus('');
+                        }, 5000);
                     } catch (err) {
-                        setStatus('Could not subscribe right now.', false);
+                        console.error('Subscription error:', err);
+                        // Fallback to mailto if Firebase fails
+                        if (confirm('Could not subscribe via database. Would you like to send an email instead?')) {
+                            window.location.href = `mailto:hello@aitoolverse.com?subject=Subscribe&body=${encodeURIComponent(email)}%20wants%20to%20subscribe.`;
+                        }
+                        setStatus('Could not subscribe. Please try again.', false);
                     } finally {
                         btn.disabled = false;
                     }
                 });
+            })();
+
+            // Footer category links handler
+            (function setupFooterLinks(){
+                document.querySelectorAll('.footer-category-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const category = link.dataset.category;
+                        if (category === 'all') {
+                            // Go to homepage and show all tools
+                            state.currentView = 'home';
+                            state.categoryExplicit = false;
+                            state.searchQuery = '';
+                            render();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                            // Navigate to specific category
+                            state.currentView = 'domain';
+                            state.activeDomain = category;
+                            state.categoryExplicit = true;
+                            render();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    });
+                });
+
+                // Footer submit link handler
+                const footerSubmitLink = document.getElementById('footer-submit-link');
+                if (footerSubmitLink) {
+                    footerSubmitLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const submitLink = document.getElementById('submit-link');
+                        if (submitLink) submitLink.click();
+                    });
+                }
             })();
     });
     </script>
