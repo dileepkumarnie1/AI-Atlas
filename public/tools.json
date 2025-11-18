@@ -2962,6 +2962,75 @@
           "Limited control over outputs",
           "Discord-based workflow may not suit everyone"
         ]
+      },
+      {
+        "name": "Fliki",
+        "description": "Text-to-video tool with AI voices, ideal for faceless content and social media",
+        "link": "https://fliki.ai/",
+        "tags": [
+          "Freemium",
+          "Text-to-Video",
+          "Social Media"
+        ],
+        "iconUrl": "https://fliki.ai/favicon.ico",
+        "about": "Fliki converts text into engaging videos with AI-generated voices and visuals, perfect for creating faceless YouTube content, social media videos, and explainers.",
+        "pros": [
+          "Easy text-to-video conversion",
+          "Large library of voices and media",
+          "Great for faceless content creation",
+          "Fast video generation"
+        ],
+        "cons": [
+          "Limited customization on free tier",
+          "Watermark on free videos",
+          "Stock footage can feel generic"
+        ]
+      },
+      {
+        "name": "Topaz Video AI",
+        "description": "AI video enhancement and upscaling for improving video quality and resolution",
+        "link": "https://www.topazlabs.com/topaz-video-ai",
+        "tags": [
+          "Paid",
+          "Video Enhancement",
+          "Professional"
+        ],
+        "iconUrl": "https://www.topazlabs.com/favicon.ico",
+        "about": "Topaz Video AI specializes in enhancing and upscaling video quality using AI, making old or low-resolution footage look sharper and more professional.",
+        "pros": [
+          "Excellent video quality enhancement",
+          "Professional-grade upscaling",
+          "Batch processing capabilities",
+          "One-time purchase model"
+        ],
+        "cons": [
+          "Higher upfront cost",
+          "Resource-intensive processing",
+          "Requires powerful hardware for best results"
+        ]
+      },
+      {
+        "name": "Lumen5",
+        "description": "AI-powered conversion of articles and text into engaging social-ready videos",
+        "link": "https://www.lumen5.com/",
+        "tags": [
+          "Freemium",
+          "Text-to-Video",
+          "Marketing"
+        ],
+        "iconUrl": "https://www.lumen5.com/favicon.ico",
+        "about": "Lumen5 automatically transforms blog posts, articles, and text content into professional-looking videos optimized for social media and marketing campaigns.",
+        "pros": [
+          "Easy article-to-video conversion",
+          "Good template library",
+          "Social media optimization",
+          "Brand customization options"
+        ],
+        "cons": [
+          "Watermark on free tier",
+          "Limited customization vs manual editing",
+          "Subscription required for high-resolution exports"
+        ]
       }
     ]
   },
@@ -3467,6 +3536,29 @@
           "Limited to React and specific tech stack",
           "Requires credits for extensive use",
           "May need manual refinement"
+        ]
+      },
+      {
+        "name": "Continue",
+        "description": "Open-source AI code assistant with customizable models and privacy focus",
+        "link": "https://continue.dev/",
+        "tags": [
+          "Open Source",
+          "Code Assistant",
+          "Privacy"
+        ],
+        "iconUrl": "https://continue.dev/favicon.ico",
+        "about": "Continue is an open-source AI coding assistant that prioritizes privacy and customization, allowing developers to use their own AI models and maintain full control over their code.",
+        "pros": [
+          "Open source and customizable",
+          "Can use your own AI models",
+          "Privacy-focused design",
+          "Free to use"
+        ],
+        "cons": [
+          "Requires more setup than commercial alternatives",
+          "Less polished UI/UX",
+          "Community support vs dedicated support team"
         ]
       }
     ]
@@ -13306,6 +13398,252 @@
           "No free tier available",
           "Limited text editing features",
           "Not ideal for long-form writing"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Voice Cloning & TTS",
+    "slug": "ai-voice-cloning-tts",
+    "description": "AI-powered voice cloning and text-to-speech tools for creating natural-sounding voiceovers, narration, and audio content.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z\" clip-rule=\"evenodd\"/></svg>",
+    "tools": [
+      {
+        "name": "Resemble AI",
+        "description": "Enterprise-grade voice cloning with flexible API and custom voice creation",
+        "link": "https://www.resemble.ai/",
+        "tags": [
+          "Paid",
+          "Voice Cloning",
+          "Enterprise"
+        ],
+        "iconUrl": "https://www.resemble.ai/favicon.ico",
+        "about": "Resemble AI provides enterprise-grade voice cloning technology with a flexible API, allowing developers and businesses to create custom AI voices for chatbots, customer support, and media production.",
+        "pros": [
+          "Robust API for developers and enterprises",
+          "High-quality, emotionally expressive voices",
+          "Strong security and consent protocols",
+          "Real-time voice synthesis capabilities"
+        ],
+        "cons": [
+          "Premium pricing for commercial use",
+          "Requires technical integration",
+          "Learning curve for API implementation"
+        ]
+      },
+      {
+        "name": "Murf AI",
+        "description": "Realistic AI voiceovers for presentations, training, and marketing content",
+        "link": "https://murf.ai/",
+        "tags": [
+          "Freemium",
+          "Voice Cloning",
+          "TTS"
+        ],
+        "iconUrl": "https://murf.ai/favicon.ico",
+        "about": "Murf AI offers studio-quality AI voiceovers with voice cloning capabilities, perfect for creating professional narration for presentations, e-learning, podcasts, and marketing videos.",
+        "pros": [
+          "Excellent voice quality and naturalness",
+          "Integrated studio tools for editing",
+          "Large library of professional voices",
+          "Good for business and education sectors"
+        ],
+        "cons": [
+          "Limited free tier features",
+          "Voice cloning requires higher tier subscription",
+          "Commercial license adds to cost"
+        ]
+      },
+      {
+        "name": "WellSaid Labs",
+        "description": "Enterprise-level AI voice generation for e-learning, narration, and corporate communications",
+        "link": "https://www.wellsaidlabs.com/",
+        "tags": [
+          "Enterprise",
+          "TTS",
+          "Corporate"
+        ],
+        "iconUrl": "https://www.wellsaidlabs.com/favicon.ico",
+        "about": "WellSaid Labs provides enterprise-grade AI voice generation with clear consent protocols and high-fidelity output, ideal for corporate communications, e-learning, and professional narration.",
+        "pros": [
+          "Enterprise-grade quality and reliability",
+          "Clear legal and consent frameworks",
+          "Excellent for corporate and educational use",
+          "High-fidelity voice output"
+        ],
+        "cons": [
+          "Premium pricing for enterprise customers",
+          "No free tier available",
+          "Focused on business use cases"
+        ]
+      },
+      {
+        "name": "Play.ht",
+        "description": "Multi-language AI voice generation with extensive language and accent support",
+        "link": "https://play.ht/",
+        "tags": [
+          "Freemium",
+          "TTS",
+          "Multi-Language"
+        ],
+        "iconUrl": "https://play.ht/favicon.ico",
+        "about": "Play.ht offers AI text-to-speech with support for 100+ languages and accents, making it ideal for creating global content, audiobooks, and multi-language voiceovers.",
+        "pros": [
+          "Extensive language and accent coverage",
+          "Easy plug-and-play integration",
+          "Good voice quality across languages",
+          "Affordable pricing tiers"
+        ],
+        "cons": [
+          "Voice quality varies by language",
+          "Limited customization vs premium tools",
+          "Free tier has usage restrictions"
+        ]
+      },
+      {
+        "name": "Lovo AI",
+        "description": "Cinematic AI voices for video content, storytelling, and professional narration",
+        "link": "https://www.lovo.ai/",
+        "tags": [
+          "Freemium",
+          "Voice Cloning",
+          "Video"
+        ],
+        "iconUrl": "https://www.lovo.ai/favicon.ico",
+        "about": "Lovo AI (Genny) specializes in creating cinematic-quality AI voices perfect for video production, storytelling, and professional content creation with emotional range and expression.",
+        "pros": [
+          "High-quality, emotionally expressive voices",
+          "Great for cinematic and storytelling applications",
+          "Voice cloning capabilities",
+          "Video-focused features"
+        ],
+        "cons": [
+          "Higher pricing for advanced features",
+          "Learning curve for optimal use",
+          "Credits system can be limiting"
+        ]
+      },
+      {
+        "name": "Speechify",
+        "description": "Popular text-to-speech app focused on accessibility and content consumption",
+        "link": "https://speechify.com/",
+        "tags": [
+          "Freemium",
+          "TTS",
+          "Accessibility"
+        ],
+        "iconUrl": "https://speechify.com/favicon.ico",
+        "about": "Speechify is a widely-used text-to-speech tool that helps people consume content more efficiently, with a focus on accessibility, studying, and productivity.",
+        "pros": [
+          "Excellent for accessibility needs",
+          "Great for consuming content (articles, PDFs, books)",
+          "Natural-sounding voices",
+          "Mobile and browser extensions"
+        ],
+        "cons": [
+          "Premium pricing for best voices",
+          "Limited voice customization",
+          "Some features require subscription"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Paraphrasing & Rewriting",
+    "slug": "ai-paraphrasing-rewriting",
+    "description": "AI tools for rewriting, paraphrasing, and improving content while maintaining meaning and avoiding plagiarism.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z\"/></svg>",
+    "tools": [
+      {
+        "name": "QuillBot",
+        "description": "Leading paraphrasing tool with multiple modes, grammar checking, and citation generator",
+        "link": "https://quillbot.com/",
+        "tags": [
+          "Freemium",
+          "Paraphrasing",
+          "Academic"
+        ],
+        "iconUrl": "https://quillbot.com/favicon.ico",
+        "about": "QuillBot is the industry-leading paraphrasing and rewriting tool with customizable modes, integrated grammar checking, citation generation, and browser extensions for seamless writing enhancement.",
+        "pros": [
+          "Multiple paraphrasing modes (Standard, Fluency, Academic)",
+          "Integrated grammar checker and summarizer",
+          "Affordable pricing for students",
+          "Chrome and Word extensions"
+        ],
+        "cons": [
+          "Free tier has word count limitations",
+          "Premium required for all modes",
+          "May not preserve highly technical language perfectly"
+        ]
+      },
+      {
+        "name": "Wordtune",
+        "description": "Context-aware rewriting with tone adjustments and smart synonym suggestions",
+        "link": "https://www.wordtune.com/",
+        "tags": [
+          "Freemium",
+          "Rewriting",
+          "Professional"
+        ],
+        "iconUrl": "https://www.wordtune.com/favicon.ico",
+        "about": "Wordtune provides context-aware rewriting with the ability to adjust tone (formal/casual), improve clarity, and enhance English writing with smart synonym suggestions and grammar corrections.",
+        "pros": [
+          "Excellent context understanding",
+          "Tone switching capabilities",
+          "Natural language suggestions",
+          "Great for non-native English speakers"
+        ],
+        "cons": [
+          "Free version has daily limits",
+          "Premium pricing for unlimited access",
+          "Focused primarily on English"
+        ]
+      },
+      {
+        "name": "Writesonic Paraphraser",
+        "description": "Fast AI paraphrasing for blog posts, articles, and SEO content optimization",
+        "link": "https://writesonic.com/",
+        "tags": [
+          "Freemium",
+          "Paraphrasing",
+          "SEO"
+        ],
+        "iconUrl": "https://writesonic.com/favicon.ico",
+        "about": "Writesonic's paraphrasing tool helps quickly rewrite blog posts, articles, and marketing content with SEO optimization in mind, making it ideal for content marketers and bloggers.",
+        "pros": [
+          "Fast rewriting for long-form content",
+          "SEO-focused features",
+          "Good for content repurposing",
+          "Multiple output variations"
+        ],
+        "cons": [
+          "Can be less nuanced than specialized paraphrasers",
+          "Credit-based pricing model",
+          "May require manual editing for technical content"
+        ]
+      },
+      {
+        "name": "Rytr",
+        "description": "Affordable AI writing and paraphrasing tool with 40+ templates and multi-language support",
+        "link": "https://rytr.me/",
+        "tags": [
+          "Freemium",
+          "Writing",
+          "Multi-Language"
+        ],
+        "iconUrl": "https://rytr.me/favicon.ico",
+        "about": "Rytr is an affordable AI writing assistant with paraphrasing capabilities, 40+ content templates, support for 30+ languages, and various tone options for different writing needs.",
+        "pros": [
+          "Forever free plan available (10k characters/month)",
+          "40+ templates for different content types",
+          "Multi-language support (30+ languages)",
+          "Affordable paid plans"
+        ],
+        "cons": [
+          "Free tier character limits",
+          "Output quality varies by use case",
+          "Less specialized than dedicated paraphrasers"
         ]
       }
     ]
