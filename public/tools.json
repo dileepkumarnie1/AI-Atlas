@@ -13647,5 +13647,305 @@
         ]
       }
     ]
+  },
+  {
+    "name": "AI Background Removal",
+    "slug": "ai-background-removal",
+    "description": "AI-powered tools for automatically removing backgrounds from images and videos for professional editing.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1V9h-1v2zm1-4V5h-1v2h1zM5 5v2H4V5h1zm0 4H4v2h1V9zm-1 4h1v2H4v-2z\" clip-rule=\"evenodd\"/></svg>",
+    "tools": [
+      {
+        "name": "Remove.bg",
+        "description": "Industry-leading automatic background removal tool with high accuracy",
+        "link": "https://www.remove.bg/",
+        "tags": [
+          "Freemium",
+          "Background Removal",
+          "Images"
+        ],
+        "iconUrl": "https://www.remove.bg/favicon.ico",
+        "about": "Remove.bg is the most popular AI background removal tool, offering instant, high-quality background removal from images with support for batch processing and API integration.",
+        "pros": [
+          "Extremely accurate background detection",
+          "Fast processing (seconds per image)",
+          "Free tier available for basic use",
+          "API for automation"
+        ],
+        "cons": [
+          "Limited free credits per month",
+          "High-resolution exports require payment",
+          "Complex backgrounds may need manual touch-ups"
+        ]
+      },
+      {
+        "name": "PhotoRoom",
+        "description": "AI background removal and product photography tool for e-commerce",
+        "link": "https://www.photoroom.com/",
+        "tags": [
+          "Freemium",
+          "Background Removal",
+          "E-commerce"
+        ],
+        "iconUrl": "https://www.photoroom.com/favicon.ico",
+        "about": "PhotoRoom combines AI background removal with professional product photography templates, making it ideal for e-commerce sellers and marketers creating product listings.",
+        "pros": [
+          "Excellent for product photography",
+          "Background replacement templates",
+          "Mobile app available",
+          "Batch processing capabilities"
+        ],
+        "cons": [
+          "Free version has watermark",
+          "Best features require Pro subscription",
+          "Focused on product/portrait photography"
+        ]
+      },
+      {
+        "name": "Clipping Magic",
+        "description": "AI background removal with manual editing tools for precise control",
+        "link": "https://clippingmagic.com/",
+        "tags": [
+          "Paid",
+          "Background Removal",
+          "Professional"
+        ],
+        "iconUrl": "https://clippingmagic.com/favicon.ico",
+        "about": "Clipping Magic offers AI-powered background removal with advanced manual editing tools, allowing users to fine-tune results for professional-quality output.",
+        "pros": [
+          "Combination of AI automation and manual control",
+          "High-quality results for complex images",
+          "Professional editing tools",
+          "Good for hair and fine details"
+        ],
+        "cons": [
+          "No free tier available",
+          "Requires subscription",
+          "Steeper learning curve than fully automated tools"
+        ]
+      },
+      {
+        "name": "Unscreen",
+        "description": "AI-powered video background removal without green screen",
+        "link": "https://www.unscreen.com/",
+        "tags": [
+          "Freemium",
+          "Video",
+          "Background Removal"
+        ],
+        "iconUrl": "https://www.unscreen.com/favicon.ico",
+        "about": "Unscreen automatically removes backgrounds from videos without requiring a green screen, making professional video editing accessible to everyone.",
+        "pros": [
+          "Automatic video background removal",
+          "No green screen required",
+          "Easy to use",
+          "Good quality results"
+        ],
+        "cons": [
+          "Free version has limitations",
+          "Processing can be slow for long videos",
+          "Complex scenes may have artifacts"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Form & Survey Builders",
+    "slug": "ai-form-survey-builders",
+    "description": "AI-powered form and survey creation tools for data collection, customer feedback, and lead generation.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z\" clip-rule=\"evenodd\"/></svg>",
+    "tools": [
+      {
+        "name": "Typeform",
+        "description": "Beautiful, conversational forms with AI-powered features and logic jumps",
+        "link": "https://www.typeform.com/",
+        "tags": [
+          "Freemium",
+          "Forms",
+          "Surveys"
+        ],
+        "iconUrl": "https://www.typeform.com/favicon.ico",
+        "about": "Typeform creates beautiful, conversational forms and surveys with AI-powered insights, conditional logic, and integrations for collecting and analyzing data.",
+        "pros": [
+          "Beautiful, user-friendly design",
+          "Conversational form experience",
+          "Advanced logic and branching",
+          "Great analytics and integrations"
+        ],
+        "cons": [
+          "Free plan limited to 10 responses/month",
+          "Can be expensive for high-volume needs",
+          "Some features require premium tiers"
+        ]
+      },
+      {
+        "name": "Jotform",
+        "description": "Powerful form builder with 10,000+ templates and AI form generation",
+        "link": "https://www.jotform.com/",
+        "tags": [
+          "Freemium",
+          "Forms",
+          "No-Code"
+        ],
+        "iconUrl": "https://www.jotform.com/favicon.ico",
+        "about": "Jotform offers a comprehensive form building platform with 10,000+ templates, AI form generation, payment integration, and workflow automation.",
+        "pros": [
+          "Massive template library (10,000+)",
+          "AI-powered form generation",
+          "Payment collection built-in",
+          "Generous free tier"
+        ],
+        "cons": [
+          "Interface can feel overwhelming",
+          "Some advanced features require paid plans",
+          "Mobile editor less intuitive"
+        ]
+      },
+      {
+        "name": "Fillout",
+        "description": "Modern form builder with AI features and powerful integrations",
+        "link": "https://www.fillout.com/",
+        "tags": [
+          "Freemium",
+          "Forms",
+          "Modern"
+        ],
+        "iconUrl": "https://www.fillout.com/favicon.ico",
+        "about": "Fillout is a modern, powerful form builder with AI capabilities, scheduling features, and seamless integrations for collecting information and payments.",
+        "pros": [
+          "Modern, clean interface",
+          "Generous free tier (unlimited forms)",
+          "Scheduling and payment features",
+          "Good integrations"
+        ],
+        "cons": [
+          "Newer platform with evolving features",
+          "Smaller community than established competitors",
+          "Some advanced features coming soon"
+        ]
+      },
+      {
+        "name": "Tally",
+        "description": "Free, unlimited forms with AI assistance and no coding required",
+        "link": "https://tally.so/",
+        "tags": [
+          "Free",
+          "Forms",
+          "No-Code"
+        ],
+        "iconUrl": "https://tally.so/favicon.ico",
+        "about": "Tally offers completely free, unlimited forms with AI assistance, no branding, and powerful features without requiring coding skills.",
+        "pros": [
+          "Completely free with unlimited forms",
+          "No Tally branding",
+          "Simple, intuitive interface",
+          "Good for non-technical users"
+        ],
+        "cons": [
+          "Fewer advanced features than paid alternatives",
+          "Smaller ecosystem of integrations",
+          "No phone support"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI Diagram & Flowchart Tools",
+    "slug": "ai-diagram-flowchart-tools",
+    "description": "AI-powered diagramming and flowchart creation tools for visualizing processes, systems, and ideas.",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z\"/></svg>",
+    "tools": [
+      {
+        "name": "Whimsical",
+        "description": "Fast, collaborative diagramming with AI assistance for wireframes and flowcharts",
+        "link": "https://whimsical.com/",
+        "tags": [
+          "Freemium",
+          "Diagrams",
+          "Collaboration"
+        ],
+        "iconUrl": "https://whimsical.com/favicon.ico",
+        "about": "Whimsical provides fast, beautiful diagramming tools with AI assistance for creating flowcharts, wireframes, mind maps, and docs in a collaborative environment.",
+        "pros": [
+          "Extremely fast and responsive",
+          "Beautiful, clean design",
+          "Great for collaboration",
+          "Multiple diagram types (flowcharts, wireframes, mind maps)"
+        ],
+        "cons": [
+          "Free tier limits board count",
+          "Fewer integrations than enterprise tools",
+          "Advanced features require paid plan"
+        ]
+      },
+      {
+        "name": "Miro",
+        "description": "Collaborative online whiteboard with AI-powered diagramming and templates",
+        "link": "https://miro.com/",
+        "tags": [
+          "Freemium",
+          "Whiteboard",
+          "Collaboration"
+        ],
+        "iconUrl": "https://miro.com/favicon.ico",
+        "about": "Miro is a collaborative online whiteboard platform with AI features, extensive templates, and powerful diagramming tools for teams and remote collaboration.",
+        "pros": [
+          "Infinite canvas for creativity",
+          "Huge template library",
+          "Excellent for remote teams",
+          "Many integrations (Zoom, Slack, etc.)"
+        ],
+        "cons": [
+          "Can be overwhelming for simple tasks",
+          "Free plan limits boards",
+          "Performance can slow with very large boards"
+        ]
+      },
+      {
+        "name": "Lucidchart",
+        "description": "Professional diagramming tool with AI features for technical and business diagrams",
+        "link": "https://www.lucidchart.com/",
+        "tags": [
+          "Freemium",
+          "Professional",
+          "Technical"
+        ],
+        "iconUrl": "https://www.lucidchart.com/favicon.ico",
+        "about": "Lucidchart is a professional diagramming application with AI-powered features for creating technical diagrams, flowcharts, org charts, and network diagrams.",
+        "pros": [
+          "Professional-grade features",
+          "Great for technical diagrams",
+          "Data linking capabilities",
+          "Enterprise-ready"
+        ],
+        "cons": [
+          "Free tier very limited",
+          "Can be expensive for teams",
+          "Steeper learning curve"
+        ]
+      },
+      {
+        "name": "Excalidraw",
+        "description": "Open-source, hand-drawn style diagramming tool with simplicity focus",
+        "link": "https://excalidraw.com/",
+        "tags": [
+          "Free",
+          "Open Source",
+          "Simple"
+        ],
+        "iconUrl": "https://excalidraw.com/favicon.ico",
+        "about": "Excalidraw is a free, open-source diagramming tool with a hand-drawn aesthetic, perfect for quick sketches, wireframes, and informal diagrams.",
+        "pros": [
+          "Completely free and open source",
+          "Hand-drawn aesthetic",
+          "Simple and fast to use",
+          "No account required"
+        ],
+        "cons": [
+          "Limited features compared to professional tools",
+          "No advanced formatting options",
+          "Basic collaboration features"
+        ]
+      }
+    ]
   }
 ]
