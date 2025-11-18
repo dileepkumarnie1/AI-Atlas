@@ -973,59 +973,103 @@
   measurementId: "G-ES11CRRDP6"
 };
         
-        // Import Firebase modules
+        // Import Firebase modules with error handling
+        let app = null;
+        let auth = null;
+        let provider = null;
+        let firestore = null;
+        let onAuthStateChanged = null;
+        let createUserWithEmailAndPassword = null;
+        let signInWithEmailAndPassword = null;
+        let signInWithPopup = null;
+        let GoogleAuthProvider = null;
+        let signOut = null;
+        let getIdTokenResult = null;
+        let doc = null;
+        let getDoc = null;
+        let setDoc = null;
+        let updateDoc = null;
+        let collection = null;
+        let getDocs = null;
+        let query = null;
+        let orderBy = null;
+        let limit = null;
+        let deleteDoc = null;
+        let serverTimestamp = null;
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { 
-            getAuth, 
-            onAuthStateChanged,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            signInWithPopup,
-            GoogleAuthProvider,
-            signOut,
-            getIdTokenResult
-        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-        import {
-            getFirestore,
-            doc,
-            getDoc,
-            setDoc,
-            updateDoc,
-            collection,
-            getDocs,
-            query,
-            orderBy,
-            limit,
-            deleteDoc,
-            serverTimestamp
-        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-        // Initialize Firebase
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-        const firestore = getFirestore(app);
+        // Try to load Firebase asynchronously, but don't block the page
+        (async function loadFirebase() {
+            try {
+                const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+                const authModule = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+                const firestoreModule = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+                
+                // Extract auth functions
+                onAuthStateChanged = authModule.onAuthStateChanged;
+                createUserWithEmailAndPassword = authModule.createUserWithEmailAndPassword;
+                signInWithEmailAndPassword = authModule.signInWithEmailAndPassword;
+                signInWithPopup = authModule.signInWithPopup;
+                GoogleAuthProvider = authModule.GoogleAuthProvider;
+                signOut = authModule.signOut;
+                getIdTokenResult = authModule.getIdTokenResult;
+                
+                // Extract firestore functions
+                doc = firestoreModule.doc;
+                getDoc = firestoreModule.getDoc;
+                setDoc = firestoreModule.setDoc;
+                updateDoc = firestoreModule.updateDoc;
+                collection = firestoreModule.collection;
+                getDocs = firestoreModule.getDocs;
+                query = firestoreModule.query;
+                orderBy = firestoreModule.orderBy;
+                limit = firestoreModule.limit;
+                deleteDoc = firestoreModule.deleteDoc;
+                serverTimestamp = firestoreModule.serverTimestamp;
+                
+                // Initialize Firebase
+                app = initializeApp(firebaseConfig);
+                auth = authModule.getAuth(app);
+                provider = new GoogleAuthProvider();
+                firestore = firestoreModule.getFirestore(app);
+                
+                console.log('Firebase initialized successfully');
+            } catch (error) {
+                console.warn('Firebase could not be loaded. Authentication features will be disabled.', error);
+                // Firebase is optional - the app should work without it
+            }
+        })();
 
         // --- Firestore User Profile Sync ---
         async function getUserProfile(uid) {
-            if (!uid) return null;
-            const ref = doc(firestore, 'users', uid);
-            const snap = await getDoc(ref);
-            return snap.exists() ? snap.data() : null;
+            if (!uid || !firestore || !doc || !getDoc) return null;
+            try {
+                const ref = doc(firestore, 'users', uid);
+                const snap = await getDoc(ref);
+                return snap.exists() ? snap.data() : null;
+            } catch (error) {
+                console.warn('getUserProfile failed:', error);
+                return null;
+            }
         }
 
         async function setUserProfile(uid, data) {
-            if (!uid) return;
-            const ref = doc(firestore, 'users', uid);
-            await setDoc(ref, data, { merge: true });
+            if (!uid || !firestore || !doc || !setDoc) return;
+            try {
+                const ref = doc(firestore, 'users', uid);
+                await setDoc(ref, data, { merge: true });
+            } catch (error) {
+                console.warn('setUserProfile failed:', error);
+            }
         }
 
         async function updateUserProfileField(uid, field, value) {
-            if (!uid) return;
-            const ref = doc(firestore, 'users', uid);
-            await updateDoc(ref, { [field]: value });
+            if (!uid || !firestore || !doc || !updateDoc) return;
+            try {
+                const ref = doc(firestore, 'users', uid);
+                await updateDoc(ref, { [field]: value });
+            } catch (error) {
+                console.warn('updateUserProfileField failed:', error);
+            }
         }
 
         // Save favorites, reviews, comparisons
@@ -1105,37 +1149,48 @@
             };
 
             // --- Ensure Firestore user document is created after login and favorites are loaded ---
-            onAuthStateChanged(auth, async (user) => {
-                state.user = user;
-                if (user) {
-                    // Load custom claims to determine admin rights
-                    try {
-                        const token = await getIdTokenResult(user, true);
-                        state.isAdmin = !!(token?.claims?.admin);
-                    } catch (e) {
+            // This is set up asynchronously once Firebase loads
+            if (typeof onAuthStateChanged === 'function' && auth) {
+                onAuthStateChanged(auth, async (user) => {
+                    state.user = user;
+                    if (user) {
+                        // Load custom claims to determine admin rights
+                        try {
+                            const token = await getIdTokenResult(user, true);
+                            state.isAdmin = !!(token?.claims?.admin);
+                        } catch (e) {
+                            state.isAdmin = false;
+                        }
+                        // Create or update user document in Firestore
+                        // Create/update user profile; do NOT set/overwrite role here
+                        if (firestore && doc && setDoc) {
+                            try {
+                                await setDoc(doc(firestore, 'users', user.uid), {
+                                    profile: {
+                                        displayName: user.displayName || '',
+                                        email: user.email || '',
+                                        avatar: user.photoURL || ''
+                                    }
+                                }, { merge: true });
+                            } catch (e) {
+                                console.warn('Could not save user profile to Firestore:', e);
+                            }
+                        }
+                        // Load favorites, reviews, comparisons from Firestore
+                        await loadUserProfileToState(user);
+                    } else {
+                        // Clear user-specific state on logout
+                        state.favorites = [];
+                        state.reviews = {};
+                        state.comparisons = [];
                         state.isAdmin = false;
                     }
-                    // Create or update user document in Firestore
-                    // Create/update user profile; do NOT set/overwrite role here
-                    await setDoc(doc(firestore, 'users', user.uid), {
-                        profile: {
-                            displayName: user.displayName || '',
-                            email: user.email || '',
-                            avatar: user.photoURL || ''
-                        }
-                    }, { merge: true });
-                    // Load favorites, reviews, comparisons from Firestore
-                    await loadUserProfileToState(user);
-                } else {
-                    // Clear user-specific state on logout
-                    state.favorites = [];
-                    state.reviews = {};
-                    state.comparisons = [];
-                    state.isAdmin = false;
-                }
-                // Re-render UI to reflect updated state
-                render();
-            });
+                    // Re-render UI to reflect updated state
+                    render();
+                });
+            } else {
+                console.debug('Firebase auth not yet available, skipping initial auth state listener');
+            }
             // --- Firestore Profile Sync Logic ---
             async function loadUserProfileToState(user) {
                 if (!user || !user.uid) return;
@@ -3110,6 +3165,13 @@
                 const password = passwordInput.value;
                 modalError.classList.add('hidden');
 
+                // Check if Firebase is available
+                if (!auth || !signInWithEmailAndPassword || !createUserWithEmailAndPassword) {
+                    modalError.textContent = 'Authentication is currently unavailable. Please try again later or disable your ad blocker.';
+                    modalError.classList.remove('hidden');
+                    return;
+                }
+
                 try {
                     if (isLoginMode) {
                         await signInWithEmailAndPassword(auth, email, password);
@@ -3124,6 +3186,13 @@
             };
             
             const handleGoogleSignIn = async () => {
+                // Check if Firebase is available
+                if (!auth || !signInWithPopup || !provider) {
+                    modalError.textContent = 'Authentication is currently unavailable. Please try again later or disable your ad blocker.';
+                    modalError.classList.remove('hidden');
+                    return;
+                }
+
                 try {
                     await signInWithPopup(auth, provider);
                     closeModal();
@@ -3134,7 +3203,15 @@
             };
 
             const handleSignOut = async () => {
-                await signOut(auth);
+                if (!auth || !signOut) {
+                    console.warn('Cannot sign out: Firebase not available');
+                    return;
+                }
+                try {
+                    await signOut(auth);
+                } catch (error) {
+                    console.error('Sign out failed:', error);
+                }
             };
 
             // --- AUTH UI RENDER ---
@@ -3382,10 +3459,22 @@
                 // build search index
                 setupFuse();
 
-                // Auth state listener
-                onAuthStateChanged(auth, (user) => {
-                    updateAuthUI(user);
-                });
+                // Auth state listener (only if Firebase loaded successfully)
+                if (typeof onAuthStateChanged === 'function' && auth) {
+                    try {
+                        onAuthStateChanged(auth, (user) => {
+                            updateAuthUI(user);
+                        });
+                    } catch (error) {
+                        console.warn('Auth state listener could not be initialized:', error);
+                        // Show sign-in UI in disabled state
+                        updateAuthUI(null);
+                    }
+                } else {
+                    console.warn('Firebase authentication not available');
+                    // Show sign-in UI in disabled state
+                    updateAuthUI(null);
+                }
 
                 // Modal listeners
                 document.getElementById('close-modal-btn').addEventListener('click', closeModal);
