@@ -267,9 +267,18 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.35); /* increased opacity */
+            background: rgba(255,255,255,0.35);
             z-index: 1; /* above background image, below app */
             pointer-events: none;
+        }
+        /* Desktop: reduce overlay opacity for better content visibility */
+        @media (min-width: 769px) {
+            #background-overlay {
+                background: rgba(255,255,255,0.15);
+            }
+            html.dark #background-overlay {
+                background: rgba(30,41,59,0.35);
+            }
         }
         /* Filter backdrop to prevent underlying content from showing/clicking */
         #filter-backdrop {
