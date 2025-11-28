@@ -256,7 +256,7 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100vw; height: 100vh;
-            background-image: url('./images/3d_part1.jpg');
+            background-image: url('./images/3d_part3.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1202,19 +1202,78 @@
             if (typeof setupTheme === 'function') setupTheme();
 
             // --- Tag normalization and synonym mapping for better search ---
+            // Comprehensive synonym system covering all major categories and search intents
             const TAG_SYNONYMS = {
-                'video editing': ['video editor', 'video edit', 'edit video', 'video creation', 'video maker'],
-                'video generation': ['video gen', 'generate video', 'video ai', 'text to video', 'text-to-video'],
-                'image generation': ['image gen', 'generate image', 'image ai', 'text to image', 'text-to-image'],
-                'image editing': ['image editor', 'image edit', 'edit image', 'photo editing', 'photo editor'],
-                'code assistant': ['coding assistant', 'code helper', 'programming assistant', 'code completion'],
-                'chatbot': ['chat bot', 'conversational ai', 'chat assistant'],
-                'voice': ['audio', 'speech', 'tts', 'text to speech'],
-                'writing': ['writing assistant', 'content writing', 'copywriting', 'text generation'],
-                'productivity': ['productivity tool', 'automation', 'workflow'],
-                'design': ['graphic design', 'ui design', 'design tool'],
-                'translation': ['translator', 'language translation', 'multilingual'],
-                'transcription': ['transcribe', 'speech to text', 'audio to text']
+                // Chat & Conversation
+                'chat': ['chatbot', 'chat bot', 'conversational ai', 'chat assistant', 'conversation', 'messaging', 'chat ai', 'ai chat', 'llm', 'language model'],
+                'chatbot': ['chat', 'chat bot', 'conversational ai', 'virtual assistant', 'chat agent'],
+                
+                // Video
+                'video editing': ['video editor', 'video edit', 'edit video', 'video creation', 'video maker', 'video production'],
+                'video generation': ['video gen', 'generate video', 'video ai', 'text to video', 'text-to-video', 'create video', 'video creator'],
+                
+                // Image
+                'image generation': ['image gen', 'generate image', 'image ai', 'text to image', 'text-to-image', 'create image', 'image creator', 'ai art', 'art generator'],
+                'image editing': ['image editor', 'image edit', 'edit image', 'photo editing', 'photo editor', 'image manipulation'],
+                
+                // Code & Development
+                'code assistant': ['coding assistant', 'code helper', 'programming assistant', 'code completion', 'coding', 'programming', 'developer tool', 'code ai'],
+                'coding': ['code', 'programming', 'development', 'developer', 'code assistant'],
+                
+                // Writing & Content
+                'writing': ['writing assistant', 'content writing', 'copywriting', 'text generation', 'writer', 'content creator'],
+                'writing assistant': ['writing', 'writer', 'content writing', 'ai writer', 'text assistant'],
+                
+                // Productivity
+                'productivity': ['productivity tool', 'automation', 'workflow', 'efficiency', 'task management', 'organization'],
+                'automation': ['workflow automation', 'automate', 'automated', 'workflow', 'productivity'],
+                
+                // Design
+                'design': ['graphic design', 'ui design', 'design tool', 'designer', 'visual design', 'creative design'],
+                'graphic design': ['design', 'graphics', 'visual design', 'designer tool'],
+                
+                // Audio & Voice
+                'voice': ['audio', 'speech', 'tts', 'text to speech', 'voice ai', 'voice generator'],
+                'audio': ['voice', 'sound', 'music', 'audio editing', 'speech'],
+                'tts': ['text to speech', 'voice', 'speech synthesis', 'voice generation'],
+                'voice cloning': ['voice clone', 'voice ai', 'voice generation', 'voice synthesis'],
+                
+                // Translation & Language
+                'translation': ['translator', 'translate', 'language translation', 'multilingual', 'localization'],
+                'transcription': ['transcribe', 'speech to text', 'audio to text', 'stt'],
+                
+                // Business Functions
+                'marketing': ['seo', 'advertising', 'marketing tool', 'promotion', 'digital marketing'],
+                'seo': ['search engine optimization', 'marketing', 'search optimization'],
+                'sales': ['crm', 'sales tool', 'lead generation', 'sales assistant'],
+                'customer support': ['support', 'help desk', 'customer service', 'support chatbot'],
+                'hr': ['recruitment', 'hiring', 'human resources', 'talent acquisition'],
+                
+                // Data & Analytics
+                'data analysis': ['analytics', 'data analytics', 'data science', 'analysis', 'data visualization'],
+                'research': ['research tool', 'research assistant', 'academic', 'study'],
+                
+                // Creative
+                'avatar': ['virtual influencer', 'ai avatar', 'digital avatar', 'virtual character'],
+                '3d': ['3d modeling', '3d model', 'three dimensional', '3d design', '3d creation'],
+                'logo': ['branding', 'logo design', 'brand identity', 'logo maker'],
+                
+                // Specialized
+                'presentation': ['slides', 'powerpoint', 'presentation tool', 'slide deck'],
+                'meeting': ['meeting assistant', 'meeting notes', 'meeting recorder', 'video conferencing'],
+                'email': ['email assistant', 'email tool', 'email writer', 'email automation'],
+                'note taking': ['notes', 'note app', 'pkm', 'knowledge management', 'note assistant'],
+                'pdf': ['document', 'pdf tool', 'document processing', 'pdf editor'],
+                'summarization': ['summarize', 'summary', 'summarizer', 'text summary'],
+                
+                // Professional Services
+                'legal': ['law', 'legal assistant', 'compliance', 'legal research'],
+                'healthcare': ['medical', 'health', 'healthcare ai', 'medical ai'],
+                'finance': ['financial', 'accounting', 'fintech', 'finance tool'],
+                
+                // Quality Indicators (for "best" queries)
+                'best': ['top', 'popular', 'leading', 'recommended', 'famous', 'most popular'],
+                'top': ['best', 'leading', 'popular', 'recommended', 'famous']
             };
 
             function normalizeSearchQuery(query) {
@@ -1232,6 +1291,9 @@
                 const q = query.toLowerCase().trim();
                 const terms = [q];
                 
+                // Handle "best" or "top" queries by prioritizing popular tools
+                const hasBestTop = /\b(best|top|popular|leading|famous|recommended)\b/i.test(q);
+                
                 // Add synonyms for ALL matching patterns (not just first match)
                 for (const [canonical, synonyms] of Object.entries(TAG_SYNONYMS)) {
                     if (q.includes(canonical) || synonyms.some(syn => q.includes(syn))) {
@@ -1242,22 +1304,38 @@
                 }
                 
                 // Extract meaningful phrases from the query
-                // For "ai tool for editing video" -> extract "editing video", "video"
+                // For "best chat ai tools" -> extract "chat ai", "ai tools", "chat", etc.
                 const words = q.split(/\s+/);
                 if (words.length > 1) {
-                    // Add bigrams and individual important words
+                    // Add bigrams (word pairs) and trigrams (word triplets)
                     for (let i = 0; i < words.length - 1; i++) {
                         const bigram = words[i] + ' ' + words[i + 1];
                         terms.push(bigram);
+                        
+                        // Add trigrams for more context
+                        if (i < words.length - 2) {
+                            const trigram = words[i] + ' ' + words[i + 1] + ' ' + words[i + 2];
+                            terms.push(trigram);
+                        }
                     }
+                    
                     // Add individual words (but filter out common stop words)
-                    const stopWords = new Set(['a', 'an', 'the', 'for', 'to', 'of', 'in', 'on', 'at', 'with', 'by', 'ai', 'tool', 'tools']);
+                    const stopWords = new Set(['a', 'an', 'the', 'for', 'to', 'of', 'in', 'on', 'at', 'with', 'by', 'ai', 'tool', 'tools', 'best', 'top', 'good']);
                     words.forEach(word => {
                         if (word.length > 2 && !stopWords.has(word)) {
                             terms.push(word);
                         }
                     });
                 }
+                
+                // If query mentions category name directly, add it
+                // E.g., "productivity tools" should search for "productivity"
+                const categoryKeywords = ['productivity', 'chat', 'video', 'image', 'code', 'writing', 'design', 'audio', 'voice', 'avatar', 'marketing', 'seo', 'sales', 'research', 'education'];
+                categoryKeywords.forEach(keyword => {
+                    if (q.includes(keyword) && !terms.includes(keyword)) {
+                        terms.push(keyword);
+                    }
+                });
                 
                 return [...new Set(terms)];
             }
