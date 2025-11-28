@@ -445,8 +445,7 @@
         "link": "https://www.heygen.com/",
         "tags": [
           "Freemium",
-          "Translation",
-          "video"
+          "Translation"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "HeyGen is an AI video platform that specializes in generating spokesperson videos with realistic avatars. Its standout feature is AI-powered video translation, which can change the spoken language of a person in a video while syncing their lip movements.",
@@ -488,8 +487,7 @@
         "link": "https://invideo.io/",
         "tags": [
           "Freemium",
-          "Social Media",
-          "video"
+          "Social Media"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "InVideo is a web-based video creation platform that uses AI to help users turn text content, such as blog posts, into videos. It offers a large library of templates, stock footage, and music, making it ideal for social media and marketing content.",
@@ -769,8 +767,7 @@
         "tags": [
           "llm",
           "code",
-          "Free",
-          "video"
+          "Free"
         ],
         "about": "Sign in - Google Accounts",
         "pros": [
@@ -962,8 +959,7 @@
         "link": "https://runwayml.com/",
         "tags": [
           "Freemium",
-          "Video Generation",
-          "video"
+          "Video Generation"
         ],
         "iconUrl": "https://media.licdn.com/dms/image/C4D0BAQG0C5b0g-f_vA/company-logo_200_200/0/1677520033123/runwayml_logo?e=2147483647&v=beta&t=H_L_D-qj5s9c-Q2a7b1c3d4e5f6g7h8i",
         "about": "Runway is a comprehensive platform offering a wide array of AI magic tools for video, including text-to-video generation, video-to-video style transfer, automatic background removal (rotoscoping), and much more.",
@@ -1054,8 +1050,7 @@
         "link": "https://www.synthesia.io/",
         "tags": [
           "Subscription",
-          "Avatars",
-          "video"
+          "Avatars"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "Synthesia is a leading platform for creating AI-generated videos, primarily for corporate training and communication. Users can choose from a library of stock avatars or create their own, and then generate a video from a script in multiple languages.",
@@ -2536,11 +2531,7 @@
           "developer-tools",
           "video",
           "audio",
-          "Freemium",
-          "video generation",
-          "meme",
-          "content creation",
-          "viral"
+          "Freemium"
         ],
         "about": "Create viral brainrot videos instantly with AI. Generate funny celebrity dialogues, memes, and more. The ultimate brainrot maker for content creators.",
         "pros": [
@@ -2561,9 +2552,7 @@
         "link": "https://www.d-id.com/",
         "tags": [
           "Freemium",
-          "Talking Head",
-          "video generation",
-          "photo animation"
+          "Talking Head"
         ],
         "iconUrl": "https://www.d-id.com/favicon.svg",
         "about": "D-ID animates photos into talking head videos for presentations, learning, and more.",
@@ -2584,10 +2573,7 @@
         "link": "https://www.deepbrain.io/",
         "tags": [
           "Subscription",
-          "Avatars",
-          "video generation",
-          "ai avatars",
-          "presentations"
+          "Avatars"
         ],
         "iconUrl": "https://www.deepbrain.io/favicon.svg",
         "about": "DeepBrain AI generates realistic AI avatars for video content, news, and training.",
@@ -2608,11 +2594,7 @@
         "link": "https://www.descript.com/",
         "tags": [
           "Freemium",
-          "Editing",
-          "video editing",
-          "audio editing",
-          "transcription",
-          "podcast"
+          "Editing"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "Descript revolutionizes video editing by first transcribing the content, then allowing users to edit the video by simply editing the text transcript. It also includes AI features like filler word removal, voice cloning, and automatic studio sound.",
@@ -2634,11 +2616,7 @@
         "tags": [
           "Preview",
           "Text-to-Video",
-          "Freemium",
-          "video generation",
-          "text to video",
-          "google",
-          "deepmind"
+          "Freemium"
         ],
         "iconUrl": "https://deepmind.google/favicon.svg",
         "about": "Advanced T2V with strong scene coherence and camera control showcased in research demos.",
@@ -2659,11 +2637,7 @@
         "link": "https://www.heygen.com/",
         "tags": [
           "Freemium",
-          "Translation",
-          "video generation",
-          "ai avatars",
-          "video translation",
-          "lip sync"
+          "Translation"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "HeyGen is an AI video platform that specializes in generating spokesperson videos with realistic avatars. Its standout feature is AI-powered video translation, which can change the spoken language of a person in a video while syncing their lip movements.",
@@ -2683,9 +2657,7 @@
         "description": "HunyuanVideo: A Systematic Framework For Large Video Generation Model",
         "link": "https://aivideo.hunyuan.tencent.com",
         "tags": [
-          "Open Source",
-          "video generation",
-          "text to video"
+          "Open Source"
         ],
         "iconUrl": "icons/video-tools/hunyuanvideo.png",
         "about": "HunyuanVideo: A Systematic Framework For Large Video Generation Model",
@@ -2698,11 +2670,7 @@
         "link": "https://invideo.io/",
         "tags": [
           "Freemium",
-          "Social Media",
-          "video editing",
-          "video creation",
-          "templates",
-          "marketing"
+          "Social Media"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "InVideo is a web-based video creation platform that uses AI to help users turn text content, such as blog posts, into videos. It offers a large library of templates, stock footage, and music, making it ideal for social media and marketing content.",
@@ -2723,10 +2691,7 @@
         "link": "https://www.kaiber.ai/",
         "tags": [
           "Freemium",
-          "Video Effects",
-          "video generation",
-          "animation",
-          "artistic"
+          "Video Effects"
         ],
         "iconUrl": "https://www.kaiber.ai/favicon.svg",
         "about": "Turn static images into animated clips and apply stylistic transformations easily.",
@@ -2747,11 +2712,7 @@
         "link": "https://kling.kuaishou.com/",
         "tags": [
           "Freemium",
-          "Text-to-Video",
-          "video generation",
-          "text to video",
-          "high definition",
-          "long form"
+          "Text-to-Video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1799738092284981248/9fl65hJz_400x400.jpg",
         "about": "Kling is a text-to-video model developed by Kuaishou, a Chinese tech company. It is capable of generating up to two minutes of high-definition (1080p) video at 30 frames per second. The model has shown a remarkable ability to create physically realistic motion and large-scale, dynamic scenes, positioning it as a strong competitor to other leading video generation models.",
@@ -2771,10 +2732,7 @@
         "description": ":robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
         "link": "https://localai.io",
         "tags": [
-          "Open Source",
-          "video generation",
-          "self hosted",
-          "privacy"
+          "Open Source"
         ],
         "iconUrl": "icons/video-tools/localai.png",
         "about": ":robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
@@ -2787,10 +2745,7 @@
         "link": "https://lumalabs.ai/dream-machine",
         "tags": [
           "Freemium",
-          "Text-to-Video",
-          "video generation",
-          "text to video",
-          "cinematic"
+          "Text-to-Video"
         ],
         "iconUrl": "https://lumalabs.ai/favicon.svg",
         "about": "Generates cinematic clips with good motion and style adherence from short prompts.",
@@ -2810,9 +2765,7 @@
         "description": "MAGI-1: Autoregressive Video Generation at Scale",
         "link": "https://sand.ai",
         "tags": [
-          "Open Source",
-          "video generation",
-          "autoregressive"
+          "Open Source"
         ],
         "about": "MAGI-1: Autoregressive Video Generation at Scale",
         "pros": [],
@@ -2826,9 +2779,7 @@
         "tags": [
           "Freemium",
           "Video Repurposing",
-          "Social Media",
-          "video editing",
-          "short form"
+          "Social Media"
         ],
         "iconUrl": "https://www.opus.pro/favicon.svg",
         "about": "Opus Clip uses AI to identify the most engaging segments of long-form video content (podcasts, webinars, interviews) and converts them into short, captioned, social-media-ready clips with automated framing, dynamic captions, and virality scoring.",
@@ -2849,10 +2800,7 @@
         "link": "https://pictory.ai/",
         "tags": [
           "Freemium",
-          "Text-to-Video",
-          "video generation",
-          "text to video",
-          "blog to video"
+          "Text-to-Video"
         ],
         "iconUrl": "https://pictory.ai/favicon.svg",
         "about": "Pictory turns scripts and blog posts into short videos with AI narration and visuals.",
@@ -2873,10 +2821,7 @@
         "link": "https://pika.art/",
         "tags": [
           "Freemium",
-          "Text-to-Video",
-          "video generation",
-          "text to video",
-          "image to video"
+          "Text-to-Video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1730030234199494656/v4_f5s4p_400x400.jpg",
         "about": "Pika specializes in text-to-video and image-to-video generation, aiming to make video creation accessible to everyone. It's known for its ease of use and the cinematic quality of its output.",
@@ -2897,10 +2842,7 @@
         "link": "https://runwayml.com/",
         "tags": [
           "Freemium",
-          "Video Generation",
-          "video editing",
-          "text to video",
-          "ai video"
+          "Video Generation"
         ],
         "iconUrl": "https://media.licdn.com/dms/image/C4D0BAQG0C5b0g-f_vA/company-logo_200_200/0/1677520033123/runwayml_logo?e=2147483647&v=beta&t=H_L_D-qj5s9c-Q2a7b1c3d4e5f6g7h8i",
         "about": "Runway is a comprehensive platform offering a wide array of AI magic tools for video, including text-to-video generation, video-to-video style transfer, automatic background removal (rotoscoping), and much more.",
@@ -2922,11 +2864,7 @@
         "tags": [
           "Limited Access",
           "Text-to-Video",
-          "Freemium",
-          "video generation",
-          "text to video",
-          "openai",
-          "realistic"
+          "Freemium"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1758183303683780608/9Vr3-K5A_400x400.jpg",
         "about": "Sora is a text-to-video model developed by OpenAI, capable of generating high-fidelity, minute-long videos from textual prompts. It demonstrates a sophisticated understanding of language, physics, and cinematic composition, allowing it to create complex scenes with multiple characters, specific types of motion, and accurate details of the subject and background.",
@@ -2947,11 +2885,7 @@
         "link": "https://www.synthesia.io/",
         "tags": [
           "Subscription",
-          "Avatars",
-          "video generation",
-          "ai avatars",
-          "talking head",
-          "corporate"
+          "Avatars"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "Synthesia is a leading platform for creating AI-generated videos, primarily for corporate training and communication. Users can choose from a library of stock avatars or create their own, and then generate a video from a script in multiple languages.",
@@ -2972,10 +2906,7 @@
         "link": "https://www.veed.io/",
         "tags": [
           "Freemium",
-          "Editing",
-          "video editing",
-          "online editor",
-          "subtitles"
+          "Editing"
         ],
         "iconUrl": "https://www.veed.io/favicon.svg",
         "about": "Veed.io offers video editing, subtitles, and AI tools for content creators.",
@@ -2996,10 +2927,7 @@
         "link": "https://runwayml.com/",
         "tags": [
           "Paid",
-          "Professional",
-          "video generation",
-          "video editing",
-          "gen-3"
+          "Professional"
         ],
         "iconUrl": "https://runwayml.com/favicon.ico",
         "about": "Runway ML offers cutting-edge AI video tools including Gen-3 for text-to-video, video editing, motion tracking, and special effects. Used by professional creators and filmmakers.",
@@ -3020,10 +2948,7 @@
         "link": "https://pika.art/",
         "tags": [
           "Freemium",
-          "Quick Generation",
-          "video generation",
-          "text to video",
-          "discord"
+          "Quick Generation"
         ],
         "iconUrl": "https://pika.art/favicon.ico",
         "about": "Pika Labs provides quick AI video generation from text prompts and images. Known for its speed and accessibility, with a friendly Discord-based interface.",
@@ -3045,10 +2970,7 @@
         "tags": [
           "Freemium",
           "Text-to-Video",
-          "Social Media",
-          "video editing",
-          "faceless video",
-          "youtube"
+          "Social Media"
         ],
         "iconUrl": "https://fliki.ai/favicon.ico",
         "about": "Fliki converts text into engaging videos with AI-generated voices and visuals, perfect for creating faceless YouTube content, social media videos, and explainers.",
@@ -3071,9 +2993,7 @@
         "tags": [
           "Paid",
           "Video Enhancement",
-          "Professional",
-          "video editing",
-          "upscaling"
+          "Professional"
         ],
         "iconUrl": "https://www.topazlabs.com/favicon.ico",
         "about": "Topaz Video AI specializes in enhancing and upscaling video quality using AI, making old or low-resolution footage look sharper and more professional.",
@@ -3096,9 +3016,7 @@
         "tags": [
           "Freemium",
           "Text-to-Video",
-          "Marketing",
-          "video editing",
-          "article to video"
+          "Marketing"
         ],
         "iconUrl": "https://www.lumen5.com/favicon.ico",
         "about": "Lumen5 automatically transforms blog posts, articles, and text content into professional-looking videos optimized for social media and marketing campaigns.",
@@ -3785,8 +3703,7 @@
         "link": "https://www.descript.com/overdub",
         "tags": [
           "Freemium",
-          "Voice Cloning",
-          "video"
+          "Voice Cloning"
         ],
         "iconUrl": "https://www.descript.com/favicon.svg",
         "about": "Descript Overdub allows you to create a digital voice clone for editing and generating audio content.",
@@ -5642,8 +5559,7 @@
         "link": "https://lumalabs.ai/",
         "tags": [
           "Freemium",
-          "Photogrammetry",
-          "video"
+          "Photogrammetry"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1600233516212940800/2a1a3e5e_400x400.jpg",
         "about": "Luma AI uses a technique called NeRFs (Neural Radiance Fields) to create high-quality 3D models from videos. Users can capture a video of an object or scene, and Luma's AI processes it into a detailed, interactive 3D asset.",
@@ -9241,8 +9157,7 @@
         "tags": [
           "Paid",
           "Video Interview",
-          "Assessment",
-          "video"
+          "Assessment"
         ],
         "iconUrl": "icons/hr-recruitment/hirevue.ico",
         "about": "HireVue is an AI-powered platform for video interviewing and candidate assessments. It analyzes candidate responses, tone, and engagement to assess fit, automatically scores interviews, and streamlines communication, helping reduce bias and save recruiter time.",
@@ -10402,8 +10317,7 @@
         "tags": [
           "Freemium",
           "Design",
-          "Content Creation",
-          "video"
+          "Content Creation"
         ],
         "iconUrl": "icons/social-media-content/canva-ai.ico",
         "about": "Canva AI offers Magic Design (auto-generates graphics based on prompts) and Magic Write (AI-powered caption generation) for visual-first content creation. It provides image/video creation, social templates, and brand kits, making it perfect for teams and solo creators designing posts for Instagram, LinkedIn, and more.",
@@ -11373,8 +11287,7 @@
         "tags": [
           "Content Creation",
           "SEO",
-          "Multimedia",
-          "video"
+          "Multimedia"
         ],
         "iconUrl": "icons/ai-browsers/sigma-ai-browser.ico",
         "about": "Sigma AI Browser is tailored for content creators and marketers. It includes built-in AI tools for generating text, images, and video content, along with SEO optimization features to help creators produce and optimize content without leaving the browser.",
@@ -12729,8 +12642,7 @@
         "link": "https://www.headliner.app/",
         "tags": [
           "Freemium",
-          "Video Creation",
-          "video"
+          "Video Creation"
         ],
         "iconUrl": "https://www.headliner.app/favicon.ico",
         "about": "Headliner converts podcast audio into engaging videos, audiograms, and social media clips with automated transcription and waveforms.",
@@ -13115,8 +13027,7 @@
         "tags": [
           "Digital Clones",
           "Scalable",
-          "Business",
-          "video"
+          "Business"
         ],
         "iconUrl": "icons/avatar-virtual-influencer/heygen.ico",
         "about": "HeyGen offers powerful video avatar features with the ability to create personalized digital clones and custom scenes. It's used for scalable influencer campaigns and virtual spokespeople with professional quality output.",
@@ -13162,8 +13073,7 @@
         "tags": [
           "Video Avatars",
           "230+ Styles",
-          "Professional",
-          "video"
+          "Professional"
         ],
         "iconUrl": "https://www.synthesia.io/favicon.ico",
         "about": "Synthesia is the industry leader for lifelike AI video avatars, offering over 230 avatar styles and support for 140+ languages. Avatars demonstrate natural gestures, expressions, and accurate lip sync, making it ideal for professional social media and marketing videos.",
@@ -13236,8 +13146,7 @@
         "tags": [
           "Freemium",
           "Screen Recording",
-          "Collaboration",
-          "video"
+          "Collaboration"
         ],
         "iconUrl": "https://www.tella.tv/favicon.ico",
         "about": "Tella is a modern video platform that makes it easy to create and share screen recordings for tutorials, demos, and presentations with collaborative features and team branding options.",
@@ -13283,8 +13192,7 @@
         "tags": [
           "Freemium",
           "Screen Recording",
-          "AI Transcription",
-          "video"
+          "AI Transcription"
         ],
         "iconUrl": "https://screenapp.io/favicon.ico",
         "about": "ScreenApp provides AI-powered screen recording with automatic transcription, video summarization, and support for multiple languages, making it ideal for creating searchable video content.",
@@ -13353,8 +13261,7 @@
         "tags": [
           "Freemium",
           "Screen Recording",
-          "AI Automation",
-          "video"
+          "AI Automation"
         ],
         "iconUrl": "https://trupeer.ai/favicon.ico",
         "about": "Trupeer automates product video creation with AI-generated scripts, voiceovers, and multi-language support, perfect for creating software demos and product tutorials at scale.",

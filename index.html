@@ -1201,6 +1201,46 @@
             // Ensure theme toggle is initialized after DOM is ready
             if (typeof setupTheme === 'function') setupTheme();
 
+            // --- Tag normalization and synonym mapping for better search ---
+            const TAG_SYNONYMS = {
+                'video editing': ['video editor', 'video edit', 'edit video', 'video creation', 'video maker'],
+                'video generation': ['video gen', 'generate video', 'video ai', 'text to video', 'text-to-video'],
+                'image generation': ['image gen', 'generate image', 'image ai', 'text to image', 'text-to-image'],
+                'image editing': ['image editor', 'image edit', 'edit image', 'photo editing', 'photo editor'],
+                'code assistant': ['coding assistant', 'code helper', 'programming assistant', 'code completion'],
+                'chatbot': ['chat bot', 'conversational ai', 'chat assistant'],
+                'voice': ['audio', 'speech', 'tts', 'text to speech'],
+                'writing': ['writing assistant', 'content writing', 'copywriting', 'text generation'],
+                'productivity': ['productivity tool', 'automation', 'workflow'],
+                'design': ['graphic design', 'ui design', 'design tool'],
+                'translation': ['translator', 'language translation', 'multilingual'],
+                'transcription': ['transcribe', 'speech to text', 'audio to text']
+            };
+
+            function normalizeSearchQuery(query) {
+                const q = query.toLowerCase().trim();
+                // Check if query matches any synonym group
+                for (const [canonical, synonyms] of Object.entries(TAG_SYNONYMS)) {
+                    if (synonyms.some(syn => q.includes(syn)) || q.includes(canonical)) {
+                        return canonical;
+                    }
+                }
+                return q;
+            }
+
+            function expandSearchTerms(query) {
+                const q = query.toLowerCase().trim();
+                const terms = [q];
+                // Add synonyms if query matches a known pattern
+                for (const [canonical, synonyms] of Object.entries(TAG_SYNONYMS)) {
+                    if (q.includes(canonical) || synonyms.some(syn => q.includes(syn))) {
+                        terms.push(canonical, ...synonyms);
+                        break;
+                    }
+                }
+                return [...new Set(terms)];
+            }
+
             // --- Fuse setup for search ---
             function setupFuse() {
                 try {
@@ -1212,8 +1252,21 @@
                         fuse = null;
                         return;
                     }
-                    // create fuse index with fields; includeScore for safer result mapping
-                    fuse = new FuseLib(all, { keys: ['name', 'description', 'tags'], threshold: 0.4, includeScore: true });
+                    // Enhanced Fuse configuration with weighted keys for better relevance
+                    // Lower threshold = stricter matching, weighted keys prioritize name matches
+                    fuse = new FuseLib(all, {
+                        keys: [
+                            { name: 'name', weight: 0.5 },           // Name is most important
+                            { name: 'tags', weight: 0.3 },           // Tags are very relevant
+                            { name: 'description', weight: 0.2 }     // Description is supplementary
+                        ],
+                        threshold: 0.3,              // Stricter matching (was 0.4)
+                        includeScore: true,
+                        ignoreLocation: true,        // Don't penalize matches based on position
+                        minMatchCharLength: 2,       // Minimum characters to match
+                        findAllMatches: true,        // Find all matching patterns
+                        useExtendedSearch: true      // Enable extended search patterns
+                    });
                     console.debug('Fuse search index initialized with', all.length, 'tools');
                 } catch (e) {
                     console.warn('setupFuse failed', e);
@@ -1352,27 +1405,50 @@
                 try {
                     if (fuse) {
                         try {
-                            const results = fuse.search(query, { limit: 50 });
-                            // Fuse v6 returns array of { item, score } objects; some configs may return item directly
-                            const mapped = Array.isArray(results) ? results.map(r => (r && r.item) ? r.item : r) : [];
-                            const cleaned = dedupeAndFilterTools(mapped);
-                            console.debug('performSearch (fuse) query=', query, 'matches=', mapped.length, 'after dedupe/exclude=', cleaned.length);
+                            // Get expanded search terms including synonyms
+                            const searchTerms = expandSearchTerms(query);
+                            const allResults = new Map();
+                            
+                            // Search with all expanded terms and merge results
+                            for (const term of searchTerms) {
+                                const results = fuse.search(term, { limit: 50 });
+                                const mapped = Array.isArray(results) ? results.map(r => (r && r.item) ? r.item : r) : [];
+                                // Add to map, keeping best score for each tool
+                                mapped.forEach((tool, idx) => {
+                                    const key = tool.name;
+                                    if (!allResults.has(key) || idx < allResults.get(key).idx) {
+                                        allResults.set(key, { tool, idx });
+                                    }
+                                });
+                            }
+                            
+                            // Convert back to array and sort by relevance
+                            const uniqueTools = Array.from(allResults.values())
+                                .sort((a, b) => a.idx - b.idx)
+                                .map(entry => entry.tool)
+                                .slice(0, 50);
+                            
+                            const cleaned = dedupeAndFilterTools(uniqueTools);
+                            console.debug('performSearch (fuse) query=', query, 'terms=', searchTerms, 'matches=', uniqueTools.length, 'after dedupe/exclude=', cleaned.length);
                             return cleaned;
                         } catch (fe) {
                             console.warn('Fuse search threw, falling back to substring match', fe);
                         }
                     }
-                    // Fallback substring search across name, description, tags
+                    // Fallback enhanced substring search with synonym support
                     const allTools = (db || []).flatMap(d => d.tools || []);
-                    const ql = query.toLowerCase();
+                    const searchTerms = expandSearchTerms(query);
                     const filtered = allTools.filter(t => {
                         const name = (t.name || '').toLowerCase();
                         const desc = (t.description || '').toLowerCase();
                         const tags = Array.isArray(t.tags) ? t.tags.join(' ').toLowerCase() : (String(t.tags || '')).toLowerCase();
-                        return name.includes(ql) || desc.includes(ql) || tags.includes(ql);
+                        // Match any of the expanded search terms
+                        return searchTerms.some(term => 
+                            name.includes(term) || desc.includes(term) || tags.includes(term)
+                        );
                     }).slice(0, 50);
                     const cleaned = dedupeAndFilterTools(filtered);
-                    console.debug('performSearch (fallback) query=', query, 'matches=', filtered.length, 'after dedupe/exclude=', cleaned.length);
+                    console.debug('performSearch (fallback) query=', query, 'terms=', searchTerms, 'matches=', filtered.length, 'after dedupe/exclude=', cleaned.length);
                     return cleaned;
                 } catch (e) {
                     console.error('performSearch error', e);

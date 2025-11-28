@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+</head>
+<body>
+    <h1>Search Functionality Test</h1>
+    <div>
+        <input type="text" id="searchInput" placeholder="Try: video editing, video tools, image generation" style="width: 400px; padding: 10px;">
+        <button onclick="testSearch()">Search</button>
+    </div>
+    <div id="results" style="margin-top: 20px;"></div>
+
+    <script>
+        let db = [];
+        let fuse = null;
+
+        // Tag synonyms from the enhanced search
+        const TAG_SYNONYMS = {
+            'video editing': ['video editor', 'video edit', 'edit video', 'video creation', 'video maker'],
+            'video generation': ['video gen', 'generate video', 'video ai', 'text to video', 'text-to-video'],
+            'image generation': ['image gen', 'generate image', 'image ai', 'text to image', 'text-to-image'],
+        };
+
+        function expandSearchTerms(query) {
+            const q = query.toLowerCase().trim();
+            const terms = [q];
+            for (const [canonical, synonyms] of Object.entries(TAG_SYNONYMS)) {
+                if (q.includes(canonical) || synonyms.some(syn => q.includes(syn))) {
+                    terms.push(canonical, ...synonyms);
+                    break;
+                }
+            }
+            return [...new Set(terms)];
+        }
+
+        async function loadData() {
+            const response = await fetch('/public/tools.json');
+            db = await response.json();
+            const allTools = db.flatMap(d => d.tools || []);
+            
+            fuse = new Fuse(allTools, {
+                keys: [
+                    { name: 'name', weight: 0.5 },
+                    { name: 'tags', weight: 0.3 },
+                    { name: 'description', weight: 0.2 }
+                ],
+                threshold: 0.3,
+                includeScore: true,
+                ignoreLocation: true,
+                minMatchCharLength: 2,
+                findAllMatches: true,
+                useExtendedSearch: true
+            });
+            
+            console.log('Loaded', allTools.length, 'tools');
+        }
+
+        function testSearch() {
+            const query = document.getElementById('searchInput').value;
+            const searchTerms = expandSearchTerms(query);
+            console.log('Query:', query);
+            console.log('Expanded terms:', searchTerms);
+            
+            const allResults = new Map();
+            
+            for (const term of searchTerms) {
+                const results = fuse.search(term, { limit: 20 });
+                results.forEach((r, idx) => {
+                    const key = r.item.name;
+                    if (!allResults.has(key) || r.score < allResults.get(key).score) {
+                        allResults.set(key, { ...r, idx });
+                    }
+                });
+            }
+            
+            const uniqueTools = Array.from(allResults.values())
+                .sort((a, b) => a.score - b.score)
+                .slice(0, 20);
+            
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>Results for "${query}" (${uniqueTools.length} found)</h2>
+                <p>Searched with terms: ${searchTerms.join(', ')}</p>
+                <ol>
+                    ${uniqueTools.map(r => `
+                        <li>
+                            <strong>${r.item.name}</strong> (score: ${r.score.toFixed(3)})<br>
+                            <em>${r.item.description}</em><br>
+                            <small>Tags: ${(r.item.tags || []).join(', ')}</small>
+                        </li>
+                    `).join('')}
+                </ol>
+            `;
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
