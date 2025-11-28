@@ -260,8 +260,37 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: -1; /* keep behind the video; used as a fallback */
+            z-index: -1;
             pointer-events: none;
+            /* Fade out background as user scrolls */
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+        /* Gradient overlay that transitions from transparent to dark */
+        #scroll-gradient-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw; height: 100vh;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0) 40vh,
+                rgba(15, 15, 20, 0.7) 60vh,
+                rgba(15, 15, 20, 0.95) 80vh,
+                rgba(15, 15, 20, 1) 100vh
+            );
+            z-index: -1;
+            pointer-events: none;
+        }
+        html.dark #scroll-gradient-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0) 40vh,
+                rgba(10, 10, 15, 0.8) 60vh,
+                rgba(10, 10, 15, 0.98) 80vh,
+                rgba(10, 10, 15, 1) 100vh
+            );
         }
         #background-overlay {
             position: fixed;
@@ -270,6 +299,9 @@
             background: rgba(255,255,255,0.35); /* increased opacity */
             z-index: 1; /* above background image, below app */
             pointer-events: none;
+            /* Fade out overlay as user scrolls */
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
         }
         /* Filter backdrop to prevent underlying content from showing/clicking */
         #filter-backdrop {
@@ -598,6 +630,7 @@
         <source id="bg-video-source" src="./images/media (3).mp4" type="video/mp4">
     </video> -->
     <div id="background-image"></div>
+    <div id="scroll-gradient-overlay"></div>
     <div id="background-overlay"></div>
     <div id="app" style="min-height:100vh; display:flex; flex-direction:column; position:relative; z-index:2;">
         <!-- Header -->
@@ -3706,6 +3739,27 @@
                 const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
                 applyTheme(initialTheme);
             }
+
+            // Handle scroll-based background fade effect
+            function handleScrollBackgroundFade() {
+                const scrollY = window.scrollY || window.pageYOffset;
+                const heroHeight = Math.min(window.innerHeight * 0.7, 700); // Fade out after hero section
+                
+                const bgImage = document.getElementById('background-image');
+                const bgOverlay = document.getElementById('background-overlay');
+                
+                if (bgImage && bgOverlay) {
+                    // Calculate opacity: full opacity at top, fade to 0 after scrolling past hero
+                    const opacity = Math.max(0, 1 - (scrollY / heroHeight));
+                    bgImage.style.opacity = opacity;
+                    bgOverlay.style.opacity = opacity;
+                }
+            }
+
+            // Initialize scroll handler
+            window.addEventListener('scroll', handleScrollBackgroundFade, { passive: true });
+            // Run once on load
+            handleScrollBackgroundFade();
 
             initialize();
 
