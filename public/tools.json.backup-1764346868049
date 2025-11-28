@@ -68,7 +68,7 @@
       },
       {
         "name": "Character.AI",
-        "description": "Persona‑driven conversational agents for creative and social chats.",
+        "description": "Persona\u2011driven conversational agents for creative and social chats.",
         "link": "https://beta.character.ai/",
         "tags": [
           "Freemium",
@@ -138,7 +138,7 @@
           "Autocomplete"
         ],
         "iconUrl": "icons/code-assistance/codeium.svg",
-        "about": "Fast, privacy‑friendly completions and inline chat with broad language support.",
+        "about": "Fast, privacy\u2011friendly completions and inline chat with broad language support.",
         "pros": [
           "Free for individuals.",
           "Wide IDE coverage.",
@@ -269,7 +269,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Suggestions may need review."
         ],
         "iconUrl": "icons/most-popular/docsgpt.png"
@@ -446,11 +446,7 @@
         "tags": [
           "Freemium",
           "Translation",
-          "video",
-          "video generation",
-          "ai avatars",
-          "video translation",
-          "lip sync"
+          "video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "HeyGen is an AI video platform that specializes in generating spokesperson videos with realistic avatars. Its standout feature is AI-powered video translation, which can change the spoken language of a person in a video while syncing their lip movements.",
@@ -493,11 +489,7 @@
         "tags": [
           "Freemium",
           "Social Media",
-          "video",
-          "video editing",
-          "video creation",
-          "templates",
-          "marketing"
+          "video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "InVideo is a web-based video creation platform that uses AI to help users turn text content, such as blog posts, into videos. It offers a large library of templates, stock footage, and music, making it ideal for social media and marketing content.",
@@ -553,7 +545,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "icons/most-popular/leon.png"
@@ -618,7 +610,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
@@ -634,14 +626,14 @@
           "Consumer"
         ],
         "iconUrl": "icons/most-popular/meta-ai.ico",
-        "about": "Meta AI offers chat, image generation, and search‑enhanced answers across Meta properties, focusing on mainstream, mobile‑first usage.",
+        "about": "Meta AI offers chat, image generation, and search\u2011enhanced answers across Meta properties, focusing on mainstream, mobile\u2011first usage.",
         "pros": [
           "Broad reach across Meta apps.",
           "Simple UX.",
           "Realtime web context."
         ],
         "cons": [
-          "App‑tied experience.",
+          "App\u2011tied experience.",
           "Limited pro controls.",
           "Availability varies by region."
         ]
@@ -655,10 +647,10 @@
           "Search"
         ],
         "iconUrl": "icons/most-popular/microsoft-copilot.ico",
-        "about": "Brings web‑aware chat, image creation, and graph‑based answers in one place.",
+        "about": "Brings web\u2011aware chat, image creation, and graph\u2011based answers in one place.",
         "pros": [
           "Good web grounding.",
-          "Image generation built‑in.",
+          "Image generation built\u2011in.",
           "Free access level."
         ],
         "cons": [
@@ -698,7 +690,7 @@
           "LLM"
         ],
         "iconUrl": "https://chat.mistral.ai/favicon.svg",
-        "about": "Concise, code‑friendly responses with efficient open models.",
+        "about": "Concise, code\u2011friendly responses with efficient open models.",
         "pros": [
           "Quick replies.",
           "Great for code.",
@@ -730,7 +722,7 @@
       },
       {
         "name": "NightCafe",
-        "description": "Beginner‑friendly image generator with presets and social challenges.",
+        "description": "Beginner\u2011friendly image generator with presets and social challenges.",
         "link": "https://nightcafe.studio/",
         "tags": [
           "Freemium",
@@ -778,8 +770,7 @@
           "llm",
           "code",
           "Free",
-          "video",
-          "video generation"
+          "video"
         ],
         "about": "Sign in - Google Accounts",
         "pros": [
@@ -834,7 +825,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Coverage and speed can vary."
         ],
         "iconUrl": "icons/most-popular/onyx.ico"
@@ -848,7 +839,7 @@
           "Meetings"
         ],
         "iconUrl": "https://otter.ai/favicon.svg",
-        "about": "Real‑time capture and searchable transcripts for Zoom, Meet, and Teams.",
+        "about": "Real\u2011time capture and searchable transcripts for Zoom, Meet, and Teams.",
         "pros": [
           "Accurate live transcripts.",
           "Auto summaries.",
@@ -972,10 +963,7 @@
         "tags": [
           "Freemium",
           "Video Generation",
-          "video",
-          "video editing",
-          "text to video",
-          "ai video"
+          "video"
         ],
         "iconUrl": "https://media.licdn.com/dms/image/C4D0BAQG0C5b0g-f_vA/company-logo_200_200/0/1677520033123/runwayml_logo?e=2147483647&v=beta&t=H_L_D-qj5s9c-Q2a7b1c3d4e5f6g7h8i",
         "about": "Runway is a comprehensive platform offering a wide array of AI magic tools for video, including text-to-video generation, video-to-video style transfer, automatic background removal (rotoscoping), and much more.",
@@ -1067,11 +1055,7 @@
         "tags": [
           "Subscription",
           "Avatars",
-          "video",
-          "video generation",
-          "ai avatars",
-          "talking head",
-          "corporate"
+          "video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1643329895956922368/gG3BS7dE_400x400.jpg",
         "about": "Synthesia is a leading platform for creating AI-generated videos, primarily for corporate training and communication. Users can choose from a library of stock avatars or create their own, and then generate a video from a script in multiple languages.",
@@ -1197,19 +1181,19 @@
       },
       {
         "name": "browser-use",
-        "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+        "description": "\ud83c\udf10 Make websites accessible for AI agents. Automate tasks online with ease.",
         "link": "https://browser-use.com",
         "tags": [
           "Open Source"
         ],
-        "about": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+        "about": "\ud83c\udf10 Make websites accessible for AI agents. Automate tasks online with ease.",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/language-chat/browser-use.png"
       },
       {
         "name": "Character.AI",
-        "description": "Persona‑driven conversational agents for creative and social chats.",
+        "description": "Persona\u2011driven conversational agents for creative and social chats.",
         "link": "https://beta.character.ai/",
         "tags": [
           "Freemium",
@@ -1251,12 +1235,12 @@
       },
       {
         "name": "cherry-studio",
-        "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+        "description": "\ud83c\udf52 Cherry Studio is a desktop client that supports for multiple LLM providers.",
         "link": "https://cherry-ai.com",
         "tags": [
           "Open Source"
         ],
-        "about": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+        "about": "\ud83c\udf52 Cherry Studio is a desktop client that supports for multiple LLM providers.",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/language-chat/cherry-studio.png"
@@ -1343,12 +1327,12 @@
       },
       {
         "name": "dspy",
-        "description": "DSPy: The framework for programming—not prompting—language models",
+        "description": "DSPy: The framework for programming\u2014not prompting\u2014language models",
         "link": "https://dspy.ai",
         "tags": [
           "Open Source"
         ],
-        "about": "DSPy: The framework for programming—not prompting—language models",
+        "about": "DSPy: The framework for programming\u2014not prompting\u2014language models",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/language-chat/dspy.png"
@@ -1429,7 +1413,7 @@
           "Generates visuals quickly."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "https://flyer.chat/favicon-32x32.png"
@@ -1535,7 +1519,7 @@
       },
       {
         "name": "jan",
-        "description": "Jan is building Open Superintelligence. It’s the open-source ChatGPT alternative that leverages the best of open-source AI.",
+        "description": "Jan is building Open Superintelligence. It\u2019s the open-source ChatGPT alternative that leverages the best of open-source AI.",
         "link": "https://jan.ai/",
         "tags": [
           "chatbot",
@@ -1544,7 +1528,7 @@
           "open-source",
           "Open Source"
         ],
-        "about": "Jan is building Open Superintelligence. It’s the open-source ChatGPT alternative that leverages the best of open-source AI.",
+        "about": "Jan is building Open Superintelligence. It\u2019s the open-source ChatGPT alternative that leverages the best of open-source AI.",
         "pros": [
           "Open source and extensible.",
           "Good for drafting and Q&A.",
@@ -1552,7 +1536,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Coverage and speed can vary."
         ],
         "iconUrl": "icons/language-chat/jan.ico"
@@ -1580,13 +1564,13 @@
       },
       {
         "name": "langchain",
-        "description": "🦜🔗 Build context-aware reasoning applications",
+        "description": "\ud83e\udd9c\ud83d\udd17 Build context-aware reasoning applications",
         "link": "https://python.langchain.com",
         "tags": [
           "Open Source"
         ],
         "iconUrl": "icons/language-chat/langchain.png",
-        "about": "🦜🔗 Build context-aware reasoning applications",
+        "about": "\ud83e\udd9c\ud83d\udd17 Build context-aware reasoning applications",
         "pros": [],
         "cons": []
       },
@@ -1611,10 +1595,10 @@
           "Search"
         ],
         "iconUrl": "icons/language-chat/microsoft-copilot.ico",
-        "about": "Brings web‑aware chat, image creation, and graph‑based answers in one place.",
+        "about": "Brings web\u2011aware chat, image creation, and graph\u2011based answers in one place.",
         "pros": [
           "Good web grounding.",
-          "Image generation built‑in.",
+          "Image generation built\u2011in.",
           "Free access level."
         ],
         "cons": [
@@ -1644,7 +1628,7 @@
           "LLM"
         ],
         "iconUrl": "https://chat.mistral.ai/favicon.svg",
-        "about": "Concise, code‑friendly responses with efficient open models.",
+        "about": "Concise, code\u2011friendly responses with efficient open models.",
         "pros": [
           "Quick replies.",
           "Great for code.",
@@ -1770,12 +1754,12 @@
       },
       {
         "name": "quivr",
-        "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
+        "description": "Opiniated RAG for integrating GenAI in your apps \ud83e\udde0   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
         "link": "https://core.quivr.com",
         "tags": [
           "Open Source"
         ],
-        "about": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
+        "about": "Opiniated RAG for integrating GenAI in your apps \ud83e\udde0   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/language-chat/quivr.png"
@@ -1839,7 +1823,7 @@
         "iconUrl": "https://seeddream.app/favicon.svg"
       },
       {
-        "name": "Syllabi – Open-source agentic AI with tools, RAG, and multi-channel deploy",
+        "name": "Syllabi \u2013 Open-source agentic AI with tools, RAG, and multi-channel deploy",
         "description": "Build intelligent AI chatbots with RAG, native Python/R code execution, and seamless integrations. Connect to Slack, Discord, Google Drive, and more. Free and open source.",
         "link": "https://www.syllabi-ai.com/",
         "tags": [
@@ -1860,7 +1844,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
@@ -1879,7 +1863,7 @@
           "Good for drafting and Q&A."
         ],
         "cons": [
-          "May require fact‑checking."
+          "May require fact\u2011checking."
         ],
         "iconUrl": "icons/language-chat/wechaty.ico"
       },
@@ -2353,12 +2337,12 @@
       },
       {
         "name": "coai",
-        "description": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+        "description": "\ud83d\ude80 Next Generation AI One-Stop Internationalization Solution. \ud83d\ude80 \u4e0b\u4e00\u4ee3 AI \u4e00\u7ad9\u5f0f B/C \u7aef\u89e3\u51b3\u65b9\u6848\uff0c\u652f\u6301 OpenAI\uff0cMidjourney\uff0cClaude\uff0c\u8baf\u98de\u661f\u706b\uff0cStable Diffusion\uff0cDALL\u00b7E\uff0cChatGLM\uff0c\u901a\u4e49\u5343\u95ee\uff0c\u817e\u8baf\u6df7\u5143\uff0c360 \u667a\u8111\uff0c\u767e\u5ddd AI\uff0c\u706b\u5c71\u65b9\u821f\uff0c\u65b0\u5fc5\u5e94\uff0cGemini\uff0cMoonshot \u7b49\u6a21\u578b\uff0c\u652f\u6301\u5bf9\u8bdd\u5206\u4eab\uff0c\u81ea\u5b9a\u4e49\u9884\u8bbe\uff0c\u4e91\u7aef\u540c\u6b65\uff0c\u6a21\u578b\u5e02\u573a\uff0c\u652f\u6301\u5f39\u6027\u8ba1\u8d39\u548c\u8ba2\u9605\u8ba1\u5212\u6a21\u5f0f\uff0c\u652f\u6301\u56fe\u7247\u89e3\u6790\uff0c\u652f\u6301\u8054\u7f51\u641c\u7d22\uff0c\u652f\u6301\u6a21\u578b\u7f13\u5b58\uff0c\u4e30\u5bcc\u7f8e\u89c2\u7684\u540e\u53f0\u7ba1\u7406\u4e0e\u4eea\u8868\u76d8\u6570\u636e\u7edf\u8ba1\u3002",
         "link": "https://coai.dev",
         "tags": [
           "Open Source"
         ],
-        "about": "🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。",
+        "about": "\ud83d\ude80 Next Generation AI One-Stop Internationalization Solution. \ud83d\ude80 \u4e0b\u4e00\u4ee3 AI \u4e00\u7ad9\u5f0f B/C \u7aef\u89e3\u51b3\u65b9\u6848\uff0c\u652f\u6301 OpenAI\uff0cMidjourney\uff0cClaude\uff0c\u8baf\u98de\u661f\u706b\uff0cStable Diffusion\uff0cDALL\u00b7E\uff0cChatGLM\uff0c\u901a\u4e49\u5343\u95ee\uff0c\u817e\u8baf\u6df7\u5143\uff0c360 \u667a\u8111\uff0c\u767e\u5ddd AI\uff0c\u706b\u5c71\u65b9\u821f\uff0c\u65b0\u5fc5\u5e94\uff0cGemini\uff0cMoonshot \u7b49\u6a21\u578b\uff0c\u652f\u6301\u5bf9\u8bdd\u5206\u4eab\uff0c\u81ea\u5b9a\u4e49\u9884\u8bbe\uff0c\u4e91\u7aef\u540c\u6b65\uff0c\u6a21\u578b\u5e02\u573a\uff0c\u652f\u6301\u5f39\u6027\u8ba1\u8d39\u548c\u8ba2\u9605\u8ba1\u5212\u6a21\u5f0f\uff0c\u652f\u6301\u56fe\u7247\u89e3\u6790\uff0c\u652f\u6301\u8054\u7f51\u641c\u7d22\uff0c\u652f\u6301\u6a21\u578b\u7f13\u5b58\uff0c\u4e30\u5bcc\u7f8e\u89c2\u7684\u540e\u53f0\u7ba1\u7406\u4e0e\u4eea\u8868\u76d8\u6570\u636e\u7edf\u8ba1\u3002",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/image-generation/coai.png"
@@ -2627,7 +2611,7 @@
       },
       {
         "name": "NightCafe",
-        "description": "Beginner‑friendly image generator with presets and social challenges.",
+        "description": "Beginner\u2011friendly image generator with presets and social challenges.",
         "link": "https://nightcafe.studio/",
         "tags": [
           "Freemium",
@@ -2659,7 +2643,7 @@
         "pros": [
           "Great typography.",
           "Fast iterations.",
-          "Beginner‑friendly."
+          "Beginner\u2011friendly."
         ],
         "cons": [
           "Credits required for heavy use.",
@@ -2668,14 +2652,14 @@
         ]
       },
       {
-        "name": "Riffusion – Stable Diffusion fine-tuned to generate music",
-        "description": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "name": "Riffusion \u2013 Stable Diffusion fine-tuned to generate music",
+        "description": "Riffusion \u2013 Stable Diffusion fine-tuned to generate music",
         "link": "https://www.riffusion.com/about",
         "tags": [
           "Trending",
           "Freemium"
         ],
-        "about": "Riffusion – Stable Diffusion fine-tuned to generate music",
+        "about": "Riffusion \u2013 Stable Diffusion fine-tuned to generate music",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/image-generation/riffusion-stable-diffusion-fine-tuned-to-generate-music.ico"
@@ -2733,7 +2717,7 @@
       },
       {
         "name": "ZenCtrl",
-        "description": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training—ideal for reimagining existing subjects.",
+        "description": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training\u2014ideal for reimagining existing subjects.",
         "link": "https://fotographer.ai/zenctrl",
         "tags": [
           "developer-tools",
@@ -2743,7 +2727,7 @@
           "open-source",
           "Open Source"
         ],
-        "about": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training—ideal for reimagining existing subjects.",
+        "about": "ZenCtrl redefines consistency in AI image generation. It produces high-quality, multi-view, and diverse-scene outputs from a single image without any training\u2014ideal for reimagining existing subjects.",
         "pros": [
           "Open source and extensible.",
           "Generates visuals quickly.",
@@ -3005,9 +2989,7 @@
         "tags": [
           "TikTok",
           "Video",
-          "Social",
-          "video generation",
-          "image generation"
+          "Social"
         ],
         "iconUrl": "https://dreamina.ai/favicon.ico",
         "about": "Dreamina is TikTok's AI creative platform for generating images and videos for social content.",
@@ -3175,7 +3157,7 @@
       },
       {
         "name": "Google Veo",
-        "description": "Cinematic text‑to‑video model previewed by Google DeepMind.",
+        "description": "Cinematic text\u2011to\u2011video model previewed by Google DeepMind.",
         "link": "https://deepmind.google/technologies/veo/",
         "tags": [
           "Preview",
@@ -3191,7 +3173,7 @@
         "pros": [
           "High fidelity.",
           "Advanced camera controls.",
-          "Research‑grade quality."
+          "Research\u2011grade quality."
         ],
         "cons": [
           "Limited access.",
@@ -3329,7 +3311,7 @@
       },
       {
         "name": "Luma Dream Machine",
-        "description": "High‑quality text‑to‑video and video‑to‑video generation.",
+        "description": "High\u2011quality text\u2011to\u2011video and video\u2011to\u2011video generation.",
         "link": "https://lumalabs.ai/dream-machine",
         "tags": [
           "Freemium",
@@ -3667,10 +3649,7 @@
         "tags": [
           "Collaborative",
           "Online",
-          "AI Tools",
-          "video editing",
-          "online editor",
-          "meme maker"
+          "AI Tools"
         ],
         "iconUrl": "https://www.kapwing.com/favicon.ico",
         "about": "Kapwing offers browser-based video editing with AI features for subtitles, background removal, and content creation.",
@@ -3692,9 +3671,7 @@
         "tags": [
           "Free",
           "Microsoft",
-          "Templates",
-          "video editing",
-          "online editor"
+          "Templates"
         ],
         "iconUrl": "https://clipchamp.com/favicon.ico",
         "about": "Clipchamp is Microsoft's free video editor with AI features including text-to-speech, auto-captions, and smart templates.",
@@ -3716,9 +3693,7 @@
         "tags": [
           "Avatar",
           "Training",
-          "Enterprise",
-          "video",
-          "video tool"
+          "Enterprise"
         ],
         "iconUrl": "https://elai.io/favicon.ico",
         "about": "Elai creates AI-generated videos with realistic digital avatars, ideal for corporate training and marketing content.",
@@ -3740,9 +3715,7 @@
         "tags": [
           "L&D",
           "Training",
-          "AI Presenter",
-          "video",
-          "video tool"
+          "AI Presenter"
         ],
         "iconUrl": "https://www.colossyan.com/favicon.ico",
         "about": "Colossyan specializes in creating AI-generated training videos with diverse AI presenters for corporate learning.",
@@ -3764,9 +3737,7 @@
         "tags": [
           "Video Generation",
           "Motion",
-          "Chinese",
-          "video",
-          "video tool"
+          "Chinese"
         ],
         "iconUrl": "https://klingai.com/favicon.ico",
         "about": "Kling AI from Kuaishou generates videos with impressive understanding of motion and physics.",
@@ -3788,9 +3759,7 @@
         "tags": [
           "Creative",
           "Artistic",
-          "Free Tier",
-          "video",
-          "video tool"
+          "Free Tier"
         ],
         "iconUrl": "https://haiper.ai/favicon.ico",
         "about": "Haiper creates AI-generated videos with a focus on creative and artistic content.",
@@ -3812,9 +3781,7 @@
         "tags": [
           "Story-Driven",
           "Creation",
-          "Editing",
-          "video",
-          "video tool"
+          "Editing"
         ],
         "iconUrl": "https://ltx.studio/favicon.ico",
         "about": "LTX Studio provides AI video creation focused on storytelling with generation and editing tools.",
@@ -3836,9 +3803,7 @@
         "tags": [
           "Animation",
           "Dance",
-          "Fun",
-          "video",
-          "video tool"
+          "Fun"
         ],
         "iconUrl": "https://viggle.ai/favicon.ico",
         "about": "Viggle AI makes any character dance and move with AI-powered animation from simple inputs.",
@@ -3884,7 +3849,7 @@
       },
       {
         "name": "autodev-vscode",
-        "description": "🧙‍AutoDev - The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful bug-slaying assistant 🐞! Customizable prompts 🎨 and a magic Auto Dev/Testing feature 🧪 included! 🚀",
+        "description": "\ud83e\uddd9\u200dAutoDev - The AI-powered coding wizard with multilingual support \ud83c\udf10, auto code generation \ud83c\udfd7\ufe0f, and a helpful bug-slaying assistant \ud83d\udc1e! Customizable prompts \ud83c\udfa8 and a magic Auto Dev/Testing feature \ud83e\uddea included! \ud83d\ude80",
         "link": "http://vscode.unitmesh.cc/",
         "tags": [
           "chatbot",
@@ -3892,13 +3857,13 @@
           "translation",
           "Freemium"
         ],
-        "about": "🧙‍AutoDev - The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful bug-slaying assistant 🐞! Customizable prompts 🎨 and a magic Auto Dev/Testing feature 🧪 included! 🚀",
+        "about": "\ud83e\uddd9\u200dAutoDev - The AI-powered coding wizard with multilingual support \ud83c\udf10, auto code generation \ud83c\udfd7\ufe0f, and a helpful bug-slaying assistant \ud83d\udc1e! Customizable prompts \ud83c\udfa8 and a magic Auto Dev/Testing feature \ud83e\uddea included! \ud83d\ude80",
         "pros": [
           "Good for drafting and Q&A.",
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Suggestions may need review."
         ],
         "iconUrl": "icons/code-assistance/autodev-vscode.ico"
@@ -3950,7 +3915,7 @@
           "Autocomplete"
         ],
         "iconUrl": "icons/code-assistance/codeium.svg",
-        "about": "Fast, privacy‑friendly completions and inline chat with broad language support.",
+        "about": "Fast, privacy\u2011friendly completions and inline chat with broad language support.",
         "pros": [
           "Free for individuals.",
           "Wide IDE coverage.",
@@ -4036,7 +4001,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Suggestions may need review."
         ],
         "iconUrl": "icons/code-assistance/git-mcp.png"
@@ -4057,19 +4022,19 @@
           "Quality code edits."
         ],
         "cons": [
-          "Paid add‑on.",
+          "Paid add\u2011on.",
           "Model choice opaque.",
           "Variable results on niche stacks."
         ]
       },
       {
         "name": "kestra",
-        "description": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+        "description": "Orchestrate everything \u2014 from scripts to data, infra, AI, and business \u2014 as code, with UI and AI Copilot. Simple. Fast. Scalable.",
         "link": "https://kestra.io",
         "tags": [
           "Open Source"
         ],
-        "about": "Orchestrate everything — from scripts to data, infra, AI, and business — as code, with UI and AI Copilot. Simple. Fast. Scalable.",
+        "about": "Orchestrate everything \u2014 from scripts to data, infra, AI, and business \u2014 as code, with UI and AI Copilot. Simple. Fast. Scalable.",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/code-assistance/kestra.png"
@@ -4127,7 +4092,7 @@
       },
       {
         "name": "OpenSpec",
-        "description": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "description": "OpenSpec is a lightweight, spec\u2011driven framework for coding agents and CLIs \u2014 universal, open source, and no API keys or MCP required.",
         "link": "https://openspec.dev/",
         "tags": [
           "agents",
@@ -4136,7 +4101,7 @@
           "open-source",
           "Open Source"
         ],
-        "about": "OpenSpec is a lightweight, spec‑driven framework for coding agents and CLIs — universal, open source, and no API keys or MCP required.",
+        "about": "OpenSpec is a lightweight, spec\u2011driven framework for coding agents and CLIs \u2014 universal, open source, and no API keys or MCP required.",
         "pros": [
           "Open source and extensible."
         ],
@@ -4180,12 +4145,12 @@
       },
       {
         "name": "qodo-cover",
-        "description": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+        "description": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! \ud83d\udcbb\ud83e\udd16\ud83e\uddea\ud83d\udc1e",
         "link": "https://qodo.ai/",
         "tags": [
           "Open Source"
         ],
-        "about": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞",
+        "about": "Qodo-Cover: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! \ud83d\udcbb\ud83e\udd16\ud83e\uddea\ud83d\udc1e",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/code-assistance/qodo-cover.png"
@@ -4213,7 +4178,7 @@
       },
       {
         "name": "Sourcegraph Cody",
-        "description": "Codebase‑aware AI for large repos with powerful context windows.",
+        "description": "Codebase\u2011aware AI for large repos with powerful context windows.",
         "link": "https://sourcegraph.com/cody",
         "tags": [
           "Freemium",
@@ -4265,7 +4230,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Suggestions may need review."
         ],
         "iconUrl": "icons/code-assistance/sweep.ico"
@@ -4280,9 +4245,9 @@
           "Self-Hosted"
         ],
         "iconUrl": "https://tabbyml.ai/favicon.svg",
-        "about": "TabbyML is an open, self‑hostable coding assistant that provides fast, private code completions and chat across editors and languages.",
+        "about": "TabbyML is an open, self\u2011hostable coding assistant that provides fast, private code completions and chat across editors and languages.",
         "pros": [
-          "On‑prem and private by design.",
+          "On\u2011prem and private by design.",
           "Good performance on commodity GPUs/CPUs.",
           "Active OSS community."
         ],
@@ -4705,7 +4670,7 @@
           "Audio Enhancement"
         ],
         "iconUrl": "https://auphonic.com/favicon.svg",
-        "about": "Post‑production for podcasts and videos with target loudness and cleanup.",
+        "about": "Post\u2011production for podcasts and videos with target loudness and cleanup.",
         "pros": [
           "Reliable results.",
           "Batch processing.",
@@ -4738,7 +4703,7 @@
           "Useful for voice and audio workflows."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "May need cleanup for artifacts."
         ],
@@ -4789,8 +4754,7 @@
         "tags": [
           "Freemium",
           "Voice Cloning",
-          "video",
-          "video editing"
+          "video"
         ],
         "iconUrl": "https://www.descript.com/favicon.svg",
         "about": "Descript Overdub allows you to create a digital voice clone for editing and generating audio content.",
@@ -4850,7 +4814,7 @@
         "iconUrl": "https://www.kits.ai/favicon.svg",
         "about": "Convert vocals between timbres, build custom voices, and explore curated model library.",
         "pros": [
-          "Creator‑focused.",
+          "Creator\u2011focused.",
           "Good conversions.",
           "Model marketplace."
         ],
@@ -4923,7 +4887,7 @@
           "Useful for voice and audio workflows."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Render times or credit limits may apply.",
           "May need cleanup for artifacts."
         ],
@@ -4931,16 +4895,16 @@
       },
       {
         "name": "Riffusion",
-        "description": "Real‑time music generation via stable diffusion on spectrograms.",
+        "description": "Real\u2011time music generation via stable diffusion on spectrograms.",
         "link": "https://www.riffusion.com/",
         "tags": [
           "Open Source",
           "Music Generation"
         ],
         "iconUrl": "icons/audio-music/riffusion.ico",
-        "about": "Riffusion generates musical audio by producing spectrogram images with diffusion and converting them back to sound, enabling prompt‑based loops and styles.",
+        "about": "Riffusion generates musical audio by producing spectrogram images with diffusion and converting them back to sound, enabling prompt\u2011based loops and styles.",
         "pros": [
-          "Fun, prompt‑based music loops.",
+          "Fun, prompt\u2011based music loops.",
           "Runs locally with OSS code.",
           "Great for experimentation."
         ],
@@ -5320,7 +5284,7 @@
           "Strong collaboration."
         ],
         "cons": [
-          "Paid add‑on.",
+          "Paid add\u2011on.",
           "Admin setup.",
           "Feature parity varies by region."
         ]
@@ -5374,7 +5338,7 @@
       },
       {
         "name": "Mem",
-        "description": "Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
+        "description": "Let AI organize your team\u2019s work\u2014from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
         "link": "https://mem.ai",
         "tags": [
           "search",
@@ -5382,7 +5346,7 @@
           "library",
           "Freemium"
         ],
-        "about": "Let AI organize your team’s work—from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
+        "about": "Let AI organize your team\u2019s work\u2014from meeting notes, projects, to knowledge bases. All instantly searchable and readily discoverable.",
         "pros": [
           "Free tier available.",
           "Open source and extensible.",
@@ -5480,7 +5444,7 @@
           "Meetings"
         ],
         "iconUrl": "https://otter.ai/favicon.svg",
-        "about": "Real‑time capture and searchable transcripts for Zoom, Meet, and Teams.",
+        "about": "Real\u2011time capture and searchable transcripts for Zoom, Meet, and Teams.",
         "pros": [
           "Accurate live transcripts.",
           "Auto summaries.",
@@ -5581,7 +5545,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
@@ -5589,7 +5553,7 @@
       },
       {
         "name": "Supernormal",
-        "description": "AI-Powered meetings · Supernormal",
+        "description": "AI-Powered meetings \u00b7 Supernormal",
         "link": "https://supernormal.com",
         "tags": [
           "image",
@@ -5597,7 +5561,7 @@
           "library",
           "Freemium"
         ],
-        "about": "AI-Powered meetings · Supernormal",
+        "about": "AI-Powered meetings \u00b7 Supernormal",
         "pros": [
           "Free tier available.",
           "Open source and extensible.",
@@ -5880,7 +5844,7 @@
     "tools": [
       {
         "name": "Beautiful.ai",
-        "description": "AI‑assisted slide design with smart templates.",
+        "description": "AI\u2011assisted slide design with smart templates.",
         "link": "https://www.beautiful.ai/",
         "tags": [
           "Subscription",
@@ -5922,7 +5886,7 @@
       },
       {
         "name": "Canva Magic Design",
-        "description": "Auto‑generate layouts, images, and copy in Canva.",
+        "description": "Auto\u2011generate layouts, images, and copy in Canva.",
         "link": "https://www.canva.com/magic-design/",
         "tags": [
           "Freemium",
@@ -5931,7 +5895,7 @@
         "iconUrl": "https://static.canva.com/static/images/android-chrome-192x192.png",
         "about": "Turn a prompt into themed presentations and marketing assets.",
         "pros": [
-          "Beginner‑friendly.",
+          "Beginner\u2011friendly.",
           "Huge template library.",
           "Fast results."
         ],
@@ -5955,7 +5919,7 @@
       },
       {
         "name": "Figma AI",
-        "description": "We’re introducing a suite of AI-powered features to help you push past creative blocks and bring your best ideas to life.",
+        "description": "We\u2019re introducing a suite of AI-powered features to help you push past creative blocks and bring your best ideas to life.",
         "link": "https://www.figma.com/blog/introducing-figma-ai/",
         "tags": [
           "Trending",
@@ -6173,12 +6137,12 @@
       },
       {
         "name": "upscayl",
-        "description": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+        "description": "\ud83c\udd99 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
         "link": "https://upscayl.org",
         "tags": [
           "Open Source"
         ],
-        "about": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
+        "about": "\ud83c\udd99 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/design-tools/upscayl.png"
@@ -6341,9 +6305,7 @@
         "tags": [
           "Multi-tool",
           "Logos",
-          "Videos",
-          "video",
-          "video generation"
+          "Videos"
         ],
         "iconUrl": "https://designs.ai/favicon.ico",
         "about": "Designs.ai offers multiple AI design tools for creating logos, videos, mockups, and marketing materials.",
@@ -6803,7 +6765,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "icons/marketing-seo/alwrity.png"
@@ -6817,7 +6779,7 @@
           "Copywriting"
         ],
         "iconUrl": "https://anyword.com/favicon.svg",
-        "about": "Generate and test marketing copy variants with audience‑based predictions.",
+        "about": "Generate and test marketing copy variants with audience\u2011based predictions.",
         "pros": [
           "Performance scoring.",
           "Ad/channel templates.",
@@ -6862,7 +6824,7 @@
         "about": "Research SERPs, create outlines, and optimize content for target keywords.",
         "pros": [
           "Solid briefs.",
-          "On‑page guidance.",
+          "On\u2011page guidance.",
           "Integrations."
         ],
         "cons": [
@@ -7112,7 +7074,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
@@ -7139,14 +7101,14 @@
           "Notebook"
         ],
         "iconUrl": "icons/data-analysis/hex-magic.svg",
-        "about": "Blend SQL, Python, and charts; ship data apps with AI‑assisted analysis and docs.",
+        "about": "Blend SQL, Python, and charts; ship data apps with AI\u2011assisted analysis and docs.",
         "pros": [
           "Great UX.",
           "Team collaboration.",
           "Shareable apps."
         ],
         "cons": [
-          "Cloud‑centric.",
+          "Cloud\u2011centric.",
           "Limits on free.",
           "Learning curve for app building."
         ]
@@ -7173,7 +7135,7 @@
         ]
       },
       {
-        "name": "Launch HN: Extend (YC W23) – Turn your messiest documents into data",
+        "name": "Launch HN: Extend (YC W23) \u2013 Turn your messiest documents into data",
         "description": "The document processing platform built for the next generation.",
         "link": "https://www.extend.ai/",
         "tags": [
@@ -7215,7 +7177,7 @@
       },
       {
         "name": "Power BI Copilot",
-        "description": "Natural‑language insights and narratives in Power BI.",
+        "description": "Natural\u2011language insights and narratives in Power BI.",
         "link": "https://learn.microsoft.com/power-bi/create-reports/copilot",
         "tags": [
           "Enterprise",
@@ -7259,7 +7221,7 @@
       },
       {
         "name": "WrenAI",
-        "description": "Transform how your team explores data. Wren AI’s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights—all with natural language.",
+        "description": "Transform how your team explores data. Wren AI\u2019s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights\u2014all with natural language.",
         "link": "https://getwren.ai/oss",
         "tags": [
           "chatbot",
@@ -7272,14 +7234,14 @@
           "api",
           "Open Source"
         ],
-        "about": "Transform how your team explores data. Wren AI’s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights—all with natural language.",
+        "about": "Transform how your team explores data. Wren AI\u2019s open-source GenBI platform lets you chat with your data, generate SQL, build charts, and create insights\u2014all with natural language.",
         "pros": [
           "Good for drafting and Q&A.",
           "Generates visuals quickly.",
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
@@ -7504,7 +7466,7 @@
     "tools": [
       {
         "name": "Blockade Labs Skybox",
-        "description": "Generate 360° skyboxes and environments from prompts.",
+        "description": "Generate 360\u00b0 skyboxes and environments from prompts.",
         "link": "https://skybox.blockadelabs.com/",
         "tags": [
           "Freemium",
@@ -7532,9 +7494,9 @@
           "Text-to-3D"
         ],
         "iconUrl": "https://www.kaedim3d.com/favicon.svg",
-        "about": "Accelerates concept‑to‑asset workflows with human QA options.",
+        "about": "Accelerates concept\u2011to\u2011asset workflows with human QA options.",
         "pros": [
-          "Production‑minded.",
+          "Production\u2011minded.",
           "QA services.",
           "Artist friendly."
         ],
@@ -7551,8 +7513,7 @@
         "tags": [
           "Freemium",
           "Photogrammetry",
-          "video",
-          "video generation"
+          "video"
         ],
         "iconUrl": "https://pbs.twimg.com/profile_images/1600233516212940800/2a1a3e5e_400x400.jpg",
         "about": "Luma AI uses a technique called NeRFs (Neural Radiance Fields) to create high-quality 3D models from videos. Users can capture a video of an object or scene, and Luma's AI processes it into a detailed, interactive 3D asset.",
@@ -7590,7 +7551,7 @@
       },
       {
         "name": "Meshy",
-        "description": "Text/image‑to‑3D assets and textures for games and design.",
+        "description": "Text/image\u2011to\u20113D assets and textures for games and design.",
         "link": "https://www.meshy.ai/",
         "tags": [
           "Freemium",
@@ -7604,7 +7565,7 @@
           "Web workflows."
         ],
         "cons": [
-          "Post‑cleanup needed.",
+          "Post\u2011cleanup needed.",
           "Export limits on free.",
           "IP diligence required."
         ]
@@ -7649,9 +7610,7 @@
         "tags": [
           "Multi-Modal",
           "3D Generation",
-          "Assets",
-          "video",
-          "video generation"
+          "Assets"
         ],
         "iconUrl": "https://www.csm.ai/favicon.ico",
         "about": "CSM AI enables 3D world creation from various inputs including videos, images, and text descriptions.",
@@ -7695,8 +7654,7 @@
         "tags": [
           "Motion Capture",
           "Markerless",
-          "Animation",
-          "video"
+          "Animation"
         ],
         "iconUrl": "https://www.move.ai/favicon.ico",
         "about": "Move AI extracts professional-quality motion capture data from regular smartphone or camera video using AI.",
@@ -7736,7 +7694,7 @@
         ],
         "cons": [
           "Focus on tabular.",
-          "Not an end‑to‑end platform.",
+          "Not an end\u2011to\u2011end platform.",
           "Requires practitioner judgment."
         ]
       },
@@ -7821,8 +7779,8 @@
         ],
         "cons": [
           "Multiple components to learn.",
-          "Azure‑biased samples.",
-          "Dev‑centric setup."
+          "Azure\u2011biased samples.",
+          "Dev\u2011centric setup."
         ]
       },
       {
@@ -8084,7 +8042,7 @@
         "iconUrl": "https://www.magicschool.ai/favicon.svg",
         "about": "Save prep time with structured outputs aligned to classroom needs.",
         "pros": [
-          "Educator‑focused.",
+          "Educator\u2011focused.",
           "Good templates.",
           "Time saver."
         ],
@@ -8143,7 +8101,7 @@
       },
       {
         "name": "Photomath",
-        "description": "Step‑by‑step math solutions via camera input.",
+        "description": "Step\u2011by\u2011step math solutions via camera input.",
         "link": "https://photomath.com/",
         "tags": [
           "Freemium",
@@ -8157,7 +8115,7 @@
           "Good OCR."
         ],
         "cons": [
-          "Can encourage answer‑seeking.",
+          "Can encourage answer\u2011seeking.",
           "Struggles with complex layouts.",
           "Premium features gated."
         ]
@@ -8484,14 +8442,14 @@
       },
       {
         "name": "IntoTheBlock",
-        "description": "ML‑driven on‑chain and market indicators for crypto assets.",
+        "description": "ML\u2011driven on\u2011chain and market indicators for crypto assets.",
         "link": "https://app.intotheblock.com/",
         "tags": [
           "Subscription",
           "Analytics"
         ],
         "iconUrl": "icons/crypto/intotheblock.ico",
-        "about": "Explore holders, on‑chain flows, derivatives metrics, and signals.",
+        "about": "Explore holders, on\u2011chain flows, derivatives metrics, and signals.",
         "pros": [
           "Rich indicators.",
           "Good dashboards.",
@@ -8520,7 +8478,7 @@
         ],
         "cons": [
           "Paywall for Pro.",
-          "Not real‑time trading.",
+          "Not real\u2011time trading.",
           "Coverage varies by asset."
         ]
       },
@@ -8535,7 +8493,7 @@
         "iconUrl": "https://www.nansen.ai/favicon.svg",
         "about": "Identify entity wallets, follow flows, and analyze behavior trends.",
         "pros": [
-          "Best‑in‑class labels.",
+          "Best\u2011in\u2011class labels.",
           "Great UX.",
           "DeFi insights."
         ],
@@ -8839,12 +8797,12 @@
       },
       {
         "name": "langwatch",
-        "description": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+        "description": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization \u2728",
         "link": "https://langwatch.ai",
         "tags": [
           "Open Source"
         ],
-        "about": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization ✨",
+        "about": "The open LLM Ops platform - Traces, Analytics, Evaluations, Datasets and Prompt Optimization \u2728",
         "pros": [],
         "cons": [],
         "iconUrl": "icons/prompt-enhancers/langwatch.png"
@@ -8866,7 +8824,7 @@
           "Generates visuals quickly."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "icons/prompt-enhancers/learnprompt.ico"
@@ -8930,7 +8888,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Suggestions may need review."
         ],
         "iconUrl": "https://www.promptlayer.com/favicon.svg"
@@ -8947,12 +8905,12 @@
         "about": "Define eval datasets and run regressions to keep prompts reliable.",
         "pros": [
           "Great for CI.",
-          "Model‑agnostic.",
+          "Model\u2011agnostic.",
           "Lightweight."
         ],
         "cons": [
           "Requires crafting datasets.",
-          "CLI‑centric.",
+          "CLI\u2011centric.",
           "Manual analysis for nuanced outputs."
         ]
       },
@@ -9068,7 +9026,7 @@
           "Good for drafting and Q&A."
         ],
         "cons": [
-          "May require fact‑checking."
+          "May require fact\u2011checking."
         ],
         "iconUrl": "icons/most-famous-agentic-ai-s/agent-zero.png"
       },
@@ -9431,7 +9389,7 @@
           "Freemium"
         ],
         "iconUrl": "icons/most-famous-agentic-ais/openai-custom-gpts-agents.svg",
-        "about": "OpenAI’s framework lets users create domain-specific GPTs with API calls, memory, and tool use. Effectively a platform for building personalized agentic AI.",
+        "about": "OpenAI\u2019s framework lets users create domain-specific GPTs with API calls, memory, and tool use. Effectively a platform for building personalized agentic AI.",
         "pros": [
           "Easy to build custom agents.",
           "Built into ChatGPT ecosystem.",
@@ -9459,7 +9417,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Coverage and speed can vary."
         ],
         "iconUrl": "https://raw.githubusercontent.com/ai-christianson/RA.Aid/main/assets/logo.svg"
@@ -9519,7 +9477,7 @@
           "Freemium"
         ],
         "iconUrl": "https://voyager.minedojo.org/static/voyager_logo.png",
-        "about": "An agent from Microsoft that learns skills in Minecraft autonomously, building a library of abilities. It’s a proof of concept for lifelong learning agents in open worlds.",
+        "about": "An agent from Microsoft that learns skills in Minecraft autonomously, building a library of abilities. It\u2019s a proof of concept for lifelong learning agents in open worlds.",
         "pros": [
           "Innovative lifelong learning.",
           "Demonstrates continuous skill acquisition.",
@@ -9718,7 +9676,7 @@
     "tools": [
       {
         "name": "activepieces",
-        "description": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more — under the supervision of your IT ninjas",
+        "description": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more \u2014 under the supervision of your IT ninjas",
         "link": "https://www.activepieces.com",
         "tags": [
           "developer-tools",
@@ -9731,7 +9689,7 @@
           "open-source",
           "Open Source"
         ],
-        "about": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more — under the supervision of your IT ninjas",
+        "about": "Activepieces is the best way to build a self-driven AI culture across HR, finance, marketing, sales and more \u2014 under the supervision of your IT ninjas",
         "pros": [
           "Open source and extensible.",
           "Generates visuals quickly.",
@@ -9818,7 +9776,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
@@ -9915,7 +9873,7 @@
       },
       {
         "name": "pipeshub-ai",
-        "description": "Empower your enterprise with PipesHub – the open-source, enterprise-ready workplace AI platform that unifies your scattered business data, connects your business and enterprise apps, and powers AI agents to get work done. Built for teams that move fast.",
+        "description": "Empower your enterprise with PipesHub \u2013 the open-source, enterprise-ready workplace AI platform that unifies your scattered business data, connects your business and enterprise apps, and powers AI agents to get work done. Built for teams that move fast.",
         "link": "https://pipeshub.com",
         "tags": [
           "developer-tools",
@@ -9924,7 +9882,7 @@
           "open-source",
           "Open Source"
         ],
-        "about": "Empower your enterprise with PipesHub – the open-source, enterprise-ready workplace AI platform that unifies your scattered business data, connects your business and enterprise apps, and powers AI agents to get work done. Built for teams that move fast.",
+        "about": "Empower your enterprise with PipesHub \u2013 the open-source, enterprise-ready workplace AI platform that unifies your scattered business data, connects your business and enterprise apps, and powers AI agents to get work done. Built for teams that move fast.",
         "pros": [
           "Open source and extensible.",
           "Boosts developer productivity."
@@ -10209,14 +10167,14 @@
       },
       {
         "name": "crawlee",
-        "description": "Crawlee · Build reliable crawlers. Fast.",
+        "description": "Crawlee \u00b7 Build reliable crawlers. Fast.",
         "link": "https://crawlee.dev",
         "tags": [
           "image",
           "design",
           "Freemium"
         ],
-        "about": "Crawlee · Build reliable crawlers. Fast.",
+        "about": "Crawlee \u00b7 Build reliable crawlers. Fast.",
         "pros": [
           "Generates visuals quickly."
         ],
@@ -10235,7 +10193,7 @@
           "Subscription"
         ],
         "iconUrl": "https://www.glean.com/favicon.svg",
-        "about": "Glean connects to all your company’s apps and surfaces answers, files, and people instantly using AI.",
+        "about": "Glean connects to all your company\u2019s apps and surfaces answers, files, and people instantly using AI.",
         "pros": [
           "Unified search across apps.",
           "Enterprise-grade security.",
@@ -10268,7 +10226,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Render times or credit limits may apply.",
           "Coverage and speed can vary."
         ],
@@ -10357,7 +10315,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Coverage and speed can vary."
         ],
         "iconUrl": "https://octocode.ai/favicon.svg"
@@ -10383,7 +10341,7 @@
         ],
         "cons": [
           "Requires setup and maintenance.",
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Coverage and speed can vary."
         ],
         "iconUrl": "https://probeai.dev/favicon.svg"
@@ -10604,7 +10562,7 @@
       },
       {
         "name": "Anthropic Constitutional AI",
-        "description": "Anthropic’s approach to aligning AI with human values.",
+        "description": "Anthropic\u2019s approach to aligning AI with human values.",
         "link": "https://www.anthropic.com/constitution",
         "tags": [
           "Alignment",
@@ -10612,7 +10570,7 @@
           "Freemium"
         ],
         "iconUrl": "https://www.anthropic.com/favicon.svg",
-        "about": "Constitutional AI is Anthropic’s method for training models to be helpful, harmless, and honest.",
+        "about": "Constitutional AI is Anthropic\u2019s method for training models to be helpful, harmless, and honest.",
         "pros": [
           "Innovative alignment method.",
           "Transparency focus.",
@@ -10703,7 +10661,7 @@
       },
       {
         "name": "Google PAIR",
-        "description": "Google’s People + AI Research initiative for responsible AI.",
+        "description": "Google\u2019s People + AI Research initiative for responsible AI.",
         "link": "https://pair.withgoogle.com/",
         "tags": [
           "Responsible AI",
@@ -10787,7 +10745,7 @@
       },
       {
         "name": "modelbench",
-        "description": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for “chat” style systems.",
+        "description": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for \u201cchat\u201d style systems.",
         "link": "https://mlcommons.org/ailuminate",
         "tags": [
           "chatbot",
@@ -10795,13 +10753,13 @@
           "design",
           "Freemium"
         ],
-        "about": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for “chat” style systems.",
+        "about": "The v1.0 AILuminate benchmark from the MLCommons AI Risk &amp; Reliability working group is the first AI risk assessment benchmark developed with broad involvement from leading AI companies, academia, and civil society. It is a significant step towards standard risk assessment for \u201cchat\u201d style systems.",
         "pros": [
           "Good for drafting and Q&A.",
           "Generates visuals quickly."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "https://mlcommons.org/favicon.svg"
@@ -10816,7 +10774,7 @@
           "Freemium"
         ],
         "iconUrl": "icons/ai-safety-ethics/openai-red-teaming.svg",
-        "about": "OpenAI’s red teaming resources help organizations test AI models for safety, robustness, and misuse.",
+        "about": "OpenAI\u2019s red teaming resources help organizations test AI models for safety, robustness, and misuse.",
         "pros": [
           "Industry-leading guidance.",
           "Open resources.",
@@ -10857,7 +10815,7 @@
     "tools": [
       {
         "name": "Ada",
-        "description": "Automated customer service with multi‑channel chatbots and deflection.",
+        "description": "Automated customer service with multi\u2011channel chatbots and deflection.",
         "link": "https://www.ada.cx/",
         "tags": [
           "Subscription",
@@ -10865,16 +10823,16 @@
           "Automation"
         ],
         "iconUrl": "https://www.ada.cx/favicon.svg",
-        "about": "Ada builds no‑code, brand‑safe chatbots that resolve common support requests across web, mobile, and messaging channels.",
+        "about": "Ada builds no\u2011code, brand\u2011safe chatbots that resolve common support requests across web, mobile, and messaging channels.",
         "pros": [
-          "No‑code flows empower CX teams.",
+          "No\u2011code flows empower CX teams.",
           "Omnichannel deployment.",
           "Strong deflection for FAQs."
         ],
         "cons": [
           "Complex use cases may need developer help.",
           "Analytics require setup to track impact.",
-          "Enterprise‑oriented pricing."
+          "Enterprise\u2011oriented pricing."
         ]
       },
       {
@@ -10891,7 +10849,7 @@
           "Good for drafting and Q&A."
         ],
         "cons": [
-          "May require fact‑checking."
+          "May require fact\u2011checking."
         ],
         "iconUrl": "icons/customer-support-chatbots/ai-chatbot.ico"
       },
@@ -10915,7 +10873,7 @@
           "Boosts developer productivity."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Suggestions may need review."
         ],
@@ -10923,7 +10881,7 @@
       },
       {
         "name": "CLI",
-        "description": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence — with contextual, senior-level feedback.",
+        "description": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence \u2014 with contextual, senior-level feedback.",
         "link": "https://bito.ai",
         "tags": [
           "developer-tools",
@@ -10932,7 +10890,7 @@
           "design",
           "Freemium"
         ],
-        "about": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence — with contextual, senior-level feedback.",
+        "about": "AI Code Reviews designed for modern dev teams. Cut review time, improve code quality, and ship with confidence \u2014 with contextual, senior-level feedback.",
         "pros": [
           "Generates visuals quickly.",
           "Boosts developer productivity."
@@ -10972,14 +10930,14 @@
           "Chatbot"
         ],
         "iconUrl": "https://www.intercom.com/favicon.svg",
-        "about": "Fin is Intercom’s AI agent that can instantly answer most customer queries using your help center and policies, handing off to humans when needed.",
+        "about": "Fin is Intercom\u2019s AI agent that can instantly answer most customer queries using your help center and policies, handing off to humans when needed.",
         "pros": [
           "Deeply integrated with Intercom inbox and help center.",
           "Handles secure handoffs and policy adherence.",
-          "Reduces first‑response and resolution times."
+          "Reduces first\u2011response and resolution times."
         ],
         "cons": [
-          "Best value when you’re already on Intercom.",
+          "Best value when you\u2019re already on Intercom.",
           "Requires curated help content for accuracy.",
           "Enterprise pricing for advanced features."
         ]
@@ -10999,7 +10957,7 @@
           "Generates visuals quickly."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt."
         ],
         "iconUrl": "icons/customer-support-chatbots/weclone.svg"
@@ -11014,7 +10972,7 @@
           "Agent Assist"
         ],
         "iconUrl": "https://www.zendesk.com/favicon.svg",
-        "about": "Zendesk AI automates intent detection, routing, and suggested answers, while assisting agents with real‑time guidance and macros.",
+        "about": "Zendesk AI automates intent detection, routing, and suggested answers, while assisting agents with real\u2011time guidance and macros.",
         "pros": [
           "Native to Zendesk workflows and SLAs.",
           "Good intent/routing models.",
@@ -11281,7 +11239,7 @@
           "Drafting"
         ],
         "iconUrl": "icons/legal-compliance/harvey.ico",
-        "about": "Harvey partners with leading law firms and in‑house teams to accelerate legal research and drafting with guardrails and enterprise controls.",
+        "about": "Harvey partners with leading law firms and in\u2011house teams to accelerate legal research and drafting with guardrails and enterprise controls.",
         "pros": [
           "Built for legal workflows and teams.",
           "Emphasis on accuracy and governance.",
@@ -11314,7 +11272,7 @@
           "Great for research and discovery."
         ],
         "cons": [
-          "May require fact‑checking.",
+          "May require fact\u2011checking.",
           "Quality varies by prompt.",
           "Coverage and speed can vary."
         ],
@@ -11330,7 +11288,7 @@
           "Contracts"
         ],
         "iconUrl": "https://www.luminance.com/favicon.svg",
-        "about": "Luminance applies machine learning to surface anomalies, classify clauses, and streamline large‑scale legal reviews.",
+        "about": "Luminance applies machine learning to surface anomalies, classify clauses, and streamline large\u2011scale legal reviews.",
         "pros": [
           "Handles large document sets.",
           "Good anomaly/cluster surfacing.",
@@ -11374,7 +11332,7 @@
         "iconUrl": "https://www.spellbook.legal/favicon.svg",
         "about": "Spellbook accelerates contract drafting by suggesting clauses, flagging risks, and aligning to playbooks directly within Word.",
         "pros": [
-          "In‑editor experience.",
+          "In\u2011editor experience.",
           "Playbooks and clause libraries.",
           "Great for redlines."
         ],
@@ -11780,7 +11738,7 @@
           "Healthcare"
         ],
         "iconUrl": "https://www.nuance.com/favicon.svg",
-        "about": "Dragon Medical One provides high‑accuracy clinical dictation with EHR integrations, speeding up documentation and reducing burnout.",
+        "about": "Dragon Medical One provides high\u2011accuracy clinical dictation with EHR integrations, speeding up documentation and reducing burnout.",
         "pros": [
           "High accuracy for medical vocab.",
           "EHR integrations.",
@@ -11794,7 +11752,7 @@
       },
       {
         "name": "PathAI",
-        "description": "AI‑powered pathology for diagnostics and drug development.",
+        "description": "AI\u2011powered pathology for diagnostics and drug development.",
         "link": "https://pathai.com/",
         "tags": [
           "Subscription",
@@ -12194,7 +12152,7 @@
       },
       {
         "name": "QuickBooks + AI",
-        "description": "Bookkeeping and invoicing with AI‑assisted categorization and insights.",
+        "description": "Bookkeeping and invoicing with AI\u2011assisted categorization and insights.",
         "link": "https://quickbooks.intuit.com/",
         "tags": [
           "Subscription",
@@ -12202,7 +12160,7 @@
           "SMB"
         ],
         "iconUrl": "https://quickbooks.intuit.com/favicon.svg",
-        "about": "QuickBooks uses AI to categorize transactions, surface cash‑flow insights, and reduce manual bookkeeping.",
+        "about": "QuickBooks uses AI to categorize transactions, surface cash\u2011flow insights, and reduce manual bookkeeping.",
         "pros": [
           "Widely used by SMBs.",
           "Bank feeds and rules.",
@@ -12262,7 +12220,7 @@
       },
       {
         "name": "Stripe Radar",
-        "description": "ML‑powered fraud detection and risk scoring for payments.",
+        "description": "ML\u2011powered fraud detection and risk scoring for payments.",
         "link": "https://stripe.com/radar",
         "tags": [
           "Subscription",
@@ -12270,7 +12228,7 @@
           "Payments"
         ],
         "iconUrl": "https://stripe.com/favicon.svg",
-        "about": "Radar uses network‑level signals across Stripe to block fraud, score risk, and reduce chargebacks.",
+        "about": "Radar uses network\u2011level signals across Stripe to block fraud, score risk, and reduce chargebacks.",
         "pros": [
           "Easy enablement on Stripe.",
           "Custom rules and reviews.",
@@ -12295,13 +12253,13 @@
         "about": "Vic.ai applies AI to accounts payable, extracting and coding invoices, predicting approvals, and cutting cycle times.",
         "pros": [
           "High automation rates.",
-          "Good for multi‑entity finance.",
+          "Good for multi\u2011entity finance.",
           "Analytics on spend."
         ],
         "cons": [
           "Implementation and change management.",
           "Works best with volume.",
-          "Enterprise‑class pricing."
+          "Enterprise\u2011class pricing."
         ]
       },
       {
@@ -12607,7 +12565,7 @@
           "Enterprise"
         ],
         "iconUrl": "https://eightfold.ai/favicon.svg",
-        "about": "Eightfold AI unifies candidate and employee data to power sourcing, matching, and skills‑based mobility across the talent lifecycle.",
+        "about": "Eightfold AI unifies candidate and employee data to power sourcing, matching, and skills\u2011based mobility across the talent lifecycle.",
         "pros": [
           "Strong candidate/job matching.",
           "Skills graph and mobility.",
@@ -12652,7 +12610,7 @@
           "Recruiting"
         ],
         "iconUrl": "https://hireez.com/favicon.svg",
-        "about": "hireEZ helps recruiters find, enrich, and engage candidates at scale with AI‑assisted search and campaigns.",
+        "about": "hireEZ helps recruiters find, enrich, and engage candidates at scale with AI\u2011assisted search and campaigns.",
         "pros": [
           "Large talent data coverage.",
           "Sequencing and outreach.",
@@ -12721,11 +12679,11 @@
           "Chatbot"
         ],
         "iconUrl": "https://www.paradox.ai/favicon.svg",
-        "about": "Olivia automates candidate Q&A, pre‑screening, and interview scheduling via chat and SMS, especially for high‑volume roles.",
+        "about": "Olivia automates candidate Q&A, pre\u2011screening, and interview scheduling via chat and SMS, especially for high\u2011volume roles.",
         "pros": [
-          "Great for high‑volume hiring.",
+          "Great for high\u2011volume hiring.",
           "Scheduling automation.",
-          "Mobile‑first experience."
+          "Mobile\u2011first experience."
         ],
         "cons": [
           "Less depth for niche roles.",
@@ -13326,7 +13284,7 @@
       },
       {
         "name": "Inworld AI",
-        "description": "Intelligent NPCs with personalities, memory, and real‑time dialogue.",
+        "description": "Intelligent NPCs with personalities, memory, and real\u2011time dialogue.",
         "link": "https://inworld.ai/",
         "tags": [
           "Subscription",
@@ -13343,7 +13301,7 @@
         "cons": [
           "Online dependency for inference.",
           "Latency considerations.",
-          "Usage‑based pricing."
+          "Usage\u2011based pricing."
         ]
       },
       {
@@ -13388,12 +13346,12 @@
         "cons": [
           "Service engagement required.",
           "Best for studios.",
-          "Project‑specific setup."
+          "Project\u2011specific setup."
         ]
       },
       {
         "name": "notebook",
-        "description": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes — and everything within them.",
+        "description": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes \u2014 and everything within them.",
         "link": "http://www.notebook.ai",
         "tags": [
           "image",
@@ -13402,7 +13360,7 @@
           "design",
           "Freemium"
         ],
-        "about": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes — and everything within them.",
+        "about": "Notebook.ai is a set of tools for writers and roleplayers to create magnificent universes \u2014 and everything within them.",
         "pros": [
           "Generates visuals quickly.",
           "Great for research and discovery."
@@ -13633,7 +13591,7 @@
           "Assistant"
         ],
         "iconUrl": "https://www.crowdstrike.com/favicon.svg",
-        "about": "Charlotte AI enables natural‑language queries and guided investigations across Falcon telemetry and detections.",
+        "about": "Charlotte AI enables natural\u2011language queries and guided investigations across Falcon telemetry and detections.",
         "pros": [
           "Powerful on Falcon data.",
           "Speeds up investigations.",
@@ -13647,7 +13605,7 @@
       },
       {
         "name": "Darktrace",
-        "description": "Self‑learning AI for threat detection and autonomous response.",
+        "description": "Self\u2011learning AI for threat detection and autonomous response.",
         "link": "https://darktrace.com/",
         "tags": [
           "Subscription",
@@ -13714,7 +13672,7 @@
       },
       {
         "name": "Microsoft Security Copilot",
-        "description": "An AI assistant for security analysts across Microsoft’s security stack.",
+        "description": "An AI assistant for security analysts across Microsoft\u2019s security stack.",
         "link": "https://www.microsoft.com/security/business/ai/security-copilot",
         "tags": [
           "Subscription",
@@ -13729,7 +13687,7 @@
           "Enterprise compliance posture."
         ],
         "cons": [
-          "Microsoft‑centric.",
+          "Microsoft\u2011centric.",
           "Access and licensing requirements.",
           "Data residency considerations."
         ]
@@ -14035,7 +13993,7 @@
     "tools": [
       {
         "name": "Apollo AI",
-        "description": "Prospecting, enrichment, and AI‑assisted outreach.",
+        "description": "Prospecting, enrichment, and AI\u2011assisted outreach.",
         "link": "https://www.apollo.io/",
         "tags": [
           "Freemium",
@@ -14047,7 +14005,7 @@
         "pros": [
           "Large B2B dataset.",
           "Affordable entry tier.",
-          "Sequencing built‑in."
+          "Sequencing built\u2011in."
         ],
         "cons": [
           "Data accuracy varies.",
@@ -14136,7 +14094,7 @@
         "iconUrl": "https://www.hubspot.com/favicon.svg",
         "about": "HubSpot AI helps draft emails, generate content, and surface insights across Marketing, Sales, and Service Hubs.",
         "pros": [
-          "Good for SMB and mid‑market.",
+          "Good for SMB and mid\u2011market.",
           "Simple UX.",
           "Free tier options."
         ],
@@ -14443,7 +14401,7 @@
     "tools": [
       {
         "name": "Buffer AI Assistant",
-        "description": "Generate on‑brand social posts and ideas inside Buffer.",
+        "description": "Generate on\u2011brand social posts and ideas inside Buffer.",
         "link": "https://buffer.com/ai",
         "tags": [
           "Freemium",
@@ -14451,7 +14409,7 @@
           "Content"
         ],
         "iconUrl": "https://buffer.com/favicon.svg",
-        "about": "Buffer’s AI helps brainstorm, draft, and repurpose content across networks, integrated with your scheduling calendar.",
+        "about": "Buffer\u2019s AI helps brainstorm, draft, and repurpose content across networks, integrated with your scheduling calendar.",
         "pros": [
           "Tight with scheduling and analytics.",
           "Easy brand tone prompts.",
@@ -14459,7 +14417,7 @@
         ],
         "cons": [
           "Best for SMB and creators.",
-          "Limited long‑form tools.",
+          "Limited long\u2011form tools.",
           "Network feature parity varies."
         ]
       },
@@ -14471,8 +14429,7 @@
           "Freemium",
           "Design",
           "Content Creation",
-          "video",
-          "video generation"
+          "video"
         ],
         "iconUrl": "icons/social-media-content/canva-ai.ico",
         "about": "Canva AI offers Magic Design (auto-generates graphics based on prompts) and Magic Write (AI-powered caption generation) for visual-first content creation. It provides image/video creation, social templates, and brand kits, making it perfect for teams and solo creators designing posts for Instagram, LinkedIn, and more.",
@@ -14521,7 +14478,7 @@
           "Content"
         ],
         "iconUrl": "https://www.hootsuite.com/favicon.svg",
-        "about": "OwlyWriter generates captions, repurposes posts, and drafts content calendars, integrated with Hootsuite’s suite.",
+        "about": "OwlyWriter generates captions, repurposes posts, and drafts content calendars, integrated with Hootsuite\u2019s suite.",
         "pros": [
           "Fits existing Hootsuite flows.",
           "Helps ideation and repurposing.",
@@ -14569,7 +14526,7 @@
         "about": "Later offers AI caption writing and planning tools alongside their visual calendar for Instagram, TikTok, and more.",
         "pros": [
           "Great visual planner.",
-          "Creator‑friendly.",
+          "Creator\u2011friendly.",
           "Affordable entry tiers."
         ],
         "cons": [
@@ -14780,7 +14737,7 @@
     ]
   },
   {
-    "name": "E‑commerce & Retail",
+    "name": "E\u2011commerce & Retail",
     "slug": "ecommerce-retail",
     "description": "Recommendations, pricing, catalog enrichment, and customer experience.",
     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-10 w-10\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path d=\"M3 3a1 1 0 00-1 1v2h16V4a1 1 0 00-1-1H3zm-1 5h16l-1.5 8.5A2 2 0 0114.52 18H5.48a2 2 0 01-1.98-1.5L2 8z\"/></svg>",
@@ -14795,10 +14752,10 @@
           "AWS"
         ],
         "iconUrl": "https://aws.amazon.com/favicon.svg",
-        "about": "Personalize brings Amazon.com‑grade recommendation tech to your apps for product, content, and promotions.",
+        "about": "Personalize brings Amazon.com\u2011grade recommendation tech to your apps for product, content, and promotions.",
         "pros": [
           "Managed service with SDKs.",
-          "Good for cold‑start.",
+          "Good for cold\u2011start.",
           "A/B evaluation tools."
         ],
         "cons": [
@@ -14809,7 +14766,7 @@
       },
       {
         "name": "Bloomreach Discovery",
-        "description": "AI‑powered site search, merchandising, and recommendations.",
+        "description": "AI\u2011powered site search, merchandising, and recommendations.",
         "link": "https://www.bloomreach.com/en/products/discovery",
         "tags": [
           "Subscription",
@@ -14817,7 +14774,7 @@
           "Merchandising"
         ],
         "iconUrl": "https://www.bloomreach.com/favicon.svg",
-        "about": "Discovery boosts conversion with semantic search, relevance tuning, and AI‑driven merchandising tools.",
+        "about": "Discovery boosts conversion with semantic search, relevance tuning, and AI\u2011driven merchandising tools.",
         "pros": [
           "Strong commerce search relevance.",
           "Merch rules + AI.",
@@ -15233,7 +15190,7 @@
           "Lender/investor focus."
         ],
         "cons": [
-          "US‑centric data.",
+          "US\u2011centric data.",
           "Enterprise contracts.",
           "Needs integration into workflows."
         ]
@@ -15273,7 +15230,7 @@
         "iconUrl": "https://matterport.com/favicon.svg",
         "about": "Matterport captures spaces into interactive 3D tours with AI features for measurement, floor plans, and virtual staging.",
         "pros": [
-          "High‑quality 3D tours.",
+          "High\u2011quality 3D tours.",
           "Measurement/floor plan tools.",
           "Broad camera/app support."
         ],
@@ -15347,7 +15304,7 @@
         "cons": [
           "Coverage varies by region.",
           "Data freshness considerations.",
-          "Seat‑based pricing."
+          "Seat\u2011based pricing."
         ]
       },
       {
@@ -15927,8 +15884,7 @@
           "Content Creation",
           "SEO",
           "Multimedia",
-          "video",
-          "video generation"
+          "video"
         ],
         "iconUrl": "icons/ai-browsers/sigma-ai-browser.ico",
         "about": "Sigma AI Browser is tailored for content creators and marketers. It includes built-in AI tools for generating text, images, and video content, along with SEO optimization features to help creators produce and optimize content without leaving the browser.",
@@ -17635,10 +17591,7 @@
         "tags": [
           "Text-Based Editing",
           "Overdub",
-          "Transcription",
-          "video editing",
-          "audio editing",
-          "podcast"
+          "Transcription"
         ],
         "iconUrl": "https://www.descript.com/favicon.ico",
         "about": "Descript is the leading podcast editing tool with innovative text-based editing - edit audio by editing text. It offers automatic transcription, filler word removal, background noise reduction, multi-track editing, and voice cloning (Overdub) for corrections.",
@@ -17705,8 +17658,7 @@
         "tags": [
           "Freemium",
           "Video Creation",
-          "video",
-          "video generation"
+          "video"
         ],
         "iconUrl": "https://www.headliner.app/favicon.ico",
         "about": "Headliner converts podcast audio into engaging videos, audiograms, and social media clips with automated transcription and waveforms.",
@@ -18158,11 +18110,7 @@
           "Digital Clones",
           "Scalable",
           "Business",
-          "video",
-          "video generation",
-          "ai avatars",
-          "video translation",
-          "lip sync"
+          "video"
         ],
         "iconUrl": "icons/avatar-virtual-influencer/heygen.ico",
         "about": "HeyGen offers powerful video avatar features with the ability to create personalized digital clones and custom scenes. It's used for scalable influencer campaigns and virtual spokespeople with professional quality output.",
@@ -18209,11 +18157,7 @@
           "Video Avatars",
           "230+ Styles",
           "Professional",
-          "video",
-          "video generation",
-          "ai avatars",
-          "talking head",
-          "corporate"
+          "video"
         ],
         "iconUrl": "https://www.synthesia.io/favicon.ico",
         "about": "Synthesia is the industry leader for lifelike AI video avatars, offering over 230 avatar styles and support for 140+ languages. Avatars demonstrate natural gestures, expressions, and accurate lip sync, making it ideal for professional social media and marketing videos.",
@@ -18278,9 +18222,7 @@
         "tags": [
           "Video Avatars",
           "Marketing",
-          "Training",
-          "video",
-          "video generation"
+          "Training"
         ],
         "iconUrl": "https://www.synthesia.io/favicon.ico",
         "about": "Synthesia creates realistic AI video avatars that can speak any script in multiple languages.",
@@ -18311,8 +18253,7 @@
           "Freemium",
           "Screen Recording",
           "Collaboration",
-          "video",
-          "video editing"
+          "video"
         ],
         "iconUrl": "https://www.tella.tv/favicon.ico",
         "about": "Tella is a modern video platform that makes it easy to create and share screen recordings for tutorials, demos, and presentations with collaborative features and team branding options.",
@@ -18359,8 +18300,7 @@
           "Freemium",
           "Screen Recording",
           "AI Transcription",
-          "video",
-          "video editing"
+          "video"
         ],
         "iconUrl": "https://screenapp.io/favicon.ico",
         "about": "ScreenApp provides AI-powered screen recording with automatic transcription, video summarization, and support for multiple languages, making it ideal for creating searchable video content.",
@@ -18430,8 +18370,7 @@
           "Freemium",
           "Screen Recording",
           "AI Automation",
-          "video",
-          "video generation"
+          "video"
         ],
         "iconUrl": "https://trupeer.ai/favicon.ico",
         "about": "Trupeer automates product video creation with AI-generated scripts, voiceovers, and multi-language support, perfect for creating software demos and product tutorials at scale.",
@@ -18454,8 +18393,7 @@
         "tags": [
           "Video Messaging",
           "AI Summary",
-          "Transcription",
-          "video"
+          "Transcription"
         ],
         "iconUrl": "https://www.loom.com/favicon.ico",
         "about": "Loom provides video messaging with AI-powered summaries and transcription.",
@@ -20448,9 +20386,7 @@
         "tags": [
           "Photo/Video",
           "Filters",
-          "Advanced",
-          "video",
-          "video editing"
+          "Advanced"
         ],
         "iconUrl": "https://www.polarr.com/favicon.ico",
         "about": "Polarr offers AI-powered photo and video editing with intelligent auto-enhancement, custom filters, and professional tools.",
@@ -21120,9 +21056,7 @@
         "tags": [
           "Video Editing",
           "NLE Integration",
-          "Translation",
-          "transcription",
-          "subtitles"
+          "Translation"
         ],
         "iconUrl": "https://www.simonsaysai.com/favicon.ico",
         "about": "Simon Says provides AI transcription with direct integration into video editing software like Premiere Pro and Final Cut Pro.",
@@ -21446,8 +21380,7 @@
         "tags": [
           "YouTube",
           "Podcasts",
-          "Audio",
-          "video"
+          "Audio"
         ],
         "iconUrl": "https://summarist.ai/favicon.ico",
         "about": "Summarist specializes in summarizing YouTube videos and podcasts, extracting key points and timestamps.",
@@ -22117,8 +22050,7 @@
         "tags": [
           "Multi-modal",
           "Enterprise",
-          "Real-time",
-          "video"
+          "Real-time"
         ],
         "iconUrl": "https://hivemoderation.com/favicon.ico",
         "about": "Hive provides AI moderation across all content types with high accuracy for platforms and enterprises.",

@@ -24,6 +24,12 @@ const VIDEO_TOOL_TAGS = {
   'Topaz Video AI': ['video editing', 'video enhancement', 'upscaling'],
   'Fliki': ['video editing', 'faceless video', 'youtube'],
   'Lumen5': ['video editing', 'article to video', 'marketing'],
+  'Kapwing': ['video editing', 'online editor', 'collaborative', 'meme maker'],
+  'CapCut': ['video editing', 'mobile', 'tiktok', 'short form'],
+  'Clipchamp': ['video editing', 'microsoft', 'online editor'],
+  'Animoto': ['video editing', 'templates', 'marketing'],
+  'WeVideo': ['video editing', 'collaborative', 'cloud based'],
+  'Simon Says': ['video editing', 'transcription', 'subtitles'],
   
   // Video Generation Tools
   'Runway': ['video generation', 'video editing', 'text to video', 'ai video'],
@@ -38,6 +44,7 @@ const VIDEO_TOOL_TAGS = {
   'MAGI-1': ['video generation', 'autoregressive', 'open source'],
   'Kaiber': ['video generation', 'video effects', 'animation', 'artistic'],
   'Pictory': ['video generation', 'text to video', 'blog to video'],
+  'Dreamina': ['video generation', 'image generation', 'tiktok'],
   
   // Avatar & Talking Head Tools
   'Synthesia': ['video generation', 'ai avatars', 'talking head', 'corporate'],
@@ -134,15 +141,31 @@ function processToolsData() {
         const desc = (tool.description || '').toLowerCase();
         const name = (tool.name || '').toLowerCase();
         
+        // Check if this tool should have video tags based on our mapping
+        if (VIDEO_TOOL_TAGS[tool.name]) {
+          const tagsToAdd = VIDEO_TOOL_TAGS[tool.name];
+          if (addTagsToTool(tool, tagsToAdd)) {
+            console.log(`  ✓ Added tags to ${tool.name} in ${category.name}: ${JSON.stringify(tagsToAdd)}`);
+            updatedCount++;
+          }
+        }
         // If tool mentions video in name or description, ensure it has video tags
-        if (desc.includes('video') || name.includes('video')) {
+        else if (desc.includes('video') || name.includes('video')) {
           const existingTags = (tool.tags || []).map(t => String(t).toLowerCase());
           
-          if (!existingTags.includes('video') && !existingTags.includes('video tool')) {
-            if (addTagsToTool(tool, ['video'])) {
-              console.log(`  ✓ Added 'video' tag to ${tool.name} in ${category.name}`);
-              updatedCount++;
-            }
+          // Determine what kind of video tool it is
+          let tagsToAdd = [];
+          if (desc.includes('edit') || desc.includes('editor') || name.includes('edit')) {
+            tagsToAdd = ['video', 'video editing'];
+          } else if (desc.includes('generat') || desc.includes('creat') || desc.includes('text to video') || desc.includes('text-to-video')) {
+            tagsToAdd = ['video', 'video generation'];
+          } else if (!existingTags.includes('video') && !existingTags.includes('video tool')) {
+            tagsToAdd = ['video'];
+          }
+          
+          if (tagsToAdd.length > 0 && addTagsToTool(tool, tagsToAdd)) {
+            console.log(`  ✓ Added tags to ${tool.name} in ${category.name}: ${JSON.stringify(tagsToAdd)}`);
+            updatedCount++;
           }
         }
       }

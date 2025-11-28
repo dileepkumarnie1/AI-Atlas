@@ -1231,13 +1231,34 @@
             function expandSearchTerms(query) {
                 const q = query.toLowerCase().trim();
                 const terms = [q];
-                // Add synonyms if query matches a known pattern
+                
+                // Add synonyms for ALL matching patterns (not just first match)
                 for (const [canonical, synonyms] of Object.entries(TAG_SYNONYMS)) {
                     if (q.includes(canonical) || synonyms.some(syn => q.includes(syn))) {
-                        terms.push(canonical, ...synonyms);
-                        break;
+                        terms.push(canonical);
+                        // Also add individual synonym terms for better matching
+                        terms.push(...synonyms);
                     }
                 }
+                
+                // Extract meaningful phrases from the query
+                // For "ai tool for editing video" -> extract "editing video", "video"
+                const words = q.split(/\s+/);
+                if (words.length > 1) {
+                    // Add bigrams and individual important words
+                    for (let i = 0; i < words.length - 1; i++) {
+                        const bigram = words[i] + ' ' + words[i + 1];
+                        terms.push(bigram);
+                    }
+                    // Add individual words (but filter out common stop words)
+                    const stopWords = new Set(['a', 'an', 'the', 'for', 'to', 'of', 'in', 'on', 'at', 'with', 'by', 'ai', 'tool', 'tools']);
+                    words.forEach(word => {
+                        if (word.length > 2 && !stopWords.has(word)) {
+                            terms.push(word);
+                        }
+                    });
+                }
+                
                 return [...new Set(terms)];
             }
 
