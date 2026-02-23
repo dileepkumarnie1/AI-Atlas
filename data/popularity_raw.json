@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-02-19T03:50:52.109Z",
+  "generatedAt": "2026-02-23T03:52:52.920Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 103531,
-          "forks": 11810,
-          "openIssues": 3713,
+          "stars": 103876,
+          "forks": 11867,
+          "openIssues": 3734,
           "commitCount90": 100,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 5
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.5179,
+      "signalsRaw": 4.5066,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -68,13 +68,13 @@
           "forks": 346,
           "openIssues": 56,
           "commitCount90": 0,
-          "daysSinceRelease": 652
+          "daysSinceRelease": 656
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.4499,
-      "signalsNorm": 54.23,
+      "signalsRaw": 2.4497,
+      "signalsNorm": 54.36,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
@@ -154,16 +154,16 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 12021,
-          "forks": 1044,
-          "openIssues": 315,
+          "stars": 12027,
+          "forks": 1048,
+          "openIssues": 316,
           "commitCount90": 0,
           "daysSinceRelease": null
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9009
+      "signalsRaw": 2.9012
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 32893,
-          "forks": 1683,
+          "stars": 32906,
+          "forks": 1682,
           "openIssues": 291,
           "commitCount90": 13,
-          "daysSinceRelease": 24
+          "daysSinceRelease": 28
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.7749,
-      "signalsNorm": 83.55,
+      "signalsRaw": 3.7669,
+      "signalsNorm": 83.59,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -202,17 +202,17 @@
     "Riffusion": {
       "signals": {
         "github": {
-          "stars": 3869,
+          "stars": 3873,
           "forks": 468,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1149
+          "daysSinceRelease": 1153
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5751,
-      "signalsNorm": 57,
+      "signalsRaw": 2.5753,
+      "signalsNorm": 57.15,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,44 +222,44 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 94799,
-          "forks": 11776,
+          "stars": 94947,
+          "forks": 11788,
           "openIssues": 115,
           "commitCount90": 0,
-          "daysSinceRelease": 238
+          "daysSinceRelease": 242
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.6791
+      "signalsRaw": 3.6785
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 14245,
+          "stars": 14266,
           "forks": 1679,
-          "openIssues": 585,
-          "commitCount90": 1,
-          "daysSinceRelease": 668
+          "openIssues": 588,
+          "commitCount90": 2,
+          "daysSinceRelease": 672
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.1019
+      "signalsRaw": 3.155
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 44561,
-          "forks": 5965,
-          "openIssues": 8,
+          "stars": 44594,
+          "forks": 5970,
+          "openIssues": 7,
           "commitCount90": 0,
-          "daysSinceRelease": 800
+          "daysSinceRelease": 804
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3861
+      "signalsRaw": 3.3862
     },
     "airbyte": {
       "signals": {
