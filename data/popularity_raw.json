@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-05-21T04:31:32.133Z",
+  "generatedAt": "2026-05-25T04:32:44.135Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 113753,
-          "forks": 13317,
-          "openIssues": 4041,
+          "stars": 114341,
+          "forks": 13388,
+          "openIssues": 4028,
           "commitCount90": 100,
-          "daysSinceRelease": 0
+          "daysSinceRelease": 4
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.5535,
+      "signalsRaw": 4.5425,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -68,13 +68,13 @@
           "forks": 344,
           "openIssues": 57,
           "commitCount90": 1,
-          "daysSinceRelease": 743
+          "daysSinceRelease": 747
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5356,
-      "signalsNorm": 55.68,
+      "signalsRaw": 2.5355,
+      "signalsNorm": 55.82,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
@@ -154,8 +154,8 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 12119,
-          "forks": 1075,
+          "stars": 12118,
+          "forks": 1077,
           "openIssues": 319,
           "commitCount90": 0,
           "daysSinceRelease": null
@@ -163,7 +163,7 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9049
+      "signalsRaw": 2.905
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 33531,
-          "forks": 1746,
+          "stars": 33541,
+          "forks": 1748,
           "openIssues": 315,
           "commitCount90": 1,
-          "daysSinceRelease": 115
+          "daysSinceRelease": 119
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.4236,
-      "signalsNorm": 75.19,
+      "signalsRaw": 3.4213,
+      "signalsNorm": 75.32,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -206,13 +206,13 @@
           "forks": 480,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1240
+          "daysSinceRelease": 1244
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5774,
-      "signalsNorm": 56.6,
+      "signalsRaw": 2.5773,
+      "signalsNorm": 56.74,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,44 +222,44 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 99855,
-          "forks": 12226,
-          "openIssues": 123,
+          "stars": 100422,
+          "forks": 12302,
+          "openIssues": 125,
           "commitCount90": 2,
-          "daysSinceRelease": 329
+          "daysSinceRelease": 333
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.8203
+      "signalsRaw": 3.8216
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 14748,
+          "stars": 14773,
           "forks": 1722,
-          "openIssues": 596,
-          "commitCount90": 1,
-          "daysSinceRelease": 759
+          "openIssues": 594,
+          "commitCount90": 0,
+          "daysSinceRelease": 763
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.1088
+      "signalsRaw": 3.0188
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 45345,
-          "forks": 6098,
-          "openIssues": 9,
+          "stars": 45391,
+          "forks": 6111,
+          "openIssues": 6,
           "commitCount90": 0,
-          "daysSinceRelease": 891
+          "daysSinceRelease": 895
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3892
+      "signalsRaw": 3.3895
     },
     "airbyte": {
       "signals": {
