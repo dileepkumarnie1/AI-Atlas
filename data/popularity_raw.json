@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-13T04:14:41.321Z",
+  "generatedAt": "2026-07-16T04:02:14.354Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 120508,
-          "forks": 14180,
-          "openIssues": 4276,
+          "stars": 120894,
+          "forks": 14210,
+          "openIssues": 4279,
           "commitCount90": 100,
-          "daysSinceRelease": 12
+          "daysSinceRelease": 1
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.5374,
+      "signalsRaw": 4.5703,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -68,17 +68,17 @@
           "forks": 339,
           "openIssues": 57,
           "commitCount90": 1,
-          "daysSinceRelease": 796
+          "daysSinceRelease": 799
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5325,
-      "signalsNorm": 55.81,
+      "signalsRaw": 2.5324,
+      "signalsNorm": 55.41,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
-      "popularityScore": 76.27,
+      "popularityScore": 76.26,
       "isOpenSource": false
     },
     "Midjourney": {
@@ -154,7 +154,7 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 12181,
+          "stars": 12188,
           "forks": 1085,
           "openIssues": 321,
           "commitCount90": 0,
@@ -163,7 +163,7 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9068
+      "signalsRaw": 2.907
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 33692,
-          "forks": 1763,
-          "openIssues": 327,
+          "stars": 33703,
+          "forks": 1769,
+          "openIssues": 328,
           "commitCount90": 1,
-          "daysSinceRelease": 168
+          "daysSinceRelease": 171
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3985,
-      "signalsNorm": 74.9,
+      "signalsRaw": 3.3976,
+      "signalsNorm": 74.34,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -202,17 +202,17 @@
     "Riffusion": {
       "signals": {
         "github": {
-          "stars": 3895,
+          "stars": 3897,
           "forks": 479,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1293
+          "daysSinceRelease": 1296
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5761,
-      "signalsNorm": 56.77,
+      "signalsRaw": 2.5762,
+      "signalsNorm": 56.37,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,25 +222,25 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 104826,
-          "forks": 12771,
-          "openIssues": 136,
-          "commitCount90": 1,
-          "daysSinceRelease": 382
+          "stars": 105012,
+          "forks": 12760,
+          "openIssues": 134,
+          "commitCount90": 0,
+          "daysSinceRelease": 385
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.7757
+      "signalsRaw": 3.6855
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 14933,
-          "forks": 1734,
+          "stars": 14944,
+          "forks": 1733,
           "openIssues": 598,
           "commitCount90": 3,
-          "daysSinceRelease": 812
+          "daysSinceRelease": 815
         },
         "npm": null,
         "pypi": null
@@ -250,11 +250,11 @@
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 45749,
-          "forks": 6154,
+          "stars": 45758,
+          "forks": 6152,
           "openIssues": 4,
           "commitCount90": 0,
-          "daysSinceRelease": 944
+          "daysSinceRelease": 947
         },
         "npm": null,
         "pypi": null
@@ -12334,7 +12334,7 @@
     },
     {
       "name": "DreamStudio",
-      "score": 76.27,
+      "score": 76.26,
       "rank": 15
     },
     {
