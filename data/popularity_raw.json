@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-06T04:02:51.876Z",
+  "generatedAt": "2026-08-10T03:35:24.434Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 124036,
-          "forks": 14668,
-          "openIssues": 4444,
+          "stars": 125654,
+          "forks": 14851,
+          "openIssues": 4503,
           "commitCount90": 100,
-          "daysSinceRelease": 3
+          "daysSinceRelease": 2
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.5727,
+      "signalsRaw": 4.5801,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -64,17 +64,17 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 2438,
+          "stars": 2437,
           "forks": 339,
           "openIssues": 57,
           "commitCount90": 1,
-          "daysSinceRelease": 820
+          "daysSinceRelease": 824
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.532,
-      "signalsNorm": 55.37,
+      "signalsRaw": 2.5318,
+      "signalsNorm": 55.28,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
@@ -154,8 +154,8 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 12211,
-          "forks": 1089,
+          "stars": 12213,
+          "forks": 1090,
           "openIssues": 319,
           "commitCount90": 0,
           "daysSinceRelease": null
@@ -163,7 +163,7 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9077
+      "signalsRaw": 2.9078
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 33821,
-          "forks": 1778,
+          "stars": 33819,
+          "forks": 1780,
           "openIssues": 329,
           "commitCount90": 1,
-          "daysSinceRelease": 192
+          "daysSinceRelease": 196
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3911,
-      "signalsNorm": 74.16,
+      "signalsRaw": 3.3898,
+      "signalsNorm": 74.01,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -202,17 +202,17 @@
     "Riffusion": {
       "signals": {
         "github": {
-          "stars": 3901,
+          "stars": 3900,
           "forks": 480,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1317
+          "daysSinceRelease": 1321
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5763,
-      "signalsNorm": 56.34,
+      "signalsRaw": 2.5762,
+      "signalsNorm": 56.25,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,39 +222,39 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 106717,
-          "forks": 12970,
-          "openIssues": 135,
+          "stars": 106977,
+          "forks": 12993,
+          "openIssues": 134,
           "commitCount90": 2,
-          "daysSinceRelease": 406
+          "daysSinceRelease": 410
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.8315
+      "signalsRaw": 3.8318
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 15029,
-          "forks": 1744,
+          "stars": 15034,
+          "forks": 1742,
           "openIssues": 601,
-          "commitCount90": 3,
-          "daysSinceRelease": 836
+          "commitCount90": 4,
+          "daysSinceRelease": 840
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.2022
+      "signalsRaw": 3.2312
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 45857,
-          "forks": 6154,
+          "stars": 45872,
+          "forks": 6155,
           "openIssues": 6,
           "commitCount90": 0,
-          "daysSinceRelease": 968
+          "daysSinceRelease": 972
         },
         "npm": null,
         "pypi": null
