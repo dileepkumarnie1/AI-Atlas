@@ -15647,6 +15647,29 @@
           "Content moderation",
           "Subscription for best experience"
         ]
+      },
+      {
+        "name": "Roblox GUI Maker",
+        "description": "Free AI-assisted Roblox Studio GUI planner for ScreenGui layouts, HUDs, menus, and Lua UI starter code.",
+        "link": "https://robloxguimaker.dev/",
+        "tags": [
+          "Free",
+          "Roblox",
+          "Game Dev",
+          "UI",
+          "Lua"
+        ],
+        "iconUrl": "https://res.cloudinary.com/dqp362rzh/image/upload/v1781751810/bihytjivjlx3d4fd50jy.png",
+        "about": "Roblox GUI Maker turns natural-language prompts into practical Roblox Studio GUI plans, including ScreenGui layouts, HUDs, menus, shop and inventory screens, admin panels, onboarding flows, JSON-style blueprints, and Lua UI starter-code guidance.",
+        "pros": [
+          "Focused specifically on Roblox Studio GUI planning.",
+          "Useful for HUDs, menus, shops, inventories, and other common game UI flows.",
+          "Free browser-based workflow with Roblox and Lua-oriented output."
+        ],
+        "cons": [
+          "Still requires manual implementation and testing inside Roblox Studio.",
+          "Best for UI planning and starter code rather than complete game systems."
+        ]
       }
     ]
   },
