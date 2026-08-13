@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-10T03:35:24.434Z",
+  "generatedAt": "2026-08-13T03:47:28.662Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 125654,
-          "forks": 14851,
-          "openIssues": 4503,
+          "stars": 127126,
+          "forks": 14976,
+          "openIssues": 4558,
           "commitCount90": 100,
-          "daysSinceRelease": 2
+          "daysSinceRelease": 1
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.5801,
+      "signalsRaw": 4.5869,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -67,18 +67,18 @@
           "stars": 2437,
           "forks": 339,
           "openIssues": 57,
-          "commitCount90": 1,
-          "daysSinceRelease": 824
+          "commitCount90": 0,
+          "daysSinceRelease": 827
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5318,
-      "signalsNorm": 55.28,
+      "signalsRaw": 2.4414,
+      "signalsNorm": 53.23,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
-      "popularityScore": 76.26,
+      "popularityScore": 76.2,
       "isOpenSource": false
     },
     "Midjourney": {
@@ -155,7 +155,7 @@
       "signals": {
         "github": {
           "stars": 12213,
-          "forks": 1090,
+          "forks": 1088,
           "openIssues": 319,
           "commitCount90": 0,
           "daysSinceRelease": null
@@ -163,7 +163,7 @@
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9078
+      "signalsRaw": 2.9077
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 33819,
-          "forks": 1780,
-          "openIssues": 329,
+          "stars": 33822,
+          "forks": 1777,
+          "openIssues": 328,
           "commitCount90": 1,
-          "daysSinceRelease": 196
+          "daysSinceRelease": 199
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3898,
-      "signalsNorm": 74.01,
+      "signalsRaw": 3.3888,
+      "signalsNorm": 73.88,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -206,13 +206,13 @@
           "forks": 480,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1321
+          "daysSinceRelease": 1324
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.5762,
-      "signalsNorm": 56.25,
+      "signalsRaw": 2.5761,
+      "signalsNorm": 56.16,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,44 +222,44 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 106977,
-          "forks": 12993,
-          "openIssues": 134,
+          "stars": 107184,
+          "forks": 13007,
+          "openIssues": 135,
           "commitCount90": 2,
-          "daysSinceRelease": 410
+          "daysSinceRelease": 413
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.8318
+      "signalsRaw": 3.832
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 15034,
-          "forks": 1742,
-          "openIssues": 601,
+          "stars": 15050,
+          "forks": 1743,
+          "openIssues": 600,
           "commitCount90": 4,
-          "daysSinceRelease": 840
+          "daysSinceRelease": 843
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.2312
+      "signalsRaw": 3.2314
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 45872,
-          "forks": 6155,
-          "openIssues": 6,
+          "stars": 45886,
+          "forks": 6150,
+          "openIssues": 4,
           "commitCount90": 0,
-          "daysSinceRelease": 972
+          "daysSinceRelease": 975
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.3908
+      "signalsRaw": 3.3907
     },
     "airbyte": {
       "signals": {
@@ -12334,7 +12334,7 @@
     },
     {
       "name": "DreamStudio",
-      "score": 76.26,
+      "score": 76.2,
       "rank": 15
     },
     {
