@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-05T03:19:01.403Z",
+  "generatedAt": "2026-10-08T03:15:52.117Z",
   "raw": {
     "ComfyUI": {
       "signals": {
         "github": {
-          "stars": 136110,
-          "forks": 16139,
-          "openIssues": 5060,
+          "stars": 136524,
+          "forks": 16206,
+          "openIssues": 5085,
           "commitCount90": 100,
-          "daysSinceRelease": 5
+          "daysSinceRelease": 2
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 4.597,
+      "signalsRaw": 4.6074,
       "signalsNorm": 100,
       "mpScore": 0,
       "freqScore": 0,
@@ -64,17 +64,17 @@
     "DreamStudio": {
       "signals": {
         "github": {
-          "stars": 2436,
+          "stars": 2435,
           "forks": 338,
           "openIssues": 57,
           "commitCount90": 0,
-          "daysSinceRelease": 880
+          "daysSinceRelease": 883
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.4395,
-      "signalsNorm": 53.07,
+      "signalsRaw": 2.4393,
+      "signalsNorm": 52.94,
       "mpScore": 75.92592592592592,
       "freqScore": 10,
       "usersScore": 78.7628776601396,
@@ -154,16 +154,16 @@
     "AnimateDiff": {
       "signals": {
         "github": {
-          "stars": 12264,
-          "forks": 1101,
-          "openIssues": 318,
+          "stars": 12274,
+          "forks": 1100,
+          "openIssues": 319,
           "commitCount90": 0,
           "daysSinceRelease": null
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.9095
+      "signalsRaw": 2.9097
     },
     "Stable Video Diffusion": {
       "signals": {
@@ -182,17 +182,17 @@
     "TabbyML": {
       "signals": {
         "github": {
-          "stars": 33896,
-          "forks": 1793,
-          "openIssues": 342,
+          "stars": 33906,
+          "forks": 1792,
+          "openIssues": 341,
           "commitCount90": 0,
-          "daysSinceRelease": 252
+          "daysSinceRelease": 255
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.2851,
-      "signalsNorm": 71.46,
+      "signalsRaw": 3.2845,
+      "signalsNorm": 71.29,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -202,17 +202,17 @@
     "Riffusion": {
       "signals": {
         "github": {
-          "stars": 3902,
+          "stars": 3900,
           "forks": 476,
           "openIssues": 71,
           "commitCount90": 0,
-          "daysSinceRelease": 1377
+          "daysSinceRelease": 1380
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 2.575,
-      "signalsNorm": 56.01,
+      "signalsRaw": 2.5749,
+      "signalsNorm": 55.89,
       "mpScore": 0,
       "freqScore": 0,
       "usersScore": 0,
@@ -222,39 +222,39 @@
     "Whisper (OpenAI)": {
       "signals": {
         "github": {
-          "stars": 109979,
-          "forks": 13334,
-          "openIssues": 160,
+          "stars": 110118,
+          "forks": 13344,
+          "openIssues": 166,
           "commitCount90": 3,
-          "daysSinceRelease": 466
+          "daysSinceRelease": 469
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.8727
+      "signalsRaw": 3.8728
     },
     "Vosk": {
       "signals": {
         "github": {
-          "stars": 15163,
-          "forks": 1768,
+          "stars": 15165,
+          "forks": 1765,
           "openIssues": 606,
           "commitCount90": 1,
-          "daysSinceRelease": 896
+          "daysSinceRelease": 899
         },
         "npm": null,
         "pypi": null
       },
-      "signalsRaw": 3.1133
+      "signalsRaw": 3.1132
     },
     "Coqui TTS": {
       "signals": {
         "github": {
-          "stars": 46104,
-          "forks": 6167,
+          "stars": 46112,
+          "forks": 6166,
           "openIssues": 3,
           "commitCount90": 0,
-          "daysSinceRelease": 1028
+          "daysSinceRelease": 1031
         },
         "npm": null,
         "pypi": null
